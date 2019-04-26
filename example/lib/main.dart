@@ -16,7 +16,7 @@ class _MyAppState extends State<MyApp> {
 
   static const platform = const MethodChannel("razorpay_flutter");
 
-  RazorpayFlutter _razorpayFlutter;
+  Razorpay _razorpay;
 
   @override
   Widget build(BuildContext context) {
@@ -39,52 +39,52 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
-    _razorpayFlutter = new RazorpayFlutter();
-    _razorpayFlutter.on('payment.success', _handlePaymentSuccess);
-    _razorpayFlutter.on('payment.error', _handlePaymentError);
-    _razorpayFlutter.on('payment.external_wallet', _handleExternalWallet);
+    _razorpay = Razorpay();
+    _razorpay.on(Razorpay.EVENT_PAYMENT_SUCCESS, _handlePaymentSuccess);
+    _razorpay.on(Razorpay.EVENT_PAYMENT_ERROR, _handlePaymentError);
+    _razorpay.on(Razorpay.EVENT_EXTERNAL_WALLET, _handleExternalWallet);
   }
 
   @override
   void dispose() {
     super.dispose();
-    _razorpayFlutter.clear();
+    _razorpay.clear();
   }
 
   void openCheckout() async {
 
-    Map<String, dynamic> options = new Map();
-
-    options['key'] = 'rzp_live_ILgsfZCZoFIKMb';
-    options['amount'] = 100;
-    options['name'] = 'Acme Corp';
-    options['description'] = 'Fine T-shirt';
-
-    options['prefill'] = new Map();
-    options['prefill']['contact'] = '8888888888';
-    options['prefill']['email'] = 'test@razorpay.com';
-
-    options['external'] = new Map();
-    options['external']['wallets'] = ['paytm'];
+    var options = {
+      'key': 'rzp_test_1DP5mmOlF5G5ag',
+      'amount': 2000,
+      'name': 'Acme Corp.',
+      'description': 'Fine T-Shirt',
+      'prefill': {
+        'contact': '8888888888',
+        'email': 'test@razorpay.com'
+      },
+      'external': {
+        'wallets': ['paytm']
+      }
+    };
 
     try {
-      _razorpayFlutter.open(options);
+      _razorpay.open(options);
     } catch (e) {
       debugPrint(e);
     }
 
   }
 
-  void _handlePaymentSuccess(String event, Map result) {
-    Fluttertoast.showToast(msg: "SUCCESS: " + result.toString(), timeInSecForIos: 4);
+  void _handlePaymentSuccess(PaymentSuccessResponse response) {
+    Fluttertoast.showToast(msg: "SUCCESS: " + response.paymentId, timeInSecForIos: 4);
   }
 
-  void _handlePaymentError(String event, Map result) {
-    Fluttertoast.showToast(msg: "ERROR: " + result.toString(), timeInSecForIos: 4);
+  void _handlePaymentError(PaymentFailureResponse response) {
+    Fluttertoast.showToast(msg: "ERROR: " + response.code.toString() + " - " + response.message, timeInSecForIos: 4);
   }
 
-  void _handleExternalWallet(String event, Map result) {
-    Fluttertoast.showToast(msg: "EXTERNAL_WALLET: " + result.toString(), timeInSecForIos: 4);
+  void _handleExternalWallet(ExternalWalletResponse response) {
+    Fluttertoast.showToast(msg: "EXTERNAL_WALLET: " + response.walletName, timeInSecForIos: 4);
   }
 
 }

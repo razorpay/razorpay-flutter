@@ -7,10 +7,12 @@ public class RazorpayDelegate: NSObject, RazorpayPaymentCompletionProtocolWithDa
     let CODE_PAYMENT_ERROR = 1;
     let CODE_PAYMENT_EXTERNAL_WALLET = 2;
     
-    public func onExternalWalletSelected(_ walletName: String, WithPaymentData data: [AnyHashable : Any]?) {
+    public func onExternalWalletSelected(_ walletName: String, WithPaymentData paymentData: [AnyHashable : Any]?) {
         var response = [String:Any]()
         response["type"] = CODE_PAYMENT_EXTERNAL_WALLET
-        // TODO set wallet name
+        
+        var data = [String:Any]()
+        data["external_wallet"] = walletName
         response["data"] = data
         
         pendingResult(response as NSDictionary)
@@ -35,7 +37,11 @@ public class RazorpayDelegate: NSObject, RazorpayPaymentCompletionProtocolWithDa
     public func onPaymentSuccess(_ payment_id: String, andData data: [AnyHashable : Any]?) {
         var response = [String:Any]();
         response["type"] = CODE_PAYMENT_SUCCESS
+        
+        var data = [String:Any]()
+        data["razorpay_payment_id"] = payment_id
         response["data"] = data
+        
         pendingResult(response as NSDictionary)
     }
     
@@ -43,7 +49,9 @@ public class RazorpayDelegate: NSObject, RazorpayPaymentCompletionProtocolWithDa
         
         self.pendingResult = result
         
-        let razorpay = Razorpay.initWithKey(options["key"] as! String, andDelegateWithData: self)
+        let key = options["key"] as? String
+        
+        let razorpay = Razorpay.initWithKey(key ?? "", andDelegateWithData: self)
         razorpay.setExternalWalletSelectionDelegate(self)
         
         razorpay.open(options)

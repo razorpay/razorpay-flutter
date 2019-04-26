@@ -12,6 +12,7 @@ import com.razorpay.PaymentResultWithDataListener;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import io.flutter.plugin.common.MethodChannel.Result;
@@ -21,7 +22,7 @@ public class RazorpayDelegate implements ActivityResultListener, ExternalWalletL
 
     private final Activity activity;
     private Result pendingResult;
-    private JSONObject pendingReply;
+    private Map<String, Object> pendingReply;
 
     private final int CODE_PAYMENT_SUCCESS = 0;
     private final int CODE_PAYMENT_ERROR = 1;
@@ -46,13 +47,9 @@ public class RazorpayDelegate implements ActivityResultListener, ExternalWalletL
 
     }
 
-    private void sendReply(JSONObject data) {
+    private void sendReply(Map<String, Object> data) {
         if (pendingResult != null) {
-            try {
-                pendingResult.success(Utils.toMap(data));
-            } catch (JSONException e) {
-                // TODO
-            }
+            pendingResult.success(data);
             pendingReply = null;
         } else {
             pendingReply = data;
@@ -61,7 +58,7 @@ public class RazorpayDelegate implements ActivityResultListener, ExternalWalletL
 
     public void resync(Result result) throws JSONException {
         if (pendingReply != null) {
-            result.success(Utils.toMap(pendingReply));
+            result.success(pendingReply);
             pendingReply = null;
         } else {
             result.success(null);
@@ -70,32 +67,28 @@ public class RazorpayDelegate implements ActivityResultListener, ExternalWalletL
 
     @Override
     public void onPaymentError(int code, String message, PaymentData paymentData) {
-        try {
-            JSONObject reply = new JSONObject();
-            reply.put("type", CODE_PAYMENT_ERROR);
+        Map<String, Object> reply = new HashMap<>();
+        reply.put("type", CODE_PAYMENT_ERROR);
 
-            JSONObject data = paymentData.getData();
-            data.put("code", code);
-            data.put("message", message);
+        Map<String, Object> data = new HashMap<>();
+        data.put("code", code);
+        data.put("message", message);
 
-            reply.put("data", data);
+        reply.put("data", data);
 
-            sendReply(reply);
-        } catch (Exception e) {
-            // TODO handle exception
-        }
+        sendReply(reply);
     }
 
     @Override
-    public void onPaymentSuccess(String paymentId, PaymentData data) {
-        try {
-            JSONObject reply = new JSONObject();
-            reply.put("type", CODE_PAYMENT_SUCCESS);
-            reply.put("data", data.getData());
-            sendReply(reply);
-        } catch (Exception e) {
-            // TODO handle exception
-        }
+    public void onPaymentSuccess(String paymentId, PaymentData paymentData) {
+        Map<String, Object> reply = new HashMap<>();
+        reply.put("type", CODE_PAYMENT_SUCCESS);
+
+        Map<String, Object> data = new HashMap<>();
+        data.put("razorpay_payment_id", paymentId);
+
+        reply.put("data", data);
+        sendReply(reply);
     }
 
     @Override
@@ -106,18 +99,14 @@ public class RazorpayDelegate implements ActivityResultListener, ExternalWalletL
 
     @Override
     public void onExternalWalletSelected(String walletName, PaymentData paymentData) {
-        try {
-            JSONObject reply = new JSONObject();
-            reply.put("type", CODE_PAYMENT_EXTERNAL_WALLET);
+        Map<String, Object> reply = new HashMap<>();
+        reply.put("type", CODE_PAYMENT_EXTERNAL_WALLET);
 
-            JSONObject data = paymentData.getData();
-            data.put("external_wallet", walletName);
-            reply.put("data", data);
+        Map<String, Object> data = new HashMap<>();
+        data.put("external_wallet", walletName);
+        reply.put("data", data);
 
-            sendReply(reply);
-        } catch (Exception e) {
-            //TODO handle
-        }
+        sendReply(reply);
     }
 
 }
