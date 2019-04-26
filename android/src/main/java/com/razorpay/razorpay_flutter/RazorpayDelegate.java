@@ -46,10 +46,10 @@ public class RazorpayDelegate implements ActivityResultListener, ExternalWalletL
 
         this.pendingResult = result;
 
-        JSONObject optionsJSON = new JSONObject(arguments);
+        JSONObject options = new JSONObject(arguments);
 
         Intent intent = new Intent(activity, CheckoutActivity.class);
-        intent.putExtra("OPTIONS", optionsJSON.toString());
+        intent.putExtra("OPTIONS", options.toString());
         intent.putExtra("FRAMEWORK", "flutter");
 
         activity.startActivityForResult(intent, Checkout.RZP_REQUEST_CODE);
