@@ -15,12 +15,12 @@ class Razorpay {
   static const EVENT_EXTERNAL_WALLET = 'payment.external_wallet';
 
   // Payment error codes
-  // TODO update code values
   static const NETWORK_ERROR = 0;
   static const INVALID_OPTIONS = 1;
   static const PAYMENT_CANCELLED = 2;
   static const TLS_ERROR = 3;
-
+  static const INCOMPATIBLE_PLUGIN = 4;
+  static const UNKNOWN_ERROR = 100;
 
   static const MethodChannel _channel =
       const MethodChannel('razorpay_flutter');

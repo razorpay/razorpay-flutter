@@ -24,9 +24,18 @@ public class RazorpayDelegate implements ActivityResultListener, ExternalWalletL
     private Result pendingResult;
     private Map<String, Object> pendingReply;
 
-    private final int CODE_PAYMENT_SUCCESS = 0;
-    private final int CODE_PAYMENT_ERROR = 1;
-    private final int CODE_PAYMENT_EXTERNAL_WALLET = 2;
+    // Response codes for communicating with plugin
+    private static final int CODE_PAYMENT_SUCCESS = 0;
+    private static final int CODE_PAYMENT_ERROR = 1;
+    private static final int CODE_PAYMENT_EXTERNAL_WALLET = 2;
+
+    // Payment error codes for communicating with plugin
+    private static final int NETWORK_ERROR = 0;
+    private static final int INVALID_OPTIONS = 1;
+    private static final int PAYMENT_CANCELLED = 2;
+    private static final int TLS_ERROR = 3;
+    private static final int INCOMPATIBLE_PLUGIN = 3;
+    private static final int UNKNOWN_ERROR = 100;
 
 
     public RazorpayDelegate(Activity activity) {
@@ -65,13 +74,30 @@ public class RazorpayDelegate implements ActivityResultListener, ExternalWalletL
         }
     }
 
+    private static int translateRzpPaymentError(int errorCode) {
+        switch (errorCode) {
+            case Checkout.NETWORK_ERROR:
+                return NETWORK_ERROR;
+            case Checkout.INVALID_OPTIONS:
+                return INVALID_OPTIONS;
+            case Checkout.PAYMENT_CANCELED:
+                return PAYMENT_CANCELLED;
+            case Checkout.TLS_ERROR:
+                return TLS_ERROR;
+            case Checkout.INCOMPATIBLE_PLUGIN:
+                return INCOMPATIBLE_PLUGIN;
+            default:
+                return UNKNOWN_ERROR;
+        }
+    }
+
     @Override
     public void onPaymentError(int code, String message, PaymentData paymentData) {
         Map<String, Object> reply = new HashMap<>();
         reply.put("type", CODE_PAYMENT_ERROR);
 
         Map<String, Object> data = new HashMap<>();
-        data.put("code", code);
+        data.put("code", translateRzpPaymentError(code));
         data.put("message", message);
 
         reply.put("data", data);
