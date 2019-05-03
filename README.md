@@ -1,6 +1,6 @@
 # razorpay_flutter
 
-A new flutter plugin project.
+Flutter plugin for Razorpay SDK.
 
 ## Getting Started
 
