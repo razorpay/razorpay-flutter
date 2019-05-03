@@ -3,16 +3,16 @@ import Razorpay
 
 public class RazorpayDelegate: NSObject, RazorpayPaymentCompletionProtocolWithData, ExternalWalletSelectionProtocol {
     
-    static let CODE_PAYMENT_SUCCESS = 0;
-    static let CODE_PAYMENT_ERROR = 1;
-    static let CODE_PAYMENT_EXTERNAL_WALLET = 2;
+    static let CODE_PAYMENT_SUCCESS = 0
+    static let CODE_PAYMENT_ERROR = 1
+    static let CODE_PAYMENT_EXTERNAL_WALLET = 2
     
-    static let NETWORK_ERROR = 0;
-    static let INVALID_OPTIONS = 1;
-    static let PAYMENT_CANCELLED = 2;
-    static let TLS_ERROR = 3;
-    static let INCOMPATIBLE_PLUGIN = 3;
-    static let UNKNOWN_ERROR = 100;
+    static let NETWORK_ERROR = 0
+    static let INVALID_OPTIONS = 1
+    static let PAYMENT_CANCELLED = 2
+    static let TLS_ERROR = 3
+    static let INCOMPATIBLE_PLUGIN = 3
+    static let UNKNOWN_ERROR = 100
     
     public func onExternalWalletSelected(_ walletName: String, WithPaymentData paymentData: [AnyHashable : Any]?) {
         var response = [String:Any]()
@@ -24,7 +24,6 @@ public class RazorpayDelegate: NSObject, RazorpayPaymentCompletionProtocolWithDa
         
         pendingResult(response as NSDictionary)
     }
-    
     
     private var pendingResult: FlutterResult!
     
@@ -42,7 +41,7 @@ public class RazorpayDelegate: NSObject, RazorpayPaymentCompletionProtocolWithDa
     }
     
     public func onPaymentSuccess(_ payment_id: String, andData data: [AnyHashable : Any]?) {
-        var response = [String:Any]();
+        var response = [String:Any]()
         response["type"] = RazorpayDelegate.CODE_PAYMENT_SUCCESS
         
         var data = [String:Any]()
@@ -72,13 +71,13 @@ public class RazorpayDelegate: NSObject, RazorpayPaymentCompletionProtocolWithDa
     static func translateRzpPaymentError(errorCode: Int) -> Int {
         switch (errorCode) {
         case 0:
-            return NETWORK_ERROR;
+            return NETWORK_ERROR
         case 1:
-            return INVALID_OPTIONS;
+            return INVALID_OPTIONS
         case 2:
-            return PAYMENT_CANCELLED;
+            return PAYMENT_CANCELLED
         default:
-            return UNKNOWN_ERROR;
+            return UNKNOWN_ERROR
         }
     }
     
