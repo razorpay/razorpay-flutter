@@ -4,6 +4,7 @@ Flutter plugin for Razorpay SDK.
 
 ## Getting Started
 
+This flutter plugin is a wrapper around our Android and iOS SDKs.
 
 ## Installation
 
@@ -37,6 +38,12 @@ _razorpay = Razorpay();
 
 #### Attach event listeners
 
+The plugin uses event-based communication, and emits events when payment fails or succeeds.
+
+The event names are exposed via the constants `EVENT_PAYMENT_SUCCESS`, `EVENT_PAYMENT_ERROR` and `EVENT_EXTERNAL_WALLET` from the `Razorpay` class.
+
+Use the `on(String event, Function handler)` method on the `Razorpay` instance to attach event listeners.
+
 ```dart
 
 _razorpay.on(Razorpay.EVENT_PAYMENT_SUCCESS, _handlePaymentSuccess);
@@ -44,14 +51,16 @@ _razorpay.on(Razorpay.EVENT_PAYMENT_ERROR, _handlePaymentError);
 _razorpay.on(Razorpay.EVENT_EXTERNAL_WALLET, _handleExternalWallet);
 ```
 
+The handlers would be defined somewhere as
+
 ```dart
 
 void _handlePaymentSuccess(PaymentSuccessResponse response) {
-  // Do something when payment succeeded
+  // Do something when payment succeeds
 }
 
 void _handlePaymentError(PaymentFailureResponse response) {
-  // Do something when payment failed
+  // Do something when payment fails
 }
 
 void _handleExternalWallet(ExternalWalletResponse response) {
