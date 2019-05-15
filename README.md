@@ -21,7 +21,7 @@ Run `flutter packages get` in the root directory of your app.
 
 ## Usage
 
-Sample code to integrate can be found in `example/lib/main.dart`.
+Sample code to integrate can be found in [example/lib/main.dart](example/lib/main.dart).
 
 #### Import package 
 
@@ -77,10 +77,12 @@ var options = {
 };
 ```
 
+A detailed list of options can be found [here](https://razorpay.com/docs/payment-gateway/integrations-guide/checkout/standard/#checkout-form).
+
 #### Open checkout
 
 ```dart
-  _razorpay.open(options);
+_razorpay.open(options);
 ```
 
 ## Caveats
