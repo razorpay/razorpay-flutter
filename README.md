@@ -24,8 +24,8 @@ Add this to `dependencies` in your app's `pubspec.yml`
 
 ```yaml
 razorpay_flutter:
-    git:
-        url: git://github.com/razorpay/razorpay-flutter.git
+  git:
+    url: git://github.com/razorpay/razorpay-flutter.git
 ```
 
 **Note for Android**: Make sure that the minimum API level for your app is 19 or higher.
