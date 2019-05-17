@@ -8,11 +8,15 @@ This flutter plugin is a wrapper around our Android and iOS SDKs.
 
 ## Installation
 
-This plugin is available on Pub: <link>
+This plugin will soon be available on Pub.
 
 Add this to `dependencies` in your app's `pubspec.yml`
 
-`<package_name>: <version>`
+```yaml
+razorpay_flutter:
+    git:
+        url: git://github.com/razorpay/razorpay-flutter.git
+```
 
 **Note for Android**: Make sure that the minimum API level for your app is 19 or higher.
 
@@ -112,5 +116,3 @@ The error code is available as the `code` field of the `PaymentFailureResponse` 
 | PAYMENT_CANCELLED | User cancelled the payment                                           |
 | TLS_ERROR         | Device does not support TLS v1.1 or TLS v1.2                         |
 | UNKNOWN_ERROR     | An unknown error occurred.                                           |
-
-## Caveats
