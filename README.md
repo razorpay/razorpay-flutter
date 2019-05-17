@@ -10,9 +10,9 @@ The following documentation is only focussed on the wrapper around our native An
 
 **Android**: [https://docs.razorpay.com/v1/page/android/](https://docs.razorpay.com/v1/page/android/)
 
-**iOS**: [https://razorpay.com/docs/ios/)](https://razorpay.com/docs/ios/)
+**iOS**: [https://razorpay.com/docs/ios/](https://razorpay.com/docs/ios/)
 
-To know more about Razorpay payment flow and steps involved, read up here: https://docs.razorpay.com/docs
+To know more about Razorpay payment flow and steps involved, read up here: [https://docs.razorpay.com/docs](https://docs.razorpay.com/docs)
 
 ## Installation
 
