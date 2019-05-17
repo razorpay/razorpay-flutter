@@ -6,6 +6,14 @@ Flutter plugin for Razorpay SDK.
 
 This flutter plugin is a wrapper around our Android and iOS SDKs.
 
+The following documentation is only focussed on the wrapper around our native Android and iOS sdks. To know more about our sdks and how to link them within the projects, refer to the following documentation:
+
+**Android**: [https://docs.razorpay.com/v1/page/android/](https://docs.razorpay.com/v1/page/android/)
+
+**iOS**: [https://razorpay.com/docs/ios/)](https://razorpay.com/docs/ios/)
+
+To know more about Razorpay payment flow and steps involved, read up here: https://docs.razorpay.com/docs
+
 ## Installation
 
 This plugin will soon be available on Pub.
