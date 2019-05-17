@@ -18,6 +18,8 @@ To know more about Razorpay payment flow and steps involved, read up here: https
 
 This plugin will soon be available on Pub.
 
+**Note**: The installation process will change once this plugin is out of alpha.
+
 Add this to `dependencies` in your app's `pubspec.yml`
 
 ```yaml
