@@ -68,6 +68,12 @@ void _handleExternalWallet(ExternalWalletResponse response) {
 }
 ```
 
+To clear event listeners, use the `clear` method on the `Razorpay` instance.
+
+```dart
+_razorpay.clear(); // Removes all listeners
+```
+
 #### Setup options
 
 ```dart
@@ -88,10 +94,23 @@ var options = {
 
 A detailed list of options can be found [here](https://razorpay.com/docs/payment-gateway/integrations-guide/checkout/standard/#checkout-form).
 
-#### Open checkout
+#### Open Checkout
 
 ```dart
 _razorpay.open(options);
 ```
+
+#### Error Codes
+The error codes have also been exposed by the `Razorpay` class.
+
+The error code is available as the `code` field of the `PaymentFailureResponse` instance passed to the callback.
+
+| Error Code        | Description                                                          |
+| ----------------- | -------------------------------------------------------------------- |
+| NETWORK_ERROR     | There was a network error, for example loss of internet connectivity |
+| INVALID_OPTIONS   | An issue with options passed in `Razorpay.open`                      |
+| PAYMENT_CANCELLED | User cancelled the payment                                           |
+| TLS_ERROR         | Device does not support TLS v1.1 or TLS v1.2                         |
+| UNKNOWN_ERROR     | An unknown error occurred.                                           |
 
 ## Caveats
