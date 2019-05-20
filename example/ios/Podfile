@@ -1,5 +1,5 @@
 # Uncomment this line to define a global platform for your project
-# platform :ios, '9.0'
+platform :ios, '10.0'
 
 # CocoaPods analytics sends network stats synchronously affecting flutter build latency.
 ENV['COCOAPODS_DISABLE_STATS'] = 'true'
@@ -39,8 +39,6 @@ target 'Runner' do
   # referring to absolute paths on developers' machines.
   system('rm -rf .symlinks')
   system('mkdir -p .symlinks/plugins')
-
-  platform :ios, '10.0'
 
   # Flutter Pods
   generated_xcode_build_settings = parse_KV_file('./Flutter/Generated.xcconfig')

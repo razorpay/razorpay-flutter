@@ -16,5 +16,5 @@ Pod::Spec.new do |s|
   s.dependency 'razorpay-pod', '1.1.2'
 
   s.ios.deployment_target = '10.0'
+  s.swift_version = '5.0'
 end
-
