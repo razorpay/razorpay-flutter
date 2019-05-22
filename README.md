@@ -26,7 +26,7 @@ Add this to `dependencies` in your app's `pubspec.yml`
 razorpay_flutter:
   git:
     url: git://github.com/razorpay/razorpay-flutter.git
-    ref: f7ea14a
+    ref: "f7ea14a"
 ```
 
 **Note for Android**: Make sure that the minimum API level for your app is 19 or higher.
