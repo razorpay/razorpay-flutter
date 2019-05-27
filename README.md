@@ -8,7 +8,7 @@ This flutter plugin is a wrapper around our Android and iOS SDKs.
 
 The following documentation is only focussed on the wrapper around our native Android and iOS sdks. To know more about our sdks and how to link them within the projects, refer to the following documentation:
 
-**Android**: [https://docs.razorpay.com/v1/page/android/](https://docs.razorpay.com/v1/page/android/)
+**Android**: [https://razorpay.com/docs/checkout/android/](https://razorpay.com/docs/checkout/android/)
 
 **iOS**: [https://razorpay.com/docs/ios/](https://razorpay.com/docs/ios/)
 
