@@ -100,9 +100,6 @@ var options = {
   'prefill': {
     'contact': '8888888888',
     'email': 'test@razorpay.com'
-  },
-  'external': {
-    'wallets': ['paytm']
   }
 };
 ```
