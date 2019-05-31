@@ -65,13 +65,9 @@ public class RazorpayDelegate implements ActivityResultListener, ExternalWalletL
         }
     }
 
-    public void resync(Result result) throws JSONException {
-        if (pendingReply != null) {
-            result.success(pendingReply);
-            pendingReply = null;
-        } else {
-            result.success(null);
-        }
+    public void resync(Result result) {
+        result.success(pendingReply);
+        pendingReply = null;
     }
 
     private static int translateRzpPaymentError(int errorCode) {

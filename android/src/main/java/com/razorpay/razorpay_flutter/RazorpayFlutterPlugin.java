@@ -35,25 +35,20 @@ public class RazorpayFlutterPlugin implements MethodCallHandler {
     @SuppressWarnings("unchecked")
     public void onMethodCall(MethodCall call, Result result) {
 
-        try {
 
-            switch (call.method) {
+        switch (call.method) {
 
-                case "open":
-                    razorpayDelegate.openCheckout((Map<String, Object>) call.arguments, result);
-                    break;
+            case "open":
+                razorpayDelegate.openCheckout((Map<String, Object>) call.arguments, result);
+                break;
 
-                case "resync":
-                    razorpayDelegate.resync(result);
-                    break;
+            case "resync":
+                razorpayDelegate.resync(result);
+                break;
 
-                default:
-                    result.notImplemented();
+            default:
+                result.notImplemented();
 
-            }
-
-        } catch (JSONException e) {
-            // TODO
         }
 
     }
