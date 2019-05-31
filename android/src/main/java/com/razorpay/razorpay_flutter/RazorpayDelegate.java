@@ -111,7 +111,9 @@ public class RazorpayDelegate implements ActivityResultListener, ExternalWalletL
         reply.put("type", CODE_PAYMENT_SUCCESS);
 
         Map<String, Object> data = new HashMap<>();
-        data.put("razorpay_payment_id", paymentId);
+        data.put("razorpay_payment_id", paymentData.getPaymentId());
+        data.put("razorpay_order_id", paymentData.getOrderId());
+        data.put("razorpay_signature", paymentData.getSignature());
 
         reply.put("data", data);
         sendReply(reply);

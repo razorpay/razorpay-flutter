@@ -40,12 +40,9 @@ public class RazorpayDelegate: NSObject, RazorpayPaymentCompletionProtocolWithDa
         pendingResult(response as NSDictionary)
     }
     
-    public func onPaymentSuccess(_ payment_id: String, andData data: [AnyHashable : Any]?) {
+    public func onPaymentSuccess(_ payment_id: String, andData data: [AnyHashable: Any]?) {
         var response = [String:Any]()
         response["type"] = RazorpayDelegate.CODE_PAYMENT_SUCCESS
-        
-        var data = [String:Any]()
-        data["razorpay_payment_id"] = payment_id
         response["data"] = data
         
         pendingResult(response as NSDictionary)
