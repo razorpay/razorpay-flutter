@@ -28,8 +28,8 @@ SPEC CHECKSUMS:
   Flutter: 58dd7d1b27887414a370fcccb9e645c08ffd7a6a
   fluttertoast: b644586ef3b16f67fae9a1f8754cef6b2d6b634b
   razorpay-pod: bd7b4bfedd59002e7c30d96dd71fe31e740f2bcf
-  razorpay_flutter: e69a0f07ea0d4a84201c67ac420c60345ae28afd
+  razorpay_flutter: 8ab88b8cc00824e54bd16a8699adc740b51caa44
 
-PODFILE CHECKSUM: f2e2c4919c4368d87298b5c73564e48043b34469
+PODFILE CHECKSUM: df2315ca108ab9f64afcc322c952cceef8821016
 
 COCOAPODS: 1.6.1

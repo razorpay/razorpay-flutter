@@ -65,13 +65,9 @@ public class RazorpayDelegate implements ActivityResultListener, ExternalWalletL
         }
     }
 
-    public void resync(Result result) throws JSONException {
-        if (pendingReply != null) {
-            result.success(pendingReply);
-            pendingReply = null;
-        } else {
-            result.success(null);
-        }
+    public void resync(Result result) {
+        result.success(pendingReply);
+        pendingReply = null;
     }
 
     private static int translateRzpPaymentError(int errorCode) {
@@ -111,7 +107,9 @@ public class RazorpayDelegate implements ActivityResultListener, ExternalWalletL
         reply.put("type", CODE_PAYMENT_SUCCESS);
 
         Map<String, Object> data = new HashMap<>();
-        data.put("razorpay_payment_id", paymentId);
+        data.put("razorpay_payment_id", paymentData.getPaymentId());
+        data.put("razorpay_order_id", paymentData.getOrderId());
+        data.put("razorpay_signature", paymentData.getSignature());
 
         reply.put("data", data);
         sendReply(reply);
