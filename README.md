@@ -112,10 +112,37 @@ A detailed list of options can be found [here](https://razorpay.com/docs/payment
 _razorpay.open(options);
 ```
 
+## API
+
+### Razorpay
+
+#### open(map<String, dynamic> options)
+
+Open Razorpay Checkout. 
+
+The `options` map has `key` as a required property. All other properties are optional. 
+For a complete list of options, please click [here](https://razorpay.com/docs/payment-gateway/integrations-guide/checkout/standard/#checkout-form).
+
+#### on(String eventName, Function listener)
+
+Register event listeners for payment events.
+
+- `eventName`: The name of the event.
+- `listener`: The function to be called. The listener should accept a single argument of the following type:
+  - [`PaymentSuccessResponse`](#paymentsuccessresponse) for `EVENT_PAYMENT_SUCCESS`
+  - [`PaymentFailureResponse`](#paymentfailureresponse) for `EVENT_PAYMENT_FAILURE`
+  - [`ExternalWalletResponse`](#externalwalletresponse) for `EVENT_EXTERNAL_WALLET`
+
+#### clear()
+
+Clear all event listeners.
+
 #### Error Codes
-The error codes have also been exposed by the `Razorpay` class.
+
+The error codes have been exposed as integers by the `Razorpay` class.
 
 The error code is available as the `code` field of the `PaymentFailureResponse` instance passed to the callback.
+
 
 | Error Code        | Description                                                          |
 | ----------------- | -------------------------------------------------------------------- |
@@ -124,3 +151,35 @@ The error code is available as the `code` field of the `PaymentFailureResponse` 
 | PAYMENT_CANCELLED | User cancelled the payment                                           |
 | TLS_ERROR         | Device does not support TLS v1.1 or TLS v1.2                         |
 | UNKNOWN_ERROR     | An unknown error occurred.                                           |
+
+#### Event names
+
+The event names have also been exposed as Strings by the `Razorpay` class.
+
+| Event Name            | Description                      |
+| --------------------- | -------------------------------- |
+| EVENT_PAYMENT_SUCCESS | The payment was successful.      |
+| EVENT_PAYMENT_ERROR   | The payment was not successful.  |
+| EVENT_EXTERNAL_WALLET | An external wallet was selected. |
+
+### PaymentSuccessResponse
+
+| Field Name | Type   | Description                                                                                  |
+| ---------- | ------ | -------------------------------------------------------------------------------------------- |
+| paymentId  | String | The ID for the payment.                                                                      |
+| orderId    | String | The order ID if the payment was for an order, `null` otherwise.                              |
+| signature  | String | The signature to be used for payment verification. (Only valid for orders, `null` otherwise) |
+
+### PaymentFailureResponse
+
+| Field Name | Type   | Description        |
+| ---------- | ------ | ------------------ |
+| code       | int    | The error code.    |
+| message    | String | The error message. |
+
+### ExternalWalletResponse
+
+| Field Name  | Type    | Description                               |
+| ----------- | ------- | ----------------------------------------- |
+| walletName  | String  | The name of the external wallet selected. |
+
