@@ -121,7 +121,7 @@ _razorpay.open(options);
 Open Razorpay Checkout. 
 
 The `options` map has `key` as a required property. All other properties are optional. 
-For a complete list of options, please click [here](https://razorpay.com/docs/payment-gateway/integrations-guide/checkout/standard/#checkout-form).
+For a complete list of options, please see [the Checkout documentation](https://razorpay.com/docs/payment-gateway/integrations-guide/checkout/standard/#checkout-form).
 
 #### on(String eventName, Function listener)
 
