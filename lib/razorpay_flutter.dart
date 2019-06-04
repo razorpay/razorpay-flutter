@@ -3,7 +3,6 @@ import 'package:flutter/services.dart';
 import 'package:eventify/eventify.dart';
 
 class Razorpay {
-
   // Response codes from platform
   static const _CODE_PAYMENT_SUCCESS = 0;
   static const _CODE_PAYMENT_ERROR = 1;
@@ -22,8 +21,7 @@ class Razorpay {
   static const INCOMPATIBLE_PLUGIN = 4;
   static const UNKNOWN_ERROR = 100;
 
-  static const MethodChannel _channel =
-      const MethodChannel('razorpay_flutter');
+  static const MethodChannel _channel = const MethodChannel('razorpay_flutter');
 
   // EventEmitter instance used for communication
   EventEmitter _eventEmitter;
@@ -34,7 +32,6 @@ class Razorpay {
 
   /// Opens Razorpay checkout
   void open(Map<String, dynamic> options) async {
-
     Map<String, dynamic> validationResult = _validateOptions(options);
 
     if (!validationResult['success']) {
@@ -50,7 +47,6 @@ class Razorpay {
 
     var response = await _channel.invokeMethod('open', options);
     _handleResult(response);
-
   }
 
   /// Handles checkout response from platform
@@ -61,7 +57,6 @@ class Razorpay {
     dynamic payload;
 
     switch (response['type']) {
-
       case _CODE_PAYMENT_SUCCESS:
         eventName = EVENT_PAYMENT_SUCCESS;
         payload = PaymentSuccessResponse.fromMap(data);
@@ -79,8 +74,8 @@ class Razorpay {
 
       default:
         eventName = 'error';
-        payload = PaymentFailureResponse(UNKNOWN_ERROR, 'An unknown error occurred.');
-
+        payload =
+            PaymentFailureResponse(UNKNOWN_ERROR, 'An unknown error occurred.');
     }
 
     _eventEmitter.emit(eventName, null, payload);
@@ -117,13 +112,9 @@ class Razorpay {
         'message': 'Key is required. Please check if key is present in options.'
       };
     }
-    return {
-      'success': true
-    };
+    return {'success': true};
   }
-
 }
-
 
 class PaymentSuccessResponse {
   String paymentId;
@@ -139,11 +130,9 @@ class PaymentSuccessResponse {
 
     return new PaymentSuccessResponse(paymentId, orderId, signature);
   }
-
 }
 
 class PaymentFailureResponse {
-
   int code;
   String message;
 
@@ -154,7 +143,6 @@ class PaymentFailureResponse {
     var message = map["message"] as String;
     return new PaymentFailureResponse(code, message);
   }
-
 }
 
 class ExternalWalletResponse {

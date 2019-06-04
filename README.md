@@ -16,17 +16,14 @@ To know more about Razorpay payment flow and steps involved, read up here: [http
 
 ## Installation
 
-This plugin will soon be available on Pub.
+This plugin is available on Pub: [https://pub.dev/packages/razorpay_flutter](https://pub.dev/packages/razorpay_flutter)
 
 **Note**: The installation process will change once this plugin is out of alpha.
 
 Add this to `dependencies` in your app's `pubspec.yml`
 
 ```yaml
-razorpay_flutter:
-  git:
-    url: git://github.com/razorpay/razorpay-flutter.git
-    ref: "v1.0.0-alpha"
+razorpay_flutter: 1.1.0-alpha
 ```
 
 **Note for Android**: Make sure that the minimum API level for your app is 19 or higher.
