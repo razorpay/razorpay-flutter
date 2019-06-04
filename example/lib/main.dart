@@ -13,7 +13,6 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-
   static const platform = const MethodChannel("razorpay_flutter");
 
   Razorpay _razorpay;
@@ -25,13 +24,12 @@ class _MyAppState extends State<MyApp> {
         appBar: AppBar(
           title: const Text('Razorpay Sample App'),
         ),
-        body: Center(child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            RaisedButton(onPressed: openCheckout, child: Text('Open'))
-          ]
-          )
-        ),
+        body: Center(
+            child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+              RaisedButton(onPressed: openCheckout, child: Text('Open'))
+            ])),
       ),
     );
   }
@@ -52,16 +50,12 @@ class _MyAppState extends State<MyApp> {
   }
 
   void openCheckout() async {
-
     var options = {
       'key': 'rzp_test_1DP5mmOlF5G5ag',
       'amount': 2000,
       'name': 'Acme Corp.',
       'description': 'Fine T-Shirt',
-      'prefill': {
-        'contact': '8888888888',
-        'email': 'test@razorpay.com'
-      },
+      'prefill': {'contact': '8888888888', 'email': 'test@razorpay.com'},
       'external': {
         'wallets': ['paytm']
       }
@@ -72,19 +66,21 @@ class _MyAppState extends State<MyApp> {
     } catch (e) {
       debugPrint(e);
     }
-
   }
 
   void _handlePaymentSuccess(PaymentSuccessResponse response) {
-    Fluttertoast.showToast(msg: "SUCCESS: " + response.paymentId, timeInSecForIos: 4);
+    Fluttertoast.showToast(
+        msg: "SUCCESS: " + response.paymentId, timeInSecForIos: 4);
   }
 
   void _handlePaymentError(PaymentFailureResponse response) {
-    Fluttertoast.showToast(msg: "ERROR: " + response.code.toString() + " - " + response.message, timeInSecForIos: 4);
+    Fluttertoast.showToast(
+        msg: "ERROR: " + response.code.toString() + " - " + response.message,
+        timeInSecForIos: 4);
   }
 
   void _handleExternalWallet(ExternalWalletResponse response) {
-    Fluttertoast.showToast(msg: "EXTERNAL_WALLET: " + response.walletName, timeInSecForIos: 4);
+    Fluttertoast.showToast(
+        msg: "EXTERNAL_WALLET: " + response.walletName, timeInSecForIos: 4);
   }
-
 }

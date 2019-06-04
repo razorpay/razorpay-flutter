@@ -3,7 +3,6 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:razorpay_flutter/razorpay_flutter.dart';
 
 void main() {
-
   group("$Razorpay", () {
     const MethodChannel channel = MethodChannel("razorpay_flutter");
 
@@ -23,7 +22,6 @@ void main() {
     });
 
     group("#open", () {
-
       setUp(() {
         razorpay.clear();
       });
@@ -42,13 +40,10 @@ void main() {
 
         razorpay.open(options);
 
-        expect(log, <Matcher>[
-          isMethodCall('open', arguments: options)
-        ]);
+        expect(log, <Matcher>[isMethodCall('open', arguments: options)]);
       });
 
       test('throws error if key is not passed', () async {
-
         var options = {
           'amount': 2000,
           'name': 'Acme Corp.',
@@ -63,12 +58,11 @@ void main() {
           expect(response.code, equals(Razorpay.INVALID_OPTIONS));
         };
 
-        razorpay.on(Razorpay.EVENT_PAYMENT_ERROR, expectAsync1(errorHandler, count: 1));
+        razorpay.on(
+            Razorpay.EVENT_PAYMENT_ERROR, expectAsync1(errorHandler, count: 1));
 
         razorpay.open(options);
-
       });
-
     });
   });
 }
