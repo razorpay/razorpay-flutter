@@ -18,8 +18,6 @@ To know more about Razorpay payment flow and steps involved, read up here: [http
 
 This plugin is available on Pub: [https://pub.dev/packages/razorpay_flutter](https://pub.dev/packages/razorpay_flutter)
 
-**Note**: The installation process will change once this plugin is out of alpha.
-
 Add this to `dependencies` in your app's `pubspec.yml`
 
 ```yaml
