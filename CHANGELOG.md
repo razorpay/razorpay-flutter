@@ -1,3 +1,9 @@
+## 1.1.1
+- Updated podspec and build.gradle to match plugin versions
+
+## 1.1.0
+- Removed alpha status
+
 ## 1.1.0-alpha
 
 - Added `signature` and `orderId` to `PaymentSuccessResponse` for Orders API support.
