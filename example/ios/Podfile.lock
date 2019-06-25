@@ -3,7 +3,7 @@ PODS:
   - fluttertoast (0.0.2):
     - Flutter
   - razorpay-pod (1.1.2)
-  - razorpay_flutter (0.0.1):
+  - razorpay_flutter (1.1.0):
     - Flutter
     - razorpay-pod (= 1.1.2)
 
@@ -28,7 +28,7 @@ SPEC CHECKSUMS:
   Flutter: 58dd7d1b27887414a370fcccb9e645c08ffd7a6a
   fluttertoast: b644586ef3b16f67fae9a1f8754cef6b2d6b634b
   razorpay-pod: bd7b4bfedd59002e7c30d96dd71fe31e740f2bcf
-  razorpay_flutter: 8ab88b8cc00824e54bd16a8699adc740b51caa44
+  razorpay_flutter: f14b80b6aee414b944e25de20834e61f508b07c8
 
 PODFILE CHECKSUM: df2315ca108ab9f64afcc322c952cceef8821016
 
