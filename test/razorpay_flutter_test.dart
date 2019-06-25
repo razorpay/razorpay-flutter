@@ -32,10 +32,7 @@ void main() {
           'amount': 2000,
           'name': 'Acme Corp.',
           'description': 'Fine T-Shirt',
-          'prefill': {'contact': '8888888888', 'email': 'test@razorpay.com'},
-          'external': {
-            'wallets': ['paytm']
-          }
+          'prefill': {'contact': '8888888888', 'email': 'test@razorpay.com'}
         };
 
         razorpay.open(options);
@@ -48,10 +45,7 @@ void main() {
           'amount': 2000,
           'name': 'Acme Corp.',
           'description': 'Fine T-Shirt',
-          'prefill': {'contact': '8888888888', 'email': 'test@razorpay.com'},
-          'external': {
-            'wallets': ['paytm']
-          }
+          'prefill': {'contact': '8888888888', 'email': 'test@razorpay.com'}
         };
 
         var errorHandler = (PaymentFailureResponse response) {
