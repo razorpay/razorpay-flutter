@@ -107,6 +107,52 @@ A detailed list of options can be found [here](https://razorpay.com/docs/payment
 _razorpay.open(options);
 ```
 
+## Troubleshooting
+
+### `CocoaPods could not find compatible versions for pod "razorpay_flutter"` when running `pod install`
+
+```
+Specs satisfying the `razorpay_flutter (from
+    `.symlinks/plugins/razorpay_flutter/ios`)` dependency were found, but they
+    required a higher minimum deployment target.
+```
+
+This is due to your minimum deployment target being less than iOS 10.0. To change this, open `ios/Podfile` in your project and add/uncomment this line at the top:
+
+```Podfile
+# platform :ios, '9.0'
+```
+and change it to 
+```Podfile
+platform :ios, '10.0'
+```
+and run `pod install` again in the `ios` directory. 
+
+### iOS build fails with `'razorpay_flutter/razorpay_flutter-Swift.h' file not found`
+
+Add use_frameworks! in `ios/Podfile` and run `pod install` again in the `ios` directory.
+
+### Gradle build fails with `Error: uses-sdk:minSdkVersion 16 cannot be smaller than version 19 declared in library [:razorpay_flutter]`
+
+This is due to your Android minimum SDK version being less than 19. To change this, open `android/app/build.gradle`, find `minSdkVersion` in `defaultConfig` and set it to at least `19`.
+
+### A lot of errors saying `xxxx is not defined for the class 'Razorpay'`
+
+We export a class `Razorpay` from `package:razorpay_flutter/razorpay_flutter.dart`. Check if your code is redeclaring the `Razorpay` class.
+
+### Type 'xxxx' is not a subtype of type 'xxxx' of 'response' in `Razorpay.on.<anonymous closure>`
+```
+[VERBOSE-2:ui_dart_state.cc(148)] Unhandled Exception: type 'PaymentFailureResponse' is not a subtype of type 'PaymentSuccessResponse' of 'response'
+#0      Razorpay.on.<anonymous closure> (package:razorpay_flutter/razorpay_flutter.dart:87:14)
+#1      EventEmitter.emit.<anonymous closure> (package:eventify/src/event_emitter.dart:94:14)
+#2      List.forEach (dart:core-patch/growable_array.dart:278:8)
+#3      EventEmitter.emit (package:eventify/src/event_emitter.dart:90:15)
+#4      Razorpay._handleResult (package:razorpay_flutter/razorpay_flutter.dart:81:19)
+#5      Razorpay.open (package:razorpay_flutter/razorpay_flutter.dart:49:5)
+```
+
+Check the signatures of the callbacks for payment events. They should match the ones described [here](#onstring-eventname-function-listener).
+
 ## API
 
 ### Razorpay
@@ -137,7 +183,6 @@ Clear all event listeners.
 The error codes have been exposed as integers by the `Razorpay` class.
 
 The error code is available as the `code` field of the `PaymentFailureResponse` instance passed to the callback.
-
 
 | Error Code        | Description                                                          |
 | ----------------- | -------------------------------------------------------------------- |
