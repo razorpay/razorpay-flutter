@@ -139,11 +139,11 @@ Specs satisfying the `razorpay_flutter (from
 
 This is due to your minimum deployment target being less than iOS 10.0. To change this, open `ios/Podfile` in your project and add/uncomment this line at the top:
 
-```Podfile
+```ruby
 # platform :ios, '9.0'
 ```
 and change it to 
-```Podfile
+```ruby
 platform :ios, '10.0'
 ```
 and run `pod install` again in the `ios` directory. 
