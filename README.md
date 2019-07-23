@@ -109,6 +109,26 @@ _razorpay.open(options);
 
 ## Troubleshooting
 
+### Enabling Bitcode
+
+Open `ios/Podfile` and find this section:
+```ruby
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      config.build_settings['ENABLE_BITCODE'] = 'NO'
+    end
+  end
+end
+```
+Set `config.build_settings['ENABLE_BITCODE'] = 'YES'`.
+
+### Setting Swift version
+
+Add the following line below `config.build_settings['ENABLE_BITCODE'] = 'YES'`:
+
+`config.build_settings['SWIFT_VERSION'] = '5.0'`
+
 ### `CocoaPods could not find compatible versions for pod "razorpay_flutter"` when running `pod install`
 
 ```
