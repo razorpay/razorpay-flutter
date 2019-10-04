@@ -14,7 +14,7 @@ public class RazorpayDelegate: NSObject, RazorpayPaymentCompletionProtocolWithDa
     static let INCOMPATIBLE_PLUGIN = 3
     static let UNKNOWN_ERROR = 100
     
-    public func onExternalWalletSelected(_ walletName: String, WithPaymentData paymentData: [AnyHashable : Any]?) {
+    public func onExternalWalletSelected(_ walletName: String, withPaymentData paymentData: [AnyHashable : Any]?) {
         var response = [String:Any]()
         response["type"] = RazorpayDelegate.CODE_PAYMENT_EXTERNAL_WALLET
         
