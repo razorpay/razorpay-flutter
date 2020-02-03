@@ -26,6 +26,18 @@ razorpay_flutter: ^1.1.1
 
 **Note for Android**: Make sure that the minimum API level for your app is 19 or higher.
 
+## Proguard rules
+If you are using proguard for your builds, you need to add following lines to proguard files
+```
+-keepattributes *Annotation*
+-dontwarn com.razorpay.**
+-keep class com.razorpay.** {*;}
+-optimizations !method/inlining/
+-keepclasseswithmembers class * {
+  public void onPayment*(...);
+}
+```
+
 **Note for iOS**: Make sure that the minimum deployment target for your app is iOS 10.0 or higher. Also, don't forget to enable bitcode for your project.
 
 Run `flutter packages get` in the root directory of your app.
