@@ -3,7 +3,7 @@
 #
 Pod::Spec.new do |s|
   s.name             = 'razorpay_flutter'
-  s.version          = '1.1.1'
+  s.version          = '1.1.3'
   s.summary          = 'Flutter plugin for Razorpay SDK.'
   s.description      = 'Flutter plugin for Razorpay SDK.'
   s.homepage         = 'https://github.com/razorpay/razorpay-flutter'
@@ -13,8 +13,7 @@ Pod::Spec.new do |s|
   s.source_files = 'Classes/**/*'
   s.public_header_files = 'Classes/**/*.h'
   s.dependency 'Flutter'
-  s.dependency 'razorpay-pod', '~> 1.1.4'
+  s.dependency 'razorpay-pod'
 
   s.ios.deployment_target = '10.0'
-  s.swift_version = '5.0'
 end

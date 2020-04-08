@@ -1,3 +1,7 @@
+## 1.1.3
+- Updated podspec for without the version so it will always point to the latest version. 
+- Updated changes around Module stability related to iOS and Swift.
+
 ## 1.1.2
 - Updated Podspec to use `razorpay-pod ~> 1.1.4`
 

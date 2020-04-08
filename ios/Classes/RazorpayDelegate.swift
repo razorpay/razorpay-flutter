@@ -54,11 +54,12 @@ public class RazorpayDelegate: NSObject, RazorpayPaymentCompletionProtocolWithDa
         
         let key = options["key"] as? String
         
-        let razorpay = Razorpay.initWithKey(key ?? "", andDelegateWithData: self)
+        let razorpay = RazorpayCheckout.initWithKey(key ?? "", andDelegateWithData: self)
         razorpay.setExternalWalletSelectionDelegate(self)
-        
+        var options = options
+        options["integration"] = "flutter"
+        options["FRAMEWORK"] = "flutter"
         razorpay.open(options)
-        
     }
     
     public func resync(result: @escaping FlutterResult) {
