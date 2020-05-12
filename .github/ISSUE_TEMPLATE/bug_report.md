@@ -18,6 +18,9 @@ Run `flutter version` in your terminal and copy the results here.
 ## Xcode Version :
 Open Xcode > Go to `About Xcode` > copy the Xcode version here.
 
+## Cocoapod Version :
+Go to iOS folder > open `podfile.lock` > copy the `razorpay-pod version` and `razorpay_flutter`a version.
+
 ## Steps To Reproduce
 Provide a detailed list of steps that reproduce the issue.
 
