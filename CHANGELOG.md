@@ -1,3 +1,9 @@
+## 1.2.0
+- Android implementation fixes added.
+
+## 1.1.4
+- Android SDK changes updated
+
 ## 1.1.3
 - Updated podspec for without the version so it will always point to the latest version. 
 - Updated changes around Module stability related to iOS and Swift.
