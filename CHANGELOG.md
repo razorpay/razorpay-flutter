@@ -1,3 +1,9 @@
+## 1.2.2
+- Updated Podspec to use `razorpay-pod ~> 1.1.5`
+
+## 1.2.1
+- Android bug fixes.
+
 ## 1.2.0
 - Android implementation fixes added.
 

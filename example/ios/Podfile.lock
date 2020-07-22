@@ -5,7 +5,7 @@ PODS:
   - razorpay-pod (1.1.4)
   - razorpay_flutter (1.1.1):
     - Flutter
-    - razorpay-pod (~> 1.1.4)
+    - razorpay-pod (~> 1.1.5)
 
 DEPENDENCIES:
   - Flutter (from `.symlinks/flutter/ios`)
