@@ -26,7 +26,7 @@ To know more about Razorpay payment flow and steps involved, read up here: [http
 
 ## Prerequisites
 
- - Learn about the <a href="/docs/payment-gateway/payment-flow/" target="_blank">Razorpay Payment Flow</a>.
+ - Learn about the <a href="https://razorpay.com/docs/payment-gateway/payment-flow/" target="_blank">Razorpay Payment Flow</a>.
  - Sign up for a <a href="https://dashboard.razorpay.com/#/access/signin">Razorpay Account</a> and generate the <a href="https://razorpay.com/docs/payment-gateway/dashboard-guide/settings/#api-keys/" target="_blank">API Keys</a> from the Razorpay Dashboard. Using the Test keys helps simulate a sandbox environment. No actual monetary transaction happens when using the Test keys. Use Live keys once you have thoroughly tested the application and are ready to go live.
  
 
