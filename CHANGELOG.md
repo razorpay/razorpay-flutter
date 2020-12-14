@@ -1,3 +1,6 @@
+## 1.2.3
+- Updated Android API key version. 
+
 ## 1.2.2
 - Updated Podspec to use `razorpay-pod ~> 1.1.5`
 
