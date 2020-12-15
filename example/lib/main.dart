@@ -55,7 +55,6 @@ class _MyAppState extends State<MyApp> {
       'amount': 2000,
       'name': 'Acme Corp.',
       'description': 'Fine T-Shirt',
-      'image' : 'https://firebasestorage.googleapis.com/v0/b/mytestApp.appspot.com/o/images%2FpZm8daajsIS4LvqBYTiWiuLIgmE2?alt=media&token=3kuli4cd-dc45-7845-b87d-5c4acc7da3c2',
       'prefill': {'contact': '8888888888', 'email': 'test@razorpay.com'},
       'external': {
         'wallets': ['paytm']
