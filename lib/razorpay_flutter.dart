@@ -31,28 +31,27 @@ class Razorpay {
   }
 
   /// Opens Razorpay checkout
-  void open(Map<String, dynamic> options) async {
+  Future<Map<String, dynamic>> open(Map<String, dynamic> options) async {
     Map<String, dynamic> validationResult = _validateOptions(options);
 
     if (!validationResult['success']) {
-      _handleResult({
+      return _handleResult({
         'type': _CODE_PAYMENT_ERROR,
         'data': {
           'code': INVALID_OPTIONS,
           'message': validationResult['message']
         }
       });
-      return;
     }
 
     var response = await _channel.invokeMethod('open', options);
-    _handleResult(response);
+    return _handleResult(response);
   }
 
   /// Handles checkout response from platform
-  void _handleResult(Map<dynamic, dynamic> response) {
+  Map<String, dynamic> _handleResult(Map<dynamic, dynamic> response) {
     String eventName;
-    Map<dynamic, dynamic> data = response["data"];
+    Map<dynamic, dynamic> data = response['data'];
 
     dynamic payload;
 
@@ -79,6 +78,11 @@ class Razorpay {
     }
 
     _eventEmitter.emit(eventName, null, payload);
+
+    // Creating a response map
+    Map<String, dynamic> res = {'event': eventName};
+    res['data'] = payload?.toJson();
+    return res;
   }
 
   /// Registers event listeners for payment events
@@ -123,12 +127,20 @@ class PaymentSuccessResponse {
 
   PaymentSuccessResponse(this.paymentId, this.orderId, this.signature);
 
-  static PaymentSuccessResponse fromMap(Map<dynamic, dynamic> map) {
-    String paymentId = map["razorpay_payment_id"];
-    String signature = map["razorpay_signature"];
-    String orderId = map["razorpay_order_id"];
+  factory PaymentSuccessResponse.fromMap(Map<dynamic, dynamic> map) {
+    String paymentId = map['razorpay_payment_id'];
+    String signature = map['razorpay_signature'];
+    String orderId = map['razorpay_order_id'];
 
     return new PaymentSuccessResponse(paymentId, orderId, signature);
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'razorpay_payment_id': this.paymentId,
+      'razorpay_signature': this.signature,
+      'razorpay_order_id': this.orderId,
+    };
   }
 }
 
@@ -138,10 +150,14 @@ class PaymentFailureResponse {
 
   PaymentFailureResponse(this.code, this.message);
 
-  static PaymentFailureResponse fromMap(Map<dynamic, dynamic> map) {
-    var code = map["code"] as int;
-    var message = map["message"] as String;
+  factory PaymentFailureResponse.fromMap(Map<dynamic, dynamic> map) {
+    var code = map['code'] as int;
+    var message = map['message'] as String;
     return new PaymentFailureResponse(code, message);
+  }
+
+  Map<String, dynamic> toJson() {
+    return {'code': this.code, 'message': this.message};
   }
 }
 
@@ -150,8 +166,12 @@ class ExternalWalletResponse {
 
   ExternalWalletResponse(this.walletName);
 
-  static ExternalWalletResponse fromMap(Map<dynamic, dynamic> map) {
-    var walletName = map["external_wallet"] as String;
+  factory ExternalWalletResponse.fromMap(Map<dynamic, dynamic> map) {
+    var walletName = map['external_wallet'] as String;
     return new ExternalWalletResponse(walletName);
+  }
+
+  Map<String, dynamic> toJson() {
+    return {'external_wallet': this.walletName};
   }
 }
