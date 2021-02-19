@@ -3,7 +3,7 @@
 - Updated changes around Module stability related to iOS and Swift.
 
 ## 1.1.2
-- Updated Podspec to use `razorpay-pod ~> 1.1.4`
+- Updated Podspec to use `razorpay-pod ~> 1.2.4`
 
 ## 1.1.1
 - Updated podspec and build.gradle to match plugin versions

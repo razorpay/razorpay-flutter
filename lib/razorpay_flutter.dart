@@ -1,3 +1,5 @@
+import 'dart:js';
+
 import 'package:flutter/services.dart';
 
 import 'package:eventify/eventify.dart';
@@ -24,7 +26,7 @@ class Razorpay {
   static const MethodChannel _channel = const MethodChannel('razorpay_flutter');
 
   // EventEmitter instance used for communication
-  EventEmitter _eventEmitter;
+  EventEmitter _eventEmitter = new EventEmitter();
 
   Razorpay() {
     _eventEmitter = new EventEmitter();
@@ -78,7 +80,7 @@ class Razorpay {
             PaymentFailureResponse(UNKNOWN_ERROR, 'An unknown error occurred.');
     }
 
-    _eventEmitter.emit(eventName, null, payload);
+    _eventEmitter.emit(eventName, payload);
   }
 
   /// Registers event listeners for payment events
@@ -86,7 +88,7 @@ class Razorpay {
     EventCallback cb = (event, cont) {
       handler(event.eventData);
     };
-    _eventEmitter.on(event, null, cb);
+    _eventEmitter.on(event, context, cb);
     _resync();
   }
 

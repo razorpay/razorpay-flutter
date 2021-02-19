@@ -8,7 +8,7 @@ void main() {
 
     final List<MethodCall> log = <MethodCall>[];
 
-    Razorpay razorpay;
+    Razorpay razorpay = Razorpay();
 
     setUp(() {
       channel.setMockMethodCallHandler((MethodCall call) async {
@@ -16,7 +16,7 @@ void main() {
         return {};
       });
 
-      razorpay = Razorpay();
+      //razorpay = Razorpay();
 
       log.clear();
     });
