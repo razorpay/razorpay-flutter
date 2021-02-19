@@ -33,6 +33,6 @@ android {
     }
     dependencies {
         implementation fileTree(dir: 'libs', include: ['*.jar'])
-        api 'com.razorpay:checkout:1.6.4'
+        api 'com.razorpay:checkout:1.6.5'
     }
 }
