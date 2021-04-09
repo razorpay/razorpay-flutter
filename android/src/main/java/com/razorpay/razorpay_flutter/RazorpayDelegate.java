@@ -111,6 +111,18 @@ public class RazorpayDelegate implements ActivityResultListener, ExternalWalletL
         data.put("razorpay_order_id", paymentData.getOrderId());
         data.put("razorpay_signature", paymentData.getSignature());
 
+        
+        if (paymentData.getData().has("razorpay_subscription_id")) 
+        { 
+            try { 
+                data.put("razorpay_subscription_id", paymentData.getData().optString("razorpay_subscription_id")); 
+            } catch (Exception e) 
+            { 
+                e.printStackTrace(); 
+            } 
+        }
+        
+        
         reply.put("data", data);
         sendReply(reply);
     }
