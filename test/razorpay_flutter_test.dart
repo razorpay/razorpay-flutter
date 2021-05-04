@@ -8,7 +8,7 @@ void main() {
 
     final List<MethodCall> log = <MethodCall>[];
 
-    Razorpay razorpay;
+    Razorpay? razorpay;
 
     setUp(() {
       channel.setMockMethodCallHandler((MethodCall call) async {
@@ -23,7 +23,7 @@ void main() {
 
     group("#open", () {
       setUp(() {
-        razorpay.clear();
+        razorpay?.clear();
       });
 
       test('passes options correctly', () async {
@@ -35,7 +35,7 @@ void main() {
           'prefill': {'contact': '8888888888', 'email': 'test@razorpay.com'}
         };
 
-        razorpay.open(options);
+        razorpay?.open(options);
 
         expect(log, <Matcher>[isMethodCall('open', arguments: options)]);
       });
@@ -52,10 +52,10 @@ void main() {
           expect(response.code, equals(Razorpay.INVALID_OPTIONS));
         };
 
-        razorpay.on(
+        razorpay?.on(
             Razorpay.EVENT_PAYMENT_ERROR, expectAsync1(errorHandler, count: 1));
 
-        razorpay.open(options);
+        razorpay?.open(options);
       });
     });
   });
