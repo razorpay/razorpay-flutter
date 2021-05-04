@@ -24,15 +24,15 @@ class Razorpay {
   static const MethodChannel _channel = const MethodChannel('razorpay_flutter');
 
   // EventEmitter instance used for communication
-  EventEmitter _eventEmitter;
+  EventEmitter? _eventEmitter;
 
   Razorpay() {
     _eventEmitter = new EventEmitter();
   }
 
   /// Opens Razorpay checkout
-  void open(Map<String, dynamic> options) async {
-    Map<String, dynamic> validationResult = _validateOptions(options);
+  void open(Map<String?, dynamic> options) async {
+    Map<String?, dynamic> validationResult = _validateOptions(options);
 
     if (!validationResult['success']) {
       _handleResult({
@@ -51,7 +51,7 @@ class Razorpay {
 
   /// Handles checkout response from platform
   void _handleResult(Map<dynamic, dynamic> response) {
-    String eventName;
+    String? eventName;
     Map<dynamic, dynamic> data = response["data"];
 
     dynamic payload;
@@ -78,21 +78,21 @@ class Razorpay {
             PaymentFailureResponse(UNKNOWN_ERROR, 'An unknown error occurred.');
     }
 
-    _eventEmitter.emit(eventName, null, payload);
+    _eventEmitter?.emit(eventName, null, payload);
   }
 
   /// Registers event listeners for payment events
-  void on(String event, Function handler) {
+  void on(String? event, Function handler) {
     EventCallback cb = (event, cont) {
       handler(event.eventData);
     };
-    _eventEmitter.on(event, null, cb);
+    _eventEmitter?.on(event!, null, cb);
     _resync();
   }
 
   /// Clears all event listeners
   void clear() {
-    _eventEmitter.clear();
+    _eventEmitter?.clear();
   }
 
   /// Retrieves lost responses from platform
@@ -104,7 +104,7 @@ class Razorpay {
   }
 
   /// Validate payment options
-  static Map<String, dynamic> _validateOptions(Map<String, dynamic> options) {
+  static Map<String?, dynamic> _validateOptions(Map<String?, dynamic> options) {
     var key = options['key'];
     if (key == null) {
       return {
@@ -117,31 +117,33 @@ class Razorpay {
 }
 
 class PaymentSuccessResponse {
-  String paymentId;
-  String orderId;
-  String signature;
-  String subscriptionId;
+  String? paymentId;
+  String? orderId;
+  String? signature;
+  String? subscriptionId;
 
-  PaymentSuccessResponse(this.paymentId, this.orderId, this.signature,this.subscriptionId);
+  PaymentSuccessResponse(
+      this.paymentId, this.orderId, this.signature, this.subscriptionId);
 
   static PaymentSuccessResponse fromMap(Map<dynamic, dynamic> map) {
-    String paymentId = map["razorpay_payment_id"];
-    String signature = map["razorpay_signature"];
-    String orderId = map["razorpay_order_id"];
-    String subscriptionId = map["razorpay_subscription_id"];
-    return new PaymentSuccessResponse(paymentId, orderId, signature,subscriptionId);
+    String? paymentId = map["razorpay_payment_id"];
+    String? signature = map["razorpay_signature"];
+    String? orderId = map["razorpay_order_id"];
+    String? subscriptionId = map["razorpay_subscription_id"];
+    return new PaymentSuccessResponse(
+        paymentId, orderId, signature, subscriptionId);
   }
 }
 
 class PaymentFailureResponse {
-  int code;
-  String message;
+  int? code;
+  String? message;
 
   PaymentFailureResponse(this.code, this.message);
 
   static PaymentFailureResponse fromMap(Map<dynamic, dynamic> map) {
-    var code = map["code"] as int;
-    var message = map["message"] as String;
+    var code = map["code"] as int?;
+    var message = map["message"] as String?;
     return new PaymentFailureResponse(code, message);
   }
 }
