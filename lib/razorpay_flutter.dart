@@ -24,7 +24,7 @@ class Razorpay {
   static const MethodChannel _channel = const MethodChannel('razorpay_flutter');
 
   // EventEmitter instance used for communication
-  EventEmitter _eventEmitter;
+  late EventEmitter _eventEmitter;
 
   Razorpay() {
     _eventEmitter = new EventEmitter();
@@ -118,18 +118,20 @@ class Razorpay {
 
 class PaymentSuccessResponse {
   String paymentId;
-  String orderId;
-  String signature;
-  String subscriptionId;
+  String? orderId;
+  String? signature;
+  String? subscriptionId;
 
-  PaymentSuccessResponse(this.paymentId, this.orderId, this.signature,this.subscriptionId);
+  PaymentSuccessResponse(
+      this.paymentId, this.orderId, this.signature, this.subscriptionId);
 
   static PaymentSuccessResponse fromMap(Map<dynamic, dynamic> map) {
     String paymentId = map["razorpay_payment_id"];
-    String signature = map["razorpay_signature"];
-    String orderId = map["razorpay_order_id"];
-    String subscriptionId = map["razorpay_subscription_id"];
-    return new PaymentSuccessResponse(paymentId, orderId, signature,subscriptionId);
+    String? signature = map["razorpay_signature"];
+    String? orderId = map["razorpay_order_id"];
+    String? subscriptionId = map["razorpay_subscription_id"];
+    return new PaymentSuccessResponse(
+        paymentId, orderId, signature, subscriptionId);
   }
 }
 
