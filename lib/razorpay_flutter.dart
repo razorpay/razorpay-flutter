@@ -52,30 +52,36 @@ class Razorpay {
   /// Handles checkout response from platform
   void _handleResult(Map<dynamic, dynamic> response) {
     String eventName;
-    Map<dynamic, dynamic> data = response["data"];
+    Map<dynamic, dynamic>? data = response["data"];
 
     dynamic payload;
 
-    switch (response['type']) {
-      case _CODE_PAYMENT_SUCCESS:
-        eventName = EVENT_PAYMENT_SUCCESS;
-        payload = PaymentSuccessResponse.fromMap(data);
-        break;
+    if (data == null) {
+      eventName = 'error';
+      payload =
+          PaymentFailureResponse(UNKNOWN_ERROR, 'An unknown error occurred.');
+    } else {
+      switch (response['type']) {
+        case _CODE_PAYMENT_SUCCESS:
+          eventName = EVENT_PAYMENT_SUCCESS;
+          payload = PaymentSuccessResponse.fromMap(data);
+          break;
 
-      case _CODE_PAYMENT_ERROR:
-        eventName = EVENT_PAYMENT_ERROR;
-        payload = PaymentFailureResponse.fromMap(data);
-        break;
+        case _CODE_PAYMENT_ERROR:
+          eventName = EVENT_PAYMENT_ERROR;
+          payload = PaymentFailureResponse.fromMap(data);
+          break;
 
-      case _CODE_PAYMENT_EXTERNAL_WALLET:
-        eventName = EVENT_EXTERNAL_WALLET;
-        payload = ExternalWalletResponse.fromMap(data);
-        break;
+        case _CODE_PAYMENT_EXTERNAL_WALLET:
+          eventName = EVENT_EXTERNAL_WALLET;
+          payload = ExternalWalletResponse.fromMap(data);
+          break;
 
-      default:
-        eventName = 'error';
-        payload =
-            PaymentFailureResponse(UNKNOWN_ERROR, 'An unknown error occurred.');
+        default:
+          eventName = 'error';
+          payload = PaymentFailureResponse(
+              UNKNOWN_ERROR, 'An unknown error occurred.');
+      }
     }
 
     _eventEmitter.emit(eventName, null, payload);
