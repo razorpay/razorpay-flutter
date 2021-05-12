@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 import 'package:razorpay_flutter/razorpay_flutter.dart';
 
@@ -13,9 +12,8 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  static const platform = const MethodChannel("razorpay_flutter");
 
-  Razorpay _razorpay;
+  late Razorpay _razorpay;
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +26,7 @@ class _MyAppState extends State<MyApp> {
             child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-              RaisedButton(onPressed: openCheckout, child: Text('Open'))
+              ElevatedButton(onPressed: openCheckout, child: Text('Open'))
             ])),
       ),
     );
@@ -64,23 +62,23 @@ class _MyAppState extends State<MyApp> {
     try {
       _razorpay.open(options);
     } catch (e) {
-      debugPrint(e);
+      debugPrint('data: $e');
     }
   }
 
   void _handlePaymentSuccess(PaymentSuccessResponse response) {
     Fluttertoast.showToast(
-        msg: "SUCCESS: " + response.paymentId, timeInSecForIos: 4);
+        msg: "SUCCESS: " + response.paymentId!, timeInSecForIosWeb: 4);
   }
 
   void _handlePaymentError(PaymentFailureResponse response) {
     Fluttertoast.showToast(
-        msg: "ERROR: " + response.code.toString() + " - " + response.message,
-        timeInSecForIos: 4);
+        msg: "ERROR: " + response.code.toString() + " - " + response.message!,
+        timeInSecForIosWeb: 4);
   }
 
   void _handleExternalWallet(ExternalWalletResponse response) {
     Fluttertoast.showToast(
-        msg: "EXTERNAL_WALLET: " + response.walletName, timeInSecForIos: 4);
+        msg: "EXTERNAL_WALLET: " + response.walletName!, timeInSecForIosWeb: 4);
   }
 }
