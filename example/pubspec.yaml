@@ -1,20 +1,20 @@
 name: razorpay_flutter_example
 description: Demonstrates how to use the razorpay_flutter plugin.
 publish_to: 'none'
-version: 1.0.0
+version: 1.2.6
 
 environment:
-  sdk: ">=2.1.0 <3.0.0"
+  sdk: '>=2.12.0 <3.0.0'
 
 dependencies:
   flutter:
     sdk: flutter
-  fluttertoast: ^3.0.4
+  fluttertoast: ^8.0.6
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons: ^0.1.2
-  http: any
+  cupertino_icons: ^1.0.3
+  http: ^0.13.3
 
 dev_dependencies:
   flutter_test:

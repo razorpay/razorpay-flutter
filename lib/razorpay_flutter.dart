@@ -24,7 +24,7 @@ class Razorpay {
   static const MethodChannel _channel = const MethodChannel('razorpay_flutter');
 
   // EventEmitter instance used for communication
-  EventEmitter _eventEmitter;
+  late EventEmitter _eventEmitter;
 
   Razorpay() {
     _eventEmitter = new EventEmitter();
@@ -52,24 +52,24 @@ class Razorpay {
   /// Handles checkout response from platform
   void _handleResult(Map<dynamic, dynamic> response) {
     String eventName;
-    Map<dynamic, dynamic> data = response["data"];
+    Map<dynamic, dynamic>? data = response["data"];
 
     dynamic payload;
 
     switch (response['type']) {
       case _CODE_PAYMENT_SUCCESS:
         eventName = EVENT_PAYMENT_SUCCESS;
-        payload = PaymentSuccessResponse.fromMap(data);
+        payload = PaymentSuccessResponse.fromMap(data!);
         break;
 
       case _CODE_PAYMENT_ERROR:
         eventName = EVENT_PAYMENT_ERROR;
-        payload = PaymentFailureResponse.fromMap(data);
+        payload = PaymentFailureResponse.fromMap(data!);
         break;
 
       case _CODE_PAYMENT_EXTERNAL_WALLET:
         eventName = EVENT_EXTERNAL_WALLET;
-        payload = ExternalWalletResponse.fromMap(data);
+        payload = ExternalWalletResponse.fromMap(data!);
         break;
 
       default:
@@ -117,41 +117,41 @@ class Razorpay {
 }
 
 class PaymentSuccessResponse {
-  String paymentId;
-  String orderId;
-  String signature;
+  String? paymentId;
+  String? orderId;
+  String? signature;
 
   PaymentSuccessResponse(this.paymentId, this.orderId, this.signature);
 
   static PaymentSuccessResponse fromMap(Map<dynamic, dynamic> map) {
-    String paymentId = map["razorpay_payment_id"];
-    String signature = map["razorpay_signature"];
-    String orderId = map["razorpay_order_id"];
+    String? paymentId = map["razorpay_payment_id"];
+    String? signature = map["razorpay_signature"];
+    String? orderId = map["razorpay_order_id"];
 
     return new PaymentSuccessResponse(paymentId, orderId, signature);
   }
 }
 
 class PaymentFailureResponse {
-  int code;
-  String message;
+  int? code;
+  String? message;
 
   PaymentFailureResponse(this.code, this.message);
 
   static PaymentFailureResponse fromMap(Map<dynamic, dynamic> map) {
-    var code = map["code"] as int;
-    var message = map["message"] as String;
+    var code = map["code"] as int?;
+    var message = map["message"] as String?;
     return new PaymentFailureResponse(code, message);
   }
 }
 
 class ExternalWalletResponse {
-  String walletName;
+  String? walletName;
 
   ExternalWalletResponse(this.walletName);
 
   static ExternalWalletResponse fromMap(Map<dynamic, dynamic> map) {
-    var walletName = map["external_wallet"] as String;
+    var walletName = map["external_wallet"] as String?;
     return new ExternalWalletResponse(walletName);
   }
 }
