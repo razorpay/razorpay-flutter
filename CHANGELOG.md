@@ -1,3 +1,6 @@
+## 1.2.7
+- Updated package to support for NULL safety.
+
 ## 1.2.6
 - Updated package to support for NULL safety.
 
