@@ -3,7 +3,7 @@
 #
 Pod::Spec.new do |s|
   s.name             = 'razorpay_flutter'
-  s.version          = '1.1.10'
+  s.version          = '1.1.16'
   s.summary          = 'Flutter plugin for Razorpay SDK.'
   s.description      = 'Flutter plugin for Razorpay SDK.'
   s.homepage         = 'https://github.com/razorpay/razorpay-flutter'
@@ -16,4 +16,7 @@ Pod::Spec.new do |s|
   s.dependency 'razorpay-pod'
 
   s.ios.deployment_target = '10.0'
+
+  s.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+  s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
 end
