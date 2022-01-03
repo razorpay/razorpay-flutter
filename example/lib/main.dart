@@ -28,7 +28,7 @@ class _MyAppState extends State<MyApp> {
             child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-              RaisedButton(onPressed: openCheckout, child: Text('Open'))
+              ElevatedButton(onPressed: openCheckout, child: Text('Open'))
             ])),
       ),
     );
@@ -70,7 +70,8 @@ class _MyAppState extends State<MyApp> {
 
   void _handlePaymentSuccess(PaymentSuccessResponse response) {
     Fluttertoast.showToast(
-        msg: "SUCCESS: " + response.paymentId!, toastLength: Toast.LENGTH_SHORT);
+        msg: "SUCCESS: " + response.paymentId!,
+        toastLength: Toast.LENGTH_SHORT);
   }
 
   void _handlePaymentError(PaymentFailureResponse response) {
@@ -81,6 +82,7 @@ class _MyAppState extends State<MyApp> {
 
   void _handleExternalWallet(ExternalWalletResponse response) {
     Fluttertoast.showToast(
-        msg: "EXTERNAL_WALLET: " + response.walletName!, toastLength: Toast.LENGTH_SHORT);
+        msg: "EXTERNAL_WALLET: " + response.walletName!,
+        toastLength: Toast.LENGTH_SHORT);
   }
 }
