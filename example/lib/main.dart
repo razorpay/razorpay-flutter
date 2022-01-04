@@ -51,11 +51,10 @@ class _MyAppState extends State<MyApp> {
 
   void openCheckout() async {
     var options = {
-      'key': 'rzp_live_ILgsfZCZoFIKMb',
+      'key': 'rzp_test_1DP5mmOlF5G5ag',
       'amount': 100,
       'name': 'Acme Corp.',
       'description': 'Fine T-Shirt',
-      'retry': {'enabled': true, 'max_count': 1},
       'send_sms_hash': true,
       'prefill': {'contact': '8888888888', 'email': 'test@razorpay.com'},
       'external': {

@@ -10,6 +10,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_web_plugins:
+    sdk: flutter
   eventify: ^1.0.0
 
 dev_dependencies:
@@ -25,3 +27,6 @@ flutter:
             pluginClass: RazorpayFlutterPlugin
         ios:
             pluginClass: RazorpayFlutterPlugin
+        web:
+            pluginClass: RazorpayFlutterPlugin
+            fileName: razorpay_flutter_web.dart
