@@ -47,7 +47,6 @@ class Razorpay {
     }
 
     var response = await _channel.invokeMethod('open', options);
-    print(response);
     _handleResult(response);
   }
 
