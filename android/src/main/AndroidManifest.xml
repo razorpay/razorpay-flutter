@@ -2,6 +2,7 @@
   package="com.razorpay.razorpay_flutter">
     <application>
         <activity
+                android:exported="false"
                 android:name="com.razorpay.CheckoutActivity"
                 android:label="Razorpay Checkout" >
         </activity>
