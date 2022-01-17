@@ -1,11 +1,11 @@
 name: razorpay_flutter
 description: Flutter plugin for Razorpay SDK. To know more about Razorpay, visit http://razorpay.com.
-version: 1.2.5
+version: 1.2.9
 homepage: https://github.com/razorpay/razorpay-flutter
 
 environment:
   sdk: '>=2.12.0 <3.0.0'
-  flutter: ">=1.12.0 <2.0.0"
+  flutter: ">=1.12.0"
 
 dependencies:
   flutter:

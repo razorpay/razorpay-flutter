@@ -1,3 +1,12 @@
+## 1.2.9
+- Android Native Fixes and Performance Improvements.
+
+## 1.2.7
+- Updated package to support for NULL safety.
+
+## 1.2.6
+- Updated package to support for NULL safety.
+
 ## 1.2.3
 - Updated Android API key version. 
 
