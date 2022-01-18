@@ -1,3 +1,7 @@
+## 1.2.9
+- Updated package to support for NULL safety.
+- Native SDK version update
+
 ## 1.2.7
 - Updated package to support for NULL safety.
 
