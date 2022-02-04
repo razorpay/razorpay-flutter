@@ -20,6 +20,7 @@ class Razorpay {
   static const TLS_ERROR = 3;
   static const INCOMPATIBLE_PLUGIN = 4;
   static const UNKNOWN_ERROR = 100;
+  static const BASE_REQUEST_ERROR = 5;
 
   static const MethodChannel _channel = const MethodChannel('razorpay_flutter');
 
