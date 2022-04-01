@@ -71,20 +71,23 @@ class _MyAppState extends State<MyApp> {
   }
 
   void _handlePaymentSuccess(PaymentSuccessResponse response) {
-    Fluttertoast.showToast(
+    print('Success Response: $response');
+    /*Fluttertoast.showToast(
         msg: "SUCCESS: " + response.paymentId!,
-        toastLength: Toast.LENGTH_SHORT);
+        toastLength: Toast.LENGTH_SHORT); */
   }
 
   void _handlePaymentError(PaymentFailureResponse response) {
-    Fluttertoast.showToast(
+    print('Error Response: $response');
+    /* Fluttertoast.showToast(
         msg: "ERROR: " + response.code.toString() + " - " + response.message!,
-        toastLength: Toast.LENGTH_SHORT);
+        toastLength: Toast.LENGTH_SHORT); */
   }
 
   void _handleExternalWallet(ExternalWalletResponse response) {
-    Fluttertoast.showToast(
+    print('External SDK Response: $response');
+    /* Fluttertoast.showToast(
         msg: "EXTERNAL_WALLET: " + response.walletName!,
-        toastLength: Toast.LENGTH_SHORT);
+        toastLength: Toast.LENGTH_SHORT); */
   }
 }
