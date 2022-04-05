@@ -2,34 +2,38 @@ PODS:
   - Flutter (1.0.0)
   - fluttertoast (0.0.2):
     - Flutter
-  - razorpay-pod (1.1.4)
-  - razorpay_flutter (1.1.1):
+    - Toast
+  - razorpay-pod (1.2.1)
+  - razorpay_flutter (1.1.10):
     - Flutter
-    - razorpay-pod (~> 1.1.5)
+    - razorpay-pod
+  - Toast (4.0.0)
 
 DEPENDENCIES:
-  - Flutter (from `.symlinks/flutter/ios`)
+  - Flutter (from `Flutter`)
   - fluttertoast (from `.symlinks/plugins/fluttertoast/ios`)
   - razorpay_flutter (from `.symlinks/plugins/razorpay_flutter/ios`)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
     - razorpay-pod
+    - Toast
 
 EXTERNAL SOURCES:
   Flutter:
-    :path: ".symlinks/flutter/ios"
+    :path: Flutter
   fluttertoast:
     :path: ".symlinks/plugins/fluttertoast/ios"
   razorpay_flutter:
     :path: ".symlinks/plugins/razorpay_flutter/ios"
 
 SPEC CHECKSUMS:
-  Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
-  fluttertoast: b644586ef3b16f67fae9a1f8754cef6b2d6b634b
-  razorpay-pod: 592624080178be4c6121216508e7857fc245f4b8
-  razorpay_flutter: 0ca3b03963648a212711715b6eec381bb794fc48
+  Flutter: 50d75fe2f02b26cc09d224853bb45737f8b3214a
+  fluttertoast: 6122fa75143e992b1d3470f61000f591a798cc58
+  razorpay-pod: 372528dcba385d95d384aa8abc44feeb7a644d4e
+  razorpay_flutter: 84b3bfd206ae9c9c2a9ba585524a1b3d8102b6c1
+  Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
 
-PODFILE CHECKSUM: df2315ca108ab9f64afcc322c952cceef8821016
+PODFILE CHECKSUM: 20d2b986c5dace0d084b196b20f01408c956ccff
 
-COCOAPODS: 1.6.1
+COCOAPODS: 1.11.2

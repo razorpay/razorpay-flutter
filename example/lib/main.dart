@@ -28,7 +28,7 @@ class _MyAppState extends State<MyApp> {
             child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-              RaisedButton(onPressed: openCheckout, child: Text('Open'))
+              ElevatedButton(onPressed: openCheckout, child: Text('Open'))
             ])),
       ),
     );
@@ -71,18 +71,23 @@ class _MyAppState extends State<MyApp> {
   }
 
   void _handlePaymentSuccess(PaymentSuccessResponse response) {
-    Fluttertoast.showToast(
-        msg: "SUCCESS: " + response.paymentId!, toastLength: Toast.LENGTH_SHORT);
+    print('Success Response: $response');
+    /*Fluttertoast.showToast(
+        msg: "SUCCESS: " + response.paymentId!,
+        toastLength: Toast.LENGTH_SHORT); */
   }
 
   void _handlePaymentError(PaymentFailureResponse response) {
-    Fluttertoast.showToast(
+    print('Error Response: $response');
+    /* Fluttertoast.showToast(
         msg: "ERROR: " + response.code.toString() + " - " + response.message!,
-        toastLength: Toast.LENGTH_SHORT);
+        toastLength: Toast.LENGTH_SHORT); */
   }
 
   void _handleExternalWallet(ExternalWalletResponse response) {
-    Fluttertoast.showToast(
-        msg: "EXTERNAL_WALLET: " + response.walletName!, toastLength: Toast.LENGTH_SHORT);
+    print('External SDK Response: $response');
+    /* Fluttertoast.showToast(
+        msg: "EXTERNAL_WALLET: " + response.walletName!,
+        toastLength: Toast.LENGTH_SHORT); */
   }
 }

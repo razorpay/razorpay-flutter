@@ -4,13 +4,13 @@ Flutter plugin for Razorpay SDK.
 
 [![pub package](https://img.shields.io/pub/v/razorpay_flutter.svg)](https://pub.dartlang.org/packages/razorpay_flutter)
 
-* [Getting Started](#getting-started)
-* [Prerequisites](#prerequisites)
-* [Installation](#installation)
-* [Usage](#usage)
-* [Troubleshooting](#troubleshooting)
-* [API](#api)
-* [Example App](https://github.com/razorpay/razorpay-flutter/tree/master/example)
+- [Getting Started](#getting-started)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Troubleshooting](#troubleshooting)
+- [API](#api)
+- [Example App](https://github.com/razorpay/razorpay-flutter/tree/master/example)
 
 ## Getting Started
 
@@ -26,9 +26,8 @@ To know more about Razorpay payment flow and steps involved, read up here: [http
 
 ## Prerequisites
 
- - Learn about the <a href="https://razorpay.com/docs/payment-gateway/payment-flow/" target="_blank">Razorpay Payment Flow</a>.
- - Sign up for a <a href="https://dashboard.razorpay.com/#/access/signin">Razorpay Account</a> and generate the <a href="https://razorpay.com/docs/payment-gateway/dashboard-guide/settings/#api-keys/" target="_blank">API Keys</a> from the Razorpay Dashboard. Using the Test keys helps simulate a sandbox environment. No actual monetary transaction happens when using the Test keys. Use Live keys once you have thoroughly tested the application and are ready to go live.
- 
+- Learn about the <a href="https://razorpay.com/docs/payment-gateway/payment-flow/" target="_blank">Razorpay Payment Flow</a>.
+- Sign up for a <a href="https://dashboard.razorpay.com/#/access/signin">Razorpay Account</a> and generate the <a href="https://razorpay.com/docs/payment-gateway/dashboard-guide/settings/#api-keys/" target="_blank">API Keys</a> from the Razorpay Dashboard. Using the Test keys helps simulate a sandbox environment. No actual monetary transaction happens when using the Test keys. Use Live keys once you have thoroughly tested the application and are ready to go live.
 
 ## Installation
 
@@ -37,13 +36,15 @@ This plugin is available on Pub: [https://pub.dev/packages/razorpay_flutter](htt
 Add this to `dependencies` in your app's `pubspec.yaml`
 
 ```yaml
-razorpay_flutter: ^1.2.3
+razorpay_flutter: ^1.3.0
 ```
 
 **Note for Android**: Make sure that the minimum API level for your app is 19 or higher.
 
 ### Proguard rules
+
 If you are using proguard for your builds, you need to add following lines to proguard files
+
 ```
 -keepattributes *Annotation*
 -dontwarn com.razorpay.**
@@ -64,7 +65,7 @@ Run `flutter packages get` in the root directory of your app.
 
 Sample code to integrate can be found in [example/lib/main.dart](example/lib/main.dart).
 
-#### Import package 
+#### Import package
 
 ```dart
 import 'package:razorpay_flutter/razorpay_flutter.dart';
@@ -142,6 +143,7 @@ _razorpay.open(options);
 ### Enabling Bitcode
 
 Open `ios/Podfile` and find this section:
+
 ```ruby
 post_install do |installer|
   installer.pods_project.targets.each do |target|
@@ -151,6 +153,7 @@ post_install do |installer|
   end
 end
 ```
+
 Set `config.build_settings['ENABLE_BITCODE'] = 'YES'`.
 
 ### Setting Swift version
@@ -172,11 +175,14 @@ This is due to your minimum deployment target being less than iOS 10.0. To chang
 ```ruby
 # platform :ios, '9.0'
 ```
-and change it to 
+
+and change it to
+
 ```ruby
 platform :ios, '10.0'
 ```
-and run `pod install` again in the `ios` directory. 
+
+and run `pod install` again in the `ios` directory.
 
 ### iOS build fails with `'razorpay_flutter/razorpay_flutter-Swift.h' file not found`
 
@@ -191,6 +197,7 @@ This is due to your Android minimum SDK version being less than 19. To change th
 We export a class `Razorpay` from `package:razorpay_flutter/razorpay_flutter.dart`. Check if your code is redeclaring the `Razorpay` class.
 
 ### Type 'xxxx' is not a subtype of type 'xxxx' of 'response' in `Razorpay.on.<anonymous closure>`
+
 ```
 [VERBOSE-2:ui_dart_state.cc(148)] Unhandled Exception: type 'PaymentFailureResponse' is not a subtype of type 'PaymentSuccessResponse' of 'response'
 #0      Razorpay.on.<anonymous closure> (package:razorpay_flutter/razorpay_flutter.dart:87:14)
@@ -209,9 +216,9 @@ Check the signatures of the callbacks for payment events. They should match the 
 
 #### open(map<String, dynamic> options)
 
-Open Razorpay Checkout. 
+Open Razorpay Checkout.
 
-The `options` map has `key` as a required property. All other properties are optional. 
+The `options` map has `key` as a required property. All other properties are optional.
 For a complete list of options, please see [the Checkout documentation](https://razorpay.com/docs/payment-gateway/integrations-guide/checkout/standard/#checkout-form).
 
 #### on(String eventName, Function listener)
@@ -269,7 +276,6 @@ The event names have also been exposed as Strings by the `Razorpay` class.
 
 ### ExternalWalletResponse
 
-| Field Name  | Type    | Description                               |
-| ----------- | ------- | ----------------------------------------- |
-| walletName  | String  | The name of the external wallet selected. |
-
+| Field Name | Type   | Description                               |
+| ---------- | ------ | ----------------------------------------- |
+| walletName | String | The name of the external wallet selected. |
