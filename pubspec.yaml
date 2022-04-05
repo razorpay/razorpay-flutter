@@ -21,8 +21,8 @@ dev_dependencies:
 flutter:
   plugin:
     platforms:
-        android:
-            package: com.razorpay.razorpay_flutter
-            pluginClass: RazorpayFlutterPlugin
-        ios:
-            pluginClass: RazorpayFlutterPlugin
+      android:
+        package: com.razorpay.razorpay_flutter
+        pluginClass: RazorpayFlutterPlugin
+      ios:
+        pluginClass: RazorpayFlutterPlugin
