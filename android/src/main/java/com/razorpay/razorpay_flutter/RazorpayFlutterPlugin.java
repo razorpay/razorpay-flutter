@@ -67,6 +67,10 @@ public class RazorpayFlutterPlugin implements FlutterPlugin, MethodCallHandler, 
                 razorpayDelegate.openCheckout((Map<String, Object>) call.arguments, result);
                 break;
 
+            case "setPackageName":
+                razorpayDelegate.setPackageName((String)call.arguments);
+                break;
+
             case "resync":
                 razorpayDelegate.resync(result);
                 break;
