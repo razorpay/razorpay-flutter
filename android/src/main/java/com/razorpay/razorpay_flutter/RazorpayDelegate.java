@@ -2,6 +2,7 @@ package com.razorpay.razorpay_flutter;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.util.Log;
 
 import com.razorpay.Checkout;
 import com.razorpay.CheckoutActivity;
@@ -36,10 +37,15 @@ public class RazorpayDelegate implements ActivityResultListener, ExternalWalletL
     private static final int TLS_ERROR = 3;
     private static final int INCOMPATIBLE_PLUGIN = 3;
     private static final int UNKNOWN_ERROR = 100;
-
+    private String packageName;
 
     public RazorpayDelegate(Activity activity) {
         this.activity = activity;
+    }
+
+    void setPackageName(String packageName){
+        this.packageName = packageName;
+        Log.d("PackageName", packageName);
     }
 
     void openCheckout(Map<String, Object> arguments, Result result) {
@@ -47,12 +53,15 @@ public class RazorpayDelegate implements ActivityResultListener, ExternalWalletL
         this.pendingResult = result;
 
         JSONObject options = new JSONObject(arguments);
+        if (activity.getPackageName().equalsIgnoreCase(packageName)){
+            Log.d("PAYMENT", activity.getPackageName()+";;;"+packageName);
+            Intent intent = new Intent(activity, CheckoutActivity.class);
+            intent.putExtra("OPTIONS", options.toString());
+            intent.putExtra("FRAMEWORK", "flutter");
 
-        Intent intent = new Intent(activity, CheckoutActivity.class);
-        intent.putExtra("OPTIONS", options.toString());
-        intent.putExtra("FRAMEWORK", "flutter");
+            activity.startActivityForResult(intent, Checkout.RZP_REQUEST_CODE);
+        }
 
-        activity.startActivityForResult(intent, Checkout.RZP_REQUEST_CODE);
 
     }
 
