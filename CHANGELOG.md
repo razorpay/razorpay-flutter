@@ -1,3 +1,6 @@
+##1.3.1
+- Intent Redirection Vulnerability fix as per updated Google Policy
+
 ## 1.3.0
 
 - Standardised the events
