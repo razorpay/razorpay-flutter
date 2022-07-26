@@ -36,7 +36,7 @@ This plugin is available on Pub: [https://pub.dev/packages/razorpay_flutter](htt
 Add this to `dependencies` in your app's `pubspec.yaml`
 
 ```yaml
-razorpay_flutter: ^1.3.1
+razorpay_flutter: ^1.3.2
 ```
 
 **Note for Android**: Make sure that the minimum API level for your app is 19 or higher.
