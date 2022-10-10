@@ -31,12 +31,12 @@ public class RazorpayDelegate: NSObject, RazorpayPaymentCompletionProtocolWithDa
         var response = [String:Any]()
         response["type"] = RazorpayDelegate.CODE_PAYMENT_ERROR
         
-        var data = [String:Any]()
-        data["code"] = RazorpayDelegate.translateRzpPaymentError(errorCode: Int(code))
-        data["message"] = message
+        var errorData = [String:Any]()
+        errorData["code"] = RazorpayDelegate.translateRzpPaymentError(errorCode: Int(code))
+        errorData["message"] = message 
+        errorData["responseBody"] = data
         
-        response["data"] = data
-        
+        response["data"] = errorData
         pendingResult(response as NSDictionary)
     }
     
