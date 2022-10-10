@@ -1,3 +1,7 @@
+## 1.3.3
+
+- Detailed error object added in the error response
+
 ## 1.3.2
 
 - Bug fixes and performance improvements

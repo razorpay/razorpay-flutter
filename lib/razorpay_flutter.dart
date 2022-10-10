@@ -45,7 +45,7 @@ class Razorpay {
       });
       return;
     }
-    if(Platform.isAndroid){
+    if (Platform.isAndroid) {
       PackageInfo packageInfo = await PackageInfo.fromPlatform();
       _channel.invokeMethod('setPackageName', packageInfo.packageName);
     }
@@ -79,8 +79,8 @@ class Razorpay {
 
       default:
         eventName = 'error';
-        payload =
-            PaymentFailureResponse(UNKNOWN_ERROR, 'An unknown error occurred.');
+        payload = PaymentFailureResponse(
+            UNKNOWN_ERROR, 'An unknown error occurred.', null);
     }
 
     _eventEmitter.emit(eventName, null, payload);
@@ -140,13 +140,15 @@ class PaymentSuccessResponse {
 class PaymentFailureResponse {
   int? code;
   String? message;
+  Map<dynamic, dynamic>? response;
 
-  PaymentFailureResponse(this.code, this.message);
+  PaymentFailureResponse(this.code, this.message, this.response);
 
   static PaymentFailureResponse fromMap(Map<dynamic, dynamic> map) {
     var code = map["code"] as int?;
     var message = map["message"] as String?;
-    return new PaymentFailureResponse(code, message);
+    var responseBody = map["responseBody"] as Map<dynamic, dynamic>?;
+    return new PaymentFailureResponse(code, message, responseBody);
   }
 }
 
