@@ -104,7 +104,7 @@ public class RazorpayDelegate implements ActivityResultListener, ExternalWalletL
         Map<String, Object> data = new HashMap<>();
         data.put("code", translateRzpPaymentError(code));
         data.put("message", message);
-
+        data.put('responseBody', paymentData.toString())
         reply.put("data", data);
 
         sendReply(reply);
