@@ -13,6 +13,7 @@ import com.razorpay.PaymentResultWithDataListener;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -150,8 +151,6 @@ public class RazorpayDelegate implements ActivityResultListener, ExternalWalletL
                 e.printStackTrace();
             }
         }
-
-
         reply.put("data", data);
         sendReply(reply);
     }
@@ -159,9 +158,10 @@ public class RazorpayDelegate implements ActivityResultListener, ExternalWalletL
     @Override
     public boolean onActivityResult(int requestCode, int resultCode, Intent data) {
         try{
-            Checkout.handleActivityResult(activity, requestCode, resultCode, data, this, this);
+            Method merchantActivityResult = Checkout.class.getMethod("merchantActivityResult", Activity.class, Integer.class, Integer.class, Intent.class, PaymentResultWithDataListener.class, ExternalWalletListener.class);
+            merchantActivityResult.invoke(null,activity, requestCode, resultCode, data, this, this);
         }catch (Exception e){
-            new Checkout().merchantActivityResult(activity, requestCode, resultCode, data, this, this);
+            Checkout.handleActivityResult(activity, requestCode, resultCode, data, this, this);
         }
         return true;
     }
