@@ -4,15 +4,15 @@ version: 1.3.3
 homepage: https://github.com/razorpay/razorpay-flutter
 
 environment:
-  sdk: ">=2.12.0 <3.0.0"
-  flutter: ">=1.12.0"
+  sdk: '>=2.12.0 <3.0.0'
+  flutter: '>=1.12.0'
 
 dependencies:
   flutter:
     sdk: flutter
   eventify: ^1.0.0
   fluttertoast: ^8.0.7
-  package_info_plus: ^1.4.3
+  package_info_plus: 1.4.2
 
 dev_dependencies:
   flutter_test:
