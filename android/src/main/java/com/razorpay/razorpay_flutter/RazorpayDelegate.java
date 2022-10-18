@@ -147,9 +147,7 @@ public class RazorpayDelegate implements ActivityResultListener, ExternalWalletL
         if (paymentData.getData().has("razorpay_subscription_id")) {
             try {
                 data.put("razorpay_subscription_id", paymentData.getData().optString("razorpay_subscription_id"));
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+            } catch (Exception e) {}
         }
         reply.put("data", data);
         sendReply(reply);
