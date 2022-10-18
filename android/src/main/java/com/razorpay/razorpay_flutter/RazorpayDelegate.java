@@ -13,7 +13,9 @@ import com.razorpay.PaymentResultWithDataListener;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.lang.reflect.Method;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 
 import io.flutter.plugin.common.MethodChannel.Result;
@@ -45,7 +47,6 @@ public class RazorpayDelegate implements ActivityResultListener, ExternalWalletL
 
     void setPackageName(String packageName){
         this.packageName = packageName;
-        Log.d("PackageName", packageName);
     }
 
     void openCheckout(Map<String, Object> arguments, Result result) {
@@ -54,7 +55,6 @@ public class RazorpayDelegate implements ActivityResultListener, ExternalWalletL
 
         JSONObject options = new JSONObject(arguments);
         if (activity.getPackageName().equalsIgnoreCase(packageName)){
-            Log.d("PAYMENT", activity.getPackageName()+";;;"+packageName);
             Intent intent = new Intent(activity, CheckoutActivity.class);
             intent.putExtra("OPTIONS", options.toString());
             intent.putExtra("FRAMEWORK", "flutter");
@@ -103,10 +103,34 @@ public class RazorpayDelegate implements ActivityResultListener, ExternalWalletL
 
         Map<String, Object> data = new HashMap<>();
         data.put("code", translateRzpPaymentError(code));
-        data.put("message", message);
+        try{
+            JSONObject response = new JSONObject(message);
+            JSONObject errorObj = response.getJSONObject("error");
+            data.put("message", errorObj.getString("description"));
+            JSONObject metadata = errorObj.getJSONObject("metadata");
+            Map<String, String> metadataHash = new HashMap<>();
+            Iterator<String> metaKeys = metadata.keys();
+            while (metaKeys.hasNext()){
+                String key = metaKeys.next();
+                metadataHash.put(key,metadata.getString(key));
+            }
+            errorObj.remove("metadata");
+            Map<String,Object> resp = new HashMap<>();
+            Iterator<String> keys = errorObj.keys();
+            while (keys.hasNext()) {
+                String key = keys.next();
+                resp.put(key,errorObj.get(key));
+            }
+            resp.put("metadata", metadataHash);
+            resp.put("email", paymentData.getUserEmail());
+            resp.put("contact", paymentData.getUserContact());
+            data.put("responseBody", resp);
+        }catch (JSONException e){
+            data.put("message", message);
+            data.put("responseBody", message);
+        }
 
         reply.put("data", data);
-
         sendReply(reply);
     }
 
@@ -127,15 +151,18 @@ public class RazorpayDelegate implements ActivityResultListener, ExternalWalletL
                 e.printStackTrace();
             }
         }
-
-
         reply.put("data", data);
         sendReply(reply);
     }
 
     @Override
     public boolean onActivityResult(int requestCode, int resultCode, Intent data) {
-        Checkout.handleActivityResult(activity, requestCode, resultCode, data, this, this);
+        try{
+            Method merchantActivityResult = Checkout.class.getMethod("merchantActivityResult", Activity.class, Integer.class, Integer.class, Intent.class, PaymentResultWithDataListener.class, ExternalWalletListener.class);
+            merchantActivityResult.invoke(null,activity, requestCode, resultCode, data, this, this);
+        }catch (Exception e){
+            Checkout.handleActivityResult(activity, requestCode, resultCode, data, this, this);
+        }
         return true;
     }
 
