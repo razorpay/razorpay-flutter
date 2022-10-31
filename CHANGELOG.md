@@ -1,3 +1,6 @@
+## 1.3.4
+- Removed 
+
 ## 1.3.3
 
 - Detailed error object added in the error response
