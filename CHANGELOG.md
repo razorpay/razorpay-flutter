@@ -1,5 +1,5 @@
 ## 1.3.4
-- Removed 
+- Removed jcenter for android due to deprecation
 
 ## 1.3.3
 
