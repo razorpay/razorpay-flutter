@@ -1,0 +1,6 @@
+framework module razorpay_flutter {
+  umbrella header "razorpay_flutter-umbrella.h"
+
+  export *
+  module * { export * }
+}
