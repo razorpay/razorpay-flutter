@@ -1,3 +1,6 @@
+## 1.3.4
+- Removed jcenter for android due to deprecation
+
 ## 1.3.3
 
 - Detailed error object added in the error response
