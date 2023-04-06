@@ -3,6 +3,8 @@ import 'package:eventify/eventify.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'dart:io' show Platform;
 
+import 'package:razorpay_flutter/options.dart';
+
 class Razorpay {
   // Response codes from platform
   static const _CODE_PAYMENT_SUCCESS = 0;
@@ -32,8 +34,8 @@ class Razorpay {
   }
 
   /// Opens Razorpay checkout
-  void open(Map<String, dynamic> options) async {
-    Map<String, dynamic> validationResult = _validateOptions(options);
+  void open(CheckoutOptions options) async {
+    Map<String, dynamic> validationResult = _validateOptions(options.toJSON());
 
     if (!validationResult['success']) {
       _handleResult({
@@ -50,7 +52,7 @@ class Razorpay {
       _channel.invokeMethod('setPackageName', packageInfo.packageName);
     }
 
-    var response = await _channel.invokeMethod('open', options);
+    var response = await _channel.invokeMethod('open', options.toJSON());
     _handleResult(response);
   }
 
