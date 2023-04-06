@@ -1,5 +1,5 @@
 /// Filters null values from the map.
-bool _nullFilter(_, val) => val != null;
+bool _nullFilter(_, val) => val == null;
 
 /// Pre-selection of the payment method for the customer. Will only work if contact and email are also pre-filled. Possible values:
 /// - `CheckoutMethod.card`: Card payments
