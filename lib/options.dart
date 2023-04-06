@@ -45,10 +45,10 @@ class CheckoutPrefill {
 
   /// Creates a new CheckoutPrefill object.
   CheckoutPrefill({this.name, this.email, this.contact, this.method})
-      : assert((contact != null && email != null) || method == null, {
-          'message':
-              'Contact and email are required to pre-select payment method.'
-        });
+      : assert(
+          (contact != null && email != null) || method == null,
+          'Contact and email are required to pre-select payment method.',
+        );
 
   Map<String, dynamic> toJSON() {
     return {
