@@ -43,7 +43,7 @@ void main() {
 
         razorpay.open(options);
 
-        expect(log, <Matcher>[isMethodCall('open', arguments: options)]);
+        expect(log, <Matcher>[isMethodCall('open', arguments: options.toJSON())]);
       });
 
       /* Now user cannot create [CheckoutOptions] object without passing the key */
