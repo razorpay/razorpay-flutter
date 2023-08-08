@@ -32,7 +32,7 @@ class Razorpay {
   }
 
   /// Opens Razorpay checkout
-  void open(Map<String, dynamic> options) async {
+  Future<void> open(Map<String, dynamic> options) async {
     Map<String, dynamic> validationResult = _validateOptions(options);
 
     if (!validationResult['success']) {
