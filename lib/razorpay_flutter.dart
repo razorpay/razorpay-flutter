@@ -1,7 +1,9 @@
+// ignore_for_file: constant_identifier_names
+
 import 'package:flutter/services.dart';
 import 'package:eventify/eventify.dart';
 import 'package:package_info_plus/package_info_plus.dart';
-import 'dart:io' show Platform;
+import 'package:universal_platform/universal_platform.dart';
 
 class Razorpay {
   // Response codes from platform
@@ -45,7 +47,7 @@ class Razorpay {
       });
       return;
     }
-    if (Platform.isAndroid) {
+    if (UniversalPlatform.isAndroid) {
       PackageInfo packageInfo = await PackageInfo.fromPlatform();
       _channel.invokeMethod('setPackageName', packageInfo.packageName);
     }
@@ -125,6 +127,7 @@ class Razorpay {
   }
 }
 
+/// payment response on payment success
 class PaymentSuccessResponse {
   String? paymentId;
   String? orderId;
@@ -141,6 +144,7 @@ class PaymentSuccessResponse {
   }
 }
 
+/// payment response on payment failure
 class PaymentFailureResponse {
   int? code;
   String? message;
@@ -156,6 +160,7 @@ class PaymentFailureResponse {
   }
 }
 
+/// payment response on payment done by wallet
 class ExternalWalletResponse {
   String? walletName;
 
