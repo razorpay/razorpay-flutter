@@ -47,7 +47,7 @@ class _HomePageState extends State<HomePage> {
               onPressed: () {
                 Razorpay razorpay = Razorpay();
                 var options = {
-                  'key': 'rzp_test_KdOUktx4iNXOO6',
+                  'key': 'rzp_live_ILgsfZCZoFIKMb',
                   'amount': 100,
                   'name': 'Acme Corp.',
                   'description': 'Fine T-Shirt',
