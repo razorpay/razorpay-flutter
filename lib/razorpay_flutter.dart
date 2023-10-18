@@ -1,7 +1,9 @@
+// ignore_for_file: constant_identifier_names
+
 import 'package:flutter/services.dart';
 import 'package:eventify/eventify.dart';
 import 'package:package_info_plus/package_info_plus.dart';
-import 'dart:io' show Platform;
+import 'package:universal_platform/universal_platform.dart';
 
 class Razorpay {
   // Response codes from platform
@@ -22,13 +24,13 @@ class Razorpay {
   static const INCOMPATIBLE_PLUGIN = 4;
   static const UNKNOWN_ERROR = 100;
 
-  static const MethodChannel _channel = const MethodChannel('razorpay_flutter');
+  static const MethodChannel _channel = MethodChannel('razorpay_flutter');
 
   // EventEmitter instance used for communication
   late EventEmitter _eventEmitter;
 
   Razorpay() {
-    _eventEmitter = new EventEmitter();
+    _eventEmitter = EventEmitter();
   }
 
   /// Opens Razorpay checkout
@@ -45,7 +47,7 @@ class Razorpay {
       });
       return;
     }
-    if (Platform.isAndroid) {
+    if (UniversalPlatform.isAndroid) {
       PackageInfo packageInfo = await PackageInfo.fromPlatform();
       _channel.invokeMethod('setPackageName', packageInfo.packageName);
     }
@@ -80,7 +82,10 @@ class Razorpay {
       default:
         eventName = 'error';
         payload = PaymentFailureResponse(
-            UNKNOWN_ERROR, 'An unknown error occurred.', null);
+          UNKNOWN_ERROR,
+          'An unknown error occurred.',
+          null,
+        );
     }
 
     _eventEmitter.emit(eventName, null, payload);
@@ -88,9 +93,10 @@ class Razorpay {
 
   /// Registers event listeners for payment events
   void on(String event, Function handler) {
-    EventCallback cb = (event, cont) {
+    void cb(Event event, Object? context) {
       handler(event.eventData);
-    };
+    }
+
     _eventEmitter.on(event, null, cb);
     _resync();
   }
@@ -121,6 +127,7 @@ class Razorpay {
   }
 }
 
+/// payment response on payment success
 class PaymentSuccessResponse {
   String? paymentId;
   String? orderId;
@@ -133,10 +140,11 @@ class PaymentSuccessResponse {
     String? signature = map["razorpay_signature"];
     String? orderId = map["razorpay_order_id"];
 
-    return new PaymentSuccessResponse(paymentId, orderId, signature);
+    return PaymentSuccessResponse(paymentId, orderId, signature);
   }
 }
 
+/// payment response on payment failure
 class PaymentFailureResponse {
   int? code;
   String? message;
@@ -148,10 +156,11 @@ class PaymentFailureResponse {
     var code = map["code"] as int?;
     var message = map["message"] as String?;
     var responseBody = map["responseBody"] as Map<dynamic, dynamic>?;
-    return new PaymentFailureResponse(code, message, responseBody);
+    return PaymentFailureResponse(code, message, responseBody);
   }
 }
 
+/// payment response on payment done by wallet
 class ExternalWalletResponse {
   String? walletName;
 
@@ -159,6 +168,6 @@ class ExternalWalletResponse {
 
   static ExternalWalletResponse fromMap(Map<dynamic, dynamic> map) {
     var walletName = map["external_wallet"] as String?;
-    return new ExternalWalletResponse(walletName);
+    return ExternalWalletResponse(walletName);
   }
 }
