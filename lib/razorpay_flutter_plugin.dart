@@ -70,25 +70,23 @@ class RazorpayFlutterPlugin {
   }
 
   /// check retry in option
-  (bool, int) _retryStatus(dynamic options) {
-    int maxCount = 0;
+  /// check retry in option
+  bool _retryStatus(dynamic options) {
     bool isRetryEnabled = true;
 
     if (options.containsKey('retry')) {
-      if (options['retry'].runtimeType == bool) {
+      if (options['retry'] is bool) {
         isRetryEnabled = options['retry'];
-      }
-
-      if (options['retry'].runtimeType.toString() ==
-          "LinkedMap<Object?, Object?>") {
-        if (options['retry'].containsKey('enabled')) {
-          isRetryEnabled = options['retry']['enabled'] ?? true;
-          // maxCount = options['retry']['max_count'] ?? 0;
+      } else {
+        if (options['retry'] is Map<String, dynamic>) {
+          if (options['retry'].containsKey('enabled')) {
+            isRetryEnabled = options['retry']['enabled'] ?? true;
+          }
         }
       }
     }
 
-    return (isRetryEnabled, maxCount);
+    return isRetryEnabled;
   }
 
   /// Convert LegacyJavaScriptObject to Dart Map.
@@ -111,14 +109,7 @@ class RazorpayFlutterPlugin {
 
     /// check retry enabled in options
     /// true (default): Enables customers to retry payments.
-    bool isRetryEnabled = true;
-
-    /// Web Integration does not support the max_count parameter.
-    // int maxCount = 0;
-
-    var status = _retryStatus(options);
-    isRetryEnabled = status.$1;
-    // maxCount = status.$2;
+    bool isRetryEnabled = _retryStatus(options);
 
     options['handler'] = allowInterop((dynamic res) {
       final response = _mapify(res);
