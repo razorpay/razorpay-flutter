@@ -164,9 +164,6 @@ class _MyHomePageState extends State<MyHomePage> {
     AlertDialog alert = AlertDialog(
       title: Text(title),
       content: Text(message),
-      actions: [
-        continueButton,
-      ],
     );
     // show the dialog
     showDialog(
