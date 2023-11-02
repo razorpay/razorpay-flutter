@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:razorpay_flutter/checkout.dart';
+import 'package:razorpay_flutter/model/upi_account.dart';
 import 'package:razorpay_flutter/razorpay_flutter.dart';
+import 'package:razorpay_flutter/model/Error.dart';
+import 'package:flutter/cupertino.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -50,6 +55,15 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
+  String keyId = "rzp_test_0wFRWIZnH65uny";
+  String mobileNumber="";
+  late CheckOut checkOut ;
+
+  @override
+  void initState() {
+    checkOut = CheckOut(keyId);
+    super.initState();
+  }
 
   void _incrementCounter() {
     setState(() {
@@ -119,6 +133,40 @@ class _MyHomePageState extends State<MyHomePage> {
                   razorpay.open(options);
                 },
                 child: const Text("Pay with Razorpay")),
+
+            SizedBox(height: 10,),
+            Padding(
+              padding: const EdgeInsets.only(left: 20, right: 20, top: 10, bottom: 10),
+              child:  TextField(
+                  keyboardType: TextInputType.number,
+                  textAlign: TextAlign.start,
+                  decoration: InputDecoration(
+                    hintText: 'Mobile Number',
+                  ),
+                  onChanged: (newValue) => mobileNumber = newValue,
+              ),
+            ),
+            ElevatedButton(onPressed: (){
+             checkOut.upiTurbo.linkNewUpiAccount(customerMobile: mobileNumber,
+                 color: "#ffffff",
+                 onSuccess: (List<UpiAccount> upiAccounts) {
+
+                 },
+               onFailure:(Error error) { ScaffoldMessenger.of(context).showSnackBar(
+                   SnackBar(content: Text("Error : ${error.errorDescription}")));}
+                );
+            }, child: const Text("Pay with Turbo UPI")),
+
+            SizedBox(height: 8,),
+
+            ElevatedButton(onPressed: (){
+              checkOut.upiTurbo.manageUpiAccounts(customerMobile: mobileNumber,
+                  color: "#ffffff",
+                  onFailure:(Error error) { ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(content: Text("Error : ${error.errorDescription}")));}
+              );
+            }, child: const Text("ManageUpiAccounts")),
+
           ],
         ),
       ),

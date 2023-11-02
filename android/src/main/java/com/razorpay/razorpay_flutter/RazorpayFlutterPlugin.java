@@ -23,6 +23,9 @@ public class RazorpayFlutterPlugin implements FlutterPlugin, MethodCallHandler, 
     private RazorpayDelegate razorpayDelegate;
     private ActivityPluginBinding pluginBinding;
     private static String CHANNEL_NAME = "razorpay_flutter";
+    Map<String, Object> _arguments;
+    String customerMobile ;
+    String color;
 
 
     public RazorpayFlutterPlugin() {
@@ -75,6 +78,26 @@ public class RazorpayFlutterPlugin implements FlutterPlugin, MethodCallHandler, 
                 razorpayDelegate.resync(result);
                 break;
 
+            case "setKeyID":
+                String key = call.arguments().toString();
+                razorpayDelegate.setKeyID(key,  result);
+                break;
+            case "linkNewUpiAccount":
+                _arguments = call.arguments();
+                customerMobile = (String) _arguments.get("customerMobile");
+                color = (String) _arguments.get("color");
+                razorpayDelegate.linkNewUpiAccount(customerMobile, color , result);
+                break;
+
+            case "manageUpiAccounts":
+                _arguments = call.arguments();
+                customerMobile = (String) _arguments.get("customerMobile");
+                color = (String) _arguments.get("color");
+                razorpayDelegate.manageUpiAccounts(customerMobile, color , result);
+                break;
+            case "isTurboPluginAvailable":
+                razorpayDelegate.isTurboPluginAvailable(result);
+                break;
             default:
                 result.notImplemented();
 
