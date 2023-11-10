@@ -196,21 +196,22 @@ public class RazorpayDelegate implements ActivityResultListener, ExternalWalletL
         Log.d("RazorpayDelegate" , "customerMobile "+customerMobile +" color "+color);
         this.pendingResult = result;
         Map<String, Object> reply = new HashMap<>();
-        checkout.upiTurbo.linkNewUpiAccount(customerMobile, color , new UpiTurboLinkAccountResultListener(){
+        checkout.upiTurbo.linkNewUpiAccount(customerMobile, color , new GenericPluginCallback(){
             @Override
-            public void onSuccess(@NonNull List<UpiAccount> upiAccounts) {
-                if(upiAccounts.isEmpty()){
+            public void onSuccess(@NonNull Object o) {
+                /*if(upiAccounts.isEmpty()){
                     reply.put("data", "");
                 }else {
                     reply.put("data", toJsonString(upiAccounts));
-                }
+                }*/
                 //sendReply(reply);
             }
 
             @Override
-            public void onError(@NonNull Error error) {
-              //  pendingResult.error(error.getErrorCode(), error.getErrorDescription(), toJsonString(error));
+            public void onError(@NonNull JSONObject jsonObject) {
+                //pendingResult.error(error.getErrorCode(), error.getErrorDescription(), toJsonString(error));
             }
+
         });
     }
 
