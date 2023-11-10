@@ -1,6 +1,7 @@
 import 'package:flutter/services.dart';
 import 'package:eventify/eventify.dart';
 import 'package:package_info_plus/package_info_plus.dart';
+import 'dart:convert';
 import 'dart:io' show Platform;
 
 class Razorpay {
@@ -147,7 +148,8 @@ class PaymentFailureResponse {
   static PaymentFailureResponse fromMap(Map<dynamic, dynamic> map) {
     var code = map["code"] as int?;
     var message = map["message"] as String?;
-    var responseBody = map["responseBody"] as Map<dynamic, dynamic>?;
+    var responseBody =
+        jsonDecode(map["responseBody"]) as Map<dynamic, dynamic>?;
     return new PaymentFailureResponse(code, message, responseBody);
   }
 }
