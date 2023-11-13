@@ -149,7 +149,7 @@ class PaymentFailureResponse {
     var code = map["code"] as int?;
     var message = map["message"] as String?;
     var responseBody =
-        jsonDecode(map["responseBody"]) as Map<dynamic, dynamic>?;
+        jsonDecode(map["responseBody"].toString()) as Map<dynamic, dynamic>?;
     return new PaymentFailureResponse(code, message, responseBody);
   }
 }
