@@ -199,17 +199,27 @@ public class RazorpayDelegate implements ActivityResultListener, ExternalWalletL
         checkout.upiTurbo.linkNewUpiAccount(customerMobile, color , new GenericPluginCallback(){
             @Override
             public void onSuccess(@NonNull Object o) {
-                /*if(upiAccounts.isEmpty()){
+                if (o instanceof List<?> && !((List<?>) o).isEmpty()) {
+                    reply.put("data", toJsonString(o));
+                } else {
                     reply.put("data", "");
-                }else {
-                    reply.put("data", toJsonString(upiAccounts));
-                }*/
-                //sendReply(reply);
+                }
+                sendReply(reply);
             }
 
             @Override
             public void onError(@NonNull JSONObject jsonObject) {
-                //pendingResult.error(error.getErrorCode(), error.getErrorDescription(), toJsonString(error));
+                String errorCode = "AXIS_SDK_ERROR";
+                String errorDescription = "Something went wrong.Please try again.";
+                try {
+                    if (jsonObject.has("error")) {
+                        errorCode = jsonObject.getJSONObject("error").getString("code");
+                        errorDescription = jsonObject.getJSONObject("error").getString("description");
+                    }
+                } catch (Exception e) {
+                    Log.d("Exception", e.getMessage());
+                }
+                pendingResult.error(errorCode, errorDescription, jsonObject.toString());
             }
 
         });
@@ -226,7 +236,17 @@ public class RazorpayDelegate implements ActivityResultListener, ExternalWalletL
 
             @Override
             public void onError(@NonNull JSONObject jsonObject) {
-                pendingResult.error("", jsonObject.toString(), jsonObject.toString());
+                String errorCode = "AXIS_SDK_ERROR";
+                String errorDescription = "Something went wrong.Please try again.";
+                try {
+                    if (jsonObject.has("error")) {
+                        errorCode = jsonObject.getJSONObject("error").getString("code");
+                        errorDescription = jsonObject.getJSONObject("error").getString("description");
+                    }
+                } catch (Exception e) {
+                    Log.d("Exception", e.getMessage());
+                }
+                pendingResult.error(errorCode, errorDescription, jsonObject.toString());
             }
         });
     }
