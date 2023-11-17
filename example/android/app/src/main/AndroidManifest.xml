@@ -38,6 +38,9 @@
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />
+        <meta-data
+            android:name="com.razorpay.ApiKey"
+            android:value="rzp_test_qRGYYA5wZrpFvJ" />
     </application>
 
 </manifest>
