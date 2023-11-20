@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:razorpay_flutter/checkout.dart';
 import 'package:razorpay_flutter/model/upi_account.dart';
 import 'package:razorpay_flutter/razorpay_flutter.dart';
 import 'package:razorpay_flutter/model/Error.dart';
@@ -212,13 +211,11 @@ class _MyHomePageState extends State<MyHomePage> {
   String orderIdValue = "";
   String mobileNumberValue = "8888888888";
 
-  late CheckOut checkOut ;
   late Razorpay razorpay ;
 
   @override
   void initState() {
-    checkOut = CheckOut(merchantKeyValue);
-    razorpay = Razorpay();
+    razorpay = Razorpay(merchantKeyValue);
     super.initState();
   }
 
@@ -314,7 +311,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 onPressed: () {
                   mobileNumberValue = mobileNumberController.text;
 
-                  checkOut.upiTurbo.linkNewUpiAccount(customerMobile: mobileNumberValue,
+                  razorpay.upiTurbo.linkNewUpiAccount(customerMobile: mobileNumberValue,
                       color: "#ffffff",
                       onSuccess: (List<UpiAccount> upiAccounts) {
                         print("Successfully Onboarded Account : ${upiAccounts.length}");
@@ -330,7 +327,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 onPressed: () {
                   mobileNumberValue = mobileNumberController.text;
 
-                  checkOut.upiTurbo.manageUpiAccounts(customerMobile: mobileNumberValue,
+                  razorpay.upiTurbo.manageUpiAccounts(customerMobile: mobileNumberValue,
                       color: "#ffffff",
                       onFailure:(Error error) { ScaffoldMessenger.of(context).showSnackBar(
                           SnackBar(content: Text("Error : ${error.errorDescription}")));}
