@@ -29,10 +29,17 @@ class Razorpay {
   // EventEmitter instance used for communication
   late EventEmitter _eventEmitter;
 
-  Razorpay() {
+  Razorpay(String key) {
     _eventEmitter = new EventEmitter();
-    upiTurbo = new UpiTurbo( _channel);
+    _setKeyID(key);
   }
+
+  Razorpay initUpiTurbo(){
+    upiTurbo = new UpiTurbo( _channel);
+    return this;
+  }
+
+
 
   ///Set KeyId function
   void _setKeyID(String keyID) async {

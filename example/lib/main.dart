@@ -215,7 +215,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   void initState() {
-    razorpay = Razorpay();
+    razorpay = Razorpay("rzp_test_qRGYYA5wZrpFvJ").initUpiTurbo();
     super.initState();
   }
 
