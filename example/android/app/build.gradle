@@ -24,6 +24,7 @@ if (flutterVersionName == null) {
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion flutter.compileSdkVersion
@@ -47,10 +48,11 @@ android {
         applicationId "com.razorpay.razorpay_flutter.example"
         // You can update the following values to match your application needs.
         // For more information, see: https://docs.flutter.dev/deployment/android#reviewing-the-build-configuration.
-        minSdkVersion 19
+        minSdkVersion 21
         targetSdkVersion flutter.targetSdkVersion
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
+        multiDexEnabled = true
     }
 
     buildTypes {
@@ -60,6 +62,12 @@ android {
             signingConfig signingConfigs.debug
         }
     }
+
+    buildFeatures {
+        buildConfig = false
+        dataBinding true
+        viewBinding true
+    }
 }
 
 flutter {
@@ -68,4 +76,23 @@ flutter {
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.5.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    // Turbo sdk
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.10.0'
+    implementation 'com.google.code.gson:gson:+'
+    implementation 'com.github.bumptech.glide:glide:4.15.1'
+    implementation  'io.sentry:sentry:6.21.0'
+    implementation 'com.segment.analytics.kotlin:android:1.10.2'
+
+    kapt 'com.android.databinding:compiler:3.1.4'
+
+    implementation 'com.google.android.gms:play-services-auth:20.2.0'
+    implementation 'com.google.android.gms:play-services-auth-api-phone:18.0.1'
+
+    implementation fileTree(include: ['*.aar'], dir: '/Users/shibu.prasad/Desktop/FlutterStandardWithTPV/')
+    //implementation fileTree(include: ['*.aar'], dir: '/Users/atif.qamar/Desktop/StandardCheckout/CheckoutLib/')
 }

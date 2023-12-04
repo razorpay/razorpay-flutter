@@ -4,11 +4,18 @@ import android.app.Activity;
 import android.content.Intent;
 import android.util.Log;
 
+import androidx.annotation.NonNull;
+
+import com.google.gson.Gson;
 import com.razorpay.Checkout;
 import com.razorpay.CheckoutActivity;
 import com.razorpay.ExternalWalletListener;
+import com.razorpay.GenericPluginCallback;
 import com.razorpay.PaymentData;
 import com.razorpay.PaymentResultWithDataListener;
+import com.razorpay.UpiTurboLinkAccountResultListener;
+import com.razorpay.upi.Error;
+import com.razorpay.upi.UpiAccount;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -16,6 +23,7 @@ import org.json.JSONObject;
 import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 
 import io.flutter.plugin.common.MethodChannel.Result;
@@ -40,9 +48,13 @@ public class RazorpayDelegate implements ActivityResultListener, ExternalWalletL
     private static final int INCOMPATIBLE_PLUGIN = 3;
     private static final int UNKNOWN_ERROR = 100;
     private String packageName;
+    private Checkout checkout;
+    Gson gson ;
 
     public RazorpayDelegate(Activity activity) {
         this.activity = activity;
+        checkout = new Checkout().upiTurbo(activity);
+        this.gson = new Gson();
     }
 
     void setPackageName(String packageName){
@@ -174,6 +186,90 @@ public class RazorpayDelegate implements ActivityResultListener, ExternalWalletL
         reply.put("data", data);
 
         sendReply(reply);
+    }
+
+    public void setKeyID(String keyId,  Result result){
+        checkout.setKeyID(keyId);
+    }
+
+    public void linkNewUpiAccount(String customerMobile, String color, Result result){
+        Log.d("RazorpayDelegate" , "customerMobile "+customerMobile +" color "+color);
+        this.pendingResult = result;
+        Map<String, Object> reply = new HashMap<>();
+        checkout.upiTurbo.linkNewUpiAccount(customerMobile, color , new GenericPluginCallback(){
+            @Override
+            public void onSuccess(@NonNull Object o) {
+                if (o instanceof List<?> && !((List<?>) o).isEmpty()) {
+                    reply.put("data", toJsonString(o));
+                } else {
+                    reply.put("data", "");
+                }
+                sendReply(reply);
+            }
+
+            @Override
+            public void onError(@NonNull JSONObject jsonObject) {
+                String errorCode = "AXIS_SDK_ERROR";
+                String errorDescription = "Something went wrong.Please try again.";
+                try {
+                    if (jsonObject.has("error")) {
+                        errorCode = jsonObject.getJSONObject("error").getString("code");
+                        errorDescription = jsonObject.getJSONObject("error").getString("description");
+                    }
+                } catch (Exception e) {
+                    Log.d("Exception", e.getMessage());
+                }
+                pendingResult.error(errorCode, errorDescription, jsonObject.toString());
+            }
+
+        });
+    }
+
+
+    public void manageUpiAccounts(String customerMobile, String color, Result result){
+        this.pendingResult = result;
+        HashMap<Object, Object> reply = new HashMap<>();
+        checkout.upiTurbo.manageUpiAccounts(customerMobile, color , new GenericPluginCallback(){
+            @Override
+            public void onSuccess(@NonNull Object object) {
+            }
+
+            @Override
+            public void onError(@NonNull JSONObject jsonObject) {
+                String errorCode = "AXIS_SDK_ERROR";
+                String errorDescription = "Something went wrong.Please try again.";
+                try {
+                    if (jsonObject.has("error")) {
+                        errorCode = jsonObject.getJSONObject("error").getString("code");
+                        errorDescription = jsonObject.getJSONObject("error").getString("description");
+                    }
+                } catch (Exception e) {
+                    Log.d("Exception", e.getMessage());
+                }
+                pendingResult.error(errorCode, errorDescription, jsonObject.toString());
+            }
+        });
+    }
+
+    public  boolean isTurboPluginAvailable(Result result) {
+        this.pendingResult = result;
+
+        Map<String, Object> reply = new HashMap<>();
+        try {
+            Class.forName("com.razorpay.UpiTurboLinkAccountResultListener");
+            reply.put("isTurboPluginAvailable", true);
+            sendReply(reply);
+            return true;
+        } catch (ClassNotFoundException e) {
+            // Class not found, so it doesn't exist
+            reply.put("isTurboPluginAvailable", false);
+            sendReply(reply);
+            return false;
+        }
+    }
+
+    private String toJsonString(Object object){
+        return this.gson.toJson(object);
     }
 
 }

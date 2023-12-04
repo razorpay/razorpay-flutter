@@ -2,6 +2,7 @@ import 'package:flutter/services.dart';
 import 'package:eventify/eventify.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'dart:io' show Platform;
+import 'package:razorpay_flutter/upi_turbo.dart';
 
 class Razorpay {
   // Response codes from platform
@@ -23,12 +24,26 @@ class Razorpay {
   static const UNKNOWN_ERROR = 100;
 
   static const MethodChannel _channel = const MethodChannel('razorpay_flutter');
+  late UpiTurbo upiTurbo;
 
   // EventEmitter instance used for communication
   late EventEmitter _eventEmitter;
 
-  Razorpay() {
+  Razorpay(String key) {
     _eventEmitter = new EventEmitter();
+    _setKeyID(key);
+  }
+
+  Razorpay initUpiTurbo(){
+    upiTurbo = new UpiTurbo( _channel);
+    return this;
+  }
+
+
+
+  ///Set KeyId function
+  void _setKeyID(String keyID) async {
+    await _channel.invokeMethod('setKeyID', keyID);
   }
 
   /// Opens Razorpay checkout
@@ -147,8 +162,15 @@ class PaymentFailureResponse {
   static PaymentFailureResponse fromMap(Map<dynamic, dynamic> map) {
     var code = map["code"] as int?;
     var message = map["message"] as String?;
-    var responseBody = map["responseBody"] as Map<dynamic, dynamic>?;
-    return new PaymentFailureResponse(code, message, responseBody);
+    var responseBody;
+
+    if (responseBody is Map<dynamic, dynamic>) {
+      return new PaymentFailureResponse(code, message, responseBody);
+    } else{
+      Map<dynamic, dynamic> errorMap = new Map<dynamic, dynamic>();
+      errorMap["reason"] = responseBody;
+      return new PaymentFailureResponse(code, message, responseBody);
+    }
   }
 }
 
