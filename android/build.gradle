@@ -34,7 +34,7 @@ android {
     dependencies {
         implementation fileTree(dir: 'libs', include: ['*.jar'])
         //api 'com.razorpay:checkout:1.6.+'
-        compileOnly fileTree(include: ['*.aar'], dir: '/Users/shibu.prasad/Desktop/FlutterStandardWithTPV/')
+        //compileOnly fileTree(include: ['*.aar'], dir: '/Users/shibu.prasad/Desktop/FlutterStandardWithTPV/')
         //compileOnly fileTree(include: ['*.aar'], dir: '/Users/atif.qamar/Desktop/StandardCheckout/CheckoutLib/')
         implementation 'com.google.code.gson:gson:2.8.8'
     }
