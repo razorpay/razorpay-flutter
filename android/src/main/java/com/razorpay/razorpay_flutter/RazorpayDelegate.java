@@ -50,7 +50,6 @@ public class RazorpayDelegate implements ActivityResultListener, ExternalWalletL
     public RazorpayDelegate(Activity activity) {
         this.activity = activity;
         upiTurbo = new UpiTurbo(activity);
-        /*checkout = new Checkout().upiTurbo(activity);*/
         this.gson = new Gson();
     }
 

@@ -35,7 +35,6 @@ public class UpiTurbo {
     }
 
     public void linkNewUpiAccount(String customerMobile, String color, MethodChannel.Result result){
-        Log.d("RazorpayDelegate" , "customerMobile "+customerMobile +" color "+color);
         this.pendingResult = result;
         Map<String, Object> reply = new HashMap<>();
         checkout.upiTurbo.linkNewUpiAccount(customerMobile, color , new GenericPluginCallback(){
