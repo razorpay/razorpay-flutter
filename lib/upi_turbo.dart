@@ -39,11 +39,11 @@ class UpiTurbo {
       if(getLinkedUpiAccountsResponse["data"]!=""){
         onSuccess(_getUpiAccounts(getLinkedUpiAccountsResponse["data"]));
       }else {
-        onFailure(Error(errorCode:"" , errorDescription: "No Account Found", errorReason: "sdk_error", errorSource: "unknown_source", errorStep: ""));
+        onFailure(Error(errorCode:"NO_ACCOUNT_FOUND" , errorDescription: "No Account Found"));
       }
 
     } on PlatformException catch (error) {
-      onFailure(Error(errorCode:error.code , errorDescription: error.message!, errorReason: "sdk_error", errorSource: "unknown_source", errorStep: ""));
+      onFailure(Error(errorCode:error.code , errorDescription: error.message!));
     }
   }
 
@@ -61,7 +61,7 @@ class UpiTurbo {
 
       await _channel.invokeMethod('manageUpiAccounts', requestManageUpiAccounts);
     } on PlatformException catch (error) {
-      onFailure(Error(errorCode:error.code , errorDescription: error.message!, errorReason: "sdk_error", errorSource: "unknown_source", errorStep: ""));
+      onFailure(Error(errorCode:error.code , errorDescription: error.message!));
     }
   }
 
@@ -77,7 +77,7 @@ class UpiTurbo {
   }
 
   void _emitFailure(OnFailure<Error> onFailure) {
-    onFailure(Error(errorCode:"" , errorDescription: "No Turbo Plugin Found", errorReason: "sdk_error", errorSource: "unknown_source", errorStep: ""));
+    onFailure(Error(errorCode:"AXIS_SDK_ERROR" , errorDescription: "No Turbo Plugin Found"));
   }
 
 }
