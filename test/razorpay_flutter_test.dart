@@ -11,12 +11,13 @@ void main() {
     late Razorpay razorpay;
 
     setUp(() {
+      // ignore: deprecated_member_use
       channel.setMockMethodCallHandler((MethodCall call) async {
         log.add(call);
         return {};
       });
 
-      razorpay = Razorpay();
+      razorpay = Razorpay('', packageName: 'com.razorpay.test');
 
       log.clear();
     });

@@ -1,10 +1,14 @@
-import 'package:flutter/services.dart';
-import 'package:eventify/eventify.dart';
-import 'package:package_info_plus/package_info_plus.dart';
 import 'dart:io' show Platform;
+
+import 'package:eventify/eventify.dart';
+import 'package:flutter/services.dart';
 import 'package:razorpay_flutter/upi_turbo.dart';
 
 class Razorpay {
+  /// Package name of end app
+  /// eg. com.yourcompany.app
+  final String packageName;
+
   // Response codes from platform
   static const _CODE_PAYMENT_SUCCESS = 0;
   static const _CODE_PAYMENT_ERROR = 1;
@@ -29,17 +33,15 @@ class Razorpay {
   // EventEmitter instance used for communication
   late EventEmitter _eventEmitter;
 
-  Razorpay(String key) {
+  Razorpay(String key, {required this.packageName}) {
     _eventEmitter = new EventEmitter();
     _setKeyID(key);
   }
 
-  Razorpay initUpiTurbo(){
-    upiTurbo = new UpiTurbo( _channel);
+  Razorpay initUpiTurbo() {
+    upiTurbo = new UpiTurbo(_channel);
     return this;
   }
-
-
 
   ///Set KeyId function
   void _setKeyID(String keyID) async {
@@ -61,8 +63,7 @@ class Razorpay {
       return;
     }
     if (Platform.isAndroid) {
-      PackageInfo packageInfo = await PackageInfo.fromPlatform();
-      _channel.invokeMethod('setPackageName', packageInfo.packageName);
+      _channel.invokeMethod('setPackageName', packageName);
     }
 
     var response = await _channel.invokeMethod('open', options);
@@ -166,7 +167,7 @@ class PaymentFailureResponse {
 
     if (responseBody is Map<dynamic, dynamic>) {
       return new PaymentFailureResponse(code, message, responseBody);
-    } else{
+    } else {
       Map<dynamic, dynamic> errorMap = new Map<dynamic, dynamic>();
       errorMap["reason"] = responseBody;
       return new PaymentFailureResponse(code, message, responseBody);
