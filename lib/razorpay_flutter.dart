@@ -139,16 +139,20 @@ class Razorpay {
 class PaymentSuccessResponse {
   String? paymentId;
   String? orderId;
+  String? subscriptionId;
   String? signature;
 
-  PaymentSuccessResponse(this.paymentId, this.orderId, this.signature);
+  PaymentSuccessResponse(
+      this.paymentId, this.orderId, this.subscriptionId, this.signature);
 
   static PaymentSuccessResponse fromMap(Map<dynamic, dynamic> map) {
     String? paymentId = map["razorpay_payment_id"];
     String? signature = map["razorpay_signature"];
     String? orderId = map["razorpay_order_id"];
+    String? subscriptionId = map["razorpay_subscription_id"];
 
-    return new PaymentSuccessResponse(paymentId, orderId, signature);
+    return new PaymentSuccessResponse(
+        paymentId, orderId, subscriptionId, signature);
   }
 }
 
