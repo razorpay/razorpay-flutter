@@ -162,14 +162,16 @@ class PaymentFailureResponse {
   static PaymentFailureResponse fromMap(Map<dynamic, dynamic> map) {
     var code = map["code"] as int?;
     var message = map["message"] as String?;
-    var responseBody;
+    var responseBody = map["responseBody"];
 
     if (responseBody is Map<dynamic, dynamic>) {
       return new PaymentFailureResponse(code, message, responseBody);
-    } else{
+    } else if (responseBody is String) {
       Map<dynamic, dynamic> errorMap = new Map<dynamic, dynamic>();
       errorMap["reason"] = responseBody;
-      return new PaymentFailureResponse(code, message, responseBody);
+      return new PaymentFailureResponse(code, message, errorMap);
+    } else {
+      return new PaymentFailureResponse(code, message, null);
     }
   }
 }
