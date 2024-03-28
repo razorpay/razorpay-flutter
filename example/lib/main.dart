@@ -250,148 +250,146 @@ class _MyHomePageState extends State<MyHomePage> {
         title: const Text('Razorpay Flutter Sample App'),
       ),
       body: SingleChildScrollView(
-        child: Container(
-          child: Column(
-            children: [
-              RZPEditText(
-                controller: keyController,
-                textInputType: TextInputType.text,
-                hintText: 'Enter Key',
-                labelText: 'Merchant Key',
-              ),
-              RZPEditText(
-                controller: amountController,
-                textInputType: TextInputType.number,
-                hintText: 'Enter Amount',
-                labelText: 'Amount',
-              ),
-              RZPEditText(
-                controller: orderIdController,
-                textInputType: TextInputType.text,
-                hintText: 'Enter Order Id',
-                labelText: 'Order Id',
-              ),
-              RZPEditText(
-                controller: mobileNumberController,
-                textInputType: TextInputType.number,
-                hintText: 'Enter Mobile Number',
-                labelText: 'Mobile Number',
-              ),
-              Container(
-                margin: const EdgeInsets.fromLTRB(12.0, 0, 12.0, 0),
-                child: const Text(
-                  '* Note - In case of TPV the orderId is mandatory.',
-                  style: TextStyle(
-                    fontStyle: FontStyle.italic,
-                  ),
+        child: Column(
+          children: [
+            RZPEditText(
+              controller: keyController,
+              textInputType: TextInputType.text,
+              hintText: 'Enter Key',
+              labelText: 'Merchant Key',
+            ),
+            RZPEditText(
+              controller: amountController,
+              textInputType: TextInputType.number,
+              hintText: 'Enter Amount',
+              labelText: 'Amount',
+            ),
+            RZPEditText(
+              controller: orderIdController,
+              textInputType: TextInputType.text,
+              hintText: 'Enter Order Id',
+              labelText: 'Order Id',
+            ),
+            RZPEditText(
+              controller: mobileNumberController,
+              textInputType: TextInputType.number,
+              hintText: 'Enter Mobile Number',
+              labelText: 'Mobile Number',
+            ),
+            Container(
+              margin: const EdgeInsets.fromLTRB(12.0, 0, 12.0, 0),
+              child: const Text(
+                '* Note - In case of TPV the orderId is mandatory.',
+                style: TextStyle(
+                  fontStyle: FontStyle.italic,
                 ),
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  Expanded(
-                    child: RZPButton(
-                      widthSize: 200.0,
-                      onPressed: () {
-                        merchantKeyValue = keyController.text;
-                        amountValue = amountController.text;
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Expanded(
+                  child: RZPButton(
+                    widthSize: 200.0,
+                    onPressed: () {
+                      merchantKeyValue = keyController.text;
+                      amountValue = amountController.text;
 
-                        razorpay.on(
-                          Razorpay.EVENT_PAYMENT_ERROR,
-                          handlePaymentErrorResponse,
-                        );
-                        razorpay.on(
-                          Razorpay.EVENT_PAYMENT_SUCCESS,
-                          handlePaymentSuccessResponse,
-                        );
-                        razorpay.on(
-                          Razorpay.EVENT_EXTERNAL_WALLET,
-                          handleExternalWalletSelected,
-                        );
-                        razorpay.open(getPaymentOptions());
-                      },
-                      labelText: 'Standard Checkout Pay',
-                    ),
+                      razorpay.on(
+                        Razorpay.EVENT_PAYMENT_ERROR,
+                        handlePaymentErrorResponse,
+                      );
+                      razorpay.on(
+                        Razorpay.EVENT_PAYMENT_SUCCESS,
+                        handlePaymentSuccessResponse,
+                      );
+                      razorpay.on(
+                        Razorpay.EVENT_EXTERNAL_WALLET,
+                        handleExternalWalletSelected,
+                      );
+                      razorpay.open(getPaymentOptions());
+                    },
+                    labelText: 'Standard Checkout Pay',
                   ),
-                  Expanded(
-                    child: RZPButton(
-                      widthSize: 200.0,
-                      onPressed: () {
-                        merchantKeyValue = keyController.text;
-                        amountValue = amountController.text;
-                        mobileNumberValue = mobileNumberController.text;
-                        orderIdValue = orderIdController.text;
+                ),
+                Expanded(
+                  child: RZPButton(
+                    widthSize: 200.0,
+                    onPressed: () {
+                      merchantKeyValue = keyController.text;
+                      amountValue = amountController.text;
+                      mobileNumberValue = mobileNumberController.text;
+                      orderIdValue = orderIdController.text;
 
-                        razorpay.on(
-                          Razorpay.EVENT_PAYMENT_ERROR,
-                          handlePaymentErrorResponse,
-                        );
-                        razorpay.on(
-                          Razorpay.EVENT_PAYMENT_SUCCESS,
-                          handlePaymentSuccessResponse,
-                        );
-                        razorpay.on(
-                          Razorpay.EVENT_EXTERNAL_WALLET,
-                          handleExternalWalletSelected,
-                        );
-                        razorpay.open(getTurboPaymentOptions());
-                      },
-                      labelText: 'Turbo Pay',
-                    ),
+                      razorpay.on(
+                        Razorpay.EVENT_PAYMENT_ERROR,
+                        handlePaymentErrorResponse,
+                      );
+                      razorpay.on(
+                        Razorpay.EVENT_PAYMENT_SUCCESS,
+                        handlePaymentSuccessResponse,
+                      );
+                      razorpay.on(
+                        Razorpay.EVENT_EXTERNAL_WALLET,
+                        handleExternalWalletSelected,
+                      );
+                      razorpay.open(getTurboPaymentOptions());
+                    },
+                    labelText: 'Turbo Pay',
                   ),
-                ],
-              ),
-              RZPEditText(
-                controller: mobileNumberController,
-                textInputType: TextInputType.number,
-                hintText: 'Enter Mobile Number',
-                labelText: 'Mobile Number',
-              ),
-              RZPButton(
-                widthSize: 200.0,
-                labelText: "Link New Upi Account",
-                onPressed: () {
-                  mobileNumberValue = mobileNumberController.text;
+                ),
+              ],
+            ),
+            RZPEditText(
+              controller: mobileNumberController,
+              textInputType: TextInputType.number,
+              hintText: 'Enter Mobile Number',
+              labelText: 'Mobile Number',
+            ),
+            RZPButton(
+              widthSize: 200.0,
+              labelText: "Link New Upi Account",
+              onPressed: () {
+                mobileNumberValue = mobileNumberController.text;
 
-                  razorpay.upiTurbo.linkNewUpiAccount(
-                    customerMobile: mobileNumberValue,
-                    color: "#ffffff",
-                    onSuccess: (List<UpiAccount> upiAccounts) {
-                      print(
-                        "Successfully Onboarded Account : ${upiAccounts.length}",
-                      );
-                    },
-                    onFailure: (Error error) {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(
-                          content: Text("Error : ${error.errorDescription}"),
-                        ),
-                      );
-                    },
-                  );
-                },
-              ),
-              RZPButton(
-                widthSize: 200.0,
-                labelText: "Manage Upi Account",
-                onPressed: () {
-                  mobileNumberValue = mobileNumberController.text;
+                razorpay.upiTurbo.linkNewUpiAccount(
+                  customerMobile: mobileNumberValue,
+                  color: "#ffffff",
+                  onSuccess: (List<UpiAccount> upiAccounts) {
+                    debugPrint(
+                      "Successfully Onboarded Account : ${upiAccounts.length}",
+                    );
+                  },
+                  onFailure: (Error error) {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text("Error : ${error.errorDescription}"),
+                      ),
+                    );
+                  },
+                );
+              },
+            ),
+            RZPButton(
+              widthSize: 200.0,
+              labelText: "Manage Upi Account",
+              onPressed: () {
+                mobileNumberValue = mobileNumberController.text;
 
-                  razorpay.upiTurbo.manageUpiAccounts(
-                    customerMobile: mobileNumberValue,
-                    color: "#ffffff",
-                    onFailure: (Error error) {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(
-                          content: Text("Error : ${error.errorDescription}"),
-                        ),
-                      );
-                    },
-                  );
-                },
-              ),
-            ],
-          ),
+                razorpay.upiTurbo.manageUpiAccounts(
+                  customerMobile: mobileNumberValue,
+                  color: "#ffffff",
+                  onFailure: (Error error) {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text("Error : ${error.errorDescription}"),
+                      ),
+                    );
+                  },
+                );
+              },
+            ),
+          ],
         ),
       ),
     );
@@ -477,27 +475,29 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   void showAlertDialog(BuildContext context, String title, String message) {
-    // set up the buttons
-    Widget continueButton = ElevatedButton(
-      child: const Text("Continue"),
-      onPressed: () {},
-    );
     // set up the AlertDialog
     AlertDialog alert = AlertDialog(
       title: Text(title),
       content: Text(message),
     );
+    // show the dialog
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return alert;
+      },
+    );
   }
 }
 
 class RZPButton extends StatelessWidget {
-  String labelText;
-  VoidCallback onPressed;
-  double widthSize = 100.0;
+  final String labelText;
+  final VoidCallback onPressed;
+  final double widthSize;
 
-  RZPButton({
+  const RZPButton({
     super.key,
-    required this.widthSize,
+    this.widthSize = 100.0,
     required this.labelText,
     required this.onPressed,
   });
@@ -525,12 +525,12 @@ class RZPButton extends StatelessWidget {
 }
 
 class RZPEditText extends StatelessWidget {
-  String hintText;
-  String labelText;
-  TextInputType textInputType;
-  TextEditingController controller;
+  final String hintText;
+  final String labelText;
+  final TextInputType textInputType;
+  final TextEditingController controller;
 
-  RZPEditText({
+  const RZPEditText({
     super.key,
     required this.textInputType,
     required this.hintText,
