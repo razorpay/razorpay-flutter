@@ -1,6 +1,6 @@
-# example
+# razorpay_flutter_example
 
-Example project which is integrated with razorpay-flutter SDK
+Demonstrates how to use the razorpay_flutter plugin.
 
 ## Getting Started
 

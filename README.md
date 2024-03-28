@@ -1,6 +1,6 @@
 # Razorpay Flutter
 
-Flutter plugin for Razorpay SDK.
+Flutter plugin for Razorpay SDK. To know more about Razorpay, visit https://razorpay.com.
 
 [![pub package](https://img.shields.io/pub/v/razorpay_flutter.svg)](https://pub.dartlang.org/packages/razorpay_flutter)
 
