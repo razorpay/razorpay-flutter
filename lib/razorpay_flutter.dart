@@ -23,23 +23,21 @@ class Razorpay {
   static const INCOMPATIBLE_PLUGIN = 4;
   static const UNKNOWN_ERROR = 100;
 
-  static const MethodChannel _channel = const MethodChannel('razorpay_flutter');
+  static const MethodChannel _channel = MethodChannel('razorpay_flutter');
   late UpiTurbo upiTurbo;
 
   // EventEmitter instance used for communication
   late EventEmitter _eventEmitter;
 
   Razorpay(String key) {
-    _eventEmitter = new EventEmitter();
+    _eventEmitter = EventEmitter();
     _setKeyID(key);
   }
 
-  Razorpay initUpiTurbo(){
-    upiTurbo = new UpiTurbo( _channel);
+  Razorpay initUpiTurbo() {
+    upiTurbo = UpiTurbo(_channel);
     return this;
   }
-
-
 
   ///Set KeyId function
   void _setKeyID(String keyID) async {
@@ -55,8 +53,8 @@ class Razorpay {
         'type': _CODE_PAYMENT_ERROR,
         'data': {
           'code': INVALID_OPTIONS,
-          'message': validationResult['message']
-        }
+          'message': validationResult['message'],
+        },
       });
       return;
     }
@@ -95,7 +93,10 @@ class Razorpay {
       default:
         eventName = 'error';
         payload = PaymentFailureResponse(
-            UNKNOWN_ERROR, 'An unknown error occurred.', null);
+          UNKNOWN_ERROR,
+          'An unknown error occurred.',
+          null,
+        );
     }
 
     _eventEmitter.emit(eventName, null, payload);
@@ -103,9 +104,10 @@ class Razorpay {
 
   /// Registers event listeners for payment events
   void on(String event, Function handler) {
-    EventCallback cb = (event, cont) {
+    void cb(Event event, Object? context) {
       handler(event.eventData);
-    };
+    }
+
     _eventEmitter.on(event, null, cb);
     _resync();
   }
@@ -129,7 +131,8 @@ class Razorpay {
     if (key == null) {
       return {
         'success': false,
-        'message': 'Key is required. Please check if key is present in options.'
+        'message':
+            'Key is required. Please check if key is present in options.',
       };
     }
     return {'success': true};
@@ -148,7 +151,7 @@ class PaymentSuccessResponse {
     String? signature = map["razorpay_signature"];
     String? orderId = map["razorpay_order_id"];
 
-    return new PaymentSuccessResponse(paymentId, orderId, signature);
+    return PaymentSuccessResponse(paymentId, orderId, signature);
   }
 }
 
@@ -165,11 +168,11 @@ class PaymentFailureResponse {
     var responseBody;
 
     if (responseBody is Map<dynamic, dynamic>) {
-      return new PaymentFailureResponse(code, message, responseBody);
-    } else{
-      Map<dynamic, dynamic> errorMap = new Map<dynamic, dynamic>();
+      return PaymentFailureResponse(code, message, responseBody);
+    } else {
+      Map<dynamic, dynamic> errorMap = <dynamic, dynamic>{};
       errorMap["reason"] = responseBody;
-      return new PaymentFailureResponse(code, message, responseBody);
+      return PaymentFailureResponse(code, message, responseBody);
     }
   }
 }
@@ -181,6 +184,6 @@ class ExternalWalletResponse {
 
   static ExternalWalletResponse fromMap(Map<dynamic, dynamic> map) {
     var walletName = map["external_wallet"] as String?;
-    return new ExternalWalletResponse(walletName);
+    return ExternalWalletResponse(walletName);
   }
 }

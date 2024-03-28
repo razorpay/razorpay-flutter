@@ -14,19 +14,17 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Razorpay Flutter Sample App',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
+  const MyHomePage({super.key});
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
@@ -56,14 +54,46 @@ class MyHomePage extends StatefulWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: const Text('Razorpay Flutter Sample App'),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text(
-              'Pay with Razorpay',
+            const Text('Pay with Razorpay'),
+            ElevatedButton(
+              onPressed: () {
+                Razorpay razorpay = Razorpay();
+                var options = {
+                  'key': 'rzp_live_ILgsfZCZoFIKMb',
+                  'amount': 100,
+                  'name': 'Acme Corp.',
+                  'description': 'Fine T-Shirt',
+                  'retry': {'enabled': true, 'max_count': 1},
+                  'send_sms_hash': true,
+                  'prefill': {
+                    'contact': '8888888888',
+                    'email': 'test@razorpay.com',
+                  },
+                  'external': {
+                    'wallets': ['paytm'],
+                  },
+                };
+                razorpay.on(
+                  Razorpay.EVENT_PAYMENT_ERROR,
+                  handlePaymentErrorResponse,
+                );
+                razorpay.on(
+                  Razorpay.EVENT_PAYMENT_SUCCESS,
+                  handlePaymentSuccessResponse,
+                );
+                razorpay.on(
+                  Razorpay.EVENT_EXTERNAL_WALLET,
+                  handleExternalWalletSelected,
+                );
+                razorpay.open(options);
+              },
+              child: const Text('Pay with Razorpay'),
             ),
             ElevatedButton(onPressed: (){
                   Razorpay razorpay = Razorpay();
@@ -143,11 +173,6 @@ class MyHomePage extends StatefulWidget {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 
@@ -223,7 +248,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: const Text('Razorpay Flutter Sample App'),
       ),
       body: SingleChildScrollView(
         child: Container(
@@ -254,8 +279,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 labelText: 'Mobile Number',
               ),
               Container(
-                margin: EdgeInsets.fromLTRB(12.0, 0, 12.0, 0),
-                child: Text(
+                margin: const EdgeInsets.fromLTRB(12.0, 0, 12.0, 0),
+                child: const Text(
                   '* Note - In case of TPV the orderId is mandatory.',
                   style: TextStyle(
                     fontStyle: FontStyle.italic,
@@ -343,14 +368,14 @@ class _MyHomePageState extends State<MyHomePage> {
 
   Map<String, Object> getPaymentOptions() {
     return {
-      'key': '$merchantKeyValue',
+      'key': merchantKeyValue,
       'amount': int.parse(amountValue),
       'name': 'Acme Corp.',
       'description': 'Fine T-Shirt',
       'retry': {'enabled': true, 'max_count': 1},
       'send_sms_hash': true,
       'prefill': {
-        'contact': '$mobileNumberValue',
+        'contact': mobileNumberValue,
         'email': 'test@razorpay.com'
       },
       'external': {
@@ -364,7 +389,7 @@ class _MyHomePageState extends State<MyHomePage> {
       'amount': int.parse(amountValue),
       'currency': 'INR',
       'prefill':{
-        'contact':'$mobileNumberValue',
+        'contact':mobileNumberValue,
         'email':'test@razorpay.com'
       },
       'theme':{
@@ -375,8 +400,8 @@ class _MyHomePageState extends State<MyHomePage> {
         'enabled':false,
         'max_count':4
       },
-      'key': '$merchantKeyValue',
-      'order_id':'$orderIdValue',
+      'key': merchantKeyValue,
+      'order_id':orderIdValue,
       'disable_redesign_v15': false,
       'experiments.upi_turbo':true,
       'ep':'https://api-web-turbo-upi.ext.dev.razorpay.in/test/checkout.html?branch=feat/turbo/tpv'
@@ -421,13 +446,6 @@ class _MyHomePageState extends State<MyHomePage> {
       title: Text(title),
       content: Text(message),
     );
-    // show the dialog
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return alert;
-      },
-    );
   }
 }
 
@@ -437,7 +455,7 @@ class RZPButton extends StatelessWidget {
   double widthSize = 100.0;
 
   RZPButton(
-      {required this.widthSize,
+      {super.key, required this.widthSize,
       required this.labelText,
       required this.onPressed});
 
@@ -446,17 +464,17 @@ class RZPButton extends StatelessWidget {
     return Container(
       width: widthSize,
       height: 50.0,
-      margin: EdgeInsets.fromLTRB(12.0, 8.0, 8.0, 12.0),
+      margin: const EdgeInsets.fromLTRB(12.0, 8.0, 8.0, 12.0),
       child: ElevatedButton(
         onPressed: onPressed,
-        child: Text(
-          labelText,
-          style: TextStyle(
-            color: Colors.white,
-          ),
-        ),
         style: ButtonStyle(
           backgroundColor: MaterialStateProperty.all(Colors.indigoAccent),
+        ),
+        child: Text(
+          labelText,
+          style: const TextStyle(
+            color: Colors.white,
+          ),
         ),
       ),
     );
@@ -470,7 +488,7 @@ class RZPEditText extends StatelessWidget {
   TextEditingController controller;
 
   RZPEditText(
-      {required this.textInputType,
+      {super.key, required this.textInputType,
       required this.hintText,
       required this.labelText,
       required this.controller});
@@ -478,15 +496,15 @@ class RZPEditText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(12.0),
-      padding: EdgeInsets.fromLTRB(16.0, 0, 0, 0),
+      margin: const EdgeInsets.all(12.0),
+      padding: const EdgeInsets.fromLTRB(16.0, 0, 0, 0),
       decoration: BoxDecoration(
         border: Border.all(),
       ),
       child: TextField(
         controller: controller,
         keyboardType: textInputType,
-        style: TextStyle(
+        style: const TextStyle(
           color: Colors.black,
         ),
         decoration: InputDecoration(
