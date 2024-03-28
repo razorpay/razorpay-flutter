@@ -1,6 +1,6 @@
 import 'dart:convert';
 import 'package:flutter/services.dart';
-import 'package:razorpay_flutter/model/Error.dart';
+import 'package:razorpay_flutter/model/error.dart';
 import 'package:razorpay_flutter/model/upi_account.dart';
 
 typedef OnSuccess<T> = void Function(T result);

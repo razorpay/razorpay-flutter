@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:razorpay_flutter/model/upi_account.dart';
 import 'package:razorpay_flutter/razorpay_flutter.dart';
-import 'package:razorpay_flutter/model/Error.dart';
+import 'package:razorpay_flutter/model/error.dart';
 
 void main() {
   runApp(const MyApp());
