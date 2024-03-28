@@ -20,7 +20,7 @@ void main() {
         },
       );
 
-      razorpay = Razorpay();
+      razorpay = Razorpay('rzp_test_1DP5mmOlF5G5aa');
 
       log.clear();
     });
