@@ -78,19 +78,22 @@ class MyHomePage extends StatefulWidget {
                     'wallets': ['paytm'],
                   },
                 };
-                razorpay.on(
-                  Razorpay.EVENT_PAYMENT_ERROR,
-                  handlePaymentErrorResponse,
-                );
-                razorpay.on(
-                  Razorpay.EVENT_PAYMENT_SUCCESS,
-                  handlePaymentSuccessResponse,
-                );
-                razorpay.on(
-                  Razorpay.EVENT_EXTERNAL_WALLET,
-                  handleExternalWalletSelected,
-                );
-                razorpay.open(options);
+
+                razorpay
+                  ..clear()
+                  ..on(
+                    Razorpay.EVENT_PAYMENT_ERROR,
+                    handlePaymentErrorResponse,
+                  )
+                  ..on(
+                    Razorpay.EVENT_PAYMENT_SUCCESS,
+                    handlePaymentSuccessResponse,
+                  )
+                  ..on(
+                    Razorpay.EVENT_EXTERNAL_WALLET,
+                    handleExternalWalletSelected,
+                  )
+                  ..open(options);
               },
               child: const Text('Pay with Razorpay'),
             ),
@@ -129,10 +132,22 @@ class MyHomePage extends StatefulWidget {
                     'experiments.upi_turbo':true,
                     'ep':'https://api-web-turbo-upi.ext.dev.razorpay.in/test/checkout.html?branch=feat/turbo/tpv'
                   };
-                  razorpay.on(Razorpay.EVENT_PAYMENT_ERROR, handlePaymentErrorResponse);
-                  razorpay.on(Razorpay.EVENT_PAYMENT_SUCCESS, handlePaymentSuccessResponse);
-                  razorpay.on(Razorpay.EVENT_EXTERNAL_WALLET, handleExternalWalletSelected);
-                  razorpay.open(options);
+
+                  razorpay
+                    ..clear
+                    ..on(
+                      Razorpay.EVENT_PAYMENT_ERROR,
+                      handlePaymentErrorResponse,
+                    )
+                    ..on(
+                      Razorpay.EVENT_PAYMENT_SUCCESS,
+                      handlePaymentSuccessResponse,
+                    )
+                    ..on(
+                      Razorpay.EVENT_EXTERNAL_WALLET,
+                      handleExternalWalletSelected,
+                    )
+                    ..open(options);
                 },
                 child: const Text("Pay with Razorpay")),
 
@@ -295,19 +310,21 @@ class _MyHomePageState extends State<MyHomePage> {
                       merchantKeyValue = keyController.text;
                       amountValue = amountController.text;
 
-                      razorpay.on(
-                        Razorpay.EVENT_PAYMENT_ERROR,
-                        handlePaymentErrorResponse,
-                      );
-                      razorpay.on(
-                        Razorpay.EVENT_PAYMENT_SUCCESS,
-                        handlePaymentSuccessResponse,
-                      );
-                      razorpay.on(
-                        Razorpay.EVENT_EXTERNAL_WALLET,
-                        handleExternalWalletSelected,
-                      );
-                      razorpay.open(getPaymentOptions());
+                      razorpay
+                        ..clear()
+                        ..on(
+                          Razorpay.EVENT_PAYMENT_ERROR,
+                          handlePaymentErrorResponse,
+                        )
+                        ..on(
+                          Razorpay.EVENT_PAYMENT_SUCCESS,
+                          handlePaymentSuccessResponse,
+                        )
+                        ..on(
+                          Razorpay.EVENT_EXTERNAL_WALLET,
+                          handleExternalWalletSelected,
+                        )
+                        ..open(getPaymentOptions());
                     },
                     labelText: 'Standard Checkout Pay',
                   ),
@@ -321,19 +338,21 @@ class _MyHomePageState extends State<MyHomePage> {
                       mobileNumberValue = mobileNumberController.text;
                       orderIdValue = orderIdController.text;
 
-                      razorpay.on(
-                        Razorpay.EVENT_PAYMENT_ERROR,
-                        handlePaymentErrorResponse,
-                      );
-                      razorpay.on(
-                        Razorpay.EVENT_PAYMENT_SUCCESS,
-                        handlePaymentSuccessResponse,
-                      );
-                      razorpay.on(
-                        Razorpay.EVENT_EXTERNAL_WALLET,
-                        handleExternalWalletSelected,
-                      );
-                      razorpay.open(getTurboPaymentOptions());
+                      razorpay
+                        ..clear()
+                        ..on(
+                          Razorpay.EVENT_PAYMENT_ERROR,
+                          handlePaymentErrorResponse,
+                        )
+                        ..on(
+                          Razorpay.EVENT_PAYMENT_SUCCESS,
+                          handlePaymentSuccessResponse,
+                        )
+                        ..on(
+                          Razorpay.EVENT_EXTERNAL_WALLET,
+                          handleExternalWalletSelected,
+                        )
+                        ..open(getTurboPaymentOptions());
                     },
                     labelText: 'Turbo Pay',
                   ),
@@ -475,10 +494,18 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   void showAlertDialog(BuildContext context, String title, String message) {
+    // set up the buttons
+    Widget continueButton = ElevatedButton(
+      child: const Text("Continue"),
+      onPressed: () {
+        Navigator.of(context).pop();
+      },
+    );
     // set up the AlertDialog
     AlertDialog alert = AlertDialog(
       title: Text(title),
       content: Text(message),
+      actions: [continueButton],
     );
     // show the dialog
     showDialog(
