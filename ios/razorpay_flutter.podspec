@@ -7,7 +7,7 @@ Pod::Spec.new do |s|
   s.version          = '1.1.10'
   s.summary          = 'Flutter plugin for Razorpay SDK.'
   s.description      = <<-DESC
-Flutter plugin for Razorpay SDK. To know more about Razorpay, visit http://razorpay.com.
+Flutter plugin for Razorpay SDK. To know more about Razorpay, visit https://razorpay.com.
                        DESC
   s.homepage         = 'https://github.com/razorpay/razorpay-flutter'
   s.license          = { :file => '../LICENSE' }
@@ -17,7 +17,7 @@ Flutter plugin for Razorpay SDK. To know more about Razorpay, visit http://razor
   s.public_header_files = 'Classes/**/*.h'
   s.dependency 'Flutter'
   s.dependency 'razorpay-pod'
-  s.platform = :ios, '11.0'
+  s.platform = :ios, '12.0'
 
   # Flutter.framework does not contain a i386 slice.
   s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES', 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386' }

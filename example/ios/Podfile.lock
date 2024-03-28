@@ -37,7 +37,7 @@ SPEC CHECKSUMS:
   fluttertoast: 31b00dabfa7fb7bacd9e7dbee580d7a2ff4bf265
   package_info_plus: 58f0028419748fad15bf008b270aaa8e54380b1c
   razorpay-pod: 29b4d9e0a868a9234eaa7be0fbd09484bbfa9973
-  razorpay_flutter: ca05ba41f60c241c8a6ce9ae818ba67decf3eff3
+  razorpay_flutter: b382407f50c9a23c5b6e7fdac3358f31df916fe7
   Toast: ec33c32b8688982cecc6348adeae667c1b9938da
 
 PODFILE CHECKSUM: 819463e6a0290f5a72f145ba7cde16e8b6ef0796
