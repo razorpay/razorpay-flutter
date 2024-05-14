@@ -538,7 +538,7 @@ class RZPButton extends StatelessWidget {
       child: ElevatedButton(
         onPressed: onPressed,
         style: ButtonStyle(
-          backgroundColor: MaterialStateProperty.all(Colors.indigoAccent),
+          backgroundColor: WidgetStateProperty.all(Colors.indigoAccent),
         ),
         child: Text(
           labelText,
