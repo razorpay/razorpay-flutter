@@ -1,5 +1,7 @@
 package com.razorpay.razorpay_flutter;
 
+import android.util.Log;
+
 import androidx.annotation.NonNull;
 
 import org.json.JSONException;
@@ -53,6 +55,7 @@ public class RazorpayFlutterPlugin implements FlutterPlugin, MethodCallHandler, 
      */
     private RazorpayFlutterPlugin(Registrar registrar) {
         this.razorpayDelegate = new RazorpayDelegate(registrar.activity());
+        this.razorpayDelegate.setPackageName(registrar.activity().getPackageName());
         registrar.addActivityResultListener(razorpayDelegate);
     }
 
@@ -65,10 +68,6 @@ public class RazorpayFlutterPlugin implements FlutterPlugin, MethodCallHandler, 
 
             case "open":
                 razorpayDelegate.openCheckout((Map<String, Object>) call.arguments, result);
-                break;
-
-            case "setPackageName":
-                razorpayDelegate.setPackageName((String)call.arguments);
                 break;
 
             case "resync":
@@ -86,6 +85,7 @@ public class RazorpayFlutterPlugin implements FlutterPlugin, MethodCallHandler, 
     public void onAttachedToActivity(@NonNull ActivityPluginBinding binding) {
         this.razorpayDelegate = new RazorpayDelegate(binding.getActivity());
         this.pluginBinding = binding;
+        razorpayDelegate.setPackageName(binding.getActivity().getPackageName());
         binding.addActivityResultListener(razorpayDelegate);
     }
 

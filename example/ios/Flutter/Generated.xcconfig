@@ -1,6 +1,6 @@
 // This is a generated file; do not edit or check into version control.
-FLUTTER_ROOT=/Users/ramprasad.a/Developer/flutter
-FLUTTER_APPLICATION_PATH=/Users/ramprasad.a/Documents/RamprasadA/project/razorpay-flutter/example
+FLUTTER_ROOT=/Users/vivek.shindhe/fvm/versions/3.22.0
+FLUTTER_APPLICATION_PATH=/Users/vivek.shindhe/Razorpay/Flutter/razorpay-flutter/example
 COCOAPODS_PARALLEL_CODE_SIGN=true
 FLUTTER_TARGET=lib/main.dart
 FLUTTER_BUILD_DIR=build

@@ -12,7 +12,6 @@ dependencies:
     sdk: flutter
   eventify: ^1.0.0
   fluttertoast: ^8.0.7
-  package_info_plus: ^4.0.1
 
 dev_dependencies:
   flutter_test:
