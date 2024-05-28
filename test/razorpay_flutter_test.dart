@@ -2,7 +2,8 @@ import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:razorpay_flutter/razorpay_flutter.dart';
 
-void main() {
+void main(List<String> args) {
+  assert(args.length == 1, "Please provide the key as an argument.");
   group("$Razorpay", () {
     const MethodChannel channel = MethodChannel("razorpay_flutter");
 
@@ -16,7 +17,7 @@ void main() {
         return {};
       });
 
-      razorpay = Razorpay();
+      razorpay = Razorpay(args[0]);
 
       log.clear();
     });
