@@ -45,11 +45,17 @@ public class RazorpayDelegate implements ActivityResultListener, ExternalWalletL
     private String packageName;
     private Checkout checkout;
     Gson gson ;
-    private UpiTurbo upiTurbo;
+    private Class upiTurbo;
 
     public RazorpayDelegate(Activity activity) {
         this.activity = activity;
-        upiTurbo = new UpiTurbo(activity);
+        try {
+            upiTurbo = Class.forName("com.razorpay.upi_turbo.UpiTurbo");
+
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+
         this.gson = new Gson();
     }
 
@@ -185,20 +191,29 @@ public class RazorpayDelegate implements ActivityResultListener, ExternalWalletL
     }
 
     public void setKeyID(String keyId,  Result result){
-        upiTurbo.setKeyID(keyId, result);
+//        upiTurbo.setKeyID(keyId, result);
     }
 
     public void linkNewUpiAccount(String customerMobile, String color, Result result){
-        upiTurbo.linkNewUpiAccount(customerMobile, color, result);
+        if (upiTurbo!=null){
+//            upiTurbo.linkNewUpiAccount(customerMobile, color, result);
+        }
+
     }
 
 
     public void manageUpiAccounts(String customerMobile, String color, Result result){
-        upiTurbo.manageUpiAccounts(customerMobile, color, result);
+        if (upiTurbo != null){
+//            upiTurbo.manageUpiAccounts(customerMobile, color, result);
+        }
+
     }
 
     public  boolean isTurboPluginAvailable(Result result) {
-        return upiTurbo.isTurboPluginAvailable(result);
+        if (upiTurbo!=null){
+//            return upiTurbo.isTurboPluginAvailable(result);
+        }
+        return false;
     }
 
 }
