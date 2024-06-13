@@ -2,15 +2,10 @@ package com.razorpay.upi_turbo;
 
 import android.app.Activity;
 import android.util.Log;
-
-
-
 import com.google.gson.Gson;
 import com.razorpay.Checkout;
 import com.razorpay.GenericPluginCallback;
-
 import org.json.JSONObject;
-
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -58,7 +53,7 @@ public class UpiTurbo {
                 } catch (Exception e) {
                     Log.d("Exception", e.getMessage());
                 }
-//                pendingResult.error(errorCode, errorDescription, jsonObject.toString());
+                pendingResult.error(errorCode, errorDescription, jsonObject.toString());
             }
 
         });
@@ -85,7 +80,7 @@ public class UpiTurbo {
                 } catch (Exception e) {
                     Log.d("Exception", e.getMessage());
                 }
-//                pendingResult.error(errorCode, errorDescription, jsonObject.toString());
+                pendingResult.error(errorCode, errorDescription, jsonObject.toString());
             }
         });
     }
@@ -113,7 +108,7 @@ public class UpiTurbo {
 
     private void sendReply(Map<String, Object> data) {
         if (pendingResult != null) {
-//            pendingResult.success(data);
+            pendingResult.success(data);
             pendingReply = null;
         } else {
             pendingReply = data;

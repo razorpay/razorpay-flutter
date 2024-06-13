@@ -1,2 +1,4 @@
+package android
+
 rootProject.name = 'razorpay_flutter'
 include ':upi-turbo'

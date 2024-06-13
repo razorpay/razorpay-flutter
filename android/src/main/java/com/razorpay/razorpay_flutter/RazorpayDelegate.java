@@ -4,8 +4,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.util.Log;
 
-import androidx.annotation.NonNull;
-
 import com.google.gson.Gson;
 import com.razorpay.Checkout;
 import com.razorpay.CheckoutActivity;
@@ -16,6 +14,7 @@ import com.razorpay.PaymentResultWithDataListener;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -45,12 +44,13 @@ public class RazorpayDelegate implements ActivityResultListener, ExternalWalletL
     private String packageName;
     private Checkout checkout;
     Gson gson ;
-    private Class upiTurbo;
+    private final Class<?> upiTurbo;
 
     public RazorpayDelegate(Activity activity) {
         this.activity = activity;
         try {
             upiTurbo = Class.forName("com.razorpay.upi_turbo.UpiTurbo");
+            checkout = new Checkout();
 
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
@@ -161,7 +161,7 @@ public class RazorpayDelegate implements ActivityResultListener, ExternalWalletL
         if (paymentData.getData().has("razorpay_subscription_id")) {
             try {
                 data.put("razorpay_subscription_id", paymentData.getData().optString("razorpay_subscription_id"));
-            } catch (Exception e) {}
+            } catch (Exception ignored) {}
         }
         reply.put("data", data);
         sendReply(reply);
@@ -191,29 +191,46 @@ public class RazorpayDelegate implements ActivityResultListener, ExternalWalletL
     }
 
     public void setKeyID(String keyId,  Result result){
-//        upiTurbo.setKeyID(keyId, result);
+        try {
+            upiTurbo.getMethod("setKeyID", String.class, Result.class).invoke(upiTurbo.getDeclaredConstructor(Activity.class).newInstance(activity), keyId, result);
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException |
+                 InstantiationException exception) {
+            throw new RuntimeException(exception);
+        }
     }
 
     public void linkNewUpiAccount(String customerMobile, String color, Result result){
-        if (upiTurbo!=null){
-//            upiTurbo.linkNewUpiAccount(customerMobile, color, result);
+        try {
+            upiTurbo.getMethod("linkNewUpiAccount", String.class, String.class, Result.class).invoke(upiTurbo.getDeclaredConstructor(Activity.class).newInstance(activity), customerMobile, color, result);
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException |
+                 InstantiationException exception) {
+            throw new RuntimeException(exception);
         }
 
     }
 
 
     public void manageUpiAccounts(String customerMobile, String color, Result result){
-        if (upiTurbo != null){
-//            upiTurbo.manageUpiAccounts(customerMobile, color, result);
+        try {
+            upiTurbo.getMethod("manageUpiAccounts", String.class, String.class, Result.class).invoke(upiTurbo.getDeclaredConstructor(Activity.class).newInstance(activity), customerMobile, color, result);
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException |
+                 InstantiationException exception) {
+            throw new RuntimeException(exception);
         }
-
     }
 
-    public  boolean isTurboPluginAvailable(Result result) {
-        if (upiTurbo!=null){
-//            return upiTurbo.isTurboPluginAvailable(result);
+    public boolean isTurboPluginAvailable(Result result) {
+        try {
+            Object response = upiTurbo.getMethod("isTurboPluginAvailable", Result.class).invoke(upiTurbo.getDeclaredConstructor(Activity.class).newInstance(activity), result);
+            if (response instanceof Boolean) {
+                return (boolean) response;
+            } else {
+                return false;
+            }
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException |
+                 InstantiationException exception) {
+            return false;
         }
-        return false;
     }
 
 }
