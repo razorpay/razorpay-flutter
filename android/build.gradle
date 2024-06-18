@@ -27,22 +27,39 @@ apply plugin: 'com.android.library'
 apply plugin: 'org.jetbrains.kotlin.android'
 
 android {
-    compileSdkVersion 34
-    namespace 'com.razorpay.razorpay_flutter'
+    compileSdk 34
+
 
     defaultConfig {
         minSdkVersion 21
         targetSdkVersion 34
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
+
+    flavorDimensions "sdk"
+
+    productFlavors {
+        standard {
+            dimension "sdk"
+        }
+        standardWithTurbo {
+            dimension "sdk"
+        }
+    }
+
     lintOptions {
         disable 'InvalidPackage'
     }
     dependencies {
         implementation fileTree(dir: 'libs', include: ['*.jar'])
-        api 'com.razorpay:checkout:1.6.+'
         implementation 'com.google.code.gson:gson:2.8.8'
-        implementation fileTree(dir: 'upi-turbo/build/outputs/', include: ['*-debug.aar'])
+        //implementation fileTree(dir: 'upi-turbo/build/outputs/', include: ['*-debug.aar'])
+
+        // Dependencies for standard flavor
+        standardImplementation 'com.razorpay:checkout:1.6.+'
+
+        // Dependencies for standardWithTurbo flavor
+        standardWithTurboImplementation fileTree(dir: '/Users/shibu.prasad/Desktop/FlutterStandardTPVLibrary/', include: ['*.aar'])
     }
     kotlinOptions {
         jvmTarget = '17'

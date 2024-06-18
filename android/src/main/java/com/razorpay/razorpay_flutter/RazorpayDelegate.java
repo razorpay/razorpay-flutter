@@ -49,8 +49,7 @@ public class RazorpayDelegate implements ActivityResultListener, ExternalWalletL
     public RazorpayDelegate(Activity activity) {
         this.activity = activity;
         try {
-            upiTurbo = Class.forName("com.razorpay.upi_turbo.UpiTurbo");
-            checkout = new Checkout();
+            upiTurbo = Class.forName("android.src.turbo.java.com.razorpay.razorpay_flutter.UpiTurbo");
 
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
