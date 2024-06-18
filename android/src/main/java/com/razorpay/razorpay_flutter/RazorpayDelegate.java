@@ -184,22 +184,11 @@ public class RazorpayDelegate implements ActivityResultListener, ExternalWalletL
     }
 
     public void setKeyID(String keyId,  Result result){
-        /*try {
-           // upiTurbo.getMethod("setKeyID", String.class, Result.class).invoke(upiTurbo.getDeclaredConstructor(Activity.class).newInstance(activity), keyId, result);
-        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException |
-                 InstantiationException exception) {
-            throw new RuntimeException(exception);
-        }*/
+        upiTurbo.setKeyID(keyId, result);
     }
 
     public void linkNewUpiAccount(String customerMobile, String color, Result result){
-       /* try {
-           // upiTurbo.getMethod("linkNewUpiAccount", String.class, String.class, Result.class).invoke(upiTurbo.getDeclaredConstructor(Activity.class).newInstance(activity), customerMobile, color, result);
-        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException |
-                 InstantiationException exception) {
-            throw new RuntimeException(exception);
-        }*/
-
+        upiTurbo.linkNewUpiAccount(customerMobile, color, result);
     }
 
 

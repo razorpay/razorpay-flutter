@@ -41,9 +41,11 @@ android {
     productFlavors {
         standard {
             dimension "sdk"
+            matchingFallbacks = ['debug', 'release']
         }
         standardWithTurbo {
             dimension "sdk"
+            matchingFallbacks = ['debug', 'release']
         }
     }
 
