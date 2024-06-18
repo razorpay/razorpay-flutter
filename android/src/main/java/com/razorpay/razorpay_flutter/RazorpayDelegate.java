@@ -14,7 +14,6 @@ import com.razorpay.PaymentResultWithDataListener;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -44,17 +43,12 @@ public class RazorpayDelegate implements ActivityResultListener, ExternalWalletL
     private String packageName;
     private Checkout checkout;
     Gson gson ;
-    private final Class<?> upiTurbo;
+    private UpiTurbo upiTurbo;
 
     public RazorpayDelegate(Activity activity) {
         this.activity = activity;
-        try {
-            upiTurbo = Class.forName("android.src.turbo.java.com.razorpay.razorpay_flutter.UpiTurbo");
-
-        } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);
-        }
-
+        upiTurbo = new UpiTurbo(activity);
+        Log.d("IsTurboPlugin", String.valueOf(upiTurbo.isTurboPluginAvailable(null)));
         this.gson = new Gson();
     }
 
@@ -190,46 +184,32 @@ public class RazorpayDelegate implements ActivityResultListener, ExternalWalletL
     }
 
     public void setKeyID(String keyId,  Result result){
-        try {
-            upiTurbo.getMethod("setKeyID", String.class, Result.class).invoke(upiTurbo.getDeclaredConstructor(Activity.class).newInstance(activity), keyId, result);
+        /*try {
+           // upiTurbo.getMethod("setKeyID", String.class, Result.class).invoke(upiTurbo.getDeclaredConstructor(Activity.class).newInstance(activity), keyId, result);
         } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException |
                  InstantiationException exception) {
             throw new RuntimeException(exception);
-        }
+        }*/
     }
 
     public void linkNewUpiAccount(String customerMobile, String color, Result result){
-        try {
-            upiTurbo.getMethod("linkNewUpiAccount", String.class, String.class, Result.class).invoke(upiTurbo.getDeclaredConstructor(Activity.class).newInstance(activity), customerMobile, color, result);
+       /* try {
+           // upiTurbo.getMethod("linkNewUpiAccount", String.class, String.class, Result.class).invoke(upiTurbo.getDeclaredConstructor(Activity.class).newInstance(activity), customerMobile, color, result);
         } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException |
                  InstantiationException exception) {
             throw new RuntimeException(exception);
-        }
+        }*/
 
     }
 
 
     public void manageUpiAccounts(String customerMobile, String color, Result result){
-        try {
-            upiTurbo.getMethod("manageUpiAccounts", String.class, String.class, Result.class).invoke(upiTurbo.getDeclaredConstructor(Activity.class).newInstance(activity), customerMobile, color, result);
-        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException |
-                 InstantiationException exception) {
-            throw new RuntimeException(exception);
-        }
+        upiTurbo.manageUpiAccounts(customerMobile, color, result);
     }
 
     public boolean isTurboPluginAvailable(Result result) {
-        try {
-            Object response = upiTurbo.getMethod("isTurboPluginAvailable", Result.class).invoke(upiTurbo.getDeclaredConstructor(Activity.class).newInstance(activity), result);
-            if (response instanceof Boolean) {
-                return (boolean) response;
-            } else {
-                return false;
-            }
-        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException |
-                 InstantiationException exception) {
-            return false;
-        }
+        return upiTurbo.isTurboPluginAvailable(result);
+
     }
 
 }

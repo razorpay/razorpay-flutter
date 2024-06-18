@@ -59,7 +59,7 @@ android {
         standardImplementation 'com.razorpay:checkout:1.6.+'
 
         // Dependencies for standardWithTurbo flavor
-        standardWithTurboImplementation fileTree(dir: '/Users/shibu.prasad/Desktop/FlutterStandardTPVLibrary/', include: ['*.aar'])
+        standardWithTurboCompileOnly fileTree(dir: '/Users/shibu.prasad/Desktop/FlutterStandardTPVLibrary/', include: ['*.aar'])
     }
     kotlinOptions {
         jvmTarget = '17'

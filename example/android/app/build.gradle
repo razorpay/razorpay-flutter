@@ -27,7 +27,7 @@ apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 apply plugin: 'kotlin-kapt'
 
 android {
-    compileSdkVersion flutter.compileSdkVersion
+    compileSdkVersion 34
     ndkVersion flutter.ndkVersion
 
     compileOptions {
@@ -63,17 +63,6 @@ android {
         }
     }
 
-    flavorDimensions "sdk"
-
-    productFlavors {
-        standard {
-            dimension "sdk"
-        }
-        standardWithTurbo {
-            dimension "sdk"
-        }
-    }
-
     buildFeatures {
         buildConfig = false
         dataBinding true
@@ -90,7 +79,7 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.5.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-    standardWithTurboImplementation fileTree(dir: 'libs', include: ['*.aar'])
+    implementation fileTree(dir: 'libs', include: ['*.aar'])
 
     kapt 'com.android.databinding:compiler:3.1.4'
 
