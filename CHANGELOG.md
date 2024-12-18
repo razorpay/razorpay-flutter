@@ -1,3 +1,6 @@
+## 1.4.0
+- Removed Flutter V1 embedding support
+
 ## 1.3.5
 
 - Update package_info_plus to 4.0.0 to support 3.10.1 flutter version
