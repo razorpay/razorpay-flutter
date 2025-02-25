@@ -10,9 +10,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  eventify: ^1.0.0
-  fluttertoast: ^8.0.7
-  package_info_plus: ^4.0.1
+  eventify: ^1.0.1
+  fluttertoast: ^8.2.5
+  package_info_plus: ^8.0.0
 
 dev_dependencies:
   flutter_test:
