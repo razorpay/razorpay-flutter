@@ -1,115 +1,75 @@
 package com.razorpay.razorpay_flutter;
 
+import android.util.Log;
 import androidx.annotation.NonNull;
-
-import org.json.JSONException;
-
 import java.util.Map;
-
 import io.flutter.embedding.engine.plugins.FlutterPlugin;
 import io.flutter.embedding.engine.plugins.activity.ActivityAware;
 import io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding;
-import io.flutter.plugin.common.EventChannel;
 import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler;
 import io.flutter.plugin.common.MethodChannel.Result;
-import io.flutter.plugin.common.PluginRegistry.Registrar;
 
 /**
- * RazorpayFlutterPlugin
+ * RazorpayFlutterPlugin migrated to Flutter v2 Android embedding.
  */
 public class RazorpayFlutterPlugin implements FlutterPlugin, MethodCallHandler, ActivityAware {
 
+    private MethodChannel channel;
     private RazorpayDelegate razorpayDelegate;
     private ActivityPluginBinding pluginBinding;
-    private static String CHANNEL_NAME = "razorpay_flutter";
-    Map<String, Object> _arguments;
-    String customerMobile ;
-    String color;
-
+    private static final String CHANNEL_NAME = "razorpay_flutter";
 
     public RazorpayFlutterPlugin() {
+        // Default constructor.
     }
 
-    /**
-     * Plugin registration for Flutter version < 1.12
-     */
-    public static void registerWith(Registrar registrar) {
-        final MethodChannel channel = new MethodChannel(registrar.messenger(), CHANNEL_NAME);
-        channel.setMethodCallHandler(new RazorpayFlutterPlugin(registrar));
-    }
+    // Note: The static registerWith() method (v1 embedding) has been removed
+    // because it references the deprecated PluginRegistry.Registrar API.
 
     @Override
     public void onAttachedToEngine(@NonNull FlutterPluginBinding binding) {
-        final MethodChannel channel = new MethodChannel(binding.getBinaryMessenger(), CHANNEL_NAME);
+        channel = new MethodChannel(binding.getBinaryMessenger(), CHANNEL_NAME);
         channel.setMethodCallHandler(this);
     }
 
     @Override
     public void onDetachedFromEngine(@NonNull FlutterPluginBinding binding) {
-    }
-
-
-    /**
-     * Constructor for Flutter version < 1.12
-     * @param registrar
-     */
-    private RazorpayFlutterPlugin(Registrar registrar) {
-        this.razorpayDelegate = new RazorpayDelegate(registrar.activity());
-        registrar.addActivityResultListener(razorpayDelegate);
+        if (channel != null) {
+            channel.setMethodCallHandler(null);
+            channel = null;
+        }
     }
 
     @Override
     @SuppressWarnings("unchecked")
     public void onMethodCall(MethodCall call, Result result) {
-
-
         switch (call.method) {
-
             case "open":
-                razorpayDelegate.openCheckout((Map<String, Object>) call.arguments, result);
+                if (razorpayDelegate != null) {
+                    razorpayDelegate.openCheckout((Map<String, Object>) call.arguments, result);
+                } else {
+                    result.error("NO_ACTIVITY", "Activity is not attached", null);
+                }
                 break;
-
-            case "setPackageName":
-                razorpayDelegate.setPackageName((String)call.arguments);
-                break;
-
             case "resync":
-                razorpayDelegate.resync(result);
-                break;
-
-            case "setKeyID":
-                String key = call.arguments().toString();
-                razorpayDelegate.setKeyID(key,  result);
-                break;
-            case "linkNewUpiAccount":
-                _arguments = call.arguments();
-                customerMobile = (String) _arguments.get("customerMobile");
-                color = (String) _arguments.get("color");
-                razorpayDelegate.linkNewUpiAccount(customerMobile, color , result);
-                break;
-
-            case "manageUpiAccounts":
-                _arguments = call.arguments();
-                customerMobile = (String) _arguments.get("customerMobile");
-                color = (String) _arguments.get("color");
-                razorpayDelegate.manageUpiAccounts(customerMobile, color , result);
-                break;
-            case "isTurboPluginAvailable":
-                razorpayDelegate.isTurboPluginAvailable(result);
+                if (razorpayDelegate != null) {
+                    razorpayDelegate.resync(result);
+                } else {
+                    result.error("NO_ACTIVITY", "Activity is not attached", null);
+                }
                 break;
             default:
                 result.notImplemented();
-
         }
-
     }
 
     @Override
     public void onAttachedToActivity(@NonNull ActivityPluginBinding binding) {
-        this.razorpayDelegate = new RazorpayDelegate(binding.getActivity());
-        this.pluginBinding = binding;
+        pluginBinding = binding;
+        razorpayDelegate = new RazorpayDelegate(binding.getActivity());
+        razorpayDelegate.setPackageName(binding.getActivity().getPackageName());
         binding.addActivityResultListener(razorpayDelegate);
     }
 
@@ -125,7 +85,10 @@ public class RazorpayFlutterPlugin implements FlutterPlugin, MethodCallHandler, 
 
     @Override
     public void onDetachedFromActivity() {
-        pluginBinding.removeActivityResultListener(razorpayDelegate);
+        if (pluginBinding != null && razorpayDelegate != null) {
+            pluginBinding.removeActivityResultListener(razorpayDelegate);
+        }
         pluginBinding = null;
+        razorpayDelegate = null;
     }
 }
