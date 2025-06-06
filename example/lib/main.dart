@@ -3,6 +3,9 @@ import 'package:razorpay_flutter/model/upi_account.dart';
 import 'package:razorpay_flutter/razorpay_flutter.dart';
 import 'package:razorpay_flutter/model/Error.dart';
 import 'package:flutter/cupertino.dart';
+import 'location_service.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
 
 void main() {
   runApp(const MyApp());
@@ -32,171 +35,6 @@ class MyHomePage extends StatefulWidget {
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
-/*class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-  // TPV Key - rzp_test_5sHeuuremkiApj
-  //Non-TPV key - rzp_test_0wFRWIZnH65uny
-  String keyId = "rzp_test_5sHeuuremkiApj";
-  String mobileNumber="";
-  late CheckOut checkOut ;
-
-  @override
-  void initState() {
-    checkOut = CheckOut(keyId);
-    super.initState();
-  }
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'Pay with Razorpay',
-            ),
-            ElevatedButton(onPressed: (){
-                  Razorpay razorpay = Razorpay();
-                   var options = {
-                    'key': 'rzp_live_ILgsfZCZoFIKMb',
-                    'amount': 100,
-                    'name': 'Acme Corp.',
-                    'description': 'Fine T-Shirt',
-                    'retry': {'enabled': true, 'max_count': 1},
-                    'send_sms_hash': true,
-                    'prefill': {'contact': '8888888888', 'email': 'test@razorpay.com'},
-                    'external': {
-                      'wallets': ['paytm']
-                    }
-                  };
-                  var options = {
-                    'amount': 10000,
-                    'currency': 'INR',
-                    'prefill':{
-                      'contact':'9877597717',
-                      'email':'pshibu567@gmail.com'
-                    },
-                    'theme':{
-                      'color':'#0CA72F'
-                    },
-                    'send_sms_hash':true,
-                    'retry':{
-                      'enabled':false,
-                      'max_count':4
-                    },
-                    'key': 'rzp_test_5sHeuuremkiApj',
-                    'order_id':'order_N0fmkHxFIp7wQh',
-                    'disable_redesign_v15': false,
-                    'experiments.upi_turbo':true,
-                    'ep':'https://api-web-turbo-upi.ext.dev.razorpay.in/test/checkout.html?branch=feat/turbo/tpv'
-                  };
-                  razorpay.on(Razorpay.EVENT_PAYMENT_ERROR, handlePaymentErrorResponse);
-                  razorpay.on(Razorpay.EVENT_PAYMENT_SUCCESS, handlePaymentSuccessResponse);
-                  razorpay.on(Razorpay.EVENT_EXTERNAL_WALLET, handleExternalWalletSelected);
-                  razorpay.open(options);
-                },
-                child: const Text("Pay with Razorpay")),
-
-            SizedBox(height: 10,),
-            Padding(
-              padding: const EdgeInsets.only(left: 20, right: 20, top: 10, bottom: 10),
-              child:  TextField(
-                  keyboardType: TextInputType.number,
-                  textAlign: TextAlign.start,
-                  decoration: InputDecoration(
-                    hintText: 'Mobile Number',
-                  ),
-                  onChanged: (newValue) => mobileNumber = newValue,
-              ),
-            ),
-            ElevatedButton(onPressed: (){
-             checkOut.upiTurbo.linkNewUpiAccount(customerMobile: mobileNumber,
-                 color: "#ffffff",
-                 onSuccess: (List<UpiAccount> upiAccounts) {
-                    print("Successfully Onboarded Account : ${upiAccounts.length}");
-                 },
-               onFailure:(Error error) { ScaffoldMessenger.of(context).showSnackBar(
-                   SnackBar(content: Text("Error : ${error.errorDescription}")));}
-                );
-            }, child: const Text("Pay with Turbo UPI")),
-
-            SizedBox(height: 8,),
-
-            ElevatedButton(onPressed: (){
-              checkOut.upiTurbo.manageUpiAccounts(customerMobile: mobileNumber,
-                  color: "#ffffff",
-                  onFailure:(Error error) { ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(content: Text("Error : ${error.errorDescription}")));}
-              );
-            }, child: const Text("ManageUpiAccounts")),
-
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
-    );
-  }
-
-  void handlePaymentErrorResponse(PaymentFailureResponse response){
-
-    * PaymentFailureResponse contains three values:
-    * 1. Error Code
-    * 2. Error Description
-    * 3. Metadata
-    *
-    showAlertDialog(context, "Payment Failed", "Code: ${response.code}\nDescription: ${response.message}\nMetadata:${response.error.toString()}");
-  }
-
-  void handlePaymentSuccessResponse(PaymentSuccessResponse response){
-
-    * Payment Success Response contains three values:
-    * 1. Order ID
-    * 2. Payment ID
-    * 3. Signature
-    *
-    showAlertDialog(context, "Payment Successful", "Payment ID: ${response.paymentId}");
-  }
-
-  void handleExternalWalletSelected(ExternalWalletResponse response){
-    showAlertDialog(context, "External Wallet Selected", "${response.walletName}");
-  }
-
-  void showAlertDialog(BuildContext context, String title, String message){
-    // set up the buttons
-    Widget continueButton = ElevatedButton(
-      child: const Text("Continue"),
-      onPressed:  () {},
-    );
-    // set up the AlertDialog
-    AlertDialog alert = AlertDialog(
-      title: Text(title),
-      content: Text(message),
-    );
-    // show the dialog
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return alert;
-      },
-    );
-  }
-
-}*/
-
 class _MyHomePageState extends State<MyHomePage> {
   final TextEditingController keyController = TextEditingController();
   final TextEditingController amountController = TextEditingController();
@@ -209,14 +47,48 @@ class _MyHomePageState extends State<MyHomePage> {
   String merchantKeyValue = "rzp_live_ILgsfZCZoFIKMb";
   String amountValue = "100";
   String orderIdValue = "";
-  String mobileNumberValue = "8888888888";
+  String mobileNumberValue = "9633370305";
+  final LocationService _locationService = LocationService();
 
-  late Razorpay razorpay ;
+  late Razorpay razorpay;
 
   @override
   void initState() {
-    razorpay = Razorpay("rzp_test_qRGYYA5wZrpFvJ").initUpiTurbo();
+    keyController.text = merchantKeyValue;
+    amountController.text = amountValue;
+    mobileNumberController.text = mobileNumberValue;
+    razorpay = Razorpay(merchantKeyValue);
+    razorpay.on(Razorpay.EVENT_PAYMENT_ERROR, handlePaymentErrorResponse);
+    razorpay.on(Razorpay.EVENT_PAYMENT_SUCCESS, handlePaymentSuccessResponse);
+    razorpay.on(Razorpay.EVENT_EXTERNAL_WALLET, handleExternalWalletSelected);
+    razorpay.on(Razorpay.EVENT_FETCH_SESSION_TOKEN, _handleRefreshToken);
     super.initState();
+  }
+
+  Future<void> _getLocation() async {
+    final status = await _locationService.requestLocationPermission();
+    if (status.isGranted) {
+    } else {
+      // Show dialog or snackbar with status.message
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(status.message)),
+      );
+    }
+  }
+
+  void _handleRefreshToken(dynamic response) async {
+    var url =
+        Uri.parse("https://api.razorpay.com/v1/upi/turbo/customer/session");
+    final basicToken =
+        'cnpwX3Rlc3RfRHQydGdQM3B5eW5sVm86b3FJUFBaM3VwR3MyR2JLWlg3Z3lxYkZL=';
+    final response = await http.post(
+      url,
+      headers: {"Authorization": "Basic $basicToken"},
+      body: {'customer_reference': mobileNumberValue},
+    );
+    print('Token Response ${response.body}');
+    final responseJson = json.decode(response.body);
+    razorpay.upiTurbo.updateSessionToken(token: responseJson['token']);
   }
 
   @override
@@ -265,21 +137,18 @@ class _MyHomePageState extends State<MyHomePage> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  Expanded(
-                    child: RZPButton(
-                      widthSize: 200.0,
-                      onPressed: () {
-                        merchantKeyValue = keyController.text;
-                        amountValue = amountController.text;
+                  // Expanded(
+                  //   child: RZPButton(
+                  //     widthSize: 200.0,
+                  //     onPressed: () {
+                  //       merchantKeyValue = keyController.text;
+                  //       amountValue = amountController.text;
 
-                        razorpay.on(Razorpay.EVENT_PAYMENT_ERROR, handlePaymentErrorResponse);
-                        razorpay.on(Razorpay.EVENT_PAYMENT_SUCCESS, handlePaymentSuccessResponse);
-                        razorpay.on(Razorpay.EVENT_EXTERNAL_WALLET, handleExternalWalletSelected);
-                        razorpay.open(getPaymentOptions());
-                      },
-                      labelText: 'Standard Checkout Pay',
-                    ),
-                  ),
+                  //       razorpay.open(getPaymentOptions());
+                  //     },
+                  //     labelText: 'Standard Checkout Pay',
+                  //   ),
+                  // ),
                   Expanded(
                     child: RZPButton(
                       widthSize: 200.0,
@@ -289,9 +158,14 @@ class _MyHomePageState extends State<MyHomePage> {
                         mobileNumberValue = mobileNumberController.text;
                         orderIdValue = orderIdController.text;
 
-                        razorpay.on(Razorpay.EVENT_PAYMENT_ERROR, handlePaymentErrorResponse);
-                        razorpay.on(Razorpay.EVENT_PAYMENT_SUCCESS, handlePaymentSuccessResponse);
-                        razorpay.on(Razorpay.EVENT_EXTERNAL_WALLET, handleExternalWalletSelected);
+                        razorpay.on(Razorpay.EVENT_PAYMENT_ERROR,
+                            handlePaymentErrorResponse);
+                        razorpay.on(Razorpay.EVENT_PAYMENT_SUCCESS,
+                            handlePaymentSuccessResponse);
+                        razorpay.on(Razorpay.EVENT_EXTERNAL_WALLET,
+                            handleExternalWalletSelected);
+
+                        _getLocation();
                         razorpay.open(getTurboPaymentOptions());
                       },
                       labelText: 'Turbo Pay',
@@ -311,14 +185,18 @@ class _MyHomePageState extends State<MyHomePage> {
                 onPressed: () {
                   mobileNumberValue = mobileNumberController.text;
 
-                  razorpay.upiTurbo.linkNewUpiAccount(customerMobile: mobileNumberValue,
+                  razorpay.upiTurbo.linkNewUpiAccount(
+                      customerMobile: mobileNumberValue,
                       color: "#ffffff",
                       onSuccess: (List<UpiAccount> upiAccounts) {
-                        print("Successfully Onboarded Account : ${upiAccounts.length}");
+                        print(
+                            "Successfully Onboarded Account : ${upiAccounts.length}");
                       },
-                      onFailure:(Error error) { ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(content: Text("Error : ${error.errorDescription}")));}
-                  );
+                      onFailure: (Error error) {
+                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                            content:
+                                Text("Error : ${error.errorDescription}")));
+                      });
                 },
               ),
               RZPButton(
@@ -327,11 +205,14 @@ class _MyHomePageState extends State<MyHomePage> {
                 onPressed: () {
                   mobileNumberValue = mobileNumberController.text;
 
-                  razorpay.upiTurbo.manageUpiAccounts(customerMobile: mobileNumberValue,
+                  razorpay.upiTurbo.manageUpiAccounts(
+                      customerMobile: mobileNumberValue,
                       color: "#ffffff",
-                      onFailure:(Error error) { ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(content: Text("Error : ${error.errorDescription}")));}
-                  );
+                      onFailure: (Error error) {
+                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                            content:
+                                Text("Error : ${error.errorDescription}")));
+                      });
                 },
               ),
             ],
@@ -363,58 +244,56 @@ class _MyHomePageState extends State<MyHomePage> {
     return {
       'amount': int.parse(amountValue),
       'currency': 'INR',
-      'prefill':{
-        'contact':'$mobileNumberValue',
-        'email':'test@razorpay.com'
+      'prefill': {
+        'contact': '$mobileNumberValue',
+        'email': 'test@razorpay.com'
       },
-      'theme':{
-        'color':'#0CA72F'
-      },
-      'send_sms_hash':true,
-      'retry':{
-        'enabled':false,
-        'max_count':4
-      },
+      'theme': {'color': '#0CA72F'},
       'key': '$merchantKeyValue',
-      'order_id':'$orderIdValue',
-      'disable_redesign_v15': false,
-      'experiments.upi_turbo':true,
-      'ep':'https://api-web-turbo-upi.ext.dev.razorpay.in/test/checkout.html?branch=feat/turbo/tpv'
+      // 'disable_redesign_v15': false,
+      'image':
+          'https://spaceplace.nasa.gov/templates/featured/sun/sunburn300.png'
+      //   'experiments.upi_turbo': true,
+      //  "environment_url":
+      //      "https://api.razorpay.com/v1/checkout/public?platform=ios&build=31fa0ffe9ece6982dc4d08461b5a700d607f4269&version=1.3.14&force_checkout_v2=1&checkout_v2=1",
+      // 'external': {
+      //   'wallets': ['paytm']
+      // }
     };
   }
 
-
   //Handle Payment Responses
 
-  void handlePaymentErrorResponse(PaymentFailureResponse response){
-
+  void handlePaymentErrorResponse(PaymentFailureResponse response) {
     /** PaymentFailureResponse contains three values:
     * 1. Error Code
     * 2. Error Description
     * 3. Metadata
     **/
-    showAlertDialog(context, "Payment Failed", "Code: ${response.code}\nDescription: ${response.message}\nMetadata:${response.error.toString()}");
+    showAlertDialog(context, "Payment Failed",
+        "Code: ${response.code}\nDescription: ${response.message}\nMetadata:${response.error.toString()}");
   }
 
-  void handlePaymentSuccessResponse(PaymentSuccessResponse response){
-
+  void handlePaymentSuccessResponse(PaymentSuccessResponse response) {
     /** Payment Success Response contains three values:
     * 1. Order ID
     * 2. Payment ID
     * 3. Signature
     **/
-    showAlertDialog(context, "Payment Successful", "Payment ID: ${response.paymentId}");
+    showAlertDialog(
+        context, "Payment Successful", "Payment ID: ${response.paymentId}");
   }
 
-  void handleExternalWalletSelected(ExternalWalletResponse response){
-    showAlertDialog(context, "External Wallet Selected", "${response.walletName}");
+  void handleExternalWalletSelected(ExternalWalletResponse response) {
+    showAlertDialog(
+        context, "External Wallet Selected", "${response.walletName}");
   }
 
-  void showAlertDialog(BuildContext context, String title, String message){
+  void showAlertDialog(BuildContext context, String title, String message) {
     // set up the buttons
     Widget continueButton = ElevatedButton(
       child: const Text("Continue"),
-      onPressed:  () {},
+      onPressed: () {},
     );
     // set up the AlertDialog
     AlertDialog alert = AlertDialog(

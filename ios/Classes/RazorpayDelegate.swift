@@ -1,7 +1,8 @@
 import Flutter
+import TurboUpiPluginUI
 import Razorpay
 
-public class RazorpayDelegate: NSObject, RazorpayPaymentCompletionProtocolWithData, ExternalWalletSelectionProtocol {
+class RazorpayDelegate: NSObject, RazorpayPaymentCompletionProtocolWithData, ExternalWalletSelectionProtocol {
     
     static let CODE_PAYMENT_SUCCESS = 0
     static let CODE_PAYMENT_ERROR = 1
@@ -14,7 +15,28 @@ public class RazorpayDelegate: NSObject, RazorpayPaymentCompletionProtocolWithDa
     static let INCOMPATIBLE_PLUGIN = 3
     static let UNKNOWN_ERROR = 100
     
-    public func onExternalWalletSelected(_ walletName: String, withPaymentData paymentData: [AnyHashable : Any]?) {
+    let CODE_EVENT_SUCCESS = 200
+    
+    var razorpay: RazorpayCheckout?
+
+    var sessionToken: String?
+    var sessionTokenCompletion: ((Session)-> Void)?
+    var pendingResult: FlutterResult!
+    var merchantKey: String = ""
+    var eventSink: FlutterEventSink!
+
+    func initilizeSDK(withKey key: String, result: @escaping FlutterResult) {
+        guard key != "" else { return }
+        guard self.razorpay == nil else { return }
+        self.merchantKey = key
+        pendingResult = result
+        
+        self.razorpay = RazorpayCheckout.initWithKey(key, andDelegateWithData: self, plugin: RZPTurboUPI.UIPluginInstance())
+        self.razorpay?.upiTurbo?.initialize(self)             
+    }
+
+    
+    func onExternalWalletSelected(_ walletName: String, withPaymentData paymentData: [AnyHashable : Any]?) {
         var response = [String:Any]()
         response["type"] = RazorpayDelegate.CODE_PAYMENT_EXTERNAL_WALLET
         
@@ -25,9 +47,8 @@ public class RazorpayDelegate: NSObject, RazorpayPaymentCompletionProtocolWithDa
         pendingResult(response as NSDictionary)
     }
     
-    private var pendingResult: FlutterResult!
     
-    public func onPaymentError(_ code: Int32, description message: String, andData data: [AnyHashable : Any]?) {
+    func onPaymentError(_ code: Int32, description message: String, andData data: [AnyHashable : Any]?) {
         var response = [String:Any]()
         response["type"] = RazorpayDelegate.CODE_PAYMENT_ERROR
         
@@ -40,7 +61,7 @@ public class RazorpayDelegate: NSObject, RazorpayPaymentCompletionProtocolWithDa
         pendingResult(response as NSDictionary)
     }
     
-    public func onPaymentSuccess(_ payment_id: String, andData data: [AnyHashable: Any]?) {
+    func onPaymentSuccess(_ payment_id: String, andData data: [AnyHashable: Any]?) {
         var response = [String:Any]()
         response["type"] = RazorpayDelegate.CODE_PAYMENT_SUCCESS
         response["data"] = data
@@ -48,21 +69,18 @@ public class RazorpayDelegate: NSObject, RazorpayPaymentCompletionProtocolWithDa
         pendingResult(response as NSDictionary)
     }
     
-    public func open(options: Dictionary<String, Any>, result: @escaping FlutterResult) {
-        
-        self.pendingResult = result
+    func open(options: Dictionary<String, Any>, result: @escaping FlutterResult) {
         
         let key = options["key"] as? String
-        
-        let razorpay = RazorpayCheckout.initWithKey(key ?? "", andDelegateWithData: self)
-        razorpay.setExternalWalletSelectionDelegate(self)
+        self.initilizeSDK(withKey: key ?? "", result: result)
+        razorpay?.setExternalWalletSelectionDelegate(self)
         var options = options
         options["integration"] = "flutter"
         options["FRAMEWORK"] = "flutter"
-        razorpay.open(options)
+        self.razorpay?.open(options, arrExternalPaymentEntities: [RZPTurboUPI.turboUIPaymentPlugin()])
     }
     
-    public func resync(result: @escaping FlutterResult) {
+    func resync(result: @escaping FlutterResult) {
         result(nil)
     }
     
@@ -79,4 +97,14 @@ public class RazorpayDelegate: NSObject, RazorpayPaymentCompletionProtocolWithDa
         }
     }
     
+}
+
+// MARK: Session Token Handle
+extension RazorpayDelegate: TurboSessionDelegate {
+     func fetchToken(completion: @escaping (Session) -> Void) {
+        self.sessionTokenCompletion = completion
+        var reply = TurboDictionary()
+        reply["responseEvent"] = "refreshSessionToken"
+        onEventSuccess(&reply)
+    }
 }

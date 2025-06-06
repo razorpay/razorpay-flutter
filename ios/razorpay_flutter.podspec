@@ -14,6 +14,7 @@ Pod::Spec.new do |s|
   s.public_header_files = 'Classes/**/*.h'
   s.dependency 'Flutter'
   s.dependency 'razorpay-pod'
+  s.dependency 'razorpay-turbo'
 
   s.ios.deployment_target = '10.0'
 end

@@ -22,6 +22,7 @@ class Razorpay {
   static const TLS_ERROR = 3;
   static const INCOMPATIBLE_PLUGIN = 4;
   static const UNKNOWN_ERROR = 100;
+  static const EVENT_FETCH_SESSION_TOKEN = "fetchSessionTokenEvent";
 
   static const MethodChannel _channel = const MethodChannel('razorpay_flutter');
   late UpiTurbo upiTurbo;
@@ -31,19 +32,8 @@ class Razorpay {
 
   Razorpay(String key) {
     _eventEmitter = new EventEmitter();
-    _setKeyID(key);
-  }
-
-  Razorpay initUpiTurbo(){
-    upiTurbo = new UpiTurbo( _channel);
-    return this;
-  }
-
-
-
-  ///Set KeyId function
-  void _setKeyID(String keyID) async {
-    await _channel.invokeMethod('setKeyID', keyID);
+    _channel.invokeMethod('initilizeSDK', key);
+    upiTurbo = new UpiTurbo(_channel, _eventEmitter);
   }
 
   /// Opens Razorpay checkout
@@ -166,7 +156,7 @@ class PaymentFailureResponse {
 
     if (responseBody is Map<dynamic, dynamic>) {
       return new PaymentFailureResponse(code, message, responseBody);
-    } else{
+    } else {
       Map<dynamic, dynamic> errorMap = new Map<dynamic, dynamic>();
       errorMap["reason"] = responseBody;
       return new PaymentFailureResponse(code, message, responseBody);
