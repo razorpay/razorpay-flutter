@@ -46,10 +46,11 @@ public class RazorpayDelegate implements ActivityResultListener, ExternalWalletL
     private Checkout checkout;
     Gson gson ;
     private UpiTurbo upiTurbo;
+    private String merchantKey;
 
     public RazorpayDelegate(Activity activity) {
         this.activity = activity;
-        upiTurbo = new UpiTurbo(activity);
+        this.upiTurbo = new UpiTurbo(merchantKey, checkout, activity);
         this.gson = new Gson();
     }
 
@@ -57,9 +58,26 @@ public class RazorpayDelegate implements ActivityResultListener, ExternalWalletL
         this.packageName = packageName;
     }
 
+    public void initializeSDK(String key, Result result) {
+        this.pendingResult = result;
+        if (key == null || key.isEmpty()) {
+            return;
+        }
+        if (this.checkout != null) {
+            return;
+        }
+        
+        this.merchantKey = key;
+        this.pendingResult = result;
+        
+        this.checkout = new Checkout().upiTurbo(activity);
+        this.checkout.setKeyID(key);
+    }
+
     void openCheckout(Map<String, Object> arguments, Result result) {
 
-        this.pendingResult = result;
+        String key = (String) arguments.get("key");
+        this.initializeSDK(key, result);
 
         JSONObject options = new JSONObject(arguments);
         if (activity.getPackageName().equalsIgnoreCase(packageName)){
@@ -69,8 +87,6 @@ public class RazorpayDelegate implements ActivityResultListener, ExternalWalletL
 
             activity.startActivityForResult(intent, Checkout.RZP_REQUEST_CODE);
         }
-
-
     }
 
     private void sendReply(Map<String, Object> data) {
@@ -200,5 +216,4 @@ public class RazorpayDelegate implements ActivityResultListener, ExternalWalletL
     public  boolean isTurboPluginAvailable(Result result) {
         return upiTurbo.isTurboPluginAvailable(result);
     }
-
 }

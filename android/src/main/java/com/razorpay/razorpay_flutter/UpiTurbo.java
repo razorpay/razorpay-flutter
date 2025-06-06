@@ -22,11 +22,13 @@ public class UpiTurbo {
     private MethodChannel.Result pendingResult;
     private Map<String, Object> pendingReply;
     private Checkout checkout;
+    private String merchantKey;
     Gson gson ;
 
-    UpiTurbo(Activity activity) {
+    UpiTurbo(String merchantKey, checkout: Checkout, Activity activity) {
+        this.merchantKey = merchantKey;
         this.activity = activity;
-        checkout = new Checkout().upiTurbo(activity);
+        checkout = checkout;
         this.gson = new Gson();
     }
 
@@ -37,6 +39,7 @@ public class UpiTurbo {
     public void linkNewUpiAccount(String customerMobile, String color, MethodChannel.Result result){
         this.pendingResult = result;
         Map<String, Object> reply = new HashMap<>();
+        this.checkout.initializeSDK(merchantKey, result);
         checkout.upiTurbo.linkNewUpiAccount(customerMobile, color , new GenericPluginCallback(){
             @Override
             public void onSuccess(@NonNull Object o) {
@@ -70,6 +73,7 @@ public class UpiTurbo {
     public void manageUpiAccounts(String customerMobile, String color, MethodChannel.Result result){
         this.pendingResult = result;
         HashMap<Object, Object> reply = new HashMap<>();
+        checkout.initializeSDK(merchantKey, result);
         checkout.upiTurbo.manageUpiAccounts(customerMobile, color , new GenericPluginCallback(){
             @Override
             public void onSuccess(@NonNull Object object) {
