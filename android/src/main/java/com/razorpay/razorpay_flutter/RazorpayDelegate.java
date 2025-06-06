@@ -58,6 +58,17 @@ public class RazorpayDelegate implements ActivityResultListener, ExternalWalletL
         this.packageName = packageName;
     }
 
+    private Function1<? super Session, Unit> sessionCompletion = null;
+    TurboSessionDelegate turboSessionDelegate = new TurboSessionDelegate() {
+        @Override
+        public void fetchToken(@NonNull Function1<? super Session, Unit> completion) {
+            sessionCompletion = completion;
+            HashMap<Object, Object> reply = new HashMap<>();
+            reply.put("responseEvent", "refreshSessionToken");
+            onEventSuccess(reply);
+        }
+    };
+
     public void initializeSDK(String key, Result result) {
         this.pendingResult = result;
         if (key == null || key.isEmpty()) {
@@ -215,5 +226,11 @@ public class RazorpayDelegate implements ActivityResultListener, ExternalWalletL
 
     public  boolean isTurboPluginAvailable(Result result) {
         return upiTurbo.isTurboPluginAvailable(result);
+    }
+
+    public void updateToken(String token) {
+        if (sessionCompletion != null) {
+            sessionCompletion.invoke(new Session(token));
+        }
     }
 }

@@ -103,6 +103,10 @@ public class RazorpayFlutterPlugin implements FlutterPlugin, MethodCallHandler, 
             case "isTurboPluginAvailable":
                 razorpayDelegate.isTurboPluginAvailable(result);
                 break;
+
+            case "refreshSessionToken":
+                String newToken = call.arguments().toString();
+                razorpayDelegate.updateToken(newToken);
             default:
                 result.notImplemented();
 
