@@ -15,6 +15,7 @@
 			dependencies = (
 			);
 			name = Flutter;
+			productName = Flutter;
 		};
 		30AA407894472403FBBF5E31DF515631 /* razorpay-turbo */ = {
 			isa = PBXAggregateTarget;
@@ -25,6 +26,7 @@
 				C7C951BF68D9DCDF2076468F4CF83538 /* PBXTargetDependency */,
 			);
 			name = "razorpay-turbo";
+			productName = "razorpay-turbo";
 		};
 		84CA3424E172CD651235AF0783D01D39 /* razorpay-pod */ = {
 			isa = PBXAggregateTarget;
@@ -35,11 +37,12 @@
 			dependencies = (
 			);
 			name = "razorpay-pod";
+			productName = "razorpay-pod";
 		};
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		00B03128C92244F0ADAA94C5C40F7B01 /* geolocator_apple-geolocator_apple_privacy in Resources */ = {isa = PBXBuildFile; fileRef = FA845F80B3847B22ACF63FD7E64E6D03 /* geolocator_apple-geolocator_apple_privacy */; };
+		00B03128C92244F0ADAA94C5C40F7B01 /* geolocator_apple_privacy.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FA845F80B3847B22ACF63FD7E64E6D03 /* geolocator_apple_privacy.bundle */; };
 		074E10E075FE4EB1BA8BD39672B0A78E /* Codec.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A6A7D3628731349DDCC10BB78E4A402 /* Codec.m */; };
 		09ACBCDACF8C41630EA145EE646BF781 /* BluetoothPermissionStrategy.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F7B3DC7E91FB984AD2999FEC8BE48D3 /* BluetoothPermissionStrategy.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0A3BBAE0F1826F9464A2F83B2527B7D7 /* StoragePermissionStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = A6E38F1A6DBE16678B5CC92666A82ABB /* StoragePermissionStrategy.m */; };
@@ -47,10 +50,9 @@
 		123ACE1FF6852EBFAD3A2537EE39CEB0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 384DDA2CB25005BD6479B5987C619DD4 /* Foundation.framework */; };
 		14CD373747F82EE2A8AA8D5F7E17DD14 /* BackgroundRefreshStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = A0FD211D49DAEE64C28ACE207D993C31 /* BackgroundRefreshStrategy.m */; };
 		18323812E735E98718EC3CBE560D439D /* UIView+Toast.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F3B8D0AAF72E90EA057BA51CDA138C1 /* UIView+Toast.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1EA1A5F035FDB01ACEE6CDAE5C374DBC /* RazorpayDelegate+Turbo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48142849B8A98437826E91D6F199AA82 /* RazorpayDelegate+Turbo.swift */; };
 		1F70E507EEFC23CF1C1047313F8BA04D /* package_info_plus-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2443B02046B81C1369600D26DD65B79C /* package_info_plus-dummy.m */; };
 		2602A425EA33CCAA1BE1257D8C79509E /* geolocator-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 581E6D67D7FC73DF90755A873B69CE84 /* geolocator-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		264EEBA75A636D45FD8D4267A48BD6F9 /* package_info_plus-package_info_plus_privacy in Resources */ = {isa = PBXBuildFile; fileRef = 64FB8D36F3D5FD1F4E08A8CB92BCD154 /* package_info_plus-package_info_plus_privacy */; };
+		264EEBA75A636D45FD8D4267A48BD6F9 /* package_info_plus_privacy.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 64FB8D36F3D5FD1F4E08A8CB92BCD154 /* package_info_plus_privacy.bundle */; };
 		287C529E133C5521BE98D1C4E0C8D054 /* PositionStreamHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EFF39AF08ADEFD9D78CF204375DF508 /* PositionStreamHandler.m */; };
 		28B6342727D95F564667E15C9931E217 /* fluttertoast-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 148C968A6D00022AE162377AA009057F /* fluttertoast-dummy.m */; };
 		299375271BFAA4E66BF6DF83A6513CFA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 384DDA2CB25005BD6479B5987C619DD4 /* Foundation.framework */; };
@@ -113,7 +115,7 @@
 		A002834DC4E75205EC330B3C909A81A0 /* RazorpayDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7EB984E7D1BB775E82CF3129530543 /* RazorpayDelegate.swift */; };
 		A17E89455D8763474B8ACFA389FBB5A2 /* package_info_plus-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E9E0803DB16B07FAB6F6CE6667F8BB0A /* package_info_plus-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A4389B49BFDD48A94A478A2A102A189A /* SwiftRazorpayFlutterPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE45398224AD6F73CFB3DAB783773A9 /* SwiftRazorpayFlutterPlugin.swift */; };
-		A4F0114D4061CA8A90DB6059278A6605 /* fluttertoast-fluttertoast_privacy in Resources */ = {isa = PBXBuildFile; fileRef = E3D661B08B615B28E8D0AD8F5E80E812 /* fluttertoast-fluttertoast_privacy */; };
+		A4F0114D4061CA8A90DB6059278A6605 /* fluttertoast_privacy.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E3D661B08B615B28E8D0AD8F5E80E812 /* fluttertoast_privacy.bundle */; };
 		A638046076DAC9169565B32A7EB5B746 /* BackgroundRefreshStrategy.h in Headers */ = {isa = PBXBuildFile; fileRef = ACACF49CCB5377CFF1AE147BA8CFC729 /* BackgroundRefreshStrategy.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A645F842CC49BF6453B5520EAFD9393B /* PermissionUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 724DDFB1FB364E5C2F4EA623691C5E74 /* PermissionUtils.m */; };
 		AB6B59C5DB5C485F5E1C0B3013806CF7 /* permission_handler_apple-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D56567BA44BC607EDAB6530859D22FC7 /* permission_handler_apple-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -146,6 +148,7 @@
 		EB7E221603A0CCD2ECAC439818B8112C /* Codec.h in Headers */ = {isa = PBXBuildFile; fileRef = 67F5E321EF99C07C866150E4E8F25560 /* Codec.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F14B010DE972E95770668154042F9DFE /* CriticalAlertsPermissionStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D89BE97419A7D19A433CC276E7EBE23 /* CriticalAlertsPermissionStrategy.m */; };
 		F3A366FDE2949A56C9896B6A188787F4 /* PermissionStrategy.h in Headers */ = {isa = PBXBuildFile; fileRef = 70C6732516AF810CF26E60599FB6B9CD /* PermissionStrategy.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F43B03C42DF2C0A0007D8E75 /* RazorpayDelegate+Turbo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43B03C32DF2C096007D8E75 /* RazorpayDelegate+Turbo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -302,7 +305,7 @@
 		148C968A6D00022AE162377AA009057F /* fluttertoast-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "fluttertoast-dummy.m"; sourceTree = "<group>"; };
 		14BE29DAB0A97695399C1FB3200DEC50 /* razorpay-pod.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "razorpay-pod.debug.xcconfig"; sourceTree = "<group>"; };
 		167F1E5A155A90F6D091BB034814E7C0 /* Pods-Runner.profile.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Runner.profile.xcconfig"; sourceTree = "<group>"; };
-		1894A9FCAFE0E31E880B5DCD4DBDB49E /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; name = PrivacyInfo.xcprivacy; path = "../../../../../../../../../../../../../.pub-cache/hosted/pub.dev/fluttertoast-8.2.12/ios/Resources/PrivacyInfo.xcprivacy"; sourceTree = "<group>"; };
+		1894A9FCAFE0E31E880B5DCD4DBDB49E /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = "../../../../../../../../../../../../../.pub-cache/hosted/pub.dev/fluttertoast-8.2.12/ios/Resources/PrivacyInfo.xcprivacy"; sourceTree = "<group>"; };
 		18DE05867658B46C2CDD49444414D0A3 /* AudioVideoPermissionStrategy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AudioVideoPermissionStrategy.m; path = "../../../../../../../../../../../../../../.pub-cache/hosted/pub.dev/permission_handler_apple-9.4.7/ios/Classes/strategies/AudioVideoPermissionStrategy.m"; sourceTree = "<group>"; };
 		195732F83D65CE0AD2B90D34B8576BA9 /* LocationMapper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LocationMapper.h; path = "../../../../../../../../../../../../../../../../../../.pub-cache/hosted/pub.dev/geolocator_apple-2.3.13/darwin/geolocator_apple/Sources/geolocator_apple/include/geolocator_apple/Utils/LocationMapper.h"; sourceTree = "<group>"; };
 		19E9B742E6CC05D299852854B0FAAF81 /* Pods-Runner-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Runner-resources.sh"; sourceTree = "<group>"; };
@@ -317,13 +320,13 @@
 		2443B02046B81C1369600D26DD65B79C /* package_info_plus-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "package_info_plus-dummy.m"; sourceTree = "<group>"; };
 		25DB605C65A60C6FBCA455D7D9873786 /* Flutter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Flutter.release.xcconfig; sourceTree = "<group>"; };
 		26CF3FF7ED6CF9ABE84E47EC4ADD3D9C /* ActivityTypeMapper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ActivityTypeMapper.h; path = "../../../../../../../../../../../../../../../../../../.pub-cache/hosted/pub.dev/geolocator_apple-2.3.13/darwin/geolocator_apple/Sources/geolocator_apple/include/geolocator_apple/Utils/ActivityTypeMapper.h"; sourceTree = "<group>"; };
-		272269192FC5B913BAC1510AAA31F045 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; name = PrivacyInfo.xcprivacy; path = "../../../../../../../../../../../../../../../.pub-cache/hosted/pub.dev/geolocator_apple-2.3.13/darwin/geolocator_apple/Sources/geolocator_apple/PrivacyInfo.xcprivacy"; sourceTree = "<group>"; };
+		272269192FC5B913BAC1510AAA31F045 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = "../../../../../../../../../../../../../../../.pub-cache/hosted/pub.dev/geolocator_apple-2.3.13/darwin/geolocator_apple/Sources/geolocator_apple/PrivacyInfo.xcprivacy"; sourceTree = "<group>"; };
 		2756B626A3E38457FCD5208E255915F9 /* PermissionHandlerEnums.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PermissionHandlerEnums.h; path = "../../../../../../../../../../../../../.pub-cache/hosted/pub.dev/permission_handler_apple-9.4.7/ios/Classes/PermissionHandlerEnums.h"; sourceTree = "<group>"; };
 		28DA1E156C5F85ACCA6EBF8ADA13C3D5 /* LocationServiceStreamHandler.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LocationServiceStreamHandler.h; path = "../../../../../../../../../../../../../../../../../../.pub-cache/hosted/pub.dev/geolocator_apple-2.3.13/darwin/geolocator_apple/Sources/geolocator_apple/include/geolocator_apple/Handlers/LocationServiceStreamHandler.h"; sourceTree = "<group>"; };
 		29A4720FA2B4034FB169EDC87FE1CC91 /* AuthorizationStatusMapper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AuthorizationStatusMapper.h; path = "../../../../../../../../../../../../../../../../../../.pub-cache/hosted/pub.dev/geolocator_apple-2.3.13/darwin/geolocator_apple/Sources/geolocator_apple/include/geolocator_apple/Utils/AuthorizationStatusMapper.h"; sourceTree = "<group>"; };
 		2A433D919FCFD4223D8C6FB3E75349D3 /* FPPPackageInfoPlusPlugin.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FPPPackageInfoPlusPlugin.m; path = "../../../../../../../../../../../../../../../.pub-cache/hosted/pub.dev/package_info_plus-8.3.0/ios/package_info_plus/Sources/package_info_plus/FPPPackageInfoPlusPlugin.m"; sourceTree = "<group>"; };
 		2C3CB0E3F8A226D41C56DD67B2A3FF88 /* ResourceBundle-fluttertoast_privacy-fluttertoast-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-fluttertoast_privacy-fluttertoast-Info.plist"; sourceTree = "<group>"; };
-		2CBF7F4EC404792BDDFD12BD35868080 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = "../../../../../../../../../../../../.pub-cache/hosted/pub.dev/geolocator_apple-2.3.13/LICENSE"; sourceTree = "<group>"; };
+		2CBF7F4EC404792BDDFD12BD35868080 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = "../../../../../../../../../../../../.pub-cache/hosted/pub.dev/geolocator_apple-2.3.13/LICENSE"; sourceTree = "<group>"; };
 		2DAEF76794DC5F259947B63B7D83B24E /* LocationDistanceMapper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LocationDistanceMapper.h; path = "../../../../../../../../../../../../../../../../../../.pub-cache/hosted/pub.dev/geolocator_apple-2.3.13/darwin/geolocator_apple/Sources/geolocator_apple/include/geolocator_apple/Utils/LocationDistanceMapper.h"; sourceTree = "<group>"; };
 		2E910997BC2DC43B7C03E4C7E745B235 /* GeolocatorPlugin.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; name = GeolocatorPlugin.modulemap; path = "../../../../../../../../../../../../.pub-cache/hosted/pub.dev/geolocator_apple-2.3.13/darwin/geolocator_apple/Sources/geolocator_apple/include/GeolocatorPlugin.modulemap"; sourceTree = "<group>"; };
 		2EAE9FC6B4EDCE6BE8A767EBA6932639 /* razorpay_flutter-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "razorpay_flutter-Info.plist"; sourceTree = "<group>"; };
@@ -332,28 +335,27 @@
 		33270C9715C28210BD5C8C4C89751ADB /* PhonePermissionStrategy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PhonePermissionStrategy.h; path = "../../../../../../../../../../../../../../.pub-cache/hosted/pub.dev/permission_handler_apple-9.4.7/ios/Classes/strategies/PhonePermissionStrategy.h"; sourceTree = "<group>"; };
 		3495F60D565C7259217AF179CD5070BA /* razorpay_flutter-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "razorpay_flutter-umbrella.h"; sourceTree = "<group>"; };
 		384DDA2CB25005BD6479B5987C619DD4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		3A300899DC1BF9DBDC7531F1DFC7A9BF /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = "../../../../../../../../../../../../.pub-cache/hosted/pub.dev/fluttertoast-8.2.12/LICENSE"; sourceTree = "<group>"; };
+		3A300899DC1BF9DBDC7531F1DFC7A9BF /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = "../../../../../../../../../../../../.pub-cache/hosted/pub.dev/fluttertoast-8.2.12/LICENSE"; sourceTree = "<group>"; };
 		3AC631B3F8545DEFE6A5B7E44D85F43F /* razorpay-pod.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "razorpay-pod.release.xcconfig"; sourceTree = "<group>"; };
 		3AEF6594591237624EF9F1A65746D708 /* AssistantPermissionStrategy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AssistantPermissionStrategy.m; path = "../../../../../../../../../../../../../../.pub-cache/hosted/pub.dev/permission_handler_apple-9.4.7/ios/Classes/strategies/AssistantPermissionStrategy.m"; sourceTree = "<group>"; };
 		3D07E2253F60BAF9BF235FF30671FB96 /* LocationAccuracyMapper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LocationAccuracyMapper.m; path = "../../../../../../../../../../../../../../../../.pub-cache/hosted/pub.dev/geolocator_apple-2.3.13/darwin/geolocator_apple/Sources/geolocator_apple/Utils/LocationAccuracyMapper.m"; sourceTree = "<group>"; };
-		3DF58D147A690DDD829F727178DF60F1 /* package_info_plus.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = package_info_plus.podspec; path = "../../../../../../../../../../../../.pub-cache/hosted/pub.dev/package_info_plus-8.3.0/ios/package_info_plus.podspec"; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		3DF58D147A690DDD829F727178DF60F1 /* package_info_plus.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = package_info_plus.podspec; path = "../../../../../../../../../../../../.pub-cache/hosted/pub.dev/package_info_plus-8.3.0/ios/package_info_plus.podspec"; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		3EAA2A01B9CAFC28C5008CCF4D2A8454 /* razorpay_flutter-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "razorpay_flutter-prefix.pch"; sourceTree = "<group>"; };
 		4042E1F567B25C14F1DB719AEF7B3F7C /* razorpay-pod-xcframeworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "razorpay-pod-xcframeworks.sh"; sourceTree = "<group>"; };
-		407BF8011119473E5540173D602C5046 /* Razorpay.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = Razorpay.xcframework; path = Pod/Razorpay.xcframework; sourceTree = "<group>"; };
+		407BF8011119473E5540173D602C5046 /* Razorpay.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.xcframework; name = Razorpay.xcframework; path = Pod/Razorpay.xcframework; sourceTree = "<group>"; };
 		41A9426D24B988BA35F31F9DEDAC1D9B /* razorpay_flutter-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "razorpay_flutter-dummy.m"; sourceTree = "<group>"; };
 		43D2F4D54DD04A8F74AD03C00458F6EC /* GeolocatorPlugin_Test.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GeolocatorPlugin_Test.h; path = "../../../../../../../../../../../../../../../../../.pub-cache/hosted/pub.dev/geolocator_apple-2.3.13/darwin/geolocator_apple/Sources/geolocator_apple/include/geolocator_apple/GeolocatorPlugin_Test.h"; sourceTree = "<group>"; };
 		43F3F3FCE8CA37A501D7FB700F43C641 /* SensorPermissionStrategy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SensorPermissionStrategy.m; path = "../../../../../../../../../../../../../../.pub-cache/hosted/pub.dev/permission_handler_apple-9.4.7/ios/Classes/strategies/SensorPermissionStrategy.m"; sourceTree = "<group>"; };
 		44CD1ACD79C937822A9D6EBD66B3910F /* LocationPermissionStrategy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LocationPermissionStrategy.m; path = "../../../../../../../../../../../../../../.pub-cache/hosted/pub.dev/permission_handler_apple-9.4.7/ios/Classes/strategies/LocationPermissionStrategy.m"; sourceTree = "<group>"; };
-		4683C6A6BA60720F17CAD71C28988BDC /* permission_handler_apple-permission_handler_apple_privacy */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "permission_handler_apple-permission_handler_apple_privacy"; path = permission_handler_apple_privacy.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
-		48142849B8A98437826E91D6F199AA82 /* RazorpayDelegate+Turbo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "RazorpayDelegate+Turbo.swift"; path = "../../../../../../../ios/Classes/RazorpayDelegate+Turbo.swift"; sourceTree = "<group>"; };
+		4683C6A6BA60720F17CAD71C28988BDC /* permission_handler_apple_privacy.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = permission_handler_apple_privacy.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		482455A0F708A07418636F28FAA1EC36 /* geolocator_apple-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "geolocator_apple-dummy.m"; sourceTree = "<group>"; };
-		4A4D9F12A595864C86E21CAF6FA006E7 /* geolocator_apple.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = geolocator_apple.podspec; path = "../../../../../../../../../../../../.pub-cache/hosted/pub.dev/geolocator_apple-2.3.13/darwin/geolocator_apple.podspec"; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		4A4D9F12A595864C86E21CAF6FA006E7 /* geolocator_apple.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = geolocator_apple.podspec; path = "../../../../../../../../../../../../.pub-cache/hosted/pub.dev/geolocator_apple-2.3.13/darwin/geolocator_apple.podspec"; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		4AA2004D795E4B1FDF2F6D545436B362 /* razorpay_flutter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = razorpay_flutter.release.xcconfig; sourceTree = "<group>"; };
-		4D68842CB2772778EFB677388B48AC94 /* razorpay_flutter */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = razorpay_flutter; path = razorpay_flutter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D68842CB2772778EFB677388B48AC94 /* razorpay_flutter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = razorpay_flutter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E88B114676C190FFBF55B0F65D7C03E /* razorpay-turbo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "razorpay-turbo.debug.xcconfig"; sourceTree = "<group>"; };
-		4F7103F069E74A30CE8B2B169C89A66F /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; name = PrivacyInfo.xcprivacy; path = "../../../../../../../../../../../../../.pub-cache/hosted/pub.dev/permission_handler_apple-9.4.7/ios/Resources/PrivacyInfo.xcprivacy"; sourceTree = "<group>"; };
+		4F7103F069E74A30CE8B2B169C89A66F /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = "../../../../../../../../../../../../../.pub-cache/hosted/pub.dev/permission_handler_apple-9.4.7/ios/Resources/PrivacyInfo.xcprivacy"; sourceTree = "<group>"; };
 		4FAE2B1775BC7C692F7D96BAAC3431D1 /* FluttertoastPlugin.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FluttertoastPlugin.h; path = "../../../../../../../../../../../../../.pub-cache/hosted/pub.dev/fluttertoast-8.2.12/ios/Classes/FluttertoastPlugin.h"; sourceTree = "<group>"; };
-		502E20F09A7CAFBD1DE1AA882DCC550C /* geolocator_apple */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = geolocator_apple; path = geolocator_apple.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		502E20F09A7CAFBD1DE1AA882DCC550C /* geolocator_apple.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = geolocator_apple.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		50E3CE677B725677D4215FB5CB39AEEF /* NotificationPermissionStrategy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NotificationPermissionStrategy.m; path = "../../../../../../../../../../../../../../.pub-cache/hosted/pub.dev/permission_handler_apple-9.4.7/ios/Classes/strategies/NotificationPermissionStrategy.m"; sourceTree = "<group>"; };
 		56A511AE64BAEDAEAF3A52F2753F5538 /* CommonLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CommonLibrary.framework; path = Pod/core/CommonLibrary.framework; sourceTree = "<group>"; };
 		57D5380F7F0F162816756F07C964091F /* AppTrackingTransparencyPermissionStrategy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AppTrackingTransparencyPermissionStrategy.m; path = "../../../../../../../../../../../../../../.pub-cache/hosted/pub.dev/permission_handler_apple-9.4.7/ios/Classes/strategies/AppTrackingTransparencyPermissionStrategy.m"; sourceTree = "<group>"; };
@@ -372,13 +374,13 @@
 		62E1181A0CFD348A8D591F2613A4494B /* Pods-Runner-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Runner-frameworks.sh"; sourceTree = "<group>"; };
 		6414C2D9CE61DF81B9749EA916CC4B31 /* PhotoPermissionStrategy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PhotoPermissionStrategy.h; path = "../../../../../../../../../../../../../../.pub-cache/hosted/pub.dev/permission_handler_apple-9.4.7/ios/Classes/strategies/PhotoPermissionStrategy.h"; sourceTree = "<group>"; };
 		64DD766772F34C6827F479A856CEEC3A /* permission_handler_apple-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "permission_handler_apple-dummy.m"; sourceTree = "<group>"; };
-		64FB8D36F3D5FD1F4E08A8CB92BCD154 /* package_info_plus-package_info_plus_privacy */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "package_info_plus-package_info_plus_privacy"; path = package_info_plus_privacy.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		64FB8D36F3D5FD1F4E08A8CB92BCD154 /* package_info_plus_privacy.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = package_info_plus_privacy.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		6547F2A4357DBB1477959FC77DAB3ECB /* AuthorizationStatusMapper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AuthorizationStatusMapper.m; path = "../../../../../../../../../../../../../../../../.pub-cache/hosted/pub.dev/geolocator_apple-2.3.13/darwin/geolocator_apple/Sources/geolocator_apple/Utils/AuthorizationStatusMapper.m"; sourceTree = "<group>"; };
 		655DD1071F65226B393B1442EB4735BD /* Sentry.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sentry.framework; path = Pod/core/Sentry.framework; sourceTree = "<group>"; };
-		669E8F25E1897672BDB80B7EB784DA24 /* Pods-Runner */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-Runner"; path = Pods_Runner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		669E8F25E1897672BDB80B7EB784DA24 /* Pods_Runner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Runner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		67F5E321EF99C07C866150E4E8F25560 /* Codec.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Codec.h; path = "../../../../../../../../../../../../../../.pub-cache/hosted/pub.dev/permission_handler_apple-9.4.7/ios/Classes/util/Codec.h"; sourceTree = "<group>"; };
 		6902396258A63DA58F6FE61338EA0378 /* SpeechPermissionStrategy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SpeechPermissionStrategy.m; path = "../../../../../../../../../../../../../../.pub-cache/hosted/pub.dev/permission_handler_apple-9.4.7/ios/Classes/strategies/SpeechPermissionStrategy.m"; sourceTree = "<group>"; };
-		695369D201C411550D204C3DFCF51DAB /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; name = PrivacyInfo.xcprivacy; path = "../../../../../../../../../../../../../../../.pub-cache/hosted/pub.dev/package_info_plus-8.3.0/ios/package_info_plus/Sources/package_info_plus/PrivacyInfo.xcprivacy"; sourceTree = "<group>"; };
+		695369D201C411550D204C3DFCF51DAB /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = "../../../../../../../../../../../../../../../.pub-cache/hosted/pub.dev/package_info_plus-8.3.0/ios/package_info_plus/Sources/package_info_plus/PrivacyInfo.xcprivacy"; sourceTree = "<group>"; };
 		6A6A7D3628731349DDCC10BB78E4A402 /* Codec.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = Codec.m; path = "../../../../../../../../../../../../../../.pub-cache/hosted/pub.dev/permission_handler_apple-9.4.7/ios/Classes/util/Codec.m"; sourceTree = "<group>"; };
 		6B0EADEBA837290DEFD4CBDFB8D732FA /* LocationAccuracyHandler.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LocationAccuracyHandler.m; path = "../../../../../../../../../../../../../../../../.pub-cache/hosted/pub.dev/geolocator_apple-2.3.13/darwin/geolocator_apple/Sources/geolocator_apple/Handlers/LocationAccuracyHandler.m"; sourceTree = "<group>"; };
 		6BBD1E031D547AE804A5B7BEA6ED9FF6 /* package_info_plus-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "package_info_plus-prefix.pch"; sourceTree = "<group>"; };
@@ -397,25 +399,25 @@
 		822711986F95F64EEE34969424DC81BC /* PermissionHandler.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PermissionHandler.h; path = "../../../../../../../../../../../../../../../../../../.pub-cache/hosted/pub.dev/geolocator_apple-2.3.13/darwin/geolocator_apple/Sources/geolocator_apple/include/geolocator_apple/Handlers/PermissionHandler.h"; sourceTree = "<group>"; };
 		828601568D0DF89CC2B6940645202DFD /* ContactPermissionStrategy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ContactPermissionStrategy.m; path = "../../../../../../../../../../../../../../.pub-cache/hosted/pub.dev/permission_handler_apple-9.4.7/ios/Classes/strategies/ContactPermissionStrategy.m"; sourceTree = "<group>"; };
 		8462D53D25872B3DD806874884475E52 /* ResourceBundle-geolocator_apple_privacy-geolocator_apple-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-geolocator_apple_privacy-geolocator_apple-Info.plist"; sourceTree = "<group>"; };
-		86C34A54D27032FBBBB2BA22E8D45A7F /* Flutter.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = Flutter.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		86C34A54D27032FBBBB2BA22E8D45A7F /* Flutter.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = Flutter.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		896E42E51E69CF09D9225D4E12200635 /* LocationPermissionStrategy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LocationPermissionStrategy.h; path = "../../../../../../../../../../../../../../.pub-cache/hosted/pub.dev/permission_handler_apple-9.4.7/ios/Classes/strategies/LocationPermissionStrategy.h"; sourceTree = "<group>"; };
 		89982C3F86CFF171F5E7F905203B9C5A /* AssistantPermissionStrategy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AssistantPermissionStrategy.h; path = "../../../../../../../../../../../../../../.pub-cache/hosted/pub.dev/permission_handler_apple-9.4.7/ios/Classes/strategies/AssistantPermissionStrategy.h"; sourceTree = "<group>"; };
 		89E5CBEAD45C9C26A59316086044CFD7 /* GeolocationHandler_Test.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GeolocationHandler_Test.h; path = "../../../../../../../../../../../../../../../../../../.pub-cache/hosted/pub.dev/geolocator_apple-2.3.13/darwin/geolocator_apple/Sources/geolocator_apple/include/geolocator_apple/Handlers/GeolocationHandler_Test.h"; sourceTree = "<group>"; };
 		8BEC2B6BAA2BBFFD49F8C8A6B3887F78 /* LocationServiceStreamHandler.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LocationServiceStreamHandler.m; path = "../../../../../../../../../../../../../../../../.pub-cache/hosted/pub.dev/geolocator_apple-2.3.13/darwin/geolocator_apple/Sources/geolocator_apple/Handlers/LocationServiceStreamHandler.m"; sourceTree = "<group>"; };
-		8BF69E821828139640FEC362030630CF /* razorpay_flutter.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = razorpay_flutter.podspec; path = ../../../../../../ios/razorpay_flutter.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		8BF69E821828139640FEC362030630CF /* razorpay_flutter.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = razorpay_flutter.podspec; path = ../../../../../../ios/razorpay_flutter.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		8DB72D06C6BC9E111DC9C44AB1D5F31B /* LocationAccuracyMapper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LocationAccuracyMapper.h; path = "../../../../../../../../../../../../../../../../../../.pub-cache/hosted/pub.dev/geolocator_apple-2.3.13/darwin/geolocator_apple/Sources/geolocator_apple/include/geolocator_apple/Utils/LocationAccuracyMapper.h"; sourceTree = "<group>"; };
 		8DCA0714D4E40FB5C80C93FC55C63C93 /* package_info_plus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = package_info_plus.release.xcconfig; sourceTree = "<group>"; };
 		8E4B09451D3D6FD670E28D9F86EFC6C6 /* FluttertoastPlugin.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FluttertoastPlugin.m; path = "../../../../../../../../../../../../../.pub-cache/hosted/pub.dev/fluttertoast-8.2.12/ios/Classes/FluttertoastPlugin.m"; sourceTree = "<group>"; };
 		8EFF39AF08ADEFD9D78CF204375DF508 /* PositionStreamHandler.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PositionStreamHandler.m; path = "../../../../../../../../../../../../../../../../.pub-cache/hosted/pub.dev/geolocator_apple-2.3.13/darwin/geolocator_apple/Sources/geolocator_apple/Handlers/PositionStreamHandler.m"; sourceTree = "<group>"; };
 		92D6DA3F0097C33D31CAC31C3E8C0582 /* PermissionUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PermissionUtils.h; path = "../../../../../../../../../../../../../../../../../../.pub-cache/hosted/pub.dev/geolocator_apple-2.3.13/darwin/geolocator_apple/Sources/geolocator_apple/include/geolocator_apple/Utils/PermissionUtils.h"; sourceTree = "<group>"; };
-		94D691BE05A37BA1EC211B8ABD3E9E33 /* permission_handler_apple.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = permission_handler_apple.podspec; path = "../../../../../../../../../../../../.pub-cache/hosted/pub.dev/permission_handler_apple-9.4.7/ios/permission_handler_apple.podspec"; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		95A07D5C783EF82649EBEBDA42559375 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = "../../../../../../../../../../../../.pub-cache/hosted/pub.dev/package_info_plus-8.3.0/LICENSE"; sourceTree = "<group>"; };
+		94D691BE05A37BA1EC211B8ABD3E9E33 /* permission_handler_apple.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = permission_handler_apple.podspec; path = "../../../../../../../../../../../../.pub-cache/hosted/pub.dev/permission_handler_apple-9.4.7/ios/permission_handler_apple.podspec"; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		95A07D5C783EF82649EBEBDA42559375 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = "../../../../../../../../../../../../.pub-cache/hosted/pub.dev/package_info_plus-8.3.0/LICENSE"; sourceTree = "<group>"; };
 		976770A1082ED43F9250DA9C8821C14A /* UnknownPermissionStrategy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = UnknownPermissionStrategy.m; path = "../../../../../../../../../../../../../../.pub-cache/hosted/pub.dev/permission_handler_apple-9.4.7/ios/Classes/strategies/UnknownPermissionStrategy.m"; sourceTree = "<group>"; };
 		984E7B30CB71699D7A9D9FBDB765BEDE /* geolocator_apple.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = geolocator_apple.modulemap; sourceTree = "<group>"; };
 		995597763847D2B3998AEBB1A7642440 /* FPPPackageInfoPlusPlugin.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FPPPackageInfoPlusPlugin.h; path = "../../../../../../../../../../../../../../../../../.pub-cache/hosted/pub.dev/package_info_plus-8.3.0/ios/package_info_plus/Sources/package_info_plus/include/package_info_plus/FPPPackageInfoPlusPlugin.h"; sourceTree = "<group>"; };
 		9D4DAFCA26EE2852D3FC30A620A9FD86 /* geolocator_apple.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = geolocator_apple.release.xcconfig; sourceTree = "<group>"; };
 		9D8FDB0DA229EDA579FADD5E7878B188 /* package_info_plus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = package_info_plus.debug.xcconfig; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A04B754E29C360A04D183B8EEEA49C91 /* permission_handler_apple.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = permission_handler_apple.debug.xcconfig; sourceTree = "<group>"; };
 		A0FD211D49DAEE64C28ACE207D993C31 /* BackgroundRefreshStrategy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BackgroundRefreshStrategy.m; path = "../../../../../../../../../../../../../../.pub-cache/hosted/pub.dev/permission_handler_apple-9.4.7/ios/Classes/strategies/BackgroundRefreshStrategy.m"; sourceTree = "<group>"; };
 		A35429DA91A87635A8FB88028857DDE4 /* PermissionHandlerPlugin.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PermissionHandlerPlugin.h; path = "../../../../../../../../../../../../../.pub-cache/hosted/pub.dev/permission_handler_apple-9.4.7/ios/Classes/PermissionHandlerPlugin.h"; sourceTree = "<group>"; };
@@ -433,23 +435,23 @@
 		BC878CFD30CA63022FCC71EC35687C72 /* package_info_plus.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = package_info_plus.modulemap; sourceTree = "<group>"; };
 		BEC0C2594B427CA027F8B3FE4AD1E0E1 /* SensorPermissionStrategy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SensorPermissionStrategy.h; path = "../../../../../../../../../../../../../../.pub-cache/hosted/pub.dev/permission_handler_apple-9.4.7/ios/Classes/strategies/SensorPermissionStrategy.h"; sourceTree = "<group>"; };
 		C34F8CD76AC60B4ABC058C4EA06C0E5A /* razorpay_flutter.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = razorpay_flutter.modulemap; sourceTree = "<group>"; };
-		C39BE06027F24EB0328A76E7507FA463 /* package_info_plus */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = package_info_plus; path = package_info_plus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C39BE06027F24EB0328A76E7507FA463 /* package_info_plus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = package_info_plus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C42CF7373068346429E7313334787E0F /* NotificationPermissionStrategy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NotificationPermissionStrategy.h; path = "../../../../../../../../../../../../../../.pub-cache/hosted/pub.dev/permission_handler_apple-9.4.7/ios/Classes/strategies/NotificationPermissionStrategy.h"; sourceTree = "<group>"; };
 		C7939B277753A90B7D85D7F8476FB02F /* Pods-Runner.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Runner.modulemap"; sourceTree = "<group>"; };
-		C7AD28D5FB25A8DEDF61F78996932FA6 /* permission_handler_apple */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = permission_handler_apple; path = permission_handler_apple.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C7AD28D5FB25A8DEDF61F78996932FA6 /* permission_handler_apple.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = permission_handler_apple.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C90C577F4E20090923472AF0BCC344C1 /* GeolocationHandler.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GeolocationHandler.m; path = "../../../../../../../../../../../../../../../../.pub-cache/hosted/pub.dev/geolocator_apple-2.3.13/darwin/geolocator_apple/Sources/geolocator_apple/Handlers/GeolocationHandler.m"; sourceTree = "<group>"; };
 		CE072C13BA99978411F390E377909906 /* ErrorCodes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ErrorCodes.h; path = "../../../../../../../../../../../../../../../../../../.pub-cache/hosted/pub.dev/geolocator_apple-2.3.13/darwin/geolocator_apple/Sources/geolocator_apple/include/geolocator_apple/Constants/ErrorCodes.h"; sourceTree = "<group>"; };
-		D0C5A85ABEF5ED03A54A449B87B69225 /* fluttertoast */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = fluttertoast; path = fluttertoast.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0C5A85ABEF5ED03A54A449B87B69225 /* fluttertoast.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = fluttertoast.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D29EE19BD162943940664F3A728902E8 /* PermissionHandler.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PermissionHandler.m; path = "../../../../../../../../../../../../../../../../.pub-cache/hosted/pub.dev/geolocator_apple-2.3.13/darwin/geolocator_apple/Sources/geolocator_apple/Handlers/PermissionHandler.m"; sourceTree = "<group>"; };
 		D56567BA44BC607EDAB6530859D22FC7 /* permission_handler_apple-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "permission_handler_apple-umbrella.h"; sourceTree = "<group>"; };
-		D942E09C0EB49C00F4FD8BD054BCB211 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../../../../../../LICENSE; sourceTree = "<group>"; };
-		DB79C4E9ECF0BF273DACF4A1121D9E50 /* fluttertoast.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = fluttertoast.podspec; path = "../../../../../../../../../../../../.pub-cache/hosted/pub.dev/fluttertoast-8.2.12/ios/fluttertoast.podspec"; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		D942E09C0EB49C00F4FD8BD054BCB211 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../../../../../../LICENSE; sourceTree = "<group>"; };
+		DB79C4E9ECF0BF273DACF4A1121D9E50 /* fluttertoast.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = fluttertoast.podspec; path = "../../../../../../../../../../../../.pub-cache/hosted/pub.dev/fluttertoast-8.2.12/ios/fluttertoast.podspec"; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		DBD835722098507487082B1955EC666C /* PermissionManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PermissionManager.h; path = "../../../../../../../../../../../../../.pub-cache/hosted/pub.dev/permission_handler_apple-9.4.7/ios/Classes/PermissionManager.h"; sourceTree = "<group>"; };
 		DE1BE31DB40106D583663DCCD0BE78D2 /* AppTrackingTransparencyPermissionStrategy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AppTrackingTransparencyPermissionStrategy.h; path = "../../../../../../../../../../../../../../.pub-cache/hosted/pub.dev/permission_handler_apple-9.4.7/ios/Classes/strategies/AppTrackingTransparencyPermissionStrategy.h"; sourceTree = "<group>"; };
 		E17DDFCCCCCE5444786852DCD7D14FEC /* permission_handler_apple.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = permission_handler_apple.modulemap; sourceTree = "<group>"; };
 		E1C878C4DBA6DB64BC25EABC5D3199D4 /* CriticalAlertsPermissionStrategy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CriticalAlertsPermissionStrategy.h; path = "../../../../../../../../../../../../../../.pub-cache/hosted/pub.dev/permission_handler_apple-9.4.7/ios/Classes/strategies/CriticalAlertsPermissionStrategy.h"; sourceTree = "<group>"; };
 		E327F2724AD228E525A39F7A2F96A48A /* Pods-Runner-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Runner-dummy.m"; sourceTree = "<group>"; };
-		E3D661B08B615B28E8D0AD8F5E80E812 /* fluttertoast-fluttertoast_privacy */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "fluttertoast-fluttertoast_privacy"; path = fluttertoast_privacy.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		E3D661B08B615B28E8D0AD8F5E80E812 /* fluttertoast_privacy.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = fluttertoast_privacy.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		E633AB50F0B94499465515D91F0B596F /* LocationDistanceMapper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LocationDistanceMapper.m; path = "../../../../../../../../../../../../../../../../.pub-cache/hosted/pub.dev/geolocator_apple-2.3.13/darwin/geolocator_apple/Sources/geolocator_apple/Utils/LocationDistanceMapper.m"; sourceTree = "<group>"; };
 		E95B8474E869A1496D55E824CDB3EDB3 /* fluttertoast.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = fluttertoast.modulemap; sourceTree = "<group>"; };
 		E9E0803DB16B07FAB6F6CE6667F8BB0A /* package_info_plus-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "package_info_plus-umbrella.h"; sourceTree = "<group>"; };
@@ -457,12 +459,13 @@
 		EBA40F7E961CC3A0FA46B191B5809BD8 /* ServiceStatus.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ServiceStatus.h; path = "../../../../../../../../../../../../../../../../../../.pub-cache/hosted/pub.dev/geolocator_apple-2.3.13/darwin/geolocator_apple/Sources/geolocator_apple/include/geolocator_apple/Utils/ServiceStatus.h"; sourceTree = "<group>"; };
 		EF54BEED02A5A4DE8C36633724F64B59 /* Pods-Runner-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Runner-acknowledgements.plist"; sourceTree = "<group>"; };
 		EF5E18FE92A6BCA30E9B72C5F9641B42 /* AudioVideoPermissionStrategy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AudioVideoPermissionStrategy.h; path = "../../../../../../../../../../../../../../.pub-cache/hosted/pub.dev/permission_handler_apple-9.4.7/ios/Classes/strategies/AudioVideoPermissionStrategy.h"; sourceTree = "<group>"; };
-		EF77732B0A5B02927ED467224B7F0B82 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = "../../../../../../../../../../../../.pub-cache/hosted/pub.dev/permission_handler_apple-9.4.7/LICENSE"; sourceTree = "<group>"; };
+		EF77732B0A5B02927ED467224B7F0B82 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = "../../../../../../../../../../../../.pub-cache/hosted/pub.dev/permission_handler_apple-9.4.7/LICENSE"; sourceTree = "<group>"; };
 		F01F0E1FA40088F2C7B4F2288D912558 /* permission_handler_apple.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = permission_handler_apple.release.xcconfig; sourceTree = "<group>"; };
 		F374E21220B62F99C56A1804DDEBF039 /* StoragePermissionStrategy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = StoragePermissionStrategy.h; path = "../../../../../../../../../../../../../../.pub-cache/hosted/pub.dev/permission_handler_apple-9.4.7/ios/Classes/strategies/StoragePermissionStrategy.h"; sourceTree = "<group>"; };
 		F3FD89A3C35F3ED2DDAE100615C517D1 /* Pods-Runner-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Runner-umbrella.h"; sourceTree = "<group>"; };
+		F43B03C32DF2C096007D8E75 /* RazorpayDelegate+Turbo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RazorpayDelegate+Turbo.swift"; sourceTree = "<group>"; };
 		F8A4F738016CA08FA80158A640583508 /* ResourceBundle-permission_handler_apple_privacy-permission_handler_apple-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-permission_handler_apple_privacy-permission_handler_apple-Info.plist"; sourceTree = "<group>"; };
-		FA845F80B3847B22ACF63FD7E64E6D03 /* geolocator_apple-geolocator_apple_privacy */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "geolocator_apple-geolocator_apple_privacy"; path = geolocator_apple_privacy.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA845F80B3847B22ACF63FD7E64E6D03 /* geolocator_apple_privacy.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = geolocator_apple_privacy.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB7EB984E7D1BB775E82CF3129530543 /* RazorpayDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RazorpayDelegate.swift; path = ../../../../../../../ios/Classes/RazorpayDelegate.swift; sourceTree = "<group>"; };
 		FF1F77BEBD8E3A4787D744F581CA110C /* LocationAccuracyHandler.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LocationAccuracyHandler.h; path = "../../../../../../../../../../../../../../../../../../.pub-cache/hosted/pub.dev/geolocator_apple-2.3.13/darwin/geolocator_apple/Sources/geolocator_apple/include/geolocator_apple/Handlers/LocationAccuracyHandler.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -553,20 +556,18 @@
 				266FD3C31D0F54F4DF6FCD8EEE0C8B27 /* Classes */,
 				68ED3E7921C8FDCFFFE98F003EC0034E /* Resources */,
 			);
-			name = ios;
 			path = ios;
 			sourceTree = "<group>";
 		};
 		02EF0638177BEB722D23B1F1C3D384DC /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				F43B03C32DF2C096007D8E75 /* RazorpayDelegate+Turbo.swift */,
 				FB7EB984E7D1BB775E82CF3129530543 /* RazorpayDelegate.swift */,
-				48142849B8A98437826E91D6F199AA82 /* RazorpayDelegate+Turbo.swift */,
 				0CA11942F4DB23FB451735B54758690F /* RazorpayFlutterPlugin.h */,
 				1076978A211FA946775D96E2CF0107F3 /* RazorpayFlutterPlugin.m */,
 				1CE45398224AD6F73CFB3DAB783773A9 /* SwiftRazorpayFlutterPlugin.swift */,
 			);
-			name = Classes;
 			path = Classes;
 			sourceTree = "<group>";
 		};
@@ -575,7 +576,6 @@
 			children = (
 				4F7103F069E74A30CE8B2B169C89A66F /* PrivacyInfo.xcprivacy */,
 			);
-			name = Resources;
 			path = Resources;
 			sourceTree = "<group>";
 		};
@@ -584,7 +584,6 @@
 			children = (
 				8391936B4507619C8E52C98A744025A8 /* .. */,
 			);
-			name = ..;
 			path = ..;
 			sourceTree = "<group>";
 		};
@@ -641,7 +640,6 @@
 			children = (
 				1899A05CFD831DA343F333D542D0E2A9 /* permission_handler_apple */,
 			);
-			name = plugins;
 			path = plugins;
 			sourceTree = "<group>";
 		};
@@ -654,7 +652,6 @@
 				38C8064146F230422CE1F1EDCD398774 /* Handlers */,
 				3DEF1BF19AB6023C0EE37A46ED8F6901 /* Utils */,
 			);
-			name = geolocator_apple;
 			path = geolocator_apple;
 			sourceTree = "<group>";
 		};
@@ -663,7 +660,6 @@
 			children = (
 				4CE36C735A07E2C132C5FC8424CC0683 /* .. */,
 			);
-			name = ..;
 			path = ..;
 			sourceTree = "<group>";
 		};
@@ -672,7 +668,6 @@
 			children = (
 				995597763847D2B3998AEBB1A7642440 /* FPPPackageInfoPlusPlugin.h */,
 			);
-			name = package_info_plus;
 			path = package_info_plus;
 			sourceTree = "<group>";
 		};
@@ -681,7 +676,6 @@
 			children = (
 				BF5515DFC152F99D94DD13BF3CB9B8B3 /* ios */,
 			);
-			name = permission_handler_apple;
 			path = permission_handler_apple;
 			sourceTree = "<group>";
 		};
@@ -690,7 +684,6 @@
 			children = (
 				02D1EFB4E5250D27B752B8A3A95B1D73 /* ios */,
 			);
-			name = fluttertoast;
 			path = fluttertoast;
 			sourceTree = "<group>";
 		};
@@ -699,7 +692,6 @@
 			children = (
 				72D9FBFF2AA0AFE560FDB7407D5299F5 /* package_info_plus */,
 			);
-			name = ios;
 			path = ios;
 			sourceTree = "<group>";
 		};
@@ -739,7 +731,6 @@
 				7F3B8D0AAF72E90EA057BA51CDA138C1 /* UIView+Toast.h */,
 				B2A6F8B3822A5AF50C8D0059922A4E8E /* UIView+Toast.m */,
 			);
-			name = Classes;
 			path = Classes;
 			sourceTree = "<group>";
 		};
@@ -748,7 +739,6 @@
 			children = (
 				69323708BAB30CAA592B4084443C9B7F /* geolocator_apple */,
 			);
-			name = plugins;
 			path = plugins;
 			sourceTree = "<group>";
 		};
@@ -792,23 +782,22 @@
 			children = (
 				8A0D49EA0E760906A8B172C0C8ACB6BE /* .. */,
 			);
-			name = ..;
 			path = ..;
 			sourceTree = "<group>";
 		};
 		2FE5F5DD626D520D0531CABA645A8225 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D0C5A85ABEF5ED03A54A449B87B69225 /* fluttertoast */,
-				E3D661B08B615B28E8D0AD8F5E80E812 /* fluttertoast-fluttertoast_privacy */,
-				502E20F09A7CAFBD1DE1AA882DCC550C /* geolocator_apple */,
-				FA845F80B3847B22ACF63FD7E64E6D03 /* geolocator_apple-geolocator_apple_privacy */,
-				C39BE06027F24EB0328A76E7507FA463 /* package_info_plus */,
-				64FB8D36F3D5FD1F4E08A8CB92BCD154 /* package_info_plus-package_info_plus_privacy */,
-				C7AD28D5FB25A8DEDF61F78996932FA6 /* permission_handler_apple */,
-				4683C6A6BA60720F17CAD71C28988BDC /* permission_handler_apple-permission_handler_apple_privacy */,
-				669E8F25E1897672BDB80B7EB784DA24 /* Pods-Runner */,
-				4D68842CB2772778EFB677388B48AC94 /* razorpay_flutter */,
+				D0C5A85ABEF5ED03A54A449B87B69225 /* fluttertoast.framework */,
+				E3D661B08B615B28E8D0AD8F5E80E812 /* fluttertoast_privacy.bundle */,
+				502E20F09A7CAFBD1DE1AA882DCC550C /* geolocator_apple.framework */,
+				FA845F80B3847B22ACF63FD7E64E6D03 /* geolocator_apple_privacy.bundle */,
+				C39BE06027F24EB0328A76E7507FA463 /* package_info_plus.framework */,
+				64FB8D36F3D5FD1F4E08A8CB92BCD154 /* package_info_plus_privacy.bundle */,
+				C7AD28D5FB25A8DEDF61F78996932FA6 /* permission_handler_apple.framework */,
+				4683C6A6BA60720F17CAD71C28988BDC /* permission_handler_apple_privacy.bundle */,
+				669E8F25E1897672BDB80B7EB784DA24 /* Pods_Runner.framework */,
+				4D68842CB2772778EFB677388B48AC94 /* razorpay_flutter.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -818,7 +807,6 @@
 			children = (
 				ACF65760757C0ABEA205B3D3C71D68E5 /* .. */,
 			);
-			name = ..;
 			path = ..;
 			sourceTree = "<group>";
 		};
@@ -827,7 +815,6 @@
 			children = (
 				C8B270FD231C6DB1B9B0F7A76C1DA58D /* example */,
 			);
-			name = "razorpay-flutter";
 			path = "razorpay-flutter";
 			sourceTree = "<group>";
 		};
@@ -842,7 +829,6 @@
 				FB31FCE79863686EFCC40647A92D69FA /* strategies */,
 				A7F4E1CED6FB6826AF96E80CABB00AC0 /* util */,
 			);
-			name = Classes;
 			path = Classes;
 			sourceTree = "<group>";
 		};
@@ -856,7 +842,6 @@
 				822711986F95F64EEE34969424DC81BC /* PermissionHandler.h */,
 				B80608F6CCBE98EDD4A2BF3D4EAE816E /* PositionStreamHandler.h */,
 			);
-			name = Handlers;
 			path = Handlers;
 			sourceTree = "<group>";
 		};
@@ -865,7 +850,6 @@
 			children = (
 				73C4364AB19F0BF7133D188EE27CD4D4 /* Project */,
 			);
-			name = Flutter;
 			path = Flutter;
 			sourceTree = "<group>";
 		};
@@ -885,7 +869,6 @@
 			children = (
 				7DA584716BFAF6BBC41552C49008D1B2 /* RZPOrg */,
 			);
-			name = Documents;
 			path = Documents;
 			sourceTree = "<group>";
 		};
@@ -894,7 +877,6 @@
 			children = (
 				E751EFBEB13C5D09B375A688BF63CA4E /* .. */,
 			);
-			name = ..;
 			path = ..;
 			sourceTree = "<group>";
 		};
@@ -909,7 +891,6 @@
 				92D6DA3F0097C33D31CAC31C3E8C0582 /* PermissionUtils.h */,
 				EBA40F7E961CC3A0FA46B191B5809BD8 /* ServiceStatus.h */,
 			);
-			name = Utils;
 			path = Utils;
 			sourceTree = "<group>";
 		};
@@ -918,7 +899,6 @@
 			children = (
 				14863234D9570E383C7AC8DD680F39A4 /* .. */,
 			);
-			name = ..;
 			path = ..;
 			sourceTree = "<group>";
 		};
@@ -932,7 +912,6 @@
 				C815D2D2815A579CCAD6357F89C9BB61 /* include */,
 				643822E52A8FA010E5DB67E825CADE32 /* Utils */,
 			);
-			name = geolocator_apple;
 			path = geolocator_apple;
 			sourceTree = "<group>";
 		};
@@ -941,7 +920,6 @@
 			children = (
 				EDD54B53DEDCF19567E95F143B8F1F80 /* Documents */,
 			);
-			name = ..;
 			path = ..;
 			sourceTree = "<group>";
 		};
@@ -950,7 +928,6 @@
 			children = (
 				1EEF1ADF0C410CEC790CB098E1021C50 /* ErrorCodes.m */,
 			);
-			name = Constants;
 			path = Constants;
 			sourceTree = "<group>";
 		};
@@ -959,7 +936,6 @@
 			children = (
 				995AEB299E8906B1AD207D5687CC49F1 /* plugins */,
 			);
-			name = .symlinks;
 			path = .symlinks;
 			sourceTree = "<group>";
 		};
@@ -968,7 +944,6 @@
 			children = (
 				13ED186A20832AAED4E181989FFAA440 /* plugins */,
 			);
-			name = .symlinks;
 			path = .symlinks;
 			sourceTree = "<group>";
 		};
@@ -987,7 +962,6 @@
 			children = (
 				EF26ECE47004E59413ACDAA2F36AF171 /* .. */,
 			);
-			name = ..;
 			path = ..;
 			sourceTree = "<group>";
 		};
@@ -1005,7 +979,6 @@
 			children = (
 				26F3082BC31AC74636E14673B7002E3A /* plugins */,
 			);
-			name = .symlinks;
 			path = .symlinks;
 			sourceTree = "<group>";
 		};
@@ -1014,7 +987,6 @@
 			children = (
 				552AF52378F412E02BD7359C22ED6E1A /* ios */,
 			);
-			name = razorpay_flutter;
 			path = razorpay_flutter;
 			sourceTree = "<group>";
 		};
@@ -1024,7 +996,6 @@
 				B5F17035E4C07398760632BAD564C34A /* Frameworks */,
 				A1DC354A2021B5EA7F4BE35E3054555F /* Support Files */,
 			);
-			name = "razorpay-pod";
 			path = "razorpay-pod";
 			sourceTree = "<group>";
 		};
@@ -1033,7 +1004,6 @@
 			children = (
 				A2F3E5201C65A839253ADE041158295D /* Flutter */,
 			);
-			name = Mobile;
 			path = Mobile;
 			sourceTree = "<group>";
 		};
@@ -1042,7 +1012,6 @@
 			children = (
 				02EF0638177BEB722D23B1F1C3D384DC /* Classes */,
 			);
-			name = ios;
 			path = ios;
 			sourceTree = "<group>";
 		};
@@ -1062,7 +1031,6 @@
 				695369D201C411550D204C3DFCF51DAB /* PrivacyInfo.xcprivacy */,
 				C3F0D5FC8CF2FFC6389EDF078F2EF13A /* include */,
 			);
-			name = package_info_plus;
 			path = package_info_plus;
 			sourceTree = "<group>";
 		};
@@ -1076,7 +1044,6 @@
 				5B2B18E3E5399A9845FE4F38C1B8A8E7 /* LocationMapper.m */,
 				724DDFB1FB364E5C2F4EA623691C5E74 /* PermissionUtils.m */,
 			);
-			name = Utils;
 			path = Utils;
 			sourceTree = "<group>";
 		};
@@ -1102,7 +1069,6 @@
 			children = (
 				1894A9FCAFE0E31E880B5DCD4DBDB49E /* PrivacyInfo.xcprivacy */,
 			);
-			name = Resources;
 			path = Resources;
 			sourceTree = "<group>";
 		};
@@ -1111,7 +1077,6 @@
 			children = (
 				E2C4690C488C1310A99CA2E77EFCAE9C /* darwin */,
 			);
-			name = geolocator_apple;
 			path = geolocator_apple;
 			sourceTree = "<group>";
 		};
@@ -1120,7 +1085,6 @@
 			children = (
 				3393CEBE9D97043034EACCCB79EE9981 /* .. */,
 			);
-			name = ..;
 			path = ..;
 			sourceTree = "<group>";
 		};
@@ -1129,7 +1093,6 @@
 			children = (
 				1BEAEBCA03A6FBEF1C109F5234FB891F /* fluttertoast */,
 			);
-			name = plugins;
 			path = plugins;
 			sourceTree = "<group>";
 		};
@@ -1138,7 +1101,6 @@
 			children = (
 				7C3F5C211E1A5637E5526A9691966818 /* example */,
 			);
-			name = "razorpay-flutter";
 			path = "razorpay-flutter";
 			sourceTree = "<group>";
 		};
@@ -1157,7 +1119,6 @@
 			children = (
 				8BFF8A6B3D56131B07AAEF08AD2C888B /* Sources */,
 			);
-			name = package_info_plus;
 			path = package_info_plus;
 			sourceTree = "<group>";
 		};
@@ -1166,7 +1127,6 @@
 			children = (
 				6FC9C16BA5F95BBB75BAD122F6230F8D /* razorpay-flutter */,
 			);
-			name = Project;
 			path = Project;
 			sourceTree = "<group>";
 		};
@@ -1175,7 +1135,6 @@
 			children = (
 				77052447F6006C984C428D382ACE8F4D /* ios */,
 			);
-			name = example;
 			path = example;
 			sourceTree = "<group>";
 		};
@@ -1184,7 +1143,6 @@
 			children = (
 				E7C637A318A3BE6DA9058F61D11DE82F /* .symlinks */,
 			);
-			name = ios;
 			path = ios;
 			sourceTree = "<group>";
 		};
@@ -1206,7 +1164,6 @@
 			children = (
 				39B3619EE1BDDDF66BA1B5A110046228 /* Flutter */,
 			);
-			name = Mobile;
 			path = Mobile;
 			sourceTree = "<group>";
 		};
@@ -1233,7 +1190,6 @@
 			children = (
 				D14889F53E6A49AD29FB73EA91DCC3B3 /* ios */,
 			);
-			name = example;
 			path = example;
 			sourceTree = "<group>";
 		};
@@ -1242,7 +1198,6 @@
 			children = (
 				EEF37089ADD7EA63A0AF55DE034F8967 /* Mobile */,
 			);
-			name = RZPOrg;
 			path = RZPOrg;
 			sourceTree = "<group>";
 		};
@@ -1251,7 +1206,6 @@
 			children = (
 				D2DCCA5FF4BEB7CDD5E34258AB4EA136 /* ios */,
 			);
-			name = example;
 			path = example;
 			sourceTree = "<group>";
 		};
@@ -1270,7 +1224,6 @@
 			children = (
 				CFC547CCA8DBFE6D8BC0F7BE208C6755 /* .. */,
 			);
-			name = ..;
 			path = ..;
 			sourceTree = "<group>";
 		};
@@ -1279,7 +1232,6 @@
 			children = (
 				EA543F0C88ABD18F2D441E56330DBF24 /* Documents */,
 			);
-			name = ..;
 			path = ..;
 			sourceTree = "<group>";
 		};
@@ -1288,7 +1240,6 @@
 			children = (
 				B8F852F37651943AEB041C9FD8D5F0C7 /* .. */,
 			);
-			name = ..;
 			path = ..;
 			sourceTree = "<group>";
 		};
@@ -1297,7 +1248,6 @@
 			children = (
 				A45E59D2D7A69894297A2B9DD75CF207 /* Sources */,
 			);
-			name = geolocator_apple;
 			path = geolocator_apple;
 			sourceTree = "<group>";
 		};
@@ -1315,7 +1265,6 @@
 			children = (
 				FA08F63153E0D39A16D4D0EF953DE396 /* Project */,
 			);
-			name = Flutter;
 			path = Flutter;
 			sourceTree = "<group>";
 		};
@@ -1324,7 +1273,6 @@
 			children = (
 				092A9A6AD5BF8B59B8DA0DBCD952F4E3 /* .. */,
 			);
-			name = ..;
 			path = ..;
 			sourceTree = "<group>";
 		};
@@ -1337,7 +1285,6 @@
 				D29EE19BD162943940664F3A728902E8 /* PermissionHandler.m */,
 				8EFF39AF08ADEFD9D78CF204375DF508 /* PositionStreamHandler.m */,
 			);
-			name = Handlers;
 			path = Handlers;
 			sourceTree = "<group>";
 		};
@@ -1346,7 +1293,6 @@
 			children = (
 				B728E0A852EA4ABA6F425992F9FDA5D2 /* ios */,
 			);
-			name = example;
 			path = example;
 			sourceTree = "<group>";
 		};
@@ -1355,7 +1301,6 @@
 			children = (
 				89B94D11DF70A6D57DF3D85D07F304C9 /* Flutter */,
 			);
-			name = Mobile;
 			path = Mobile;
 			sourceTree = "<group>";
 		};
@@ -1364,7 +1309,6 @@
 			children = (
 				5B71B8265A9FC45A1523FC02F964A4F3 /* package_info_plus */,
 			);
-			name = Sources;
 			path = Sources;
 			sourceTree = "<group>";
 		};
@@ -1384,7 +1328,6 @@
 			children = (
 				8B6F7922AC607B7157EC7AB3F148195A /* example */,
 			);
-			name = "razorpay-flutter";
 			path = "razorpay-flutter";
 			sourceTree = "<group>";
 		};
@@ -1393,7 +1336,6 @@
 			children = (
 				51615423EE11ABEC900759C1F492C495 /* razorpay_flutter */,
 			);
-			name = plugins;
 			path = plugins;
 			sourceTree = "<group>";
 		};
@@ -1402,7 +1344,6 @@
 			children = (
 				4364F3B1FB7809D6ECA271AB41D54C2E /* .. */,
 			);
-			name = ..;
 			path = ..;
 			sourceTree = "<group>";
 		};
@@ -1422,7 +1363,6 @@
 			children = (
 				C61F6CD65900A285C187C00F7BE45F09 /* Project */,
 			);
-			name = Flutter;
 			path = Flutter;
 			sourceTree = "<group>";
 		};
@@ -1431,7 +1371,6 @@
 			children = (
 				406B0C31D9DAB848DF2ACF705F8F4308 /* geolocator_apple */,
 			);
-			name = Sources;
 			path = Sources;
 			sourceTree = "<group>";
 		};
@@ -1440,7 +1379,6 @@
 			children = (
 				7846EE0B3CDCD186EA2D7172DAD5A2EE /* Mobile */,
 			);
-			name = RZPOrg;
 			path = RZPOrg;
 			sourceTree = "<group>";
 		};
@@ -1449,7 +1387,6 @@
 			children = (
 				B7D2CCBA2B22A1E285811613E6200691 /* RZPOrg */,
 			);
-			name = Documents;
 			path = Documents;
 			sourceTree = "<group>";
 		};
@@ -1458,7 +1395,6 @@
 			children = (
 				BFF93A336A371BDF9AD91118806D8FB3 /* package_info_plus */,
 			);
-			name = plugins;
 			path = plugins;
 			sourceTree = "<group>";
 		};
@@ -1468,7 +1404,6 @@
 				67F5E321EF99C07C866150E4E8F25560 /* Codec.h */,
 				6A6A7D3628731349DDCC10BB78E4A402 /* Codec.m */,
 			);
-			name = util;
 			path = util;
 			sourceTree = "<group>";
 		};
@@ -1477,7 +1412,6 @@
 			children = (
 				A78F53B78BAF0FA4E5A9AD8E26AE23CD /* plugins */,
 			);
-			name = .symlinks;
 			path = .symlinks;
 			sourceTree = "<group>";
 		};
@@ -1486,7 +1420,6 @@
 			children = (
 				A738BB985C5BF8397D6A643FFE456577 /* Documents */,
 			);
-			name = ..;
 			path = ..;
 			sourceTree = "<group>";
 		};
@@ -1495,7 +1428,6 @@
 			children = (
 				8BEE29A97429A3A5D8563054BF8346DA /* Mobile */,
 			);
-			name = RZPOrg;
 			path = RZPOrg;
 			sourceTree = "<group>";
 		};
@@ -1504,7 +1436,6 @@
 			children = (
 				AC846388EEF5DB9C99C0466874E6EB72 /* .symlinks */,
 			);
-			name = ios;
 			path = ios;
 			sourceTree = "<group>";
 		};
@@ -1524,7 +1455,6 @@
 			children = (
 				3D847B952E8C022DA4C017338A0432F6 /* .. */,
 			);
-			name = ..;
 			path = ..;
 			sourceTree = "<group>";
 		};
@@ -1541,7 +1471,6 @@
 			children = (
 				4B04D54A17C931329B49ED75FC8C4F5C /* .symlinks */,
 			);
-			name = ios;
 			path = ios;
 			sourceTree = "<group>";
 		};
@@ -1550,7 +1479,6 @@
 			children = (
 				5435BED6C7FAE3967AB4246931463C23 /* Mobile */,
 			);
-			name = RZPOrg;
 			path = RZPOrg;
 			sourceTree = "<group>";
 		};
@@ -1575,7 +1503,6 @@
 			children = (
 				BC270D26428D750424D6227DA44A259F /* .. */,
 			);
-			name = ..;
 			path = ..;
 			sourceTree = "<group>";
 		};
@@ -1584,7 +1511,6 @@
 			children = (
 				2FB24AB35DB362D6B7922BC027591BF0 /* .. */,
 			);
-			name = ..;
 			path = ..;
 			sourceTree = "<group>";
 		};
@@ -1594,7 +1520,6 @@
 				35CD7E1DB2E93AB513651A1759CE5304 /* Classes */,
 				05522EEC5F4C88CC1D2359863E6602F1 /* Resources */,
 			);
-			name = ios;
 			path = ios;
 			sourceTree = "<group>";
 		};
@@ -1603,7 +1528,6 @@
 			children = (
 				1EC3DE062505B629F4DF8F24C29094F6 /* ios */,
 			);
-			name = package_info_plus;
 			path = package_info_plus;
 			sourceTree = "<group>";
 		};
@@ -1612,7 +1536,6 @@
 			children = (
 				14CB957F382F9B043F5D45AF89C2B3F7 /* package_info_plus */,
 			);
-			name = include;
 			path = include;
 			sourceTree = "<group>";
 		};
@@ -1621,7 +1544,6 @@
 			children = (
 				98C35142211EC228E3D314122C3C838A /* razorpay-flutter */,
 			);
-			name = Project;
 			path = Project;
 			sourceTree = "<group>";
 		};
@@ -1631,7 +1553,6 @@
 				581E6D67D7FC73DF90755A873B69CE84 /* geolocator-umbrella.h */,
 				141DB1BF029EC32D1771A9B941372EA3 /* geolocator_apple */,
 			);
-			name = include;
 			path = include;
 			sourceTree = "<group>";
 		};
@@ -1640,7 +1561,6 @@
 			children = (
 				CE072C13BA99978411F390E377909906 /* ErrorCodes.h */,
 			);
-			name = Constants;
 			path = Constants;
 			sourceTree = "<group>";
 		};
@@ -1649,7 +1569,6 @@
 			children = (
 				B1B426F7BFE7A2EBF5F0FE70C7F4AB48 /* ios */,
 			);
-			name = example;
 			path = example;
 			sourceTree = "<group>";
 		};
@@ -1667,7 +1586,6 @@
 			children = (
 				73E6B911F0CB3EDF72604C8D14979DE9 /* example */,
 			);
-			name = "razorpay-flutter";
 			path = "razorpay-flutter";
 			sourceTree = "<group>";
 		};
@@ -1697,7 +1615,6 @@
 			children = (
 				B4CA53F34C229166797FF20922057810 /* .. */,
 			);
-			name = ..;
 			path = ..;
 			sourceTree = "<group>";
 		};
@@ -1706,7 +1623,6 @@
 			children = (
 				4EF9B80237EB95EB5575D44A73951435 /* .symlinks */,
 			);
-			name = ios;
 			path = ios;
 			sourceTree = "<group>";
 		};
@@ -1723,7 +1639,6 @@
 			children = (
 				4ABE42976595FBF16B0157BD763D15CB /* .symlinks */,
 			);
-			name = ios;
 			path = ios;
 			sourceTree = "<group>";
 		};
@@ -1732,7 +1647,6 @@
 			children = (
 				ED3F9FAECF2B4771DE2DA2E5B4ACDD0E /* .. */,
 			);
-			name = ..;
 			path = ..;
 			sourceTree = "<group>";
 		};
@@ -1770,7 +1684,6 @@
 			children = (
 				CAAFBD84F7345813104D5F1C3D50AFA5 /* razorpay-flutter */,
 			);
-			name = Project;
 			path = Project;
 			sourceTree = "<group>";
 		};
@@ -1794,7 +1707,6 @@
 			children = (
 				855F9CDEBBBAF61CD6037DB57EBEF8E5 /* geolocator_apple */,
 			);
-			name = darwin;
 			path = darwin;
 			sourceTree = "<group>";
 		};
@@ -1813,7 +1725,6 @@
 				0A457ED09B09CD41908C570281B690D1 /* standard */,
 				793E38A9ED9A17F29CE20F9BD2CDD739 /* Support Files */,
 			);
-			name = "razorpay-turbo";
 			path = "razorpay-turbo";
 			sourceTree = "<group>";
 		};
@@ -1822,7 +1733,6 @@
 			children = (
 				3D4DD5967ECC44DE47532BE8FCA6BB8A /* Documents */,
 			);
-			name = ..;
 			path = ..;
 			sourceTree = "<group>";
 		};
@@ -1831,7 +1741,6 @@
 			children = (
 				6CEAA3F6FD134AFF43CEDFE4B9AA12B5 /* plugins */,
 			);
-			name = .symlinks;
 			path = .symlinks;
 			sourceTree = "<group>";
 		};
@@ -1840,7 +1749,6 @@
 			children = (
 				AD61AEFD6BFCC362B58F62AC7B0A7177 /* RZPOrg */,
 			);
-			name = Documents;
 			path = Documents;
 			sourceTree = "<group>";
 		};
@@ -1849,7 +1757,6 @@
 			children = (
 				6A254970A25B44B7AC68907A6414ACDF /* .. */,
 			);
-			name = ..;
 			path = ..;
 			sourceTree = "<group>";
 		};
@@ -1858,7 +1765,6 @@
 			children = (
 				A65551F93ACB8FE3402F2C0DFBC1922B /* RZPOrg */,
 			);
-			name = Documents;
 			path = Documents;
 			sourceTree = "<group>";
 		};
@@ -1867,7 +1773,6 @@
 			children = (
 				F9B74AD78BDE200D8BB226D908E6C505 /* Flutter */,
 			);
-			name = Mobile;
 			path = Mobile;
 			sourceTree = "<group>";
 		};
@@ -1876,7 +1781,6 @@
 			children = (
 				FC8D54DBA76D10959A9FFA5266B941FC /* .. */,
 			);
-			name = ..;
 			path = ..;
 			sourceTree = "<group>";
 		};
@@ -1885,7 +1789,6 @@
 			children = (
 				7DD29D4EF875A944BC5135D3FAF9C0C5 /* example */,
 			);
-			name = ..;
 			path = ..;
 			sourceTree = "<group>";
 		};
@@ -1903,7 +1806,6 @@
 			children = (
 				E0DB106880FC523E3D41B5BD6B94BBDA /* Project */,
 			);
-			name = Flutter;
 			path = Flutter;
 			sourceTree = "<group>";
 		};
@@ -1912,7 +1814,6 @@
 			children = (
 				3395269AEEDA4E35DE13D5480FC508FE /* razorpay-flutter */,
 			);
-			name = Project;
 			path = Project;
 			sourceTree = "<group>";
 		};
@@ -1965,7 +1866,6 @@
 				2FB9608076C32ED020B0E7720CE491D3 /* UnknownPermissionStrategy.h */,
 				976770A1082ED43F9250DA9C8821C14A /* UnknownPermissionStrategy.m */,
 			);
-			name = strategies;
 			path = strategies;
 			sourceTree = "<group>";
 		};
@@ -1974,7 +1874,6 @@
 			children = (
 				9D8AC6F954BAA439636FADF9267493BD /* .. */,
 			);
-			name = ..;
 			path = ..;
 			sourceTree = "<group>";
 		};
@@ -2088,7 +1987,7 @@
 			);
 			name = "package_info_plus-package_info_plus_privacy";
 			productName = package_info_plus_privacy;
-			productReference = 64FB8D36F3D5FD1F4E08A8CB92BCD154 /* package_info_plus-package_info_plus_privacy */;
+			productReference = 64FB8D36F3D5FD1F4E08A8CB92BCD154 /* package_info_plus_privacy.bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
 		3AEC564FBEF6D576418AC71B87922016 /* geolocator_apple-geolocator_apple_privacy */ = {
@@ -2105,7 +2004,7 @@
 			);
 			name = "geolocator_apple-geolocator_apple_privacy";
 			productName = geolocator_apple_privacy;
-			productReference = FA845F80B3847B22ACF63FD7E64E6D03 /* geolocator_apple-geolocator_apple_privacy */;
+			productReference = FA845F80B3847B22ACF63FD7E64E6D03 /* geolocator_apple_privacy.bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
 		517E8BED8B0E6D6FD078BD19B0A13893 /* permission_handler_apple-permission_handler_apple_privacy */ = {
@@ -2122,7 +2021,7 @@
 			);
 			name = "permission_handler_apple-permission_handler_apple_privacy";
 			productName = permission_handler_apple_privacy;
-			productReference = 4683C6A6BA60720F17CAD71C28988BDC /* permission_handler_apple-permission_handler_apple_privacy */;
+			productReference = 4683C6A6BA60720F17CAD71C28988BDC /* permission_handler_apple_privacy.bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
 		54A00AF9F830F355D8FD8F6A4387F6A2 /* package_info_plus */ = {
@@ -2142,7 +2041,7 @@
 			);
 			name = package_info_plus;
 			productName = package_info_plus;
-			productReference = C39BE06027F24EB0328A76E7507FA463 /* package_info_plus */;
+			productReference = C39BE06027F24EB0328A76E7507FA463 /* package_info_plus.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		8B74B458B450D74B75744B87BD747314 /* Pods-Runner */ = {
@@ -2168,7 +2067,7 @@
 			);
 			name = "Pods-Runner";
 			productName = Pods_Runner;
-			productReference = 669E8F25E1897672BDB80B7EB784DA24 /* Pods-Runner */;
+			productReference = 669E8F25E1897672BDB80B7EB784DA24 /* Pods_Runner.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		A45E503409C9530E1F5D12C293F4BD67 /* permission_handler_apple */ = {
@@ -2188,7 +2087,7 @@
 			);
 			name = permission_handler_apple;
 			productName = permission_handler_apple;
-			productReference = C7AD28D5FB25A8DEDF61F78996932FA6 /* permission_handler_apple */;
+			productReference = C7AD28D5FB25A8DEDF61F78996932FA6 /* permission_handler_apple.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		C174A07088434DD9CB45C06B185F8FF3 /* razorpay_flutter */ = {
@@ -2209,7 +2108,7 @@
 			);
 			name = razorpay_flutter;
 			productName = razorpay_flutter;
-			productReference = 4D68842CB2772778EFB677388B48AC94 /* razorpay_flutter */;
+			productReference = 4D68842CB2772778EFB677388B48AC94 /* razorpay_flutter.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		D2129B9E0DCE64EA38C25BA6C89558D7 /* geolocator_apple */ = {
@@ -2229,7 +2128,7 @@
 			);
 			name = geolocator_apple;
 			productName = geolocator_apple;
-			productReference = 502E20F09A7CAFBD1DE1AA882DCC550C /* geolocator_apple */;
+			productReference = 502E20F09A7CAFBD1DE1AA882DCC550C /* geolocator_apple.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		FA3EDC8EBD9CDE19E74123E29F5B7E04 /* fluttertoast */ = {
@@ -2249,7 +2148,7 @@
 			);
 			name = fluttertoast;
 			productName = fluttertoast;
-			productReference = D0C5A85ABEF5ED03A54A449B87B69225 /* fluttertoast */;
+			productReference = D0C5A85ABEF5ED03A54A449B87B69225 /* fluttertoast.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		FBA58286642A703EF0905798BB837EBB /* fluttertoast-fluttertoast_privacy */ = {
@@ -2266,7 +2165,7 @@
 			);
 			name = "fluttertoast-fluttertoast_privacy";
 			productName = fluttertoast_privacy;
-			productReference = E3D661B08B615B28E8D0AD8F5E80E812 /* fluttertoast-fluttertoast_privacy */;
+			productReference = E3D661B08B615B28E8D0AD8F5E80E812 /* fluttertoast_privacy.bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -2287,8 +2186,6 @@
 				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			minimizedProjectReferenceProxies = 0;
-			preferredProjectObjectVersion = 77;
 			productRefGroup = 2FE5F5DD626D520D0531CABA645A8225 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -2323,7 +2220,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A4F0114D4061CA8A90DB6059278A6605 /* fluttertoast-fluttertoast_privacy in Resources */,
+				A4F0114D4061CA8A90DB6059278A6605 /* fluttertoast_privacy.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2346,7 +2243,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				264EEBA75A636D45FD8D4267A48BD6F9 /* package_info_plus-package_info_plus_privacy in Resources */,
+				264EEBA75A636D45FD8D4267A48BD6F9 /* package_info_plus_privacy.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2369,7 +2266,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00B03128C92244F0ADAA94C5C40F7B01 /* geolocator_apple-geolocator_apple_privacy in Resources */,
+				00B03128C92244F0ADAA94C5C40F7B01 /* geolocator_apple_privacy.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2399,9 +2296,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/razorpay-pod/razorpay-pod-xcframeworks-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Copy XCFrameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/razorpay-pod/razorpay-pod-xcframeworks-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -2519,9 +2420,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F43B03C42DF2C0A0007D8E75 /* RazorpayDelegate+Turbo.swift in Sources */,
 				75ED68F565CEA355939D0C35C4D1CEE5 /* razorpay_flutter-dummy.m in Sources */,
 				A002834DC4E75205EC330B3C909A81A0 /* RazorpayDelegate.swift in Sources */,
-				1EA1A5F035FDB01ACEE6CDAE5C374DBC /* RazorpayDelegate+Turbo.swift in Sources */,
 				B3B2FE331E5961D67E0801C433ACF001 /* RazorpayFlutterPlugin.m in Sources */,
 				A4389B49BFDD48A94A478A2A102A189A /* SwiftRazorpayFlutterPlugin.swift in Sources */,
 			);
