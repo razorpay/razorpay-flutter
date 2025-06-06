@@ -1,0 +1,111 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.10 (swiftlang-5.10.0.13 clang-1500.3.9.4)
+// swift-module-flags: -target arm64-apple-ios11.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -enable-bare-slash-regex -module-name Sentry
+import AVFoundation
+import CoreGraphics
+import Foundation
+import MetricKit
+@_exported import Sentry
+import Swift
+import UIKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@objc public enum SentryTransactionNameSource : Swift.Int {
+  @objc(kSentryTransactionNameSourceCustom) case custom = 0
+  @objc(kSentryTransactionNameSourceUrl) case url
+  @objc(kSentryTransactionNameSourceRoute) case route
+  @objc(kSentryTransactionNameSourceView) case view
+  @objc(kSentryTransactionNameSourceComponent) case component
+  @objc(kSentryTransactionNameSourceTask) case sourceTask
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class SentryExperimentalOptions : ObjectiveC.NSObject {
+  @objc public var sessionReplay: Sentry.SentryReplayOptions
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class SentryReplayOptions : ObjectiveC.NSObject {
+  public enum SentryReplayQuality : Swift.Int {
+    case low
+    case medium
+    case high
+    public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  @objc public var sessionSampleRate: Swift.Float
+  @objc public var errorSampleRate: Swift.Float
+  @objc public var redactAllText: Swift.Bool
+  @objc public var redactAllImages: Swift.Bool
+  public var quality: Sentry.SentryReplayOptions.SentryReplayQuality
+  @objc override dynamic public init()
+  @objc public init(sessionSampleRate: Swift.Float = 0, errorSampleRate: Swift.Float = 0, redactAllText: Swift.Bool = true, redactAllImages: Swift.Bool = true)
+  @objc deinit
+}
+@objc public enum SentryLevel : Swift.UInt {
+  @objc(kSentryLevelNone) case none = 0
+  @objc(kSentryLevelDebug) case debug = 1
+  @objc(kSentryLevelInfo) case info = 2
+  @objc(kSentryLevelWarning) case warning = 3
+  @objc(kSentryLevelError) case error = 4
+  @objc(kSentryLevelFatal) case fatal = 5
+  public init?(rawValue: Swift.UInt)
+  public typealias RawValue = Swift.UInt
+  public var rawValue: Swift.UInt {
+    get
+  }
+}
+@objc public protocol SentryIntegrationProtocol : ObjectiveC.NSObjectProtocol {
+  @objc(installWithOptions:) func install(with options: Sentry.Options) -> Swift.Bool
+  @objc func uninstall()
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class SentryId : ObjectiveC.NSObject {
+  @objc public static var empty: Sentry.SentryId
+  @objc public var sentryIdString: Swift.String {
+    @objc get
+  }
+  @objc override dynamic public init()
+  @objc public init(uuid: Foundation.UUID)
+  @objc(initWithUUIDString:) public init(uuidString: Swift.String)
+  @objc override dynamic public func isEqual(_ object: Any?) -> Swift.Bool
+  @objc override dynamic public var description: Swift.String {
+    @objc get
+  }
+  @objc override dynamic public var hash: Swift.Int {
+    @objc get
+  }
+  @objc deinit
+}
+extension Swift.FixedWidthInteger {
+  @discardableResult
+  @inlinable postfix internal static func ++ (lhs: inout Self) -> Self {
+        defer { lhs += 1 }
+        return lhs
+    }
+}
+@_hasMissingDesignatedInitializers @objc public class SentryMetricsAPI : ObjectiveC.NSObject {
+  @objc public func increment(key: Swift.String, value: Swift.Double = 1.0, unit: Sentry.MeasurementUnit = .none, tags: [Swift.String : Swift.String] = [:])
+  @objc public func gauge(key: Swift.String, value: Swift.Double, unit: Sentry.MeasurementUnit = .none, tags: [Swift.String : Swift.String] = [:])
+  @objc public func distribution(key: Swift.String, value: Swift.Double, unit: Sentry.MeasurementUnit = .none, tags: [Swift.String : Swift.String] = [:])
+  @objc public func set(key: Swift.String, value: Swift.String, unit: Sentry.MeasurementUnit = .none, tags: [Swift.String : Swift.String] = [:])
+  public func timing<T>(key: Swift.String, tags: [Swift.String : Swift.String] = [:], _ closure: () throws -> T) rethrows -> T
+  @objc public func close()
+  @objc public func flush()
+  @objc deinit
+}
+extension Sentry.SentryTransactionNameSource : Swift.Equatable {}
+extension Sentry.SentryTransactionNameSource : Swift.Hashable {}
+extension Sentry.SentryTransactionNameSource : Swift.RawRepresentable {}
+extension Sentry.SentryReplayOptions.SentryReplayQuality : Swift.Equatable {}
+extension Sentry.SentryReplayOptions.SentryReplayQuality : Swift.Hashable {}
+extension Sentry.SentryReplayOptions.SentryReplayQuality : Swift.RawRepresentable {}
+extension Sentry.SentryLevel : Swift.Equatable {}
+extension Sentry.SentryLevel : Swift.Hashable {}
+extension Sentry.SentryLevel : Swift.RawRepresentable {}

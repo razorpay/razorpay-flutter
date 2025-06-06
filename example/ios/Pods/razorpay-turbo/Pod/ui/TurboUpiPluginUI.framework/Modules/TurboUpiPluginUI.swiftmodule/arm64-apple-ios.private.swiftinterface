@@ -1,0 +1,271 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.1 effective-5.10 (swiftlang-6.1.0.110.21 clang-1700.0.13.3)
+// swift-module-flags: -target arm64-apple-ios11.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name TurboUpiPluginUI
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1
+import CoreLocation
+import Foundation
+import Razorpay
+import RazorpayTurboUPIUI
+import Swift
+import WebKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+public typealias CallBack<T> = (_ response: T?, _ error: TurboUpiPluginUI.TurboError?) -> Swift.Void
+@objc public protocol UpiTurboLinkAccountDelegate {
+  @objc func onResponse(_ action: TurboUpiPluginUI.LinkUpiAction)
+}
+@objc public protocol UpiTurboTPVLinkAccountDelegate {
+  @objc func onResponse(_ action: TurboUpiPluginUI.TPVLinkUpiAction)
+}
+@objc public protocol UPITurboResultDelegate {
+  @objc func onSuccessFetchingLinkedAcc(_ accList: [TurboUpiPluginUI.UpiAccount])
+  @objc func onErrorFetchingLinkedAcc(_ error: TurboUpiPluginUI.TurboError?)
+  @objc optional func onSuccessGetLinkedBankAccounts(_ accList: [TurboUpiPluginUI.LinkedBankAccount])
+  @objc optional func onErrorFetchingLinkedBankAccounts(_ error: TurboUpiPluginUI.TurboError?)
+}
+@objc @_inheritsConvenienceInitializers public class RazorpayTurbo : ObjectiveC.NSObject {
+  @objc override dynamic public init()
+  @objc deinit
+}
+extension TurboUpiPluginUI.RazorpayTurbo : RazorpayTurboUPIUI.TokenProvider3p {
+  public func fetchToken(completion: @escaping (RazorpayTurboUPIUI.SessionData?) -> Swift.Void)
+}
+extension TurboUpiPluginUI.RazorpayTurbo {
+  public var hasToken: Swift.Bool {
+    get
+  }
+}
+@objc @_inheritsConvenienceInitializers public class RazorpayTurboTPV : ObjectiveC.NSObject {
+  @objc override dynamic public init()
+  @objc deinit
+}
+public protocol RazorpayTokenProvider {
+}
+@_hasMissingDesignatedInitializers @objc public class LinkUpiAction : ObjectiveC.NSObject {
+  public typealias Bank = Any
+  public typealias BankAccount = Any
+  public typealias Card = Any
+  @objc public var code: TurboUpiPluginUI.LinkActionCode
+  @objc public var data: Any?
+  @objc public var error: TurboUpiPluginUI.TurboError?
+  @objc public func registerDevice()
+  @objc public func consents(consent: [TurboUpiPluginUI.Consent])
+  @objc public func selectedBank(_ bank: Any)
+  @objc public func selectedBankAccount(_ bankAccount: Any)
+  @objc public func setUpiPin(_ card: TurboUpiPluginUI.UpiCard)
+  @objc public func approvePermission()
+  @objc deinit
+}
+@objc public class TPVLinkUpiAction : ObjectiveC.NSObject {
+  public typealias BankAccount = Any
+  public typealias Card = Any
+  @objc public var code: TurboUpiPluginUI.TPVLinkActionCode
+  @objc public var data: Any?
+  @objc public var error: TurboUpiPluginUI.TurboError?
+  @objc public init(action: TurboUpiPluginUI.TPVLinkActionCode, error: TurboUpiPluginUI.TurboError? = nil)
+  @objc public func registerDevice()
+  @objc public func setUpiPin(_ bankAccount: TurboUpiPluginUI.UpiBankAccount, _ card: TurboUpiPluginUI.UpiCard)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @objc public class UpiAccount : ObjectiveC.NSObject {
+  @objc public var id: Swift.String?
+  @objc public var accountNumber: Swift.String?
+  @objc public var bankLogoUrl: Swift.String?
+  @objc public var bankName: Swift.String?
+  @objc public var bankPlaceholderUrl: Swift.String?
+  @objc public var ifsc: Swift.String?
+  @objc public var type: Swift.String?
+  @objc public var vpa: TurboUpiPluginUI.Vpa?
+  @objc public var beneficiaryName: Swift.String? {
+    @objc get
+  }
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @objc public class UpiAllAccounts : ObjectiveC.NSObject {
+  @objc public var accountsWithPinSet: [Any]?
+  @objc public var accountsWithPinNotSet: [TurboUpiPluginUI.UpiBankAccount]?
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @objc public class Vpa : ObjectiveC.NSObject {
+  @objc public var address: Swift.String?
+  @objc public var bankAccount: TurboUpiPluginUI.UpiBankAccount?
+  @objc public var handle: Swift.String?
+  @objc public var active: Swift.Bool
+  @objc public var isDefault: Swift.Bool
+  @objc public var validated: Swift.Bool
+  @objc public var username: Swift.String?
+  @objc deinit
+}
+@objc public class AllBanks : ObjectiveC.NSObject {
+  @objc final public let popularBanks: Any
+  @objc final public let banks: Any
+  public init(popularBanks: Any, allBanks: Any)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @objc public class UpiBank : ObjectiveC.NSObject {
+  @objc final public let iin: Swift.String?
+  @objc final public let name: Swift.String?
+  @objc final public let ifsc: Swift.String?
+  @objc final public let bankPlaceholderUrl: Swift.String?
+  @objc final public let logo: Swift.String?
+  @objc deinit
+}
+@objc public class UpiPrefetchBank : ObjectiveC.NSObject {
+  @objc final public let iin: Swift.String
+  @objc final public let priority: Swift.String
+  @objc final public let displayName: Swift.String
+  @objc final public let bankLogo: Swift.String
+  public init(iin: Swift.String, priority: Swift.String, displayName: Swift.String, bankLogo: Swift.String)
+  @objc deinit
+}
+@objc public class UpiBankAccount : ObjectiveC.NSObject {
+  @objc final public let id: Swift.String?
+  @objc final public let creds: TurboUpiPluginUI.UpiBankAccountCredentials?
+  @objc final public let accountNumber: Swift.String?
+  @objc final public let beneficiaryName: Swift.String?
+  @objc final public let type: Swift.String?
+  @objc final public let bank: TurboUpiPluginUI.UpiBank?
+  @objc final public let ifsc: Swift.String?
+  @objc public var state: TurboUpiPluginUI.UpiBankAccountState
+  public init(id: Swift.String?, creds: TurboUpiPluginUI.UpiBankAccountCredentials?, accountNumber: Swift.String?, beneficiaryName: Swift.String?, type: Swift.String?, bank: TurboUpiPluginUI.UpiBank?, ifsc: Swift.String?, bankAccount: Any, state: TurboUpiPluginUI.UpiBankAccountState?, vpa: Swift.String?)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class LinkedBankAccount : TurboUpiPluginUI.UpiBankAccount {
+  @objc public func isVpaSet() -> Swift.Bool
+  @objc public func setupUpiPin(_ card: TurboUpiPluginUI.UpiCard, _ completion: @escaping TurboUpiPluginUI.CallBack<TurboUpiPluginUI.UpiAccount>)
+  @objc deinit
+}
+@objc public enum UpiBankAccountState : Swift.Int {
+  case upiPinNotSet = 0
+  case upiPinSet
+  case linkingInProgress
+  case linkingSuccess
+  case linkingFailed
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers @objc public class UpiBankAccountCredentials : ObjectiveC.NSObject {
+  @objc final public let upipin: TurboUpiPluginUI.UpiBankAccountPin?
+  @objc final public let atmpin: TurboUpiPluginUI.UpiBankAccountPin?
+  @objc final public let sms: TurboUpiPluginUI.UpiBankAccountPin?
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @objc public class UpiBankAccountPin : ObjectiveC.NSObject {
+  @objc final public let length: Swift.Int
+  @objc final public let set: Swift.Bool
+  @objc deinit
+}
+@objc public class UpiCard : ObjectiveC.NSObject {
+  @objc final public let expiryMonth: Swift.String
+  @objc final public let expiryYear: Swift.String
+  @objc public init(expMonth: Swift.String, expYear: Swift.String, lastSixDigits: Swift.String)
+  @objc deinit
+}
+@objc public enum LinkActionCode : Swift.Int {
+  case consent, sendSms, selectBank, selectBankAccount, setUpiPin, linkAccountResponse, loaderData, askForPermission
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public enum TPVLinkActionCode : Swift.Int {
+  case sendSms, setUpiPin, linkAccountResponse, loaderData
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public class UpiAccountBalance : ObjectiveC.NSObject {
+  @objc final public let success: Swift.Bool
+  @objc final public let balance: Swift.Int
+  @objc final public let currency: Swift.String
+  @objc final public let id: Swift.String
+  @objc final public let outstanding: Swift.Int
+  @objc public init(success: Swift.Bool, balance: Swift.Int, currency: Swift.String, id: Swift.String, outstanding: Swift.Int)
+  @objc deinit
+}
+@objc public class TPVBankAccount : ObjectiveC.NSObject {
+  @objc public var ifsc: Swift.String
+  @objc public var bankName: Swift.String?
+  @objc public var accountNumber: Swift.String
+  @objc public var bankLogo: Swift.String?
+  public init(ifsc: Swift.String, bankName: Swift.String? = nil, accountNumber: Swift.String, bankLogo: Swift.String? = nil)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @objc public class TurboError : ObjectiveC.NSObject {
+  @objc public var errorCode: Swift.String
+  @objc public var errorDescription: Swift.String
+  @objc public var errorReason: Swift.String?
+  @objc public var errorSource: Swift.String?
+  @objc public var errorStep: Swift.String?
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @objc public class LoaderData : ObjectiveC.NSObject {
+  @objc final public let loaderStates: TurboUpiPluginUI.LoaderDataEnum
+  @objc final public let message: Swift.String
+  @objc deinit
+}
+@objc public enum LoaderDataEnum : Swift.Int {
+  case registerSim
+  case fetchingExistingAccount
+  case accountLinked
+  case gettingBankDetails
+  case gettingBankAccounts
+  case linkingBankAccount
+  case savingUserConsent
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public class Consent : ObjectiveC.NSObject {
+  @objc public var acknowledge: Swift.Bool
+  @objc public var consentMessage: Swift.String
+  @objc public var timeStamp: Swift.String
+  @objc public var type: TurboUpiPluginUI.UpiConsentType
+  @objc public var data: [Swift.String : Any]?
+  @objc public init(acknowledge: Swift.Bool, consentMessage: Swift.String, timeStamp: Swift.String, type: TurboUpiPluginUI.UpiConsentType, data: [Swift.String : Any]? = nil)
+  @objc deinit
+}
+@objc public enum UpiConsentType : Swift.Int {
+  case prefetchAndLink = 0
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@_inheritsConvenienceInitializers @objc public class RZPTurboUPI : ObjectiveC.NSObject {
+  @objc public class func pluginInstance() -> any Razorpay.UPITurboPlugin
+  @objc public class func paymentPlugin() -> any Razorpay.PluginPaymentDelegate
+  @objc public class func UIPluginInstance() -> any Razorpay.UPITurboUIPlugin
+  @objc public class func turboUIPaymentPlugin() -> any Razorpay.PluginPaymentDelegate
+  @objc public class func turboTPVUIPlugin() -> any Razorpay.UPITurboTPVUIPlugin
+  @objc public class func turboTPVPlugin() -> any Razorpay.UPITurboTPVPlugin
+  @objc final public class func isDeviceOnboarded() -> Swift.Bool
+  @objc final public class func clearSDKState()
+  @objc override dynamic public init()
+  @objc deinit
+}
+extension TurboUpiPluginUI.UpiBankAccountState : Swift.Equatable {}
+extension TurboUpiPluginUI.UpiBankAccountState : Swift.Hashable {}
+extension TurboUpiPluginUI.UpiBankAccountState : Swift.RawRepresentable {}
+extension TurboUpiPluginUI.LinkActionCode : Swift.Equatable {}
+extension TurboUpiPluginUI.LinkActionCode : Swift.Hashable {}
+extension TurboUpiPluginUI.LinkActionCode : Swift.RawRepresentable {}
+extension TurboUpiPluginUI.TPVLinkActionCode : Swift.Equatable {}
+extension TurboUpiPluginUI.TPVLinkActionCode : Swift.Hashable {}
+extension TurboUpiPluginUI.TPVLinkActionCode : Swift.RawRepresentable {}
+extension TurboUpiPluginUI.LoaderDataEnum : Swift.Equatable {}
+extension TurboUpiPluginUI.LoaderDataEnum : Swift.Hashable {}
+extension TurboUpiPluginUI.LoaderDataEnum : Swift.RawRepresentable {}
+extension TurboUpiPluginUI.UpiConsentType : Swift.Equatable {}
+extension TurboUpiPluginUI.UpiConsentType : Swift.Hashable {}
+extension TurboUpiPluginUI.UpiConsentType : Swift.RawRepresentable {}

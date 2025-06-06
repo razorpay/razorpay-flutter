@@ -1,0 +1,16 @@
+//
+//  TPAP-PROD.xcconfig
+//  tpap
+//
+//  Created by Ramprasad A on 09/05/24.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+Config_Name = TWO PARTY PROD
+LUMBERJACK_UPI_KEY = 55794871BFF5BADEE47F2DA5E5211//55DAB44EE7F21EF5AC8CC21A72295
+SDK_Type=PROD
+SWIFT_ACTIVE_COMPILATION_CONDITIONS=PROD
+OTHER_SWIFT_FLAGS=-DPROD//-DINTERNAL
+BASE_URL=api-rzp.prod.com

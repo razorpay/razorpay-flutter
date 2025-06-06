@@ -11,6 +11,7 @@
 #endif
 
 #import "FluttertoastPlugin.h"
+#import "UIView+Toast.h"
 
 FOUNDATION_EXPORT double fluttertoastVersionNumber;
 FOUNDATION_EXPORT const unsigned char fluttertoastVersionString[];

@@ -1,0 +1,17 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.9.2 (swiftlang-5.9.2.2.56 clang-1500.1.0.2.5)
+// swift-module-flags: -target arm64-apple-ios11.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name CommonLibrary
+// swift-module-flags-ignorable: -enable-bare-slash-regex
+@_exported import CommonLibrary
+import CryptoKit
+import Swift
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@_inheritsConvenienceInitializers @available(iOS 13.0, *)
+@objc public class CLAESGCM : ObjectiveC.NSObject {
+  @objc public static func encryptedDataFor(dataToEncrypt: Foundation.Data, keyData: Foundation.Data, ivData: Foundation.Data) -> Foundation.Data?
+  @objc public static func decryptedDataFor(dataToDecrypt: Foundation.Data, keyData: Foundation.Data, ivData: Foundation.Data) -> Swift.Dictionary<Swift.String, Any>?
+  @objc override dynamic public init()
+  @objc deinit
+}

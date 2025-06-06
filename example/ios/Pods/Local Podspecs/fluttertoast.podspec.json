@@ -16,21 +16,21 @@
   "source_files": "Classes/**/*",
   "public_header_files": "Classes/**/*.h",
   "dependencies": {
-    "Flutter": [
-
-    ],
-    "Toast": [
-
-    ]
+    "Flutter": []
   },
   "pod_target_xcconfig": {
-    "DEFINES_MODULE": "YES",
-    "EXCLUDED_ARCHS[sdk=iphonesimulator*]": "i386"
+    "DEFINES_MODULE": "YES"
+  },
+  "resource_bundles": {
+    "fluttertoast_privacy": [
+      "Resources/PrivacyInfo.xcprivacy"
+    ]
   },
   "platforms": {
     "osx": null,
     "ios": null,
     "tvos": null,
+    "visionos": null,
     "watchos": null
   }
 }

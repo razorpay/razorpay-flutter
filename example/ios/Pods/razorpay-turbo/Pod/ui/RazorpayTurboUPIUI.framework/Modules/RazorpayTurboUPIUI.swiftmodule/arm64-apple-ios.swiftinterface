@@ -1,0 +1,826 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.1 effective-5.10 (swiftlang-6.1.0.110.21 clang-1700.0.13.3)
+// swift-module-flags: -target arm64-apple-ios11.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name RazorpayTurboUPIUI
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1
+import CommonCrypto
+import CoreTelephony
+import CryptoKit
+import Darwin
+import DeveloperToolsSupport
+import Foundation
+import ImageIO
+import MachO
+import MetricKit
+import ObjectiveC
+import Security
+import Sentry
+import Swift
+import SwiftUI
+import SystemConfiguration
+import UIKit
+import WebKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+import os.log
+import os
+import two_party
+public struct TurboSDKError {
+  public var errorCode: Swift.String
+  public var errorDescription: Swift.String
+  public var errorReason: Swift.String?
+  public var errorSource: Swift.String?
+  public var errorStep: Swift.String?
+  public var localizedDescription: Swift.String {
+    get
+  }
+  public var asDictionary: [Swift.String : Any?] {
+    get
+  }
+}
+extension RazorpayTurboUPIUI.TurboSDKError : Swift.Error {
+}
+public class InitiateVerification {
+  public init()
+  public func initiateVerification(_ location: Swift.String?, completion: @escaping RazorpayTurboUPIUI.CallBack<[RazorpayTurboUPIUI.VPADetails]>, progress: ((Swift.String) -> Swift.Void)?)
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @available(iOS 13.0, *)
+public class MetricKitManager : ObjectiveC.NSObject {
+  public static let shared: RazorpayTurboUPIUI.MetricKitManager
+  @objc override dynamic public init()
+  @objc deinit
+}
+@available(iOS 13.0, *)
+extension RazorpayTurboUPIUI.MetricKitManager : MetricKit.MXMetricManagerSubscriber {
+  @objc dynamic public func didReceive(_ payloads: [MetricKit.MXMetricPayload])
+  @available(iOS 14.0, *)
+  @objc dynamic public func didReceive(_ payloads: [MetricKit.MXDiagnosticPayload])
+}
+public typealias CallBack<T> = (T?, RazorpayTurboUPIUI.TurboSDKError?) -> Swift.Void
+@_hasMissingDesignatedInitializers public class DictionaryEncoder {
+  public func encode<T>(_ value: T) throws -> [Swift.String : Any] where T : Swift.Encodable
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class DictionaryDecoder {
+  public func decode<T>(_ type: T.Type, from obj: Any) throws -> T where T : Swift.Decodable
+  @objc deinit
+}
+public class TransactionsAPI {
+  public init()
+  @objc deinit
+}
+public enum UpiState : Swift.String {
+  case notRegistered
+  case registered
+  case active
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public class RazorpayUpi {
+  public static var hasToken: Swift.Bool {
+    get
+  }
+  public var sessionId: Swift.String?
+  public var isOnBoardingFlow: Swift.Bool?
+  public var isCustomerEligibleForOnboardingReward: Swift.Bool?
+  public var isCustomerEligibleForTransactionReward: Swift.Bool?
+  public var vpa: RazorpayTurboUPIUI.VPADetails? {
+    get
+    set
+  }
+  public static var shared: RazorpayTurboUPIUI.RazorpayUpi? {
+    get
+  }
+  public static var tpv: (any RazorpayTurboUPIUI.TPVProtocol)? {
+    get
+  }
+  public static var bankSDKInitialised: Swift.Bool {
+    get
+  }
+  public var state: RazorpayTurboUPIUI.UpiState {
+    get
+  }
+  public static var isTpvFlow: Swift.Bool {
+    get
+  }
+  public static var isPrefetchEnabled: Swift.Bool {
+    get
+  }
+  public static var isRewardsEnabled: Swift.Bool {
+    get
+  }
+  @discardableResult
+  public init?(keyId: Swift.String, sessionId: Swift.String, sim: RazorpayTurboUPIUI.SIM, orderId: Swift.String?, customerId: Swift.String? = nil, callback: @escaping RazorpayTurboUPIUI.CallBack<Swift.Bool>)
+  @discardableResult
+  public init?(keyId: Swift.String, sessionId: Swift.String, orderId: Swift.String?, customerId: Swift.String, callback: @escaping RazorpayTurboUPIUI.CallBack<Swift.Bool>)
+  @discardableResult
+  public init?(keyId: Swift.String, sessionId: Swift.String, mobileNo: Swift.String, callback: @escaping RazorpayTurboUPIUI.CallBack<Swift.Bool>)
+  public static func isDeviceOnboarded() -> Swift.Bool
+  public var prefetchConsent: RazorpayTurboUPIUI.TurboConsent? {
+    get
+  }
+  public func pay(payRequest: RazorpayTurboUPIUI.PayRequest, _ handler: @escaping RazorpayTurboUPIUI.moneyHandler)
+  public func getPopularBanks() -> [RazorpayTurboUPIUI.PopularBanks]?
+  public func getLinkedAccounts(_ handler: @escaping RazorpayTurboUPIUI.CallBack<[RazorpayTurboUPIUI.VPADetails]>)
+  public func getXPGService() -> Swift.String?
+  public func getPrefetchPreferedBanks() -> [RazorpayTurboUPIUI.PrefetchBank]?
+  public func getUserConsentAndCalculateFees(payRequest: [Swift.String : Any], _ handler: @escaping RazorpayTurboUPIUI.CallBack<RazorpayTurboUPIUI.CustomerFeeBearerData>)
+  public static func clearSDKState(caller: Swift.String)
+  public var accentColorHexCode: Swift.String? {
+    get
+    set
+  }
+  public func manageUpiAccounts(_ handler: @escaping RazorpayTurboUPIUI.CallBack<[RazorpayTurboUPIUI.VPADetails]>)
+  public func linkNewAccount(amountInDisplayFormat: Swift.String?, _ handler: @escaping RazorpayTurboUPIUI.CallBack<Any>)
+  public func linkNewAccount(payRequest: RazorpayTurboUPIUI.PayRequest?, _ handler: @escaping RazorpayTurboUPIUI.moneyHandler)
+  public func prefetchAndLinkUpiAccounts(linkAccountWithUPIPinNotSet: Swift.Bool = false, amountInDisplayFormat: Swift.String?, _ handler: @escaping RazorpayTurboUPIUI.CallBack<Any>)
+  public func setUpiPin(account: RazorpayTurboUPIUI.BankAccount, handler: @escaping RazorpayTurboUPIUI.CallBack<[RazorpayTurboUPIUI.VPADetails]>)
+  public func showRewardInfo()
+  @objc deinit
+}
+extension RazorpayTurboUPIUI.RazorpayUpi {
+  public func savePrefetchConsent(consent: Any, mobileNumber: Swift.String?, customerId: Swift.String?, handler: @escaping RazorpayTurboUPIUI.CallBack<Swift.Bool>)
+}
+extension RazorpayTurboUPIUI.RazorpayUpi {
+  public func allotRewards(_ paymentId: Swift.String, handler: @escaping RazorpayTurboUPIUI.CallBack<Swift.Bool>)
+}
+extension RazorpayTurboUPIUI.RazorpayUpi {
+  public func checkPermissions(completion: @escaping RazorpayTurboUPIUI.CallBack<[Swift.String : Any]>)
+}
+extension RazorpayTurboUPIUI.RazorpayUpi {
+  public static func setTokenProvider(_ tokenProvider: any RazorpayTurboUPIUI.TokenProvider3p)
+  public static func storeToken(_ token: RazorpayTurboUPIUI.SessionData)
+}
+public struct VPAAvailability : Swift.Codable {
+  public let isAvailable: Swift.Bool?
+  public let suggestions: [Swift.String]?
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+extension UIKit.UIImageView {
+  @_Concurrency.MainActor @preconcurrency public func loadGif(name: Swift.String)
+}
+public struct VPADetails : Swift.Codable, Swift.Equatable {
+  public static func == (lhs: RazorpayTurboUPIUI.VPADetails, rhs: RazorpayTurboUPIUI.VPADetails) -> Swift.Bool
+  public let id: Swift.String?
+  public let address: Swift.String?
+  public let handle: Swift.String?
+  public let username: Swift.String?
+  public let name: Swift.String?
+  public var account: RazorpayTurboUPIUI.BankAccount?
+  public let active: Swift.Bool?
+  public let validated: Swift.Bool?
+  public let verified: Swift.Bool?
+  public let isDefault: Swift.Bool?
+  public let createdAt: Swift.Int?
+  public let deletedAt: Swift.Double?
+  public var isPrimary: Swift.Bool?
+  public var rewardStatus: Swift.Bool?
+  public init(entity: Swift.String? = nil, id: Swift.String?, address: Swift.String?, handle: Swift.String?, username: Swift.String?, name: Swift.String?, account: RazorpayTurboUPIUI.BankAccount?, active: Swift.Bool?, validated: Swift.Bool? = nil, verified: Swift.Bool?, isDefault: Swift.Bool?, createdAt: Swift.Int? = nil, deletedAt: Swift.Double? = nil, rewardStatus: Swift.Bool? = nil)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+extension RazorpayTurboUPIUI.VPADetails {
+  public static func createDefaultVPA(bankAccount: RazorpayTurboUPIUI.BankAccount, _ handler: @escaping RazorpayTurboUPIUI.CallBack<[RazorpayTurboUPIUI.VPADetails]>)
+  public static func createVPA(address: Swift.String, bankAccount: RazorpayTurboUPIUI.BankAccount, _ handler: @escaping RazorpayTurboUPIUI.CallBack<[RazorpayTurboUPIUI.VPADetails]>)
+  public static func getVPAList(deletedVPA: Swift.Bool = false, handler: @escaping RazorpayTurboUPIUI.CallBack<[RazorpayTurboUPIUI.VPADetails]>)
+  public func delinkVpa(_ handler: @escaping RazorpayTurboUPIUI.CallBack<RazorpayTurboUPIUI.VPADetails>)
+}
+public struct TurboConsent : Swift.Codable {
+  public let acknowledge: Swift.Bool
+  public let message: Swift.String
+  public let timeStamp: Swift.String
+  public let type: RazorpayTurboUPIUI.ConsentType
+  public var metadata: [Swift.String : [RazorpayTurboUPIUI.PrefetchBank]]?
+  public let customerIdentifierType: Swift.String
+  public let customerIdentifierValue: Swift.String
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public enum ConsentType : Swift.String, Swift.Codable {
+  case prefetchAndLink
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+extension RazorpayTurboUPIUI.TurboConsent {
+  public static func save(userConsents: [RazorpayTurboUPIUI.TurboConsent], handler: @escaping RazorpayTurboUPIUI.CallBack<Swift.Bool>)
+}
+public enum RewardActionType : Swift.String, Swift.Codable {
+  case payment
+  case onboarding
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public struct Rewards : Swift.Codable {
+  public let contact: Swift.String
+  public let action: RazorpayTurboUPIUI.RewardActionType
+  public let data: RazorpayTurboUPIUI.RewardData
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct RewardData : Swift.Codable {
+  public let amount: Swift.Int?
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct RewardsAllocate : Swift.Codable {
+  public let contact: Swift.String
+  public let action: RazorpayTurboUPIUI.RewardActionType
+  public let data: RazorpayTurboUPIUI.RewardsAllocateData
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct RewardsAllocateData : Swift.Codable {
+  public let sdkSessionId: Swift.String?
+  public let paymentId: Swift.String?
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct TurboCustomerReward : Swift.Codable {
+  public let eligible: Swift.Bool?
+  public let rewards: [RazorpayTurboUPIUI.TurboReward]?
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct TurboReward : Swift.Codable {
+  public let rewardPartnerName: Swift.String?
+  public let rewardPartnerLogoUrl: Swift.String?
+  public let preAllotText: Swift.String?
+  public let postAllotText: Swift.String?
+  public let couponCode: Swift.String?
+  public let termsAndConditions: [Swift.String]?
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct RewardAllocateResponse : Swift.Codable {
+  public let success: Swift.Bool?
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+extension RazorpayTurboUPIUI.Rewards {
+  public static func fetchRewards(request: RazorpayTurboUPIUI.Rewards, handler: @escaping RazorpayTurboUPIUI.CallBack<RazorpayTurboUPIUI.TurboCustomerReward>)
+  public static func allotRewards(_ request: RazorpayTurboUPIUI.RewardsAllocate, _ handler: @escaping RazorpayTurboUPIUI.CallBack<RazorpayTurboUPIUI.RewardAllocateResponse>)
+}
+extension Swift.String {
+  public var isNotEmpty: Swift.Bool {
+    get
+  }
+  public func index(from: Swift.Int) -> Swift.String.Index
+  public func substring(from: Swift.Int) -> Swift.String
+  public func substring(wit r: Swift.Range<Swift.Int>) -> Swift.String
+  public var digits: Swift.String {
+    get
+  }
+  public var isCountryCodeExist: Swift.Bool {
+    get
+  }
+  public func trim() -> Swift.String
+  public func parse<D>(to type: D.Type) -> D? where D : Swift.Decodable
+  public var uppercasingFirst: Swift.String {
+    get
+  }
+  public func lastDigits(_ count: Swift.Int) -> Swift.String
+  public func toRupeesComma() -> Swift.String
+  public static func currentEpochTimestamp() -> Swift.String
+  public var toInt: Swift.Int? {
+    get
+  }
+  public var isEmptyOrWhiteSpace: Swift.Bool {
+    get
+  }
+}
+public enum BeneficiaryType : Swift.String, Swift.Codable {
+  case all
+  case vpa
+  case account
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public struct Beneficiary : Swift.Codable {
+  public let validated: Swift.Bool?
+  public let verified: Swift.Bool?
+  public let type: RazorpayTurboUPIUI.BeneficiaryType?
+  public let id: Swift.String?
+  public let address: Swift.String?
+  public let name: Swift.String?
+  public var isBlocked: Swift.Bool?
+  public var isSpammed: Swift.Bool?
+  public let blockedAt: Swift.Double?
+  public let username: Swift.String?
+  public let handle: Swift.String?
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+extension UIKit.UIView {
+  @_Concurrency.MainActor @preconcurrency public class func fromNib() -> UIKit.UIView
+  @_Concurrency.MainActor @preconcurrency public func applyCornerRadius(_ radius: CoreFoundation.CGFloat)
+}
+extension Swift.Double {
+  public func toIndianCurrencyFormat(maximumFractionDigits: Swift.Int = 0) -> Swift.String?
+  public var clean: Swift.String {
+    get
+  }
+}
+public struct CustomerFeeBearerData : Swift.Codable {
+  public let input: RazorpayTurboUPIUI.CFBInput
+  public var consent: Swift.Bool?
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct CFBDisplay : Swift.Codable {
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct CFBInput : Swift.Codable {
+  public let amount: Swift.Int
+  public let currency: Swift.String, contact: Swift.String, email: Swift.String, method: Swift.String
+  public let upi: RazorpayTurboUPIUI.Upi
+  public let fee: Swift.Int, tax: Swift.Int
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+extension UIKit.UIDevice {
+  public enum UnsupportedDevices : Swift.String {
+    case iPhone6
+    case iphone5s
+    case iPhone4s
+    case iPhone4
+    case iPhone5c
+    case iPhone5
+    case iPhone6Plus
+    public init?(rawValue: Swift.String)
+    @available(iOS 2.0, *)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  @_Concurrency.MainActor @preconcurrency public static func isValid() -> Swift.Result<Swift.Bool, any Swift.Error>
+}
+public struct Bank : Swift.Codable {
+  public let name: Swift.String?
+  public let id: Swift.String?
+  public let upiFormat: Swift.String?
+  public let isActive: Swift.Bool?
+  public let isUpiAvailable: Swift.Bool?
+  public let ifsc: Swift.String?
+  public let imageURL: Swift.String?
+  public var displayName: Swift.String?
+  public let bankLogoPlaceholder: Swift.String
+  public var bankLogo: Swift.String {
+    get
+  }
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+extension RazorpayTurboUPIUI.Bank {
+  public func getBankAccounts(_ handler: @escaping RazorpayTurboUPIUI.CallBack<[RazorpayTurboUPIUI.BankAccount]>)
+  public static func getBankAccounts(bank: RazorpayTurboUPIUI.Bank, handler: @escaping RazorpayTurboUPIUI.CallBack<[RazorpayTurboUPIUI.BankAccount]>)
+}
+extension RazorpayTurboUPIUI.Bank {
+  public static func getBankList(_ handler: @escaping RazorpayTurboUPIUI.BanksCompletionHandler)
+}
+public typealias BanksCompletionHandler = RazorpayTurboUPIUI.CallBack<[RazorpayTurboUPIUI.Bank]>
+public enum URLType : Swift.String, Swift.Codable {
+  case bharat
+  case upi
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public class URLParsedObject : Swift.Codable {
+  final public let vpa: Swift.String?
+  final public let name: Swift.String?
+  final public let remarks: Swift.String?
+  final public let amount: Swift.Double?
+  final public let currency: Swift.String?
+  final public let minimumAmount: Swift.Double?
+  final public let transactionId: Swift.String?
+  final public let url: Swift.String?
+  final public let accountNumber: Swift.String?
+  final public let ifsc: Swift.String?
+  final public let adhaarNumber: Swift.String?
+  final public let qrType: RazorpayTurboUPIUI.URLType
+  final public let merchantCategory: Swift.String?
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+public class QRParser {
+  public init()
+  public func parseQR(_ stringToParse: Swift.String) -> Swift.Result<RazorpayTurboUPIUI.URLParsedObject, any Swift.Error>
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @available(iOSApplicationExtension, unavailable)
+public class IOSSecuritySuite {
+  public static func amIJailbroken() -> Swift.Bool
+  public static func amIJailbrokenWithFailMessage() -> (jailbroken: Swift.Bool, failMessage: Swift.String)
+  public static func amIJailbrokenWithFailedChecks() -> (jailbroken: Swift.Bool, failedChecks: [RazorpayTurboUPIUI.FailedCheckType])
+  public static func amIRunInEmulator() -> Swift.Bool
+  public static func amIDebugged() -> Swift.Bool
+  public static func denyDebugger()
+  public static func isParentPidUnexpected() -> Swift.Bool
+  public static func amITampered(_ checks: [RazorpayTurboUPIUI.FileIntegrityCheck]) -> RazorpayTurboUPIUI.FileIntegrityCheckResult
+  public static func amIReverseEngineered() -> Swift.Bool
+  public static func amIReverseEngineeredWithFailedChecks() -> (reverseEngineered: Swift.Bool, failedChecks: [RazorpayTurboUPIUI.FailedCheckType])
+  @available(*, deprecated, renamed: "amIRuntimeHooked(dyldAllowList:detectionClass:selector:isClassMethod:)")
+  public static func amIRuntimeHooked(dyldWhiteList: [Swift.String], detectionClass: Swift.AnyClass, selector: ObjectiveC.Selector, isClassMethod: Swift.Bool) -> Swift.Bool
+  public static func amIRuntimeHooked(dyldAllowList: [Swift.String], detectionClass: Swift.AnyClass, selector: ObjectiveC.Selector, isClassMethod: Swift.Bool) -> Swift.Bool
+  public static func amIProxied() -> Swift.Bool
+  @available(iOS 16, *)
+  public static func amIInLockdownMode() -> Swift.Bool
+  @objc deinit
+}
+@available(iOSApplicationExtension, unavailable)
+extension RazorpayTurboUPIUI.IOSSecuritySuite {
+  public static func amIMSHooked(_ functionAddress: Swift.UnsafeMutableRawPointer) -> Swift.Bool
+  public static func denyMSHook(_ functionAddress: Swift.UnsafeMutableRawPointer) -> Swift.UnsafeMutableRawPointer?
+  public static func denySymbolHook(_ symbol: Swift.String)
+  public static func denySymbolHook(_ symbol: Swift.String, at image: Swift.UnsafePointer<MachO.mach_header>, imageSlide slide: Swift.Int)
+  public static func getMachOFileHashValue(_ target: RazorpayTurboUPIUI.IntegrityCheckerImageTarget = .default) -> Swift.String?
+  public static func findLoadedDylibs(_ target: RazorpayTurboUPIUI.IntegrityCheckerImageTarget = .default) -> [Swift.String]?
+  public static func hasBreakpointAt(_ functionAddr: Swift.UnsafeRawPointer, functionSize: Darwin.vm_size_t?) -> Swift.Bool
+  public static func hasWatchpoint() -> Swift.Bool
+}
+public typealias FailedCheckType = (check: RazorpayTurboUPIUI.FailedCheck, failMessage: Swift.String)
+public enum FailedCheck : Swift.CaseIterable {
+  case urlSchemes
+  case existenceOfSuspiciousFiles
+  case suspiciousFilesCanBeOpened
+  case restrictedDirectoriesWriteable
+  case fork
+  case symbolicLinks
+  case dyld
+  case openedPorts
+  case pSelectFlag
+  case suspiciousObjCClasses
+  public static func == (a: RazorpayTurboUPIUI.FailedCheck, b: RazorpayTurboUPIUI.FailedCheck) -> Swift.Bool
+  public typealias AllCases = [RazorpayTurboUPIUI.FailedCheck]
+  nonisolated public static var allCases: [RazorpayTurboUPIUI.FailedCheck] {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum FileIntegrityCheck {
+  case bundleID(Swift.String)
+  case mobileProvision(Swift.String)
+  case machO(Swift.String, Swift.String)
+}
+extension RazorpayTurboUPIUI.FileIntegrityCheck {
+  public var description: Swift.String {
+    get
+  }
+}
+public typealias FileIntegrityCheckResult = (result: Swift.Bool, hitChecks: [RazorpayTurboUPIUI.FileIntegrityCheck])
+public enum IntegrityCheckerImageTarget {
+  case `default`
+  case custom(Swift.String)
+}
+public struct Card {
+  public let expiryMonth: Swift.String
+  public let expiryYear: Swift.String
+  public let lastSixDigits: Swift.String
+  public init(expiryMonth: Swift.String, expiryYear: Swift.String, lastSixDigits: Swift.String)
+}
+@_hasMissingDesignatedInitializers public class CustomerFeeBearerAPI {
+  @objc deinit
+}
+public struct SessionData {
+  public var sessionToken: Swift.String
+  public init(sessionToken: Swift.String)
+}
+public struct SIM {
+  public var mobileNumber: Swift.String
+  public var carrierName: Swift.String
+  public init(mobileNumber: Swift.String, carrierName: Swift.String)
+}
+public struct BankAccount : Swift.Codable {
+  public let id: Swift.String?
+  public let ifsc: Swift.String?
+  public let accountNumber: Swift.String?
+  public let beneficiaryName: Swift.String?
+  public let creds: RazorpayTurboUPIUI.Creds?
+  public let type: Swift.String?
+  public var bank: RazorpayTurboUPIUI.Bank?
+  public let accountType: Swift.String?
+  public var state: RazorpayTurboUPIUI.BankAccountState?
+  public var vpa: Swift.String?
+  public var accountNumberLast4: Swift.String {
+    get
+  }
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public enum BankAccountState : Swift.Int {
+  case upiPinNotSet
+  case upiPinSet
+  case linkingInProgress
+  case linkingSuccess
+  case linkingFailed
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+extension RazorpayTurboUPIUI.BankAccount {
+  public func setupUpiPin(card: RazorpayTurboUPIUI.Card, handler: @escaping RazorpayTurboUPIUI.CallBack<RazorpayTurboUPIUI.BankAccount>)
+  public func setUpiPin(card: RazorpayTurboUPIUI.Card, handler: @escaping RazorpayTurboUPIUI.CallBack<RazorpayTurboUPIUI.VPADetails>)
+  public func resetUpiPin(card: RazorpayTurboUPIUI.Card, handler: @escaping RazorpayTurboUPIUI.CallBack<RazorpayTurboUPIUI.BankAccount>)
+  public func changeUpiPin(handler: @escaping RazorpayTurboUPIUI.CallBack<RazorpayTurboUPIUI.BankAccount>)
+}
+extension RazorpayTurboUPIUI.BankAccount {
+  public func getBalance(_ handler: @escaping RazorpayTurboUPIUI.CallBack<RazorpayTurboUPIUI.AccountBalance>)
+  public var isCrediAccount: Swift.Bool {
+    get
+  }
+  public var getAccountNumber: Swift.String? {
+    get
+  }
+  public var getBankName: Swift.String? {
+    get
+  }
+  public var payerAccountType: Swift.String? {
+    get
+  }
+}
+extension RazorpayTurboUPIUI.BankAccount {
+  public static func getLinkedBankAccounts(deletedVPA: Swift.Bool = false, handler: @escaping RazorpayTurboUPIUI.CallBack<[RazorpayTurboUPIUI.BankAccount]>)
+  public func delinkVpa(_ handler: @escaping RazorpayTurboUPIUI.CallBack<RazorpayTurboUPIUI.BankAccount>)
+}
+extension Swift.Decodable {
+  public init(from: Any) throws
+}
+extension Swift.Encodable {
+  public func toJSONString() -> Swift.String?
+  public var dictionary: [Swift.String : Any]? {
+    get
+  }
+}
+extension UIKit.UITextField {
+  @_Concurrency.MainActor @preconcurrency public class func validateAmountTextField(_ textField: UIKit.UITextField, shouldChangeCharactersIn range: Foundation.NSRange, replacementString string: Swift.String) -> Swift.Bool
+}
+extension os.OSLog {
+  public static let defaultLogCatory: os.OSLog
+}
+public func printLog(_ items: Any..., log: os.OSLog = .defaultLogCatory, type: os.OSLogType = .debug, fileName: Swift.String = #file, functionName: Swift.String = #function, line: Swift.Int = #line)
+public enum TransactionType : Swift.String, Swift.Codable {
+  case collect
+  case pay
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum TransactionStatus : Swift.String, Swift.Codable {
+  case pending
+  case failed
+  case success
+  case expired
+  case completed
+  case created
+  case rejected
+  case initiated
+  case requested
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum TransactionFlow : Swift.String, Swift.Codable {
+  case credit
+  case debit
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public struct Creds : Swift.Codable {
+  public let upipin: RazorpayTurboUPIUI.AccountCredentials?
+  public let sms: RazorpayTurboUPIUI.AccountCredentials?
+  public let atmpin: RazorpayTurboUPIUI.AccountCredentials?
+  public let otp: RazorpayTurboUPIUI.AccountCredentials?
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct AccountCredentials : Swift.Codable {
+  public let length: Swift.Int?
+  public let isSet: Swift.Bool?
+  public init(length: Swift.Int?, isSet: Swift.Bool?)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct Upi : Swift.Codable {
+  public let rrn: Swift.String?
+  public let refId: Swift.String?
+  public let refUrl: Swift.String?
+  public let mcc: Swift.String?
+  public let networkTransactionId: Swift.String?
+  public let gatewayErrorCode: Swift.String?
+  public let gatewayErrorDescription: Swift.String?
+  public let createdAt: Swift.Double?
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct Transaction : Swift.Codable {
+  public let id: Swift.String?
+  public let type: RazorpayTurboUPIUI.TransactionType?
+  public let flow: RazorpayTurboUPIUI.TransactionFlow?
+  public let amount: Swift.Int?
+  public let currency: Swift.String?
+  public let description: Swift.String?
+  public let status: RazorpayTurboUPIUI.TransactionStatus?
+  public let errorCode: Swift.String?
+  public let errorDescription: Swift.String?
+  public let isConcernEligible: Swift.Bool?
+  public let isPendingCollect: Swift.Bool?
+  public let initiatedAt: Swift.Double?
+  public let expireAt: Swift.Double?
+  public let completedAt: Swift.Double?
+  public let createdAt: Swift.Double?
+  public var payer: RazorpayTurboUPIUI.Beneficiary?
+  public var payee: RazorpayTurboUPIUI.Beneficiary?
+  public let bankAccount: RazorpayTurboUPIUI.BankAccount?
+  public let upi: RazorpayTurboUPIUI.Upi?
+  public let gatewayDescripiton: Swift.String?
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct AccountBalance : Swift.Codable {
+  public let balance: Swift.Int?
+  public let currency: Swift.String?
+  public let id: Swift.String?
+  public let accountType: Swift.String?
+  public let outstanding: Swift.Int?
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct AllAccounts {
+  public var accountsWithPinSet: [Any]?
+  public var accountsWithPinNotSet: [RazorpayTurboUPIUI.BankAccount]?
+}
+public protocol PrefetchLinkingDelegate : AnyObject {
+  func update(prefetchedAccounts list: RazorpayTurboUPIUI.AllAccounts, with error: RazorpayTurboUPIUI.TurboSDKError?)
+  func received(prefetchedAccounts list: RazorpayTurboUPIUI.AllAccounts, with error: RazorpayTurboUPIUI.TurboSDKError?)
+}
+@_hasMissingDesignatedInitializers public class PrefetchManager {
+  public static let shared: RazorpayTurboUPIUI.PrefetchManager
+  weak public var linkingDelegate: (any RazorpayTurboUPIUI.PrefetchLinkingDelegate)?
+  public func prefetchAndLinkAccounts(from banks: [RazorpayTurboUPIUI.PrefetchBank], linkAccountWithUPIPinNotSet: Swift.Bool = false)
+  @objc deinit
+}
+extension RazorpayTurboUPIUI.PrefetchManager : RazorpayTurboUPIUI.PrefetchLinkingDelegate {
+  public func received(prefetchedAccounts list: RazorpayTurboUPIUI.AllAccounts, with error: RazorpayTurboUPIUI.TurboSDKError?)
+  public func update(prefetchedAccounts list: RazorpayTurboUPIUI.AllAccounts, with error: RazorpayTurboUPIUI.TurboSDKError?)
+}
+public protocol TokenProvider3p {
+  func fetchToken(completion: @escaping (RazorpayTurboUPIUI.SessionData?) -> Swift.Void)
+}
+public typealias RazorpayTokenProvider = RazorpayTurboUPIUI.TokenProvider3p
+public protocol TokenSink3p {
+  func storeToken(_ sessionData: RazorpayTurboUPIUI.SessionData)
+}
+public class TokenTaskManager3p {
+  public init(tokenStore: any RazorpayTurboUPIUI.TokenSink3p)
+  public func configure(with provider: any RazorpayTurboUPIUI.TokenProvider3p)
+  public func addTask(operation: @autoclosure @escaping () -> Swift.Void, errorCallback: @escaping () -> Swift.Void)
+  @objc deinit
+}
+public class DeregisterAccountAPI {
+  public init()
+  public func deregisterAccount(_ handler: @escaping RazorpayTurboUPIUI.CallBack<Swift.Bool>)
+  @objc deinit
+}
+public class ImageCacheAPI {
+  public init()
+  public func getImageDetails(url: Foundation.URL, _ handler: @escaping RazorpayTurboUPIUI.CallBack<Foundation.Data>)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class SDKPreferencesAPI {
+  @objc deinit
+}
+public struct PayRequest {
+  public enum Source : Swift.String {
+    case scan
+    case intent
+    case p2p
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public let amount: Swift.String
+  public let currency: Swift.String
+  public let description: Swift.String?
+  public let beneficiary: RazorpayTurboUPIUI.Beneficiary?
+  public let vpa: RazorpayTurboUPIUI.VPADetails?
+  public let source: RazorpayTurboUPIUI.PayRequest.Source?
+  public let merchantCategory: Swift.String?
+  public let url: Swift.String?
+  public let transactionId: Swift.String?
+  public var additionalDetail: [Swift.String : Any]?
+  public init(amount: Swift.String, currency: Swift.String, description: Swift.String?, beneficiary: RazorpayTurboUPIUI.Beneficiary? = nil, vpa: RazorpayTurboUPIUI.VPADetails? = nil, source: RazorpayTurboUPIUI.PayRequest.Source? = nil, merchantCategory: Swift.String? = nil, url: Swift.String? = nil, transactionId: Swift.String? = nil, additionalDetail: [Swift.String : Any]? = nil)
+}
+@_hasMissingDesignatedInitializers public class TurboUPILoader {
+  public func show(view: UIKit.UIView)
+  public func hide()
+  @objc deinit
+}
+public protocol TPVProtocol : AnyObject {
+  func setOrderId(orderId: Swift.String) -> any RazorpayTurboUPIUI.TPVProtocol
+  func setCustomerId(customerId: Swift.String) -> any RazorpayTurboUPIUI.TPVProtocol
+  func setMobileNumber(mobile: Swift.String) -> any RazorpayTurboUPIUI.TPVProtocol
+  func setTpvBankAccount(tpvBankAccount: RazorpayTurboUPIUI.TPVBankAccount) -> any RazorpayTurboUPIUI.TPVProtocol
+  func getLinkedUpiAccounts(isFilter: Swift.Bool, _ handler: @escaping RazorpayTurboUPIUI.CallBack<RazorpayTurboUPIUI.TPVEnabledAccounts>)
+  func linkNewUpiAccount(amountInDisplayFormat: Swift.String?, _ handler: @escaping RazorpayTurboUPIUI.CallBack<Any>)
+  func linkNewUpiAccount(payRequest: RazorpayTurboUPIUI.PayRequest, _ handler: @escaping RazorpayTurboUPIUI.moneyHandler)
+}
+public struct TPVEnabledAccounts {
+  public var upiAccounts: [RazorpayTurboUPIUI.VPADetails]?
+  public var tpvBankAccounts: [RazorpayTurboUPIUI.TPVBankAccount]?
+}
+public typealias moneyHandler = RazorpayTurboUPIUI.CallBack<RazorpayTurboUPIUI.Transaction>
+@_hasMissingDesignatedInitializers public class UPIAccountRankManager {
+  public static let shared: RazorpayTurboUPIUI.UPIAccountRankManager
+  public func getOrderedAccounts(accounts: [RazorpayTurboUPIUI.VPADetails]) -> [RazorpayTurboUPIUI.VPADetails]
+  public func removeAccount(upiAccount: RazorpayTurboUPIUI.VPADetails)
+  public func setAccountAsPrimary(upiAccount: RazorpayTurboUPIUI.VPADetails)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class ErrorMappingsAPI {
+  @objc deinit
+}
+public struct PopularBanks : Swift.Codable {
+  public var iin: Swift.String
+  public var priority: Swift.String
+  public var displayName: Swift.String
+  public var bankLogo: Swift.String?
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct TPVBankAccount : Swift.Codable {
+  public var ifsc: Swift.String
+  public var bankName: Swift.String?
+  public var accountNumber: Swift.String
+  public var bankLogo: Swift.String?
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public typealias PrefetchBank = RazorpayTurboUPIUI.PopularBanks
+extension RazorpayTurboUPIUI.UpiState : Swift.Equatable {}
+extension RazorpayTurboUPIUI.UpiState : Swift.Hashable {}
+extension RazorpayTurboUPIUI.UpiState : Swift.RawRepresentable {}
+extension RazorpayTurboUPIUI.ConsentType : Swift.Equatable {}
+extension RazorpayTurboUPIUI.ConsentType : Swift.Hashable {}
+extension RazorpayTurboUPIUI.ConsentType : Swift.RawRepresentable {}
+extension RazorpayTurboUPIUI.RewardActionType : Swift.Equatable {}
+extension RazorpayTurboUPIUI.RewardActionType : Swift.Hashable {}
+extension RazorpayTurboUPIUI.RewardActionType : Swift.RawRepresentable {}
+extension RazorpayTurboUPIUI.BeneficiaryType : Swift.Equatable {}
+extension RazorpayTurboUPIUI.BeneficiaryType : Swift.Hashable {}
+extension RazorpayTurboUPIUI.BeneficiaryType : Swift.RawRepresentable {}
+extension UIKit.UIDevice.UnsupportedDevices : Swift.Equatable {}
+extension UIKit.UIDevice.UnsupportedDevices : Swift.Hashable {}
+extension UIKit.UIDevice.UnsupportedDevices : Swift.RawRepresentable {}
+extension RazorpayTurboUPIUI.URLType : Swift.Equatable {}
+extension RazorpayTurboUPIUI.URLType : Swift.Hashable {}
+extension RazorpayTurboUPIUI.URLType : Swift.RawRepresentable {}
+extension RazorpayTurboUPIUI.FailedCheck : Swift.Equatable {}
+extension RazorpayTurboUPIUI.FailedCheck : Swift.Hashable {}
+extension RazorpayTurboUPIUI.BankAccountState : Swift.Equatable {}
+extension RazorpayTurboUPIUI.BankAccountState : Swift.Hashable {}
+extension RazorpayTurboUPIUI.BankAccountState : Swift.RawRepresentable {}
+extension RazorpayTurboUPIUI.TransactionType : Swift.Equatable {}
+extension RazorpayTurboUPIUI.TransactionType : Swift.Hashable {}
+extension RazorpayTurboUPIUI.TransactionType : Swift.RawRepresentable {}
+extension RazorpayTurboUPIUI.TransactionStatus : Swift.Equatable {}
+extension RazorpayTurboUPIUI.TransactionStatus : Swift.Hashable {}
+extension RazorpayTurboUPIUI.TransactionStatus : Swift.RawRepresentable {}
+extension RazorpayTurboUPIUI.TransactionFlow : Swift.Equatable {}
+extension RazorpayTurboUPIUI.TransactionFlow : Swift.Hashable {}
+extension RazorpayTurboUPIUI.TransactionFlow : Swift.RawRepresentable {}
+extension RazorpayTurboUPIUI.PayRequest.Source : Swift.Equatable {}
+extension RazorpayTurboUPIUI.PayRequest.Source : Swift.Hashable {}
+extension RazorpayTurboUPIUI.PayRequest.Source : Swift.RawRepresentable {}

@@ -1,0 +1,474 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.1 effective-5.10 (swiftlang-6.1.0.110.21 clang-1700.0.13.3)
+// swift-module-flags: -target arm64-apple-ios13.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name two_party
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1
+import SystemConfiguration.CaptiveNetwork
+import CommonCrypto
+import CommonLibrary
+import CoreLocation
+import CoreTelephony
+import CryptoKit
+import Foundation
+import MessageUI
+import Network
+import Security
+import Swift
+import SystemConfiguration
+import UIKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@_exported import two_party
+@_inheritsConvenienceInitializers @objc public class Device : ObjectiveC.NSObject {
+  @objc public var ssid: Swift.String
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc public class SearchPaymentResponse : ObjectiveC.NSObject {
+  @objc public var count: Swift.Int
+  @objc public var items: [two_party.Payment]?
+  public init(count: Swift.Int, items: [two_party.Payment]?)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @objc public class FundSourceProviderResponse : ObjectiveC.NSObject {
+  @objc public var count: Swift.Int
+  @objc public var items: [two_party.FundSourceProvider]?
+  @objc deinit
+}
+@objc public enum PaymentType : Swift.Int {
+  case pay
+  case collect
+  case unspecified
+  public var description: Swift.String {
+    get
+  }
+  public init(string: Swift.String)
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public class BankAccount : ObjectiveC.NSObject {
+  @objc public var accountNumber: Swift.String
+  @objc public var ifsc: Swift.String
+  public init(accountNumber: Swift.String, ifsc: Swift.String)
+  @objc deinit
+}
+@objc public protocol ErrorMonitoringAlertingProtocol {
+  @objc func initSentry(sdkType: Swift.String, dsn: Swift.String, tracesSampleRate: Swift.Double)
+  @objc func startTransaction(name: Swift.String) -> Any
+  @objc func finishTransaction(transaction: Any?)
+  @objc func captureMessage(name: Swift.String, _ error: (any Swift.Error)?)
+}
+@objc public class SessionData : ObjectiveC.NSObject {
+  public var sessionToken: Swift.String
+  final public let sessionId: Swift.String?
+  @objc public init(sessionToken: Swift.String, sessionId: Swift.String? = nil)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class CommonOnboarding {
+  public static func initialise(customer_reference: Swift.String, sessionData: two_party.SessionData, callback: @escaping two_party.CallBack<two_party.Empty>)
+  public static func getPermissionList(callback: ([Swift.String]?, two_party.SDKError?) -> Swift.Void)
+  public static func checkPermissions(callback: @escaping two_party.CallBack<[Swift.String : Any]>)
+  public static func register(sim: two_party.SIM? = nil, encryptionKey: Swift.String? = nil, callback: @escaping two_party.CallBack<two_party.RegisterResponse>)
+  public static func deRegister(callback: @escaping two_party.CallBack<two_party.DeRegisterResponse>)
+  public static func clearSDKState()
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @objc public class LinkedFundSourceResponse : ObjectiveC.NSObject {
+  @objc public var count: Swift.Int
+  @objc public var items: [two_party.FundSource]?
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @objc public class FundSourceBalance : ObjectiveC.NSObject {
+  @objc public var balance: Swift.String?
+  @objc public var currency: Swift.String?
+  @objc public var outstandingAmount: Swift.String?
+  @objc deinit
+}
+@objc public enum PaymentStatus : Swift.Int {
+  case created
+  case requested
+  case authorized
+  case success
+  case failed
+  case deemed
+  case pending
+  case unspecified
+  public var description: Swift.String {
+    get
+  }
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers @objc public class LinkVPAResponse : ObjectiveC.NSObject {
+  @objc public var fundSource: two_party.FundSource?
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class CommonFundSource {
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc public class RazorpayUpi2p : ObjectiveC.NSObject {
+  public static let tokenManager: two_party.TokenTaskManager2p
+  public static func initialise(customer_reference: Swift.String, sessionData: two_party.SessionData, sentryInstance: (any two_party.ErrorMonitoringAlertingProtocol)? = nil, callback: @escaping two_party.CallBack<two_party.Empty>)
+  @objc public static func getPermissionsList(callback: ([Swift.String]?, two_party.SDKError?) -> Swift.Void)
+  @objc public static func checkPermissions(callback: @escaping two_party.CallBack<[Swift.String : Any]>)
+  @objc public static func register(sim: two_party.SIM? = nil, encryptionKey: Swift.String, callback: @escaping two_party.CallBack<two_party.RegisterResponse>)
+  @objc public static func getFundSourceProviders(callback: @escaping two_party.CallBack<two_party.FundSourceProviderResponse>)
+  @objc public static func getLinkedFundSources(callback: @escaping two_party.CallBack<two_party.LinkedFundSourceResponse>)
+  @objc public static func checkAvailability(vpa: Swift.String, callback: @escaping two_party.CallBack<two_party.CheckVPAAvailabilityResponse>)
+  @objc public static func createPayment(upi: two_party.UPI, amount: Swift.String, type: two_party.PaymentType, description: Swift.String, payer: two_party.Payer, payee: two_party.Payee, expireAt: Swift.Int, referenceId: Swift.String, callback: @escaping two_party.CallBack<two_party.Payment>)
+  @objc public static func clearSDKState()
+  @objc public static func deRegister(callback: @escaping two_party.CallBack<two_party.DeRegisterResponse>)
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc public class Amount : ObjectiveC.NSObject {
+  @objc public var value: Swift.Double
+  @objc public var currency: Swift.String
+  public init(value: Swift.Double, currency: Swift.String)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @objc public class RegisterResponse : ObjectiveC.NSObject {
+  @objc public var status: two_party.RegisterStatus
+  @objc public var mobile: Swift.String?
+  @objc deinit
+}
+@objc public enum RegisterStatus : Swift.Int {
+  case deviceBindingCompleted
+  case onboardingCompleted
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public class PaymentParty : ObjectiveC.NSObject {
+  @objc public var vpa: Swift.String
+  @objc public var fundsource: two_party.FundSource?
+  @objc public var name: Swift.String
+  @objc public var mcc: Swift.String?
+  @objc public var responseCode: Swift.String
+  @objc public var reversalResponseCode: Swift.String
+  public init(vpa: Swift.String, fundsource: two_party.FundSource?, name: Swift.String, mcc: Swift.String? = nil, responseCode: Swift.String, reversalResponseCode: Swift.String)
+  @objc deinit
+}
+@objc public enum PaymentInitiationMode : Swift.Int {
+  case `default` = 0
+  case qrCode
+  case secureQRCode
+  case bharatQRCode
+  case intent
+  case secureIntent
+  case nfc
+  case bluetooth
+  case uhf
+  case aadhaar
+  case sdk
+  case upiMandate
+  case foreignInwardRemittance
+  case qrMandate
+  case bbps
+  case unspecified
+  public var description: Swift.String {
+    get
+  }
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public class VPA : ObjectiveC.NSObject {
+  @objc public var address: Swift.String?
+  @objc public var status: two_party.VpaStatus
+  @objc public var verified: Swift.Bool
+  @objc public var isPrimary: Swift.Bool
+  public init(address: Swift.String?, status: two_party.VpaStatus, verified: Swift.Bool, isPrimary: Swift.Bool)
+  @objc deinit
+}
+public typealias CallBack<T> = (T?, two_party.SDKError?) -> Swift.Void
+public typealias ThrowableCallBack<T> = (T?, two_party.SDKError?) throws -> Swift.Void
+public typealias CompletionHandler<T> = (T?) -> Swift.Void
+@objc public enum PaymentPurpose : Swift.Int {
+  case `default` = 0
+  case sebi
+  case amc
+  case travel
+  case hospitality
+  case hospital
+  case telecom
+  case insurance
+  case education
+  case gifting
+  case others
+  public var description: Swift.String {
+    get
+  }
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public class Payment : ObjectiveC.NSObject {
+  @objc public var upi: two_party.UPI?
+  @objc public var id: Swift.String?
+  @objc public var amount: two_party.Amount?
+  @objc public var type: two_party.PaymentType
+  @objc public var paymentDescription: Swift.String?
+  @objc public var payer: two_party.PaymentParty?
+  @objc public var payee: [two_party.PaymentParty]?
+  @objc public var status: two_party.PaymentStatus
+  @objc public var createdAt: Swift.String?
+  @objc public var updatedAt: Swift.String?
+  public init(upi: two_party.UPI? = nil, id: Swift.String?, amount: two_party.Amount? = nil, type: two_party.PaymentType, paymentDescription: Swift.String? = nil, payer: two_party.PaymentParty? = nil, payee: [two_party.PaymentParty]? = nil, status: two_party.PaymentStatus, createdAt: Swift.String?, updatedAt: Swift.String?)
+  @objc deinit
+}
+extension two_party.Payment {
+  @objc dynamic public func approve(upi: two_party.UPI, callback: (two_party.Payment?, two_party.SDKError?) -> Swift.Void)
+  @objc dynamic public func reject(upi: two_party.UPI, callback: (two_party.Payment?, two_party.SDKError?) -> Swift.Void)
+}
+public enum UpiPinAction : Swift.String {
+  case set, reset
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+@objc public class FundSource : ObjectiveC.NSObject {
+  @objc public var id: Swift.String
+  @objc public var type: two_party.FundSourceType
+  @objc public var customerName: Swift.String
+  @objc public var accountReferenceNumber: Swift.String
+  @objc public var maskedAccountNumber: Swift.String
+  @objc public var ifsc: Swift.String
+  @objc public var npciBankCode: Swift.Int
+  @objc public var bankName: Swift.String
+  @objc public var upiPinSet: Swift.Bool
+  @objc public var upiPinLength: Swift.Int
+  @objc public var otpLength: Swift.Int
+  @objc public var atmPinLength: Swift.Int
+  @objc public var balance: Swift.Double
+  @objc public var currency: Swift.String
+  @objc public var primary: Swift.Bool
+  @objc public var vpa: [two_party.VPA]?
+  @objc public var providerFormat: Swift.String?
+  public init(id: Swift.String, type: two_party.FundSourceType, customerName: Swift.String, accountReferenceNumber: Swift.String, maskedAccountNumber: Swift.String, ifsc: Swift.String, npciBankCode: Swift.Int, bankName: Swift.String, upiPinSet: Swift.Bool, upiPinLength: Swift.Int, otpLength: Swift.Int, atmPinLength: Swift.Int, balance: Swift.Double, currency: Swift.String, primary: Swift.Bool, vpa: [two_party.VPA]? = nil, providerFormat: Swift.String? = nil)
+  convenience public init(id: Swift.String, vpa: Swift.String, upiPinLenght: Swift.Int, atmPinLength: Swift.Int, otpLength: Swift.Int, providerFormat: Swift.String, maskedAccountNumber: Swift.String, accountRefNum: Swift.String, bankName: Swift.String? = "")
+  @objc deinit
+}
+extension two_party.FundSource {
+  @objc dynamic public func resetPin(card: two_party.Card, callback: @escaping two_party.CallBack<two_party.FundSource>)
+  @objc dynamic public func setUpiPin(card: two_party.Card, callback: @escaping two_party.CallBack<two_party.FundSource>)
+  @objc dynamic public func changeUpiPin(callback: @escaping two_party.CallBack<two_party.FundSource>)
+  @objc dynamic public func getBalance(callback: @escaping two_party.CallBack<two_party.FundSourceBalance>)
+  @objc dynamic public func linkVPA(vpa: Swift.String, primary: Swift.Bool, callback: @escaping two_party.CallBack<two_party.LinkVPAResponse>)
+  @objc dynamic public func deleteVpa(vpa: Swift.String, callback: @escaping two_party.CallBack<two_party.DeleteVPAResponse>)
+}
+@objc public class MetaData : ObjectiveC.NSObject {
+  @objc public var tenantId: Swift.String
+  @objc public var tenantCustomerId: Swift.String
+  @objc public var tenantType: Swift.String?
+  @objc public var originalTenantMessageId: Swift.String?
+  @objc public var device: two_party.Device?
+  public init(tenantId: Swift.String, tenantCustomerId: Swift.String, tenantType: Swift.String? = nil, originalTenantMessageId: Swift.String? = nil)
+  @objc deinit
+}
+@objc public class DeRegisterResponse : ObjectiveC.NSObject {
+  @objc public var mobile: Swift.String?
+  @objc public init(mobile: Swift.String?)
+  @objc deinit
+}
+@objc public enum FundSourceType : Swift.Int {
+  case savings
+  case current
+  case nonResidentExternalSavingsAccount
+  case nonResidentOrdinarySavingsAccount
+  case securedOverDraft
+  case unsecuredOverDraft
+  case credit
+  case prepaidPaymentInstrument
+  case unspecified
+  public var description: Swift.String {
+    get
+  }
+  public init(string: Swift.String)
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public class SDKError : ObjectiveC.NSObject, Swift.Error {
+  @objc public var code: Swift.String
+  @objc public var source: Swift.String?
+  @objc public var reason: Swift.String?
+  @objc public var step: Swift.String?
+  @objc public var message: Swift.String
+  @objc public var retryWithToken: ((_ token: Swift.String) -> Swift.Void)?
+  @objc public var isExternal: Swift.Bool
+  public init(code: Swift.String, source: Swift.String? = nil, reason: Swift.String? = nil, step: Swift.String? = nil, message: Swift.String, isExternal: Swift.Bool = false, internalErrorCode: Swift.String = "", statuscode: Swift.Int? = nil)
+  @objc deinit
+}
+public protocol TokenProvider2p {
+  func fetchToken(completion: @escaping (Swift.String?) -> Swift.Void)
+}
+public protocol TokenSink2p {
+  func storeToken(_ token: Swift.String)
+}
+public class TokenTaskManager2p {
+  public init(tokenStore: any two_party.TokenSink2p)
+  public func configure(with provider: any two_party.TokenProvider2p)
+  public func addTask(operation: @autoclosure @escaping () -> Swift.Void, errorCallback: @escaping () -> Swift.Void)
+  public func storeToken(_ token: Swift.String)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @objc public class CheckVPAAvailabilityResponse : ObjectiveC.NSObject {
+  @objc public var available: Swift.Bool
+  @objc public var vpaSuggestions: [Swift.String]?
+  @objc deinit
+}
+@objc public enum MobileRegistrationFormat : Swift.Int {
+  case format1
+  case format2
+  case format3
+  case unspecified
+  public var description: Swift.String {
+    get
+  }
+  public init(string: Swift.String?)
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@_inheritsConvenienceInitializers @objc public class Empty : ObjectiveC.NSObject {
+  @objc override dynamic public init()
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @objc public class DeleteVPAResponse : ObjectiveC.NSObject {
+  @objc public var fundSources: [two_party.FundSource]?
+  @objc public var deletedAt: Swift.String?
+  @objc deinit
+}
+@objc public class FundSourceProvider : ObjectiveC.NSObject {
+  @objc public var name: Swift.String?
+  @objc public var npciBankCode: Swift.String
+  @objc public var ifsc: Swift.String?
+  @objc public var upiEnabled: Swift.Bool
+  @objc public var logoURL: Swift.String?
+  @objc public var mobileRegistrationFormat: two_party.MobileRegistrationFormat
+  public var product: [two_party.FundSourceProviderProduct]
+  public init(name: Swift.String? = nil, npciBankCode: Swift.String, ifsc: Swift.String? = nil, upiEnabled: Swift.Bool, logoURL: Swift.String?, mobileRegistrationFormat: two_party.MobileRegistrationFormat, product: [two_party.FundSourceProviderProduct])
+  @objc deinit
+}
+extension two_party.FundSourceProvider {
+  @objc dynamic public func getFundSources(callback: @escaping two_party.CallBack<two_party.FundSourceResponse>)
+}
+@objc public class UPI : ObjectiveC.NSObject {
+  @objc public var transactionId: Swift.String?
+  @objc public var initiationMode: two_party.PaymentInitiationMode
+  @objc public var referenceId: Swift.String?
+  @objc public var responseStatus: Swift.String?
+  @objc public var responseCode: Swift.String?
+  @objc public var responseMessage: Swift.String?
+  @objc public var paymentPurpose: two_party.PaymentPurpose
+  public init(transactionId: Swift.String?, initiationMode: two_party.PaymentInitiationMode = .default, referenceId: Swift.String? = nil, responseStatus: Swift.String? = nil, responseCode: Swift.String? = nil, responseMessage: Swift.String? = nil, paymentPurpose: two_party.PaymentPurpose = .default)
+  @objc deinit
+}
+@objc public class SIM : ObjectiveC.NSObject {
+  @objc public var id: Swift.String?
+  @objc public var mobile: Swift.String
+  @objc public var slot: Foundation.NSNumber?
+  @objc public var provider: Swift.String?
+  @objc public init(mobile: Swift.String, provider: Swift.String)
+  @objc deinit
+}
+@objc public class Card : ObjectiveC.NSObject {
+  @objc public var lastSixDigits: Swift.String
+  @objc public var expiry: Swift.String
+  public init(lastSixDigits: Swift.String, expiry: Swift.String)
+  @objc deinit
+}
+@objc public class Payee : ObjectiveC.NSObject {
+  @objc public var vpa: Swift.String?
+  @objc public var bankAccount: two_party.BankAccount?
+  @objc public var name: Swift.String?
+  @objc public var mcc: Swift.String?
+  public init(name: Swift.String? = nil, mcc: Swift.String? = nil, vpa: Swift.String? = nil, bankAccount: two_party.BankAccount? = nil)
+  @objc deinit
+}
+@objc public enum FundSourceProviderProduct : Swift.Int {
+  case nfs
+  case upi
+  case unspecified
+  public var description: Swift.String {
+    get
+  }
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public enum VpaStatus : Swift.Int {
+  case inactive
+  case active
+  case unspecified
+  public var description: Swift.String {
+    get
+  }
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers @objc public class FundSourceResponse : ObjectiveC.NSObject {
+  @objc public var count: Swift.Int
+  @objc public var items: [two_party.FundSource]?
+  @objc deinit
+}
+@objc public class Payer : ObjectiveC.NSObject {
+  @objc public var fundSource: two_party.FundSource?
+  @objc public var vpa: Swift.String?
+  public init(fundSource: two_party.FundSource? = nil, vpa: Swift.String? = nil)
+  @objc deinit
+}
+extension two_party.PaymentType : Swift.Equatable {}
+extension two_party.PaymentType : Swift.Hashable {}
+extension two_party.PaymentType : Swift.RawRepresentable {}
+extension two_party.PaymentStatus : Swift.Equatable {}
+extension two_party.PaymentStatus : Swift.Hashable {}
+extension two_party.PaymentStatus : Swift.RawRepresentable {}
+extension two_party.RegisterStatus : Swift.Equatable {}
+extension two_party.RegisterStatus : Swift.Hashable {}
+extension two_party.RegisterStatus : Swift.RawRepresentable {}
+extension two_party.PaymentInitiationMode : Swift.Equatable {}
+extension two_party.PaymentInitiationMode : Swift.Hashable {}
+extension two_party.PaymentInitiationMode : Swift.RawRepresentable {}
+extension two_party.PaymentPurpose : Swift.Equatable {}
+extension two_party.PaymentPurpose : Swift.Hashable {}
+extension two_party.PaymentPurpose : Swift.RawRepresentable {}
+extension two_party.UpiPinAction : Swift.Equatable {}
+extension two_party.UpiPinAction : Swift.Hashable {}
+extension two_party.UpiPinAction : Swift.RawRepresentable {}
+extension two_party.FundSourceType : Swift.Equatable {}
+extension two_party.FundSourceType : Swift.Hashable {}
+extension two_party.FundSourceType : Swift.RawRepresentable {}
+extension two_party.MobileRegistrationFormat : Swift.Equatable {}
+extension two_party.MobileRegistrationFormat : Swift.Hashable {}
+extension two_party.MobileRegistrationFormat : Swift.RawRepresentable {}
+extension two_party.FundSourceProviderProduct : Swift.Equatable {}
+extension two_party.FundSourceProviderProduct : Swift.Hashable {}
+extension two_party.FundSourceProviderProduct : Swift.RawRepresentable {}
+extension two_party.VpaStatus : Swift.Equatable {}
+extension two_party.VpaStatus : Swift.Hashable {}
+extension two_party.VpaStatus : Swift.RawRepresentable {}

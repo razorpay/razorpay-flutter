@@ -1,0 +1,22 @@
+//
+//  P2M_TWOP_UAT.xcconfig
+//  RazorpayUPI
+//
+//  Created by Ramprasad A on 30/09/24.
+//  Copyright © 2024 Sachin Nautiyal. All rights reserved.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+Config_Name = P2M Prod
+LUMBERJACK_UPI_KEY = 55794871BFF5BADEE47F2DA5E5211//55DAB44EE7F21EF5AC8CC21A72295
+MobileNumber = 919800000999
+FLAG_DEBUGGABLE = true
+SDK_Type=Debug
+SSLCert = zeta-api.stage.razorpay.in
+SSLLumberjackCert = lumberjackUAT
+OTHER_SWIFT_FLAGS = -DRazorpayTurbo -DTURBOTWOP
+GCC_PREPROCESSOR_DEFINITIONS = DEBUG=1 RazorpayTurbo=1 TURBOTWOP=1
+SWIFT_ACTIVE_COMPILATION_CONDITIONS = TURBOTWOP
+MARKETING_VERSION=2.0.3

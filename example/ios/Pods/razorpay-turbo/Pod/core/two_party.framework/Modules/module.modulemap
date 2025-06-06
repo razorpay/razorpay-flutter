@@ -1,0 +1,11 @@
+framework module two_party {
+  umbrella header "two_party.h"
+  export *
+
+  module * { export * }
+}
+
+module two_party.Swift {
+  header "two_party-Swift.h"
+  requires objc
+}
