@@ -80,7 +80,7 @@ public class RazorpayDelegate implements ActivityResultListener, ExternalWalletL
         
         this.merchantKey = key;
         this.pendingResult = result;
-        
+        this.checkout.upiTurbo.initialize(turboSessionDelegate);
         this.checkout = new Checkout().upiTurbo(activity);
         this.checkout.setKeyID(key);
     }
