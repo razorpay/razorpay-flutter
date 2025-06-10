@@ -24,6 +24,11 @@ import java.util.Map;
 import io.flutter.plugin.common.MethodChannel.Result;
 import io.flutter.plugin.common.PluginRegistry.ActivityResultListener;
 
+import com.razorpay.upi.TurboSessionDelegate;
+import com.razorpay.upi.model.Session;
+import kotlin.jvm.functions.Function1;
+import kotlin.Unit;
+
 public class RazorpayDelegate implements ActivityResultListener, ExternalWalletListener, PaymentResultWithDataListener {
 
     private final Activity activity;
@@ -44,17 +49,18 @@ public class RazorpayDelegate implements ActivityResultListener, ExternalWalletL
     private static final int UNKNOWN_ERROR = 100;
     private String packageName;
     private Checkout checkout;
-    Gson gson ;
+    Gson gson;
     private UpiTurbo upiTurbo;
     private String merchantKey;
 
     public RazorpayDelegate(Activity activity) {
         this.activity = activity;
-        this.upiTurbo = new UpiTurbo(merchantKey, checkout, activity);
+        this.checkout = new Checkout();
+        this.upiTurbo = new UpiTurbo(merchantKey, checkout, this, activity);
         this.gson = new Gson();
     }
 
-    void setPackageName(String packageName){
+    void setPackageName(String packageName) {
         this.packageName = packageName;
     }
 
@@ -70,28 +76,36 @@ public class RazorpayDelegate implements ActivityResultListener, ExternalWalletL
     };
 
     public void initializeSDK(String key, Result result) {
+        Log.d("RazorpayDelegate", "Initialise SDK 1");
         this.pendingResult = result;
         if (key == null || key.isEmpty()) {
             return;
         }
-        if (this.checkout != null) {
-            return;
+        Log.d("RazorpayDelegate", "Initialise SDK 2");
+        if (this.checkout == null) {
+            this.checkout = new Checkout();
         }
-        
+        Log.d("RazorpayDelegate", "Initialise SDK 3");
+
         this.merchantKey = key;
-        this.pendingResult = result;
-        this.checkout.upiTurbo.initialize(turboSessionDelegate);
-        this.checkout = new Checkout().upiTurbo(activity);
+
+        Log.d("RazorpayDelegate", "Initialise SDK 4");
         this.checkout.setKeyID(key);
+        Log.d("RazorpayDelegate", "Initialise SDK 5");
+        Log.d("RazorpayDelegate", "upiTurbo: " + upiTurbo);
+        Log.d("RazorpayDelegate", "checkout: " + checkout);
+        Log.d("RazorpayDelegate", "checkout: " + checkout.upiTurbo);
+        this.checkout.upiTurbo.initialize(turboSessionDelegate);
     }
 
     void openCheckout(Map<String, Object> arguments, Result result) {
 
         String key = (String) arguments.get("key");
+        Log.d("RazorpayDelegate", "Opening checkout, key: " + key);
         this.initializeSDK(key, result);
 
         JSONObject options = new JSONObject(arguments);
-        if (activity.getPackageName().equalsIgnoreCase(packageName)){
+        if (activity.getPackageName().equalsIgnoreCase(packageName)) {
             Intent intent = new Intent(activity, CheckoutActivity.class);
             intent.putExtra("OPTIONS", options.toString());
             intent.putExtra("FRAMEWORK", "flutter");
@@ -138,29 +152,29 @@ public class RazorpayDelegate implements ActivityResultListener, ExternalWalletL
 
         Map<String, Object> data = new HashMap<>();
         data.put("code", translateRzpPaymentError(code));
-        try{
+        try {
             JSONObject response = new JSONObject(message);
             JSONObject errorObj = response.getJSONObject("error");
             data.put("message", errorObj.getString("description"));
             JSONObject metadata = errorObj.getJSONObject("metadata");
             Map<String, String> metadataHash = new HashMap<>();
             Iterator<String> metaKeys = metadata.keys();
-            while (metaKeys.hasNext()){
+            while (metaKeys.hasNext()) {
                 String key = metaKeys.next();
-                metadataHash.put(key,metadata.getString(key));
+                metadataHash.put(key, metadata.getString(key));
             }
             errorObj.remove("metadata");
-            Map<String,Object> resp = new HashMap<>();
+            Map<String, Object> resp = new HashMap<>();
             Iterator<String> keys = errorObj.keys();
             while (keys.hasNext()) {
                 String key = keys.next();
-                resp.put(key,errorObj.get(key));
+                resp.put(key, errorObj.get(key));
             }
             resp.put("metadata", metadataHash);
             resp.put("email", paymentData.getUserEmail());
             resp.put("contact", paymentData.getUserContact());
             data.put("responseBody", resp);
-        }catch (JSONException e){
+        } catch (JSONException e) {
             data.put("message", message);
             data.put("responseBody", message);
         }
@@ -182,7 +196,8 @@ public class RazorpayDelegate implements ActivityResultListener, ExternalWalletL
         if (paymentData.getData().has("razorpay_subscription_id")) {
             try {
                 data.put("razorpay_subscription_id", paymentData.getData().optString("razorpay_subscription_id"));
-            } catch (Exception e) {}
+            } catch (Exception e) {
+            }
         }
         reply.put("data", data);
         sendReply(reply);
@@ -190,10 +205,12 @@ public class RazorpayDelegate implements ActivityResultListener, ExternalWalletL
 
     @Override
     public boolean onActivityResult(int requestCode, int resultCode, Intent data) {
-        try{
-            Method merchantActivityResult = Checkout.class.getMethod("merchantActivityResult", Activity.class, Integer.class, Integer.class, Intent.class, PaymentResultWithDataListener.class, ExternalWalletListener.class);
-            merchantActivityResult.invoke(null,activity, requestCode, resultCode, data, this, this);
-        }catch (Exception e){
+        try {
+            Method merchantActivityResult = Checkout.class.getMethod("merchantActivityResult", Activity.class,
+                    Integer.class, Integer.class, Intent.class, PaymentResultWithDataListener.class,
+                    ExternalWalletListener.class);
+            merchantActivityResult.invoke(null, activity, requestCode, resultCode, data, this, this);
+        } catch (Exception e) {
             Checkout.handleActivityResult(activity, requestCode, resultCode, data, this, this);
         }
         return true;
@@ -211,26 +228,31 @@ public class RazorpayDelegate implements ActivityResultListener, ExternalWalletL
         sendReply(reply);
     }
 
-    public void setKeyID(String keyId,  Result result){
+    public void setKeyID(String keyId, Result result) {
         upiTurbo.setKeyID(keyId, result);
     }
 
-    public void linkNewUpiAccount(String customerMobile, String color, Result result){
+    public void linkNewUpiAccount(String customerMobile, String color, Result result) {
         upiTurbo.linkNewUpiAccount(customerMobile, color, result);
     }
 
-
-    public void manageUpiAccounts(String customerMobile, String color, Result result){
+    public void manageUpiAccounts(String customerMobile, String color, Result result) {
         upiTurbo.manageUpiAccounts(customerMobile, color, result);
     }
 
-    public  boolean isTurboPluginAvailable(Result result) {
+    public boolean isTurboPluginAvailable(Result result) {
         return upiTurbo.isTurboPluginAvailable(result);
     }
 
     public void updateToken(String token) {
         if (sessionCompletion != null) {
             sessionCompletion.invoke(new Session(token));
+        }
+    }
+
+    private void onEventSuccess(HashMap<Object, Object> reply) {
+        if (pendingResult != null) {
+            pendingResult.success(reply);
         }
     }
 }

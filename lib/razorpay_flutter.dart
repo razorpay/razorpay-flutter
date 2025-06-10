@@ -54,7 +54,7 @@ class Razorpay {
       PackageInfo packageInfo = await PackageInfo.fromPlatform();
       _channel.invokeMethod('setPackageName', packageInfo.packageName);
     }
-
+    print("Opening checkout from Android");
     var response = await _channel.invokeMethod('open', options);
     _handleResult(response);
   }
