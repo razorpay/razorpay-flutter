@@ -55,7 +55,7 @@ public class RazorpayDelegate implements ActivityResultListener, ExternalWalletL
 
     public RazorpayDelegate(Activity activity) {
         this.activity = activity;
-        this.checkout = new Checkout();
+        this.checkout = new Checkout().upiTurbo(activity);
         this.upiTurbo = new UpiTurbo(merchantKey, checkout, this, activity);
         this.gson = new Gson();
     }
@@ -83,7 +83,7 @@ public class RazorpayDelegate implements ActivityResultListener, ExternalWalletL
         }
         Log.d("RazorpayDelegate", "Initialise SDK 2");
         if (this.checkout == null) {
-            this.checkout = new Checkout();
+            this.checkout = new Checkout().upiTurbo(activity);
         }
         Log.d("RazorpayDelegate", "Initialise SDK 3");
 
@@ -94,7 +94,7 @@ public class RazorpayDelegate implements ActivityResultListener, ExternalWalletL
         Log.d("RazorpayDelegate", "Initialise SDK 5");
         Log.d("RazorpayDelegate", "upiTurbo: " + upiTurbo);
         Log.d("RazorpayDelegate", "checkout: " + checkout);
-        Log.d("RazorpayDelegate", "checkout: " + checkout.upiTurbo);
+        Log.d("RazorpayDelegate", "checkout upiturbo: " + checkout.upiTurbo);
         this.checkout.upiTurbo.initialize(turboSessionDelegate);
     }
 

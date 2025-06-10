@@ -44,7 +44,7 @@ class _MyHomePageState extends State<MyHomePage> {
   // TPV Key - rzp_test_5sHeuuremkiApj
   //Non-TPV key - rzp_test_0wFRWIZnH65uny
   //Checkout key - rzp_live_ILgsfZCZoFIKMb
-  String merchantKeyValue = "rzp_test_0wFRWIZnH65uny";
+  String merchantKeyValue = "rzp_live_ILgsfZCZoFIKMb";
   String amountValue = "100";
   String orderIdValue = "";
   String mobileNumberValue = "9633370305";
@@ -248,6 +248,9 @@ class _MyHomePageState extends State<MyHomePage> {
         'contact': '$mobileNumberValue',
         'email': 'test@razorpay.com'
       },
+      'upi': {'flow': 'in_app'},
+      'method': 'upi',
+      'send_sms_hash': true,
       'theme': {'color': '#0CA72F'},
       'key': '$merchantKeyValue',
       // 'disable_redesign_v15': false,

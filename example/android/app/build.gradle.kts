@@ -49,6 +49,8 @@ android {
         implementation("androidx.appcompat:appcompat:1.6.1")
         implementation("androidx.constraintlayout:constraintlayout:2.1.4")
         implementation("com.google.android.material:material:1.11.0")
+        implementation("com.google.android.gms:play-services-auth:20.7.0")
+        implementation("com.google.android.gms:play-services-auth-api-phone:18.0.1")
         implementation(fileTree(mapOf("dir" to "/Users/ramprasad.a/Documents/projects/Android/AAR_Files/std_checkout_uat_aars", "include" to listOf("*.aar"))))
     }
 }
