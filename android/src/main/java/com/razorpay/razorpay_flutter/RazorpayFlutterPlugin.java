@@ -18,21 +18,49 @@ import io.flutter.plugin.common.MethodChannel.Result;
 /**
  * RazorpayFlutterPlugin
  */
-public class RazorpayFlutterPlugin implements FlutterPlugin, MethodCallHandler, ActivityAware {
+public class RazorpayFlutterPlugin
+        implements FlutterPlugin, MethodCallHandler, ActivityAware, EventChannel.StreamHandler {
 
     private RazorpayDelegate razorpayDelegate;
     private ActivityPluginBinding pluginBinding;
+    private static String TURBO_CHANNEL_NAME = "razorpay_turbo_with_turbo_upi";
     private static String CHANNEL_NAME = "razorpay_flutter";
-    Map<String, Object> _arguments;
-    String customerMobile ;
-    String color;
+    private EventChannel.EventSink eventSink;
 
+    Map<String, Object> _arguments;
+    String customerMobile;
+    String color;
 
     public RazorpayFlutterPlugin() {
     }
 
     @Override
+    public void onListen(Object arguments, EventChannel.EventSink events) {
+        android.util.Log.d("RazorpayFlutterPlugin", "⭐ onListen called - EventSink available");
+        this.eventSink = events;
+        // Pass the eventSink to delegate when it becomes available
+        if (razorpayDelegate != null) {
+            android.util.Log.d("RazorpayFlutterPlugin", "⭐ Setting EventSink to delegate");
+            razorpayDelegate.setEventSink(eventSink);
+        } else {
+            android.util.Log.d("RazorpayFlutterPlugin", "⭐ razorpayDelegate is null, will set later");
+        }
+    }
+
+    @Override
+    public void onCancel(Object arguments) {
+        this.eventSink = null;
+        // Clear the eventSink from delegate
+        if (razorpayDelegate != null) {
+            razorpayDelegate.setEventSink(null);
+        }
+    }
+
+    @Override
     public void onAttachedToEngine(@NonNull FlutterPluginBinding binding) {
+        final EventChannel turboChannel = new EventChannel(binding.getBinaryMessenger(), TURBO_CHANNEL_NAME);
+        turboChannel.setStreamHandler(this);
+
         final MethodChannel channel = new MethodChannel(binding.getBinaryMessenger(), CHANNEL_NAME);
         channel.setMethodCallHandler(this);
     }
@@ -45,7 +73,6 @@ public class RazorpayFlutterPlugin implements FlutterPlugin, MethodCallHandler, 
     @SuppressWarnings("unchecked")
     public void onMethodCall(MethodCall call, Result result) {
 
-
         switch (call.method) {
 
             case "initialize":
@@ -57,7 +84,7 @@ public class RazorpayFlutterPlugin implements FlutterPlugin, MethodCallHandler, 
                 break;
 
             case "setPackageName":
-                razorpayDelegate.setPackageName((String)call.arguments);
+                razorpayDelegate.setPackageName((String) call.arguments);
                 break;
 
             case "resync":
@@ -66,20 +93,20 @@ public class RazorpayFlutterPlugin implements FlutterPlugin, MethodCallHandler, 
 
             case "setKeyID":
                 String key = call.arguments().toString();
-                razorpayDelegate.setKeyID(key,  result);
+                razorpayDelegate.setKeyID(key, result);
                 break;
             case "linkNewUpiAccount":
                 _arguments = call.arguments();
                 customerMobile = (String) _arguments.get("customerMobile");
                 color = (String) _arguments.get("color");
-                razorpayDelegate.linkNewUpiAccount(customerMobile, color , result);
+                razorpayDelegate.linkNewUpiAccount(customerMobile, color, result);
                 break;
 
             case "manageUpiAccounts":
                 _arguments = call.arguments();
                 customerMobile = (String) _arguments.get("customerMobile");
                 color = (String) _arguments.get("color");
-                razorpayDelegate.manageUpiAccounts(customerMobile, color , result);
+                razorpayDelegate.manageUpiAccounts(customerMobile, color, result);
                 break;
             case "isTurboPluginAvailable":
                 razorpayDelegate.isTurboPluginAvailable(result);
@@ -97,7 +124,15 @@ public class RazorpayFlutterPlugin implements FlutterPlugin, MethodCallHandler, 
 
     @Override
     public void onAttachedToActivity(@NonNull ActivityPluginBinding binding) {
+        android.util.Log.d("RazorpayFlutterPlugin", "⭐ onAttachedToActivity called");
         this.razorpayDelegate = new RazorpayDelegate(binding.getActivity());
+        // Set eventSink if it's already available
+        if (eventSink != null) {
+            android.util.Log.d("RazorpayFlutterPlugin", "⭐ EventSink available, setting to delegate");
+            razorpayDelegate.setEventSink(eventSink);
+        } else {
+            android.util.Log.d("RazorpayFlutterPlugin", "⭐ EventSink not available yet");
+        }
         this.pluginBinding = binding;
         binding.addActivityResultListener(razorpayDelegate);
     }

@@ -117,8 +117,13 @@ class UpiTurbo {
   }
 
   void _onEvent(dynamic event) {
+    print("⭐ Flutter _onEvent received: $event");
     if (event["responseEvent"] == "refreshSessionToken") {
+      print("⭐ refreshSessionToken event detected: $event");
       _eventEmitter.emit(Razorpay.EVENT_FETCH_SESSION_TOKEN, null, event);
+      print("⭐ EVENT_FETCH_SESSION_TOKEN emitted");
+    } else {
+      print("⭐ Unknown event type received: ${event["responseEvent"]}");
     }
   }
 

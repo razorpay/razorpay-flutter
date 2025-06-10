@@ -30,7 +30,7 @@ public class UpiTurbo {
     UpiTurbo(String merchantKey, Checkout checkout, RazorpayDelegate razorpayDelegate, Activity activity) {
         this.merchantKey = merchantKey;
         this.activity = activity;
-        checkout = checkout;
+        this.checkout = checkout;
         this.razorpayDelegate = razorpayDelegate;
         this.gson = new Gson();
     }
@@ -43,6 +43,7 @@ public class UpiTurbo {
         this.pendingResult = result;
         Map<String, Object> reply = new HashMap<>();
         this.razorpayDelegate.initializeSDK(merchantKey, result);
+        Log.d("UpiTurbo", "Linking new UPI account " + this.razorpayDelegate);
         checkout.upiTurbo.linkNewUpiAccount(customerMobile, color, new GenericPluginCallback() {
             @Override
             public void onSuccess(@NonNull Object o) {

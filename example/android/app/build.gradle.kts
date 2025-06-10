@@ -21,7 +21,7 @@ android {
 
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-        applicationId = "com.razorpay.example"
+        applicationId = "com.razorpay.upisampleapp"
         // You can update the following values to match your application needs.
         // For more information, see: https://flutter.dev/to/review-gradle-config.
         minSdk = 23
@@ -52,6 +52,7 @@ android {
         implementation("com.google.android.gms:play-services-auth:20.7.0")
         implementation("com.google.android.gms:play-services-auth-api-phone:18.0.1")
         implementation(fileTree(mapOf("dir" to "/Users/ramprasad.a/Documents/projects/Android/AAR_Files/std_checkout_uat_aars", "include" to listOf("*.aar"))))
+        implementation ("io.sentry:sentry:6.21.0")
     }
 }
 

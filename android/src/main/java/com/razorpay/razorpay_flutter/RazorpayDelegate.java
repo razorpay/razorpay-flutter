@@ -23,6 +23,7 @@ import java.util.Map;
 
 import io.flutter.plugin.common.MethodChannel.Result;
 import io.flutter.plugin.common.PluginRegistry.ActivityResultListener;
+import io.flutter.plugin.common.EventChannel;
 
 import com.razorpay.upi.TurboSessionDelegate;
 import com.razorpay.upi.model.Session;
@@ -52,11 +53,11 @@ public class RazorpayDelegate implements ActivityResultListener, ExternalWalletL
     Gson gson;
     private UpiTurbo upiTurbo;
     private String merchantKey;
+    private EventChannel.EventSink eventSink;
 
     public RazorpayDelegate(Activity activity) {
         this.activity = activity;
         this.checkout = new Checkout().upiTurbo(activity);
-        this.upiTurbo = new UpiTurbo(merchantKey, checkout, this, activity);
         this.gson = new Gson();
     }
 
@@ -64,13 +65,20 @@ public class RazorpayDelegate implements ActivityResultListener, ExternalWalletL
         this.packageName = packageName;
     }
 
+    public void setEventSink(EventChannel.EventSink eventSink) {
+        Log.d("RazorpayDelegate", "⭐ setEventSink called with: " + eventSink);
+        this.eventSink = eventSink;
+    }
+
     private Function1<? super Session, Unit> sessionCompletion = null;
     TurboSessionDelegate turboSessionDelegate = new TurboSessionDelegate() {
         @Override
         public void fetchToken(@NonNull Function1<? super Session, Unit> completion) {
+            Log.d("RazorpayDelegate", "⭐ fetchToken called - SDK is requesting token");
             sessionCompletion = completion;
             HashMap<Object, Object> reply = new HashMap<>();
             reply.put("responseEvent", "refreshSessionToken");
+            Log.d("RazorpayDelegate", "⭐ About to call onEventSuccess with: " + reply);
             onEventSuccess(reply);
         }
     };
@@ -89,17 +97,24 @@ public class RazorpayDelegate implements ActivityResultListener, ExternalWalletL
 
         this.merchantKey = key;
 
+        // Initialize UpiTurbo after merchantKey is set
+        if (this.upiTurbo == null) {
+            this.upiTurbo = new UpiTurbo(merchantKey, checkout, this, activity);
+        }
+
         Log.d("RazorpayDelegate", "Initialise SDK 4");
         this.checkout.setKeyID(key);
         Log.d("RazorpayDelegate", "Initialise SDK 5");
         Log.d("RazorpayDelegate", "upiTurbo: " + upiTurbo);
         Log.d("RazorpayDelegate", "checkout: " + checkout);
         Log.d("RazorpayDelegate", "checkout upiturbo: " + checkout.upiTurbo);
+        Log.d("RazorpayDelegate", "⭐ About to initialize SDK with turboSessionDelegate");
         this.checkout.upiTurbo.initialize(turboSessionDelegate);
+        Log.d("RazorpayDelegate", "⭐ SDK initialize call completed");
     }
 
     void openCheckout(Map<String, Object> arguments, Result result) {
-
+        this.pendingResult = result;
         String key = (String) arguments.get("key");
         Log.d("RazorpayDelegate", "Opening checkout, key: " + key);
         this.initializeSDK(key, result);
@@ -245,14 +260,20 @@ public class RazorpayDelegate implements ActivityResultListener, ExternalWalletL
     }
 
     public void updateToken(String token) {
+        Log.d("RazorpayDelegate", "Updating token: " + token);
         if (sessionCompletion != null) {
             sessionCompletion.invoke(new Session(token));
         }
     }
 
     private void onEventSuccess(HashMap<Object, Object> reply) {
-        if (pendingResult != null) {
-            pendingResult.success(reply);
+        Log.d("RazorpayDelegate", "⭐ onEventSuccess: " + reply);
+        Log.d("RazorpayDelegate", "⭐ eventSink: " + eventSink);
+        if (eventSink != null) {
+            Log.d("RazorpayDelegate", "⭐ Sending event through EventChannel: " + reply);
+            eventSink.success(reply);
+        } else {
+            Log.d("RazorpayDelegate", "⭐ EventSink is null, cannot send event");
         }
     }
 }
