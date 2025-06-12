@@ -30,8 +30,14 @@ android {
         versionName = flutter.versionName
     }
 
+    buildFeatures {
+        viewBinding = true
+        dataBinding = true
+    }
+
     buildTypes {
         release {
+            isDebuggable = true
             // TODO: Add your own signing config for the release build.
             // Signing with the debug keys for now, so `flutter run --release` works.
             signingConfig = signingConfigs.getByName("debug")
@@ -53,6 +59,11 @@ android {
         implementation("com.google.android.gms:play-services-auth-api-phone:18.0.1")
         implementation(fileTree(mapOf("dir" to "/Users/ramprasad.a/Documents/projects/Android/AAR_Files/std_checkout_uat_aars", "include" to listOf("*.aar"))))
         implementation ("io.sentry:sentry:6.21.0")
+        implementation ("com.squareup.retrofit2:retrofit:2.9.0")
+        implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
+        implementation ("com.squareup.okhttp3:logging-interceptor:4.10.0")
+        implementation("org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.6.3")
+        implementation("com.github.bumptech.glide:glide:4.15.1")
     }
 }
 

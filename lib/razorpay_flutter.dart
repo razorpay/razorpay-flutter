@@ -32,7 +32,7 @@ class Razorpay {
 
   Razorpay(String key) {
     _eventEmitter = new EventEmitter();
-    _channel.invokeMethod('initilizeSDK', key);
+    _channel.invokeMethod('initialize', key);
     upiTurbo = new UpiTurbo(_channel, _eventEmitter);
   }
 

@@ -42,7 +42,6 @@ public class UpiTurbo {
     public void linkNewUpiAccount(String customerMobile, String color, MethodChannel.Result result) {
         this.pendingResult = result;
         Map<String, Object> reply = new HashMap<>();
-        this.razorpayDelegate.initializeSDK(merchantKey, result);
         Log.d("UpiTurbo", "Linking new UPI account " + this.razorpayDelegate);
         checkout.upiTurbo.linkNewUpiAccount(customerMobile, color, new GenericPluginCallback() {
             @Override
@@ -76,7 +75,6 @@ public class UpiTurbo {
     public void manageUpiAccounts(String customerMobile, String color, MethodChannel.Result result) {
         this.pendingResult = result;
         HashMap<Object, Object> reply = new HashMap<>();
-        this.razorpayDelegate.initializeSDK(merchantKey, result);
         checkout.upiTurbo.manageUpiAccounts(customerMobile, color, new GenericPluginCallback() {
             @Override
             public void onSuccess(@NonNull Object object) {
