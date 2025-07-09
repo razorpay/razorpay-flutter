@@ -187,7 +187,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
                   razorpay.upiTurbo.linkNewUpiAccount(
                       customerMobile: mobileNumberValue,
-                      color: "#ffffff",
+                      color: "#0CA72F",
                       onSuccess: (List<UpiAccount> upiAccounts) {
                         print(
                             "Successfully Onboarded Account : ${upiAccounts.length}");
@@ -207,7 +207,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
                   razorpay.upiTurbo.manageUpiAccounts(
                       customerMobile: mobileNumberValue,
-                      color: "#ffffff",
+                      color: "#0CA72F",
                       onFailure: (Error error) {
                         ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                             content:
@@ -248,6 +248,9 @@ class _MyHomePageState extends State<MyHomePage> {
         'contact': '$mobileNumberValue',
         'email': 'test@razorpay.com'
       },
+      'upi': {'flow': 'in_app'},
+      'method': 'upi',
+      'send_sms_hash': true,
       'theme': {'color': '#0CA72F'},
       'key': '$merchantKeyValue',
       // 'disable_redesign_v15': false,

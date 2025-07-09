@@ -62,7 +62,6 @@ public class SwiftRazorpayFlutterPlugin: NSObject, FlutterPlugin {
 
 extension SwiftRazorpayFlutterPlugin: FlutterStreamHandler {
     public func onListen(withArguments arguments: Any?, eventSink: @escaping FlutterEventSink) -> FlutterError? {
-        print("onListen......")
         self.eventSink = eventSink
         return nil
     }

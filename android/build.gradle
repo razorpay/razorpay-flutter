@@ -8,7 +8,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.2.1'
+        classpath 'com.android.tools.build:gradle:7.3.0'
     }
 }
 
@@ -22,18 +22,28 @@ rootProject.allprojects {
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 31
+    namespace 'com.razorpay.razorpay_flutter'
+    compileSdkVersion 33
 
     defaultConfig {
         minSdkVersion 21
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        targetSdkVersion 33
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
+    
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+
     lintOptions {
         disable 'InvalidPackage'
     }
+    
     dependencies {
         implementation fileTree(dir: 'libs', include: ['*.jar'])
         api 'com.razorpay:checkout:1.6.+'
         implementation 'com.google.code.gson:gson:2.8.8'
+        compileOnly fileTree(dir: '/Users/ramprasad.a/Documents/projects/Android/AAR_Files/std_checkout_uat_aars', include: ['*.aar'])
     }
 }

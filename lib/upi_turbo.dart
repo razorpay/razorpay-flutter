@@ -119,6 +119,8 @@ class UpiTurbo {
   void _onEvent(dynamic event) {
     if (event["responseEvent"] == "refreshSessionToken") {
       _eventEmitter.emit(Razorpay.EVENT_FETCH_SESSION_TOKEN, null, event);
+    } else {
+      print("⭐ Unknown event type received: ${event["responseEvent"]}");
     }
   }
 

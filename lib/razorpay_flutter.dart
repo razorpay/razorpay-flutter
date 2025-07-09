@@ -32,7 +32,7 @@ class Razorpay {
 
   Razorpay(String key) {
     _eventEmitter = new EventEmitter();
-    _channel.invokeMethod('initilizeSDK', key);
+    _channel.invokeMethod('initialize', key);
     upiTurbo = new UpiTurbo(_channel, _eventEmitter);
   }
 
@@ -54,7 +54,6 @@ class Razorpay {
       PackageInfo packageInfo = await PackageInfo.fromPlatform();
       _channel.invokeMethod('setPackageName', packageInfo.packageName);
     }
-
     var response = await _channel.invokeMethod('open', options);
     _handleResult(response);
   }

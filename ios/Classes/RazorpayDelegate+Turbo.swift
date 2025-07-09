@@ -213,7 +213,6 @@ extension RazorpayDelegate {
 
     
     private func handleAndPublishTurboError(error: TurboError?) {
-        print(self.pendingResult as Any)
         self.pendingResult(FlutterError.init(code: error?.errorCode ?? "",
                                              message: error?.errorDescription,
                                              details: nil))

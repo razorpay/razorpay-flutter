@@ -7,6 +7,7 @@ import androidx.annotation.NonNull;
 
 import com.google.gson.Gson;
 import com.razorpay.Checkout;
+import com.razorpay.CheckoutActivity;
 import com.razorpay.GenericPluginCallback;
 
 import org.json.JSONObject;
@@ -22,22 +23,27 @@ public class UpiTurbo {
     private MethodChannel.Result pendingResult;
     private Map<String, Object> pendingReply;
     private Checkout checkout;
-    Gson gson ;
+    private String merchantKey;
+    private RazorpayDelegate razorpayDelegate;
+    Gson gson;
 
-    UpiTurbo(Activity activity) {
+    UpiTurbo(String merchantKey, Checkout checkout, RazorpayDelegate razorpayDelegate, Activity activity) {
+        this.merchantKey = merchantKey;
         this.activity = activity;
-        checkout = new Checkout().upiTurbo(activity);
+        this.checkout = checkout;
+        this.razorpayDelegate = razorpayDelegate;
         this.gson = new Gson();
     }
 
-    public void setKeyID(String keyId,  MethodChannel.Result result){
+    public void setKeyID(String keyId, MethodChannel.Result result) {
         checkout.setKeyID(keyId);
     }
 
-    public void linkNewUpiAccount(String customerMobile, String color, MethodChannel.Result result){
+    public void linkNewUpiAccount(String customerMobile, String color, MethodChannel.Result result) {
         this.pendingResult = result;
         Map<String, Object> reply = new HashMap<>();
-        checkout.upiTurbo.linkNewUpiAccount(customerMobile, color , new GenericPluginCallback(){
+        Log.d("UpiTurbo", "Linking new UPI account " + this.razorpayDelegate);
+        checkout.upiTurbo.linkNewUpiAccount(customerMobile, color, new GenericPluginCallback() {
             @Override
             public void onSuccess(@NonNull Object o) {
                 if (o instanceof List<?> && !((List<?>) o).isEmpty()) {
@@ -60,17 +66,16 @@ public class UpiTurbo {
                 } catch (Exception e) {
                     Log.d("Exception", e.getMessage());
                 }
-                pendingResult.error(errorCode, errorDescription, jsonObject.toString());
+                // pendingResult.error(errorCode, errorDescription, jsonObject.toString());
             }
 
         });
     }
 
-
-    public void manageUpiAccounts(String customerMobile, String color, MethodChannel.Result result){
+    public void manageUpiAccounts(String customerMobile, String color, MethodChannel.Result result) {
         this.pendingResult = result;
         HashMap<Object, Object> reply = new HashMap<>();
-        checkout.upiTurbo.manageUpiAccounts(customerMobile, color , new GenericPluginCallback(){
+        checkout.upiTurbo.manageUpiAccounts(customerMobile, color, new GenericPluginCallback() {
             @Override
             public void onSuccess(@NonNull Object object) {
             }
@@ -92,7 +97,7 @@ public class UpiTurbo {
         });
     }
 
-    public  boolean isTurboPluginAvailable(MethodChannel.Result result) {
+    public boolean isTurboPluginAvailable(MethodChannel.Result result) {
         this.pendingResult = result;
 
         Map<String, Object> reply = new HashMap<>();
@@ -109,7 +114,7 @@ public class UpiTurbo {
         }
     }
 
-    private String toJsonString(Object object){
+    private String toJsonString(Object object) {
         return this.gson.toJson(object);
     }
 
