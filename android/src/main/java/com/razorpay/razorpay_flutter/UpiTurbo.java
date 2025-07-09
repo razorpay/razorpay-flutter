@@ -66,7 +66,7 @@ public class UpiTurbo {
                 } catch (Exception e) {
                     Log.d("Exception", e.getMessage());
                 }
-                pendingResult.error(errorCode, errorDescription, jsonObject.toString());
+                // pendingResult.error(errorCode, errorDescription, jsonObject.toString());
             }
 
         });
