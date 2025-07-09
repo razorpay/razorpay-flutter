@@ -187,7 +187,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
                   razorpay.upiTurbo.linkNewUpiAccount(
                       customerMobile: mobileNumberValue,
-                      color: "#ffffff",
+                      color: "#0CA72F",
                       onSuccess: (List<UpiAccount> upiAccounts) {
                         print(
                             "Successfully Onboarded Account : ${upiAccounts.length}");
@@ -207,7 +207,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
                   razorpay.upiTurbo.manageUpiAccounts(
                       customerMobile: mobileNumberValue,
-                      color: "#ffffff",
+                      color: "#0CA72F",
                       onFailure: (Error error) {
                         ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                             content:
