@@ -1,8 +1,10 @@
-# Razorpay Flutter
+# Razorpay Turbo Standard Flutter
 
-Flutter plugin for Razorpay SDK.
+Flutter plugin for Razorpay SDK with Turbo Standard features.
 
-[![pub package](https://img.shields.io/pub/v/razorpay_flutter.svg)](https://pub.dartlang.org/packages/razorpay_flutter)
+> **Note**: This is the Turbo Standard version of the Razorpay Flutter plugin, optimized for enhanced UPI payment flows and turbo functionality.
+
+[![pub package](https://img.shields.io/pub/v/razorpay_turbo_standard.svg)](https://pub.dartlang.org/packages/razorpay_turbo_standard)
 
 - [Getting Started](#getting-started)
 - [Prerequisites](#prerequisites)
@@ -31,12 +33,12 @@ To know more about Razorpay payment flow and steps involved, read up here: [http
 
 ## Installation
 
-This plugin is available on Pub: [https://pub.dev/packages/razorpay_flutter](https://pub.dev/packages/razorpay_flutter)
+This plugin is available on Pub: [https://pub.dev/packages/razorpay_turbo_standard](https://pub.dev/packages/razorpay_turbo_standard)
 
 Add this to `dependencies` in your app's `pubspec.yaml`
 
 ```yaml
-razorpay_flutter: ^1.3.5
+razorpay_turbo_standard: ^1.0.1
 ```
 
 **Note for Android**: Make sure that the minimum API level for your app is 19 or higher.
@@ -68,7 +70,7 @@ Sample code to integrate can be found in [example/lib/main.dart](example/lib/mai
 #### Import package
 
 ```dart
-import 'package:razorpay_flutter/razorpay_flutter.dart';
+import 'package:razorpay_turbo_standard/razorpay_turbo_standard.dart';
 ```
 
 #### Create Razorpay instance
@@ -162,11 +164,11 @@ Add the following line below `config.build_settings['ENABLE_BITCODE'] = 'YES'`:
 
 `config.build_settings['SWIFT_VERSION'] = '5.0'`
 
-### `CocoaPods could not find compatible versions for pod "razorpay_flutter"` when running `pod install`
+### `CocoaPods could not find compatible versions for pod "razorpay_turbo_standard"` when running `pod install`
 
 ```
-Specs satisfying the `razorpay_flutter (from
-    `.symlinks/plugins/razorpay_flutter/ios`)` dependency were found, but they
+Specs satisfying the `razorpay_turbo_standard (from
+    `.symlinks/plugins/razorpay_turbo_standard/ios`)` dependency were found, but they
     required a higher minimum deployment target.
 ```
 
@@ -184,28 +186,28 @@ platform :ios, '10.0'
 
 and run `pod install` again in the `ios` directory.
 
-### iOS build fails with `'razorpay_flutter/razorpay_flutter-Swift.h' file not found`
+### iOS build fails with `'razorpay_turbo_standard/razorpay_turbo_standard-Swift.h' file not found`
 
 Add use_frameworks! in `ios/Podfile` and run `pod install` again in the `ios` directory.
 
-### Gradle build fails with `Error: uses-sdk:minSdkVersion 16 cannot be smaller than version 19 declared in library [:razorpay_flutter]`
+### Gradle build fails with `Error: uses-sdk:minSdkVersion 16 cannot be smaller than version 19 declared in library [:razorpay_turbo_standard]`
 
 This is due to your Android minimum SDK version being less than 19. To change this, open `android/app/build.gradle`, find `minSdkVersion` in `defaultConfig` and set it to at least `19`.
 
 ### A lot of errors saying `xxxx is not defined for the class 'Razorpay'`
 
-We export a class `Razorpay` from `package:razorpay_flutter/razorpay_flutter.dart`. Check if your code is redeclaring the `Razorpay` class.
+We export a class `Razorpay` from `package:razorpay_turbo_standard/razorpay_turbo_standard.dart`. Check if your code is redeclaring the `Razorpay` class.
 
 ### Type 'xxxx' is not a subtype of type 'xxxx' of 'response' in `Razorpay.on.<anonymous closure>`
 
 ```
 [VERBOSE-2:ui_dart_state.cc(148)] Unhandled Exception: type 'PaymentFailureResponse' is not a subtype of type 'PaymentSuccessResponse' of 'response'
-#0      Razorpay.on.<anonymous closure> (package:razorpay_flutter/razorpay_flutter.dart:87:14)
+#0      Razorpay.on.<anonymous closure> (package:razorpay_turbo_standard/razorpay_turbo_standard.dart:87:14)
 #1      EventEmitter.emit.<anonymous closure> (package:eventify/src/event_emitter.dart:94:14)
 #2      List.forEach (dart:core-patch/growable_array.dart:278:8)
 #3      EventEmitter.emit (package:eventify/src/event_emitter.dart:90:15)
-#4      Razorpay._handleResult (package:razorpay_flutter/razorpay_flutter.dart:81:19)
-#5      Razorpay.open (package:razorpay_flutter/razorpay_flutter.dart:49:5)
+#4      Razorpay._handleResult (package:razorpay_turbo_standard/razorpay_turbo_standard.dart:81:19)
+#5      Razorpay.open (package:razorpay_turbo_standard/razorpay_turbo_standard.dart:49:5)
 ```
 
 Check the signatures of the callbacks for payment events. They should match the ones described [here](#onstring-eventname-function-listener).
