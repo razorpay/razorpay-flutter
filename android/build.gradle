@@ -42,8 +42,10 @@ android {
     
     dependencies {
         implementation fileTree(dir: 'libs', include: ['*.jar'])
-        api 'com.razorpay:checkout:1.6.+'
+        // api 'com.razorpay:checkout:1.6.+'
         implementation 'com.google.code.gson:gson:2.8.8'
-        compileOnly fileTree(dir: '/Users/ramprasad.a/Documents/projects/Android/AAR_Files/std_checkout_uat_aars', include: ['*.aar'])
+        compileOnly "com.razorpay:checkout:1.6.41"
+        compileOnly "com.razorpay:razorpay-turbo:2.1.0"
+        compileOnly "com.razorpay:turbo-ui:2.1.0"
     }
 }
