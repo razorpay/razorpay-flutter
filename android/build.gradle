@@ -1,4 +1,4 @@
-group 'com.razorpay.razorpay_flutter'
+group 'com.razorpay.razorpay_turbo_standard'
 version '1.1.4'
 
 buildscript {
@@ -22,7 +22,7 @@ rootProject.allprojects {
 apply plugin: 'com.android.library'
 
 android {
-    namespace 'com.razorpay.razorpay_flutter'
+    namespace 'com.razorpay.razorpay_turbo_standard'
     compileSdkVersion 33
 
     defaultConfig {

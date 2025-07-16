@@ -24,9 +24,8 @@ class Razorpay {
   static const UNKNOWN_ERROR = 100;
   static const EVENT_FETCH_SESSION_TOKEN = "fetchSessionTokenEvent";
 
-  static const MethodChannel _channel = const MethodChannel(
-    'razorpay_turbo_standard',
-  );
+  static const MethodChannel _channel =
+      const MethodChannel('razorpay_turbo_standard');
   late UpiTurbo upiTurbo;
 
   // EventEmitter instance used for communication
@@ -47,8 +46,8 @@ class Razorpay {
         'type': _CODE_PAYMENT_ERROR,
         'data': {
           'code': INVALID_OPTIONS,
-          'message': validationResult['message'],
-        },
+          'message': validationResult['message']
+        }
       });
       return;
     }
@@ -86,10 +85,7 @@ class Razorpay {
       default:
         eventName = 'error';
         payload = PaymentFailureResponse(
-          UNKNOWN_ERROR,
-          'An unknown error occurred.',
-          null,
-        );
+            UNKNOWN_ERROR, 'An unknown error occurred.', null);
     }
 
     _eventEmitter.emit(eventName, null, payload);
@@ -123,8 +119,7 @@ class Razorpay {
     if (key == null) {
       return {
         'success': false,
-        'message':
-            'Key is required. Please check if key is present in options.',
+        'message': 'Key is required. Please check if key is present in options.'
       };
     }
     return {'success': true};

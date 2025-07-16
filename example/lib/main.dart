@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:razorpay_flutter/model/upi_account.dart';
-import 'package:razorpay_flutter/razorpay_flutter.dart';
-import 'package:razorpay_flutter/model/Error.dart';
+import 'package:razorpay_turbo_standard/model/upi_account.dart';
+import 'package:razorpay_turbo_standard/razorpay_turbo_standard.dart';
+import 'package:razorpay_turbo_standard/model/Error.dart';
 import 'package:flutter/cupertino.dart';
 import 'location_service.dart';
 import 'package:http/http.dart' as http;
@@ -18,9 +18,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      theme: ThemeData(primarySwatch: Colors.blue),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
@@ -47,7 +45,7 @@ class _MyHomePageState extends State<MyHomePage> {
   String merchantKeyValue = "rzp_live_ILgsfZCZoFIKMb";
   String amountValue = "100";
   String orderIdValue = "";
-  String mobileNumberValue = "9633370305";
+  String mobileNumberValue = "8150857548";
   final LocationService _locationService = LocationService();
 
   late Razorpay razorpay;
@@ -70,15 +68,16 @@ class _MyHomePageState extends State<MyHomePage> {
     if (status.isGranted) {
     } else {
       // Show dialog or snackbar with status.message
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text(status.message)),
-      );
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(SnackBar(content: Text(status.message)));
     }
   }
 
   void _handleRefreshToken(dynamic response) async {
-    var url =
-        Uri.parse("https://api.razorpay.com/v1/upi/turbo/customer/session");
+    var url = Uri.parse(
+      "https://api.razorpay.com/v1/upi/turbo/customer/session",
+    );
     final basicToken =
         'cnpwX3Rlc3RfRHQydGdQM3B5eW5sVm86b3FJUFBaM3VwR3MyR2JLWlg3Z3lxYkZL=';
     final response = await http.post(
@@ -94,9 +93,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
+      appBar: AppBar(title: Text(widget.title)),
       body: SingleChildScrollView(
         child: Container(
           child: Column(
@@ -129,9 +126,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 margin: EdgeInsets.fromLTRB(12.0, 0, 12.0, 0),
                 child: Text(
                   '* Note - In case of TPV the orderId is mandatory.',
-                  style: TextStyle(
-                    fontStyle: FontStyle.italic,
-                  ),
+                  style: TextStyle(fontStyle: FontStyle.italic),
                 ),
               ),
               Row(
@@ -158,12 +153,18 @@ class _MyHomePageState extends State<MyHomePage> {
                         mobileNumberValue = mobileNumberController.text;
                         orderIdValue = orderIdController.text;
 
-                        razorpay.on(Razorpay.EVENT_PAYMENT_ERROR,
-                            handlePaymentErrorResponse);
-                        razorpay.on(Razorpay.EVENT_PAYMENT_SUCCESS,
-                            handlePaymentSuccessResponse);
-                        razorpay.on(Razorpay.EVENT_EXTERNAL_WALLET,
-                            handleExternalWalletSelected);
+                        razorpay.on(
+                          Razorpay.EVENT_PAYMENT_ERROR,
+                          handlePaymentErrorResponse,
+                        );
+                        razorpay.on(
+                          Razorpay.EVENT_PAYMENT_SUCCESS,
+                          handlePaymentSuccessResponse,
+                        );
+                        razorpay.on(
+                          Razorpay.EVENT_EXTERNAL_WALLET,
+                          handleExternalWalletSelected,
+                        );
 
                         _getLocation();
                         razorpay.open(getTurboPaymentOptions());
@@ -186,17 +187,21 @@ class _MyHomePageState extends State<MyHomePage> {
                   mobileNumberValue = mobileNumberController.text;
 
                   razorpay.upiTurbo.linkNewUpiAccount(
-                      customerMobile: mobileNumberValue,
-                      color: "#0CA72F",
-                      onSuccess: (List<UpiAccount> upiAccounts) {
-                        print(
-                            "Successfully Onboarded Account : ${upiAccounts.length}");
-                      },
-                      onFailure: (Error error) {
-                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                            content:
-                                Text("Error : ${error.errorDescription}")));
-                      });
+                    customerMobile: mobileNumberValue,
+                    color: "#0CA72F",
+                    onSuccess: (List<UpiAccount> upiAccounts) {
+                      print(
+                        "Successfully Onboarded Account : ${upiAccounts.length}",
+                      );
+                    },
+                    onFailure: (Error error) {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(
+                          content: Text("Error : ${error.errorDescription}"),
+                        ),
+                      );
+                    },
+                  );
                 },
               ),
               RZPButton(
@@ -206,13 +211,16 @@ class _MyHomePageState extends State<MyHomePage> {
                   mobileNumberValue = mobileNumberController.text;
 
                   razorpay.upiTurbo.manageUpiAccounts(
-                      customerMobile: mobileNumberValue,
-                      color: "#0CA72F",
-                      onFailure: (Error error) {
-                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                            content:
-                                Text("Error : ${error.errorDescription}")));
-                      });
+                    customerMobile: mobileNumberValue,
+                    color: "#0CA72F",
+                    onFailure: (Error error) {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(
+                          content: Text("Error : ${error.errorDescription}"),
+                        ),
+                      );
+                    },
+                  );
                 },
               ),
             ],
@@ -232,11 +240,11 @@ class _MyHomePageState extends State<MyHomePage> {
       'send_sms_hash': true,
       'prefill': {
         'contact': '$mobileNumberValue',
-        'email': 'test@razorpay.com'
+        'email': 'test@razorpay.com',
       },
       'external': {
-        'wallets': ['paytm']
-      }
+        'wallets': ['paytm'],
+      },
     };
   }
 
@@ -246,7 +254,7 @@ class _MyHomePageState extends State<MyHomePage> {
       'currency': 'INR',
       'prefill': {
         'contact': '$mobileNumberValue',
-        'email': 'test@razorpay.com'
+        'email': 'test@razorpay.com',
       },
       'upi': {'flow': 'in_app'},
       'method': 'upi',
@@ -255,7 +263,7 @@ class _MyHomePageState extends State<MyHomePage> {
       'key': '$merchantKeyValue',
       // 'disable_redesign_v15': false,
       'image':
-          'https://spaceplace.nasa.gov/templates/featured/sun/sunburn300.png'
+          'https://spaceplace.nasa.gov/templates/featured/sun/sunburn300.png',
       //   'experiments.upi_turbo': true,
       //  "environment_url":
       //      "https://api.razorpay.com/v1/checkout/public?platform=ios&build=31fa0ffe9ece6982dc4d08461b5a700d607f4269&version=1.3.14&force_checkout_v2=1&checkout_v2=1",
@@ -273,8 +281,11 @@ class _MyHomePageState extends State<MyHomePage> {
     * 2. Error Description
     * 3. Metadata
     **/
-    showAlertDialog(context, "Payment Failed",
-        "Code: ${response.code}\nDescription: ${response.message}\nMetadata:${response.error.toString()}");
+    showAlertDialog(
+      context,
+      "Payment Failed",
+      "Code: ${response.code}\nDescription: ${response.message}\nMetadata:${response.error.toString()}",
+    );
   }
 
   void handlePaymentSuccessResponse(PaymentSuccessResponse response) {
@@ -284,12 +295,18 @@ class _MyHomePageState extends State<MyHomePage> {
     * 3. Signature
     **/
     showAlertDialog(
-        context, "Payment Successful", "Payment ID: ${response.paymentId}");
+      context,
+      "Payment Successful",
+      "Payment ID: ${response.paymentId}",
+    );
   }
 
   void handleExternalWalletSelected(ExternalWalletResponse response) {
     showAlertDialog(
-        context, "External Wallet Selected", "${response.walletName}");
+      context,
+      "External Wallet Selected",
+      "${response.walletName}",
+    );
   }
 
   void showAlertDialog(BuildContext context, String title, String message) {
@@ -299,10 +316,7 @@ class _MyHomePageState extends State<MyHomePage> {
       onPressed: () {},
     );
     // set up the AlertDialog
-    AlertDialog alert = AlertDialog(
-      title: Text(title),
-      content: Text(message),
-    );
+    AlertDialog alert = AlertDialog(title: Text(title), content: Text(message));
     // show the dialog
     showDialog(
       context: context,
@@ -318,10 +332,11 @@ class RZPButton extends StatelessWidget {
   VoidCallback onPressed;
   double widthSize = 100.0;
 
-  RZPButton(
-      {required this.widthSize,
-      required this.labelText,
-      required this.onPressed});
+  RZPButton({
+    required this.widthSize,
+    required this.labelText,
+    required this.onPressed,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -331,12 +346,7 @@ class RZPButton extends StatelessWidget {
       margin: EdgeInsets.fromLTRB(12.0, 8.0, 8.0, 12.0),
       child: ElevatedButton(
         onPressed: onPressed,
-        child: Text(
-          labelText,
-          style: TextStyle(
-            color: Colors.white,
-          ),
-        ),
+        child: Text(labelText, style: TextStyle(color: Colors.white)),
         style: ButtonStyle(
           backgroundColor: MaterialStateProperty.all(Colors.indigoAccent),
         ),
@@ -351,26 +361,23 @@ class RZPEditText extends StatelessWidget {
   TextInputType textInputType;
   TextEditingController controller;
 
-  RZPEditText(
-      {required this.textInputType,
-      required this.hintText,
-      required this.labelText,
-      required this.controller});
+  RZPEditText({
+    required this.textInputType,
+    required this.hintText,
+    required this.labelText,
+    required this.controller,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.all(12.0),
       padding: EdgeInsets.fromLTRB(16.0, 0, 0, 0),
-      decoration: BoxDecoration(
-        border: Border.all(),
-      ),
+      decoration: BoxDecoration(border: Border.all()),
       child: TextField(
         controller: controller,
         keyboardType: textInputType,
-        style: TextStyle(
-          color: Colors.black,
-        ),
+        style: TextStyle(color: Colors.black),
         decoration: InputDecoration(
           border: InputBorder.none,
           hintText: hintText,

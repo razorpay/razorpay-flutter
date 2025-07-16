@@ -1,4 +1,4 @@
-package com.razorpay.razorpay_flutter;
+package com.razorpay.razorpay_turbo_standard;
 
 import androidx.annotation.NonNull;
 
@@ -24,7 +24,7 @@ public class RazorpayFlutterPlugin
     private RazorpayDelegate razorpayDelegate;
     private ActivityPluginBinding pluginBinding;
     private static String TURBO_CHANNEL_NAME = "razorpay_turbo_with_turbo_upi";
-    private static String CHANNEL_NAME = "razorpay_flutter";
+    private static String CHANNEL_NAME = "razorpay_turbo_standard";
     private EventChannel.EventSink eventSink;
 
     Map<String, Object> _arguments;
