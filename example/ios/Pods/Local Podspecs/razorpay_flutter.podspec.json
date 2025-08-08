@@ -16,12 +16,8 @@
   "source_files": "Classes/**/*",
   "public_header_files": "Classes/**/*.h",
   "dependencies": {
-    "Flutter": [
-
-    ],
-    "razorpay-pod": [
-
-    ]
+    "Flutter": [],
+    "razorpay-pod": []
   },
   "platforms": {
     "ios": "10.0"
