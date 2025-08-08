@@ -1,10 +1,10 @@
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:razorpay_flutter/razorpay_flutter.dart';
+import 'package:razorpay_turbo_standard/razorpay_turbo_standard.dart';
 
 void main() {
   group("$Razorpay", () {
-    const MethodChannel channel = MethodChannel("razorpay_flutter");
+    const MethodChannel channel = MethodChannel("razorpay_turbo_standard");
 
     final List<MethodCall> log = <MethodCall>[];
 
@@ -32,7 +32,7 @@ void main() {
           'amount': 2000,
           'name': 'Acme Corp.',
           'description': 'Fine T-Shirt',
-          'prefill': {'contact': '8888888888', 'email': 'test@razorpay.com'}
+          'prefill': {'contact': '8888888888', 'email': 'test@razorpay.com'},
         };
 
         razorpay.open(options);
@@ -45,7 +45,7 @@ void main() {
           'amount': 2000,
           'name': 'Acme Corp.',
           'description': 'Fine T-Shirt',
-          'prefill': {'contact': '8888888888', 'email': 'test@razorpay.com'}
+          'prefill': {'contact': '8888888888', 'email': 'test@razorpay.com'},
         };
 
         var errorHandler = (PaymentFailureResponse response) {
@@ -53,7 +53,9 @@ void main() {
         };
 
         razorpay.on(
-            Razorpay.EVENT_PAYMENT_ERROR, expectAsync1(errorHandler, count: 1));
+          Razorpay.EVENT_PAYMENT_ERROR,
+          expectAsync1(errorHandler, count: 1),
+        );
 
         razorpay.open(options);
       });

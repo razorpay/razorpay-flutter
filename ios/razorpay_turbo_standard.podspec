@@ -2,7 +2,7 @@
 # To learn more about a Podspec see http://guides.cocoapods.org/syntax/podspec.html
 #
 Pod::Spec.new do |s|
-  s.name             = 'razorpay_flutter'
+  s.name             = 'razorpay_turbo_standard'
   s.version          = '1.1.10'
   s.summary          = 'Flutter plugin for Razorpay SDK.'
   s.description      = 'Flutter plugin for Razorpay SDK.'

@@ -4,7 +4,7 @@ import Razorpay
 public class SwiftRazorpayFlutterPlugin: NSObject, FlutterPlugin {
     
     private var razorpayDelegate = RazorpayDelegate()
-    private static var CHANNEL_NAME = "razorpay_flutter";
+    private static var CHANNEL_NAME = "razorpay_turbo_standard";
     private var eventSink: FlutterEventSink!
     
     private static var TURBO_CHANNEL_NAME = "razorpay_turbo_with_turbo_upi"

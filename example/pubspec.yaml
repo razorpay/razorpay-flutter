@@ -31,7 +31,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  razorpay_flutter:
+  razorpay_turbo_standard:
     path: ../
 
   # The following adds the Cupertino Icons font to your application.

@@ -1,4 +1,4 @@
-package com.razorpay.razorpay_flutter;
+package com.razorpay.razorpay_turbo_standard;
 
 import android.app.Activity;
 import android.util.Log;

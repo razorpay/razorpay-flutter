@@ -1,10 +1,10 @@
 import 'dart:convert';
 import 'dart:async';
 import 'package:flutter/services.dart';
-import 'package:razorpay_flutter/model/Error.dart';
-import 'package:razorpay_flutter/model/upi_account.dart';
+import 'package:razorpay_turbo_standard/model/Error.dart';
+import 'package:razorpay_turbo_standard/model/upi_account.dart';
 import 'package:eventify/eventify.dart';
-import 'package:razorpay_flutter/razorpay_flutter.dart';
+import 'package:razorpay_turbo_standard/razorpay_turbo_standard.dart';
 
 typedef void OnSuccess<T>(T result);
 typedef void OnFailure<T>(T error);
@@ -32,8 +32,8 @@ class UpiTurbo {
   }
 
   void _checkTurboPluginAvailable() async {
-    final Map<dynamic, dynamic> turboPluginAvailableResponse =
-        await _channel.invokeMethod('isTurboPluginAvailable');
+    final Map<dynamic, dynamic> turboPluginAvailableResponse = await _channel
+        .invokeMethod('isTurboPluginAvailable');
     _isTurboPluginAvailable =
         turboPluginAvailableResponse["isTurboPluginAvailable"];
   }
@@ -44,15 +44,19 @@ class UpiTurbo {
 
   void _onError(dynamic error) {
     print("Error: $error");
-    _eventEmitter.emit('error', null,
-        Error(errorCode: "TURBO_ERROR", errorDescription: error.toString()));
+    _eventEmitter.emit(
+      'error',
+      null,
+      Error(errorCode: "TURBO_ERROR", errorDescription: error.toString()),
+    );
   }
 
-  void linkNewUpiAccount(
-      {required String? customerMobile,
-      String? color,
-      required OnSuccess<List<UpiAccount>> onSuccess,
-      required OnFailure<Error> onFailure}) async {
+  void linkNewUpiAccount({
+    required String? customerMobile,
+    String? color,
+    required OnSuccess<List<UpiAccount>> onSuccess,
+    required OnFailure<Error> onFailure,
+  }) async {
     try {
       if (!_isTurboPluginAvailable) {
         _emitFailure(onFailure);
@@ -61,7 +65,7 @@ class UpiTurbo {
 
       var requestLinkNewUpiAccountWithUI = <String, dynamic>{
         "customerMobile": customerMobile,
-        "color": color
+        "color": color,
       };
 
       final Map<dynamic, dynamic> getLinkedUpiAccountsResponse = await _channel
@@ -69,19 +73,23 @@ class UpiTurbo {
       if (getLinkedUpiAccountsResponse["data"] != "") {
         onSuccess(_getUpiAccounts(getLinkedUpiAccountsResponse["data"]));
       } else {
-        onFailure(Error(
+        onFailure(
+          Error(
             errorCode: "NO_ACCOUNT_FOUND",
-            errorDescription: "No Account Found"));
+            errorDescription: "No Account Found",
+          ),
+        );
       }
     } on PlatformException catch (error) {
       onFailure(Error(errorCode: error.code, errorDescription: error.message!));
     }
   }
 
-  void manageUpiAccounts(
-      {required String? customerMobile,
-      String? color,
-      required OnFailure<Error> onFailure}) async {
+  void manageUpiAccounts({
+    required String? customerMobile,
+    String? color,
+    required OnFailure<Error> onFailure,
+  }) async {
     try {
       if (!_isTurboPluginAvailable) {
         _emitFailure(onFailure);
@@ -89,11 +97,13 @@ class UpiTurbo {
       }
       var requestManageUpiAccounts = <String, dynamic>{
         "customerMobile": customerMobile,
-        "color": color
+        "color": color,
       };
 
       await _channel.invokeMethod(
-          'manageUpiAccounts', requestManageUpiAccounts);
+        'manageUpiAccounts',
+        requestManageUpiAccounts,
+      );
     } on PlatformException catch (error) {
       onFailure(Error(errorCode: error.code, errorDescription: error.message!));
     }
@@ -111,9 +121,12 @@ class UpiTurbo {
   }
 
   void _emitFailure(OnFailure<Error> onFailure) {
-    onFailure(Error(
+    onFailure(
+      Error(
         errorCode: "AXIS_SDK_ERROR",
-        errorDescription: "No Turbo Plugin Found"));
+        errorDescription: "No Turbo Plugin Found",
+      ),
+    );
   }
 
   void _onEvent(dynamic event) {
