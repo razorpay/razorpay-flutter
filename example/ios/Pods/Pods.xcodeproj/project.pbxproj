@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXAggregateTarget section */
@@ -29,542 +29,418 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		0526DC2DBE22D20482751E8F54B4E679 /* RazorpayFlutterPlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = 194040389B1CC778C72A92890983D804 /* RazorpayFlutterPlugin.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2871F59C74DB34DB578B75A31C49B78D /* package_info_plus-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EDE3CA99D74262C06F0FC4C69B514BE6 /* package_info_plus-dummy.m */; };
-		38658F98501069F72A8EC4F3DDDAF43B /* FluttertoastPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE7EC06E2D02A1884CCACCF79492DFA /* FluttertoastPlugin.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		3CE145ED451E4571DE7BF5F88DEDD46D /* RazorpayFlutterPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D06C1848D47C818F560D3995389877 /* RazorpayFlutterPlugin.m */; };
-		3D8E29CC717A9A423B4E739891A8C4C1 /* Toast.h in Headers */ = {isa = PBXBuildFile; fileRef = 15B71471ADA8C469198798E373E31CF8 /* Toast.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4545BDF140FBEB41204664B1B3B0869D /* FluttertoastPlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C8C18BD8FBFF3A2E0F499CD670208AB /* FluttertoastPlugin.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4762F0B488E88393CFED8F6CAC6B598E /* Toast-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C422037D9DE29C5B09AB3151F5E8DF7E /* Toast-dummy.m */; };
-		4A98F7FA3CC459D6A8A3B6FBE105D73E /* UIView+Toast.h in Headers */ = {isa = PBXBuildFile; fileRef = DF3389F876E2CA945E9DCECF3F88B3C6 /* UIView+Toast.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4DC58E626918A1CE1CF96F2235FE5DD3 /* SwiftRazorpayFlutterPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFFF84FB5EC528DE1125EB56A5E30AC /* SwiftRazorpayFlutterPlugin.swift */; };
-		4E9160A9E6B187B992C47AB90168B2FA /* FLTPackageInfoPlusPlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D2E69B04BC717968D4952B802AA38C0 /* FLTPackageInfoPlusPlugin.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5326686C16A914A1E8B4F6E6C066D226 /* FLTPackageInfoPlusPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C12B8FE2D076A3EC8337804ECFF5884 /* FLTPackageInfoPlusPlugin.m */; };
-		5880E9E9E3818D80DC37A85FCAE71BD9 /* Pods-Runner-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B3C932BD54DBB963102A89E0F9E3948 /* Pods-Runner-dummy.m */; };
-		68B81FE48F62841060F4FEBD2C45C554 /* package_info_plus-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 43EFFA606D851B91CE17A47384326091 /* package_info_plus-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6A3113CCC900D3A084BD14F1BE4BE2C5 /* fluttertoast-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A16E035698928DF4EDBB0C27AFEFC9C0 /* fluttertoast-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6AC2410A3B62243D2CCF9269C5CFE0D7 /* razorpay_flutter-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 258F287EDC0E027EA037F680CD98B2B0 /* razorpay_flutter-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		72CC745CEA34A19C53522199857CB162 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31FE7C6ECA71C614A5A667C679B23874 /* Foundation.framework */; };
-		7348FB297B47A4406C8D2959831822E8 /* Pods-Runner-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 96BF45FBE2BC9AD7B2D7E56D01B5EE46 /* Pods-Runner-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		79EF7CF8737E8E0B1FA9DB273E2D89E1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31FE7C6ECA71C614A5A667C679B23874 /* Foundation.framework */; };
-		8F0ABFB8E442C897481DB120361CFA26 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31FE7C6ECA71C614A5A667C679B23874 /* Foundation.framework */; };
-		9F3B0A7977BD2F164BEF0ED663035710 /* Toast-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AB974C85E68DED89EBD0E604024F22D /* Toast-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B1DB8EFFF3311CE96AFEE6DF586809F2 /* fluttertoast-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F62DE64A0BC420BB46869BBAC4F043B /* fluttertoast-dummy.m */; };
-		C0D165F8D06C0CF7659AF8E88514CC8E /* UIView+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = 97CE5EA7BAE4B5BDACC6EA306711BA1A /* UIView+Toast.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		C2D3D4E9481D8EBF9748904F37C033BC /* RazorpayDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8D497010EB53E73DB3B629E3BD1980 /* RazorpayDelegate.swift */; };
-		CCFBAA29557CD5B6B69F1FDBC7D66B25 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31FE7C6ECA71C614A5A667C679B23874 /* Foundation.framework */; };
-		DB26465C8C9E27AC900004CBB0ABC461 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FEFE490E4A06D19E868B2B9014BB8BF /* QuartzCore.framework */; };
-		E2FE03D3E61AD0E96F2F738A629790D7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31FE7C6ECA71C614A5A667C679B23874 /* Foundation.framework */; };
-		F38B5BD51479FD2B3AD97D9181961012 /* razorpay_flutter-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B37AC86FD20262FC2C1DDC10318EBB4 /* razorpay_flutter-dummy.m */; };
+		1F70E507EEFC23CF1C1047313F8BA04D /* package_info_plus-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E143932866C3207D1D4CDB73CF9027 /* package_info_plus-dummy.m */; };
+		264EEBA75A636D45FD8D4267A48BD6F9 /* package_info_plus-package_info_plus_privacy in Resources */ = {isa = PBXBuildFile; fileRef = 64FB8D36F3D5FD1F4E08A8CB92BCD154 /* package_info_plus-package_info_plus_privacy */; };
+		299375271BFAA4E66BF6DF83A6513CFA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 384DDA2CB25005BD6479B5987C619DD4 /* Foundation.framework */; };
+		34597C036AAA2AD2ED7319EFBDC29353 /* SwiftRazorpayFlutterPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE7262651AF3824C2AD14C0704A5159 /* SwiftRazorpayFlutterPlugin.swift */; };
+		3E4891F54C81DF03F2232D44A43B13AA /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = BB484074A4FA294ABE19F85C4B909BCA /* PrivacyInfo.xcprivacy */; };
+		67E684F3EACAD94D42FC64B329454CEE /* Pods-Runner-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 96BF45FBE2BC9AD7B2D7E56D01B5EE46 /* Pods-Runner-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6ACC463C7395DA1CABD9CAF3F5D2D1A5 /* RazorpayFlutterPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = EFA14143ED113FD4E5DFABF76145C41A /* RazorpayFlutterPlugin.m */; };
+		73E18A814F683CE0A9477584A01A2DC4 /* Pods-Runner-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B3C932BD54DBB963102A89E0F9E3948 /* Pods-Runner-dummy.m */; };
+		79FF0BA4875977B8061DC732C300F61F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 384DDA2CB25005BD6479B5987C619DD4 /* Foundation.framework */; };
+		8149BDA57660E20353E30C3234BE81E4 /* RazorpayDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36361C0F87E837BAA9554B97BABA7CAC /* RazorpayDelegate.swift */; };
+		88FED041CF51E03922A1C0EB0C9AF4CF /* RazorpayFlutterPlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = E08251B5E46BA2556B872EB203B1EAA9 /* RazorpayFlutterPlugin.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		940287D92DE9B82070592F9117BE8164 /* razorpay_flutter-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAA22E6D485DD03D470C1ABA55CB7C5 /* razorpay_flutter-dummy.m */; };
+		A17E89455D8763474B8ACFA389FBB5A2 /* package_info_plus-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = ABF4858C553DCEB50D367FAB4C52C270 /* package_info_plus-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C2863A0681459B6B24EEFFD8D5D03203 /* razorpay_flutter-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A7CFD091E1DB92174C380B9F0218C555 /* razorpay_flutter-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C4CF6047ADE357F50F4D9ABA5037CF14 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 384DDA2CB25005BD6479B5987C619DD4 /* Foundation.framework */; };
+		F0B9699D7D16F4E6B27460FEC7645FAF /* FPPPackageInfoPlusPlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C93F2A9FE38FD0684F0C9949E2DBCF9 /* FPPPackageInfoPlusPlugin.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FF11403534C7B365818D1C36D7A873F5 /* FPPPackageInfoPlusPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 0095D2111854E9BF41E350BD88CA8155 /* FPPPackageInfoPlusPlugin.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		19B1C777D31B4FEB5A486BF74AFE974C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = FA3EDC8EBD9CDE19E74123E29F5B7E04;
-			remoteInfo = fluttertoast;
-		};
-		3A50F206731F199C2F291E05085FC8FF /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A80A4D6B185BA43BC06122FED0C15F94;
-			remoteInfo = Toast;
-		};
-		4E7EF41EF690EB15FE8D7D7E9588A731 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 1EFDDC32A34D56D411E640A81DCD9E73;
-			remoteInfo = Flutter;
-		};
-		863084907023789E6BF9D9D44FBA0652 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A80A4D6B185BA43BC06122FED0C15F94;
-			remoteInfo = Toast;
-		};
-		9A65AF096093E210E3D8CBE96E0AAE9B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 1EFDDC32A34D56D411E640A81DCD9E73;
-			remoteInfo = Flutter;
-		};
-		B2D00E7127B47971136A888DE5DA3956 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 1EFDDC32A34D56D411E640A81DCD9E73;
-			remoteInfo = Flutter;
-		};
-		BA90F96F6C43186802510D8B756BFE4A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 54A00AF9F830F355D8FD8F6A4387F6A2;
-			remoteInfo = package_info_plus;
-		};
-		C80A0DEC35724FE10476C56E3FE73D15 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 84CA3424E172CD651235AF0783D01D39;
-			remoteInfo = "razorpay-pod";
-		};
-		CA09E6D2C9D053AB3E715E4CBD11FE4C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 84CA3424E172CD651235AF0783D01D39;
-			remoteInfo = "razorpay-pod";
-		};
-		E1713F088F2EF5258D40A5C3D6E6ACAD /* PBXContainerItemProxy */ = {
+		1C2F353E05C9D86009C1792BE2D52A85 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = C174A07088434DD9CB45C06B185F8FF3;
 			remoteInfo = razorpay_flutter;
 		};
-		EDE72F3EFD3A618F24C3BAF0B253EA35 /* PBXContainerItemProxy */ = {
+		378358AE595FC48A066960ADA88AD2BF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 1EFDDC32A34D56D411E640A81DCD9E73;
 			remoteInfo = Flutter;
 		};
+		4ACE4D8D63826D8A5490DD1F737C177D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1EFDDC32A34D56D411E640A81DCD9E73;
+			remoteInfo = Flutter;
+		};
+		555D15F6B637AAC517C936CAAC649588 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1EFDDC32A34D56D411E640A81DCD9E73;
+			remoteInfo = Flutter;
+		};
+		8F7653156A9D5DA79915EA16CD3426D8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 54A00AF9F830F355D8FD8F6A4387F6A2;
+			remoteInfo = package_info_plus;
+		};
+		DBC647A5921072EF2096FB98C82ECDE2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 84CA3424E172CD651235AF0783D01D39;
+			remoteInfo = "razorpay-pod";
+		};
+		F508671EA976820260B9798FB6B5D2AA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 07C64B0E06ED7C1903D446F9BBDDF5C9;
+			remoteInfo = "package_info_plus-package_info_plus_privacy";
+		};
+		F8BB1F4024A20AEDA2D0EE0E173B38D8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 84CA3424E172CD651235AF0783D01D39;
+			remoteInfo = "razorpay-pod";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0AB974C85E68DED89EBD0E604024F22D /* Toast-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Toast-umbrella.h"; sourceTree = "<group>"; };
-		15B71471ADA8C469198798E373E31CF8 /* Toast.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Toast.h; path = "Toast-Framework/Toast.h"; sourceTree = "<group>"; };
-		16248B7702EFD15F0C6056AE23F83E9B /* Razorpay.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = Razorpay.xcframework; path = Pod/Razorpay.xcframework; sourceTree = "<group>"; };
-		194040389B1CC778C72A92890983D804 /* RazorpayFlutterPlugin.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RazorpayFlutterPlugin.h; path = ../../../../../../../ios/Classes/RazorpayFlutterPlugin.h; sourceTree = "<group>"; };
-		1BCD74003A98AF6BFCC466967B4AADB1 /* Toast-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Toast-Info.plist"; sourceTree = "<group>"; };
-		1C1F7880E939EFE2230E87C5C57EB5A6 /* fluttertoast.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = fluttertoast.debug.xcconfig; sourceTree = "<group>"; };
-		258F287EDC0E027EA037F680CD98B2B0 /* razorpay_flutter-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "razorpay_flutter-umbrella.h"; sourceTree = "<group>"; };
-		2FEFE490E4A06D19E868B2B9014BB8BF /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
-		3161D7609DCD8BE52ED7BD9B8746F7A8 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = "../../../../../../../../../../Developer/flutter/.pub-cache/hosted/pub.dartlang.org/package_info_plus-1.4.3+1/LICENSE"; sourceTree = "<group>"; };
+		0095D2111854E9BF41E350BD88CA8155 /* FPPPackageInfoPlusPlugin.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FPPPackageInfoPlusPlugin.m; path = "../../../../../../../../../../../../.pub-cache/hosted/pub.dev/package_info_plus-8.3.0/ios/package_info_plus/Sources/package_info_plus/FPPPackageInfoPlusPlugin.m"; sourceTree = "<group>"; };
+		080C11D2D8319FE180F262BF3D38FA4C /* Razorpay.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = Razorpay.xcframework; path = Pod/Razorpay.xcframework; sourceTree = "<group>"; };
+		0D8495D5B518C57A9B0A8FC194F378C6 /* package_info_plus.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = package_info_plus.modulemap; sourceTree = "<group>"; };
+		17931AA8631AFCF6337F2C56C08FA025 /* razorpay_flutter.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = razorpay_flutter.modulemap; sourceTree = "<group>"; };
+		1D3CEABFB447C330A3C39C2319233D3F /* razorpay_flutter.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = razorpay_flutter.podspec; path = ../../../../../../ios/razorpay_flutter.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		21BEBA77726B8C519C762E580C97180F /* razorpay-pod.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "razorpay-pod.release.xcconfig"; sourceTree = "<group>"; };
+		28A041ABCA626A4C20C30B6D353809C3 /* package_info_plus.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = package_info_plus.podspec; path = "../../../../../../../../../.pub-cache/hosted/pub.dev/package_info_plus-8.3.0/ios/package_info_plus.podspec"; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		2C93F2A9FE38FD0684F0C9949E2DBCF9 /* FPPPackageInfoPlusPlugin.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FPPPackageInfoPlusPlugin.h; path = "../../../../../../../../../../../../../../.pub-cache/hosted/pub.dev/package_info_plus-8.3.0/ios/package_info_plus/Sources/package_info_plus/include/package_info_plus/FPPPackageInfoPlusPlugin.h"; sourceTree = "<group>"; };
+		2EC7DBA0FD9AAAF2312B9AC68B313F40 /* Flutter.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = Flutter.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		317C26B9A7CEDD34ADE8F37FAAB7AC20 /* Pods-Runner-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Runner-frameworks.sh"; sourceTree = "<group>"; };
-		31FE7C6ECA71C614A5A667C679B23874 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		37B93183370BF1A52B7B2C6EC1E0E9C1 /* razorpay-pod-xcframeworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "razorpay-pod-xcframeworks.sh"; sourceTree = "<group>"; };
-		43EFFA606D851B91CE17A47384326091 /* package_info_plus-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "package_info_plus-umbrella.h"; sourceTree = "<group>"; };
-		46380150A26B75544ED24DCE2D662FDD /* Toast.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Toast.release.xcconfig; sourceTree = "<group>"; };
-		483985D3FDC31B64388610BFD41F69EE /* razorpay_flutter.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = razorpay_flutter.podspec; path = ../../../../../../ios/razorpay_flutter.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		49ACFC86E07FC5094B7071A6ACC63CA4 /* razorpay-pod.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "razorpay-pod.debug.xcconfig"; sourceTree = "<group>"; };
-		4C8C18BD8FBFF3A2E0F499CD670208AB /* FluttertoastPlugin.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FluttertoastPlugin.h; path = "../../../../../../../../../../../Developer/flutter/.pub-cache/hosted/pub.dartlang.org/fluttertoast-8.1.1/ios/Classes/FluttertoastPlugin.h"; sourceTree = "<group>"; };
-		4D2E69B04BC717968D4952B802AA38C0 /* FLTPackageInfoPlusPlugin.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FLTPackageInfoPlusPlugin.h; path = "../../../../../../../../../../../Developer/flutter/.pub-cache/hosted/pub.dartlang.org/package_info_plus-1.4.3+1/ios/Classes/FLTPackageInfoPlusPlugin.h"; sourceTree = "<group>"; };
+		36361C0F87E837BAA9554B97BABA7CAC /* RazorpayDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RazorpayDelegate.swift; path = ../../../../../../../ios/Classes/RazorpayDelegate.swift; sourceTree = "<group>"; };
+		384DDA2CB25005BD6479B5987C619DD4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		44A93777670ECF244B4E9088A2D9B845 /* razorpay_flutter-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "razorpay_flutter-prefix.pch"; sourceTree = "<group>"; };
+		4CB044674E1A8FFFEAF3B571B097BF94 /* package_info_plus-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "package_info_plus-Info.plist"; sourceTree = "<group>"; };
 		4D68842CB2772778EFB677388B48AC94 /* razorpay_flutter */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = razorpay_flutter; path = razorpay_flutter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E3A1E14A2C9B2B2E8A26F26E877C9DA /* razorpay-pod.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "razorpay-pod.debug.xcconfig"; sourceTree = "<group>"; };
 		51825CD8F0558EFA53D9510F0E5BFA16 /* Pods-Runner-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Runner-Info.plist"; sourceTree = "<group>"; };
-		55E0AFD333353D71ACC2207149E879D6 /* Toast */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Toast; path = Toast.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		57B33DA131831AB5B10BC34F70F51CA6 /* fluttertoast.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = fluttertoast.podspec; path = "../../../../../../../../../../Developer/flutter/.pub-cache/hosted/pub.dartlang.org/fluttertoast-8.1.1/ios/fluttertoast.podspec"; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		5846FB5060A8EFB0FA0951DB07A3A101 /* Toast.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Toast.debug.xcconfig; sourceTree = "<group>"; };
-		5B9D0B504E177A7C8D95189FB3E357DA /* Toast-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Toast-prefix.pch"; sourceTree = "<group>"; };
-		5D02A29C04D07BF8045C6FC9D0C5A96D /* package_info_plus.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = package_info_plus.podspec; path = "../../../../../../../../../../Developer/flutter/.pub-cache/hosted/pub.dartlang.org/package_info_plus-1.4.3+1/ios/package_info_plus.podspec"; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		5E09B424A1D9EC9777AF494CFD77FFAC /* Flutter.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = Flutter.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		5E9A3DDA845C2CB6F0E937CD8B9DC555 /* fluttertoast-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "fluttertoast-Info.plist"; sourceTree = "<group>"; };
+		64FB8D36F3D5FD1F4E08A8CB92BCD154 /* package_info_plus-package_info_plus_privacy */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "package_info_plus-package_info_plus_privacy"; path = package_info_plus_privacy.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		669E8F25E1897672BDB80B7EB784DA24 /* Pods-Runner */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-Runner"; path = Pods_Runner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6AF63F8249F868AF3A1A95601C1049CF /* Flutter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Flutter.debug.xcconfig; sourceTree = "<group>"; };
-		7289B4F4A497C4B1EB8B6B71BFA81514 /* package_info_plus.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = package_info_plus.modulemap; sourceTree = "<group>"; };
-		745C4B62404310C54C80C8C547997A4F /* razorpay_flutter.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = razorpay_flutter.modulemap; sourceTree = "<group>"; };
-		74EF38989E78C786F6D03E155D41B8BE /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = "../../../../../../../../../../Developer/flutter/.pub-cache/hosted/pub.dartlang.org/fluttertoast-8.1.1/LICENSE"; sourceTree = "<group>"; };
+		6C53BC799C90FACA5D5805B8DFDA8C3F /* razorpay-pod-xcframeworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "razorpay-pod-xcframeworks.sh"; sourceTree = "<group>"; };
+		6CADC03727DC46B842C6050C26A6FA13 /* Flutter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Flutter.debug.xcconfig; sourceTree = "<group>"; };
+		72015C3ADE2A483D1564E0B31E90F337 /* package_info_plus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = package_info_plus.debug.xcconfig; sourceTree = "<group>"; };
 		7B3C932BD54DBB963102A89E0F9E3948 /* Pods-Runner-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Runner-dummy.m"; sourceTree = "<group>"; };
-		7C12B8FE2D076A3EC8337804ECFF5884 /* FLTPackageInfoPlusPlugin.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FLTPackageInfoPlusPlugin.m; path = "../../../../../../../../../../../Developer/flutter/.pub-cache/hosted/pub.dartlang.org/package_info_plus-1.4.3+1/ios/Classes/FLTPackageInfoPlusPlugin.m"; sourceTree = "<group>"; };
-		7CA1CE341C6A908F22C6E2A06A2AEF19 /* fluttertoast.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = fluttertoast.release.xcconfig; sourceTree = "<group>"; };
-		8F62DE64A0BC420BB46869BBAC4F043B /* fluttertoast-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "fluttertoast-dummy.m"; sourceTree = "<group>"; };
-		94D0485F5C78F6FC7555271F62D08712 /* Flutter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Flutter.release.xcconfig; sourceTree = "<group>"; };
+		7E47DCF605C256909658550FB72A01C1 /* razorpay_flutter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = razorpay_flutter.debug.xcconfig; sourceTree = "<group>"; };
+		84E143932866C3207D1D4CDB73CF9027 /* package_info_plus-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "package_info_plus-dummy.m"; sourceTree = "<group>"; };
+		8828AFD3843778CF4829529E63F4191B /* package_info_plus-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "package_info_plus-prefix.pch"; sourceTree = "<group>"; };
+		8D871D6296678680F81AC086E9456D82 /* Flutter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Flutter.release.xcconfig; sourceTree = "<group>"; };
 		96BF45FBE2BC9AD7B2D7E56D01B5EE46 /* Pods-Runner-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Runner-umbrella.h"; sourceTree = "<group>"; };
-		975094121CA2A22D137D17936B4AF707 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../../../../../../LICENSE; sourceTree = "<group>"; };
-		97CE5EA7BAE4B5BDACC6EA306711BA1A /* UIView+Toast.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+Toast.m"; path = "Toast/UIView+Toast.m"; sourceTree = "<group>"; };
-		9A1FF410636CB116F78B7787572F782E /* fluttertoast-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "fluttertoast-prefix.pch"; sourceTree = "<group>"; };
-		9B37AC86FD20262FC2C1DDC10318EBB4 /* razorpay_flutter-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "razorpay_flutter-dummy.m"; sourceTree = "<group>"; };
+		96E55B41BB7F7EF705467A8157D31C93 /* ResourceBundle-package_info_plus_privacy-package_info_plus-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-package_info_plus_privacy-package_info_plus-Info.plist"; sourceTree = "<group>"; };
+		98A2C2141079332E39068F240B74A984 /* razorpay_flutter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = razorpay_flutter.release.xcconfig; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9D9BEA11022E3D4F8553FA6EA148FEA8 /* package_info_plus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = package_info_plus.debug.xcconfig; sourceTree = "<group>"; };
 		9F79F8269DC34AC56BB3D1D9652C0D86 /* Pods-Runner.profile.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Runner.profile.xcconfig"; sourceTree = "<group>"; };
-		A16E035698928DF4EDBB0C27AFEFC9C0 /* fluttertoast-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "fluttertoast-umbrella.h"; sourceTree = "<group>"; };
-		A1F648FBFECE8692B6C2ABA3E76A363E /* package_info_plus-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "package_info_plus-Info.plist"; sourceTree = "<group>"; };
-		A60353EE18CBF81377609011AD08D0BC /* package_info_plus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = package_info_plus.release.xcconfig; sourceTree = "<group>"; };
-		AAE7EC06E2D02A1884CCACCF79492DFA /* FluttertoastPlugin.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FluttertoastPlugin.m; path = "../../../../../../../../../../../Developer/flutter/.pub-cache/hosted/pub.dartlang.org/fluttertoast-8.1.1/ios/Classes/FluttertoastPlugin.m"; sourceTree = "<group>"; };
-		AC8D497010EB53E73DB3B629E3BD1980 /* RazorpayDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RazorpayDelegate.swift; path = ../../../../../../../ios/Classes/RazorpayDelegate.swift; sourceTree = "<group>"; };
-		B56033421A4375FFEAE57FA2D1E8FDDD /* razorpay_flutter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = razorpay_flutter.debug.xcconfig; sourceTree = "<group>"; };
-		BEFFF84FB5EC528DE1125EB56A5E30AC /* SwiftRazorpayFlutterPlugin.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftRazorpayFlutterPlugin.swift; path = ../../../../../../../ios/Classes/SwiftRazorpayFlutterPlugin.swift; sourceTree = "<group>"; };
+		A7CFD091E1DB92174C380B9F0218C555 /* razorpay_flutter-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "razorpay_flutter-umbrella.h"; sourceTree = "<group>"; };
+		A910EE62907280C967887FC3D4C1CE01 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../../../../../../LICENSE; sourceTree = "<group>"; };
+		ABF4858C553DCEB50D367FAB4C52C270 /* package_info_plus-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "package_info_plus-umbrella.h"; sourceTree = "<group>"; };
+		BB484074A4FA294ABE19F85C4B909BCA /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; name = PrivacyInfo.xcprivacy; path = "../../../../../../../../../../../../.pub-cache/hosted/pub.dev/package_info_plus-8.3.0/ios/package_info_plus/Sources/package_info_plus/PrivacyInfo.xcprivacy"; sourceTree = "<group>"; };
+		C35349368A29458BF7DD03FDDF162B57 /* razorpay_flutter-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "razorpay_flutter-Info.plist"; sourceTree = "<group>"; };
 		C39BE06027F24EB0328A76E7507FA463 /* package_info_plus */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = package_info_plus; path = package_info_plus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C422037D9DE29C5B09AB3151F5E8DF7E /* Toast-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Toast-dummy.m"; sourceTree = "<group>"; };
-		C4B31E98D9332EC0B267B0971EAC2861 /* razorpay_flutter-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "razorpay_flutter-Info.plist"; sourceTree = "<group>"; };
-		C5D06C1848D47C818F560D3995389877 /* RazorpayFlutterPlugin.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RazorpayFlutterPlugin.m; path = ../../../../../../../ios/Classes/RazorpayFlutterPlugin.m; sourceTree = "<group>"; };
 		C6EA98402A94995D022D330B64B5203D /* Pods-Runner-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Runner-acknowledgements.markdown"; sourceTree = "<group>"; };
-		C9C164430F46B205B4909BC583B4DCE0 /* Toast.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Toast.modulemap; sourceTree = "<group>"; };
+		CDAA22E6D485DD03D470C1ABA55CB7C5 /* razorpay_flutter-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "razorpay_flutter-dummy.m"; sourceTree = "<group>"; };
 		CDAECCF4B5E08124ED410F09FD5A5DF9 /* Pods-Runner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Runner.debug.xcconfig"; sourceTree = "<group>"; };
-		D0C5A85ABEF5ED03A54A449B87B69225 /* fluttertoast */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = fluttertoast; path = fluttertoast.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D2DA93D94BE9F432941DBF51564E876B /* razorpay_flutter-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "razorpay_flutter-prefix.pch"; sourceTree = "<group>"; };
+		CEE7262651AF3824C2AD14C0704A5159 /* SwiftRazorpayFlutterPlugin.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftRazorpayFlutterPlugin.swift; path = ../../../../../../../ios/Classes/SwiftRazorpayFlutterPlugin.swift; sourceTree = "<group>"; };
 		D2FA70CA298C392CB8332ADEEDD1CE85 /* Pods-Runner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Runner.release.xcconfig"; sourceTree = "<group>"; };
-		D650B0F785DBBC15D7BA2F05547D9ECC /* razorpay-pod.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "razorpay-pod.release.xcconfig"; sourceTree = "<group>"; };
+		D86FEDD30D0997DCAAEBA91E8E171F89 /* package_info_plus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = package_info_plus.release.xcconfig; sourceTree = "<group>"; };
 		D9F2B4CB813B4BDC4D164C6E0868930A /* Pods-Runner-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Runner-acknowledgements.plist"; sourceTree = "<group>"; };
-		DF1938597E50AB7FFD4CB624D2423AFA /* razorpay_flutter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = razorpay_flutter.release.xcconfig; sourceTree = "<group>"; };
-		DF3389F876E2CA945E9DCECF3F88B3C6 /* UIView+Toast.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+Toast.h"; path = "Toast/UIView+Toast.h"; sourceTree = "<group>"; };
-		E6BE2CFD3671655460B454B9C1C92D8C /* fluttertoast.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = fluttertoast.modulemap; sourceTree = "<group>"; };
-		EDE3CA99D74262C06F0FC4C69B514BE6 /* package_info_plus-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "package_info_plus-dummy.m"; sourceTree = "<group>"; };
+		E08251B5E46BA2556B872EB203B1EAA9 /* RazorpayFlutterPlugin.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RazorpayFlutterPlugin.h; path = ../../../../../../../ios/Classes/RazorpayFlutterPlugin.h; sourceTree = "<group>"; };
+		EFA14143ED113FD4E5DFABF76145C41A /* RazorpayFlutterPlugin.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RazorpayFlutterPlugin.m; path = ../../../../../../../ios/Classes/RazorpayFlutterPlugin.m; sourceTree = "<group>"; };
 		F49C32B3B8CF59AB437BFD7314674868 /* Pods-Runner.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Runner.modulemap"; sourceTree = "<group>"; };
-		FDCB877041B2A2A442119E1FC97DC4D5 /* package_info_plus-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "package_info_plus-prefix.pch"; sourceTree = "<group>"; };
+		FA3090DC4A2ABDAA445F99B7D24E2779 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = "../../../../../../../../../.pub-cache/hosted/pub.dev/package_info_plus-8.3.0/LICENSE"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		0E986D92C16A9FFEFEDFADBA216AB5D4 /* Frameworks */ = {
+		39868BD414C8FD494F714351BFF5D7BC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				72CC745CEA34A19C53522199857CB162 /* Foundation.framework in Frameworks */,
-				DB26465C8C9E27AC900004CBB0ABC461 /* QuartzCore.framework in Frameworks */,
+				79FF0BA4875977B8061DC732C300F61F /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		83093BD325F4C5786460F62D4D85B644 /* Frameworks */ = {
+		5CD5FC73F605FB75265AE24C99CCE338 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				79EF7CF8737E8E0B1FA9DB273E2D89E1 /* Foundation.framework in Frameworks */,
+				C4CF6047ADE357F50F4D9ABA5037CF14 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BB922222E4FF9245C4CEE314D01A0A65 /* Frameworks */ = {
+		7F8313372263F1A66AD29F5DEF650B5D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8F0ABFB8E442C897481DB120361CFA26 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CFB7C2D7AF3EFD222DAC919F4C71CF11 /* Frameworks */ = {
+		915108FE0A773D8F34EB766200901AFF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CCFBAA29557CD5B6B69F1FDBC7D66B25 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		EDB45BE94446ED9E7277B8376C542944 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E2FE03D3E61AD0E96F2F738A629790D7 /* Foundation.framework in Frameworks */,
+				299375271BFAA4E66BF6DF83A6513CFA /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		045A6909D36BB830DF988BA085523780 /* .. */ = {
+		0205A25C317245DCB9BF5495837BBA32 /* .. */ = {
 			isa = PBXGroup;
 			children = (
-				EC8F90B304AF442328F032B9B53A3FB9 /* .. */,
+				DC1B98EED8EB02FC479FCB6A92E3DA5C /* .. */,
 			);
 			name = ..;
 			path = ..;
 			sourceTree = "<group>";
 		};
-		04854C3E9B5A883B182BA4C3AD611269 /* razorpay_flutter */ = {
+		1152387DB52F96FF4B1C12CDB3C42AEC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				83AB13E345D53CF8C11EEE30CE275E33 /* .. */,
-				BAF76928B76F3B776F37CD4C826BED8C /* Pod */,
-				90B0D25D21F8EB7DD3AF7EF28FF3572C /* Support Files */,
-			);
-			name = razorpay_flutter;
-			path = ../.symlinks/plugins/razorpay_flutter/ios;
-			sourceTree = "<group>";
-		};
-		07833B0D8C1580B5A2B896810EEC0948 /* ios */ = {
-			isa = PBXGroup;
-			children = (
-				D8B1FD432B48390E05D82CD92A6FA358 /* .symlinks */,
-			);
-			name = ios;
-			path = ios;
-			sourceTree = "<group>";
-		};
-		09425CB269526535245B8E00A49877A3 /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				3161D7609DCD8BE52ED7BD9B8746F7A8 /* LICENSE */,
-				5D02A29C04D07BF8045C6FC9D0C5A96D /* package_info_plus.podspec */,
-			);
-			name = Pod;
-			sourceTree = "<group>";
-		};
-		13990E63099B3EB4B932D0A9F446A6DB /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				6AF63F8249F868AF3A1A95601C1049CF /* Flutter.debug.xcconfig */,
-				94D0485F5C78F6FC7555271F62D08712 /* Flutter.release.xcconfig */,
-			);
-			name = "Support Files";
-			path = "../Pods/Target Support Files/Flutter";
-			sourceTree = "<group>";
-		};
-		1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				D325A42620E7427FB70FB046C7B7B240 /* iOS */,
+				080C11D2D8319FE180F262BF3D38FA4C /* Razorpay.xcframework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		17BC145079DB8053E6E7805B71F9CE27 /* Support Files */ = {
+		167C6DC8C7E66F9D5CCEC6EB639357FD /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				7289B4F4A497C4B1EB8B6B71BFA81514 /* package_info_plus.modulemap */,
-				EDE3CA99D74262C06F0FC4C69B514BE6 /* package_info_plus-dummy.m */,
-				A1F648FBFECE8692B6C2ABA3E76A363E /* package_info_plus-Info.plist */,
-				FDCB877041B2A2A442119E1FC97DC4D5 /* package_info_plus-prefix.pch */,
-				43EFFA606D851B91CE17A47384326091 /* package_info_plus-umbrella.h */,
-				9D9BEA11022E3D4F8553FA6EA148FEA8 /* package_info_plus.debug.xcconfig */,
-				A60353EE18CBF81377609011AD08D0BC /* package_info_plus.release.xcconfig */,
+				62347A4FB4B095DB424524E9785D495B /* Flutter */,
+				8B73B332C2049BE26085178324107728 /* package_info_plus */,
+				6919AB7EA6698A7F7EF1C26B2A255439 /* razorpay_flutter */,
 			);
-			name = "Support Files";
-			path = "../../../../Pods/Target Support Files/package_info_plus";
+			name = "Development Pods";
 			sourceTree = "<group>";
 		};
-		1B43D0F9B31327FCFE138F2F7030ACA3 /* example */ = {
+		1BA14BD69DF57942E561B844F073C533 /* .. */ = {
 			isa = PBXGroup;
 			children = (
-				4A407A8BF6ABAAA5765DBF6D9D826034 /* ios */,
+				5BD4835A09B1FECB65937924B4D32921 /* .. */,
+			);
+			name = ..;
+			path = "../../../../../../../../../.pub-cache/hosted/pub.dev/package_info_plus-8.3.0/ios/package_info_plus/Sources";
+			sourceTree = "<group>";
+		};
+		1F99118D3F66EACC9CDCE041EA4BD8B2 /* .. */ = {
+			isa = PBXGroup;
+			children = (
+				7ED25B2B51AE4869CDB2EC856B11296E /* .. */,
+			);
+			name = ..;
+			path = ../../../../../../ios;
+			sourceTree = "<group>";
+		};
+		227E50E06F21EF52691B961F0000B09F /* example */ = {
+			isa = PBXGroup;
+			children = (
+				343CF2F34F91DD1A07E7324CAD0AE832 /* ios */,
 			);
 			name = example;
 			path = example;
 			sourceTree = "<group>";
 		};
-		20AC55F0B8C6DE60B46B9033D1B7837B /* .. */ = {
+		33C4A9096BF616D682946E0E94BD9A5D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				929EC1508E0D66F93AB42256AE68E817 /* .. */,
+				C39BE06027F24EB0328A76E7507FA463 /* package_info_plus */,
+				64FB8D36F3D5FD1F4E08A8CB92BCD154 /* package_info_plus-package_info_plus_privacy */,
+				669E8F25E1897672BDB80B7EB784DA24 /* Pods-Runner */,
+				4D68842CB2772778EFB677388B48AC94 /* razorpay_flutter */,
 			);
-			name = ..;
-			path = "../../../../../../../../../../Developer/flutter/.pub-cache/hosted/pub.dartlang.org/fluttertoast-8.1.1/ios";
+			name = Products;
 			sourceTree = "<group>";
 		};
-		257B64C034C57372D7CE919E2DC3478E /* ios */ = {
+		343CF2F34F91DD1A07E7324CAD0AE832 /* ios */ = {
 			isa = PBXGroup;
 			children = (
-				7961934830A301745EE9E4AECC2C5AB0 /* .symlinks */,
-			);
-			name = ios;
-			path = ios;
-			sourceTree = "<group>";
-		};
-		2738C9B78F2DB0BE220664311EC8C502 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				4D2E69B04BC717968D4952B802AA38C0 /* FLTPackageInfoPlusPlugin.h */,
-				7C12B8FE2D076A3EC8337804ECFF5884 /* FLTPackageInfoPlusPlugin.m */,
-			);
-			name = Classes;
-			path = Classes;
-			sourceTree = "<group>";
-		};
-		27AB1D13B1FBAE260F48BD3D48B41BEA /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				4C8C18BD8FBFF3A2E0F499CD670208AB /* FluttertoastPlugin.h */,
-				AAE7EC06E2D02A1884CCACCF79492DFA /* FluttertoastPlugin.m */,
-			);
-			name = Classes;
-			path = Classes;
-			sourceTree = "<group>";
-		};
-		2ADD3C3AB9BEFF1E28108D234D1855DB /* .. */ = {
-			isa = PBXGroup;
-			children = (
-				7EDAA2EF1D432D0CC64A0DB03D67F4A2 /* example */,
-			);
-			name = ..;
-			path = ..;
-			sourceTree = "<group>";
-		};
-		2BC38CE0BADD24560AE4CC45879F7931 /* project */ = {
-			isa = PBXGroup;
-			children = (
-				3FD6EC67C63A0000A94C26F2311E4102 /* razorpay-flutter */,
-			);
-			name = project;
-			path = project;
-			sourceTree = "<group>";
-		};
-		321DCF43CD92EEF945C75B0CA242F146 /* example */ = {
-			isa = PBXGroup;
-			children = (
-				07833B0D8C1580B5A2B896810EEC0948 /* ios */,
-			);
-			name = example;
-			path = example;
-			sourceTree = "<group>";
-		};
-		34AC4274BD7958829774246ACAE94A3F /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				E6BE2CFD3671655460B454B9C1C92D8C /* fluttertoast.modulemap */,
-				8F62DE64A0BC420BB46869BBAC4F043B /* fluttertoast-dummy.m */,
-				5E9A3DDA845C2CB6F0E937CD8B9DC555 /* fluttertoast-Info.plist */,
-				9A1FF410636CB116F78B7787572F782E /* fluttertoast-prefix.pch */,
-				A16E035698928DF4EDBB0C27AFEFC9C0 /* fluttertoast-umbrella.h */,
-				1C1F7880E939EFE2230E87C5C57EB5A6 /* fluttertoast.debug.xcconfig */,
-				7CA1CE341C6A908F22C6E2A06A2AEF19 /* fluttertoast.release.xcconfig */,
-			);
-			name = "Support Files";
-			path = "../../../../Pods/Target Support Files/fluttertoast";
-			sourceTree = "<group>";
-		};
-		34E16F03DFFCC8251425228496FCBC84 /* .. */ = {
-			isa = PBXGroup;
-			children = (
-				54C722B627D2EC3AB9EF6F4DE21F864B /* .. */,
-			);
-			name = ..;
-			path = ..;
-			sourceTree = "<group>";
-		};
-		3FD6EC67C63A0000A94C26F2311E4102 /* razorpay-flutter */ = {
-			isa = PBXGroup;
-			children = (
-				321DCF43CD92EEF945C75B0CA242F146 /* example */,
-			);
-			name = "razorpay-flutter";
-			path = "razorpay-flutter";
-			sourceTree = "<group>";
-		};
-		43F91BB758EAFEA135F8125EBF2D31A8 /* Documents */ = {
-			isa = PBXGroup;
-			children = (
-				D0899E84EE696743D0759C541F87B421 /* RamprasadA */,
-			);
-			name = Documents;
-			path = Documents;
-			sourceTree = "<group>";
-		};
-		49D61B9C7CF20DA97E231188C96F206A /* .. */ = {
-			isa = PBXGroup;
-			children = (
-				045A6909D36BB830DF988BA085523780 /* .. */,
-			);
-			name = ..;
-			path = ..;
-			sourceTree = "<group>";
-		};
-		4A407A8BF6ABAAA5765DBF6D9D826034 /* ios */ = {
-			isa = PBXGroup;
-			children = (
-				6E0685CB1A35C6E2CD8DEC1C6B7F3F75 /* .symlinks */,
+				E9859D6CAC8B948026206179CD045391 /* .symlinks */,
 			);
 			name = ios;
 			path = ios;
 			sourceTree = "<group>";
 		};
-		54C722B627D2EC3AB9EF6F4DE21F864B /* .. */ = {
+		358C1F5AFD2F1E8C46D27724B20F5772 /* .symlinks */ = {
 			isa = PBXGroup;
 			children = (
-				C98903C88379E6D9D6709EFE010ED0B5 /* .. */,
+				3AC69D4FD02A0C0A6DBEAE0CF1FC4AC0 /* plugins */,
 			);
-			name = ..;
-			path = ..;
+			name = .symlinks;
+			path = .symlinks;
 			sourceTree = "<group>";
 		};
-		554E72DD7AA27606E44A2F43F27E29E7 /* Pod */ = {
+		35D86F6A374031497E9206A3BA9C4E30 /* razorpay_flutter */ = {
 			isa = PBXGroup;
 			children = (
-				57B33DA131831AB5B10BC34F70F51CA6 /* fluttertoast.podspec */,
-				74EF38989E78C786F6D03E155D41B8BE /* LICENSE */,
-			);
-			name = Pod;
-			sourceTree = "<group>";
-		};
-		5967190A67A60FE8AC6E85FD0BDDBA9E /* razorpay_flutter */ = {
-			isa = PBXGroup;
-			children = (
-				C98CD4B1FD2FC51D797872ABFA2AA496 /* ios */,
+				B3A8C534DE86E481080A2325B0A4B423 /* ios */,
 			);
 			name = razorpay_flutter;
 			path = razorpay_flutter;
 			sourceTree = "<group>";
 		};
-		596C932BC4770528DDE99AB628845D58 /* Support Files */ = {
+		399EEA4DF5C0B687C7FFA9DDDD020396 /* razorpay-flutter */ = {
 			isa = PBXGroup;
 			children = (
-				37B93183370BF1A52B7B2C6EC1E0E9C1 /* razorpay-pod-xcframeworks.sh */,
-				49ACFC86E07FC5094B7071A6ACC63CA4 /* razorpay-pod.debug.xcconfig */,
-				D650B0F785DBBC15D7BA2F05547D9ECC /* razorpay-pod.release.xcconfig */,
+				BAEC1B2723A605D51EC9E0CC20B190C2 /* example */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/razorpay-pod";
+			name = "razorpay-flutter";
+			path = "razorpay-flutter";
 			sourceTree = "<group>";
 		};
-		5C1EB78FB8610711EC35C19D7E3152E9 /* Pod */ = {
+		3AC69D4FD02A0C0A6DBEAE0CF1FC4AC0 /* plugins */ = {
 			isa = PBXGroup;
 			children = (
-				5E09B424A1D9EC9777AF494CFD77FFAC /* Flutter.podspec */,
+				9952B12360AE424064022988DCAB42B5 /* package_info_plus */,
 			);
-			name = Pod;
+			name = plugins;
+			path = plugins;
 			sourceTree = "<group>";
 		};
-		5E27407F5DF49CA6FF2D07ACB51C2B53 /* .. */ = {
+		468888538963A0C542B040AE58846496 /* package_info_plus */ = {
 			isa = PBXGroup;
 			children = (
-				C734140B33E5A08CC4658206789EBA84 /* .. */,
+				2C93F2A9FE38FD0684F0C9949E2DBCF9 /* FPPPackageInfoPlusPlugin.h */,
 			);
-			name = ..;
-			path = "../../../../../../../../../../Developer/flutter/.pub-cache/hosted/pub.dartlang.org/package_info_plus-1.4.3+1/ios";
+			name = package_info_plus;
+			path = package_info_plus;
 			sourceTree = "<group>";
 		};
-		5E61CDC279EE8263AB825CD6BD409238 /* project */ = {
+		46F456AE71B0C217AD4CBCBE08939E09 /* ios */ = {
 			isa = PBXGroup;
 			children = (
-				EF45E15468508166C1315685B1EA9F7F /* razorpay-flutter */,
+				73DBCAE92F7ED92D071114FC09D09428 /* package_info_plus */,
 			);
-			name = project;
-			path = project;
+			name = ios;
+			path = ios;
 			sourceTree = "<group>";
 		};
-		62CC3471BB221569FE582B84136B1C7F /* RamprasadA */ = {
+		49521F19A50B7CC15D2AB44F65D47079 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				2BC38CE0BADD24560AE4CC45879F7931 /* project */,
+				36361C0F87E837BAA9554B97BABA7CAC /* RazorpayDelegate.swift */,
+				E08251B5E46BA2556B872EB203B1EAA9 /* RazorpayFlutterPlugin.h */,
+				EFA14143ED113FD4E5DFABF76145C41A /* RazorpayFlutterPlugin.m */,
+				CEE7262651AF3824C2AD14C0704A5159 /* SwiftRazorpayFlutterPlugin.swift */,
 			);
-			name = RamprasadA;
-			path = RamprasadA;
+			name = Classes;
+			path = Classes;
 			sourceTree = "<group>";
 		};
-		6B8CD0D50227537B5A169BB2EC677BD7 /* .. */ = {
+		4B28B3F83E3088466F5559CB4C23216B /* plugins */ = {
 			isa = PBXGroup;
 			children = (
-				34E16F03DFFCC8251425228496FCBC84 /* .. */,
+				399EEA4DF5C0B687C7FFA9DDDD020396 /* razorpay-flutter */,
+			);
+			name = plugins;
+			path = plugins;
+			sourceTree = "<group>";
+		};
+		4BD2AE21C8E5E6AD25904BFEF16D0076 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6888521189BB2945905871A01CC3E319 /* razorpay-pod */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		4FF104884DC53A190822178203FAA011 /* .. */ = {
+			isa = PBXGroup;
+			children = (
+				C9027668189826BDF14752FDB941BF4F /* .. */,
 			);
 			name = ..;
 			path = ..;
 			sourceTree = "<group>";
 		};
-		6C5213C93F455780BC49063EB8645611 /* Support Files */ = {
+		5BD4835A09B1FECB65937924B4D32921 /* .. */ = {
 			isa = PBXGroup;
 			children = (
-				C9C164430F46B205B4909BC583B4DCE0 /* Toast.modulemap */,
-				C422037D9DE29C5B09AB3151F5E8DF7E /* Toast-dummy.m */,
-				1BCD74003A98AF6BFCC466967B4AADB1 /* Toast-Info.plist */,
-				5B9D0B504E177A7C8D95189FB3E357DA /* Toast-prefix.pch */,
-				0AB974C85E68DED89EBD0E604024F22D /* Toast-umbrella.h */,
-				5846FB5060A8EFB0FA0951DB07A3A101 /* Toast.debug.xcconfig */,
-				46380150A26B75544ED24DCE2D662FDD /* Toast.release.xcconfig */,
+				7AADD15D6FF41A2B44B81FB4FDA58590 /* .. */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/Toast";
+			name = ..;
+			path = ..;
 			sourceTree = "<group>";
 		};
-		6E0685CB1A35C6E2CD8DEC1C6B7F3F75 /* .symlinks */ = {
+		62347A4FB4B095DB424524E9785D495B /* Flutter */ = {
 			isa = PBXGroup;
 			children = (
-				CA047CCA2F6D21E7D9ED706DD8DBB644 /* plugins */,
+				FDEE6D3FA6A552B3D671949E3040759B /* Pod */,
+				84B9FFCD36FB790FD23CC83C42D0557E /* Support Files */,
 			);
-			name = .symlinks;
-			path = .symlinks;
+			name = Flutter;
+			path = ../Flutter;
+			sourceTree = "<group>";
+		};
+		6888521189BB2945905871A01CC3E319 /* razorpay-pod */ = {
+			isa = PBXGroup;
+			children = (
+				1152387DB52F96FF4B1C12CDB3C42AEC /* Frameworks */,
+				7FB872A77071E361EFA3BD1BA8D875BE /* Support Files */,
+			);
+			name = "razorpay-pod";
+			path = "razorpay-pod";
+			sourceTree = "<group>";
+		};
+		6919AB7EA6698A7F7EF1C26B2A255439 /* razorpay_flutter */ = {
+			isa = PBXGroup;
+			children = (
+				1F99118D3F66EACC9CDCE041EA4BD8B2 /* .. */,
+				6A6B633CF8DFDD926825CEA2B5F248FA /* Pod */,
+				B623843D51F167DE417296848D4D2F0C /* Support Files */,
+			);
+			name = razorpay_flutter;
+			path = ../.symlinks/plugins/razorpay_flutter/ios;
+			sourceTree = "<group>";
+		};
+		6A6B633CF8DFDD926825CEA2B5F248FA /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				A910EE62907280C967887FC3D4C1CE01 /* LICENSE */,
+				1D3CEABFB447C330A3C39C2319233D3F /* razorpay_flutter.podspec */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		6B238E05D2E89F68C0EF40C088FAC041 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				468888538963A0C542B040AE58846496 /* package_info_plus */,
+			);
+			name = include;
+			path = include;
+			sourceTree = "<group>";
+		};
+		6B8284E85DF931EBBC8F3CD47A8606DF /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				0D8495D5B518C57A9B0A8FC194F378C6 /* package_info_plus.modulemap */,
+				84E143932866C3207D1D4CDB73CF9027 /* package_info_plus-dummy.m */,
+				4CB044674E1A8FFFEAF3B571B097BF94 /* package_info_plus-Info.plist */,
+				8828AFD3843778CF4829529E63F4191B /* package_info_plus-prefix.pch */,
+				ABF4858C553DCEB50D367FAB4C52C270 /* package_info_plus-umbrella.h */,
+				72015C3ADE2A483D1564E0B31E90F337 /* package_info_plus.debug.xcconfig */,
+				D86FEDD30D0997DCAAEBA91E8E171F89 /* package_info_plus.release.xcconfig */,
+				96E55B41BB7F7EF705467A8157D31C93 /* ResourceBundle-package_info_plus_privacy-package_info_plus-Info.plist */,
+			);
+			name = "Support Files";
+			path = "../../../../Pods/Target Support Files/package_info_plus";
+			sourceTree = "<group>";
+		};
+		73DBCAE92F7ED92D071114FC09D09428 /* package_info_plus */ = {
+			isa = PBXGroup;
+			children = (
+				B79C2541FE0BDD2BC336A5AEF8DCD495 /* Sources */,
+			);
+			name = package_info_plus;
+			path = package_info_plus;
 			sourceTree = "<group>";
 		};
 		791C6E4B424AF06279F8918FA67B8ED6 /* Targets Support Files */ = {
@@ -575,19 +451,19 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		7961934830A301745EE9E4AECC2C5AB0 /* .symlinks */ = {
+		795FDFE8E3DA6358F7D358100CF3DF85 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				EEEAAAA05F66617D8494C1DCFB72A0D0 /* plugins */,
+				FA3090DC4A2ABDAA445F99B7D24E2779 /* LICENSE */,
+				28A041ABCA626A4C20C30B6D353809C3 /* package_info_plus.podspec */,
 			);
-			name = .symlinks;
-			path = .symlinks;
+			name = Pod;
 			sourceTree = "<group>";
 		};
-		7A3AA88466B9A670BC2B19CA5518A693 /* .. */ = {
+		7AADD15D6FF41A2B44B81FB4FDA58590 /* .. */ = {
 			isa = PBXGroup;
 			children = (
-				49D61B9C7CF20DA97E231188C96F206A /* .. */,
+				0205A25C317245DCB9BF5495837BBA32 /* .. */,
 			);
 			name = ..;
 			path = ..;
@@ -611,419 +487,271 @@
 			path = "Target Support Files/Pods-Runner";
 			sourceTree = "<group>";
 		};
-		7D0CDE076BC57083D732933A73ADA49B /* fluttertoast */ = {
+		7ED25B2B51AE4869CDB2EC856B11296E /* .. */ = {
 			isa = PBXGroup;
 			children = (
-				20AC55F0B8C6DE60B46B9033D1B7837B /* .. */,
-				554E72DD7AA27606E44A2F43F27E29E7 /* Pod */,
-				34AC4274BD7958829774246ACAE94A3F /* Support Files */,
+				227E50E06F21EF52691B961F0000B09F /* example */,
 			);
-			name = fluttertoast;
-			path = ../.symlinks/plugins/fluttertoast/ios;
+			name = ..;
+			path = ..;
 			sourceTree = "<group>";
 		};
-		7EDAA2EF1D432D0CC64A0DB03D67F4A2 /* example */ = {
+		7FB872A77071E361EFA3BD1BA8D875BE /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				257B64C034C57372D7CE919E2DC3478E /* ios */,
+				6C53BC799C90FACA5D5805B8DFDA8C3F /* razorpay-pod-xcframeworks.sh */,
+				4E3A1E14A2C9B2B2E8A26F26E877C9DA /* razorpay-pod.debug.xcconfig */,
+				21BEBA77726B8C519C762E580C97180F /* razorpay-pod.release.xcconfig */,
 			);
-			name = example;
-			path = example;
+			name = "Support Files";
+			path = "../Target Support Files/razorpay-pod";
 			sourceTree = "<group>";
 		};
-		8000214A03603A738BD55B5626A14E6A /* Flutter */ = {
+		84B9FFCD36FB790FD23CC83C42D0557E /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				5C1EB78FB8610711EC35C19D7E3152E9 /* Pod */,
-				13990E63099B3EB4B932D0A9F446A6DB /* Support Files */,
+				6CADC03727DC46B842C6050C26A6FA13 /* Flutter.debug.xcconfig */,
+				8D871D6296678680F81AC086E9456D82 /* Flutter.release.xcconfig */,
 			);
-			name = Flutter;
-			path = ../Flutter;
+			name = "Support Files";
+			path = "../Pods/Target Support Files/Flutter";
 			sourceTree = "<group>";
 		};
-		832B6C061A429E6B732079342155A07D /* package_info_plus */ = {
+		85614DF8D69705447253B269439D683A /* package_info_plus */ = {
 			isa = PBXGroup;
 			children = (
-				5E27407F5DF49CA6FF2D07ACB51C2B53 /* .. */,
-				09425CB269526535245B8E00A49877A3 /* Pod */,
-				17BC145079DB8053E6E7805B71F9CE27 /* Support Files */,
+				0095D2111854E9BF41E350BD88CA8155 /* FPPPackageInfoPlusPlugin.m */,
+				BB484074A4FA294ABE19F85C4B909BCA /* PrivacyInfo.xcprivacy */,
+				6B238E05D2E89F68C0EF40C088FAC041 /* include */,
+			);
+			name = package_info_plus;
+			path = package_info_plus;
+			sourceTree = "<group>";
+		};
+		8B73B332C2049BE26085178324107728 /* package_info_plus */ = {
+			isa = PBXGroup;
+			children = (
+				1BA14BD69DF57942E561B844F073C533 /* .. */,
+				795FDFE8E3DA6358F7D358100CF3DF85 /* Pod */,
+				6B8284E85DF931EBBC8F3CD47A8606DF /* Support Files */,
 			);
 			name = package_info_plus;
 			path = ../.symlinks/plugins/package_info_plus/ios;
 			sourceTree = "<group>";
 		};
-		83AB13E345D53CF8C11EEE30CE275E33 /* .. */ = {
+		922D6DC65416E611D7D7D3370614194B /* plugins */ = {
 			isa = PBXGroup;
 			children = (
-				2ADD3C3AB9BEFF1E28108D234D1855DB /* .. */,
-			);
-			name = ..;
-			path = ../../../../../../ios;
-			sourceTree = "<group>";
-		};
-		90B0D25D21F8EB7DD3AF7EF28FF3572C /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				745C4B62404310C54C80C8C547997A4F /* razorpay_flutter.modulemap */,
-				9B37AC86FD20262FC2C1DDC10318EBB4 /* razorpay_flutter-dummy.m */,
-				C4B31E98D9332EC0B267B0971EAC2861 /* razorpay_flutter-Info.plist */,
-				D2DA93D94BE9F432941DBF51564E876B /* razorpay_flutter-prefix.pch */,
-				258F287EDC0E027EA037F680CD98B2B0 /* razorpay_flutter-umbrella.h */,
-				B56033421A4375FFEAE57FA2D1E8FDDD /* razorpay_flutter.debug.xcconfig */,
-				DF1938597E50AB7FFD4CB624D2423AFA /* razorpay_flutter.release.xcconfig */,
-			);
-			name = "Support Files";
-			path = "../../../../Pods/Target Support Files/razorpay_flutter";
-			sourceTree = "<group>";
-		};
-		929EC1508E0D66F93AB42256AE68E817 /* .. */ = {
-			isa = PBXGroup;
-			children = (
-				6B8CD0D50227537B5A169BB2EC677BD7 /* .. */,
-			);
-			name = ..;
-			path = ..;
-			sourceTree = "<group>";
-		};
-		962B72F5C91DDE451420FEEC13D0C848 /* razorpay-pod */ = {
-			isa = PBXGroup;
-			children = (
-				E7BED783E12C0BD8D796DE04280C0969 /* Frameworks */,
-				596C932BC4770528DDE99AB628845D58 /* Support Files */,
-			);
-			name = "razorpay-pod";
-			path = "razorpay-pod";
-			sourceTree = "<group>";
-		};
-		98186B2E838BE3828AB1A8085C96F787 /* fluttertoast */ = {
-			isa = PBXGroup;
-			children = (
-				CD9557F693CF47D44A7240BA1D0F1B86 /* ios */,
-			);
-			name = fluttertoast;
-			path = fluttertoast;
-			sourceTree = "<group>";
-		};
-		9DE31EDFE3F1120C157293DC8875206E /* .. */ = {
-			isa = PBXGroup;
-			children = (
-				E0B7D2724656C458859ED58A54E60459 /* .. */,
-			);
-			name = ..;
-			path = ..;
-			sourceTree = "<group>";
-		};
-		B8A890852FCFB686FBB8A9F109E1D82E /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				962B72F5C91DDE451420FEEC13D0C848 /* razorpay-pod */,
-				F36BDBABC527BD62B91099A2D0DE4747 /* Toast */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		BAF76928B76F3B776F37CD4C826BED8C /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				975094121CA2A22D137D17936B4AF707 /* LICENSE */,
-				483985D3FDC31B64388610BFD41F69EE /* razorpay_flutter.podspec */,
-			);
-			name = Pod;
-			sourceTree = "<group>";
-		};
-		BF36DA16A731EEA3F70706ED6718D9E0 /* ios */ = {
-			isa = PBXGroup;
-			children = (
-				2738C9B78F2DB0BE220664311EC8C502 /* Classes */,
-			);
-			name = ios;
-			path = ios;
-			sourceTree = "<group>";
-		};
-		C14931EA206724B7925D3C621822FCEA /* Documents */ = {
-			isa = PBXGroup;
-			children = (
-				62CC3471BB221569FE582B84136B1C7F /* RamprasadA */,
-			);
-			name = Documents;
-			path = Documents;
-			sourceTree = "<group>";
-		};
-		C734140B33E5A08CC4658206789EBA84 /* .. */ = {
-			isa = PBXGroup;
-			children = (
-				E682511831ADD3CB0261074EA4767442 /* .. */,
-			);
-			name = ..;
-			path = ..;
-			sourceTree = "<group>";
-		};
-		C913E3DC14B1D136577352F3A97B9684 /* .. */ = {
-			isa = PBXGroup;
-			children = (
-				7A3AA88466B9A670BC2B19CA5518A693 /* .. */,
-			);
-			name = ..;
-			path = ..;
-			sourceTree = "<group>";
-		};
-		C98903C88379E6D9D6709EFE010ED0B5 /* .. */ = {
-			isa = PBXGroup;
-			children = (
-				9DE31EDFE3F1120C157293DC8875206E /* .. */,
-			);
-			name = ..;
-			path = ..;
-			sourceTree = "<group>";
-		};
-		C98CD4B1FD2FC51D797872ABFA2AA496 /* ios */ = {
-			isa = PBXGroup;
-			children = (
-				F14A1AFDE15764BC29F4938C1679859A /* Classes */,
-			);
-			name = ios;
-			path = ios;
-			sourceTree = "<group>";
-		};
-		CA047CCA2F6D21E7D9ED706DD8DBB644 /* plugins */ = {
-			isa = PBXGroup;
-			children = (
-				98186B2E838BE3828AB1A8085C96F787 /* fluttertoast */,
+				35D86F6A374031497E9206A3BA9C4E30 /* razorpay_flutter */,
 			);
 			name = plugins;
 			path = plugins;
 			sourceTree = "<group>";
 		};
-		CD9557F693CF47D44A7240BA1D0F1B86 /* ios */ = {
+		977BCA8BA57AF89697CE0FD0785C4728 /* Projects */ = {
 			isa = PBXGroup;
 			children = (
-				27AB1D13B1FBAE260F48BD3D48B41BEA /* Classes */,
+				4B28B3F83E3088466F5559CB4C23216B /* plugins */,
+			);
+			name = Projects;
+			path = Projects;
+			sourceTree = "<group>";
+		};
+		9952B12360AE424064022988DCAB42B5 /* package_info_plus */ = {
+			isa = PBXGroup;
+			children = (
+				46F456AE71B0C217AD4CBCBE08939E09 /* ios */,
+			);
+			name = package_info_plus;
+			path = package_info_plus;
+			sourceTree = "<group>";
+		};
+		B3A8C534DE86E481080A2325B0A4B423 /* ios */ = {
+			isa = PBXGroup;
+			children = (
+				49521F19A50B7CC15D2AB44F65D47079 /* Classes */,
 			);
 			name = ios;
 			path = ios;
+			sourceTree = "<group>";
+		};
+		B623843D51F167DE417296848D4D2F0C /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				17931AA8631AFCF6337F2C56C08FA025 /* razorpay_flutter.modulemap */,
+				CDAA22E6D485DD03D470C1ABA55CB7C5 /* razorpay_flutter-dummy.m */,
+				C35349368A29458BF7DD03FDDF162B57 /* razorpay_flutter-Info.plist */,
+				44A93777670ECF244B4E9088A2D9B845 /* razorpay_flutter-prefix.pch */,
+				A7CFD091E1DB92174C380B9F0218C555 /* razorpay_flutter-umbrella.h */,
+				7E47DCF605C256909658550FB72A01C1 /* razorpay_flutter.debug.xcconfig */,
+				98A2C2141079332E39068F240B74A984 /* razorpay_flutter.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../../../../Pods/Target Support Files/razorpay_flutter";
+			sourceTree = "<group>";
+		};
+		B79C2541FE0BDD2BC336A5AEF8DCD495 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				85614DF8D69705447253B269439D683A /* package_info_plus */,
+			);
+			name = Sources;
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		BAEC1B2723A605D51EC9E0CC20B190C2 /* example */ = {
+			isa = PBXGroup;
+			children = (
+				BD2FD623669969532FF13E03482122D9 /* ios */,
+			);
+			name = example;
+			path = example;
+			sourceTree = "<group>";
+		};
+		BD2FD623669969532FF13E03482122D9 /* ios */ = {
+			isa = PBXGroup;
+			children = (
+				358C1F5AFD2F1E8C46D27724B20F5772 /* .symlinks */,
+			);
+			name = ios;
+			path = ios;
+			sourceTree = "<group>";
+		};
+		C9027668189826BDF14752FDB941BF4F /* .. */ = {
+			isa = PBXGroup;
+			children = (
+				E65C9E774DC36A6EB72AAFF7BE955690 /* .. */,
+			);
+			name = ..;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
-				D247EEF379FB11B1CD134742224DFB8B /* Development Pods */,
-				1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */,
-				B8A890852FCFB686FBB8A9F109E1D82E /* Pods */,
-				F75C615F04CEF57C72F1FAD9657059AF /* Products */,
+				167C6DC8C7E66F9D5CCEC6EB639357FD /* Development Pods */,
+				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				4BD2AE21C8E5E6AD25904BFEF16D0076 /* Pods */,
+				33C4A9096BF616D682946E0E94BD9A5D /* Products */,
 				791C6E4B424AF06279F8918FA67B8ED6 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		D0899E84EE696743D0759C541F87B421 /* RamprasadA */ = {
+		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				5E61CDC279EE8263AB825CD6BD409238 /* project */,
+				E4801F62A6B08CD9B5410329F1A18FDE /* iOS */,
 			);
-			name = RamprasadA;
-			path = RamprasadA;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		D247EEF379FB11B1CD134742224DFB8B /* Development Pods */ = {
+		DC1B98EED8EB02FC479FCB6A92E3DA5C /* .. */ = {
 			isa = PBXGroup;
 			children = (
-				8000214A03603A738BD55B5626A14E6A /* Flutter */,
-				7D0CDE076BC57083D732933A73ADA49B /* fluttertoast */,
-				832B6C061A429E6B732079342155A07D /* package_info_plus */,
-				04854C3E9B5A883B182BA4C3AD611269 /* razorpay_flutter */,
+				4FF104884DC53A190822178203FAA011 /* .. */,
 			);
-			name = "Development Pods";
+			name = ..;
+			path = ..;
 			sourceTree = "<group>";
 		};
-		D325A42620E7427FB70FB046C7B7B240 /* iOS */ = {
+		E4801F62A6B08CD9B5410329F1A18FDE /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				31FE7C6ECA71C614A5A667C679B23874 /* Foundation.framework */,
-				2FEFE490E4A06D19E868B2B9014BB8BF /* QuartzCore.framework */,
+				384DDA2CB25005BD6479B5987C619DD4 /* Foundation.framework */,
 			);
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		D8B1FD432B48390E05D82CD92A6FA358 /* .symlinks */ = {
+		E65C9E774DC36A6EB72AAFF7BE955690 /* .. */ = {
 			isa = PBXGroup;
 			children = (
-				E1EF672FAD102429F714333E34040ACE /* plugins */,
+				977BCA8BA57AF89697CE0FD0785C4728 /* Projects */,
+			);
+			name = ..;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		E9859D6CAC8B948026206179CD045391 /* .symlinks */ = {
+			isa = PBXGroup;
+			children = (
+				922D6DC65416E611D7D7D3370614194B /* plugins */,
 			);
 			name = .symlinks;
 			path = .symlinks;
 			sourceTree = "<group>";
 		};
-		E0B7D2724656C458859ED58A54E60459 /* .. */ = {
+		FDEE6D3FA6A552B3D671949E3040759B /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				43F91BB758EAFEA135F8125EBF2D31A8 /* Documents */,
+				2EC7DBA0FD9AAAF2312B9AC68B313F40 /* Flutter.podspec */,
 			);
-			name = ..;
-			path = ..;
-			sourceTree = "<group>";
-		};
-		E1EF672FAD102429F714333E34040ACE /* plugins */ = {
-			isa = PBXGroup;
-			children = (
-				E2C63F3D6C244933F35000CB9EB25AA7 /* package_info_plus */,
-			);
-			name = plugins;
-			path = plugins;
-			sourceTree = "<group>";
-		};
-		E2C63F3D6C244933F35000CB9EB25AA7 /* package_info_plus */ = {
-			isa = PBXGroup;
-			children = (
-				BF36DA16A731EEA3F70706ED6718D9E0 /* ios */,
-			);
-			name = package_info_plus;
-			path = package_info_plus;
-			sourceTree = "<group>";
-		};
-		E682511831ADD3CB0261074EA4767442 /* .. */ = {
-			isa = PBXGroup;
-			children = (
-				C913E3DC14B1D136577352F3A97B9684 /* .. */,
-			);
-			name = ..;
-			path = ..;
-			sourceTree = "<group>";
-		};
-		E7BED783E12C0BD8D796DE04280C0969 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				16248B7702EFD15F0C6056AE23F83E9B /* Razorpay.xcframework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		EC8F90B304AF442328F032B9B53A3FB9 /* .. */ = {
-			isa = PBXGroup;
-			children = (
-				C14931EA206724B7925D3C621822FCEA /* Documents */,
-			);
-			name = ..;
-			path = ..;
-			sourceTree = "<group>";
-		};
-		EEEAAAA05F66617D8494C1DCFB72A0D0 /* plugins */ = {
-			isa = PBXGroup;
-			children = (
-				5967190A67A60FE8AC6E85FD0BDDBA9E /* razorpay_flutter */,
-			);
-			name = plugins;
-			path = plugins;
-			sourceTree = "<group>";
-		};
-		EF45E15468508166C1315685B1EA9F7F /* razorpay-flutter */ = {
-			isa = PBXGroup;
-			children = (
-				1B43D0F9B31327FCFE138F2F7030ACA3 /* example */,
-			);
-			name = "razorpay-flutter";
-			path = "razorpay-flutter";
-			sourceTree = "<group>";
-		};
-		F14A1AFDE15764BC29F4938C1679859A /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				AC8D497010EB53E73DB3B629E3BD1980 /* RazorpayDelegate.swift */,
-				194040389B1CC778C72A92890983D804 /* RazorpayFlutterPlugin.h */,
-				C5D06C1848D47C818F560D3995389877 /* RazorpayFlutterPlugin.m */,
-				BEFFF84FB5EC528DE1125EB56A5E30AC /* SwiftRazorpayFlutterPlugin.swift */,
-			);
-			name = Classes;
-			path = Classes;
-			sourceTree = "<group>";
-		};
-		F36BDBABC527BD62B91099A2D0DE4747 /* Toast */ = {
-			isa = PBXGroup;
-			children = (
-				15B71471ADA8C469198798E373E31CF8 /* Toast.h */,
-				DF3389F876E2CA945E9DCECF3F88B3C6 /* UIView+Toast.h */,
-				97CE5EA7BAE4B5BDACC6EA306711BA1A /* UIView+Toast.m */,
-				6C5213C93F455780BC49063EB8645611 /* Support Files */,
-			);
-			name = Toast;
-			path = Toast;
-			sourceTree = "<group>";
-		};
-		F75C615F04CEF57C72F1FAD9657059AF /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				D0C5A85ABEF5ED03A54A449B87B69225 /* fluttertoast */,
-				C39BE06027F24EB0328A76E7507FA463 /* package_info_plus */,
-				669E8F25E1897672BDB80B7EB784DA24 /* Pods-Runner */,
-				4D68842CB2772778EFB677388B48AC94 /* razorpay_flutter */,
-				55E0AFD333353D71ACC2207149E879D6 /* Toast */,
-			);
-			name = Products;
+			name = Pod;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		3F74A6EA8874ACDCCF1486968C5C8A0A /* Headers */ = {
+		2A0E997C1D9C1D7C20F2C4A063C1945F /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6A3113CCC900D3A084BD14F1BE4BE2C5 /* fluttertoast-umbrella.h in Headers */,
-				4545BDF140FBEB41204664B1B3B0869D /* FluttertoastPlugin.h in Headers */,
+				C2863A0681459B6B24EEFFD8D5D03203 /* razorpay_flutter-umbrella.h in Headers */,
+				88FED041CF51E03922A1C0EB0C9AF4CF /* RazorpayFlutterPlugin.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6BBF7D65AECF6FCC5136BAEBC525A3AB /* Headers */ = {
+		349A7217B927E8614FE88B764322EED5 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4E9160A9E6B187B992C47AB90168B2FA /* FLTPackageInfoPlusPlugin.h in Headers */,
-				68B81FE48F62841060F4FEBD2C45C554 /* package_info_plus-umbrella.h in Headers */,
+				F0B9699D7D16F4E6B27460FEC7645FAF /* FPPPackageInfoPlusPlugin.h in Headers */,
+				A17E89455D8763474B8ACFA389FBB5A2 /* package_info_plus-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B4B8366ABC4F8A5BAF225846545D41DF /* Headers */ = {
+		48D984623806D8BF083D707784DB42FD /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6AC2410A3B62243D2CCF9269C5CFE0D7 /* razorpay_flutter-umbrella.h in Headers */,
-				0526DC2DBE22D20482751E8F54B4E679 /* RazorpayFlutterPlugin.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CE9CF7F061F75A30A8EC0C4DCD8C21C9 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3D8E29CC717A9A423B4E739891A8C4C1 /* Toast.h in Headers */,
-				9F3B0A7977BD2F164BEF0ED663035710 /* Toast-umbrella.h in Headers */,
-				4A98F7FA3CC459D6A8A3B6FBE105D73E /* UIView+Toast.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		EB9D08984AB92A8A8D1A2E0EFE1EEEFD /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7348FB297B47A4406C8D2959831822E8 /* Pods-Runner-umbrella.h in Headers */,
+				67E684F3EACAD94D42FC64B329454CEE /* Pods-Runner-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		54A00AF9F830F355D8FD8F6A4387F6A2 /* package_info_plus */ = {
+		07C64B0E06ED7C1903D446F9BBDDF5C9 /* package_info_plus-package_info_plus_privacy */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B1896E1FFE51726CA5B894190CFAB440 /* Build configuration list for PBXNativeTarget "package_info_plus" */;
+			buildConfigurationList = 0C55CC9BBF648C35328F7C8386019CDA /* Build configuration list for PBXNativeTarget "package_info_plus-package_info_plus_privacy" */;
 			buildPhases = (
-				6BBF7D65AECF6FCC5136BAEBC525A3AB /* Headers */,
-				D5E6D17D5422E892FF51E5DF905637F6 /* Sources */,
-				CFB7C2D7AF3EFD222DAC919F4C71CF11 /* Frameworks */,
-				F1311F9D9421A40AEC15B62AECF5AD08 /* Resources */,
+				954EE2F6958AD4546D767E724CB1DB5E /* Sources */,
+				7F8313372263F1A66AD29F5DEF650B5D /* Frameworks */,
+				CE7E5990EF3BF6EDAF71ADC6D3431D72 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				E2B3F51507B2BFBB802154F7A67891AD /* PBXTargetDependency */,
+			);
+			name = "package_info_plus-package_info_plus_privacy";
+			productName = package_info_plus_privacy;
+			productReference = 64FB8D36F3D5FD1F4E08A8CB92BCD154 /* package_info_plus-package_info_plus_privacy */;
+			productType = "com.apple.product-type.bundle";
+		};
+		54A00AF9F830F355D8FD8F6A4387F6A2 /* package_info_plus */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D967CCE9AF6CA99174E8E3792AD99E78 /* Build configuration list for PBXNativeTarget "package_info_plus" */;
+			buildPhases = (
+				349A7217B927E8614FE88B764322EED5 /* Headers */,
+				A77EE9B27552283F7B0C9DF5EC4105EF /* Sources */,
+				915108FE0A773D8F34EB766200901AFF /* Frameworks */,
+				A741024B5CE752C76F200B934A111092 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CF0A23FEF35966F9270BC8238282ED05 /* PBXTargetDependency */,
+				4E18EB1F3AF9B15C9EA62B8DEFA0E60A /* PBXTargetDependency */,
 			);
 			name = package_info_plus;
 			productName = package_info_plus;
@@ -1032,84 +760,44 @@
 		};
 		8B74B458B450D74B75744B87BD747314 /* Pods-Runner */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9018D158C10641889F5A72B832E3B8AF /* Build configuration list for PBXNativeTarget "Pods-Runner" */;
+			buildConfigurationList = 017EF95C0B82C5206405AC3704F51A06 /* Build configuration list for PBXNativeTarget "Pods-Runner" */;
 			buildPhases = (
-				EB9D08984AB92A8A8D1A2E0EFE1EEEFD /* Headers */,
-				63AE066061B11F33B316E7568A0EE7BA /* Sources */,
-				BB922222E4FF9245C4CEE314D01A0A65 /* Frameworks */,
-				964E95F55A2AC8E7C557B20A2350D23A /* Resources */,
+				48D984623806D8BF083D707784DB42FD /* Headers */,
+				46441C669E7B346E74497220EEDC7091 /* Sources */,
+				5CD5FC73F605FB75265AE24C99CCE338 /* Frameworks */,
+				888C2A149351DDDA6987EA6DBC31EDB3 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				35E779E6AB145D64C44F5F5851EBD8C3 /* PBXTargetDependency */,
-				BBCCF86FD6D4FB959C5BBFFFB0C9CF77 /* PBXTargetDependency */,
-				8029955A28B8D98B755F536915276D33 /* PBXTargetDependency */,
-				280481BB505E481F10D44C3067F38BFE /* PBXTargetDependency */,
-				61D8D5969ACCF8E6F60566238AC66F48 /* PBXTargetDependency */,
-				9AA75559D16DFB00072EED9169314B14 /* PBXTargetDependency */,
+				0EA6B374055D1F6235DE88B57785EDBF /* PBXTargetDependency */,
+				3966DCD73551602F962D2686B0137E86 /* PBXTargetDependency */,
+				9B38491C782F72F66CF4232F86970379 /* PBXTargetDependency */,
+				1AC4BC919F79EBD18FE3F5CE3A5CE427 /* PBXTargetDependency */,
 			);
 			name = "Pods-Runner";
 			productName = Pods_Runner;
 			productReference = 669E8F25E1897672BDB80B7EB784DA24 /* Pods-Runner */;
 			productType = "com.apple.product-type.framework";
 		};
-		A80A4D6B185BA43BC06122FED0C15F94 /* Toast */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = BF7D1D7AC37EF4C73B5982126FD860D0 /* Build configuration list for PBXNativeTarget "Toast" */;
-			buildPhases = (
-				CE9CF7F061F75A30A8EC0C4DCD8C21C9 /* Headers */,
-				32A7C2CCD4BCDBE3551FCFCABE8B5076 /* Sources */,
-				0E986D92C16A9FFEFEDFADBA216AB5D4 /* Frameworks */,
-				7677BE4BBA065F77474313E743E39691 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = Toast;
-			productName = Toast;
-			productReference = 55E0AFD333353D71ACC2207149E879D6 /* Toast */;
-			productType = "com.apple.product-type.framework";
-		};
 		C174A07088434DD9CB45C06B185F8FF3 /* razorpay_flutter */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7FAECBACC6270768783735AC39D2FB66 /* Build configuration list for PBXNativeTarget "razorpay_flutter" */;
+			buildConfigurationList = 2510389B157C2544A1513B7E94F3D1CD /* Build configuration list for PBXNativeTarget "razorpay_flutter" */;
 			buildPhases = (
-				B4B8366ABC4F8A5BAF225846545D41DF /* Headers */,
-				4FF07930FE38BCE69DC8FBFB47CC0A73 /* Sources */,
-				83093BD325F4C5786460F62D4D85B644 /* Frameworks */,
-				89870E16AF10B6A6EE9AC9462C956FE7 /* Resources */,
+				2A0E997C1D9C1D7C20F2C4A063C1945F /* Headers */,
+				328AFF08BD4EC6EF663626F7560CA86F /* Sources */,
+				39868BD414C8FD494F714351BFF5D7BC /* Frameworks */,
+				57165DFE4A58CD2610B2A4B6B8CEAB08 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				F49D87398B156BACD54D9F1E182A12C3 /* PBXTargetDependency */,
-				BF1B8233AA544F5CB5719D333AD8EAEA /* PBXTargetDependency */,
+				99D9543457FDA5C82ECA285F0AE59B81 /* PBXTargetDependency */,
+				B19F3EF742AAEB37888433E19B177089 /* PBXTargetDependency */,
 			);
 			name = razorpay_flutter;
 			productName = razorpay_flutter;
 			productReference = 4D68842CB2772778EFB677388B48AC94 /* razorpay_flutter */;
-			productType = "com.apple.product-type.framework";
-		};
-		FA3EDC8EBD9CDE19E74123E29F5B7E04 /* fluttertoast */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = ED8790B4E827A3A76BD73D3E8954C250 /* Build configuration list for PBXNativeTarget "fluttertoast" */;
-			buildPhases = (
-				3F74A6EA8874ACDCCF1486968C5C8A0A /* Headers */,
-				B8290013272B32CF7184DF60F94B13AD /* Sources */,
-				EDB45BE94446ED9E7277B8376C542944 /* Frameworks */,
-				4BCA368CDDA31B70C4F112753BCA3AF3 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				84814876B8C9C7DA358AA409234F2837 /* PBXTargetDependency */,
-				0EF44960DFEF4A8FC84B5AA6684F4DC6 /* PBXTargetDependency */,
-			);
-			name = fluttertoast;
-			productName = fluttertoast;
-			productReference = D0C5A85ABEF5ED03A54A449B87B69225 /* fluttertoast */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -1118,11 +806,11 @@
 		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1240;
-				LastUpgradeCheck = 1240;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -1130,54 +818,50 @@
 				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = F75C615F04CEF57C72F1FAD9657059AF /* Products */;
+			minimizedProjectReferenceProxies = 0;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 33C4A9096BF616D682946E0E94BD9A5D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				1EFDDC32A34D56D411E640A81DCD9E73 /* Flutter */,
-				FA3EDC8EBD9CDE19E74123E29F5B7E04 /* fluttertoast */,
 				54A00AF9F830F355D8FD8F6A4387F6A2 /* package_info_plus */,
+				07C64B0E06ED7C1903D446F9BBDDF5C9 /* package_info_plus-package_info_plus_privacy */,
 				8B74B458B450D74B75744B87BD747314 /* Pods-Runner */,
 				84CA3424E172CD651235AF0783D01D39 /* razorpay-pod */,
 				C174A07088434DD9CB45C06B185F8FF3 /* razorpay_flutter */,
-				A80A4D6B185BA43BC06122FED0C15F94 /* Toast */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		4BCA368CDDA31B70C4F112753BCA3AF3 /* Resources */ = {
+		57165DFE4A58CD2610B2A4B6B8CEAB08 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7677BE4BBA065F77474313E743E39691 /* Resources */ = {
+		888C2A149351DDDA6987EA6DBC31EDB3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		89870E16AF10B6A6EE9AC9462C956FE7 /* Resources */ = {
+		A741024B5CE752C76F200B934A111092 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				264EEBA75A636D45FD8D4267A48BD6F9 /* package_info_plus-package_info_plus_privacy in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		964E95F55A2AC8E7C557B20A2350D23A /* Resources */ = {
+		CE7E5990EF3BF6EDAF71ADC6D3431D72 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F1311F9D9421A40AEC15B62AECF5AD08 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				3E4891F54C81DF03F2232D44A43B13AA /* PrivacyInfo.xcprivacy in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1204,194 +888,120 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		32A7C2CCD4BCDBE3551FCFCABE8B5076 /* Sources */ = {
+		328AFF08BD4EC6EF663626F7560CA86F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4762F0B488E88393CFED8F6CAC6B598E /* Toast-dummy.m in Sources */,
-				C0D165F8D06C0CF7659AF8E88514CC8E /* UIView+Toast.m in Sources */,
+				940287D92DE9B82070592F9117BE8164 /* razorpay_flutter-dummy.m in Sources */,
+				8149BDA57660E20353E30C3234BE81E4 /* RazorpayDelegate.swift in Sources */,
+				6ACC463C7395DA1CABD9CAF3F5D2D1A5 /* RazorpayFlutterPlugin.m in Sources */,
+				34597C036AAA2AD2ED7319EFBDC29353 /* SwiftRazorpayFlutterPlugin.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4FF07930FE38BCE69DC8FBFB47CC0A73 /* Sources */ = {
+		46441C669E7B346E74497220EEDC7091 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F38B5BD51479FD2B3AD97D9181961012 /* razorpay_flutter-dummy.m in Sources */,
-				C2D3D4E9481D8EBF9748904F37C033BC /* RazorpayDelegate.swift in Sources */,
-				3CE145ED451E4571DE7BF5F88DEDD46D /* RazorpayFlutterPlugin.m in Sources */,
-				4DC58E626918A1CE1CF96F2235FE5DD3 /* SwiftRazorpayFlutterPlugin.swift in Sources */,
+				73E18A814F683CE0A9477584A01A2DC4 /* Pods-Runner-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		63AE066061B11F33B316E7568A0EE7BA /* Sources */ = {
+		954EE2F6958AD4546D767E724CB1DB5E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5880E9E9E3818D80DC37A85FCAE71BD9 /* Pods-Runner-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B8290013272B32CF7184DF60F94B13AD /* Sources */ = {
+		A77EE9B27552283F7B0C9DF5EC4105EF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B1DB8EFFF3311CE96AFEE6DF586809F2 /* fluttertoast-dummy.m in Sources */,
-				38658F98501069F72A8EC4F3DDDAF43B /* FluttertoastPlugin.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D5E6D17D5422E892FF51E5DF905637F6 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5326686C16A914A1E8B4F6E6C066D226 /* FLTPackageInfoPlusPlugin.m in Sources */,
-				2871F59C74DB34DB578B75A31C49B78D /* package_info_plus-dummy.m in Sources */,
+				FF11403534C7B365818D1C36D7A873F5 /* FPPPackageInfoPlusPlugin.m in Sources */,
+				1F70E507EEFC23CF1C1047313F8BA04D /* package_info_plus-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		0EF44960DFEF4A8FC84B5AA6684F4DC6 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Toast;
-			target = A80A4D6B185BA43BC06122FED0C15F94 /* Toast */;
-			targetProxy = 3A50F206731F199C2F291E05085FC8FF /* PBXContainerItemProxy */;
-		};
-		280481BB505E481F10D44C3067F38BFE /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = package_info_plus;
-			target = 54A00AF9F830F355D8FD8F6A4387F6A2 /* package_info_plus */;
-			targetProxy = BA90F96F6C43186802510D8B756BFE4A /* PBXContainerItemProxy */;
-		};
-		35E779E6AB145D64C44F5F5851EBD8C3 /* PBXTargetDependency */ = {
+		0EA6B374055D1F6235DE88B57785EDBF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Flutter;
 			target = 1EFDDC32A34D56D411E640A81DCD9E73 /* Flutter */;
-			targetProxy = EDE72F3EFD3A618F24C3BAF0B253EA35 /* PBXContainerItemProxy */;
+			targetProxy = 555D15F6B637AAC517C936CAAC649588 /* PBXContainerItemProxy */;
 		};
-		61D8D5969ACCF8E6F60566238AC66F48 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "razorpay-pod";
-			target = 84CA3424E172CD651235AF0783D01D39 /* razorpay-pod */;
-			targetProxy = C80A0DEC35724FE10476C56E3FE73D15 /* PBXContainerItemProxy */;
-		};
-		8029955A28B8D98B755F536915276D33 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = fluttertoast;
-			target = FA3EDC8EBD9CDE19E74123E29F5B7E04 /* fluttertoast */;
-			targetProxy = 19B1C777D31B4FEB5A486BF74AFE974C /* PBXContainerItemProxy */;
-		};
-		84814876B8C9C7DA358AA409234F2837 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Flutter;
-			target = 1EFDDC32A34D56D411E640A81DCD9E73 /* Flutter */;
-			targetProxy = 9A65AF096093E210E3D8CBE96E0AAE9B /* PBXContainerItemProxy */;
-		};
-		9AA75559D16DFB00072EED9169314B14 /* PBXTargetDependency */ = {
+		1AC4BC919F79EBD18FE3F5CE3A5CE427 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = razorpay_flutter;
 			target = C174A07088434DD9CB45C06B185F8FF3 /* razorpay_flutter */;
-			targetProxy = E1713F088F2EF5258D40A5C3D6E6ACAD /* PBXContainerItemProxy */;
+			targetProxy = 1C2F353E05C9D86009C1792BE2D52A85 /* PBXContainerItemProxy */;
 		};
-		BBCCF86FD6D4FB959C5BBFFFB0C9CF77 /* PBXTargetDependency */ = {
+		3966DCD73551602F962D2686B0137E86 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = Toast;
-			target = A80A4D6B185BA43BC06122FED0C15F94 /* Toast */;
-			targetProxy = 863084907023789E6BF9D9D44FBA0652 /* PBXContainerItemProxy */;
+			name = package_info_plus;
+			target = 54A00AF9F830F355D8FD8F6A4387F6A2 /* package_info_plus */;
+			targetProxy = 8F7653156A9D5DA79915EA16CD3426D8 /* PBXContainerItemProxy */;
 		};
-		BF1B8233AA544F5CB5719D333AD8EAEA /* PBXTargetDependency */ = {
+		4E18EB1F3AF9B15C9EA62B8DEFA0E60A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "package_info_plus-package_info_plus_privacy";
+			target = 07C64B0E06ED7C1903D446F9BBDDF5C9 /* package_info_plus-package_info_plus_privacy */;
+			targetProxy = F508671EA976820260B9798FB6B5D2AA /* PBXContainerItemProxy */;
+		};
+		99D9543457FDA5C82ECA285F0AE59B81 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Flutter;
+			target = 1EFDDC32A34D56D411E640A81DCD9E73 /* Flutter */;
+			targetProxy = 378358AE595FC48A066960ADA88AD2BF /* PBXContainerItemProxy */;
+		};
+		9B38491C782F72F66CF4232F86970379 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "razorpay-pod";
 			target = 84CA3424E172CD651235AF0783D01D39 /* razorpay-pod */;
-			targetProxy = CA09E6D2C9D053AB3E715E4CBD11FE4C /* PBXContainerItemProxy */;
+			targetProxy = F8BB1F4024A20AEDA2D0EE0E173B38D8 /* PBXContainerItemProxy */;
 		};
-		E2B3F51507B2BFBB802154F7A67891AD /* PBXTargetDependency */ = {
+		B19F3EF742AAEB37888433E19B177089 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "razorpay-pod";
+			target = 84CA3424E172CD651235AF0783D01D39 /* razorpay-pod */;
+			targetProxy = DBC647A5921072EF2096FB98C82ECDE2 /* PBXContainerItemProxy */;
+		};
+		CF0A23FEF35966F9270BC8238282ED05 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Flutter;
 			target = 1EFDDC32A34D56D411E640A81DCD9E73 /* Flutter */;
-			targetProxy = B2D00E7127B47971136A888DE5DA3956 /* PBXContainerItemProxy */;
-		};
-		F49D87398B156BACD54D9F1E182A12C3 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Flutter;
-			target = 1EFDDC32A34D56D411E640A81DCD9E73 /* Flutter */;
-			targetProxy = 4E7EF41EF690EB15FE8D7D7E9588A731 /* PBXContainerItemProxy */;
+			targetProxy = 4ACE4D8D63826D8A5490DD1F737C177D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		04042DDC93BD5C9D6510B308DF997CC0 /* Debug */ = {
+		1AB620386900545C058C55E6369026D0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1C1F7880E939EFE2230E87C5C57EB5A6 /* fluttertoast.debug.xcconfig */;
+			baseConfigurationReference = D86FEDD30D0997DCAAEBA91E8E171F89 /* package_info_plus.release.xcconfig */;
 			buildSettings = {
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "$(inherited) i386";
-				"FRAMEWORK_SEARCH_PATHS[sdk=iphoneos*]" = (
-					"\"/Users/ramprasad.a/Developer/flutter/bin/cache/artifacts/engine/ios/Flutter.xcframework/ios-arm64_armv7\"",
-					"$(inherited)",
-				);
-				"FRAMEWORK_SEARCH_PATHS[sdk=iphonesimulator*]" = (
-					"\"/Users/ramprasad.a/Developer/flutter/bin/cache/artifacts/engine/ios/Flutter.xcframework/ios-arm64_x86_64-simulator\"",
-					"$(inherited)",
-				);
-				GCC_PREFIX_HEADER = "Target Support Files/fluttertoast/fluttertoast-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/fluttertoast/fluttertoast-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/fluttertoast/fluttertoast.modulemap";
-				ONLY_ACTIVE_ARCH = NO;
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					"-framework",
-					Flutter,
-				);
-				PRODUCT_MODULE_NAME = fluttertoast;
-				PRODUCT_NAME = fluttertoast;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_IDENTITY = "-";
+				CODE_SIGNING_REQUIRED = NO;
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/package_info_plus";
+				EXPANDED_CODE_SIGN_IDENTITY = "-";
+				IBSC_MODULE = package_info_plus;
+				INFOPLIST_FILE = "Target Support Files/package_info_plus/ResourceBundle-package_info_plus_privacy-package_info_plus-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				PRODUCT_NAME = package_info_plus_privacy;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				"VALID_ARCHS[sdk=iphonesimulator*]" = "$(ARCHS_STANDARD)";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
+				WRAPPER_EXTENSION = bundle;
 			};
-			name = Debug;
+			name = Release;
 		};
-		049A9DF21B5D9C438C45FD80A89F7B86 /* Profile */ = {
+		1E58A8736FDA5DADF93486E0823802DB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 94D0485F5C78F6FC7555271F62D08712 /* Flutter.release.xcconfig */;
+			baseConfigurationReference = D86FEDD30D0997DCAAEBA91E8E171F89 /* package_info_plus.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Profile;
-		};
-		061E2F156B7B1ECC3FD5DBA68E540E60 /* Profile */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7CA1CE341C6A908F22C6E2A06A2AEF19 /* fluttertoast.release.xcconfig */;
-			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -1400,67 +1010,24 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				"EXCLUDED_ARCHS[sdk=iphoneos*]" = "$(inherited) armv7";
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "$(inherited) i386";
 				"FRAMEWORK_SEARCH_PATHS[sdk=iphoneos*]" = (
-					"\"/Users/ramprasad.a/Developer/flutter/bin/cache/artifacts/engine/ios-release/Flutter.xcframework/ios-arm64_armv7\"",
+					"\"/Users/macbook/flutter/bin/cache/artifacts/engine/ios-release/Flutter.xcframework/ios-arm64\"",
 					"$(inherited)",
 				);
 				"FRAMEWORK_SEARCH_PATHS[sdk=iphonesimulator*]" = (
-					"\"/Users/ramprasad.a/Developer/flutter/bin/cache/artifacts/engine/ios-release/Flutter.xcframework/ios-arm64_x86_64-simulator\"",
-					"$(inherited)",
-				);
-				GCC_PREFIX_HEADER = "Target Support Files/fluttertoast/fluttertoast-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/fluttertoast/fluttertoast-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/fluttertoast/fluttertoast.modulemap";
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					"-framework",
-					Flutter,
-				);
-				PRODUCT_MODULE_NAME = fluttertoast;
-				PRODUCT_NAME = fluttertoast;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				"VALID_ARCHS[sdk=iphonesimulator*]" = "$(ARCHS_STANDARD)";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Profile;
-		};
-		10328FA8C7F8B1F013F1E68B95B21C68 /* Profile */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = A60353EE18CBF81377609011AD08D0BC /* package_info_plus.release.xcconfig */;
-			buildSettings = {
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "$(inherited) i386";
-				"FRAMEWORK_SEARCH_PATHS[sdk=iphoneos*]" = (
-					"\"/Users/ramprasad.a/Developer/flutter/bin/cache/artifacts/engine/ios-release/Flutter.xcframework/ios-arm64_armv7\"",
-					"$(inherited)",
-				);
-				"FRAMEWORK_SEARCH_PATHS[sdk=iphonesimulator*]" = (
-					"\"/Users/ramprasad.a/Developer/flutter/bin/cache/artifacts/engine/ios-release/Flutter.xcframework/ios-arm64_x86_64-simulator\"",
+					"\"/Users/macbook/flutter/bin/cache/artifacts/engine/ios-release/Flutter.xcframework/ios-arm64_x86_64-simulator\"",
 					"$(inherited)",
 				);
 				GCC_PREFIX_HEADER = "Target Support Files/package_info_plus/package_info_plus-prefix.pch";
+				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = "Target Support Files/package_info_plus/package_info_plus-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1477,174 +1044,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				"VALID_ARCHS[sdk=iphonesimulator*]" = "$(ARCHS_STANDARD)";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Profile;
-		};
-		1B15785EDF0C6FD9C15B325E7DB42609 /* Profile */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D650B0F785DBBC15D7BA2F05547D9ECC /* razorpay-pod.release.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Profile;
-		};
-		27A049D271528D31C812A4A83411DCE9 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 94D0485F5C78F6FC7555271F62D08712 /* Flutter.release.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		371574E265249E153C45F6449F24C906 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5846FB5060A8EFB0FA0951DB07A3A101 /* Toast.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/Toast/Toast-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Toast/Toast-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/Toast/Toast.modulemap";
-				ONLY_ACTIVE_ARCH = NO;
-				PRODUCT_MODULE_NAME = Toast;
-				PRODUCT_NAME = Toast;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		3E02C769173F4FC1F61977CA34042EF1 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9D9BEA11022E3D4F8553FA6EA148FEA8 /* package_info_plus.debug.xcconfig */;
-			buildSettings = {
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "$(inherited) i386";
-				"FRAMEWORK_SEARCH_PATHS[sdk=iphoneos*]" = (
-					"\"/Users/ramprasad.a/Developer/flutter/bin/cache/artifacts/engine/ios/Flutter.xcframework/ios-arm64_armv7\"",
-					"$(inherited)",
-				);
-				"FRAMEWORK_SEARCH_PATHS[sdk=iphonesimulator*]" = (
-					"\"/Users/ramprasad.a/Developer/flutter/bin/cache/artifacts/engine/ios/Flutter.xcframework/ios-arm64_x86_64-simulator\"",
-					"$(inherited)",
-				);
-				GCC_PREFIX_HEADER = "Target Support Files/package_info_plus/package_info_plus-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/package_info_plus/package_info_plus-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/package_info_plus/package_info_plus.modulemap";
-				ONLY_ACTIVE_ARCH = NO;
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					"-framework",
-					Flutter,
-				);
-				PRODUCT_MODULE_NAME = package_info_plus;
-				PRODUCT_NAME = package_info_plus;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				"VALID_ARCHS[sdk=iphonesimulator*]" = "$(ARCHS_STANDARD)";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		3F635F2D5BD627AD8AAC2995ED94415F /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7CA1CE341C6A908F22C6E2A06A2AEF19 /* fluttertoast.release.xcconfig */;
-			buildSettings = {
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "$(inherited) i386";
-				"FRAMEWORK_SEARCH_PATHS[sdk=iphoneos*]" = (
-					"\"/Users/ramprasad.a/Developer/flutter/bin/cache/artifacts/engine/ios-release/Flutter.xcframework/ios-arm64_armv7\"",
-					"$(inherited)",
-				);
-				"FRAMEWORK_SEARCH_PATHS[sdk=iphonesimulator*]" = (
-					"\"/Users/ramprasad.a/Developer/flutter/bin/cache/artifacts/engine/ios-release/Flutter.xcframework/ios-arm64_x86_64-simulator\"",
-					"$(inherited)",
-				);
-				GCC_PREFIX_HEADER = "Target Support Files/fluttertoast/fluttertoast-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/fluttertoast/fluttertoast-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/fluttertoast/fluttertoast.modulemap";
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					"-framework",
-					Flutter,
-				);
-				PRODUCT_MODULE_NAME = fluttertoast;
-				PRODUCT_NAME = fluttertoast;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -1654,275 +1054,7 @@
 			};
 			name = Release;
 		};
-		4AB35B83B0CAEEB2C788277E1416BD0C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6AF63F8249F868AF3A1A95601C1049CF /* Flutter.debug.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				ONLY_ACTIVE_ARCH = NO;
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		554D68EC2C7AB7A0CC50F6D019799ED6 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = A60353EE18CBF81377609011AD08D0BC /* package_info_plus.release.xcconfig */;
-			buildSettings = {
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "$(inherited) i386";
-				"FRAMEWORK_SEARCH_PATHS[sdk=iphoneos*]" = (
-					"\"/Users/ramprasad.a/Developer/flutter/bin/cache/artifacts/engine/ios-release/Flutter.xcframework/ios-arm64_armv7\"",
-					"$(inherited)",
-				);
-				"FRAMEWORK_SEARCH_PATHS[sdk=iphonesimulator*]" = (
-					"\"/Users/ramprasad.a/Developer/flutter/bin/cache/artifacts/engine/ios-release/Flutter.xcframework/ios-arm64_x86_64-simulator\"",
-					"$(inherited)",
-				);
-				GCC_PREFIX_HEADER = "Target Support Files/package_info_plus/package_info_plus-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/package_info_plus/package_info_plus-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/package_info_plus/package_info_plus.modulemap";
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					"-framework",
-					Flutter,
-				);
-				PRODUCT_MODULE_NAME = package_info_plus;
-				PRODUCT_NAME = package_info_plus;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				"VALID_ARCHS[sdk=iphonesimulator*]" = "$(ARCHS_STANDARD)";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		7862D75AB9E81409C977C7A6FBBC1B55 /* Profile */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 46380150A26B75544ED24DCE2D662FDD /* Toast.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/Toast/Toast-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Toast/Toast-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/Toast/Toast.modulemap";
-				PRODUCT_MODULE_NAME = Toast;
-				PRODUCT_NAME = Toast;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Profile;
-		};
-		839EC10792CBC366C4676B8AE25E8435 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 46380150A26B75544ED24DCE2D662FDD /* Toast.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/Toast/Toast-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Toast/Toast-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/Toast/Toast.modulemap";
-				PRODUCT_MODULE_NAME = Toast;
-				PRODUCT_NAME = Toast;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		903A0004D3E6651EFD5D2E16214D101B /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"POD_CONFIGURATION_RELEASE=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				MTL_FAST_MATH = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_VERSION = 5.0;
-				SYMROOT = "${SRCROOT}/../build";
-			};
-			name = Release;
-		};
-		9354047F1D17D9DA6919C68CA20E1565 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 49ACFC86E07FC5094B7071A6ACC63CA4 /* razorpay-pod.debug.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				ONLY_ACTIVE_ARCH = NO;
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		A404425273AA088999BD9B621B50A028 /* Profile */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = DF1938597E50AB7FFD4CB624D2423AFA /* razorpay_flutter.release.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "$(inherited) i386";
-				"FRAMEWORK_SEARCH_PATHS[sdk=iphoneos*]" = (
-					"\"/Users/ramprasad.a/Developer/flutter/bin/cache/artifacts/engine/ios-release/Flutter.xcframework/ios-arm64_armv7\"",
-					"$(inherited)",
-				);
-				"FRAMEWORK_SEARCH_PATHS[sdk=iphonesimulator*]" = (
-					"\"/Users/ramprasad.a/Developer/flutter/bin/cache/artifacts/engine/ios-release/Flutter.xcframework/ios-arm64_x86_64-simulator\"",
-					"$(inherited)",
-				);
-				GCC_PREFIX_HEADER = "Target Support Files/razorpay_flutter/razorpay_flutter-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/razorpay_flutter/razorpay_flutter-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/razorpay_flutter/razorpay_flutter.modulemap";
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					"-framework",
-					Flutter,
-				);
-				PRODUCT_MODULE_NAME = razorpay_flutter;
-				PRODUCT_NAME = razorpay_flutter;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				"VALID_ARCHS[sdk=iphonesimulator*]" = "$(ARCHS_STANDARD)";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Profile;
-		};
-		B4EFE046ACF8F37157F6E322C7FCFC28 /* Debug */ = {
+		2B9E26EAE2CD392AD762421F663075A1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -1975,7 +1107,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1988,52 +1120,77 @@
 			};
 			name = Debug;
 		};
-		BD95CFA0F973F38B0DE8F0ADEEE73B2C /* Debug */ = {
+		2CFF19BB1AD8B6A5FCBF55B99FA8F9D4 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CDAECCF4B5E08124ED410F09FD5A5DF9 /* Pods-Runner.debug.xcconfig */;
+			baseConfigurationReference = 72015C3ADE2A483D1564E0B31E90F337 /* package_info_plus.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_IDENTITY = "-";
+				CODE_SIGNING_REQUIRED = NO;
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/package_info_plus";
+				EXPANDED_CODE_SIGN_IDENTITY = "-";
+				IBSC_MODULE = package_info_plus;
+				INFOPLIST_FILE = "Target Support Files/package_info_plus/ResourceBundle-package_info_plus_privacy-package_info_plus-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_NAME = package_info_plus_privacy;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		3D0C2ACA087890C02455979A1904F5FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 72015C3ADE2A483D1564E0B31E90F337 /* package_info_plus.debug.xcconfig */;
+			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				"EXCLUDED_ARCHS[sdk=iphoneos*]" = "$(inherited) armv7";
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "$(inherited) i386";
 				"FRAMEWORK_SEARCH_PATHS[sdk=iphoneos*]" = (
-					"\"/Users/ramprasad.a/Developer/flutter/bin/cache/artifacts/engine/ios/Flutter.xcframework/ios-arm64_armv7\"",
+					"\"/Users/macbook/flutter/bin/cache/artifacts/engine/ios/Flutter.xcframework/ios-arm64\"",
 					"$(inherited)",
 				);
 				"FRAMEWORK_SEARCH_PATHS[sdk=iphonesimulator*]" = (
-					"\"/Users/ramprasad.a/Developer/flutter/bin/cache/artifacts/engine/ios/Flutter.xcframework/ios-arm64_x86_64-simulator\"",
+					"\"/Users/macbook/flutter/bin/cache/artifacts/engine/ios/Flutter.xcframework/ios-arm64_x86_64-simulator\"",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "Target Support Files/Pods-Runner/Pods-Runner-Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/package_info_plus/package_info_plus-prefix.pch";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "Target Support Files/package_info_plus/package_info_plus-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Runner/Pods-Runner.modulemap";
+				MODULEMAP_FILE = "Target Support Files/package_info_plus/package_info_plus.modulemap";
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-framework",
 					Flutter,
 				);
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_MODULE_NAME = package_info_plus;
+				PRODUCT_NAME = package_info_plus;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				"VALID_ARCHS[sdk=iphonesimulator*]" = "$(ARCHS_STANDARD)";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -2041,59 +1198,29 @@
 			};
 			name = Debug;
 		};
-		D555B4FBAEBDB6A17EB505646849EA57 /* Release */ = {
+		597A3C015EEBA60DDFE85EC53642EA6D /* Profile */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DF1938597E50AB7FFD4CB624D2423AFA /* razorpay_flutter.release.xcconfig */;
+			baseConfigurationReference = D86FEDD30D0997DCAAEBA91E8E171F89 /* package_info_plus.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "$(inherited) i386";
-				"FRAMEWORK_SEARCH_PATHS[sdk=iphoneos*]" = (
-					"\"/Users/ramprasad.a/Developer/flutter/bin/cache/artifacts/engine/ios-release/Flutter.xcframework/ios-arm64_armv7\"",
-					"$(inherited)",
-				);
-				"FRAMEWORK_SEARCH_PATHS[sdk=iphonesimulator*]" = (
-					"\"/Users/ramprasad.a/Developer/flutter/bin/cache/artifacts/engine/ios-release/Flutter.xcframework/ios-arm64_x86_64-simulator\"",
-					"$(inherited)",
-				);
-				GCC_PREFIX_HEADER = "Target Support Files/razorpay_flutter/razorpay_flutter-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/razorpay_flutter/razorpay_flutter-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/razorpay_flutter/razorpay_flutter.modulemap";
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					"-framework",
-					Flutter,
-				);
-				PRODUCT_MODULE_NAME = razorpay_flutter;
-				PRODUCT_NAME = razorpay_flutter;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_IDENTITY = "-";
+				CODE_SIGNING_REQUIRED = NO;
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/package_info_plus";
+				EXPANDED_CODE_SIGN_IDENTITY = "-";
+				IBSC_MODULE = package_info_plus;
+				INFOPLIST_FILE = "Target Support Files/package_info_plus/ResourceBundle-package_info_plus_privacy-package_info_plus-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				PRODUCT_NAME = package_info_plus_privacy;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
-				"VALID_ARCHS[sdk=iphonesimulator*]" = "$(ARCHS_STANDARD)";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
+				WRAPPER_EXTENSION = bundle;
 			};
-			name = Release;
+			name = Profile;
 		};
-		DCF364D2CA5F270CAD355FD2FAFE3B13 /* Profile */ = {
+		5AF1AC88E5F655C93D1E3B5012F6FDC8 /* Profile */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -2143,7 +1270,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2155,7 +1282,164 @@
 			};
 			name = Profile;
 		};
-		E9DAB19F611EAAFD75956FEE7BAAE47B /* Release */ = {
+		63FAF33E1C55B71A5F5A8B3CC8749F99 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		70F1E3D053D812E3D7E8E74934CC9053 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6CADC03727DC46B842C6050C26A6FA13 /* Flutter.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				ONLY_ACTIVE_ARCH = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7445158C5C0F5FEA122BB7A9CA5638C0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 98A2C2141079332E39068F240B74A984 /* razorpay_flutter.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				"EXCLUDED_ARCHS[sdk=iphoneos*]" = "$(inherited) armv7";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "$(inherited) i386";
+				"FRAMEWORK_SEARCH_PATHS[sdk=iphoneos*]" = (
+					"\"/Users/macbook/flutter/bin/cache/artifacts/engine/ios-release/Flutter.xcframework/ios-arm64\"",
+					"$(inherited)",
+				);
+				"FRAMEWORK_SEARCH_PATHS[sdk=iphonesimulator*]" = (
+					"\"/Users/macbook/flutter/bin/cache/artifacts/engine/ios-release/Flutter.xcframework/ios-arm64_x86_64-simulator\"",
+					"$(inherited)",
+				);
+				GCC_PREFIX_HEADER = "Target Support Files/razorpay_flutter/razorpay_flutter-prefix.pch";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "Target Support Files/razorpay_flutter/razorpay_flutter-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/razorpay_flutter/razorpay_flutter.modulemap";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					Flutter,
+				);
+				PRODUCT_MODULE_NAME = razorpay_flutter;
+				PRODUCT_NAME = razorpay_flutter;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				"VALID_ARCHS[sdk=iphonesimulator*]" = "$(ARCHS_STANDARD)";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		76E053E47C7357CFF4EA96DF8337031F /* Profile */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8D871D6296678680F81AC086E9456D82 /* Flutter.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Profile;
+		};
+		7820CD50F319C7F11EF5165A237D15A4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D2FA70CA298C392CB8332ADEEDD1CE85 /* Pods-Runner.release.xcconfig */;
 			buildSettings = {
@@ -2170,18 +1454,22 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				"EXCLUDED_ARCHS[sdk=iphoneos*]" = "$(inherited) armv7";
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "$(inherited) i386";
 				"FRAMEWORK_SEARCH_PATHS[sdk=iphoneos*]" = (
-					"\"/Users/ramprasad.a/Developer/flutter/bin/cache/artifacts/engine/ios-release/Flutter.xcframework/ios-arm64_armv7\"",
+					"\"/Users/macbook/flutter/bin/cache/artifacts/engine/ios-release/Flutter.xcframework/ios-arm64\"",
 					"$(inherited)",
 				);
 				"FRAMEWORK_SEARCH_PATHS[sdk=iphonesimulator*]" = (
-					"\"/Users/ramprasad.a/Developer/flutter/bin/cache/artifacts/engine/ios-release/Flutter.xcframework/ios-arm64_x86_64-simulator\"",
+					"\"/Users/macbook/flutter/bin/cache/artifacts/engine/ios-release/Flutter.xcframework/ios-arm64_x86_64-simulator\"",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "Target Support Files/Pods-Runner/Pods-Runner-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2208,9 +1496,104 @@
 			};
 			name = Release;
 		};
-		EE58A92425EA16A1647CB31C2AE1CFF6 /* Debug */ = {
+		7A8E2B61BB727B5FD134412DAA37F1CF /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B56033421A4375FFEAE57FA2D1E8FDDD /* razorpay_flutter.debug.xcconfig */;
+			baseConfigurationReference = 4E3A1E14A2C9B2B2E8A26F26E877C9DA /* razorpay-pod.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				ONLY_ACTIVE_ARCH = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7C8C0F645E1C196808A1ABBAD5B27338 /* Profile */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 21BEBA77726B8C519C762E580C97180F /* razorpay-pod.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Profile;
+		};
+		7DE3CC4F8AE6E7D31195B3A1C1DDD02E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CDAECCF4B5E08124ED410F09FD5A5DF9 /* Pods-Runner.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				"EXCLUDED_ARCHS[sdk=iphoneos*]" = "$(inherited) armv7";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "$(inherited) i386";
+				"FRAMEWORK_SEARCH_PATHS[sdk=iphoneos*]" = (
+					"\"/Users/macbook/flutter/bin/cache/artifacts/engine/ios/Flutter.xcframework/ios-arm64\"",
+					"$(inherited)",
+				);
+				"FRAMEWORK_SEARCH_PATHS[sdk=iphonesimulator*]" = (
+					"\"/Users/macbook/flutter/bin/cache/artifacts/engine/ios/Flutter.xcframework/ios-arm64_x86_64-simulator\"",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Target Support Files/Pods-Runner/Pods-Runner-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Runner/Pods-Runner.modulemap";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					Flutter,
+				);
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				"VALID_ARCHS[sdk=iphonesimulator*]" = "$(ARCHS_STANDARD)";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		8299D4A3FD122ED43106CB66279E1E05 /* Profile */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 98A2C2141079332E39068F240B74A984 /* razorpay_flutter.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO;
@@ -2222,19 +1605,80 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				"EXCLUDED_ARCHS[sdk=iphoneos*]" = "$(inherited) armv7";
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "$(inherited) i386";
 				"FRAMEWORK_SEARCH_PATHS[sdk=iphoneos*]" = (
-					"\"/Users/ramprasad.a/Developer/flutter/bin/cache/artifacts/engine/ios/Flutter.xcframework/ios-arm64_armv7\"",
+					"\"/Users/macbook/flutter/bin/cache/artifacts/engine/ios-release/Flutter.xcframework/ios-arm64\"",
 					"$(inherited)",
 				);
 				"FRAMEWORK_SEARCH_PATHS[sdk=iphonesimulator*]" = (
-					"\"/Users/ramprasad.a/Developer/flutter/bin/cache/artifacts/engine/ios/Flutter.xcframework/ios-arm64_x86_64-simulator\"",
+					"\"/Users/macbook/flutter/bin/cache/artifacts/engine/ios-release/Flutter.xcframework/ios-arm64_x86_64-simulator\"",
 					"$(inherited)",
 				);
 				GCC_PREFIX_HEADER = "Target Support Files/razorpay_flutter/razorpay_flutter-prefix.pch";
+				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = "Target Support Files/razorpay_flutter/razorpay_flutter-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/razorpay_flutter/razorpay_flutter.modulemap";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					Flutter,
+				);
+				PRODUCT_MODULE_NAME = razorpay_flutter;
+				PRODUCT_NAME = razorpay_flutter;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				"VALID_ARCHS[sdk=iphonesimulator*]" = "$(ARCHS_STANDARD)";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Profile;
+		};
+		85510F5CE76E64C24F52BAB9853893E1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7E47DCF605C256909658550FB72A01C1 /* razorpay_flutter.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				"EXCLUDED_ARCHS[sdk=iphoneos*]" = "$(inherited) armv7";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "$(inherited) i386";
+				"FRAMEWORK_SEARCH_PATHS[sdk=iphoneos*]" = (
+					"\"/Users/macbook/flutter/bin/cache/artifacts/engine/ios/Flutter.xcframework/ios-arm64\"",
+					"$(inherited)",
+				);
+				"FRAMEWORK_SEARCH_PATHS[sdk=iphonesimulator*]" = (
+					"\"/Users/macbook/flutter/bin/cache/artifacts/engine/ios/Flutter.xcframework/ios-arm64_x86_64-simulator\"",
+					"$(inherited)",
+				);
+				GCC_PREFIX_HEADER = "Target Support Files/razorpay_flutter/razorpay_flutter-prefix.pch";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "Target Support Files/razorpay_flutter/razorpay_flutter-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2252,6 +1696,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				"VALID_ARCHS[sdk=iphonesimulator*]" = "$(ARCHS_STANDARD)";
@@ -2260,13 +1705,14 @@
 			};
 			name = Debug;
 		};
-		F83D92EDA74195039C4341F709B1D499 /* Release */ = {
+		D302CBB6A8E768F07AB3AD25594DC23C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D650B0F785DBBC15D7BA2F05547D9ECC /* razorpay-pod.release.xcconfig */;
+			baseConfigurationReference = 21BEBA77726B8C519C762E580C97180F /* razorpay-pod.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_OBJC_WEAK = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2278,7 +1724,7 @@
 			};
 			name = Release;
 		};
-		FB3DF4259EE37E78EA40847CD188C7B8 /* Profile */ = {
+		E1DDDC28B09E4B290BDAC03113F9B88F /* Profile */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9F79F8269DC34AC56BB3D1D9652C0D86 /* Pods-Runner.profile.xcconfig */;
 			buildSettings = {
@@ -2293,18 +1739,22 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				"EXCLUDED_ARCHS[sdk=iphoneos*]" = "$(inherited) armv7";
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "$(inherited) i386";
 				"FRAMEWORK_SEARCH_PATHS[sdk=iphoneos*]" = (
-					"\"/Users/ramprasad.a/Developer/flutter/bin/cache/artifacts/engine/ios-release/Flutter.xcframework/ios-arm64_armv7\"",
+					"\"/Users/macbook/flutter/bin/cache/artifacts/engine/ios-release/Flutter.xcframework/ios-arm64\"",
 					"$(inherited)",
 				);
 				"FRAMEWORK_SEARCH_PATHS[sdk=iphonesimulator*]" = (
-					"\"/Users/ramprasad.a/Developer/flutter/bin/cache/artifacts/engine/ios-release/Flutter.xcframework/ios-arm64_x86_64-simulator\"",
+					"\"/Users/macbook/flutter/bin/cache/artifacts/engine/ios-release/Flutter.xcframework/ios-arm64_x86_64-simulator\"",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "Target Support Files/Pods-Runner/Pods-Runner-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2331,15 +1781,121 @@
 			};
 			name = Profile;
 		};
+		F825CD128E672B95EFD99B4E63BA2755 /* Profile */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D86FEDD30D0997DCAAEBA91E8E171F89 /* package_info_plus.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				"EXCLUDED_ARCHS[sdk=iphoneos*]" = "$(inherited) armv7";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "$(inherited) i386";
+				"FRAMEWORK_SEARCH_PATHS[sdk=iphoneos*]" = (
+					"\"/Users/macbook/flutter/bin/cache/artifacts/engine/ios-release/Flutter.xcframework/ios-arm64\"",
+					"$(inherited)",
+				);
+				"FRAMEWORK_SEARCH_PATHS[sdk=iphonesimulator*]" = (
+					"\"/Users/macbook/flutter/bin/cache/artifacts/engine/ios-release/Flutter.xcframework/ios-arm64_x86_64-simulator\"",
+					"$(inherited)",
+				);
+				GCC_PREFIX_HEADER = "Target Support Files/package_info_plus/package_info_plus-prefix.pch";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "Target Support Files/package_info_plus/package_info_plus-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/package_info_plus/package_info_plus.modulemap";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					Flutter,
+				);
+				PRODUCT_MODULE_NAME = package_info_plus;
+				PRODUCT_NAME = package_info_plus;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				"VALID_ARCHS[sdk=iphonesimulator*]" = "$(ARCHS_STANDARD)";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Profile;
+		};
+		FB4B781D3E4B2E85C6448C7B77E40A53 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8D871D6296678680F81AC086E9456D82 /* Flutter.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		017EF95C0B82C5206405AC3704F51A06 /* Build configuration list for PBXNativeTarget "Pods-Runner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7DE3CC4F8AE6E7D31195B3A1C1DDD02E /* Debug */,
+				E1DDDC28B09E4B290BDAC03113F9B88F /* Profile */,
+				7820CD50F319C7F11EF5165A237D15A4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0C55CC9BBF648C35328F7C8386019CDA /* Build configuration list for PBXNativeTarget "package_info_plus-package_info_plus_privacy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2CFF19BB1AD8B6A5FCBF55B99FA8F9D4 /* Debug */,
+				597A3C015EEBA60DDFE85EC53642EA6D /* Profile */,
+				1AB620386900545C058C55E6369026D0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2510389B157C2544A1513B7E94F3D1CD /* Build configuration list for PBXNativeTarget "razorpay_flutter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				85510F5CE76E64C24F52BAB9853893E1 /* Debug */,
+				8299D4A3FD122ED43106CB66279E1E05 /* Profile */,
+				7445158C5C0F5FEA122BB7A9CA5638C0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B4EFE046ACF8F37157F6E322C7FCFC28 /* Debug */,
-				DCF364D2CA5F270CAD355FD2FAFE3B13 /* Profile */,
-				903A0004D3E6651EFD5D2E16214D101B /* Release */,
+				2B9E26EAE2CD392AD762421F663075A1 /* Debug */,
+				5AF1AC88E5F655C93D1E3B5012F6FDC8 /* Profile */,
+				63FAF33E1C55B71A5F5A8B3CC8749F99 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -2347,29 +1903,9 @@
 		57D49A63C32AAD18DC78458CB074B92F /* Build configuration list for PBXAggregateTarget "razorpay-pod" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9354047F1D17D9DA6919C68CA20E1565 /* Debug */,
-				1B15785EDF0C6FD9C15B325E7DB42609 /* Profile */,
-				F83D92EDA74195039C4341F709B1D499 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		7FAECBACC6270768783735AC39D2FB66 /* Build configuration list for PBXNativeTarget "razorpay_flutter" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				EE58A92425EA16A1647CB31C2AE1CFF6 /* Debug */,
-				A404425273AA088999BD9B621B50A028 /* Profile */,
-				D555B4FBAEBDB6A17EB505646849EA57 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		9018D158C10641889F5A72B832E3B8AF /* Build configuration list for PBXNativeTarget "Pods-Runner" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				BD95CFA0F973F38B0DE8F0ADEEE73B2C /* Debug */,
-				FB3DF4259EE37E78EA40847CD188C7B8 /* Profile */,
-				E9DAB19F611EAAFD75956FEE7BAAE47B /* Release */,
+				7A8E2B61BB727B5FD134412DAA37F1CF /* Debug */,
+				7C8C0F645E1C196808A1ABBAD5B27338 /* Profile */,
+				D302CBB6A8E768F07AB3AD25594DC23C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -2377,39 +1913,19 @@
 		94078A06C17E946ADC1F2C06726219E5 /* Build configuration list for PBXAggregateTarget "Flutter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				4AB35B83B0CAEEB2C788277E1416BD0C /* Debug */,
-				049A9DF21B5D9C438C45FD80A89F7B86 /* Profile */,
-				27A049D271528D31C812A4A83411DCE9 /* Release */,
+				70F1E3D053D812E3D7E8E74934CC9053 /* Debug */,
+				76E053E47C7357CFF4EA96DF8337031F /* Profile */,
+				FB4B781D3E4B2E85C6448C7B77E40A53 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B1896E1FFE51726CA5B894190CFAB440 /* Build configuration list for PBXNativeTarget "package_info_plus" */ = {
+		D967CCE9AF6CA99174E8E3792AD99E78 /* Build configuration list for PBXNativeTarget "package_info_plus" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3E02C769173F4FC1F61977CA34042EF1 /* Debug */,
-				10328FA8C7F8B1F013F1E68B95B21C68 /* Profile */,
-				554D68EC2C7AB7A0CC50F6D019799ED6 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		BF7D1D7AC37EF4C73B5982126FD860D0 /* Build configuration list for PBXNativeTarget "Toast" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				371574E265249E153C45F6449F24C906 /* Debug */,
-				7862D75AB9E81409C977C7A6FBBC1B55 /* Profile */,
-				839EC10792CBC366C4676B8AE25E8435 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		ED8790B4E827A3A76BD73D3E8954C250 /* Build configuration list for PBXNativeTarget "fluttertoast" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				04042DDC93BD5C9D6510B308DF997CC0 /* Debug */,
-				061E2F156B7B1ECC3FD5DBA68E540E60 /* Profile */,
-				3F635F2D5BD627AD8AAC2995ED94415F /* Release */,
+				3D0C2ACA087890C02455979A1904F5FF /* Debug */,
+				F825CD128E672B95EFD99B4E63BA2755 /* Profile */,
+				1E58A8736FDA5DADF93486E0823802DB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

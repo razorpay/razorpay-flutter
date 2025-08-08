@@ -10,7 +10,7 @@
 #endif
 #endif
 
-#import "FLTPackageInfoPlusPlugin.h"
+#import "FPPPackageInfoPlusPlugin.h"
 
 FOUNDATION_EXPORT double package_info_plusVersionNumber;
 FOUNDATION_EXPORT const unsigned char package_info_plusVersionString[];
