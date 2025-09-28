@@ -2,8 +2,6 @@ package com.razorpay.razorpay_flutter;
 
 import androidx.annotation.NonNull;
 
-import org.json.JSONException;
-
 import java.util.Map;
 
 import io.flutter.embedding.engine.plugins.FlutterPlugin;
@@ -14,7 +12,6 @@ import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler;
 import io.flutter.plugin.common.MethodChannel.Result;
-import io.flutter.plugin.common.PluginRegistry.Registrar;
 
 /**
  * RazorpayFlutterPlugin
@@ -32,13 +29,6 @@ public class RazorpayFlutterPlugin implements FlutterPlugin, MethodCallHandler, 
     public RazorpayFlutterPlugin() {
     }
 
-    /**
-     * Plugin registration for Flutter version < 1.12
-     */
-    public static void registerWith(Registrar registrar) {
-        final MethodChannel channel = new MethodChannel(registrar.messenger(), CHANNEL_NAME);
-        channel.setMethodCallHandler(new RazorpayFlutterPlugin(registrar));
-    }
 
     @Override
     public void onAttachedToEngine(@NonNull FlutterPluginBinding binding) {
@@ -51,15 +41,6 @@ public class RazorpayFlutterPlugin implements FlutterPlugin, MethodCallHandler, 
     }
 
 
-    /**
-     * Constructor for Flutter version < 1.12
-     * @param registrar
-     */
-    private RazorpayFlutterPlugin(Registrar registrar) {
-        this.razorpayDelegate = new RazorpayDelegate(registrar.activity());
-        registrar.addActivityResultListener(razorpayDelegate);
-    }
-
     @Override
     @SuppressWarnings("unchecked")
     public void onMethodCall(MethodCall call, Result result) {
@@ -69,10 +50,6 @@ public class RazorpayFlutterPlugin implements FlutterPlugin, MethodCallHandler, 
 
             case "open":
                 razorpayDelegate.openCheckout((Map<String, Object>) call.arguments, result);
-                break;
-
-            case "setPackageName":
-                razorpayDelegate.setPackageName((String)call.arguments);
                 break;
 
             case "resync":
@@ -110,6 +87,7 @@ public class RazorpayFlutterPlugin implements FlutterPlugin, MethodCallHandler, 
     public void onAttachedToActivity(@NonNull ActivityPluginBinding binding) {
         this.razorpayDelegate = new RazorpayDelegate(binding.getActivity());
         this.pluginBinding = binding;
+        razorpayDelegate.setPackageName(binding.getActivity().getPackageName());
         binding.addActivityResultListener(razorpayDelegate);
     }
 
