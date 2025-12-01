@@ -307,9 +307,11 @@ packages:
   razorpay_turbo_standard:
     dependency: "direct main"
     description:
-      path: ".."
-      relative: true
-    source: path
+      path: "."
+      ref: "f/turbo-name-update"
+      resolved-ref: "6f8f763380df7af02147e639b968fa6f328dfb0f"
+      url: "https://github.com/razorpay/razorpay-flutter.git"
+    source: git
     version: "1.0.1"
   sky_engine:
     dependency: transitive

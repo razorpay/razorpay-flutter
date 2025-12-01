@@ -24,7 +24,7 @@ android {
         applicationId = "com.razorpay.upisampleapp"
         // You can update the following values to match your application needs.
         // For more information, see: https://flutter.dev/to/review-gradle-config.
-        minSdk = 23
+        minSdk = flutter.minSdkVersion
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode
         versionName = flutter.versionName
@@ -41,6 +41,7 @@ android {
             // TODO: Add your own signing config for the release build.
             // Signing with the debug keys for now, so `flutter run --release` works.
             signingConfig = signingConfigs.getByName("debug")
+            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
     }
 
@@ -52,9 +53,9 @@ android {
         implementation("com.google.android.material:material:1.11.0")
         implementation("com.google.android.gms:play-services-auth:20.7.0")
         implementation("com.google.android.gms:play-services-auth-api-phone:18.0.1")
-        implementation("com.razorpay:checkout:1.6.41")
-        implementation("com.razorpay:razorpay-turbo:2.1.0")
-        implementation("com.razorpay:turbo-ui:2.1.0")
+        implementation("com.razorpay:checkout-uat:1.6.41")
+        implementation("com.razorpay:razorpay-turbo-uat:2.1.7")
+        implementation("com.razorpay:turbo-ui-uat:2.1.7")
     }
 }
 

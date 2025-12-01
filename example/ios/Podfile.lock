@@ -31,7 +31,7 @@ DEPENDENCIES:
   - package_info_plus (from `.symlinks/plugins/package_info_plus/ios`)
   - permission_handler_apple (from `.symlinks/plugins/permission_handler_apple/ios`)
   - razorpay-core-pod (from `https://github.com/razorpay/razorpay-customui-pod`, branch `test/standard`)
-  - razorpay-turbo (from `https://github.com/razorpay/razorpay-turbo-pod`, branch `prod/2.1.6`)
+  - razorpay-turbo (from `https://github.com/razorpay/razorpay-turbo-pod`, branch `uat/2.1.6`)
   - razorpay_turbo_standard (from `.symlinks/plugins/razorpay_turbo_standard/ios`)
 
 SPEC REPOS:
@@ -53,7 +53,7 @@ EXTERNAL SOURCES:
     :branch: test/standard
     :git: https://github.com/razorpay/razorpay-customui-pod
   razorpay-turbo:
-    :branch: prod/2.1.6
+    :branch: uat/2.1.6
     :git: https://github.com/razorpay/razorpay-turbo-pod
   razorpay_turbo_standard:
     :path: ".symlinks/plugins/razorpay_turbo_standard/ios"
@@ -63,7 +63,7 @@ CHECKOUT OPTIONS:
     :commit: 019ea62a5a29e2a44f897b188fe851aea028e4ec
     :git: https://github.com/razorpay/razorpay-customui-pod
   razorpay-turbo:
-    :commit: f0b564060db953453bcf7c05973a5ae71e015f05
+    :commit: aefa1c202dfe0656aa0c596db58534b44baac7a9
     :git: https://github.com/razorpay/razorpay-turbo-pod
 
 SPEC CHECKSUMS:
@@ -77,6 +77,6 @@ SPEC CHECKSUMS:
   razorpay-turbo: c6adeb9917b963477d698d12504a1e6eaba64959
   razorpay_turbo_standard: 4d84065f48a70a360cdb6c97008a03cf735aaaa4
 
-PODFILE CHECKSUM: 6414f1a7ed2fe91150a4968efe7e168c9f918744
+PODFILE CHECKSUM: 8e2548c55095e7e48c2d887a418725a750ddf387
 
 COCOAPODS: 1.16.2

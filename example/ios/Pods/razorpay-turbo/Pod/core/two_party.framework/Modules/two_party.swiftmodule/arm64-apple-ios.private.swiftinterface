@@ -72,6 +72,11 @@ public enum UpiReferenceCategory : Swift.String {
   public init(count: Swift.Int, items: [two_party.RZPPayment]?)
   @objc deinit
 }
+@_hasMissingDesignatedInitializers public class NPCICredentialHelper {
+  public static var txnId: Swift.String?
+  public static func getMandateCredentials(bankName: Swift.String, accountNumber: Swift.String, vpaAddress: Swift.String, payerName: Swift.String, payeeName: Swift.String, payeeVpa: Swift.String, transactionAmount: Swift.String, txnNote: Swift.String = "Mandate Payment", customTxnId: Swift.String? = nil, mobileNumber: Swift.String? = nil, completion: @escaping ([Swift.String : Any]?, Swift.String?, (any Swift.Error)?) -> Swift.Void)
+  @objc deinit
+}
 @_hasMissingDesignatedInitializers @objc public class FundSourceProviderResponse : ObjectiveC.NSObject {
   @objc public var count: Swift.Int
   @objc public var items: [two_party.FundSourceProvider]?

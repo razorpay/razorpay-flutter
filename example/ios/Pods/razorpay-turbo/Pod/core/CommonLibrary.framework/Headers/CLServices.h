@@ -1,6 +1,6 @@
 /**
  * NPCI
- * Copyright (C) 2022 NPCI
+ * Copyright (C) 2018 NPCI
  *
  * This program is developed for usage by NPCI only.
  * Any distribution of this code
@@ -23,13 +23,13 @@ typedef void (^ResponseBlock)(NSDictionary *response);
 @interface CLServices : NSObject <NSXMLParserDelegate>
 
 
-/** Returns true if challenge is a valid string.
+/* Returns true if challenge is a valid string.
  @brief Get the challenge (string pointer) with deviceId, appId, type - type may be "Initial" or "Rotate"
  @author NPCI
  @copyright NPCI
  @note getChallengeForDeviceId is called in two modes "Initial" or "Rotate"
  @since library version 1.0
- @todo Initially when the app is launched then the function is called in "Initial" mode then challenge is found that is valid for 30days, after 30 days it is called in "Rotate" mode
+ @to-do Initially when the app is launched then the function is called in "Initial" mode then challenge is found that is valid for 30days, after 30 days it is called in "Rotate" mode
  @version 1.5
  @result pointer to string - challenge
  @return BOOL
@@ -63,7 +63,7 @@ typedef void (^ResponseBlock)(NSDictionary *response);
  @author NPCI
  @copyright NPCI
  @since library version 1.0
- @todo the function is called during any type of 3rd party transaction
+ @to-do the function is called during any type of 3rd party transaction
  @version 1.5
  @result if successful then credentials are returned as a dictionary
  
@@ -106,15 +106,15 @@ typedef void (^ResponseBlock)(NSDictionary *response);
 
 +(void)getCredentialsPresentedFrom:(UIViewController*)viewController controls:(NSDictionary*)controls keyCode:(NSString*)keyCode keyXMLPayload:(NSString*)keyXMLPayload configuration:(NSDictionary*)configuration salt:(NSDictionary*)salt trust:(NSString*)trust payInfo:(NSArray*)payInfo language:(NSString*)language completionHandler:(void(^)(int ,NSError *,NSDictionary*,ResponseBlock clCallback))completionHandler;
 
-/** Returns true if challenge is a valid string.
-
+/* Returns true if challenge is a valid string.
+ 
  @brief Get the challenge (string pointer) with deviceId, appId, type - type may be "Initial" or "Rotate"
  @author NPCI
  @copyright NPCI
  @note getChallengeForDeviceId is called in two modes "Initial" or "Rotate"
  @remarks getChallengeForDeviceId is a class function calling function as:        BOOL success = [CLServices getChallengeForDeviceId: device_id appID: App_id type:@"Initial" challenge:&challenge error:&error];
  @since library version 1.6
- @todo Initially when the app is launched then the function is called in "Initial" mode then challenge is found that is valid for 30days, after 30 days it is called in "Rotate" mode
+ @to-do Initially when the app is launched then the function is called in "Initial" mode then challenge is found that is valid for 30days, after 30 days it is called in "Rotate" mode
  @version 1.6
  @result pointer to string - challenge
  @return BOOL
@@ -151,7 +151,7 @@ typedef void (^ResponseBlock)(NSDictionary *response);
  @author NPCI
  @copyright NPCI
  @since library version 1.6
- @todo the function is called during any type of 3rd party transaction
+ @to-do the function is called during any type of 3rd party transaction
  @version 1.0
  @result if successful then credentials are returned as a dictionary
  
@@ -198,113 +198,17 @@ typedef void (^ResponseBlock)(NSDictionary *response);
 +(void)getCredentialsPresentedFrom:(UIViewController*)viewController controls:(NSDictionary*)controls keyCode:(NSString*)keyCode keyXMLPayload:(NSString*)keyXMLPayload configuration:(NSDictionary*)configuration salt:(NSDictionary*)salt trust:(NSString*)trust payInfo:(NSArray*)payInfo language:(NSString*)language appGroup:(NSString*)appGroup completionHandler:(void(^)(int ,NSError *,NSDictionary*,ResponseBlock clCallback))completionHandler;
 
 
-/** Returns true if UPI lite is supported
- @brief this function is used to check UPI lite feasibility for a device/OS version
- 
- @author NPCI
- @copyright NPCI
- @since library version 1.8
- @version 1.8
- @return BOOL
- */
+// TODO: Add documentation
 
 + (BOOL)isUpiLiteSupported;
 
-
-/** Returns a JSON String with key status and syncRequired(only if status is "BOUND")
- @brief this function is used to check if UPI lite is already bound for an account in the device
- 
- @author NPCI
- @copyright NPCI
- @since library version 1.8
- @version 1.8
- @return NSString - JSON String with key status and syncRequired(only if status is "BOUND")
- @code NSString *response = [CLServices isUpiLiteBoundForMobileNumber:mobileNumber deviceId:deviceId accountRef:accountRef];
-        // response - '{"status":"NO_BIND"/"BOUND","syncRequired":"true"/"false"}'
- @params
- 1. mobileNumber
- 2. deviceId
- 3. accountRef
- */
-
-+ (NSString *)isUpiLiteBoundForMobileNumber:(NSString *)mobile deviceId:(NSString *)deviceId accountRef:(NSString *)accountRef;
-
-
-/** Returns true if UPI lite unbinding is successful
- @brief this function is used to delete the lite related data from customer’s device
- 
- @author NPCI
- @copyright NPCI
- @since library version 1.8
- @version 1.8
- @return BOOL
- @code BOOL status = [CLServices unBindDeviceForMobileNumber:mobileNumber deviceId:deviceId accountRef:accountRef];
- @params
- 1. mobileNumber
- 2. deviceId
- 3. accountRef
- */
++ (BOOL)isUpiLiteBoundForMobileNumber:(NSString *)mobile deviceId:(NSString *)deviceId accountRef:(NSString *)accountRef;
 
 + (BOOL)unBindDeviceForMobileNumber:(NSString *)mobile deviceId:(NSString *)deviceId accountRef:(NSString *)accountRef;
 
-
-/** Gives status true if UPI lite onboarding is successfully registered in the device.
- @brief this function is used to store device certificate and account state from the XML that was received from server in the response of UPI lite onboarding.
- 
- @author NPCI
- @copyright NPCI
- @since library version 1.8
- @version 1.8
- @result BOOL - XML payload is valid and device certificate & account state are succesfully stored in the device.
- @code [CLServices registerUPILiteOnboardingForMobileNumber:mobileNumber deviceId:deviceId accountRef:accountRef xmlPayload:xmlPayload completionHandler:^(BOOL status) {
-     if (status) {
-        // Trigger load money flow if it's not lite keys rotation flow
-     } else {
-            
-     }
- }];
- @params
- 1. mobileNumber
- 2. deviceId
- 3. accountRef
- 4. xmlPayload
- */
-
 + (void)registerUPILiteOnboardingForMobileNumber:(NSString *)mobile deviceId:(NSString *)deviceId accountRef:(NSString *)accountRef xmlPayload:(NSString *)xmlPayload completionHandler:(void(^)(BOOL status))completionHandler;
 
-
-/** Returns true if riskParams are successfully updated in the device.
- @brief this function is used to store an String (riskParams) which was generated by NPCI in response to the Load Money/TopUP.
- @author NPCI
- @copyright NPCI
- @since library version 1.8
- @todo Psp app should fetch the latest state of lite account from NPCI and update it using registerUPILiteState.
- @version 1.8
- @result BOOL - XML payload is valid and device certificate & account state are succesfully stored in the device.
- @code BOOL status = [CLServices registerUPILiteStateForMobileNumber:mobileNumber deviceId:deviceId accountRef:accountRef riskParams:riskParams];
- @params
- 1. mobileNumber
- 2. deviceId
- 3. accountRef
- 4. riskParams
- */
-
 + (BOOL)registerUPILiteStateForMobileNumber:(NSString *)mobile deviceId:(NSString *)deviceId accountRef:(NSString *)accountRef riskParams:(NSString *)riskParams;
-
-
-/** Returns UPI lite balance for the account.
- @brief this function is used to get the lite account balance
- @author NPCI
- @copyright NPCI
- @since library version 1.8
- @version 1.8
- @result NSString - UPI lite balance of the account.
- @code NSString *balance = [CLServices getUPILiteBalanceForMobileNumber:mobileNumber deviceId:deviceId accountRef:accountRef];
- @params
- 1. mobileNumber
- 2. deviceId
- 3. accountRef
- */
 
 + (NSString *)getUPILiteBalanceForMobileNumber:(NSString *)mobile deviceId:(NSString *)deviceId accountRef:(NSString *)accountRef;
 

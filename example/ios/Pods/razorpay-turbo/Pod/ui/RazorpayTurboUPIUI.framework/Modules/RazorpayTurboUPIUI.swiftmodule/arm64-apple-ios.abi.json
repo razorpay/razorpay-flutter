@@ -201680,21 +201680,21 @@
     {
       "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/upi-in-app-ios\/RazorpayUPI\/RazorpayUPI\/RazorpayUpi.swift",
       "kind": "BooleanLiteral",
-      "offset": 27059,
+      "offset": 27065,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/upi-in-app-ios\/RazorpayUPI\/RazorpayUPI\/RazorpayUpi.swift",
       "kind": "StringLiteral",
-      "offset": 33744,
+      "offset": 33750,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/upi-in-app-ios\/RazorpayUPI\/RazorpayUPI\/RazorpayUpi.swift",
       "kind": "StringLiteral",
-      "offset": 33801,
+      "offset": 33807,
       "length": 2,
       "value": "\"\""
     },
@@ -207453,343 +207453,343 @@
       "value": "\"account_link_limit\""
     },
     {
-      "filePath": "\/Users\/ramprasad.a\/Library\/Developer\/Xcode\/DerivedData\/BajajAxis-djrouapqvgbxayfzxcqpjvzvdigv\/Build\/Intermediates.noindex\/RazorpayUPI.build\/P2M_TWOP_PROD-iphoneos\/RazorpayTurboUPIUI.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "filePath": "\/Users\/ramprasad.a\/Library\/Developer\/Xcode\/DerivedData\/BajajAxis-djrouapqvgbxayfzxcqpjvzvdigv\/Build\/Intermediates.noindex\/RazorpayUPI.build\/P2M_TWOP_UAT-iphoneos\/RazorpayTurboUPIUI.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
       "offset": 628,
       "length": 12,
       "value": "\"CustomBlue\""
     },
     {
-      "filePath": "\/Users\/ramprasad.a\/Library\/Developer\/Xcode\/DerivedData\/BajajAxis-djrouapqvgbxayfzxcqpjvzvdigv\/Build\/Intermediates.noindex\/RazorpayUPI.build\/P2M_TWOP_PROD-iphoneos\/RazorpayTurboUPIUI.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "filePath": "\/Users\/ramprasad.a\/Library\/Developer\/Xcode\/DerivedData\/BajajAxis-djrouapqvgbxayfzxcqpjvzvdigv\/Build\/Intermediates.noindex\/RazorpayUPI.build\/P2M_TWOP_UAT-iphoneos\/RazorpayTurboUPIUI.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
       "offset": 778,
       "length": 16,
       "value": "\"CustomDarkblue\""
     },
     {
-      "filePath": "\/Users\/ramprasad.a\/Library\/Developer\/Xcode\/DerivedData\/BajajAxis-djrouapqvgbxayfzxcqpjvzvdigv\/Build\/Intermediates.noindex\/RazorpayUPI.build\/P2M_TWOP_PROD-iphoneos\/RazorpayTurboUPIUI.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "filePath": "\/Users\/ramprasad.a\/Library\/Developer\/Xcode\/DerivedData\/BajajAxis-djrouapqvgbxayfzxcqpjvzvdigv\/Build\/Intermediates.noindex\/RazorpayUPI.build\/P2M_TWOP_UAT-iphoneos\/RazorpayTurboUPIUI.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
       "offset": 924,
       "length": 12,
       "value": "\"customGray\""
     },
     {
-      "filePath": "\/Users\/ramprasad.a\/Library\/Developer\/Xcode\/DerivedData\/BajajAxis-djrouapqvgbxayfzxcqpjvzvdigv\/Build\/Intermediates.noindex\/RazorpayUPI.build\/P2M_TWOP_PROD-iphoneos\/RazorpayTurboUPIUI.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "filePath": "\/Users\/ramprasad.a\/Library\/Developer\/Xcode\/DerivedData\/BajajAxis-djrouapqvgbxayfzxcqpjvzvdigv\/Build\/Intermediates.noindex\/RazorpayUPI.build\/P2M_TWOP_UAT-iphoneos\/RazorpayTurboUPIUI.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
       "offset": 1068,
       "length": 13,
       "value": "\"customGreen\""
     },
     {
-      "filePath": "\/Users\/ramprasad.a\/Library\/Developer\/Xcode\/DerivedData\/BajajAxis-djrouapqvgbxayfzxcqpjvzvdigv\/Build\/Intermediates.noindex\/RazorpayUPI.build\/P2M_TWOP_PROD-iphoneos\/RazorpayTurboUPIUI.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "filePath": "\/Users\/ramprasad.a\/Library\/Developer\/Xcode\/DerivedData\/BajajAxis-djrouapqvgbxayfzxcqpjvzvdigv\/Build\/Intermediates.noindex\/RazorpayUPI.build\/P2M_TWOP_UAT-iphoneos\/RazorpayTurboUPIUI.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
       "offset": 1213,
       "length": 13,
       "value": "\"customWhite\""
     },
     {
-      "filePath": "\/Users\/ramprasad.a\/Library\/Developer\/Xcode\/DerivedData\/BajajAxis-djrouapqvgbxayfzxcqpjvzvdigv\/Build\/Intermediates.noindex\/RazorpayUPI.build\/P2M_TWOP_PROD-iphoneos\/RazorpayTurboUPIUI.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "filePath": "\/Users\/ramprasad.a\/Library\/Developer\/Xcode\/DerivedData\/BajajAxis-djrouapqvgbxayfzxcqpjvzvdigv\/Build\/Intermediates.noindex\/RazorpayUPI.build\/P2M_TWOP_UAT-iphoneos\/RazorpayTurboUPIUI.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
       "offset": 1358,
       "length": 13,
       "value": "\"defaultText\""
     },
     {
-      "filePath": "\/Users\/ramprasad.a\/Library\/Developer\/Xcode\/DerivedData\/BajajAxis-djrouapqvgbxayfzxcqpjvzvdigv\/Build\/Intermediates.noindex\/RazorpayUPI.build\/P2M_TWOP_PROD-iphoneos\/RazorpayTurboUPIUI.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "filePath": "\/Users\/ramprasad.a\/Library\/Developer\/Xcode\/DerivedData\/BajajAxis-djrouapqvgbxayfzxcqpjvzvdigv\/Build\/Intermediates.noindex\/RazorpayUPI.build\/P2M_TWOP_UAT-iphoneos\/RazorpayTurboUPIUI.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
       "offset": 1503,
       "length": 13,
       "value": "\"rewardGreen\""
     },
     {
-      "filePath": "\/Users\/ramprasad.a\/Library\/Developer\/Xcode\/DerivedData\/BajajAxis-djrouapqvgbxayfzxcqpjvzvdigv\/Build\/Intermediates.noindex\/RazorpayUPI.build\/P2M_TWOP_PROD-iphoneos\/RazorpayTurboUPIUI.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "filePath": "\/Users\/ramprasad.a\/Library\/Developer\/Xcode\/DerivedData\/BajajAxis-djrouapqvgbxayfzxcqpjvzvdigv\/Build\/Intermediates.noindex\/RazorpayUPI.build\/P2M_TWOP_UAT-iphoneos\/RazorpayTurboUPIUI.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
       "offset": 1644,
       "length": 11,
       "value": "\"shadeGray\""
     },
     {
-      "filePath": "\/Users\/ramprasad.a\/Library\/Developer\/Xcode\/DerivedData\/BajajAxis-djrouapqvgbxayfzxcqpjvzvdigv\/Build\/Intermediates.noindex\/RazorpayUPI.build\/P2M_TWOP_PROD-iphoneos\/RazorpayTurboUPIUI.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "filePath": "\/Users\/ramprasad.a\/Library\/Developer\/Xcode\/DerivedData\/BajajAxis-djrouapqvgbxayfzxcqpjvzvdigv\/Build\/Intermediates.noindex\/RazorpayUPI.build\/P2M_TWOP_UAT-iphoneos\/RazorpayTurboUPIUI.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
       "offset": 1803,
       "length": 21,
       "value": "\"textLowContrastBody\""
     },
     {
-      "filePath": "\/Users\/ramprasad.a\/Library\/Developer\/Xcode\/DerivedData\/BajajAxis-djrouapqvgbxayfzxcqpjvzvdigv\/Build\/Intermediates.noindex\/RazorpayUPI.build\/P2M_TWOP_PROD-iphoneos\/RazorpayTurboUPIUI.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "filePath": "\/Users\/ramprasad.a\/Library\/Developer\/Xcode\/DerivedData\/BajajAxis-djrouapqvgbxayfzxcqpjvzvdigv\/Build\/Intermediates.noindex\/RazorpayUPI.build\/P2M_TWOP_UAT-iphoneos\/RazorpayTurboUPIUI.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
       "offset": 1974,
       "length": 22,
       "value": "\"textLowContrastTitle\""
     },
     {
-      "filePath": "\/Users\/ramprasad.a\/Library\/Developer\/Xcode\/DerivedData\/BajajAxis-djrouapqvgbxayfzxcqpjvzvdigv\/Build\/Intermediates.noindex\/RazorpayUPI.build\/P2M_TWOP_PROD-iphoneos\/RazorpayTurboUPIUI.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "filePath": "\/Users\/ramprasad.a\/Library\/Developer\/Xcode\/DerivedData\/BajajAxis-djrouapqvgbxayfzxcqpjvzvdigv\/Build\/Intermediates.noindex\/RazorpayUPI.build\/P2M_TWOP_UAT-iphoneos\/RazorpayTurboUPIUI.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
       "offset": 2128,
       "length": 13,
       "value": "\"textNeutral\""
     },
     {
-      "filePath": "\/Users\/ramprasad.a\/Library\/Developer\/Xcode\/DerivedData\/BajajAxis-djrouapqvgbxayfzxcqpjvzvdigv\/Build\/Intermediates.noindex\/RazorpayUPI.build\/P2M_TWOP_PROD-iphoneos\/RazorpayTurboUPIUI.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "filePath": "\/Users\/ramprasad.a\/Library\/Developer\/Xcode\/DerivedData\/BajajAxis-djrouapqvgbxayfzxcqpjvzvdigv\/Build\/Intermediates.noindex\/RazorpayUPI.build\/P2M_TWOP_UAT-iphoneos\/RazorpayTurboUPIUI.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
       "offset": 2368,
       "length": 8,
       "value": "\"Vector\""
     },
     {
-      "filePath": "\/Users\/ramprasad.a\/Library\/Developer\/Xcode\/DerivedData\/BajajAxis-djrouapqvgbxayfzxcqpjvzvdigv\/Build\/Intermediates.noindex\/RazorpayUPI.build\/P2M_TWOP_PROD-iphoneos\/RazorpayTurboUPIUI.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "filePath": "\/Users\/ramprasad.a\/Library\/Developer\/Xcode\/DerivedData\/BajajAxis-djrouapqvgbxayfzxcqpjvzvdigv\/Build\/Intermediates.noindex\/RazorpayUPI.build\/P2M_TWOP_UAT-iphoneos\/RazorpayTurboUPIUI.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
       "offset": 2505,
       "length": 12,
       "value": "\"add_square\""
     },
     {
-      "filePath": "\/Users\/ramprasad.a\/Library\/Developer\/Xcode\/DerivedData\/BajajAxis-djrouapqvgbxayfzxcqpjvzvdigv\/Build\/Intermediates.noindex\/RazorpayUPI.build\/P2M_TWOP_PROD-iphoneos\/RazorpayTurboUPIUI.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "filePath": "\/Users\/ramprasad.a\/Library\/Developer\/Xcode\/DerivedData\/BajajAxis-djrouapqvgbxayfzxcqpjvzvdigv\/Build\/Intermediates.noindex\/RazorpayUPI.build\/P2M_TWOP_UAT-iphoneos\/RazorpayTurboUPIUI.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
       "offset": 2637,
       "length": 7,
       "value": "\"alert\""
     },
     {
-      "filePath": "\/Users\/ramprasad.a\/Library\/Developer\/Xcode\/DerivedData\/BajajAxis-djrouapqvgbxayfzxcqpjvzvdigv\/Build\/Intermediates.noindex\/RazorpayUPI.build\/P2M_TWOP_PROD-iphoneos\/RazorpayTurboUPIUI.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "filePath": "\/Users\/ramprasad.a\/Library\/Developer\/Xcode\/DerivedData\/BajajAxis-djrouapqvgbxayfzxcqpjvzvdigv\/Build\/Intermediates.noindex\/RazorpayUPI.build\/P2M_TWOP_UAT-iphoneos\/RazorpayTurboUPIUI.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
       "offset": 2776,
       "length": 13,
       "value": "\"autoPayLogo\""
     },
     {
-      "filePath": "\/Users\/ramprasad.a\/Library\/Developer\/Xcode\/DerivedData\/BajajAxis-djrouapqvgbxayfzxcqpjvzvdigv\/Build\/Intermediates.noindex\/RazorpayUPI.build\/P2M_TWOP_PROD-iphoneos\/RazorpayTurboUPIUI.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "filePath": "\/Users\/ramprasad.a\/Library\/Developer\/Xcode\/DerivedData\/BajajAxis-djrouapqvgbxayfzxcqpjvzvdigv\/Build\/Intermediates.noindex\/RazorpayUPI.build\/P2M_TWOP_UAT-iphoneos\/RazorpayTurboUPIUI.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
       "offset": 2917,
       "length": 11,
       "value": "\"backArrow\""
     },
     {
-      "filePath": "\/Users\/ramprasad.a\/Library\/Developer\/Xcode\/DerivedData\/BajajAxis-djrouapqvgbxayfzxcqpjvzvdigv\/Build\/Intermediates.noindex\/RazorpayUPI.build\/P2M_TWOP_PROD-iphoneos\/RazorpayTurboUPIUI.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "filePath": "\/Users\/ramprasad.a\/Library\/Developer\/Xcode\/DerivedData\/BajajAxis-djrouapqvgbxayfzxcqpjvzvdigv\/Build\/Intermediates.noindex\/RazorpayUPI.build\/P2M_TWOP_UAT-iphoneos\/RazorpayTurboUPIUI.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
       "offset": 3061,
       "length": 14,
       "value": "\"bank_balance\""
     },
     {
-      "filePath": "\/Users\/ramprasad.a\/Library\/Developer\/Xcode\/DerivedData\/BajajAxis-djrouapqvgbxayfzxcqpjvzvdigv\/Build\/Intermediates.noindex\/RazorpayUPI.build\/P2M_TWOP_PROD-iphoneos\/RazorpayTurboUPIUI.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "filePath": "\/Users\/ramprasad.a\/Library\/Developer\/Xcode\/DerivedData\/BajajAxis-djrouapqvgbxayfzxcqpjvzvdigv\/Build\/Intermediates.noindex\/RazorpayUPI.build\/P2M_TWOP_UAT-iphoneos\/RazorpayTurboUPIUI.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
       "offset": 3220,
       "length": 20,
       "value": "\"checkbox_structure\""
     },
     {
-      "filePath": "\/Users\/ramprasad.a\/Library\/Developer\/Xcode\/DerivedData\/BajajAxis-djrouapqvgbxayfzxcqpjvzvdigv\/Build\/Intermediates.noindex\/RazorpayUPI.build\/P2M_TWOP_PROD-iphoneos\/RazorpayTurboUPIUI.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "filePath": "\/Users\/ramprasad.a\/Library\/Developer\/Xcode\/DerivedData\/BajajAxis-djrouapqvgbxayfzxcqpjvzvdigv\/Build\/Intermediates.noindex\/RazorpayUPI.build\/P2M_TWOP_UAT-iphoneos\/RazorpayTurboUPIUI.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
       "offset": 3364,
       "length": 9,
       "value": "\"checked\""
     },
     {
-      "filePath": "\/Users\/ramprasad.a\/Library\/Developer\/Xcode\/DerivedData\/BajajAxis-djrouapqvgbxayfzxcqpjvzvdigv\/Build\/Intermediates.noindex\/RazorpayUPI.build\/P2M_TWOP_PROD-iphoneos\/RazorpayTurboUPIUI.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "filePath": "\/Users\/ramprasad.a\/Library\/Developer\/Xcode\/DerivedData\/BajajAxis-djrouapqvgbxayfzxcqpjvzvdigv\/Build\/Intermediates.noindex\/RazorpayUPI.build\/P2M_TWOP_UAT-iphoneos\/RazorpayTurboUPIUI.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
       "offset": 3493,
       "length": 7,
       "value": "\"close\""
     },
     {
-      "filePath": "\/Users\/ramprasad.a\/Library\/Developer\/Xcode\/DerivedData\/BajajAxis-djrouapqvgbxayfzxcqpjvzvdigv\/Build\/Intermediates.noindex\/RazorpayUPI.build\/P2M_TWOP_PROD-iphoneos\/RazorpayTurboUPIUI.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "filePath": "\/Users\/ramprasad.a\/Library\/Developer\/Xcode\/DerivedData\/BajajAxis-djrouapqvgbxayfzxcqpjvzvdigv\/Build\/Intermediates.noindex\/RazorpayUPI.build\/P2M_TWOP_UAT-iphoneos\/RazorpayTurboUPIUI.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
       "offset": 3628,
       "length": 11,
       "value": "\"closeIcon\""
     },
     {
-      "filePath": "\/Users\/ramprasad.a\/Library\/Developer\/Xcode\/DerivedData\/BajajAxis-djrouapqvgbxayfzxcqpjvzvdigv\/Build\/Intermediates.noindex\/RazorpayUPI.build\/P2M_TWOP_PROD-iphoneos\/RazorpayTurboUPIUI.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "filePath": "\/Users\/ramprasad.a\/Library\/Developer\/Xcode\/DerivedData\/BajajAxis-djrouapqvgbxayfzxcqpjvzvdigv\/Build\/Intermediates.noindex\/RazorpayUPI.build\/P2M_TWOP_UAT-iphoneos\/RazorpayTurboUPIUI.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
       "offset": 3770,
       "length": 13,
       "value": "\"credit-card\""
     },
     {
-      "filePath": "\/Users\/ramprasad.a\/Library\/Developer\/Xcode\/DerivedData\/BajajAxis-djrouapqvgbxayfzxcqpjvzvdigv\/Build\/Intermediates.noindex\/RazorpayUPI.build\/P2M_TWOP_PROD-iphoneos\/RazorpayTurboUPIUI.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "filePath": "\/Users\/ramprasad.a\/Library\/Developer\/Xcode\/DerivedData\/BajajAxis-djrouapqvgbxayfzxcqpjvzvdigv\/Build\/Intermediates.noindex\/RazorpayUPI.build\/P2M_TWOP_UAT-iphoneos\/RazorpayTurboUPIUI.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
       "offset": 3903,
       "length": 7,
       "value": "\"cross\""
     },
     {
-      "filePath": "\/Users\/ramprasad.a\/Library\/Developer\/Xcode\/DerivedData\/BajajAxis-djrouapqvgbxayfzxcqpjvzvdigv\/Build\/Intermediates.noindex\/RazorpayUPI.build\/P2M_TWOP_PROD-iphoneos\/RazorpayTurboUPIUI.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "filePath": "\/Users\/ramprasad.a\/Library\/Developer\/Xcode\/DerivedData\/BajajAxis-djrouapqvgbxayfzxcqpjvzvdigv\/Build\/Intermediates.noindex\/RazorpayUPI.build\/P2M_TWOP_UAT-iphoneos\/RazorpayTurboUPIUI.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
       "offset": 4040,
       "length": 12,
       "value": "\"footerLogo\""
     },
     {
-      "filePath": "\/Users\/ramprasad.a\/Library\/Developer\/Xcode\/DerivedData\/BajajAxis-djrouapqvgbxayfzxcqpjvzvdigv\/Build\/Intermediates.noindex\/RazorpayUPI.build\/P2M_TWOP_PROD-iphoneos\/RazorpayTurboUPIUI.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "filePath": "\/Users\/ramprasad.a\/Library\/Developer\/Xcode\/DerivedData\/BajajAxis-djrouapqvgbxayfzxcqpjvzvdigv\/Build\/Intermediates.noindex\/RazorpayUPI.build\/P2M_TWOP_UAT-iphoneos\/RazorpayTurboUPIUI.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
       "offset": 4172,
       "length": 7,
       "value": "\"frame\""
     },
     {
-      "filePath": "\/Users\/ramprasad.a\/Library\/Developer\/Xcode\/DerivedData\/BajajAxis-djrouapqvgbxayfzxcqpjvzvdigv\/Build\/Intermediates.noindex\/RazorpayUPI.build\/P2M_TWOP_PROD-iphoneos\/RazorpayTurboUPIUI.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "filePath": "\/Users\/ramprasad.a\/Library\/Developer\/Xcode\/DerivedData\/BajajAxis-djrouapqvgbxayfzxcqpjvzvdigv\/Build\/Intermediates.noindex\/RazorpayUPI.build\/P2M_TWOP_UAT-iphoneos\/RazorpayTurboUPIUI.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
       "offset": 4299,
       "length": 7,
       "value": "\"icici\""
     },
     {
-      "filePath": "\/Users\/ramprasad.a\/Library\/Developer\/Xcode\/DerivedData\/BajajAxis-djrouapqvgbxayfzxcqpjvzvdigv\/Build\/Intermediates.noindex\/RazorpayUPI.build\/P2M_TWOP_PROD-iphoneos\/RazorpayTurboUPIUI.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "filePath": "\/Users\/ramprasad.a\/Library\/Developer\/Xcode\/DerivedData\/BajajAxis-djrouapqvgbxayfzxcqpjvzvdigv\/Build\/Intermediates.noindex\/RazorpayUPI.build\/P2M_TWOP_UAT-iphoneos\/RazorpayTurboUPIUI.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
       "offset": 4424,
       "length": 6,
       "value": "\"info\""
     },
     {
-      "filePath": "\/Users\/ramprasad.a\/Library\/Developer\/Xcode\/DerivedData\/BajajAxis-djrouapqvgbxayfzxcqpjvzvdigv\/Build\/Intermediates.noindex\/RazorpayUPI.build\/P2M_TWOP_PROD-iphoneos\/RazorpayTurboUPIUI.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "filePath": "\/Users\/ramprasad.a\/Library\/Developer\/Xcode\/DerivedData\/BajajAxis-djrouapqvgbxayfzxcqpjvzvdigv\/Build\/Intermediates.noindex\/RazorpayUPI.build\/P2M_TWOP_UAT-iphoneos\/RazorpayTurboUPIUI.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
       "offset": 4552,
       "length": 8,
       "value": "\"loader\""
     },
     {
-      "filePath": "\/Users\/ramprasad.a\/Library\/Developer\/Xcode\/DerivedData\/BajajAxis-djrouapqvgbxayfzxcqpjvzvdigv\/Build\/Intermediates.noindex\/RazorpayUPI.build\/P2M_TWOP_PROD-iphoneos\/RazorpayTurboUPIUI.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "filePath": "\/Users\/ramprasad.a\/Library\/Developer\/Xcode\/DerivedData\/BajajAxis-djrouapqvgbxayfzxcqpjvzvdigv\/Build\/Intermediates.noindex\/RazorpayUPI.build\/P2M_TWOP_UAT-iphoneos\/RazorpayTurboUPIUI.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
       "offset": 4688,
       "length": 11,
       "value": "\"noAccount\""
     },
     {
-      "filePath": "\/Users\/ramprasad.a\/Library\/Developer\/Xcode\/DerivedData\/BajajAxis-djrouapqvgbxayfzxcqpjvzvdigv\/Build\/Intermediates.noindex\/RazorpayUPI.build\/P2M_TWOP_PROD-iphoneos\/RazorpayTurboUPIUI.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "filePath": "\/Users\/ramprasad.a\/Library\/Developer\/Xcode\/DerivedData\/BajajAxis-djrouapqvgbxayfzxcqpjvzvdigv\/Build\/Intermediates.noindex\/RazorpayUPI.build\/P2M_TWOP_UAT-iphoneos\/RazorpayTurboUPIUI.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
       "offset": 4830,
       "length": 13,
       "value": "\"not_primary\""
     },
     {
-      "filePath": "\/Users\/ramprasad.a\/Library\/Developer\/Xcode\/DerivedData\/BajajAxis-djrouapqvgbxayfzxcqpjvzvdigv\/Build\/Intermediates.noindex\/RazorpayUPI.build\/P2M_TWOP_PROD-iphoneos\/RazorpayTurboUPIUI.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "filePath": "\/Users\/ramprasad.a\/Library\/Developer\/Xcode\/DerivedData\/BajajAxis-djrouapqvgbxayfzxcqpjvzvdigv\/Build\/Intermediates.noindex\/RazorpayUPI.build\/P2M_TWOP_UAT-iphoneos\/RazorpayTurboUPIUI.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
       "offset": 4961,
       "length": 6,
       "value": "\"path\""
     },
     {
-      "filePath": "\/Users\/ramprasad.a\/Library\/Developer\/Xcode\/DerivedData\/BajajAxis-djrouapqvgbxayfzxcqpjvzvdigv\/Build\/Intermediates.noindex\/RazorpayUPI.build\/P2M_TWOP_PROD-iphoneos\/RazorpayTurboUPIUI.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "filePath": "\/Users\/ramprasad.a\/Library\/Developer\/Xcode\/DerivedData\/BajajAxis-djrouapqvgbxayfzxcqpjvzvdigv\/Build\/Intermediates.noindex\/RazorpayUPI.build\/P2M_TWOP_UAT-iphoneos\/RazorpayTurboUPIUI.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
       "offset": 5099,
       "length": 13,
       "value": "\"placeholder\""
     },
     {
-      "filePath": "\/Users\/ramprasad.a\/Library\/Developer\/Xcode\/DerivedData\/BajajAxis-djrouapqvgbxayfzxcqpjvzvdigv\/Build\/Intermediates.noindex\/RazorpayUPI.build\/P2M_TWOP_PROD-iphoneos\/RazorpayTurboUPIUI.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "filePath": "\/Users\/ramprasad.a\/Library\/Developer\/Xcode\/DerivedData\/BajajAxis-djrouapqvgbxayfzxcqpjvzvdigv\/Build\/Intermediates.noindex\/RazorpayUPI.build\/P2M_TWOP_UAT-iphoneos\/RazorpayTurboUPIUI.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
       "offset": 5236,
       "length": 9,
       "value": "\"primary\""
     },
     {
-      "filePath": "\/Users\/ramprasad.a\/Library\/Developer\/Xcode\/DerivedData\/BajajAxis-djrouapqvgbxayfzxcqpjvzvdigv\/Build\/Intermediates.noindex\/RazorpayUPI.build\/P2M_TWOP_PROD-iphoneos\/RazorpayTurboUPIUI.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "filePath": "\/Users\/ramprasad.a\/Library\/Developer\/Xcode\/DerivedData\/BajajAxis-djrouapqvgbxayfzxcqpjvzvdigv\/Build\/Intermediates.noindex\/RazorpayUPI.build\/P2M_TWOP_UAT-iphoneos\/RazorpayTurboUPIUI.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
       "offset": 5375,
       "length": 12,
       "value": "\"primaryTag\""
     },
     {
-      "filePath": "\/Users\/ramprasad.a\/Library\/Developer\/Xcode\/DerivedData\/BajajAxis-djrouapqvgbxayfzxcqpjvzvdigv\/Build\/Intermediates.noindex\/RazorpayUPI.build\/P2M_TWOP_PROD-iphoneos\/RazorpayTurboUPIUI.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "filePath": "\/Users\/ramprasad.a\/Library\/Developer\/Xcode\/DerivedData\/BajajAxis-djrouapqvgbxayfzxcqpjvzvdigv\/Build\/Intermediates.noindex\/RazorpayUPI.build\/P2M_TWOP_UAT-iphoneos\/RazorpayTurboUPIUI.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
       "offset": 5513,
       "length": 10,
       "value": "\"razorpay\""
     },
     {
-      "filePath": "\/Users\/ramprasad.a\/Library\/Developer\/Xcode\/DerivedData\/BajajAxis-djrouapqvgbxayfzxcqpjvzvdigv\/Build\/Intermediates.noindex\/RazorpayUPI.build\/P2M_TWOP_PROD-iphoneos\/RazorpayTurboUPIUI.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "filePath": "\/Users\/ramprasad.a\/Library\/Developer\/Xcode\/DerivedData\/BajajAxis-djrouapqvgbxayfzxcqpjvzvdigv\/Build\/Intermediates.noindex\/RazorpayUPI.build\/P2M_TWOP_UAT-iphoneos\/RazorpayTurboUPIUI.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
       "offset": 5647,
       "length": 9,
       "value": "\"refresh\""
     },
     {
-      "filePath": "\/Users\/ramprasad.a\/Library\/Developer\/Xcode\/DerivedData\/BajajAxis-djrouapqvgbxayfzxcqpjvzvdigv\/Build\/Intermediates.noindex\/RazorpayUPI.build\/P2M_TWOP_PROD-iphoneos\/RazorpayTurboUPIUI.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "filePath": "\/Users\/ramprasad.a\/Library\/Developer\/Xcode\/DerivedData\/BajajAxis-djrouapqvgbxayfzxcqpjvzvdigv\/Build\/Intermediates.noindex\/RazorpayUPI.build\/P2M_TWOP_UAT-iphoneos\/RazorpayTurboUPIUI.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
       "offset": 5793,
       "length": 16,
       "value": "\"remove_account\""
     },
     {
-      "filePath": "\/Users\/ramprasad.a\/Library\/Developer\/Xcode\/DerivedData\/BajajAxis-djrouapqvgbxayfzxcqpjvzvdigv\/Build\/Intermediates.noindex\/RazorpayUPI.build\/P2M_TWOP_PROD-iphoneos\/RazorpayTurboUPIUI.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "filePath": "\/Users\/ramprasad.a\/Library\/Developer\/Xcode\/DerivedData\/BajajAxis-djrouapqvgbxayfzxcqpjvzvdigv\/Build\/Intermediates.noindex\/RazorpayUPI.build\/P2M_TWOP_UAT-iphoneos\/RazorpayTurboUPIUI.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
       "offset": 5938,
       "length": 12,
       "value": "\"right_arow\""
     },
     {
-      "filePath": "\/Users\/ramprasad.a\/Library\/Developer\/Xcode\/DerivedData\/BajajAxis-djrouapqvgbxayfzxcqpjvzvdigv\/Build\/Intermediates.noindex\/RazorpayUPI.build\/P2M_TWOP_PROD-iphoneos\/RazorpayTurboUPIUI.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "filePath": "\/Users\/ramprasad.a\/Library\/Developer\/Xcode\/DerivedData\/BajajAxis-djrouapqvgbxayfzxcqpjvzvdigv\/Build\/Intermediates.noindex\/RazorpayUPI.build\/P2M_TWOP_UAT-iphoneos\/RazorpayTurboUPIUI.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
       "offset": 6081,
       "length": 13,
       "value": "\"right_arrow\""
     },
     {
-      "filePath": "\/Users\/ramprasad.a\/Library\/Developer\/Xcode\/DerivedData\/BajajAxis-djrouapqvgbxayfzxcqpjvzvdigv\/Build\/Intermediates.noindex\/RazorpayUPI.build\/P2M_TWOP_PROD-iphoneos\/RazorpayTurboUPIUI.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "filePath": "\/Users\/ramprasad.a\/Library\/Developer\/Xcode\/DerivedData\/BajajAxis-djrouapqvgbxayfzxcqpjvzvdigv\/Build\/Intermediates.noindex\/RazorpayUPI.build\/P2M_TWOP_UAT-iphoneos\/RazorpayTurboUPIUI.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
       "offset": 6219,
       "length": 10,
       "value": "\"sms_logo\""
     },
     {
-      "filePath": "\/Users\/ramprasad.a\/Library\/Developer\/Xcode\/DerivedData\/BajajAxis-djrouapqvgbxayfzxcqpjvzvdigv\/Build\/Intermediates.noindex\/RazorpayUPI.build\/P2M_TWOP_PROD-iphoneos\/RazorpayTurboUPIUI.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "filePath": "\/Users\/ramprasad.a\/Library\/Developer\/Xcode\/DerivedData\/BajajAxis-djrouapqvgbxayfzxcqpjvzvdigv\/Build\/Intermediates.noindex\/RazorpayUPI.build\/P2M_TWOP_UAT-iphoneos\/RazorpayTurboUPIUI.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
       "offset": 6364,
       "length": 15,
       "value": "\"success_check\""
     },
     {
-      "filePath": "\/Users\/ramprasad.a\/Library\/Developer\/Xcode\/DerivedData\/BajajAxis-djrouapqvgbxayfzxcqpjvzvdigv\/Build\/Intermediates.noindex\/RazorpayUPI.build\/P2M_TWOP_PROD-iphoneos\/RazorpayTurboUPIUI.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "filePath": "\/Users\/ramprasad.a\/Library\/Developer\/Xcode\/DerivedData\/BajajAxis-djrouapqvgbxayfzxcqpjvzvdigv\/Build\/Intermediates.noindex\/RazorpayUPI.build\/P2M_TWOP_UAT-iphoneos\/RazorpayTurboUPIUI.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
       "offset": 6495,
       "length": 5,
       "value": "\"tik\""
     },
     {
-      "filePath": "\/Users\/ramprasad.a\/Library\/Developer\/Xcode\/DerivedData\/BajajAxis-djrouapqvgbxayfzxcqpjvzvdigv\/Build\/Intermediates.noindex\/RazorpayUPI.build\/P2M_TWOP_PROD-iphoneos\/RazorpayTurboUPIUI.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "filePath": "\/Users\/ramprasad.a\/Library\/Developer\/Xcode\/DerivedData\/BajajAxis-djrouapqvgbxayfzxcqpjvzvdigv\/Build\/Intermediates.noindex\/RazorpayUPI.build\/P2M_TWOP_UAT-iphoneos\/RazorpayTurboUPIUI.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
       "offset": 6631,
       "length": 13,
       "value": "\"toast_close\""
     },
     {
-      "filePath": "\/Users\/ramprasad.a\/Library\/Developer\/Xcode\/DerivedData\/BajajAxis-djrouapqvgbxayfzxcqpjvzvdigv\/Build\/Intermediates.noindex\/RazorpayUPI.build\/P2M_TWOP_PROD-iphoneos\/RazorpayTurboUPIUI.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "filePath": "\/Users\/ramprasad.a\/Library\/Developer\/Xcode\/DerivedData\/BajajAxis-djrouapqvgbxayfzxcqpjvzvdigv\/Build\/Intermediates.noindex\/RazorpayUPI.build\/P2M_TWOP_UAT-iphoneos\/RazorpayTurboUPIUI.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
       "offset": 6788,
       "length": 20,
       "value": "\"trailing-icon_down\""
     },
     {
-      "filePath": "\/Users\/ramprasad.a\/Library\/Developer\/Xcode\/DerivedData\/BajajAxis-djrouapqvgbxayfzxcqpjvzvdigv\/Build\/Intermediates.noindex\/RazorpayUPI.build\/P2M_TWOP_PROD-iphoneos\/RazorpayTurboUPIUI.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "filePath": "\/Users\/ramprasad.a\/Library\/Developer\/Xcode\/DerivedData\/BajajAxis-djrouapqvgbxayfzxcqpjvzvdigv\/Build\/Intermediates.noindex\/RazorpayUPI.build\/P2M_TWOP_UAT-iphoneos\/RazorpayTurboUPIUI.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
       "offset": 6948,
       "length": 18,
       "value": "\"trailing-icon_up\""
     },
     {
-      "filePath": "\/Users\/ramprasad.a\/Library\/Developer\/Xcode\/DerivedData\/BajajAxis-djrouapqvgbxayfzxcqpjvzvdigv\/Build\/Intermediates.noindex\/RazorpayUPI.build\/P2M_TWOP_PROD-iphoneos\/RazorpayTurboUPIUI.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "filePath": "\/Users\/ramprasad.a\/Library\/Developer\/Xcode\/DerivedData\/BajajAxis-djrouapqvgbxayfzxcqpjvzvdigv\/Build\/Intermediates.noindex\/RazorpayUPI.build\/P2M_TWOP_UAT-iphoneos\/RazorpayTurboUPIUI.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
       "offset": 7109,
       "length": 19,
       "value": "\"uncheck_structure\""
     },
     {
-      "filePath": "\/Users\/ramprasad.a\/Library\/Developer\/Xcode\/DerivedData\/BajajAxis-djrouapqvgbxayfzxcqpjvzvdigv\/Build\/Intermediates.noindex\/RazorpayUPI.build\/P2M_TWOP_PROD-iphoneos\/RazorpayTurboUPIUI.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "filePath": "\/Users\/ramprasad.a\/Library\/Developer\/Xcode\/DerivedData\/BajajAxis-djrouapqvgbxayfzxcqpjvzvdigv\/Build\/Intermediates.noindex\/RazorpayUPI.build\/P2M_TWOP_UAT-iphoneos\/RazorpayTurboUPIUI.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
       "offset": 7256,
       "length": 11,
       "value": "\"unchecked\""
     },
     {
-      "filePath": "\/Users\/ramprasad.a\/Library\/Developer\/Xcode\/DerivedData\/BajajAxis-djrouapqvgbxayfzxcqpjvzvdigv\/Build\/Intermediates.noindex\/RazorpayUPI.build\/P2M_TWOP_PROD-iphoneos\/RazorpayTurboUPIUI.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "filePath": "\/Users\/ramprasad.a\/Library\/Developer\/Xcode\/DerivedData\/BajajAxis-djrouapqvgbxayfzxcqpjvzvdigv\/Build\/Intermediates.noindex\/RazorpayUPI.build\/P2M_TWOP_UAT-iphoneos\/RazorpayTurboUPIUI.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
       "offset": 7391,
       "length": 9,
       "value": "\"upiLogo\""
     },
     {
-      "filePath": "\/Users\/ramprasad.a\/Library\/Developer\/Xcode\/DerivedData\/BajajAxis-djrouapqvgbxayfzxcqpjvzvdigv\/Build\/Intermediates.noindex\/RazorpayUPI.build\/P2M_TWOP_PROD-iphoneos\/RazorpayTurboUPIUI.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "filePath": "\/Users\/ramprasad.a\/Library\/Developer\/Xcode\/DerivedData\/BajajAxis-djrouapqvgbxayfzxcqpjvzvdigv\/Build\/Intermediates.noindex\/RazorpayUPI.build\/P2M_TWOP_UAT-iphoneos\/RazorpayTurboUPIUI.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
       "offset": 7523,
       "length": 9,

@@ -32,7 +32,7 @@
 			buildPhases = (
 			);
 			dependencies = (
-				39862F5399D6C74F9D54CBB8D08A52C0 /* PBXTargetDependency */,
+				C5B09441A365A857F54D7CA5DC02188E /* PBXTargetDependency */,
 			);
 			name = "razorpay-turbo";
 		};
@@ -43,7 +43,7 @@
 				81C725723A55959B9E110BE31BF04A74 /* [CP] Copy XCFrameworks */,
 			);
 			dependencies = (
-				3A02EB90CD47AA520BD057E0E1E3A684 /* PBXTargetDependency */,
+				80C76F0553B482DD6A531FC1FFCC8527 /* PBXTargetDependency */,
 			);
 			name = "razorpay-pod";
 		};
@@ -59,7 +59,6 @@
 		073862F4E710C2F025A855B3B774BF48 /* UIView+Toast.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B19BB4B71F1BA12D62C5E517C6137FA /* UIView+Toast.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		07D30AFD3C97796E4994A74B080FDDBB /* LocationAccuracyHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 20ECB246A42671630ECFEC5080E73CA8 /* LocationAccuracyHandler.m */; };
 		0B95EFA3B5ADEB6808F4D05CDA767FB8 /* GeolocatorPlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = C8BC520144871C7FCFE81A2CFD69CC0E /* GeolocatorPlugin.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0E81030C05F64F7E339B9D26B953DE33 /* SwiftRazorpayFlutterPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = C723B19E3AE15DFC23824585DCC0F124 /* SwiftRazorpayFlutterPlugin.swift */; };
 		123ACE1FF6852EBFAD3A2537EE39CEB0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 384DDA2CB25005BD6479B5987C619DD4 /* Foundation.framework */; };
 		142FB878E5A9DF71A59707ACAACA2E41 /* LocationPermissionStrategy.h in Headers */ = {isa = PBXBuildFile; fileRef = AD6E4E6B3F171999CD35B5C753F64909 /* LocationPermissionStrategy.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1490D473AB3A5A659ED2B08E8DC28B2F /* PermissionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 06A57A67DB4EF3719369287D78AAF33A /* PermissionManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -74,8 +73,11 @@
 		264EEBA75A636D45FD8D4267A48BD6F9 /* package_info_plus-package_info_plus_privacy in Resources */ = {isa = PBXBuildFile; fileRef = 64FB8D36F3D5FD1F4E08A8CB92BCD154 /* package_info_plus-package_info_plus_privacy */; };
 		28B6342727D95F564667E15C9931E217 /* fluttertoast-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 658C22846DB080A341CAEA55DD6BAEB6 /* fluttertoast-dummy.m */; };
 		299375271BFAA4E66BF6DF83A6513CFA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 384DDA2CB25005BD6479B5987C619DD4 /* Foundation.framework */; };
+		2AB3E6751E1DB1151BF96AAF7E263C56 /* RazorpayFlutterPlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = B5908FD93F7F2D9F900A7AEADFD0C3E5 /* RazorpayFlutterPlugin.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2AE5C5B4AC08AE5EDC17F4205269293A /* RazorpayDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8433B4AB3727B62BA8EEBECB9EE018B /* RazorpayDelegate.swift */; };
 		2C88A0305359AE1ED1DB6E7DCD8596BC /* PermissionHandlerPlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = 211417980C025A602D03D69C42B8FA6B /* PermissionHandlerPlugin.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2FF16FA6F21321FA170D87B26F94B837 /* PhotoPermissionStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8763ABC7AD66BF7CB3CB5F2AD190019F /* PhotoPermissionStrategy.m */; };
+		3099C28478DFC3209C1DC1626E0B7723 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 15775131EC5EA5205B5E00BC1DABF987 /* PrivacyInfo.xcprivacy */; };
 		313F7AB5494690A694434335DE279CC5 /* AuthorizationStatusMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = A2EF9CA06D79AEEF94BF1AB2E5A9DF61 /* AuthorizationStatusMapper.m */; };
 		33DB4A734E6415CC411DDF90EDCC2AB4 /* SensorPermissionStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5592630F0E164B6D2E455DD3681CCCA9 /* SensorPermissionStrategy.m */; };
 		3434FC38F14A3EDD913EDDF0899C7619 /* UnknownPermissionStrategy.h in Headers */ = {isa = PBXBuildFile; fileRef = 096FAC51E965CE576B3BF06732329026 /* UnknownPermissionStrategy.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -84,14 +86,13 @@
 		38FBD7EB4900152EA81E4136BA956583 /* PermissionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B7BCAAD0ED8CF65D2FC640DBDE026F9 /* PermissionHandler.m */; };
 		3926F4DDA75D634BD791B936E690AC0D /* AuthorizationStatusMapper.h in Headers */ = {isa = PBXBuildFile; fileRef = E60F470BE0F1954EF0A44581569B03F7 /* AuthorizationStatusMapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3C000BA9431C66B50512ECAC897E9D42 /* BluetoothPermissionStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = 437E6DE76C4548BAD75BFFBAD9896AD6 /* BluetoothPermissionStrategy.m */; };
-		404A9310D4D0ED9FEBE2179F5AE32C1E /* razorpay_turbo_standard-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B09D66D133A83CEAD43A1A7D015B5BD9 /* razorpay_turbo_standard-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		404A9310D4D0ED9FEBE2179F5AE32C1E /* razorpay_turbo_standard-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DF3CF490F992E290694255A97F7F3B24 /* razorpay_turbo_standard-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		42CC28B249BE93F0B7C6ABC23DE11ECB /* PositionStreamHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = C19234639A981C2213F8D417E7782979 /* PositionStreamHandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		45C0C96C1AEAB8513C0863360366157D /* RazorpayDelegate+Turbo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22935C8A7372E7EBC00C61EE68CFBE57 /* RazorpayDelegate+Turbo.swift */; };
 		4759325FD3FCBA73195DAA79C993F211 /* Pods-Runner-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F3FD89A3C35F3ED2DDAE100615C517D1 /* Pods-Runner-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		48768A50D39D3FD237E22B5D68686475 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = A11A6243522C4E31428B7294456FAB8E /* PrivacyInfo.xcprivacy */; };
 		49F691DCBC77FB3E131645F4973343D6 /* PermissionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DAAD62F25D4EF53AFBCB88799695ECF0 /* PermissionManager.m */; };
 		4A43F54128D0FDF0B93C48446CE89B1D /* permission_handler_apple-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 027DF0705A20716C90A30C7473EEBD80 /* permission_handler_apple-dummy.m */; };
 		50207F9204026D9FB3147901FE8D00A6 /* PositionStreamHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 375898344897A49BCF5DEF88CFE8E8F0 /* PositionStreamHandler.m */; };
-		504029FF777AF0FA983DA51C423A9257 /* RazorpayFlutterPlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DDFCFCF87C63C5FBE83C0D88AB8B41F /* RazorpayFlutterPlugin.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		50E721001F7699BAA90809AC8116F447 /* LocationAccuracyHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AD2FDE646639E8BCB3D94F36A3F802C /* LocationAccuracyHandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		511DD2E6BE46DDFD7FE7BF0308BAEBD4 /* ErrorCodes.m in Sources */ = {isa = PBXBuildFile; fileRef = B93C3931AC09605858E84DF95C0BC63C /* ErrorCodes.m */; };
 		51B4ABC6DD2D6B52ECFBE73EC4012712 /* StoragePermissionStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = D3F9F2AA42936ED27151E4A7ADF77354 /* StoragePermissionStrategy.m */; };
@@ -102,25 +103,24 @@
 		5F7EA331EE30C19EDEE7E7462E3C0E33 /* AppTrackingTransparencyPermissionStrategy.h in Headers */ = {isa = PBXBuildFile; fileRef = D4EAFDEC60E63ECFB07E37509777AB4B /* AppTrackingTransparencyPermissionStrategy.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6055BE2B7BDAFAF1DD342FA88FED5672 /* CriticalAlertsPermissionStrategy.h in Headers */ = {isa = PBXBuildFile; fileRef = B22FE8EBEED63C21DABA369535BDF4B1 /* CriticalAlertsPermissionStrategy.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6B5F62CADD4AD5444B45649ADA0758DC /* SensorPermissionStrategy.h in Headers */ = {isa = PBXBuildFile; fileRef = FDAE244FD4DA2F40F0A9D634B3A5770E /* SensorPermissionStrategy.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		71780423493CFA93980CD11EF4B306EC /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 15775131EC5EA5205B5E00BC1DABF987 /* PrivacyInfo.xcprivacy */; };
 		73EB04A21857044F6F7B03CD423EC58E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 384DDA2CB25005BD6479B5987C619DD4 /* Foundation.framework */; };
 		7732CB6DFD019EC47807F4A85E47A3FB /* NotificationPermissionStrategy.h in Headers */ = {isa = PBXBuildFile; fileRef = CBE885A64807DA6DFFE423AE3A18A080 /* NotificationPermissionStrategy.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		784DC293C27683433EBC409F79255EAB /* RazorpayDelegate+Turbo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C324B8578308B1CFCAE86C28576935B2 /* RazorpayDelegate+Turbo.swift */; };
 		797946F054CE099A90F7A2D60B63CF4B /* GeolocationHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BE62E46AD29417FCC8905DD6A82B553 /* GeolocationHandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7A4822A6C7A7AD2966A9B054F388BAE3 /* PermissionUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 9FCFC515B3B5163A2AFCE8377EF561E7 /* PermissionUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		82F568D03CC43BADDCB1B4C149B4093D /* geolocator_apple-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1144F6D69C14ACD8FB115D53CB4BD196 /* geolocator_apple-dummy.m */; };
 		846CB499A87C055846117FE46A1B4691 /* LocationAccuracyMapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 37170E4B65007F22DD7AEFC0A5B41D2B /* LocationAccuracyMapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		84B8CC9AD0F0F362A47DC6C7DD04ADF4 /* LocationMapper.h in Headers */ = {isa = PBXBuildFile; fileRef = AAD5C3526B94D99B40CE4BEE769E1C8C /* LocationMapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8ADCDD4C4B85D461A73DD45C2AF0DF6E /* razorpay_turbo_standard-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 10C4477C21599BD41D4A39C617ED41ED /* razorpay_turbo_standard-dummy.m */; };
+		8ADCDD4C4B85D461A73DD45C2AF0DF6E /* razorpay_turbo_standard-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 016223E6F7F422E8FB5AA00F38DA3D3F /* razorpay_turbo_standard-dummy.m */; };
 		90FD56DA7D01BBFD2E49E1DA7C995EF8 /* BackgroundRefreshStrategy.h in Headers */ = {isa = PBXBuildFile; fileRef = E8042CD1B9E382C8F5E4B4AEC8AF7B9A /* BackgroundRefreshStrategy.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9889C61D15010E9AED3B4790F0124A1E /* RazorpayFlutterPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 265FC4B3D04EBAABB8177756E6322E38 /* RazorpayFlutterPlugin.m */; };
 		9A3A232F5AED2A6789764748D0C5E96E /* PermissionStrategy.h in Headers */ = {isa = PBXBuildFile; fileRef = 5E4544999AD4788A0951497D9A703FB0 /* PermissionStrategy.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9C8019320927D8057C948D4D513244CD /* StoragePermissionStrategy.h in Headers */ = {isa = PBXBuildFile; fileRef = F0FF598021EAD7F64DB6CF80F2F5206D /* StoragePermissionStrategy.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9C90CA1F76A77A72353992C24757C886 /* fluttertoast-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F49EF06CA39944DEF38B9DEFBBFA0A23 /* fluttertoast-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9CA3555B0A664A4AFA961452287D2426 /* PhonePermissionStrategy.h in Headers */ = {isa = PBXBuildFile; fileRef = 090FAC3863FF792D35CF866C6AA9B77B /* PhonePermissionStrategy.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A08549B56DE9596A41DCC351429E5BF0 /* PermissionHandlerEnums.h in Headers */ = {isa = PBXBuildFile; fileRef = BDD9446CE8E8FBE36C36F99909F466CA /* PermissionHandlerEnums.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A17E89455D8763474B8ACFA389FBB5A2 /* package_info_plus-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C082D7BB779A8B23EC33D3C763092BC8 /* package_info_plus-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A1FF34CBE65190CAEB4A4EE93BF39747 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 304DAA72221884A962516307DD8D3632 /* PrivacyInfo.xcprivacy */; };
 		A4F0114D4061CA8A90DB6059278A6605 /* fluttertoast-fluttertoast_privacy in Resources */ = {isa = PBXBuildFile; fileRef = E3D661B08B615B28E8D0AD8F5E80E812 /* fluttertoast-fluttertoast_privacy */; };
+		A50E3BFFB184F4749DA0EE7E8C3C258E /* SwiftRazorpayFlutterPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C80BA3B93CBD31915B0D6628C6E3D4C /* SwiftRazorpayFlutterPlugin.swift */; };
 		A80790D948FAA69FABB2ADBCF3D494E6 /* EventPermissionStrategy.h in Headers */ = {isa = PBXBuildFile; fileRef = A3ED96D9A5C749940706C5DAE3992AAF /* EventPermissionStrategy.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AB6B59C5DB5C485F5E1C0B3013806CF7 /* permission_handler_apple-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4939EBEA018F62B1549E6CCD01C4B1A0 /* permission_handler_apple-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE900A971E1BB234509AAE3AECF04B1C /* BackgroundRefreshStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D622DD254FEAB3668D065B9EF45534F /* BackgroundRefreshStrategy.m */; };
@@ -129,18 +129,18 @@
 		B4F994F7C752B5E0661D7083489734D2 /* AudioVideoPermissionStrategy.h in Headers */ = {isa = PBXBuildFile; fileRef = 45956CA44B0A752C76227D5A365D4739 /* AudioVideoPermissionStrategy.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B80D0201B5509B6FB0907391820D9B1A /* ServiceStatus.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A3F2D747EC54AF60E57BF7B1F8A6774 /* ServiceStatus.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BA53CB72C8652F22A6EE383F3EC5E7B6 /* AssistantPermissionStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F51B35C9A71708A9DC440263AED477E /* AssistantPermissionStrategy.m */; };
+		BAC3A6234436A8EE3263F7120E419459 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 304DAA72221884A962516307DD8D3632 /* PrivacyInfo.xcprivacy */; };
 		BB2942A87296BEE5C0A55CA5BA00E86C /* LocationAccuracyMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E7377B924AA534719B74C4D6009728 /* LocationAccuracyMapper.m */; };
 		BC2C168999E585DBDF5CDD8E9E5217DD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 384DDA2CB25005BD6479B5987C619DD4 /* Foundation.framework */; };
 		C1A2ACC52809F31AE2061992241253B0 /* LocationMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = DCDF0F164666883627F4F32C00DDDE8D /* LocationMapper.m */; };
 		C31E68D1D1043D5B34CBD339DCD6EDD3 /* BluetoothPermissionStrategy.h in Headers */ = {isa = PBXBuildFile; fileRef = EFBA64B6ED38964F0058E0BF46F92F67 /* BluetoothPermissionStrategy.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C8B55822065CF47195FC5DD4701F8EDE /* ContactPermissionStrategy.h in Headers */ = {isa = PBXBuildFile; fileRef = 523298A8A8D8A98AC8BCB21854911750 /* ContactPermissionStrategy.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CC3E0E3D3AE51B0188A5A563E7539189 /* RazorpayDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A9D02B3DD76D4590A6CC5868B286FB /* RazorpayDelegate.swift */; };
 		CC46B9D0E80EC28F678D5415B0A5D19F /* GeolocationHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = F90F787F41FEC66DE20EB9DCFF8A1A20 /* GeolocationHandler.m */; };
-		CD4B4E0C44CA0898B3766082D2F60CF4 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 7EEA3288F811AB66A116D7B1F78A615A /* PrivacyInfo.xcprivacy */; };
 		CE051B150EDF3BC7B4C9900072DAE468 /* GeolocationHandler_Test.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BE579B5045096D35C54FD6FA4D399B4 /* GeolocationHandler_Test.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D10AD54AB2E6ABEA51CDB3AF4FC82056 /* PhonePermissionStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC75C41F9B97A1718BD36E4D205B95B /* PhonePermissionStrategy.m */; };
 		D1A2EB2948F8547044ADC4BC7BD6DF56 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 384DDA2CB25005BD6479B5987C619DD4 /* Foundation.framework */; };
 		D2FED99543ED7BC6AF5A642A12BAF9F8 /* LocationServiceStreamHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF3372E84C5029C7176A22B034186E4 /* LocationServiceStreamHandler.m */; };
+		D311370FB27D40BEF6A6FB2903477E9C /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 7EEA3288F811AB66A116D7B1F78A615A /* PrivacyInfo.xcprivacy */; };
 		D6AD3B02031BAE8EC05F1057A93CD23C /* PermissionUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 94A9F8C57C318FD84B13613F94CADC4A /* PermissionUtils.m */; };
 		D6F4B0BD22349959F0044F69AB555EC7 /* ActivityTypeMapper.h in Headers */ = {isa = PBXBuildFile; fileRef = B7E36A6CF0E39EF8F7344A4A76D143B6 /* ActivityTypeMapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DBCA5AFD9C8EFDE024289904783F7887 /* MediaLibraryPermissionStrategy.h in Headers */ = {isa = PBXBuildFile; fileRef = 44190F755B6B72F95994AE2BB991BA6F /* MediaLibraryPermissionStrategy.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -150,173 +150,174 @@
 		E77C49EF1688F5958BB0B1A9B46E0581 /* LocationPermissionStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C29C8106352102671B57BC4AF7A392 /* LocationPermissionStrategy.m */; };
 		EA64C618C03AA469C444D446F3E7BAFE /* Codec.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1E3352BBB7E07EFF742142DA07C604 /* Codec.m */; };
 		EABE5D90BDFE715A1648E00CC760328B /* geolocator-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BE65D1DD92E66AA563633A1955AE580D /* geolocator-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EB744EF527BF4F34663E7B14F93BCA2E /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = A11A6243522C4E31428B7294456FAB8E /* PrivacyInfo.xcprivacy */; };
 		EC377E58B48341BCA05D35B6DEA4AD0C /* UnknownPermissionStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = 38D4EFD23DDD1F8E29C7F927E02BD6DA /* UnknownPermissionStrategy.m */; };
 		F0B9699D7D16F4E6B27460FEC7645FAF /* FPPPackageInfoPlusPlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = 1525706CEF7583C8E8368277EF406EFF /* FPPPackageInfoPlusPlugin.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F56BA5355285B488C1FD143D7C9C37B3 /* LocationDistanceMapper.h in Headers */ = {isa = PBXBuildFile; fileRef = D15A253AD876163951F249881EFADF29 /* LocationDistanceMapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F8D2EF9DCBF34CC64797A9BCDE5EF7D3 /* RazorpayFlutterPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = D50F5CE52B9989F83D89A41EF1DC9C3C /* RazorpayFlutterPlugin.m */; };
 		FB1CFF1BA8BBE3693014DCEA0E58B88A /* UIView+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = C302C1E25ECB3450DDCA3C09CB7B1B64 /* UIView+Toast.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
 		FD8C97BAE7263EE871A7F169CCE4DF4A /* Codec.h in Headers */ = {isa = PBXBuildFile; fileRef = 655F6EBE06F55C69BF53899852A42FD5 /* Codec.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FF11403534C7B365818D1C36D7A873F5 /* FPPPackageInfoPlusPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = E913CAF59000439F75C64BA70F4E8F0F /* FPPPackageInfoPlusPlugin.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		0BCC8577404DF76F0EAEAD1BB5F4A113 /* PBXContainerItemProxy */ = {
+		0067381A40CECA519BC64882EF97C0E4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 30AA407894472403FBBF5E31DF515631;
-			remoteInfo = "razorpay-turbo";
+			remoteGlobalIDString = 84CA3424E172CD651235AF0783D01D39;
+			remoteInfo = "razorpay-pod";
 		};
-		0C9A52096C15AC21EFD3F9EB8A378182 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 3AEC564FBEF6D576418AC71B87922016;
-			remoteInfo = "geolocator_apple-geolocator_apple_privacy";
-		};
-		0F8345B84DD78D645FB94C7FBA4DBD45 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 54A00AF9F830F355D8FD8F6A4387F6A2;
-			remoteInfo = package_info_plus;
-		};
-		116CA407660EA8618C058088071A0F67 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 30AA407894472403FBBF5E31DF515631;
-			remoteInfo = "razorpay-turbo";
-		};
-		1D7EE169F3D6A951F1DA02816E3A241C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 1EFDDC32A34D56D411E640A81DCD9E73;
-			remoteInfo = Flutter;
-		};
-		22B4124396B4881C7F2BA7FB65D0B4E2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 1EFDDC32A34D56D411E640A81DCD9E73;
-			remoteInfo = Flutter;
-		};
-		33024A14BB553F644AA66EAC0810DD8C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 1EFDDC32A34D56D411E640A81DCD9E73;
-			remoteInfo = Flutter;
-		};
-		3A200896E813D15F4EC3240DBE04EA8E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = ADFC1E4E1C15A355998F057F24CDBCDB;
-			remoteInfo = razorpay_turbo_standard;
-		};
-		3BD032250955B80D64536EE8EAA6D39E /* PBXContainerItemProxy */ = {
+		093088D0479A519EA8E59DA6BD61EB75 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 517E8BED8B0E6D6FD078BD19B0A13893;
 			remoteInfo = "permission_handler_apple-permission_handler_apple_privacy";
 		};
-		50729DB9FB667956A5376167AC4A979C /* PBXContainerItemProxy */ = {
+		0D146356CE94BD83136F4C5A8D83D26B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = FBA58286642A703EF0905798BB837EBB;
-			remoteInfo = "fluttertoast-fluttertoast_privacy";
+			remoteGlobalIDString = 3AEC564FBEF6D576418AC71B87922016;
+			remoteInfo = "geolocator_apple-geolocator_apple_privacy";
 		};
-		5FF102B399835BD8CEBD4775E4F3A514 /* PBXContainerItemProxy */ = {
+		26D5D8943E025A2708DB514A9D05B628 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = A45E503409C9530E1F5D12C293F4BD67;
 			remoteInfo = permission_handler_apple;
 		};
-		6D22E6C67FBB029DACB136D673123B94 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 84CA3424E172CD651235AF0783D01D39;
-			remoteInfo = "razorpay-pod";
-		};
-		6FEF313526FF28FC8669380F8EDF6925 /* PBXContainerItemProxy */ = {
+		272106E6469640BEBFD8543A525C660B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 1EFDDC32A34D56D411E640A81DCD9E73;
 			remoteInfo = Flutter;
 		};
-		8BB96F4F38FA3FBBCD03E298FC9639E1 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = D2129B9E0DCE64EA38C25BA6C89558D7;
-			remoteInfo = geolocator_apple;
-		};
-		91F12D58D6341B7CE8CD3E689F1ACE19 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 84CA3424E172CD651235AF0783D01D39;
-			remoteInfo = "razorpay-pod";
-		};
-		94085109C90BB632ACB33D49C1E8D61F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 1EFDDC32A34D56D411E640A81DCD9E73;
-			remoteInfo = Flutter;
-		};
-		9552ADA0FEA96D7AE3F898E133C86A11 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 84CA3424E172CD651235AF0783D01D39;
-			remoteInfo = "razorpay-pod";
-		};
-		C26B06C7FEA596461BAAFA503B9BA246 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 0A1CC38B57BF7987D9DDA7A1CE4F117E;
-			remoteInfo = "razorpay-core-pod";
-		};
-		D07960CC745B768F95D588CB182D07C0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 1EFDDC32A34D56D411E640A81DCD9E73;
-			remoteInfo = Flutter;
-		};
-		D36491186F9E9E2ADAAE08056F0D5330 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 07C64B0E06ED7C1903D446F9BBDDF5C9;
-			remoteInfo = "package_info_plus-package_info_plus_privacy";
-		};
-		D772E9DCBFEA516169CB2C90C0054C11 /* PBXContainerItemProxy */ = {
+		48518954B51DC4ACC130B0DA1D8015EF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = FA3EDC8EBD9CDE19E74123E29F5B7E04;
 			remoteInfo = fluttertoast;
 		};
-		E2D32B55C63566CE129EC5DC31F0C2EB /* PBXContainerItemProxy */ = {
+		527D49D19CB0E7376DF081466E3D9CDD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1EFDDC32A34D56D411E640A81DCD9E73;
+			remoteInfo = Flutter;
+		};
+		68FD8BDFFBFF80C7C7D24267F5CCBF3C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 0A1CC38B57BF7987D9DDA7A1CE4F117E;
 			remoteInfo = "razorpay-core-pod";
 		};
+		7AA264552D04E6C967A6ECE2640BCF39 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 07C64B0E06ED7C1903D446F9BBDDF5C9;
+			remoteInfo = "package_info_plus-package_info_plus_privacy";
+		};
+		7FE729C42E0BECF9C4B373600F03E8ED /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 84CA3424E172CD651235AF0783D01D39;
+			remoteInfo = "razorpay-pod";
+		};
+		889B89A60E6177CFC4E6D4E016DF8B85 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 84CA3424E172CD651235AF0783D01D39;
+			remoteInfo = "razorpay-pod";
+		};
+		99613FC653F4B747092ADB6CA21DE5AC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D2129B9E0DCE64EA38C25BA6C89558D7;
+			remoteInfo = geolocator_apple;
+		};
+		9C08E345BBB65162805D36BDD05AEF35 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0A1CC38B57BF7987D9DDA7A1CE4F117E;
+			remoteInfo = "razorpay-core-pod";
+		};
+		B74A1F994CC8D01575EDDEA4A32ACD44 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1EFDDC32A34D56D411E640A81DCD9E73;
+			remoteInfo = Flutter;
+		};
+		B97A44AB690C7A6B8E64094F1322CA8C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 30AA407894472403FBBF5E31DF515631;
+			remoteInfo = "razorpay-turbo";
+		};
+		CA84D78BD1331C155706BB06AE827F3F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1EFDDC32A34D56D411E640A81DCD9E73;
+			remoteInfo = Flutter;
+		};
+		D9C088BA73507AAF144FF115C29B3D73 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 30AA407894472403FBBF5E31DF515631;
+			remoteInfo = "razorpay-turbo";
+		};
+		E6818E44D5DFAB85EBD49E0EEFCA504C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1EFDDC32A34D56D411E640A81DCD9E73;
+			remoteInfo = Flutter;
+		};
+		ED5A62251CDDD749D82194D0F404512C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1EFDDC32A34D56D411E640A81DCD9E73;
+			remoteInfo = Flutter;
+		};
+		F00DE99A338DA6D7AA8AE32BAAA34D9F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ADFC1E4E1C15A355998F057F24CDBCDB;
+			remoteInfo = razorpay_turbo_standard;
+		};
+		FE5229999DF6C484E93D2D29F6C158BB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FBA58286642A703EF0905798BB837EBB;
+			remoteInfo = "fluttertoast-fluttertoast_privacy";
+		};
+		FEC94B9E30D6A96818FD2F99D089476A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 54A00AF9F830F355D8FD8F6A4387F6A2;
+			remoteInfo = package_info_plus;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		016223E6F7F422E8FB5AA00F38DA3D3F /* razorpay_turbo_standard-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "razorpay_turbo_standard-dummy.m"; sourceTree = "<group>"; };
 		027DF0705A20716C90A30C7473EEBD80 /* permission_handler_apple-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "permission_handler_apple-dummy.m"; sourceTree = "<group>"; };
 		0513E0B4B846BD9CADDDB400EBAAFD81 /* razorpay-pod.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "razorpay-pod.release.xcconfig"; sourceTree = "<group>"; };
 		06A57A67DB4EF3719369287D78AAF33A /* PermissionManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PermissionManager.h; path = "../../../../../../../../../../.pub-cache/hosted/pub.dev/permission_handler_apple-9.4.7/ios/Classes/PermissionManager.h"; sourceTree = "<group>"; };
@@ -327,9 +328,7 @@
 		0AD2FDE646639E8BCB3D94F36A3F802C /* LocationAccuracyHandler.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LocationAccuracyHandler.h; path = "../../../../../../../../../../../../../../../.pub-cache/hosted/pub.dev/geolocator_apple-2.3.13/darwin/geolocator_apple/Sources/geolocator_apple/include/geolocator_apple/Handlers/LocationAccuracyHandler.h"; sourceTree = "<group>"; };
 		0AF01512C3A5E6AF61504A1BD427F3BF /* razorpay-core-pod.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "razorpay-core-pod.release.xcconfig"; sourceTree = "<group>"; };
 		0B01526DEDD9E643D214A224D0C9EE0F /* ResourceBundle-package_info_plus_privacy-package_info_plus-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-package_info_plus_privacy-package_info_plus-Info.plist"; sourceTree = "<group>"; };
-		0DDFCFCF87C63C5FBE83C0D88AB8B41F /* RazorpayFlutterPlugin.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RazorpayFlutterPlugin.h; path = ../../../../../../../ios/Classes/RazorpayFlutterPlugin.h; sourceTree = "<group>"; };
 		0E5C6178BC2C0FFA8F3E496EBF293DC3 /* TurboUpiPluginUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TurboUpiPluginUI.framework; path = Pod/ui/TurboUpiPluginUI.framework; sourceTree = "<group>"; };
-		10C4477C21599BD41D4A39C617ED41ED /* razorpay_turbo_standard-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "razorpay_turbo_standard-dummy.m"; sourceTree = "<group>"; };
 		1144F6D69C14ACD8FB115D53CB4BD196 /* geolocator_apple-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "geolocator_apple-dummy.m"; sourceTree = "<group>"; };
 		1525706CEF7583C8E8368277EF406EFF /* FPPPackageInfoPlusPlugin.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FPPPackageInfoPlusPlugin.h; path = "../../../../../../../../../../../../../../.pub-cache/hosted/pub.dev/package_info_plus-8.3.0/ios/package_info_plus/Sources/package_info_plus/include/package_info_plus/FPPPackageInfoPlusPlugin.h"; sourceTree = "<group>"; };
 		15775131EC5EA5205B5E00BC1DABF987 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; name = PrivacyInfo.xcprivacy; path = "../../../../../../../../../../.pub-cache/hosted/pub.dev/fluttertoast-8.2.12/ios/Resources/PrivacyInfo.xcprivacy"; sourceTree = "<group>"; };
@@ -340,17 +339,16 @@
 		1AB61166F1DD4E1ABF98830EC5D02571 /* package_info_plus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = package_info_plus.release.xcconfig; sourceTree = "<group>"; };
 		1B4F8A7C4624FF1111FC81B567F3E6AE /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = "../../../../../../../../../.pub-cache/hosted/pub.dev/geolocator_apple-2.3.13/LICENSE"; sourceTree = "<group>"; };
 		1B7BCAAD0ED8CF65D2FC640DBDE026F9 /* PermissionHandler.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PermissionHandler.m; path = "../../../../../../../../../../../../../.pub-cache/hosted/pub.dev/geolocator_apple-2.3.13/darwin/geolocator_apple/Sources/geolocator_apple/Handlers/PermissionHandler.m"; sourceTree = "<group>"; };
-		1C365393DDC1A8C05413740254D94A71 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../../../../../../LICENSE; sourceTree = "<group>"; };
+		1C80BA3B93CBD31915B0D6628C6E3D4C /* SwiftRazorpayFlutterPlugin.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftRazorpayFlutterPlugin.swift; path = "../../../../../../../../../../.pub-cache/git/razorpay-flutter-6f8f763380df7af02147e639b968fa6f328dfb0f/ios/Classes/SwiftRazorpayFlutterPlugin.swift"; sourceTree = "<group>"; };
 		1E870A6D7E1BB9942305F067082C80AE /* ResourceBundle-geolocator_apple_privacy-geolocator_apple-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-geolocator_apple_privacy-geolocator_apple-Info.plist"; sourceTree = "<group>"; };
 		20ECB246A42671630ECFEC5080E73CA8 /* LocationAccuracyHandler.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LocationAccuracyHandler.m; path = "../../../../../../../../../../../../../.pub-cache/hosted/pub.dev/geolocator_apple-2.3.13/darwin/geolocator_apple/Sources/geolocator_apple/Handlers/LocationAccuracyHandler.m"; sourceTree = "<group>"; };
 		211417980C025A602D03D69C42B8FA6B /* PermissionHandlerPlugin.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PermissionHandlerPlugin.h; path = "../../../../../../../../../../.pub-cache/hosted/pub.dev/permission_handler_apple-9.4.7/ios/Classes/PermissionHandlerPlugin.h"; sourceTree = "<group>"; };
 		21469BBE5222E7D6B6F83B24820F1EC7 /* Pods-Runner-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Runner-Info.plist"; sourceTree = "<group>"; };
-		22935C8A7372E7EBC00C61EE68CFBE57 /* RazorpayDelegate+Turbo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "RazorpayDelegate+Turbo.swift"; path = "../../../../../../../ios/Classes/RazorpayDelegate+Turbo.swift"; sourceTree = "<group>"; };
-		265FC4B3D04EBAABB8177756E6322E38 /* RazorpayFlutterPlugin.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RazorpayFlutterPlugin.m; path = ../../../../../../../ios/Classes/RazorpayFlutterPlugin.m; sourceTree = "<group>"; };
 		2715711985DBE6453F0DF538572DB682 /* AudioVideoPermissionStrategy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AudioVideoPermissionStrategy.m; path = "../../../../../../../../../../../.pub-cache/hosted/pub.dev/permission_handler_apple-9.4.7/ios/Classes/strategies/AudioVideoPermissionStrategy.m"; sourceTree = "<group>"; };
 		2E8393C9CAC488CEB6228216791CF612 /* permission_handler_apple.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = permission_handler_apple.release.xcconfig; sourceTree = "<group>"; };
 		3038D58B1D3F2FDA1398C12BCF14D248 /* Pods-Runner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Runner.debug.xcconfig"; sourceTree = "<group>"; };
 		304DAA72221884A962516307DD8D3632 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; name = PrivacyInfo.xcprivacy; path = "../../../../../../../../../../.pub-cache/hosted/pub.dev/permission_handler_apple-9.4.7/ios/Resources/PrivacyInfo.xcprivacy"; sourceTree = "<group>"; };
+		319DAB3920108F642828CF4E86DD4E94 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = "../../../../../../../../../.pub-cache/git/razorpay-flutter-6f8f763380df7af02147e639b968fa6f328dfb0f/LICENSE"; sourceTree = "<group>"; };
 		32496BCAC1DC674A5B5E117FB747B545 /* fluttertoast.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = fluttertoast.debug.xcconfig; sourceTree = "<group>"; };
 		37170E4B65007F22DD7AEFC0A5B41D2B /* LocationAccuracyMapper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LocationAccuracyMapper.h; path = "../../../../../../../../../../../../../../../.pub-cache/hosted/pub.dev/geolocator_apple-2.3.13/darwin/geolocator_apple/Sources/geolocator_apple/include/geolocator_apple/Utils/LocationAccuracyMapper.h"; sourceTree = "<group>"; };
 		375898344897A49BCF5DEF88CFE8E8F0 /* PositionStreamHandler.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PositionStreamHandler.m; path = "../../../../../../../../../../../../../.pub-cache/hosted/pub.dev/geolocator_apple-2.3.13/darwin/geolocator_apple/Sources/geolocator_apple/Handlers/PositionStreamHandler.m"; sourceTree = "<group>"; };
@@ -386,7 +384,6 @@
 		5F69AF2A9859A21258956892DD78BEE7 /* razorpay-core-pod-xcframeworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "razorpay-core-pod-xcframeworks.sh"; sourceTree = "<group>"; };
 		61A2ECF79BF5D4EC6B6F0C32ECFA6A07 /* fluttertoast-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "fluttertoast-prefix.pch"; sourceTree = "<group>"; };
 		62E1181A0CFD348A8D591F2613A4494B /* Pods-Runner-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Runner-frameworks.sh"; sourceTree = "<group>"; };
-		640C1359DFBD273648B49308086C9054 /* razorpay_turbo_standard.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = razorpay_turbo_standard.modulemap; sourceTree = "<group>"; };
 		64FB8D36F3D5FD1F4E08A8CB92BCD154 /* package_info_plus-package_info_plus_privacy */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "package_info_plus-package_info_plus_privacy"; path = package_info_plus_privacy.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		655F6EBE06F55C69BF53899852A42FD5 /* Codec.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Codec.h; path = "../../../../../../../../../../../.pub-cache/hosted/pub.dev/permission_handler_apple-9.4.7/ios/Classes/util/Codec.h"; sourceTree = "<group>"; };
 		658C22846DB080A341CAEA55DD6BAEB6 /* fluttertoast-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "fluttertoast-dummy.m"; sourceTree = "<group>"; };
@@ -394,7 +391,7 @@
 		67D010070CE271BC6A5E7A5BEFDF7156 /* fluttertoast.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = fluttertoast.release.xcconfig; sourceTree = "<group>"; };
 		6D0298B6E4E2C7F706F3DDC03DF09026 /* ResourceBundle-fluttertoast_privacy-fluttertoast-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-fluttertoast_privacy-fluttertoast-Info.plist"; sourceTree = "<group>"; };
 		6D622DD254FEAB3668D065B9EF45534F /* BackgroundRefreshStrategy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BackgroundRefreshStrategy.m; path = "../../../../../../../../../../../.pub-cache/hosted/pub.dev/permission_handler_apple-9.4.7/ios/Classes/strategies/BackgroundRefreshStrategy.m"; sourceTree = "<group>"; };
-		6DEF055BB79C69CD53F4D5E1DC3149D9 /* razorpay_turbo_standard.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = razorpay_turbo_standard.podspec; path = ../../../../../../ios/razorpay_turbo_standard.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		6DA221BA00FE1B54EC29A0D58C2BE275 /* razorpay_turbo_standard.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = razorpay_turbo_standard.modulemap; sourceTree = "<group>"; };
 		6F41003691DEED627F444F76179BA511 /* razorpay-core-pod.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "razorpay-core-pod.debug.xcconfig"; sourceTree = "<group>"; };
 		72DB1DD47618F6AFBD440B2A12AD9E0D /* geolocator_apple.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = geolocator_apple.podspec; path = "../../../../../../../../../.pub-cache/hosted/pub.dev/geolocator_apple-2.3.13/darwin/geolocator_apple.podspec"; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		73D787ECDC24C05443E805EA8474FEAD /* ErrorCodes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ErrorCodes.h; path = "../../../../../../../../../../../../../../../.pub-cache/hosted/pub.dev/geolocator_apple-2.3.13/darwin/geolocator_apple/Sources/geolocator_apple/include/geolocator_apple/Constants/ErrorCodes.h"; sourceTree = "<group>"; };
@@ -403,9 +400,9 @@
 		7C0E5740299FE62108A13E3CF38073E0 /* ActivityTypeMapper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ActivityTypeMapper.m; path = "../../../../../../../../../../../../../.pub-cache/hosted/pub.dev/geolocator_apple-2.3.13/darwin/geolocator_apple/Sources/geolocator_apple/Utils/ActivityTypeMapper.m"; sourceTree = "<group>"; };
 		7EEA3288F811AB66A116D7B1F78A615A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; name = PrivacyInfo.xcprivacy; path = "../../../../../../../../../../../../.pub-cache/hosted/pub.dev/package_info_plus-8.3.0/ios/package_info_plus/Sources/package_info_plus/PrivacyInfo.xcprivacy"; sourceTree = "<group>"; };
 		80BF9B6370D3FDB139ABC19C7736EC86 /* Pods-Runner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Runner.release.xcconfig"; sourceTree = "<group>"; };
+		8171CDDC98662B1DCC1D9820E6729756 /* razorpay_turbo_standard.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = razorpay_turbo_standard.podspec; path = "../../../../../../../../../.pub-cache/git/razorpay-flutter-6f8f763380df7af02147e639b968fa6f328dfb0f/ios/razorpay_turbo_standard.podspec"; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		8763ABC7AD66BF7CB3CB5F2AD190019F /* PhotoPermissionStrategy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PhotoPermissionStrategy.m; path = "../../../../../../../../../../../.pub-cache/hosted/pub.dev/permission_handler_apple-9.4.7/ios/Classes/strategies/PhotoPermissionStrategy.m"; sourceTree = "<group>"; };
 		87BE1822F724E9915F674F67D2F1E9B0 /* fluttertoast-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "fluttertoast-Info.plist"; sourceTree = "<group>"; };
-		88149F647CDCF8AF744C9694BF4CF9F6 /* razorpay_turbo_standard-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "razorpay_turbo_standard-Info.plist"; sourceTree = "<group>"; };
 		88E3829AB04B3D69D7E402D12E153131 /* two_party.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = two_party.framework; path = Pod/core/two_party.framework; sourceTree = "<group>"; };
 		89FC87CEAAB1EEE01A1B8EA0A1749CDD /* razorpay-pod.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "razorpay-pod.debug.xcconfig"; sourceTree = "<group>"; };
 		8C32328A36B90477DD20811156D2F5B8 /* FluttertoastPlugin.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FluttertoastPlugin.h; path = "../../../../../../../../../../.pub-cache/hosted/pub.dev/fluttertoast-8.2.12/ios/Classes/FluttertoastPlugin.h"; sourceTree = "<group>"; };
@@ -415,6 +412,7 @@
 		943314CD98137DB43EC0CDE05AEC6A42 /* razorpay-turbo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "razorpay-turbo.debug.xcconfig"; sourceTree = "<group>"; };
 		94A9F8C57C318FD84B13613F94CADC4A /* PermissionUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PermissionUtils.m; path = "../../../../../../../../../../../../../.pub-cache/hosted/pub.dev/geolocator_apple-2.3.13/darwin/geolocator_apple/Sources/geolocator_apple/Utils/PermissionUtils.m"; sourceTree = "<group>"; };
 		965DC3F91D6B38CBEA0E4F15724E25BD /* razorpay-turbo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "razorpay-turbo.release.xcconfig"; sourceTree = "<group>"; };
+		97906EF1897FA2582C7AACBA477926DF /* razorpay_turbo_standard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = razorpay_turbo_standard.release.xcconfig; sourceTree = "<group>"; };
 		98058B9721549A560D2B75CC8A2053E1 /* permission_handler_apple.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = permission_handler_apple.debug.xcconfig; sourceTree = "<group>"; };
 		985E36E99ECC21BA9C7164054C2B2BE5 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = "../../../../../../../../../.pub-cache/hosted/pub.dev/permission_handler_apple-9.4.7/LICENSE"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -432,14 +430,15 @@
 		AAD5C3526B94D99B40CE4BEE769E1C8C /* LocationMapper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LocationMapper.h; path = "../../../../../../../../../../../../../../../.pub-cache/hosted/pub.dev/geolocator_apple-2.3.13/darwin/geolocator_apple/Sources/geolocator_apple/include/geolocator_apple/Utils/LocationMapper.h"; sourceTree = "<group>"; };
 		AC07E0A06E92595FA267D23AE55EECFE /* Pods-Runner-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Runner-acknowledgements.markdown"; sourceTree = "<group>"; };
 		AD6E4E6B3F171999CD35B5C753F64909 /* LocationPermissionStrategy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LocationPermissionStrategy.h; path = "../../../../../../../../../../../.pub-cache/hosted/pub.dev/permission_handler_apple-9.4.7/ios/Classes/strategies/LocationPermissionStrategy.h"; sourceTree = "<group>"; };
-		B09D66D133A83CEAD43A1A7D015B5BD9 /* razorpay_turbo_standard-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "razorpay_turbo_standard-umbrella.h"; sourceTree = "<group>"; };
 		B0ACC5D4658E98C008E465331EA76264 /* geolocator_apple-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "geolocator_apple-prefix.pch"; sourceTree = "<group>"; };
 		B22FE8EBEED63C21DABA369535BDF4B1 /* CriticalAlertsPermissionStrategy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CriticalAlertsPermissionStrategy.h; path = "../../../../../../../../../../../.pub-cache/hosted/pub.dev/permission_handler_apple-9.4.7/ios/Classes/strategies/CriticalAlertsPermissionStrategy.h"; sourceTree = "<group>"; };
 		B57CF52C35E3E7FB42180C405AAE0EB9 /* RazorpayTurboUPIUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RazorpayTurboUPIUI.framework; path = Pod/ui/RazorpayTurboUPIUI.framework; sourceTree = "<group>"; };
+		B5908FD93F7F2D9F900A7AEADFD0C3E5 /* RazorpayFlutterPlugin.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RazorpayFlutterPlugin.h; path = "../../../../../../../../../../.pub-cache/git/razorpay-flutter-6f8f763380df7af02147e639b968fa6f328dfb0f/ios/Classes/RazorpayFlutterPlugin.h"; sourceTree = "<group>"; };
 		B5B829FA7BBAB1636FDE4154BEF2D27C /* razorpay_turbo_standard */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = razorpay_turbo_standard; path = razorpay_turbo_standard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5C29C8106352102671B57BC4AF7A392 /* LocationPermissionStrategy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LocationPermissionStrategy.m; path = "../../../../../../../../../../../.pub-cache/hosted/pub.dev/permission_handler_apple-9.4.7/ios/Classes/strategies/LocationPermissionStrategy.m"; sourceTree = "<group>"; };
 		B73E97E4929AEEDDD762DD70C5EFFC73 /* CriticalAlertsPermissionStrategy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CriticalAlertsPermissionStrategy.m; path = "../../../../../../../../../../../.pub-cache/hosted/pub.dev/permission_handler_apple-9.4.7/ios/Classes/strategies/CriticalAlertsPermissionStrategy.m"; sourceTree = "<group>"; };
 		B7E36A6CF0E39EF8F7344A4A76D143B6 /* ActivityTypeMapper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ActivityTypeMapper.h; path = "../../../../../../../../../../../../../../../.pub-cache/hosted/pub.dev/geolocator_apple-2.3.13/darwin/geolocator_apple/Sources/geolocator_apple/include/geolocator_apple/Utils/ActivityTypeMapper.h"; sourceTree = "<group>"; };
+		B8433B4AB3727B62BA8EEBECB9EE018B /* RazorpayDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RazorpayDelegate.swift; path = "../../../../../../../../../../.pub-cache/git/razorpay-flutter-6f8f763380df7af02147e639b968fa6f328dfb0f/ios/Classes/RazorpayDelegate.swift"; sourceTree = "<group>"; };
 		B93C3931AC09605858E84DF95C0BC63C /* ErrorCodes.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ErrorCodes.m; path = "../../../../../../../../../../../../../.pub-cache/hosted/pub.dev/geolocator_apple-2.3.13/darwin/geolocator_apple/Sources/geolocator_apple/Constants/ErrorCodes.m"; sourceTree = "<group>"; };
 		BAAD07AFDE230DAA49D5B307E947E504 /* ContactPermissionStrategy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ContactPermissionStrategy.m; path = "../../../../../../../../../../../.pub-cache/hosted/pub.dev/permission_handler_apple-9.4.7/ios/Classes/strategies/ContactPermissionStrategy.m"; sourceTree = "<group>"; };
 		BAC75C41F9B97A1718BD36E4D205B95B /* PhonePermissionStrategy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PhonePermissionStrategy.m; path = "../../../../../../../../../../../.pub-cache/hosted/pub.dev/permission_handler_apple-9.4.7/ios/Classes/strategies/PhonePermissionStrategy.m"; sourceTree = "<group>"; };
@@ -450,11 +449,10 @@
 		C0E7377B924AA534719B74C4D6009728 /* LocationAccuracyMapper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LocationAccuracyMapper.m; path = "../../../../../../../../../../../../../.pub-cache/hosted/pub.dev/geolocator_apple-2.3.13/darwin/geolocator_apple/Sources/geolocator_apple/Utils/LocationAccuracyMapper.m"; sourceTree = "<group>"; };
 		C19234639A981C2213F8D417E7782979 /* PositionStreamHandler.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PositionStreamHandler.h; path = "../../../../../../../../../../../../../../../.pub-cache/hosted/pub.dev/geolocator_apple-2.3.13/darwin/geolocator_apple/Sources/geolocator_apple/include/geolocator_apple/Handlers/PositionStreamHandler.h"; sourceTree = "<group>"; };
 		C302C1E25ECB3450DDCA3C09CB7B1B64 /* UIView+Toast.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+Toast.m"; path = "../../../../../../../../../../.pub-cache/hosted/pub.dev/fluttertoast-8.2.12/ios/Classes/UIView+Toast.m"; sourceTree = "<group>"; };
+		C324B8578308B1CFCAE86C28576935B2 /* RazorpayDelegate+Turbo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "RazorpayDelegate+Turbo.swift"; path = "../../../../../../../../../../.pub-cache/git/razorpay-flutter-6f8f763380df7af02147e639b968fa6f328dfb0f/ios/Classes/RazorpayDelegate+Turbo.swift"; sourceTree = "<group>"; };
 		C39BE06027F24EB0328A76E7507FA463 /* package_info_plus */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = package_info_plus; path = package_info_plus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C723B19E3AE15DFC23824585DCC0F124 /* SwiftRazorpayFlutterPlugin.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftRazorpayFlutterPlugin.swift; path = ../../../../../../../ios/Classes/SwiftRazorpayFlutterPlugin.swift; sourceTree = "<group>"; };
 		C7939B277753A90B7D85D7F8476FB02F /* Pods-Runner.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Runner.modulemap"; sourceTree = "<group>"; };
 		C7AD28D5FB25A8DEDF61F78996932FA6 /* permission_handler_apple */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = permission_handler_apple; path = permission_handler_apple.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C82AB811D47F960A9CEFDFE4553ABD4A /* razorpay_turbo_standard-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "razorpay_turbo_standard-prefix.pch"; sourceTree = "<group>"; };
 		C8BC520144871C7FCFE81A2CFD69CC0E /* GeolocatorPlugin.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GeolocatorPlugin.h; path = "../../../../../../../../../../../../../../.pub-cache/hosted/pub.dev/geolocator_apple-2.3.13/darwin/geolocator_apple/Sources/geolocator_apple/include/geolocator_apple/GeolocatorPlugin.h"; sourceTree = "<group>"; };
 		CA1E3352BBB7E07EFF742142DA07C604 /* Codec.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = Codec.m; path = "../../../../../../../../../../../.pub-cache/hosted/pub.dev/permission_handler_apple-9.4.7/ios/Classes/util/Codec.m"; sourceTree = "<group>"; };
 		CAF27E06E3BA017ABD6D3CB33F11B82E /* PhotoPermissionStrategy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PhotoPermissionStrategy.h; path = "../../../../../../../../../../../.pub-cache/hosted/pub.dev/permission_handler_apple-9.4.7/ios/Classes/strategies/PhotoPermissionStrategy.h"; sourceTree = "<group>"; };
@@ -465,20 +463,21 @@
 		D328517DD002A64BB3E9BC4A0F6D81C9 /* CommonLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CommonLibrary.framework; path = Pod/core/CommonLibrary.framework; sourceTree = "<group>"; };
 		D3F9F2AA42936ED27151E4A7ADF77354 /* StoragePermissionStrategy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = StoragePermissionStrategy.m; path = "../../../../../../../../../../../.pub-cache/hosted/pub.dev/permission_handler_apple-9.4.7/ios/Classes/strategies/StoragePermissionStrategy.m"; sourceTree = "<group>"; };
 		D4EAFDEC60E63ECFB07E37509777AB4B /* AppTrackingTransparencyPermissionStrategy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AppTrackingTransparencyPermissionStrategy.h; path = "../../../../../../../../../../../.pub-cache/hosted/pub.dev/permission_handler_apple-9.4.7/ios/Classes/strategies/AppTrackingTransparencyPermissionStrategy.h"; sourceTree = "<group>"; };
+		D50F5CE52B9989F83D89A41EF1DC9C3C /* RazorpayFlutterPlugin.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RazorpayFlutterPlugin.m; path = "../../../../../../../../../../.pub-cache/git/razorpay-flutter-6f8f763380df7af02147e639b968fa6f328dfb0f/ios/Classes/RazorpayFlutterPlugin.m"; sourceTree = "<group>"; };
 		D5F1E0A2B88A506208392CC9927511D1 /* ResourceBundle-permission_handler_apple_privacy-permission_handler_apple-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-permission_handler_apple_privacy-permission_handler_apple-Info.plist"; sourceTree = "<group>"; };
 		DAAD62F25D4EF53AFBCB88799695ECF0 /* PermissionManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PermissionManager.m; path = "../../../../../../../../../../.pub-cache/hosted/pub.dev/permission_handler_apple-9.4.7/ios/Classes/PermissionManager.m"; sourceTree = "<group>"; };
 		DAC96FC47D90D397FCAC86EF189B7066 /* RazorpayStandard.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = RazorpayStandard.xcframework; path = Pod/RazorpayStandard.xcframework; sourceTree = "<group>"; };
 		DC01A3D97926AA07C3EB01BFE27E9FE1 /* package_info_plus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = package_info_plus.debug.xcconfig; sourceTree = "<group>"; };
 		DC400E988968F071CFC8ABA85EF62B75 /* MediaLibraryPermissionStrategy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MediaLibraryPermissionStrategy.m; path = "../../../../../../../../../../../.pub-cache/hosted/pub.dev/permission_handler_apple-9.4.7/ios/Classes/strategies/MediaLibraryPermissionStrategy.m"; sourceTree = "<group>"; };
 		DCDF0F164666883627F4F32C00DDDE8D /* LocationMapper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LocationMapper.m; path = "../../../../../../../../../../../../../.pub-cache/hosted/pub.dev/geolocator_apple-2.3.13/darwin/geolocator_apple/Sources/geolocator_apple/Utils/LocationMapper.m"; sourceTree = "<group>"; };
+		DF3CF490F992E290694255A97F7F3B24 /* razorpay_turbo_standard-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "razorpay_turbo_standard-umbrella.h"; sourceTree = "<group>"; };
 		DFB6E2DD2C4F9B9C4254ED19B399E0A2 /* SpeechPermissionStrategy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SpeechPermissionStrategy.m; path = "../../../../../../../../../../../.pub-cache/hosted/pub.dev/permission_handler_apple-9.4.7/ios/Classes/strategies/SpeechPermissionStrategy.m"; sourceTree = "<group>"; };
 		E327F2724AD228E525A39F7A2F96A48A /* Pods-Runner-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Runner-dummy.m"; sourceTree = "<group>"; };
 		E3D661B08B615B28E8D0AD8F5E80E812 /* fluttertoast-fluttertoast_privacy */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "fluttertoast-fluttertoast_privacy"; path = fluttertoast_privacy.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		E60F470BE0F1954EF0A44581569B03F7 /* AuthorizationStatusMapper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AuthorizationStatusMapper.h; path = "../../../../../../../../../../../../../../../.pub-cache/hosted/pub.dev/geolocator_apple-2.3.13/darwin/geolocator_apple/Sources/geolocator_apple/include/geolocator_apple/Utils/AuthorizationStatusMapper.h"; sourceTree = "<group>"; };
-		E7A9D02B3DD76D4590A6CC5868B286FB /* RazorpayDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RazorpayDelegate.swift; path = ../../../../../../../ios/Classes/RazorpayDelegate.swift; sourceTree = "<group>"; };
 		E8042CD1B9E382C8F5E4B4AEC8AF7B9A /* BackgroundRefreshStrategy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BackgroundRefreshStrategy.h; path = "../../../../../../../../../../../.pub-cache/hosted/pub.dev/permission_handler_apple-9.4.7/ios/Classes/strategies/BackgroundRefreshStrategy.h"; sourceTree = "<group>"; };
 		E913CAF59000439F75C64BA70F4E8F0F /* FPPPackageInfoPlusPlugin.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FPPPackageInfoPlusPlugin.m; path = "../../../../../../../../../../../../.pub-cache/hosted/pub.dev/package_info_plus-8.3.0/ios/package_info_plus/Sources/package_info_plus/FPPPackageInfoPlusPlugin.m"; sourceTree = "<group>"; };
-		EC30912E2C09CA4CF5D1CA0AA30E9210 /* razorpay_turbo_standard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = razorpay_turbo_standard.release.xcconfig; sourceTree = "<group>"; };
+		ECBB57F6A011D966E20EF2AD9BF515AC /* razorpay_turbo_standard-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "razorpay_turbo_standard-Info.plist"; sourceTree = "<group>"; };
 		EE2777EDF04E21F58839894CF2DF38B5 /* geolocator_apple.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = geolocator_apple.release.xcconfig; sourceTree = "<group>"; };
 		EF54BEED02A5A4DE8C36633724F64B59 /* Pods-Runner-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Runner-acknowledgements.plist"; sourceTree = "<group>"; };
 		EFBA64B6ED38964F0058E0BF46F92F67 /* BluetoothPermissionStrategy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BluetoothPermissionStrategy.h; path = "../../../../../../../../../../../.pub-cache/hosted/pub.dev/permission_handler_apple-9.4.7/ios/Classes/strategies/BluetoothPermissionStrategy.h"; sourceTree = "<group>"; };
@@ -488,13 +487,14 @@
 		F49EF06CA39944DEF38B9DEFBBFA0A23 /* fluttertoast-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "fluttertoast-umbrella.h"; sourceTree = "<group>"; };
 		F59F17E0892981505EFE1194A294C31B /* RazorpayCore.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = RazorpayCore.xcframework; path = Pod/core/RazorpayCore.xcframework; sourceTree = "<group>"; };
 		F7435D7F5CA1F4E9CCE102026462B22B /* PermissionHandlerPlugin.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PermissionHandlerPlugin.m; path = "../../../../../../../../../../.pub-cache/hosted/pub.dev/permission_handler_apple-9.4.7/ios/Classes/PermissionHandlerPlugin.m"; sourceTree = "<group>"; };
+		F8D442A0AC38CCE1F32C6A9F4470D7CA /* razorpay_turbo_standard-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "razorpay_turbo_standard-prefix.pch"; sourceTree = "<group>"; };
 		F90F787F41FEC66DE20EB9DCFF8A1A20 /* GeolocationHandler.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GeolocationHandler.m; path = "../../../../../../../../../../../../../.pub-cache/hosted/pub.dev/geolocator_apple-2.3.13/darwin/geolocator_apple/Sources/geolocator_apple/Handlers/GeolocationHandler.m"; sourceTree = "<group>"; };
-		F9B98D2B8524846FEF98FC3416DE9F6C /* razorpay_turbo_standard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = razorpay_turbo_standard.debug.xcconfig; sourceTree = "<group>"; };
 		FA845F80B3847B22ACF63FD7E64E6D03 /* geolocator_apple-geolocator_apple_privacy */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "geolocator_apple-geolocator_apple_privacy"; path = geolocator_apple_privacy.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDAE244FD4DA2F40F0A9D634B3A5770E /* SensorPermissionStrategy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SensorPermissionStrategy.h; path = "../../../../../../../../../../../.pub-cache/hosted/pub.dev/permission_handler_apple-9.4.7/ios/Classes/strategies/SensorPermissionStrategy.h"; sourceTree = "<group>"; };
 		FF5A311C08742D51034B2110FD9551FE /* FluttertoastPlugin.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FluttertoastPlugin.m; path = "../../../../../../../../../../.pub-cache/hosted/pub.dev/fluttertoast-8.2.12/ios/Classes/FluttertoastPlugin.m"; sourceTree = "<group>"; };
 		FF5C2280C1E4DAE1A2CCC0A17379D841 /* LocationServiceStreamHandler.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LocationServiceStreamHandler.h; path = "../../../../../../../../../../../../../../../.pub-cache/hosted/pub.dev/geolocator_apple-2.3.13/darwin/geolocator_apple/Sources/geolocator_apple/include/geolocator_apple/Handlers/LocationServiceStreamHandler.h"; sourceTree = "<group>"; };
 		FF7A105D121192FC65636CAECA129AD6 /* AppTrackingTransparencyPermissionStrategy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AppTrackingTransparencyPermissionStrategy.m; path = "../../../../../../../../../../../.pub-cache/hosted/pub.dev/permission_handler_apple-9.4.7/ios/Classes/strategies/AppTrackingTransparencyPermissionStrategy.m"; sourceTree = "<group>"; };
+		FF7E94E265906FCC5E593E081701B817 /* razorpay_turbo_standard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = razorpay_turbo_standard.debug.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -514,7 +514,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		44EEE2861122FC6272AAE3B0AB7674ED /* Frameworks */ = {
+		43D7E885C9750BFEF4A747592164162E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -529,18 +529,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7C81D8A36C5B259EFC479350715AC67E /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		915108FE0A773D8F34EB766200901AFF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				299375271BFAA4E66BF6DF83A6513CFA /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		985C67834FC436632430D7851A6DC78C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -552,7 +552,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B90E9E1353EF90F7A5E5E9D65DBEDAEB /* Frameworks */ = {
+		CDCCE87174714C661094A38234BA0592 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DEB0394B81C791A1A6839A5C92EE9000 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -567,25 +574,9 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E6B6F8010BCEFD7EFEAA5FFC8A05E239 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		01221C84E5770EDBDE28AD5CAC3AB972 /* razorpay_turbo_standard */ = {
-			isa = PBXGroup;
-			children = (
-				729BBC58C0FC63ED254DE6DC9FC7C8D2 /* ios */,
-			);
-			name = razorpay_turbo_standard;
-			path = razorpay_turbo_standard;
-			sourceTree = "<group>";
-		};
 		0290D07C890C1C62A9B1E3F3104D6F6A /* .. */ = {
 			isa = PBXGroup;
 			children = (
@@ -633,15 +624,6 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		0759065161EA9B61FD9CF17BA2C2F507 /* ios */ = {
-			isa = PBXGroup;
-			children = (
-				A7A6C1ADC881442851161A553AC2AA54 /* .symlinks */,
-			);
-			name = ios;
-			path = ios;
-			sourceTree = "<group>";
-		};
 		08F4753DBF5DA3FA22B05ED88AC8C3F3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -685,15 +667,6 @@
 			);
 			name = ..;
 			path = ..;
-			sourceTree = "<group>";
-		};
-		154C5F84BEA7F55DBFF0BF010BA9E21F /* example */ = {
-			isa = PBXGroup;
-			children = (
-				0759065161EA9B61FD9CF17BA2C2F507 /* ios */,
-			);
-			name = example;
-			path = example;
 			sourceTree = "<group>";
 		};
 		1615D79D63DD7986ACC3E15A89A35D9E /* .symlinks */ = {
@@ -756,6 +729,15 @@
 			path = "Target Support Files/Pods-Runner";
 			sourceTree = "<group>";
 		};
+		23567B127D000AB2D6DEF206EEFF62E2 /* projects */ = {
+			isa = PBXGroup;
+			children = (
+				6EA649C04797BB4FFEC4EB6FFB7DAE6A /* razorpay-flutter */,
+			);
+			name = projects;
+			path = projects;
+			sourceTree = "<group>";
+		};
 		23F3F9F6C16D7A08BCAE03CD3C785CA4 /* geolocator_apple */ = {
 			isa = PBXGroup;
 			children = (
@@ -772,6 +754,21 @@
 				F59F17E0892981505EFE1194A294C31B /* RazorpayCore.xcframework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		24737FEF11CFCDE6E79A1A0D493844B2 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				6DA221BA00FE1B54EC29A0D58C2BE275 /* razorpay_turbo_standard.modulemap */,
+				016223E6F7F422E8FB5AA00F38DA3D3F /* razorpay_turbo_standard-dummy.m */,
+				ECBB57F6A011D966E20EF2AD9BF515AC /* razorpay_turbo_standard-Info.plist */,
+				F8D442A0AC38CCE1F32C6A9F4470D7CA /* razorpay_turbo_standard-prefix.pch */,
+				DF3CF490F992E290694255A97F7F3B24 /* razorpay_turbo_standard-umbrella.h */,
+				FF7E94E265906FCC5E593E081701B817 /* razorpay_turbo_standard.debug.xcconfig */,
+				97906EF1897FA2582C7AACBA477926DF /* razorpay_turbo_standard.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../../../../Pods/Target Support Files/razorpay_turbo_standard";
 			sourceTree = "<group>";
 		};
 		26EE12C98A96295675366EA421BAD5E7 /* fluttertoast */ = {
@@ -835,21 +832,6 @@
 			name = Pod;
 			sourceTree = "<group>";
 		};
-		34A8DB9DF6567023686FF24DFDDA1CE6 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				640C1359DFBD273648B49308086C9054 /* razorpay_turbo_standard.modulemap */,
-				10C4477C21599BD41D4A39C617ED41ED /* razorpay_turbo_standard-dummy.m */,
-				88149F647CDCF8AF744C9694BF4CF9F6 /* razorpay_turbo_standard-Info.plist */,
-				C82AB811D47F960A9CEFDFE4553ABD4A /* razorpay_turbo_standard-prefix.pch */,
-				B09D66D133A83CEAD43A1A7D015B5BD9 /* razorpay_turbo_standard-umbrella.h */,
-				F9B98D2B8524846FEF98FC3416DE9F6C /* razorpay_turbo_standard.debug.xcconfig */,
-				EC30912E2C09CA4CF5D1CA0AA30E9210 /* razorpay_turbo_standard.release.xcconfig */,
-			);
-			name = "Support Files";
-			path = "../../../../Pods/Target Support Files/razorpay_turbo_standard";
-			sourceTree = "<group>";
-		};
 		3F4F4E2D9F68DF7D2E15929DDA89CEEC /* .symlinks */ = {
 			isa = PBXGroup;
 			children = (
@@ -879,15 +861,22 @@
 			path = ..;
 			sourceTree = "<group>";
 		};
-		49441272D21A45D45B1F507363F4104D /* razorpay_turbo_standard */ = {
+		4AAA3342608D8F853FCDF95352BF279E /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				B89FD7BCDE23C6E62AF9889A1D799686 /* .. */,
-				DAEA2D0F5B312C720B31CD589FB7A00F /* Pod */,
-				34A8DB9DF6567023686FF24DFDDA1CE6 /* Support Files */,
+				319DAB3920108F642828CF4E86DD4E94 /* LICENSE */,
+				8171CDDC98662B1DCC1D9820E6729756 /* razorpay_turbo_standard.podspec */,
 			);
-			name = razorpay_turbo_standard;
-			path = ../.symlinks/plugins/razorpay_turbo_standard/ios;
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		4B65449623B65B4536417B4407F41E33 /* plugins */ = {
+			isa = PBXGroup;
+			children = (
+				6BC01AFA13F00103E068B3F44B3B0542 /* razorpay_turbo_standard */,
+			);
+			name = plugins;
+			path = plugins;
 			sourceTree = "<group>";
 		};
 		4BFDDD8396A55070F67A174385B35303 /* Classes */ = {
@@ -938,6 +927,15 @@
 				08F4753DBF5DA3FA22B05ED88AC8C3F3 /* Frameworks */,
 			);
 			name = standard;
+			sourceTree = "<group>";
+		};
+		56C9FC929E989339BFAD08C0F3DE4AB9 /* example */ = {
+			isa = PBXGroup;
+			children = (
+				EFBA5C61B325DFC85D669896C806C280 /* ios */,
+			);
+			name = example;
+			path = example;
 			sourceTree = "<group>";
 		};
 		574B901C194CF118DDAACB926561402D /* Support Files */ = {
@@ -994,6 +992,15 @@
 			);
 			name = Resources;
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		6BC01AFA13F00103E068B3F44B3B0542 /* razorpay_turbo_standard */ = {
+			isa = PBXGroup;
+			children = (
+				F8A597E313FD649F7DD1472BE54FCF36 /* ios */,
+			);
+			name = razorpay_turbo_standard;
+			path = razorpay_turbo_standard;
 			sourceTree = "<group>";
 		};
 		6BD6521E5EB323BB1A5FF37BC5B551AE /* example */ = {
@@ -1084,6 +1091,15 @@
 			path = strategies;
 			sourceTree = "<group>";
 		};
+		6EA649C04797BB4FFEC4EB6FFB7DAE6A /* razorpay-flutter */ = {
+			isa = PBXGroup;
+			children = (
+				56C9FC929E989339BFAD08C0F3DE4AB9 /* example */,
+			);
+			name = "razorpay-flutter";
+			path = "razorpay-flutter";
+			sourceTree = "<group>";
+		};
 		6FAACDA2999C666FEC83467E4D793B45 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -1116,15 +1132,6 @@
 			path = darwin;
 			sourceTree = "<group>";
 		};
-		729BBC58C0FC63ED254DE6DC9FC7C8D2 /* ios */ = {
-			isa = PBXGroup;
-			children = (
-				74ACBCA437A6BC59EF766474CA11789A /* Classes */,
-			);
-			name = ios;
-			path = ios;
-			sourceTree = "<group>";
-		};
 		737E6C95C953E6AD87701992C5778AFE /* razorpay-flutter */ = {
 			isa = PBXGroup;
 			children = (
@@ -1132,19 +1139,6 @@
 			);
 			name = "razorpay-flutter";
 			path = "razorpay-flutter";
-			sourceTree = "<group>";
-		};
-		74ACBCA437A6BC59EF766474CA11789A /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				E7A9D02B3DD76D4590A6CC5868B286FB /* RazorpayDelegate.swift */,
-				22935C8A7372E7EBC00C61EE68CFBE57 /* RazorpayDelegate+Turbo.swift */,
-				0DDFCFCF87C63C5FBE83C0D88AB8B41F /* RazorpayFlutterPlugin.h */,
-				265FC4B3D04EBAABB8177756E6322E38 /* RazorpayFlutterPlugin.m */,
-				C723B19E3AE15DFC23824585DCC0F124 /* SwiftRazorpayFlutterPlugin.swift */,
-			);
-			name = Classes;
-			path = Classes;
 			sourceTree = "<group>";
 		};
 		773A640739A3AE78E082573BB420DFC8 /* fluttertoast */ = {
@@ -1167,15 +1161,6 @@
 			);
 			name = permission_handler_apple;
 			path = ../.symlinks/plugins/permission_handler_apple/ios;
-			sourceTree = "<group>";
-		};
-		792F6A604D5183BED444A213440D8BCA /* plugins */ = {
-			isa = PBXGroup;
-			children = (
-				01221C84E5770EDBDE28AD5CAC3AB972 /* razorpay_turbo_standard */,
-			);
-			name = plugins;
-			path = plugins;
 			sourceTree = "<group>";
 		};
 		7B13AB62F6AC29DA01FEFB712972F4E7 /* Pod */ = {
@@ -1295,7 +1280,7 @@
 				B6F62D5B33A9541D6B1FE1B700146F95 /* geolocator_apple */,
 				46A4BE828D5E9A5E2AF35ECC136C0F06 /* package_info_plus */,
 				775F47165FC40FCCCBD65BA28488BA74 /* permission_handler_apple */,
-				49441272D21A45D45B1F507363F4104D /* razorpay_turbo_standard */,
+				A7870AA4AE21A2426B84C50DB96BC030 /* razorpay_turbo_standard */,
 			);
 			name = "Development Pods";
 			sourceTree = "<group>";
@@ -1307,6 +1292,19 @@
 			);
 			name = Constants;
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		86FCBB386E10CA35438B5CC2EA50AF81 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				B8433B4AB3727B62BA8EEBECB9EE018B /* RazorpayDelegate.swift */,
+				C324B8578308B1CFCAE86C28576935B2 /* RazorpayDelegate+Turbo.swift */,
+				B5908FD93F7F2D9F900A7AEADFD0C3E5 /* RazorpayFlutterPlugin.h */,
+				D50F5CE52B9989F83D89A41EF1DC9C3C /* RazorpayFlutterPlugin.m */,
+				1C80BA3B93CBD31915B0D6628C6E3D4C /* SwiftRazorpayFlutterPlugin.swift */,
+			);
+			name = Classes;
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		8771FA5ADF8E29B6295104A2588A89FB /* Products */ = {
@@ -1348,15 +1346,6 @@
 			isa = PBXGroup;
 			children = (
 				0F9EE6072F211C2E53275BC970FA4BDA /* .. */,
-			);
-			name = ..;
-			path = ..;
-			sourceTree = "<group>";
-		};
-		9374486F6C6F0E2A87CDA52E39634312 /* .. */ = {
-			isa = PBXGroup;
-			children = (
-				154C5F84BEA7F55DBFF0BF010BA9E21F /* example */,
 			);
 			name = ..;
 			path = ..;
@@ -1436,13 +1425,24 @@
 			path = ..;
 			sourceTree = "<group>";
 		};
-		A7A6C1ADC881442851161A553AC2AA54 /* .symlinks */ = {
+		A7870AA4AE21A2426B84C50DB96BC030 /* razorpay_turbo_standard */ = {
 			isa = PBXGroup;
 			children = (
-				792F6A604D5183BED444A213440D8BCA /* plugins */,
+				EA6ADC74EB95395680B1F07B059FB956 /* .. */,
+				4AAA3342608D8F853FCDF95352BF279E /* Pod */,
+				24737FEF11CFCDE6E79A1A0D493844B2 /* Support Files */,
 			);
-			name = .symlinks;
-			path = .symlinks;
+			name = razorpay_turbo_standard;
+			path = ../.symlinks/plugins/razorpay_turbo_standard/ios;
+			sourceTree = "<group>";
+		};
+		A8DB579BB0304A055DCF5B275F355BEA /* .. */ = {
+			isa = PBXGroup;
+			children = (
+				F6FEDD7705EF38BD472BBCCA394EFBCF /* .. */,
+			);
+			name = ..;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		AB0C4CD3836FB9EABC93E7A8BDF54AB8 /* plugins */ = {
@@ -1583,15 +1583,6 @@
 			path = example;
 			sourceTree = "<group>";
 		};
-		B89FD7BCDE23C6E62AF9889A1D799686 /* .. */ = {
-			isa = PBXGroup;
-			children = (
-				9374486F6C6F0E2A87CDA52E39634312 /* .. */,
-			);
-			name = ..;
-			path = ../../../../../../ios;
-			sourceTree = "<group>";
-		};
 		BE1E30F1FF1CBD1F33B550F6D5D2364E /* .. */ = {
 			isa = PBXGroup;
 			children = (
@@ -1637,6 +1628,15 @@
 			path = Documents;
 			sourceTree = "<group>";
 		};
+		C270CD2CA0153791F0CBE751B098C85E /* .. */ = {
+			isa = PBXGroup;
+			children = (
+				CFB6A434066B15377E4CE8015D91F087 /* .. */,
+			);
+			name = ..;
+			path = ..;
+			sourceTree = "<group>";
+		};
 		C3859D7DF86379CA7A75E22B9C29F726 /* .. */ = {
 			isa = PBXGroup;
 			children = (
@@ -1677,6 +1677,15 @@
 				8771FA5ADF8E29B6295104A2588A89FB /* Products */,
 				7BFBD40CEA58281397A76A48B8C3BCD1 /* Targets Support Files */,
 			);
+			sourceTree = "<group>";
+		};
+		CFB6A434066B15377E4CE8015D91F087 /* .. */ = {
+			isa = PBXGroup;
+			children = (
+				A8DB579BB0304A055DCF5B275F355BEA /* .. */,
+			);
+			name = ..;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		D09D061D3966087C808A86C5419179C4 /* Support Files */ = {
@@ -1779,15 +1788,6 @@
 			path = "razorpay-flutter";
 			sourceTree = "<group>";
 		};
-		DAEA2D0F5B312C720B31CD589FB7A00F /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				1C365393DDC1A8C05413740254D94A71 /* LICENSE */,
-				6DEF055BB79C69CD53F4D5E1DC3149D9 /* razorpay_turbo_standard.podspec */,
-			);
-			name = Pod;
-			sourceTree = "<group>";
-		};
 		DB315ACD68693A5B2C3F19E67ADFC99E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -1814,6 +1814,24 @@
 			);
 			name = ios;
 			path = ios;
+			sourceTree = "<group>";
+		};
+		E2873DB4F11DAE00EEF04A80CDFE4DC2 /* Documents */ = {
+			isa = PBXGroup;
+			children = (
+				23567B127D000AB2D6DEF206EEFF62E2 /* projects */,
+			);
+			name = Documents;
+			path = Documents;
+			sourceTree = "<group>";
+		};
+		E2A9F9FCC9452C449532ECBB55AFA5EF /* .symlinks */ = {
+			isa = PBXGroup;
+			children = (
+				4B65449623B65B4536417B4407F41E33 /* plugins */,
+			);
+			name = .symlinks;
+			path = .symlinks;
 			sourceTree = "<group>";
 		};
 		E2CAB232AECB2A26CACBB99251AC6507 /* ios */ = {
@@ -1862,6 +1880,15 @@
 			path = ..;
 			sourceTree = "<group>";
 		};
+		EA6ADC74EB95395680B1F07B059FB956 /* .. */ = {
+			isa = PBXGroup;
+			children = (
+				C270CD2CA0153791F0CBE751B098C85E /* .. */,
+			);
+			name = ..;
+			path = "../../../../../../../../../.pub-cache/git/razorpay-flutter-6f8f763380df7af02147e639b968fa6f328dfb0f/ios";
+			sourceTree = "<group>";
+		};
 		EE2247FA48346A3B3B13BF210CF22460 /* .. */ = {
 			isa = PBXGroup;
 			children = (
@@ -1878,6 +1905,15 @@
 			);
 			name = Sources;
 			path = Sources;
+			sourceTree = "<group>";
+		};
+		EFBA5C61B325DFC85D669896C806C280 /* ios */ = {
+			isa = PBXGroup;
+			children = (
+				E2A9F9FCC9452C449532ECBB55AFA5EF /* .symlinks */,
+			);
+			name = ios;
+			path = ios;
 			sourceTree = "<group>";
 		};
 		F166804791F83A6BBFC7A6C924B86558 /* package_info_plus */ = {
@@ -1909,6 +1945,15 @@
 			path = example;
 			sourceTree = "<group>";
 		};
+		F6FEDD7705EF38BD472BBCCA394EFBCF /* .. */ = {
+			isa = PBXGroup;
+			children = (
+				E2873DB4F11DAE00EEF04A80CDFE4DC2 /* Documents */,
+			);
+			name = ..;
+			path = ..;
+			sourceTree = "<group>";
+		};
 		F7C4BF506C99C28CA67F302CAD957292 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
@@ -1916,6 +1961,15 @@
 				4D9334E7EEF317C9F97A7ED02463793C /* package_info_plus.podspec */,
 			);
 			name = Pod;
+			sourceTree = "<group>";
+		};
+		F8A597E313FD649F7DD1472BE54FCF36 /* ios */ = {
+			isa = PBXGroup;
+			children = (
+				86FCBB386E10CA35438B5CC2EA50AF81 /* Classes */,
+			);
+			name = ios;
+			path = ios;
 			sourceTree = "<group>";
 		};
 		FEECA2904E62A7A87AC7EE50FC48ED71 /* Handlers */ = {
@@ -1948,7 +2002,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				404A9310D4D0ED9FEBE2179F5AE32C1E /* razorpay_turbo_standard-umbrella.h in Headers */,
-				504029FF777AF0FA983DA51C423A9257 /* RazorpayFlutterPlugin.h in Headers */,
+				2AB3E6751E1DB1151BF96AAF7E263C56 /* RazorpayFlutterPlugin.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2029,11 +2083,11 @@
 /* Begin PBXNativeTarget section */
 		07C64B0E06ED7C1903D446F9BBDDF5C9 /* package_info_plus-package_info_plus_privacy */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4E281352B7118E6F18E0D8133325B6EE /* Build configuration list for PBXNativeTarget "package_info_plus-package_info_plus_privacy" */;
+			buildConfigurationList = 3A495DEA2434234D930FB55FBB8BEFE8 /* Build configuration list for PBXNativeTarget "package_info_plus-package_info_plus_privacy" */;
 			buildPhases = (
-				029C63469146C48B3C68D155CBAFA378 /* Sources */,
-				44EEE2861122FC6272AAE3B0AB7674ED /* Frameworks */,
-				71E9804F76476E68DC28914BF89399E7 /* Resources */,
+				EAB22737F7B5CE9D55AFF3D8F4033A82 /* Sources */,
+				985C67834FC436632430D7851A6DC78C /* Frameworks */,
+				187B9CEEC6DE36C1C2F9B593ECC09DE5 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -2046,11 +2100,11 @@
 		};
 		3AEC564FBEF6D576418AC71B87922016 /* geolocator_apple-geolocator_apple_privacy */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8F3388CE20309001DFB3CA28ED945CA8 /* Build configuration list for PBXNativeTarget "geolocator_apple-geolocator_apple_privacy" */;
+			buildConfigurationList = 44FD488DF7B0F1E2AB75530E0579C89B /* Build configuration list for PBXNativeTarget "geolocator_apple-geolocator_apple_privacy" */;
 			buildPhases = (
-				5A0AF5092737F6D542A16CA77D5AA295 /* Sources */,
-				B90E9E1353EF90F7A5E5E9D65DBEDAEB /* Frameworks */,
-				E19C0CB23930E5FE50C9FF71DBB142A8 /* Resources */,
+				F909499755448A70FF521C4BD33D7A5B /* Sources */,
+				DEB0394B81C791A1A6839A5C92EE9000 /* Frameworks */,
+				B233E5C39E473881E6A7E509676E965A /* Resources */,
 			);
 			buildRules = (
 			);
@@ -2063,11 +2117,11 @@
 		};
 		517E8BED8B0E6D6FD078BD19B0A13893 /* permission_handler_apple-permission_handler_apple_privacy */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FDAE94B1FEBD34ED9582276864267EFC /* Build configuration list for PBXNativeTarget "permission_handler_apple-permission_handler_apple_privacy" */;
+			buildConfigurationList = 25EAABCA43F845273FDAA588083BCA4C /* Build configuration list for PBXNativeTarget "permission_handler_apple-permission_handler_apple_privacy" */;
 			buildPhases = (
-				77FF79AA0E351BF80E25B350F4D96C19 /* Sources */,
-				E6B6F8010BCEFD7EFEAA5FFC8A05E239 /* Frameworks */,
-				B5456B97815AFECE46161925E6CA1D5C /* Resources */,
+				06E5B0986B593F175E0C66CCD19E2C0B /* Sources */,
+				CDCCE87174714C661094A38234BA0592 /* Frameworks */,
+				5203E8B835CF7AEE82D46B626D456234 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -2090,8 +2144,8 @@
 			buildRules = (
 			);
 			dependencies = (
-				92DE8518618FB8F259AFEA77372C42D0 /* PBXTargetDependency */,
-				CF8D78C566974068CF7570602814FEE4 /* PBXTargetDependency */,
+				53AF1306B0689211ADEB305AF192ABD7 /* PBXTargetDependency */,
+				D1465E2BC16CDFAD5A81BD6384571AA4 /* PBXTargetDependency */,
 			);
 			name = package_info_plus;
 			productName = package_info_plus;
@@ -2110,15 +2164,15 @@
 			buildRules = (
 			);
 			dependencies = (
-				B07644B7E63FD6C2E8BCC98A7738093A /* PBXTargetDependency */,
-				68B901F47A443C92BAEA571B5E7136DF /* PBXTargetDependency */,
-				A463E13E8DAF34BF941C45F2D33B4616 /* PBXTargetDependency */,
-				8B7FADE2E7DBE5979A2B170BE1D4E070 /* PBXTargetDependency */,
-				BCB18D24ACA462C7FC3C0779CB3A8F8E /* PBXTargetDependency */,
-				6CAF6B8B2BC8E57E037CA3D86DD68246 /* PBXTargetDependency */,
-				898839E94EA70C0E5468B3A181283B14 /* PBXTargetDependency */,
-				EC03E5DFC5088F20C9B8D3826EDBFB5C /* PBXTargetDependency */,
-				DA0EB1131BC17AE754FA5E4B704A9D30 /* PBXTargetDependency */,
+				8A07E94D9BD951367B96D57E34E0E340 /* PBXTargetDependency */,
+				D18A387CACBA1CDD64E7F3B46C179EF4 /* PBXTargetDependency */,
+				B1C3FA11027D2740C0741E75DFC7B7ED /* PBXTargetDependency */,
+				BE145EE262BFAC478C887A48B90A6F2C /* PBXTargetDependency */,
+				40B9C7CBFB58AFF6E329F5EE7685B118 /* PBXTargetDependency */,
+				128A2C9F4BB63AC02AF8951204F0A6E6 /* PBXTargetDependency */,
+				FE2324C58D0E316368C35426864CD5D2 /* PBXTargetDependency */,
+				D4CE615DD24500B7CCAB5F6D697B7C01 /* PBXTargetDependency */,
+				500EBAC56A30B9C5C38FADCB54210E3A /* PBXTargetDependency */,
 			);
 			name = "Pods-Runner";
 			productName = Pods_Runner;
@@ -2137,8 +2191,8 @@
 			buildRules = (
 			);
 			dependencies = (
-				FE55C9C5B8E0304DD7DB5A9F8FFE13B1 /* PBXTargetDependency */,
-				F4F4B5B99D5F71F1C8891073016D616A /* PBXTargetDependency */,
+				46AD2DB1C2B73EE257572F593369980F /* PBXTargetDependency */,
+				71E936583DA949FFE8960E0D60A3A98A /* PBXTargetDependency */,
 			);
 			name = permission_handler_apple;
 			productName = permission_handler_apple;
@@ -2157,9 +2211,9 @@
 			buildRules = (
 			);
 			dependencies = (
-				E35325631C793290EE6ADEF215316E8D /* PBXTargetDependency */,
-				D1F94458481CC387EF71D35831D4A2B2 /* PBXTargetDependency */,
-				6A914E45AF6264FEE3C0FACEBFBC83F2 /* PBXTargetDependency */,
+				F02AE4A656DD5CD499F4C25B7FA0BD60 /* PBXTargetDependency */,
+				6FF74ED92332535F0B9D06B541001AA8 /* PBXTargetDependency */,
+				F42C58A34FCD2A363198E27E59FEB4A1 /* PBXTargetDependency */,
 			);
 			name = razorpay_turbo_standard;
 			productName = razorpay_turbo_standard;
@@ -2178,8 +2232,8 @@
 			buildRules = (
 			);
 			dependencies = (
-				FC9AAB9F968668821FEFDD0523E3C301 /* PBXTargetDependency */,
-				181853404ECD3C8AA65952F04B67682C /* PBXTargetDependency */,
+				CCB7320FA8E542EF4F2F1E2F0F98F10D /* PBXTargetDependency */,
+				C7CCED55F33A2910EFE02B800B6B6E0F /* PBXTargetDependency */,
 			);
 			name = geolocator_apple;
 			productName = geolocator_apple;
@@ -2198,8 +2252,8 @@
 			buildRules = (
 			);
 			dependencies = (
-				99C306AD66F565DF3C3578935F4EDCF1 /* PBXTargetDependency */,
-				87221E249BBEE442A96B012B995131DA /* PBXTargetDependency */,
+				8BAC9898202F824CD18350477EFC3DF3 /* PBXTargetDependency */,
+				9E5C35CF5D4986E9F173BF23F860F48A /* PBXTargetDependency */,
 			);
 			name = fluttertoast;
 			productName = fluttertoast;
@@ -2208,11 +2262,11 @@
 		};
 		FBA58286642A703EF0905798BB837EBB /* fluttertoast-fluttertoast_privacy */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A0525CD037B0CDE7E226F455946CDAC3 /* Build configuration list for PBXNativeTarget "fluttertoast-fluttertoast_privacy" */;
+			buildConfigurationList = 47BB2D76BB4EC560F4ABA90081554755 /* Build configuration list for PBXNativeTarget "fluttertoast-fluttertoast_privacy" */;
 			buildPhases = (
-				0195DBB593E80B6312528996C1C461D8 /* Sources */,
-				7C81D8A36C5B259EFC479350715AC67E /* Frameworks */,
-				777FC4515C3058BA32895F1C45CA796B /* Resources */,
+				35FD3E83E021FD87BB7180A9DAEBFB7C /* Sources */,
+				43D7E885C9750BFEF4A747592164162E /* Frameworks */,
+				E03270ECD2204DBAA2610449F9AF8C29 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -2266,6 +2320,14 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		187B9CEEC6DE36C1C2F9B593ECC09DE5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D311370FB27D40BEF6A6FB2903477E9C /* PrivacyInfo.xcprivacy in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4A4A68286BF6EE93CE5EEDA81E609ED5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -2274,26 +2336,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5203E8B835CF7AEE82D46B626D456234 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BAC3A6234436A8EE3263F7120E419459 /* PrivacyInfo.xcprivacy in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		649A4A6B66C7048856D130D18FCA69A7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		71E9804F76476E68DC28914BF89399E7 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CD4B4E0C44CA0898B3766082D2F60CF4 /* PrivacyInfo.xcprivacy in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		777FC4515C3058BA32895F1C45CA796B /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				71780423493CFA93980CD11EF4B306EC /* PrivacyInfo.xcprivacy in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2312,11 +2366,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B5456B97815AFECE46161925E6CA1D5C /* Resources */ = {
+		B233E5C39E473881E6A7E509676E965A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A1FF34CBE65190CAEB4A4EE93BF39747 /* PrivacyInfo.xcprivacy in Resources */,
+				48768A50D39D3FD237E22B5D68686475 /* PrivacyInfo.xcprivacy in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2335,11 +2389,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E19C0CB23930E5FE50C9FF71DBB142A8 /* Resources */ = {
+		E03270ECD2204DBAA2610449F9AF8C29 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EB744EF527BF4F34663E7B14F93BCA2E /* PrivacyInfo.xcprivacy in Resources */,
+				3099C28478DFC3209C1DC1626E0B7723 /* PrivacyInfo.xcprivacy in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2383,21 +2437,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		0195DBB593E80B6312528996C1C461D8 /* Sources */ = {
+		06E5B0986B593F175E0C66CCD19E2C0B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		029C63469146C48B3C68D155CBAFA378 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5A0AF5092737F6D542A16CA77D5AA295 /* Sources */ = {
+		35FD3E83E021FD87BB7180A9DAEBFB7C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -2432,13 +2479,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		77FF79AA0E351BF80E25B350F4D96C19 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		A77EE9B27552283F7B0C9DF5EC4105EF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -2463,10 +2503,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				8ADCDD4C4B85D461A73DD45C2AF0DF6E /* razorpay_turbo_standard-dummy.m in Sources */,
-				CC3E0E3D3AE51B0188A5A563E7539189 /* RazorpayDelegate.swift in Sources */,
-				45C0C96C1AEAB8513C0863360366157D /* RazorpayDelegate+Turbo.swift in Sources */,
-				9889C61D15010E9AED3B4790F0124A1E /* RazorpayFlutterPlugin.m in Sources */,
-				0E81030C05F64F7E339B9D26B953DE33 /* SwiftRazorpayFlutterPlugin.swift in Sources */,
+				2AE5C5B4AC08AE5EDC17F4205269293A /* RazorpayDelegate.swift in Sources */,
+				784DC293C27683433EBC409F79255EAB /* RazorpayDelegate+Turbo.swift in Sources */,
+				F8D2EF9DCBF34CC64797A9BCDE5EF7D3 /* RazorpayFlutterPlugin.m in Sources */,
+				A50E3BFFB184F4749DA0EE7E8C3C258E /* SwiftRazorpayFlutterPlugin.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2491,6 +2531,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EAB22737F7B5CE9D55AFF3D8F4033A82 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F909499755448A70FF521C4BD33D7A5B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FA41EE7FD718A3BDB170FA75F1047E4C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -2502,137 +2556,137 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		181853404ECD3C8AA65952F04B67682C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "geolocator_apple-geolocator_apple_privacy";
-			target = 3AEC564FBEF6D576418AC71B87922016 /* geolocator_apple-geolocator_apple_privacy */;
-			targetProxy = 0C9A52096C15AC21EFD3F9EB8A378182 /* PBXContainerItemProxy */;
-		};
-		39862F5399D6C74F9D54CBB8D08A52C0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "razorpay-pod";
-			target = 84CA3424E172CD651235AF0783D01D39 /* razorpay-pod */;
-			targetProxy = 91F12D58D6341B7CE8CD3E689F1ACE19 /* PBXContainerItemProxy */;
-		};
-		3A02EB90CD47AA520BD057E0E1E3A684 /* PBXTargetDependency */ = {
+		128A2C9F4BB63AC02AF8951204F0A6E6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "razorpay-core-pod";
 			target = 0A1CC38B57BF7987D9DDA7A1CE4F117E /* razorpay-core-pod */;
-			targetProxy = C26B06C7FEA596461BAAFA503B9BA246 /* PBXContainerItemProxy */;
+			targetProxy = 68FD8BDFFBFF80C7C7D24267F5CCBF3C /* PBXContainerItemProxy */;
 		};
-		68B901F47A443C92BAEA571B5E7136DF /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = fluttertoast;
-			target = FA3EDC8EBD9CDE19E74123E29F5B7E04 /* fluttertoast */;
-			targetProxy = D772E9DCBFEA516169CB2C90C0054C11 /* PBXContainerItemProxy */;
-		};
-		6A914E45AF6264FEE3C0FACEBFBC83F2 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "razorpay-turbo";
-			target = 30AA407894472403FBBF5E31DF515631 /* razorpay-turbo */;
-			targetProxy = 116CA407660EA8618C058088071A0F67 /* PBXContainerItemProxy */;
-		};
-		6CAF6B8B2BC8E57E037CA3D86DD68246 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "razorpay-core-pod";
-			target = 0A1CC38B57BF7987D9DDA7A1CE4F117E /* razorpay-core-pod */;
-			targetProxy = E2D32B55C63566CE129EC5DC31F0C2EB /* PBXContainerItemProxy */;
-		};
-		87221E249BBEE442A96B012B995131DA /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "fluttertoast-fluttertoast_privacy";
-			target = FBA58286642A703EF0905798BB837EBB /* fluttertoast-fluttertoast_privacy */;
-			targetProxy = 50729DB9FB667956A5376167AC4A979C /* PBXContainerItemProxy */;
-		};
-		898839E94EA70C0E5468B3A181283B14 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "razorpay-pod";
-			target = 84CA3424E172CD651235AF0783D01D39 /* razorpay-pod */;
-			targetProxy = 6D22E6C67FBB029DACB136D673123B94 /* PBXContainerItemProxy */;
-		};
-		8B7FADE2E7DBE5979A2B170BE1D4E070 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = package_info_plus;
-			target = 54A00AF9F830F355D8FD8F6A4387F6A2 /* package_info_plus */;
-			targetProxy = 0F8345B84DD78D645FB94C7FBA4DBD45 /* PBXContainerItemProxy */;
-		};
-		92DE8518618FB8F259AFEA77372C42D0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Flutter;
-			target = 1EFDDC32A34D56D411E640A81DCD9E73 /* Flutter */;
-			targetProxy = 33024A14BB553F644AA66EAC0810DD8C /* PBXContainerItemProxy */;
-		};
-		99C306AD66F565DF3C3578935F4EDCF1 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Flutter;
-			target = 1EFDDC32A34D56D411E640A81DCD9E73 /* Flutter */;
-			targetProxy = D07960CC745B768F95D588CB182D07C0 /* PBXContainerItemProxy */;
-		};
-		A463E13E8DAF34BF941C45F2D33B4616 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = geolocator_apple;
-			target = D2129B9E0DCE64EA38C25BA6C89558D7 /* geolocator_apple */;
-			targetProxy = 8BB96F4F38FA3FBBCD03E298FC9639E1 /* PBXContainerItemProxy */;
-		};
-		B07644B7E63FD6C2E8BCC98A7738093A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Flutter;
-			target = 1EFDDC32A34D56D411E640A81DCD9E73 /* Flutter */;
-			targetProxy = 1D7EE169F3D6A951F1DA02816E3A241C /* PBXContainerItemProxy */;
-		};
-		BCB18D24ACA462C7FC3C0779CB3A8F8E /* PBXTargetDependency */ = {
+		40B9C7CBFB58AFF6E329F5EE7685B118 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = permission_handler_apple;
 			target = A45E503409C9530E1F5D12C293F4BD67 /* permission_handler_apple */;
-			targetProxy = 5FF102B399835BD8CEBD4775E4F3A514 /* PBXContainerItemProxy */;
+			targetProxy = 26D5D8943E025A2708DB514A9D05B628 /* PBXContainerItemProxy */;
 		};
-		CF8D78C566974068CF7570602814FEE4 /* PBXTargetDependency */ = {
+		46AD2DB1C2B73EE257572F593369980F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = "package_info_plus-package_info_plus_privacy";
-			target = 07C64B0E06ED7C1903D446F9BBDDF5C9 /* package_info_plus-package_info_plus_privacy */;
-			targetProxy = D36491186F9E9E2ADAAE08056F0D5330 /* PBXContainerItemProxy */;
+			name = Flutter;
+			target = 1EFDDC32A34D56D411E640A81DCD9E73 /* Flutter */;
+			targetProxy = 527D49D19CB0E7376DF081466E3D9CDD /* PBXContainerItemProxy */;
 		};
-		D1F94458481CC387EF71D35831D4A2B2 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "razorpay-pod";
-			target = 84CA3424E172CD651235AF0783D01D39 /* razorpay-pod */;
-			targetProxy = 9552ADA0FEA96D7AE3F898E133C86A11 /* PBXContainerItemProxy */;
-		};
-		DA0EB1131BC17AE754FA5E4B704A9D30 /* PBXTargetDependency */ = {
+		500EBAC56A30B9C5C38FADCB54210E3A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = razorpay_turbo_standard;
 			target = ADFC1E4E1C15A355998F057F24CDBCDB /* razorpay_turbo_standard */;
-			targetProxy = 3A200896E813D15F4EC3240DBE04EA8E /* PBXContainerItemProxy */;
+			targetProxy = F00DE99A338DA6D7AA8AE32BAAA34D9F /* PBXContainerItemProxy */;
 		};
-		E35325631C793290EE6ADEF215316E8D /* PBXTargetDependency */ = {
+		53AF1306B0689211ADEB305AF192ABD7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Flutter;
 			target = 1EFDDC32A34D56D411E640A81DCD9E73 /* Flutter */;
-			targetProxy = 22B4124396B4881C7F2BA7FB65D0B4E2 /* PBXContainerItemProxy */;
+			targetProxy = B74A1F994CC8D01575EDDEA4A32ACD44 /* PBXContainerItemProxy */;
 		};
-		EC03E5DFC5088F20C9B8D3826EDBFB5C /* PBXTargetDependency */ = {
+		6FF74ED92332535F0B9D06B541001AA8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = "razorpay-turbo";
-			target = 30AA407894472403FBBF5E31DF515631 /* razorpay-turbo */;
-			targetProxy = 0BCC8577404DF76F0EAEAD1BB5F4A113 /* PBXContainerItemProxy */;
+			name = "razorpay-pod";
+			target = 84CA3424E172CD651235AF0783D01D39 /* razorpay-pod */;
+			targetProxy = 889B89A60E6177CFC4E6D4E016DF8B85 /* PBXContainerItemProxy */;
 		};
-		F4F4B5B99D5F71F1C8891073016D616A /* PBXTargetDependency */ = {
+		71E936583DA949FFE8960E0D60A3A98A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "permission_handler_apple-permission_handler_apple_privacy";
 			target = 517E8BED8B0E6D6FD078BD19B0A13893 /* permission_handler_apple-permission_handler_apple_privacy */;
-			targetProxy = 3BD032250955B80D64536EE8EAA6D39E /* PBXContainerItemProxy */;
+			targetProxy = 093088D0479A519EA8E59DA6BD61EB75 /* PBXContainerItemProxy */;
 		};
-		FC9AAB9F968668821FEFDD0523E3C301 /* PBXTargetDependency */ = {
+		80C76F0553B482DD6A531FC1FFCC8527 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "razorpay-core-pod";
+			target = 0A1CC38B57BF7987D9DDA7A1CE4F117E /* razorpay-core-pod */;
+			targetProxy = 9C08E345BBB65162805D36BDD05AEF35 /* PBXContainerItemProxy */;
+		};
+		8A07E94D9BD951367B96D57E34E0E340 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Flutter;
 			target = 1EFDDC32A34D56D411E640A81DCD9E73 /* Flutter */;
-			targetProxy = 6FEF313526FF28FC8669380F8EDF6925 /* PBXContainerItemProxy */;
+			targetProxy = E6818E44D5DFAB85EBD49E0EEFCA504C /* PBXContainerItemProxy */;
 		};
-		FE55C9C5B8E0304DD7DB5A9F8FFE13B1 /* PBXTargetDependency */ = {
+		8BAC9898202F824CD18350477EFC3DF3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Flutter;
 			target = 1EFDDC32A34D56D411E640A81DCD9E73 /* Flutter */;
-			targetProxy = 94085109C90BB632ACB33D49C1E8D61F /* PBXContainerItemProxy */;
+			targetProxy = CA84D78BD1331C155706BB06AE827F3F /* PBXContainerItemProxy */;
+		};
+		9E5C35CF5D4986E9F173BF23F860F48A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "fluttertoast-fluttertoast_privacy";
+			target = FBA58286642A703EF0905798BB837EBB /* fluttertoast-fluttertoast_privacy */;
+			targetProxy = FE5229999DF6C484E93D2D29F6C158BB /* PBXContainerItemProxy */;
+		};
+		B1C3FA11027D2740C0741E75DFC7B7ED /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = geolocator_apple;
+			target = D2129B9E0DCE64EA38C25BA6C89558D7 /* geolocator_apple */;
+			targetProxy = 99613FC653F4B747092ADB6CA21DE5AC /* PBXContainerItemProxy */;
+		};
+		BE145EE262BFAC478C887A48B90A6F2C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = package_info_plus;
+			target = 54A00AF9F830F355D8FD8F6A4387F6A2 /* package_info_plus */;
+			targetProxy = FEC94B9E30D6A96818FD2F99D089476A /* PBXContainerItemProxy */;
+		};
+		C5B09441A365A857F54D7CA5DC02188E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "razorpay-pod";
+			target = 84CA3424E172CD651235AF0783D01D39 /* razorpay-pod */;
+			targetProxy = 0067381A40CECA519BC64882EF97C0E4 /* PBXContainerItemProxy */;
+		};
+		C7CCED55F33A2910EFE02B800B6B6E0F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "geolocator_apple-geolocator_apple_privacy";
+			target = 3AEC564FBEF6D576418AC71B87922016 /* geolocator_apple-geolocator_apple_privacy */;
+			targetProxy = 0D146356CE94BD83136F4C5A8D83D26B /* PBXContainerItemProxy */;
+		};
+		CCB7320FA8E542EF4F2F1E2F0F98F10D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Flutter;
+			target = 1EFDDC32A34D56D411E640A81DCD9E73 /* Flutter */;
+			targetProxy = ED5A62251CDDD749D82194D0F404512C /* PBXContainerItemProxy */;
+		};
+		D1465E2BC16CDFAD5A81BD6384571AA4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "package_info_plus-package_info_plus_privacy";
+			target = 07C64B0E06ED7C1903D446F9BBDDF5C9 /* package_info_plus-package_info_plus_privacy */;
+			targetProxy = 7AA264552D04E6C967A6ECE2640BCF39 /* PBXContainerItemProxy */;
+		};
+		D18A387CACBA1CDD64E7F3B46C179EF4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = fluttertoast;
+			target = FA3EDC8EBD9CDE19E74123E29F5B7E04 /* fluttertoast */;
+			targetProxy = 48518954B51DC4ACC130B0DA1D8015EF /* PBXContainerItemProxy */;
+		};
+		D4CE615DD24500B7CCAB5F6D697B7C01 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "razorpay-turbo";
+			target = 30AA407894472403FBBF5E31DF515631 /* razorpay-turbo */;
+			targetProxy = D9C088BA73507AAF144FF115C29B3D73 /* PBXContainerItemProxy */;
+		};
+		F02AE4A656DD5CD499F4C25B7FA0BD60 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Flutter;
+			target = 1EFDDC32A34D56D411E640A81DCD9E73 /* Flutter */;
+			targetProxy = 272106E6469640BEBFD8543A525C660B /* PBXContainerItemProxy */;
+		};
+		F42C58A34FCD2A363198E27E59FEB4A1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "razorpay-turbo";
+			target = 30AA407894472403FBBF5E31DF515631 /* razorpay-turbo */;
+			targetProxy = B97A44AB690C7A6B8E64094F1322CA8C /* PBXContainerItemProxy */;
+		};
+		FE2324C58D0E316368C35426864CD5D2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "razorpay-pod";
+			target = 84CA3424E172CD651235AF0783D01D39 /* razorpay-pod */;
+			targetProxy = 7FE729C42E0BECF9C4B373600F03E8ED /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -2692,49 +2746,6 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
-		};
-		04DB31930C8613651250F69A001F39D1 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 98058B9721549A560D2B75CC8A2053E1 /* permission_handler_apple.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGNING_ALLOWED = NO;
-				CODE_SIGNING_IDENTITY = "-";
-				CODE_SIGNING_REQUIRED = NO;
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/permission_handler_apple";
-				EXPANDED_CODE_SIGN_IDENTITY = "-";
-				IBSC_MODULE = permission_handler_apple;
-				INFOPLIST_FILE = "Target Support Files/permission_handler_apple/ResourceBundle-permission_handler_apple_privacy-permission_handler_apple-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				ONLY_ACTIVE_ARCH = NO;
-				PRODUCT_NAME = permission_handler_apple_privacy;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Debug;
-		};
-		071DFB07CF30F05AA62FB545165A5CB8 /* Profile */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2E8393C9CAC488CEB6228216791CF612 /* permission_handler_apple.release.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGNING_ALLOWED = NO;
-				CODE_SIGNING_IDENTITY = "-";
-				CODE_SIGNING_REQUIRED = NO;
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/permission_handler_apple";
-				EXPANDED_CODE_SIGN_IDENTITY = "-";
-				IBSC_MODULE = permission_handler_apple;
-				INFOPLIST_FILE = "Target Support Files/permission_handler_apple/ResourceBundle-permission_handler_apple_privacy-permission_handler_apple-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				PRODUCT_NAME = permission_handler_apple_privacy;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Profile;
 		};
 		0FB66A7726231042AD56A98DC24063E3 /* Profile */ = {
 			isa = XCBuildConfiguration;
@@ -2849,27 +2860,6 @@
 			};
 			name = Debug;
 		};
-		1177E1B35A17939ADE238EC67FF40A06 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = DC01A3D97926AA07C3EB01BFE27E9FE1 /* package_info_plus.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGNING_ALLOWED = NO;
-				CODE_SIGNING_IDENTITY = "-";
-				CODE_SIGNING_REQUIRED = NO;
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/package_info_plus";
-				EXPANDED_CODE_SIGN_IDENTITY = "-";
-				IBSC_MODULE = package_info_plus;
-				INFOPLIST_FILE = "Target Support Files/package_info_plus/ResourceBundle-package_info_plus_privacy-package_info_plus-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				ONLY_ACTIVE_ARCH = NO;
-				PRODUCT_NAME = package_info_plus_privacy;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Debug;
-		};
 		15025CB1AB152DBF084B4623543B49BF /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0AF01512C3A5E6AF61504A1BD427F3BF /* razorpay-core-pod.release.xcconfig */;
@@ -2944,6 +2934,49 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
+		};
+		325489FF9E1C806082C74CC2DDD2A42B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5F4F35430B82CA475BE4708FFB46AE0F /* geolocator_apple.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_IDENTITY = "-";
+				CODE_SIGNING_REQUIRED = NO;
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/geolocator_apple";
+				EXPANDED_CODE_SIGN_IDENTITY = "-";
+				IBSC_MODULE = geolocator_apple;
+				INFOPLIST_FILE = "Target Support Files/geolocator_apple/ResourceBundle-geolocator_apple_privacy-geolocator_apple-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_NAME = geolocator_apple_privacy;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		3737BF9F1167C31A72764AFCE0C123B6 /* Profile */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2E8393C9CAC488CEB6228216791CF612 /* permission_handler_apple.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_IDENTITY = "-";
+				CODE_SIGNING_REQUIRED = NO;
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/permission_handler_apple";
+				EXPANDED_CODE_SIGN_IDENTITY = "-";
+				IBSC_MODULE = permission_handler_apple;
+				INFOPLIST_FILE = "Target Support Files/permission_handler_apple/ResourceBundle-permission_handler_apple_privacy-permission_handler_apple-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				PRODUCT_NAME = permission_handler_apple_privacy;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Profile;
 		};
 		3B75CC98D4C25F7ADB34A95CCBEF7F05 /* Profile */ = {
 			isa = XCBuildConfiguration;
@@ -3020,25 +3053,27 @@
 			};
 			name = Debug;
 		};
-		4E77B7D32564C656FD59FE39B19A4588 /* Release */ = {
+		41CB5D9FEB2E169E4E0A631DA14EED38 /* Profile */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EE2777EDF04E21F58839894CF2DF38B5 /* geolocator_apple.release.xcconfig */;
+			baseConfigurationReference = 67D010070CE271BC6A5E7A5BEFDF7156 /* fluttertoast.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_IDENTITY = "-";
 				CODE_SIGNING_REQUIRED = NO;
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/geolocator_apple";
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/fluttertoast";
 				EXPANDED_CODE_SIGN_IDENTITY = "-";
-				IBSC_MODULE = geolocator_apple;
-				INFOPLIST_FILE = "Target Support Files/geolocator_apple/ResourceBundle-geolocator_apple_privacy-geolocator_apple-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				PRODUCT_NAME = geolocator_apple_privacy;
+				IBSC_MODULE = fluttertoast;
+				INFOPLIST_FILE = "Target Support Files/fluttertoast/ResourceBundle-fluttertoast_privacy-fluttertoast-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				PRODUCT_NAME = fluttertoast_privacy;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = bundle;
 			};
-			name = Release;
+			name = Profile;
 		};
 		4F5971B2EBAE1E16D08EDE80146F0C84 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -3121,6 +3156,47 @@
 			};
 			name = Profile;
 		};
+		50F44C61E03453F65CD767E868E0CF2D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EE2777EDF04E21F58839894CF2DF38B5 /* geolocator_apple.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_IDENTITY = "-";
+				CODE_SIGNING_REQUIRED = NO;
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/geolocator_apple";
+				EXPANDED_CODE_SIGN_IDENTITY = "-";
+				IBSC_MODULE = geolocator_apple;
+				INFOPLIST_FILE = "Target Support Files/geolocator_apple/ResourceBundle-geolocator_apple_privacy-geolocator_apple-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_NAME = geolocator_apple_privacy;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+		5C62DCBDC453375F6F96FE6CD2F5E6A1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DC01A3D97926AA07C3EB01BFE27E9FE1 /* package_info_plus.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_IDENTITY = "-";
+				CODE_SIGNING_REQUIRED = NO;
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/package_info_plus";
+				EXPANDED_CODE_SIGN_IDENTITY = "-";
+				IBSC_MODULE = package_info_plus;
+				INFOPLIST_FILE = "Target Support Files/package_info_plus/ResourceBundle-package_info_plus_privacy-package_info_plus-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_NAME = package_info_plus_privacy;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
 		6651B0194967D44810EE796A8F9A6D9A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 89FC87CEAAB1EEE01A1B8EA0A1749CDD /* razorpay-pod.debug.xcconfig */;
@@ -3159,47 +3235,25 @@
 			};
 			name = Debug;
 		};
-		6B81946C3AC9E78667B5BFF723FB9440 /* Debug */ = {
+		6EE4C0E8445D646EC2EBC5FB9E48AFCB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 32496BCAC1DC674A5B5E117FB747B545 /* fluttertoast.debug.xcconfig */;
+			baseConfigurationReference = 1AB61166F1DD4E1ABF98830EC5D02571 /* package_info_plus.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_IDENTITY = "-";
 				CODE_SIGNING_REQUIRED = NO;
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/fluttertoast";
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/package_info_plus";
 				EXPANDED_CODE_SIGN_IDENTITY = "-";
-				IBSC_MODULE = fluttertoast;
-				INFOPLIST_FILE = "Target Support Files/fluttertoast/ResourceBundle-fluttertoast_privacy-fluttertoast-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				ONLY_ACTIVE_ARCH = NO;
-				PRODUCT_NAME = fluttertoast_privacy;
+				IBSC_MODULE = package_info_plus;
+				INFOPLIST_FILE = "Target Support Files/package_info_plus/ResourceBundle-package_info_plus_privacy-package_info_plus-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				PRODUCT_NAME = package_info_plus_privacy;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = bundle;
 			};
-			name = Debug;
-		};
-		7284A7079FFB22E6C9B405834F47B5F8 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5F4F35430B82CA475BE4708FFB46AE0F /* geolocator_apple.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGNING_ALLOWED = NO;
-				CODE_SIGNING_IDENTITY = "-";
-				CODE_SIGNING_REQUIRED = NO;
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/geolocator_apple";
-				EXPANDED_CODE_SIGN_IDENTITY = "-";
-				IBSC_MODULE = geolocator_apple;
-				INFOPLIST_FILE = "Target Support Files/geolocator_apple/ResourceBundle-geolocator_apple_privacy-geolocator_apple-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				ONLY_ACTIVE_ARCH = NO;
-				PRODUCT_NAME = geolocator_apple_privacy;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Debug;
+			name = Release;
 		};
 		73DAF976FE9D5A74DC903CB1028D643F /* Profile */ = {
 			isa = XCBuildConfiguration;
@@ -3219,6 +3273,26 @@
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Profile;
+		};
+		74214A13EE1CEDCEF8183831F1D0BE52 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 67D010070CE271BC6A5E7A5BEFDF7156 /* fluttertoast.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_IDENTITY = "-";
+				CODE_SIGNING_REQUIRED = NO;
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/fluttertoast";
+				EXPANDED_CODE_SIGN_IDENTITY = "-";
+				IBSC_MODULE = fluttertoast;
+				INFOPLIST_FILE = "Target Support Files/fluttertoast/ResourceBundle-fluttertoast_privacy-fluttertoast-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				PRODUCT_NAME = fluttertoast_privacy;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
 		};
 		7BD1AB4DE0EECC079966841AD955E2F3 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -3279,7 +3353,7 @@
 		};
 		7CCD3FBF101284071FD3C7D43FD1FF30 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EC30912E2C09CA4CF5D1CA0AA30E9210 /* razorpay_turbo_standard.release.xcconfig */;
+			baseConfigurationReference = 97906EF1897FA2582C7AACBA477926DF /* razorpay_turbo_standard.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO;
@@ -3421,7 +3495,7 @@
 		};
 		9978246361AA7BE78A7EDE23A571639F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F9B98D2B8524846FEF98FC3416DE9F6C /* razorpay_turbo_standard.debug.xcconfig */;
+			baseConfigurationReference = FF7E94E265906FCC5E593E081701B817 /* razorpay_turbo_standard.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO;
@@ -3595,6 +3669,28 @@
 			};
 			name = Debug;
 		};
+		A086AC658A087CAFC65067205B71FBF3 /* Profile */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1AB61166F1DD4E1ABF98830EC5D02571 /* package_info_plus.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_IDENTITY = "-";
+				CODE_SIGNING_REQUIRED = NO;
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/package_info_plus";
+				EXPANDED_CODE_SIGN_IDENTITY = "-";
+				IBSC_MODULE = package_info_plus;
+				INFOPLIST_FILE = "Target Support Files/package_info_plus/ResourceBundle-package_info_plus_privacy-package_info_plus-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				PRODUCT_NAME = package_info_plus_privacy;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Profile;
+		};
 		A13E63D267BF9CB833E81578B6459770 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6F41003691DEED627F444F76179BA511 /* razorpay-core-pod.debug.xcconfig */;
@@ -3614,9 +3710,31 @@
 			};
 			name = Debug;
 		};
+		A1B2053FAE306717A9781D464B19D550 /* Profile */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EE2777EDF04E21F58839894CF2DF38B5 /* geolocator_apple.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_IDENTITY = "-";
+				CODE_SIGNING_REQUIRED = NO;
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/geolocator_apple";
+				EXPANDED_CODE_SIGN_IDENTITY = "-";
+				IBSC_MODULE = geolocator_apple;
+				INFOPLIST_FILE = "Target Support Files/geolocator_apple/ResourceBundle-geolocator_apple_privacy-geolocator_apple-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_NAME = geolocator_apple_privacy;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Profile;
+		};
 		A915DBFD6A1A53ACD1418A7B6B661EAF /* Profile */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EC30912E2C09CA4CF5D1CA0AA30E9210 /* razorpay_turbo_standard.release.xcconfig */;
+			baseConfigurationReference = 97906EF1897FA2582C7AACBA477926DF /* razorpay_turbo_standard.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO;
@@ -3877,28 +3995,6 @@
 			};
 			name = Profile;
 		};
-		CC544D185871C7FF1029A6919B71994C /* Profile */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1AB61166F1DD4E1ABF98830EC5D02571 /* package_info_plus.release.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGNING_ALLOWED = NO;
-				CODE_SIGNING_IDENTITY = "-";
-				CODE_SIGNING_REQUIRED = NO;
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/package_info_plus";
-				EXPANDED_CODE_SIGN_IDENTITY = "-";
-				IBSC_MODULE = package_info_plus;
-				INFOPLIST_FILE = "Target Support Files/package_info_plus/ResourceBundle-package_info_plus_privacy-package_info_plus-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				PRODUCT_NAME = package_info_plus_privacy;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Profile;
-		};
 		D09BFD3D35F6C946D9FAE547EC85B192 /* Profile */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2E8393C9CAC488CEB6228216791CF612 /* permission_handler_apple.release.xcconfig */;
@@ -4010,28 +4106,6 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
-		};
-		DFA10218AD948F82A390853664CF3235 /* Profile */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 67D010070CE271BC6A5E7A5BEFDF7156 /* fluttertoast.release.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGNING_ALLOWED = NO;
-				CODE_SIGNING_IDENTITY = "-";
-				CODE_SIGNING_REQUIRED = NO;
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/fluttertoast";
-				EXPANDED_CODE_SIGN_IDENTITY = "-";
-				IBSC_MODULE = fluttertoast;
-				INFOPLIST_FILE = "Target Support Files/fluttertoast/ResourceBundle-fluttertoast_privacy-fluttertoast-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				PRODUCT_NAME = fluttertoast_privacy;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Profile;
 		};
 		E0B2E00C31A7D3F336A1A0243336D2CB /* Profile */ = {
 			isa = XCBuildConfiguration;
@@ -4164,6 +4238,27 @@
 			};
 			name = Debug;
 		};
+		E9E8F31956FCAE5BDB2F1B190757A46D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 98058B9721549A560D2B75CC8A2053E1 /* permission_handler_apple.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_IDENTITY = "-";
+				CODE_SIGNING_REQUIRED = NO;
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/permission_handler_apple";
+				EXPANDED_CODE_SIGN_IDENTITY = "-";
+				IBSC_MODULE = permission_handler_apple;
+				INFOPLIST_FILE = "Target Support Files/permission_handler_apple/ResourceBundle-permission_handler_apple_privacy-permission_handler_apple-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_NAME = permission_handler_apple_privacy;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
 		ECADC3DA3CA35C50136F729EA9ECE827 /* Profile */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A5E5FD05966A42CB59496FBED2942CD5 /* Flutter.release.xcconfig */;
@@ -4182,46 +4277,6 @@
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Profile;
-		};
-		F5788100E0252FE90383BB852E839514 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2E8393C9CAC488CEB6228216791CF612 /* permission_handler_apple.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGNING_ALLOWED = NO;
-				CODE_SIGNING_IDENTITY = "-";
-				CODE_SIGNING_REQUIRED = NO;
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/permission_handler_apple";
-				EXPANDED_CODE_SIGN_IDENTITY = "-";
-				IBSC_MODULE = permission_handler_apple;
-				INFOPLIST_FILE = "Target Support Files/permission_handler_apple/ResourceBundle-permission_handler_apple_privacy-permission_handler_apple-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				PRODUCT_NAME = permission_handler_apple_privacy;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Release;
-		};
-		F5FA16AE10654A4AFB47C1DD7FBB69A3 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 67D010070CE271BC6A5E7A5BEFDF7156 /* fluttertoast.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGNING_ALLOWED = NO;
-				CODE_SIGNING_IDENTITY = "-";
-				CODE_SIGNING_REQUIRED = NO;
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/fluttertoast";
-				EXPANDED_CODE_SIGN_IDENTITY = "-";
-				IBSC_MODULE = fluttertoast;
-				INFOPLIST_FILE = "Target Support Files/fluttertoast/ResourceBundle-fluttertoast_privacy-fluttertoast-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				PRODUCT_NAME = fluttertoast_privacy;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Release;
 		};
 		F825CD128E672B95EFD99B4E63BA2755 /* Profile */ = {
 			isa = XCBuildConfiguration;
@@ -4279,47 +4334,46 @@
 			};
 			name = Profile;
 		};
-		FCE36FB1081072D68980142275628618 /* Release */ = {
+		F89F270E942617EFF3D022FA65977145 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1AB61166F1DD4E1ABF98830EC5D02571 /* package_info_plus.release.xcconfig */;
+			baseConfigurationReference = 32496BCAC1DC674A5B5E117FB747B545 /* fluttertoast.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_IDENTITY = "-";
 				CODE_SIGNING_REQUIRED = NO;
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/package_info_plus";
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/fluttertoast";
 				EXPANDED_CODE_SIGN_IDENTITY = "-";
-				IBSC_MODULE = package_info_plus;
-				INFOPLIST_FILE = "Target Support Files/package_info_plus/ResourceBundle-package_info_plus_privacy-package_info_plus-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				PRODUCT_NAME = package_info_plus_privacy;
+				IBSC_MODULE = fluttertoast;
+				INFOPLIST_FILE = "Target Support Files/fluttertoast/ResourceBundle-fluttertoast_privacy-fluttertoast-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_NAME = fluttertoast_privacy;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		F9B2608CC9851A8D22773CDEBF7AC74F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2E8393C9CAC488CEB6228216791CF612 /* permission_handler_apple.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_IDENTITY = "-";
+				CODE_SIGNING_REQUIRED = NO;
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/permission_handler_apple";
+				EXPANDED_CODE_SIGN_IDENTITY = "-";
+				IBSC_MODULE = permission_handler_apple;
+				INFOPLIST_FILE = "Target Support Files/permission_handler_apple/ResourceBundle-permission_handler_apple_privacy-permission_handler_apple-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				PRODUCT_NAME = permission_handler_apple_privacy;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = bundle;
 			};
 			name = Release;
-		};
-		FDB8BF23D72CF0CA3E57CD336AD9602F /* Profile */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = EE2777EDF04E21F58839894CF2DF38B5 /* geolocator_apple.release.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGNING_ALLOWED = NO;
-				CODE_SIGNING_IDENTITY = "-";
-				CODE_SIGNING_REQUIRED = NO;
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/geolocator_apple";
-				EXPANDED_CODE_SIGN_IDENTITY = "-";
-				IBSC_MODULE = geolocator_apple;
-				INFOPLIST_FILE = "Target Support Files/geolocator_apple/ResourceBundle-geolocator_apple_privacy-geolocator_apple-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				PRODUCT_NAME = geolocator_apple_privacy;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Profile;
 		};
 /* End XCBuildConfiguration section */
 
@@ -4344,22 +4398,52 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		25EAABCA43F845273FDAA588083BCA4C /* Build configuration list for PBXNativeTarget "permission_handler_apple-permission_handler_apple_privacy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E9E8F31956FCAE5BDB2F1B190757A46D /* Debug */,
+				3737BF9F1167C31A72764AFCE0C123B6 /* Profile */,
+				F9B2608CC9851A8D22773CDEBF7AC74F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3A495DEA2434234D930FB55FBB8BEFE8 /* Build configuration list for PBXNativeTarget "package_info_plus-package_info_plus_privacy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5C62DCBDC453375F6F96FE6CD2F5E6A1 /* Debug */,
+				A086AC658A087CAFC65067205B71FBF3 /* Profile */,
+				6EE4C0E8445D646EC2EBC5FB9E48AFCB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		44FD488DF7B0F1E2AB75530E0579C89B /* Build configuration list for PBXNativeTarget "geolocator_apple-geolocator_apple_privacy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				325489FF9E1C806082C74CC2DDD2A42B /* Debug */,
+				A1B2053FAE306717A9781D464B19D550 /* Profile */,
+				50F44C61E03453F65CD767E868E0CF2D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		47BB2D76BB4EC560F4ABA90081554755 /* Build configuration list for PBXNativeTarget "fluttertoast-fluttertoast_privacy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F89F270E942617EFF3D022FA65977145 /* Debug */,
+				41CB5D9FEB2E169E4E0A631DA14EED38 /* Profile */,
+				74214A13EE1CEDCEF8183831F1D0BE52 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8DE5143C03248BB6CD542DE3963D6F3A /* Debug */,
 				503C1EFFF98ABB8F379FAECB16E0AEE5 /* Profile */,
 				9E406C6AAF85E580207CD97B0044DEAB /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		4E281352B7118E6F18E0D8133325B6EE /* Build configuration list for PBXNativeTarget "package_info_plus-package_info_plus_privacy" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1177E1B35A17939ADE238EC67FF40A06 /* Debug */,
-				CC544D185871C7FF1029A6919B71994C /* Profile */,
-				FCE36FB1081072D68980142275628618 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -4414,32 +4498,12 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8F3388CE20309001DFB3CA28ED945CA8 /* Build configuration list for PBXNativeTarget "geolocator_apple-geolocator_apple_privacy" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				7284A7079FFB22E6C9B405834F47B5F8 /* Debug */,
-				FDB8BF23D72CF0CA3E57CD336AD9602F /* Profile */,
-				4E77B7D32564C656FD59FE39B19A4588 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		94078A06C17E946ADC1F2C06726219E5 /* Build configuration list for PBXAggregateTarget "Flutter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				66AB2934750D40AD8076557987F1C242 /* Debug */,
 				ECADC3DA3CA35C50136F729EA9ECE827 /* Profile */,
 				B90F9ECA1CF6F4B009B3F630F29E5FEC /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		A0525CD037B0CDE7E226F455946CDAC3 /* Build configuration list for PBXNativeTarget "fluttertoast-fluttertoast_privacy" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				6B81946C3AC9E78667B5BFF723FB9440 /* Debug */,
-				DFA10218AD948F82A390853664CF3235 /* Profile */,
-				F5FA16AE10654A4AFB47C1DD7FBB69A3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -4460,16 +4524,6 @@
 				6651B0194967D44810EE796A8F9A6D9A /* Debug */,
 				E0B2E00C31A7D3F336A1A0243336D2CB /* Profile */,
 				8FAD5F27CBF4877A26C9F64398411353 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		FDAE94B1FEBD34ED9582276864267EFC /* Build configuration list for PBXNativeTarget "permission_handler_apple-permission_handler_apple_privacy" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				04DB31930C8613651250F69A001F39D1 /* Debug */,
-				071DFB07CF30F05AA62FB545165A5CB8 /* Profile */,
-				F5788100E0252FE90383BB852E839514 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

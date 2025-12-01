@@ -27304,6 +27304,357 @@
         "moduleName": "two_party"
       },
       {
+        "kind": "TypeDecl",
+        "name": "NPCICredentialHelper",
+        "printedName": "NPCICredentialHelper",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "txnId",
+            "printedName": "txnId",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:9two_party20NPCICredentialHelperC5txnIdSSSgvpZ",
+            "mangledName": "$s9two_party20NPCICredentialHelperC5txnIdSSSgvpZ",
+            "moduleName": "two_party",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:9two_party20NPCICredentialHelperC5txnIdSSSgvgZ",
+                "mangledName": "$s9two_party20NPCICredentialHelperC5txnIdSSSgvgZ",
+                "moduleName": "two_party",
+                "static": true,
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:9two_party20NPCICredentialHelperC5txnIdSSSgvsZ",
+                "mangledName": "$s9two_party20NPCICredentialHelperC5txnIdSSSgvsZ",
+                "moduleName": "two_party",
+                "static": true,
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:9two_party20NPCICredentialHelperC5txnIdSSSgvMZ",
+                "mangledName": "$s9two_party20NPCICredentialHelperC5txnIdSSSgvMZ",
+                "moduleName": "two_party",
+                "static": true,
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "getMandateCredentials",
+            "printedName": "getMandateCredentials(bankName:accountNumber:vpaAddress:payerName:payeeName:payeeVpa:transactionAmount:txnNote:customTxnId:mobileNumber:completion:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "hasDefaultArg": true,
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "([Swift.String : Any]?, Swift.String?, (any Swift.Error)?) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Tuple",
+                    "printedName": "([Swift.String : Any]?, Swift.String?, (any Swift.Error)?)",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "[Swift.String : Any]?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Dictionary",
+                            "printedName": "[Swift.String : Any]",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "String",
+                                "printedName": "Swift.String",
+                                "usr": "s:SS"
+                              },
+                              {
+                                "kind": "TypeNominal",
+                                "name": "ProtocolComposition",
+                                "printedName": "Any"
+                              }
+                            ],
+                            "usr": "s:SD"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "Swift.String?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "String",
+                            "printedName": "Swift.String",
+                            "usr": "s:SS"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "(any Swift.Error)?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Error",
+                            "printedName": "any Swift.Error",
+                            "usr": "s:s5ErrorP"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:9two_party20NPCICredentialHelperC21getMandateCredentials8bankName13accountNumber10vpaAddress05payerI005payeeI00O3Vpa17transactionAmount7txnNote11customTxnId06mobileK010completionySS_S8SSgAPySDySSypGSg_APs5Error_pSgtctFZ",
+            "mangledName": "$s9two_party20NPCICredentialHelperC21getMandateCredentials8bankName13accountNumber10vpaAddress05payerI005payeeI00O3Vpa17transactionAmount7txnNote11customTxnId06mobileK010completionySS_S8SSgAPySDySSypGSg_APs5Error_pSgtctFZ",
+            "moduleName": "two_party",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "NPCICredentialHelper",
+                "printedName": "two_party.NPCICredentialHelper",
+                "usr": "s:9two_party20NPCICredentialHelperC"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:9two_party20NPCICredentialHelperCACycfc",
+            "mangledName": "$s9two_party20NPCICredentialHelperCACycfc",
+            "moduleName": "two_party",
+            "implicit": true,
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:9two_party20NPCICredentialHelperC",
+        "mangledName": "$s9two_party20NPCICredentialHelperC",
+        "moduleName": "two_party",
+        "isOpen": true,
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "hasMissingDesignatedInitializers": true,
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
+        ]
+      },
+      {
         "kind": "Import",
         "name": "Foundation",
         "printedName": "Foundation",
@@ -138327,6 +138678,211 @@
       },
       {
         "kind": "Import",
+        "name": "CommonLibrary",
+        "printedName": "CommonLibrary",
+        "declKind": "Import",
+        "moduleName": "two_party"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "UATNPCITransactionalBridge",
+        "printedName": "UATNPCITransactionalBridge",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "payment",
+            "printedName": "payment(upi:amount:type:description:payer:payee:expireAt:clData:referenceId:repo:callback:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UPI",
+                "printedName": "two_party.UPI",
+                "usr": "c:@M@two_party@objc(cs)UPI"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "PaymentType",
+                "printedName": "two_party.PaymentType",
+                "usr": "c:@M@two_party@E@PaymentType"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Payer",
+                "printedName": "two_party.Payer",
+                "usr": "c:@M@two_party@objc(cs)Payer"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Payee",
+                "printedName": "two_party.Payee",
+                "usr": "c:@M@two_party@objc(cs)Payee"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "NPCICredentialsProtocol",
+                "printedName": "any two_party.NPCICredentialsProtocol",
+                "usr": "s:9two_party23NPCICredentialsProtocolP"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "CreatePaymentProtocol",
+                "printedName": "any two_party.CreatePaymentProtocol",
+                "usr": "s:9two_party21CreatePaymentProtocolP"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(two_party.RZPPayment?, two_party.SDKError?) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Tuple",
+                    "printedName": "(two_party.RZPPayment?, two_party.SDKError?)",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "two_party.RZPPayment?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "RZPPayment",
+                            "printedName": "two_party.RZPPayment",
+                            "usr": "c:@M@two_party@objc(cs)RZPPayment"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "two_party.SDKError?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "SDKError",
+                            "printedName": "two_party.SDKError",
+                            "usr": "c:@M@two_party@objc(cs)SDKError"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:9two_party26UATNPCITransactionalBridgeV7payment3upi6amount4type11description5payer5payee8expireAt6clData11referenceId4repo8callbackyAA3UPIC_SSAA11PaymentTypeOSSAA5PayerCAA5PayeeCSiAA23NPCICredentialsProtocol_pSSAA06CreateuZ0_pyAA10RZPPaymentCSg_AA8SDKErrorCSgtctF",
+            "mangledName": "$s9two_party26UATNPCITransactionalBridgeV7payment3upi6amount4type11description5payer5payee8expireAt6clData11referenceId4repo8callbackyAA3UPIC_SSAA11PaymentTypeOSSAA5PayerCAA5PayeeCSiAA23NPCICredentialsProtocol_pSSAA06CreateuZ0_pyAA10RZPPaymentCSg_AA8SDKErrorCSgtctF",
+            "moduleName": "two_party",
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "UATNPCITransactionalBridge",
+                "printedName": "two_party.UATNPCITransactionalBridge",
+                "usr": "s:9two_party26UATNPCITransactionalBridgeV"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:9two_party26UATNPCITransactionalBridgeVACycfc",
+            "mangledName": "$s9two_party26UATNPCITransactionalBridgeVACycfc",
+            "moduleName": "two_party",
+            "implicit": true,
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:9two_party26UATNPCITransactionalBridgeV",
+        "mangledName": "$s9two_party26UATNPCITransactionalBridgeV",
+        "moduleName": "two_party",
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "NPCITransactionalProtocol",
+            "printedName": "NPCITransactionalProtocol",
+            "usr": "s:9two_party25NPCITransactionalProtocolP",
+            "mangledName": "$s9two_party25NPCITransactionalProtocolP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "NPCITokenManagementProtocol",
+            "printedName": "NPCITokenManagementProtocol",
+            "usr": "s:9two_party27NPCITokenManagementProtocolP",
+            "mangledName": "$s9two_party27NPCITokenManagementProtocolP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "BitwiseCopyable",
+            "printedName": "BitwiseCopyable",
+            "usr": "s:s15BitwiseCopyableP",
+            "mangledName": "$ss15BitwiseCopyableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
         "name": "Foundation",
         "printedName": "Foundation",
         "declKind": "Import",
@@ -146821,6 +147377,540 @@
         "moduleName": "two_party",
         "declAttributes": [
           "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "CommonLibrary",
+        "printedName": "CommonLibrary",
+        "declKind": "Import",
+        "moduleName": "two_party"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "UATNPCINonTransactionalBridge",
+        "printedName": "UATNPCINonTransactionalBridge",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "repo",
+            "printedName": "repo",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "NPCIResponseProtocol",
+                "printedName": "any two_party.NPCIResponseProtocol",
+                "usr": "s:9two_party20NPCIResponseProtocolP"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:9two_party29UATNPCINonTransactionalBridgeV4repoAA20NPCIResponseProtocol_pvp",
+            "mangledName": "$s9two_party29UATNPCINonTransactionalBridgeV4repoAA20NPCIResponseProtocol_pvp",
+            "moduleName": "two_party",
+            "declAttributes": [
+              "HasStorage"
+            ],
+            "fixedbinaryorder": 0,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NPCIResponseProtocol",
+                    "printedName": "any two_party.NPCIResponseProtocol",
+                    "usr": "s:9two_party20NPCIResponseProtocolP"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:9two_party29UATNPCINonTransactionalBridgeV4repoAA20NPCIResponseProtocol_pvg",
+                "mangledName": "$s9two_party29UATNPCINonTransactionalBridgeV4repoAA20NPCIResponseProtocol_pvg",
+                "moduleName": "two_party",
+                "implicit": true,
+                "declAttributes": [
+                  "Transparent"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NPCIResponseProtocol",
+                    "printedName": "any two_party.NPCIResponseProtocol",
+                    "usr": "s:9two_party20NPCIResponseProtocolP"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:9two_party29UATNPCINonTransactionalBridgeV4repoAA20NPCIResponseProtocol_pvs",
+                "mangledName": "$s9two_party29UATNPCINonTransactionalBridgeV4repoAA20NPCIResponseProtocol_pvs",
+                "moduleName": "two_party",
+                "implicit": true,
+                "declAttributes": [
+                  "Transparent"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:9two_party29UATNPCINonTransactionalBridgeV4repoAA20NPCIResponseProtocol_pvM",
+                "mangledName": "$s9two_party29UATNPCINonTransactionalBridgeV4repoAA20NPCIResponseProtocol_pvM",
+                "moduleName": "two_party",
+                "implicit": true,
+                "declAttributes": [
+                  "Transparent"
+                ],
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "getBalance",
+            "printedName": "getBalance(fundSourceId:vpa:clData:callback:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "NPCICredentialsProtocol",
+                "printedName": "any two_party.NPCICredentialsProtocol",
+                "usr": "s:9two_party23NPCICredentialsProtocolP"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(two_party.GetBalanceApiResponse?, two_party.SDKError?) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Tuple",
+                    "printedName": "(two_party.GetBalanceApiResponse?, two_party.SDKError?)",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "two_party.GetBalanceApiResponse?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "GetBalanceApiResponse",
+                            "printedName": "two_party.GetBalanceApiResponse",
+                            "usr": "s:9two_party21GetBalanceApiResponseV"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "two_party.SDKError?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "SDKError",
+                            "printedName": "two_party.SDKError",
+                            "usr": "c:@M@two_party@objc(cs)SDKError"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:9two_party29UATNPCINonTransactionalBridgeV10getBalance12fundSourceId3vpa6clData8callbackySS_SSAA23NPCICredentialsProtocol_pyAA03GetG11ApiResponseVSg_AA8SDKErrorCSgtctF",
+            "mangledName": "$s9two_party29UATNPCINonTransactionalBridgeV10getBalance12fundSourceId3vpa6clData8callbackySS_SSAA23NPCICredentialsProtocol_pyAA03GetG11ApiResponseVSg_AA8SDKErrorCSgtctF",
+            "moduleName": "two_party",
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "setUpiPin",
+            "printedName": "setUpiPin(fundSourceId:vpa:card:clData:action:callback:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "RZPCard",
+                "printedName": "two_party.RZPCard",
+                "usr": "c:@M@two_party@objc(cs)RZPCard"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "NPCICredentialsProtocol",
+                "printedName": "any two_party.NPCICredentialsProtocol",
+                "usr": "s:9two_party23NPCICredentialsProtocolP"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UpiPinAction",
+                "printedName": "two_party.UpiPinAction",
+                "usr": "s:9two_party12UpiPinActionO"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(two_party.FundSource?, two_party.SDKError?) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Tuple",
+                    "printedName": "(two_party.FundSource?, two_party.SDKError?)",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "two_party.FundSource?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "FundSource",
+                            "printedName": "two_party.FundSource",
+                            "usr": "c:@M@two_party@objc(cs)FundSource"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "two_party.SDKError?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "SDKError",
+                            "printedName": "two_party.SDKError",
+                            "usr": "c:@M@two_party@objc(cs)SDKError"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:9two_party29UATNPCINonTransactionalBridgeV9setUpiPin12fundSourceId3vpa4card6clData6action8callbackySS_SSAA7RZPCardCAA23NPCICredentialsProtocol_pAA0gH6ActionOyAA04FundJ0CSg_AA8SDKErrorCSgtctF",
+            "mangledName": "$s9two_party29UATNPCINonTransactionalBridgeV9setUpiPin12fundSourceId3vpa4card6clData6action8callbackySS_SSAA7RZPCardCAA23NPCICredentialsProtocol_pAA0gH6ActionOyAA04FundJ0CSg_AA8SDKErrorCSgtctF",
+            "moduleName": "two_party",
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "payment",
+            "printedName": "payment(upi:amount:type:description:payer:payee:expireAt:callback:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UPI",
+                "printedName": "two_party.UPI",
+                "usr": "c:@M@two_party@objc(cs)UPI"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Double",
+                "printedName": "Swift.Double",
+                "usr": "s:Sd"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "PaymentType",
+                "printedName": "two_party.PaymentType",
+                "usr": "c:@M@two_party@E@PaymentType"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Payer",
+                "printedName": "two_party.Payer",
+                "usr": "c:@M@two_party@objc(cs)Payer"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Payee",
+                "printedName": "two_party.Payee",
+                "usr": "c:@M@two_party@objc(cs)Payee"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(two_party.RZPPayment?, two_party.SDKError?) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Tuple",
+                    "printedName": "(two_party.RZPPayment?, two_party.SDKError?)",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "two_party.RZPPayment?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "RZPPayment",
+                            "printedName": "two_party.RZPPayment",
+                            "usr": "c:@M@two_party@objc(cs)RZPPayment"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "two_party.SDKError?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "SDKError",
+                            "printedName": "two_party.SDKError",
+                            "usr": "c:@M@two_party@objc(cs)SDKError"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:9two_party29UATNPCINonTransactionalBridgeV7payment3upi6amount4type11description5payer5payee8expireAt8callbackyAA3UPIC_SdAA11PaymentTypeOSSAA5PayerCAA5PayeeCSiyAA10RZPPaymentCSg_AA8SDKErrorCSgtctF",
+            "mangledName": "$s9two_party29UATNPCINonTransactionalBridgeV7payment3upi6amount4type11description5payer5payee8expireAt8callbackyAA3UPIC_SdAA11PaymentTypeOSSAA5PayerCAA5PayeeCSiyAA10RZPPaymentCSg_AA8SDKErrorCSgtctF",
+            "moduleName": "two_party",
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "changeUpiPin",
+            "printedName": "changeUpiPin(fundSourceId:vpa:clData:completion:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "NPCICredentialsProtocol",
+                "printedName": "any two_party.NPCICredentialsProtocol",
+                "usr": "s:9two_party23NPCICredentialsProtocolP"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(two_party.FundSource?, two_party.SDKError?) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Tuple",
+                    "printedName": "(two_party.FundSource?, two_party.SDKError?)",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "two_party.FundSource?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "FundSource",
+                            "printedName": "two_party.FundSource",
+                            "usr": "c:@M@two_party@objc(cs)FundSource"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "two_party.SDKError?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "SDKError",
+                            "printedName": "two_party.SDKError",
+                            "usr": "c:@M@two_party@objc(cs)SDKError"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:9two_party29UATNPCINonTransactionalBridgeV12changeUpiPin12fundSourceId3vpa6clData10completionySS_SSAA23NPCICredentialsProtocol_pyAA04FundJ0CSg_AA8SDKErrorCSgtctF",
+            "mangledName": "$s9two_party29UATNPCINonTransactionalBridgeV12changeUpiPin12fundSourceId3vpa6clData10completionySS_SSAA23NPCICredentialsProtocol_pyAA04FundJ0CSg_AA8SDKErrorCSgtctF",
+            "moduleName": "two_party",
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(repo:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "UATNPCINonTransactionalBridge",
+                "printedName": "two_party.UATNPCINonTransactionalBridge",
+                "usr": "s:9two_party29UATNPCINonTransactionalBridgeV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "NPCIResponseProtocol",
+                "printedName": "any two_party.NPCIResponseProtocol",
+                "usr": "s:9two_party20NPCIResponseProtocolP"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:9two_party29UATNPCINonTransactionalBridgeV4repoAcA20NPCIResponseProtocol_p_tcfc",
+            "mangledName": "$s9two_party29UATNPCINonTransactionalBridgeV4repoAcA20NPCIResponseProtocol_p_tcfc",
+            "moduleName": "two_party",
+            "implicit": true,
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:9two_party29UATNPCINonTransactionalBridgeV",
+        "mangledName": "$s9two_party29UATNPCINonTransactionalBridgeV",
+        "moduleName": "two_party",
+        "declAttributes": [
+          "RawDocComment"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "NPCINonTransactionalFlowsProtocol",
+            "printedName": "NPCINonTransactionalFlowsProtocol",
+            "usr": "s:9two_party33NPCINonTransactionalFlowsProtocolP",
+            "mangledName": "$s9two_party33NPCINonTransactionalFlowsProtocolP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "NPCITokenManagementProtocol",
+            "printedName": "NPCITokenManagementProtocol",
+            "usr": "s:9two_party27NPCITokenManagementProtocolP",
+            "mangledName": "$s9two_party27NPCITokenManagementProtocolP"
+          }
         ]
       },
       {
@@ -181995,6 +183085,13 @@
       "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/upi-sdk-core-ios\/upi-sdk\/upi-sdk\/core\/rzp_npci_cl\/NPCIDataProviders\/MockMandateDataProvider.swift",
       "kind": "StringLiteral",
       "offset": 989,
+      "length": 17,
+      "value": "\"Mandate Payment\""
+    },
+    {
+      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/upi-sdk-core-ios\/upi-sdk\/upi-sdk\/core\/rzp_npci_cl\/NPCIDataProviders\/MockMandateCredentialsHelper.swift",
+      "kind": "StringLiteral",
+      "offset": 459,
       "length": 17,
       "value": "\"Mandate Payment\""
     },

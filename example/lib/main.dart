@@ -42,10 +42,10 @@ class _MyHomePageState extends State<MyHomePage> {
   // TPV Key - rzp_test_5sHeuuremkiApj
   //Non-TPV key - rzp_test_0wFRWIZnH65uny
   //Checkout key - rzp_live_ILgsfZCZoFIKMb
-  String merchantKeyValue = "rzp_live_ILgsfZCZoFIKMb";
+  String merchantKeyValue = "rzp_test_0wFRWIZnH65uny";
   String amountValue = "100";
   String orderIdValue = "";
-  String mobileNumberValue = "9663976539";
+  String mobileNumberValue = "8595371784";
   final LocationService _locationService = LocationService();
 
   late Razorpay razorpay;
@@ -74,13 +74,19 @@ class _MyHomePageState extends State<MyHomePage> {
     }
   }
 
+  //https://api-web-turbo-upi.ext.dev.razorpay.in/v1/upi/turbo/customer/session - UAT
+  // https://api.razorpay.com/v1/upi/turbo/customer/session - Prod
+
+  // AUTH (PROD) - cnpwX3Rlc3RfRHQydGdQM3B5eW5sVm86b3FJUFBaM3VwR3MyR2JLWlg3Z3lxYkZL=
+  // AUTH (UAT) - cnpwX3Rlc3RfMHdGUldJWm5INjV1bnk6dGhpc2lzc3VwZXJzZWNyZXQ=
+
   void _handleRefreshToken(dynamic response) async {
     try {
       var url = Uri.parse(
-        "https://api.razorpay.com/v1/upi/turbo/customer/session",
+        "https://api-web-turbo-upi.ext.dev.razorpay.in/v1/upi/turbo/customer/session",
       );
       final basicToken =
-          'cnpwX3Rlc3RfRHQydGdQM3B5eW5sVm86b3FJUFBaM3VwR3MyR2JLWlg3Z3lxYkZL=';
+          'cnpwX3Rlc3RfMHdGUldJWm5INjV1bnk6dGhpc2lzc3VwZXJzZWNyZXQ=';
       final httpResponse = await http.post(
         url,
         headers: {
@@ -285,9 +291,12 @@ class _MyHomePageState extends State<MyHomePage> {
       // 'disable_redesign_v15': false,
       'image':
           'https://spaceplace.nasa.gov/templates/featured/sun/sunburn300.png',
-      //   'experiments.upi_turbo': true,
-      //  "environment_url":
-      //      "https://api.razorpay.com/v1/checkout/public?platform=ios&build=31fa0ffe9ece6982dc4d08461b5a700d607f4269&version=1.3.14&force_checkout_v2=1&checkout_v2=1",
+      //
+      'ep':
+          "https://api-web-turbo-upi.ext.dev.razorpay.in/v1/checkout/public?traffic_env=production&build=ba52c7510ea150775eb16f477f02e226c8723851&force_checkout_v2=1&platform=android",
+      // 'experiments.upi_turbo': true,
+      // "environment_url":
+      // "https://api-web-turbo-upi.ext.dev.razorpay.in/v1/checkout/public?traffic_env=production&build=ba52c7510ea150775eb16f477f02e226c8723851&force_checkout_v2=1&platform=ios",
       // 'external': {
       //   'wallets': ['paytm']
       // }

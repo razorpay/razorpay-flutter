@@ -1,11 +1,6 @@
 framework module CommonLibrary {
   umbrella header "CommonLibrary.h"
+
   export *
-
   module * { export * }
-}
-
-module CommonLibrary.Swift {
-  header "CommonLibrary-Swift.h"
-  requires objc
 }

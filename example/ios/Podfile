@@ -34,7 +34,7 @@ target 'Runner' do
   flutter_install_all_ios_pods File.dirname(File.realpath(__FILE__))
   
     pod 'razorpay-core-pod', :git => 'https://github.com/razorpay/razorpay-customui-pod', :branch => 'test/standard'
-    pod 'razorpay-turbo', :git => 'https://github.com/razorpay/razorpay-turbo-pod', :branch => 'prod/2.1.6'
+    pod 'razorpay-turbo', :git => 'https://github.com/razorpay/razorpay-turbo-pod', :branch => 'uat/2.1.6'
 
   
 end
