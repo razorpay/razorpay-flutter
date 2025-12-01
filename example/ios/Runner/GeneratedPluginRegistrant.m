@@ -30,10 +30,10 @@
 @import permission_handler_apple;
 #endif
 
-#if __has_include(<razorpay_flutter/RazorpayFlutterPlugin.h>)
-#import <razorpay_flutter/RazorpayFlutterPlugin.h>
+#if __has_include(<razorpay_turbo_standard/RazorpayFlutterPlugin.h>)
+#import <razorpay_turbo_standard/RazorpayFlutterPlugin.h>
 #else
-@import razorpay_flutter;
+@import razorpay_turbo_standard;
 #endif
 
 @implementation GeneratedPluginRegistrant

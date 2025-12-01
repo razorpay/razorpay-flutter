@@ -314,18 +314,22 @@ SWIFT_CLASS("_TtC9two_party6Amount")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
-SWIFT_CLASS("_TtC9two_party11BankAccount")
-@interface BankAccount : NSObject
-@property (nonatomic, copy) NSString * _Nonnull accountNumber;
-@property (nonatomic, copy) NSString * _Nonnull ifsc;
+typedef SWIFT_ENUM(NSInteger, AmountRule, open) {
+  AmountRuleExact = 0,
+  AmountRuleMax = 1,
+  AmountRuleUnspecified = 2,
+};
+
+SWIFT_CLASS("_TtC9two_party14AutopayMandate")
+@interface AutopayMandate : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
-SWIFT_CLASS("_TtC9two_party4Card")
-@interface Card : NSObject
-@property (nonatomic, copy) NSString * _Nonnull lastSixDigits;
-@property (nonatomic, copy) NSString * _Nonnull expiry;
+SWIFT_CLASS("_TtC9two_party11BankAccount")
+@interface BankAccount : NSObject
+@property (nonatomic, copy) NSString * _Nonnull accountNumber;
+@property (nonatomic, copy) NSString * _Nonnull ifsc;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -375,7 +379,7 @@ SWIFT_PROTOCOL("_TtP9two_party31ErrorMonitoringAlertingProtocol_")
 @end
 
 enum FundSourceType : NSInteger;
-@class VPA;
+@class RZPVPA;
 SWIFT_CLASS("_TtC9two_party10FundSource")
 @interface FundSource : NSObject
 @property (nonatomic, copy) NSString * _Nonnull id;
@@ -393,18 +397,19 @@ SWIFT_CLASS("_TtC9two_party10FundSource")
 @property (nonatomic) double balance;
 @property (nonatomic, copy) NSString * _Nonnull currency;
 @property (nonatomic) BOOL primary;
-@property (nonatomic, copy) NSArray<VPA *> * _Nullable vpa;
+@property (nonatomic, copy) NSArray<RZPVPA *> * _Nullable vpa;
 @property (nonatomic, copy) NSString * _Nullable providerFormat;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
+@class RZPCard;
 @class SDKError;
 @class FundSourceBalance;
 @class LinkVPAResponse;
 @interface FundSource (SWIFT_EXTENSION(two_party))
-- (void)resetPinWithCard:(Card * _Nonnull)card callback:(void (^ _Nonnull)(FundSource * _Nullable, SDKError * _Nullable))callback;
-- (void)setUpiPinWithCard:(Card * _Nonnull)card callback:(void (^ _Nonnull)(FundSource * _Nullable, SDKError * _Nullable))callback;
+- (void)resetPinWithCard:(RZPCard * _Nonnull)card callback:(void (^ _Nonnull)(FundSource * _Nullable, SDKError * _Nullable))callback;
+- (void)setUpiPinWithCard:(RZPCard * _Nonnull)card callback:(void (^ _Nonnull)(FundSource * _Nullable, SDKError * _Nullable))callback;
 - (void)changeUpiPinWithCallback:(void (^ _Nonnull)(FundSource * _Nullable, SDKError * _Nullable))callback;
 - (void)getBalanceWithCallback:(void (^ _Nonnull)(FundSourceBalance * _Nullable, SDKError * _Nullable))callback;
 - (void)linkVPAWithVpa:(NSString * _Nonnull)vpa primary:(BOOL)primary callback:(void (^ _Nonnull)(LinkVPAResponse * _Nullable, SDKError * _Nullable))callback;
@@ -487,6 +492,41 @@ SWIFT_CLASS("_TtC9two_party24LinkedFundSourceResponse")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
+SWIFT_CLASS("_TtC9two_party21MandateRecurrenceInfo")
+@interface MandateRecurrenceInfo : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+typedef SWIFT_ENUM(NSInteger, MandateRecurrencePeriod, open) {
+  MandateRecurrencePeriodOneTime = 0,
+  MandateRecurrencePeriodDaily = 1,
+  MandateRecurrencePeriodWeekly = 2,
+  MandateRecurrencePeriodFortnightly = 3,
+  MandateRecurrencePeriodMonthly = 4,
+  MandateRecurrencePeriodQuarterly = 5,
+  MandateRecurrencePeriodHalfYearly = 6,
+  MandateRecurrencePeriodYearly = 7,
+  MandateRecurrencePeriodAsPresented = 8,
+  MandateRecurrencePeriodUnspecified = 9,
+};
+
+typedef SWIFT_ENUM(NSInteger, MandateStatus, open) {
+  MandateStatusInitiated = 0,
+  MandateStatusCreated = 1,
+  MandateStatusActive = 2,
+  MandateStatusCompleted = 3,
+  MandateStatusPaused = 4,
+  MandateStatusFailed = 5,
+  MandateStatusUnspecified = 6,
+};
+
+SWIFT_CLASS("_TtC9two_party16MandateTimeRange")
+@interface MandateTimeRange : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
 SWIFT_CLASS("_TtC9two_party8MetaData")
 @interface MetaData : NSObject
 @property (nonatomic, copy) NSString * _Nonnull tenantId;
@@ -519,33 +559,9 @@ SWIFT_CLASS("_TtC9two_party5Payer")
 @interface Payer : NSObject
 @property (nonatomic, strong) FundSource * _Nullable fundSource;
 @property (nonatomic, copy) NSString * _Nullable vpa;
+@property (nonatomic, copy) NSString * _Nullable name;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
-
-@class UPI;
-enum PaymentType : NSInteger;
-@class PaymentParty;
-enum PaymentStatus : NSInteger;
-SWIFT_CLASS("_TtC9two_party7Payment")
-@interface Payment : NSObject
-@property (nonatomic, strong) UPI * _Nullable upi;
-@property (nonatomic, copy) NSString * _Nullable id;
-@property (nonatomic, strong) Amount * _Nullable amount;
-@property (nonatomic) enum PaymentType type;
-@property (nonatomic, copy) NSString * _Nullable paymentDescription;
-@property (nonatomic, strong) PaymentParty * _Nullable payer;
-@property (nonatomic, copy) NSArray<PaymentParty *> * _Nullable payee;
-@property (nonatomic) enum PaymentStatus status;
-@property (nonatomic, copy) NSString * _Nullable createdAt;
-@property (nonatomic, copy) NSString * _Nullable updatedAt;
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
-
-@interface Payment (SWIFT_EXTENSION(two_party))
-- (void)approveWithUpi:(UPI * _Nonnull)upi callback:(SWIFT_NOESCAPE void (^ _Nonnull)(Payment * _Nullable, SDKError * _Nullable))callback;
-- (void)rejectWithUpi:(UPI * _Nonnull)upi callback:(SWIFT_NOESCAPE void (^ _Nonnull)(Payment * _Nullable, SDKError * _Nullable))callback;
 @end
 
 typedef SWIFT_ENUM(NSInteger, PaymentInitiationMode, open) {
@@ -610,6 +626,47 @@ typedef SWIFT_ENUM(NSInteger, PaymentType, open) {
   PaymentTypeUnspecified = 2,
 };
 
+SWIFT_CLASS("_TtC9two_party7RZPCard")
+@interface RZPCard : NSObject
+@property (nonatomic, copy) NSString * _Nonnull lastSixDigits;
+@property (nonatomic, copy) NSString * _Nonnull expiry;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+@class UPI;
+SWIFT_CLASS("_TtC9two_party10RZPPayment")
+@interface RZPPayment : NSObject
+@property (nonatomic, strong) UPI * _Nullable upi;
+@property (nonatomic, copy) NSString * _Nullable id;
+@property (nonatomic, strong) Amount * _Nullable amount;
+@property (nonatomic) enum PaymentType type;
+@property (nonatomic, copy) NSString * _Nullable paymentDescription;
+@property (nonatomic, strong) PaymentParty * _Nullable payer;
+@property (nonatomic, copy) NSArray<PaymentParty *> * _Nullable payee;
+@property (nonatomic) enum PaymentStatus status;
+@property (nonatomic, copy) NSString * _Nullable createdAt;
+@property (nonatomic, copy) NSString * _Nullable updatedAt;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+@interface RZPPayment (SWIFT_EXTENSION(two_party))
+- (void)approveWithUpi:(UPI * _Nonnull)upi callback:(SWIFT_NOESCAPE void (^ _Nonnull)(RZPPayment * _Nullable, SDKError * _Nullable))callback;
+- (void)rejectWithUpi:(UPI * _Nonnull)upi callback:(SWIFT_NOESCAPE void (^ _Nonnull)(RZPPayment * _Nullable, SDKError * _Nullable))callback;
+@end
+
+enum VpaStatus : NSInteger;
+SWIFT_CLASS("_TtC9two_party6RZPVPA")
+@interface RZPVPA : NSObject
+@property (nonatomic, copy) NSString * _Nullable address;
+@property (nonatomic) enum VpaStatus status;
+@property (nonatomic) BOOL verified;
+@property (nonatomic) BOOL isPrimary;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
 @class SIM;
 @class RegisterResponse;
 SWIFT_CLASS("_TtC9two_party13RazorpayUpi2p")
@@ -620,9 +677,13 @@ SWIFT_CLASS("_TtC9two_party13RazorpayUpi2p")
 + (void)getFundSourceProvidersWithCallback:(void (^ _Nonnull)(FundSourceProviderResponse * _Nullable, SDKError * _Nullable))callback;
 + (void)getLinkedFundSourcesWithCallback:(void (^ _Nonnull)(LinkedFundSourceResponse * _Nullable, SDKError * _Nullable))callback;
 + (void)checkAvailabilityWithVpa:(NSString * _Nonnull)vpa callback:(void (^ _Nonnull)(CheckVPAAvailabilityResponse * _Nullable, SDKError * _Nullable))callback;
-+ (void)createPaymentWithUpi:(UPI * _Nonnull)upi amount:(NSString * _Nonnull)amount type:(enum PaymentType)type description:(NSString * _Nonnull)description payer:(Payer * _Nonnull)payer payee:(Payee * _Nonnull)payee expireAt:(NSInteger)expireAt referenceId:(NSString * _Nonnull)referenceId callback:(void (^ _Nonnull)(Payment * _Nullable, SDKError * _Nullable))callback;
++ (void)createPaymentWithUpi:(UPI * _Nonnull)upi amount:(NSString * _Nonnull)amount type:(enum PaymentType)type description:(NSString * _Nonnull)description payer:(Payer * _Nonnull)payer payee:(Payee * _Nonnull)payee expireAt:(NSInteger)expireAt referenceId:(NSString * _Nonnull)referenceId callback:(void (^ _Nonnull)(RZPPayment * _Nullable, SDKError * _Nullable))callback;
 + (void)clearSDKState;
 + (void)deRegisterWithCallback:(void (^ _Nonnull)(DeRegisterResponse * _Nullable, SDKError * _Nullable))callback;
++ (void)createMandateWithFundSource:(FundSource * _Nonnull)fundSource payee:(Payee * _Nonnull)payee txnId:(NSString * _Nullable)txnId refId:(NSString * _Nullable)refId requestBody:(NSDictionary<NSString *, id> * _Nonnull)requestBody callback:(void (^ _Nonnull)(AutopayMandate * _Nullable, SDKError * _Nullable))callback;
++ (void)getMandateByIdWithUmn:(NSString * _Nonnull)umn callback:(void (^ _Nonnull)(AutopayMandate * _Nullable, SDKError * _Nullable))callback;
++ (void)getMandatesWithCallback:(void (^ _Nonnull)(NSArray<AutopayMandate *> * _Nullable, SDKError * _Nullable))callback;
++ (void)updateMandateWithMandate:(AutopayMandate * _Nonnull)mandate requestBody:(NSDictionary<NSString *, id> * _Nonnull)requestBody payee:(Payee * _Nonnull)payee callback:(void (^ _Nonnull)(AutopayMandate * _Nullable, SDKError * _Nullable))callback;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -668,7 +729,7 @@ SWIFT_CLASS("_TtC9two_party3SIM")
 SWIFT_CLASS("_TtC9two_party21SearchPaymentResponse")
 @interface SearchPaymentResponse : NSObject
 @property (nonatomic) NSInteger count;
-@property (nonatomic, copy) NSArray<Payment *> * _Nullable items;
+@property (nonatomic, copy) NSArray<RZPPayment *> * _Nullable items;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -689,17 +750,6 @@ SWIFT_CLASS("_TtC9two_party3UPI")
 @property (nonatomic, copy) NSString * _Nullable responseCode;
 @property (nonatomic, copy) NSString * _Nullable responseMessage;
 @property (nonatomic) enum PaymentPurpose paymentPurpose;
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
-
-enum VpaStatus : NSInteger;
-SWIFT_CLASS("_TtC9two_party3VPA")
-@interface VPA : NSObject
-@property (nonatomic, copy) NSString * _Nullable address;
-@property (nonatomic) enum VpaStatus status;
-@property (nonatomic) BOOL verified;
-@property (nonatomic) BOOL isPrimary;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end

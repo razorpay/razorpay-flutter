@@ -45,7 +45,7 @@ class _MyHomePageState extends State<MyHomePage> {
   String merchantKeyValue = "rzp_live_ILgsfZCZoFIKMb";
   String amountValue = "100";
   String orderIdValue = "";
-  String mobileNumberValue = "8150857548";
+  String mobileNumberValue = "9663976539";
   final LocationService _locationService = LocationService();
 
   late Razorpay razorpay;
@@ -75,19 +75,40 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   void _handleRefreshToken(dynamic response) async {
-    var url = Uri.parse(
-      "https://api.razorpay.com/v1/upi/turbo/customer/session",
-    );
-    final basicToken =
-        'cnpwX3Rlc3RfRHQydGdQM3B5eW5sVm86b3FJUFBaM3VwR3MyR2JLWlg3Z3lxYkZL=';
-    final response = await http.post(
-      url,
-      headers: {"Authorization": "Basic $basicToken"},
-      body: {'customer_reference': mobileNumberValue},
-    );
-    print('Token Response ${response.body}');
-    final responseJson = json.decode(response.body);
-    razorpay.upiTurbo.updateSessionToken(token: responseJson['token']);
+    try {
+      var url = Uri.parse(
+        "https://api.razorpay.com/v1/upi/turbo/customer/session",
+      );
+      final basicToken =
+          'cnpwX3Rlc3RfRHQydGdQM3B5eW5sVm86b3FJUFBaM3VwR3MyR2JLWlg3Z3lxYkZL=';
+      final httpResponse = await http.post(
+        url,
+        headers: {
+          "Authorization": "Basic $basicToken",
+          "Content-Type": "application/json",
+        },
+        body: json.encode({'customer_reference': mobileNumberValue}),
+      );
+      print('Token Response ${httpResponse.body}');
+      final responseJson = json.decode(httpResponse.body);
+
+      // Null safety check
+      final token = responseJson['token'] as String?;
+      if (token != null && token.isNotEmpty) {
+        razorpay.upiTurbo.updateSessionToken(token: token);
+        print('Session token updated successfully');
+      } else {
+        print('Error: Token not found in response: $responseJson');
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Failed to get session token')),
+        );
+      }
+    } catch (e) {
+      print('Error in _handleRefreshToken: $e');
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Session token error: $e')),
+      );
+    }
   }
 
   @override

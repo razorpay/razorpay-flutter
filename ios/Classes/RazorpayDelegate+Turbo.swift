@@ -38,7 +38,7 @@ extension RazorpayDelegate {
     func linkNewUpiAccount(mobileNumber: String, color: String, result: @escaping FlutterResult, eventSink: @escaping FlutterEventSink){
         self.pendingResult = result
         self.initilizeSDK(withKey: self.merchantKey, result: result)
-        self.razorpay?.upiTurbo?.linkNewUpiAccount(mobileNumber: mobileNumber, color: color, completionHandler: { response, error in
+        self.razorpay?.upiTurboUI?.linkNewUpiAccount(mobileNumber: mobileNumber, color: color, completionHandler: { response, error in
             guard error == nil else {
                 let err = error as? TurboError
                 self.handleAndPublishTurboError(error: err)
@@ -56,7 +56,7 @@ extension RazorpayDelegate {
         self.pendingResult = result
         self.eventSink = eventSink
         self.initilizeSDK(withKey: self.merchantKey, result: result)
-        self.razorpay?.upiTurbo?.manageUpiAccount(mobileNumber: customerMobile, color: color, completionHandler: {_,_ in
+        self.razorpay?.upiTurboUI?.manageUpiAccount(mobileNumber: customerMobile, color: color, completionHandler: {_,_ in
         })
     }
     

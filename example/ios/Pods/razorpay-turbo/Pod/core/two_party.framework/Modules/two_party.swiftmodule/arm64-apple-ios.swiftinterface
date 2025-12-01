@@ -1,6 +1,6 @@
 // swift-interface-format-version: 1.0
 // swift-compiler-version: Apple Swift version 6.1 effective-5.10 (swiftlang-6.1.0.110.21 clang-1700.0.13.3)
-// swift-module-flags: -target arm64-apple-ios13.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name two_party
+// swift-module-flags: -target arm64-apple-ios13.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name two_party
 // swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1
 import SystemConfiguration.CaptiveNetwork
 import CommonCrypto
@@ -19,15 +19,57 @@ import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
 @_exported import two_party
+@_hasMissingDesignatedInitializers public class CommonMandates {
+  @objc deinit
+}
+@objc public class MandateRecurrenceInfo : ObjectiveC.NSObject, Swift.Codable {
+  public var period: two_party.MandateRecurrencePeriod
+  public var rule: two_party.MandateRecurrenceRule?
+  public var value: Swift.Int?
+  public init(period: two_party.MandateRecurrencePeriod, rule: two_party.MandateRecurrenceRule?, value: Swift.Int?)
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@objc public enum MandateStatus : Swift.Int {
+  case initiated
+  case created
+  case active
+  case completed
+  case paused
+  case failed
+  case unspecified
+  public var description: Swift.String {
+    get
+  }
+  public init(string: Swift.String)
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
 @_inheritsConvenienceInitializers @objc public class Device : ObjectiveC.NSObject {
   @objc public var ssid: Swift.String
   @objc override dynamic public init()
   @objc deinit
 }
+public enum UpiReferenceCategory : Swift.String {
+  case `default`
+  case advertisement
+  case invoice
+  case unspecified
+  public init(string: Swift.String)
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
 @objc public class SearchPaymentResponse : ObjectiveC.NSObject {
   @objc public var count: Swift.Int
-  @objc public var items: [two_party.Payment]?
-  public init(count: Swift.Int, items: [two_party.Payment]?)
+  @objc public var items: [two_party.RZPPayment]?
+  public init(count: Swift.Int, items: [two_party.RZPPayment]?)
   @objc deinit
 }
 @_hasMissingDesignatedInitializers @objc public class FundSourceProviderResponse : ObjectiveC.NSObject {
@@ -105,12 +147,41 @@ import _SwiftConcurrencyShims
     get
   }
 }
+@objc @objcMembers public class MandateTimeRange : ObjectiveC.NSObject, Swift.Codable {
+  final public let startAt: Swift.Int?
+  final public let endAt: Swift.Int?
+  public init(startAt: Swift.Int?, endAt: Swift.Int?)
+  required public init(from decoder: any Swift.Decoder) throws
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+public class MandateResponseTimeRange : Swift.Codable {
+  final public let startAt: Swift.String?
+  final public let endAt: Swift.String?
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
 @_hasMissingDesignatedInitializers @objc public class LinkVPAResponse : ObjectiveC.NSObject {
   @objc public var fundSource: two_party.FundSource?
   @objc deinit
 }
 @_hasMissingDesignatedInitializers public class CommonFundSource {
   @objc deinit
+}
+@objc public enum AmountRule : Swift.Int {
+  case exact
+  case max
+  case unspecified
+  public var description: Swift.String {
+    get
+  }
+  public init(string: Swift.String)
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
 }
 @_inheritsConvenienceInitializers @objc public class RazorpayUpi2p : ObjectiveC.NSObject {
   public static let tokenManager: two_party.TokenTaskManager2p
@@ -121,9 +192,13 @@ import _SwiftConcurrencyShims
   @objc public static func getFundSourceProviders(callback: @escaping two_party.CallBack<two_party.FundSourceProviderResponse>)
   @objc public static func getLinkedFundSources(callback: @escaping two_party.CallBack<two_party.LinkedFundSourceResponse>)
   @objc public static func checkAvailability(vpa: Swift.String, callback: @escaping two_party.CallBack<two_party.CheckVPAAvailabilityResponse>)
-  @objc public static func createPayment(upi: two_party.UPI, amount: Swift.String, type: two_party.PaymentType, description: Swift.String, payer: two_party.Payer, payee: two_party.Payee, expireAt: Swift.Int, referenceId: Swift.String, callback: @escaping two_party.CallBack<two_party.Payment>)
+  @objc public static func createPayment(upi: two_party.UPI, amount: Swift.String, type: two_party.PaymentType, description: Swift.String, payer: two_party.Payer, payee: two_party.Payee, expireAt: Swift.Int, referenceId: Swift.String, callback: @escaping two_party.CallBack<two_party.RZPPayment>)
   @objc public static func clearSDKState()
   @objc public static func deRegister(callback: @escaping two_party.CallBack<two_party.DeRegisterResponse>)
+  @objc public static func createMandate(fundSource: two_party.FundSource, payee: two_party.Payee, txnId: Swift.String?, refId: Swift.String?, requestBody: [Swift.String : Any], callback: @escaping two_party.CallBack<two_party.AutopayMandate>)
+  @objc public static func getMandateById(umn: Swift.String, callback: @escaping two_party.CallBack<two_party.AutopayMandate>)
+  @objc public static func getMandates(callback: @escaping two_party.CallBack<[two_party.AutopayMandate]>)
+  @objc public static func updateMandate(mandate: two_party.AutopayMandate, requestBody: [Swift.String : Any], payee: two_party.Payee, callback: @escaping two_party.CallBack<two_party.AutopayMandate>)
   @objc override dynamic public init()
   @objc deinit
 }
@@ -131,6 +206,29 @@ import _SwiftConcurrencyShims
   @objc public var value: Swift.Double
   @objc public var currency: Swift.String
   public init(value: Swift.Double, currency: Swift.String)
+  @objc deinit
+}
+@objc public class AutopayMandate : ObjectiveC.NSObject {
+  public var umn: Swift.String
+  public var amount: Swift.Int
+  public var amountRule: two_party.AmountRule
+  public var payer: two_party.Payer
+  public var payee: two_party.Payee
+  public var name: Swift.String
+  public var expireAt: Swift.Int
+  public var blockFund: Swift.Bool
+  public var revocableByPayer: Swift.Bool
+  public var recurrence: two_party.MandateRecurrenceInfo
+  public var validity: two_party.MandateTimeRange
+  public var upiReferenceCategory: two_party.UpiReferenceCategory
+  public var upiReferenceUrl: Swift.String
+  public var descriptionText: Swift.String?
+  public var status: two_party.MandateStatus
+  public var createdAt: Swift.Int
+  public var pause: two_party.MandateTimeRange?
+  public var upiTransactionId: Swift.String?
+  public var referenceId: Swift.String?
+  public init(umn: Swift.String, amount: Swift.Int, amountRule: two_party.AmountRule, payer: two_party.Payer, payee: two_party.Payee, name: Swift.String, expireAt: Swift.Int, blockFund: Swift.Bool, revocableByPayer: Swift.Bool, recurrence: two_party.MandateRecurrenceInfo, validity: two_party.MandateTimeRange, upiReferenceCategory: two_party.UpiReferenceCategory, upiReferenceUrl: Swift.String, descriptionText: Swift.String?, status: two_party.MandateStatus, createdAt: Swift.Int, pause: two_party.MandateTimeRange?, upiTransactionId: Swift.String?, referenceId: Swift.String?)
   @objc deinit
 }
 @_hasMissingDesignatedInitializers @objc public class RegisterResponse : ObjectiveC.NSObject {
@@ -183,7 +281,7 @@ import _SwiftConcurrencyShims
     get
   }
 }
-@objc public class VPA : ObjectiveC.NSObject {
+@objc public class RZPVPA : ObjectiveC.NSObject {
   @objc public var address: Swift.String?
   @objc public var status: two_party.VpaStatus
   @objc public var verified: Swift.Bool
@@ -215,24 +313,6 @@ public typealias CompletionHandler<T> = (T?) -> Swift.Void
     get
   }
 }
-@objc public class Payment : ObjectiveC.NSObject {
-  @objc public var upi: two_party.UPI?
-  @objc public var id: Swift.String?
-  @objc public var amount: two_party.Amount?
-  @objc public var type: two_party.PaymentType
-  @objc public var paymentDescription: Swift.String?
-  @objc public var payer: two_party.PaymentParty?
-  @objc public var payee: [two_party.PaymentParty]?
-  @objc public var status: two_party.PaymentStatus
-  @objc public var createdAt: Swift.String?
-  @objc public var updatedAt: Swift.String?
-  public init(upi: two_party.UPI? = nil, id: Swift.String?, amount: two_party.Amount? = nil, type: two_party.PaymentType, paymentDescription: Swift.String? = nil, payer: two_party.PaymentParty? = nil, payee: [two_party.PaymentParty]? = nil, status: two_party.PaymentStatus, createdAt: Swift.String?, updatedAt: Swift.String?)
-  @objc deinit
-}
-extension two_party.Payment {
-  @objc dynamic public func approve(upi: two_party.UPI, callback: (two_party.Payment?, two_party.SDKError?) -> Swift.Void)
-  @objc dynamic public func reject(upi: two_party.UPI, callback: (two_party.Payment?, two_party.SDKError?) -> Swift.Void)
-}
 public enum UpiPinAction : Swift.String {
   case set, reset
   public init?(rawValue: Swift.String)
@@ -257,15 +337,15 @@ public enum UpiPinAction : Swift.String {
   @objc public var balance: Swift.Double
   @objc public var currency: Swift.String
   @objc public var primary: Swift.Bool
-  @objc public var vpa: [two_party.VPA]?
+  @objc public var vpa: [two_party.RZPVPA]?
   @objc public var providerFormat: Swift.String?
-  public init(id: Swift.String, type: two_party.FundSourceType, customerName: Swift.String, accountReferenceNumber: Swift.String, maskedAccountNumber: Swift.String, ifsc: Swift.String, npciBankCode: Swift.Int, bankName: Swift.String, upiPinSet: Swift.Bool, upiPinLength: Swift.Int, otpLength: Swift.Int, atmPinLength: Swift.Int, balance: Swift.Double, currency: Swift.String, primary: Swift.Bool, vpa: [two_party.VPA]? = nil, providerFormat: Swift.String? = nil)
+  public init(id: Swift.String, type: two_party.FundSourceType, customerName: Swift.String, accountReferenceNumber: Swift.String, maskedAccountNumber: Swift.String, ifsc: Swift.String, npciBankCode: Swift.Int, bankName: Swift.String, upiPinSet: Swift.Bool, upiPinLength: Swift.Int, otpLength: Swift.Int, atmPinLength: Swift.Int, balance: Swift.Double, currency: Swift.String, primary: Swift.Bool, vpa: [two_party.RZPVPA]? = nil, providerFormat: Swift.String? = nil)
   convenience public init(id: Swift.String, vpa: Swift.String, upiPinLenght: Swift.Int, atmPinLength: Swift.Int, otpLength: Swift.Int, providerFormat: Swift.String, maskedAccountNumber: Swift.String, accountRefNum: Swift.String, bankName: Swift.String? = "")
   @objc deinit
 }
 extension two_party.FundSource {
-  @objc dynamic public func resetPin(card: two_party.Card, callback: @escaping two_party.CallBack<two_party.FundSource>)
-  @objc dynamic public func setUpiPin(card: two_party.Card, callback: @escaping two_party.CallBack<two_party.FundSource>)
+  @objc dynamic public func resetPin(card: two_party.RZPCard, callback: @escaping two_party.CallBack<two_party.FundSource>)
+  @objc dynamic public func setUpiPin(card: two_party.RZPCard, callback: @escaping two_party.CallBack<two_party.FundSource>)
   @objc dynamic public func changeUpiPin(callback: @escaping two_party.CallBack<two_party.FundSource>)
   @objc dynamic public func getBalance(callback: @escaping two_party.CallBack<two_party.FundSourceBalance>)
   @objc dynamic public func linkVPA(vpa: Swift.String, primary: Swift.Bool, callback: @escaping two_party.CallBack<two_party.LinkVPAResponse>)
@@ -279,6 +359,24 @@ extension two_party.FundSource {
   @objc public var device: two_party.Device?
   public init(tenantId: Swift.String, tenantCustomerId: Swift.String, tenantType: Swift.String? = nil, originalTenantMessageId: Swift.String? = nil)
   @objc deinit
+}
+@objc public class RZPPayment : ObjectiveC.NSObject {
+  @objc public var upi: two_party.UPI?
+  @objc public var id: Swift.String?
+  @objc public var amount: two_party.Amount?
+  @objc public var type: two_party.PaymentType
+  @objc public var paymentDescription: Swift.String?
+  @objc public var payer: two_party.PaymentParty?
+  @objc public var payee: [two_party.PaymentParty]?
+  @objc public var status: two_party.PaymentStatus
+  @objc public var createdAt: Swift.String?
+  @objc public var updatedAt: Swift.String?
+  public init(upi: two_party.UPI? = nil, id: Swift.String?, amount: two_party.Amount? = nil, type: two_party.PaymentType, paymentDescription: Swift.String? = nil, payer: two_party.PaymentParty? = nil, payee: [two_party.PaymentParty]? = nil, status: two_party.PaymentStatus, createdAt: Swift.String?, updatedAt: Swift.String?)
+  @objc deinit
+}
+extension two_party.RZPPayment {
+  @objc dynamic public func approve(upi: two_party.UPI, callback: (two_party.RZPPayment?, two_party.SDKError?) -> Swift.Void)
+  @objc dynamic public func reject(upi: two_party.UPI, callback: (two_party.RZPPayment?, two_party.SDKError?) -> Swift.Void)
 }
 @objc public class DeRegisterResponse : ObjectiveC.NSObject {
   @objc public var mobile: Swift.String?
@@ -313,8 +411,38 @@ extension two_party.FundSource {
   @objc public var message: Swift.String
   @objc public var retryWithToken: ((_ token: Swift.String) -> Swift.Void)?
   @objc public var isExternal: Swift.Bool
-  public init(code: Swift.String, source: Swift.String? = nil, reason: Swift.String? = nil, step: Swift.String? = nil, message: Swift.String, isExternal: Swift.Bool = false, internalErrorCode: Swift.String = "", statuscode: Swift.Int? = nil)
+  public init(code: Swift.String, source: Swift.String? = nil, reason: Swift.String? = nil, step: Swift.String? = nil, message: Swift.String, isExternal: Swift.Bool = false, internalErrorCode: Swift.String = "", statuscode: Swift.Int? = nil, internalDescription: Swift.String = "", metadata: [Swift.String : Any]? = nil)
   @objc deinit
+}
+public struct UpdateMandateRequestModel : Swift.Codable {
+  public enum Action : Swift.String, Swift.Codable {
+    case update
+    case revoke
+    case pause
+    case unpause
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public enum UpdateMandateValidationError : Swift.Error, Swift.CustomStringConvertible {
+    case missingRequiredField(Swift.String)
+    case invalidField(Swift.String)
+    case unknown
+    public var description: Swift.String {
+      get
+    }
+  }
+  public let amount: Swift.Int?
+  public let expireAt: Swift.Int?
+  public let action: two_party.UpdateMandateRequestModel.Action
+  public let validity: two_party.MandateTimeRange?
+  public let pause: two_party.MandateTimeRange?
+  public let description: Swift.String?
+  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from json: [Swift.String : Any]) throws
 }
 public protocol TokenProvider2p {
   func fetchToken(completion: @escaping (Swift.String?) -> Swift.Void)
@@ -352,6 +480,28 @@ public class TokenTaskManager2p {
 @_inheritsConvenienceInitializers @objc public class Empty : ObjectiveC.NSObject {
   @objc override dynamic public init()
   @objc deinit
+}
+@objc public enum MandateRecurrencePeriod : Swift.Int, Swift.Codable {
+  case oneTime
+  case daily
+  case weekly
+  case fortnightly
+  case monthly
+  case quarterly
+  case halfYearly
+  case yearly
+  case asPresented
+  case unspecified
+  public var description: Swift.String {
+    get
+  }
+  public init(string: Swift.String)
+  public init(from decoder: any Swift.Decoder) throws
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
 }
 @_hasMissingDesignatedInitializers @objc public class DeleteVPAResponse : ObjectiveC.NSObject {
   @objc public var fundSources: [two_party.FundSource]?
@@ -391,7 +541,7 @@ extension two_party.FundSourceProvider {
   @objc public init(mobile: Swift.String, provider: Swift.String)
   @objc deinit
 }
-@objc public class Card : ObjectiveC.NSObject {
+@objc public class RZPCard : ObjectiveC.NSObject {
   @objc public var lastSixDigits: Swift.String
   @objc public var expiry: Swift.String
   public init(lastSixDigits: Swift.String, expiry: Swift.String)
@@ -418,6 +568,31 @@ extension two_party.FundSourceProvider {
     get
   }
 }
+public struct CreateMandateRequestModel : Swift.Codable {
+  public enum CreateMandateRequestError : Swift.Error, Swift.CustomStringConvertible, Swift.Equatable {
+    case missingRequiredField(Swift.String)
+    case invalidField(Swift.String)
+    case unknown
+    public var description: Swift.String {
+      get
+    }
+    public static func == (a: two_party.CreateMandateRequestModel.CreateMandateRequestError, b: two_party.CreateMandateRequestModel.CreateMandateRequestError) -> Swift.Bool
+  }
+  public let amount: Swift.Int
+  public let amountRule: Swift.String
+  public let name: Swift.String
+  public let description: Swift.String
+  public let expireAt: Swift.Int
+  public let blockFund: Swift.Bool
+  public let revocableByPayer: Swift.Bool
+  public let recurrence: two_party.MandateRecurrenceInfo
+  public let validity: two_party.MandateTimeRange
+  public let upiReferenceCategory: Swift.String
+  public let upiReferenceURL: Swift.String
+  public init(from decoder: any Swift.Decoder) throws
+  public init(from json: [Swift.String : Any]) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+}
 @objc public enum VpaStatus : Swift.Int {
   case inactive
   case active
@@ -439,15 +614,41 @@ extension two_party.FundSourceProvider {
 @objc public class Payer : ObjectiveC.NSObject {
   @objc public var fundSource: two_party.FundSource?
   @objc public var vpa: Swift.String?
-  public init(fundSource: two_party.FundSource? = nil, vpa: Swift.String? = nil)
+  @objc public var name: Swift.String?
+  public init(fundSource: two_party.FundSource? = nil, vpa: Swift.String? = nil, name: Swift.String? = nil)
   @objc deinit
 }
+public enum MandateRecurrenceRule : Swift.Int, Swift.Codable {
+  case on
+  case before
+  case after
+  case unspecified
+  public var description: Swift.String {
+    get
+  }
+  public init(string: Swift.String)
+  public init(from decoder: any Swift.Decoder) throws
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+extension two_party.MandateStatus : Swift.Equatable {}
+extension two_party.MandateStatus : Swift.Hashable {}
+extension two_party.MandateStatus : Swift.RawRepresentable {}
+extension two_party.UpiReferenceCategory : Swift.Equatable {}
+extension two_party.UpiReferenceCategory : Swift.Hashable {}
+extension two_party.UpiReferenceCategory : Swift.RawRepresentable {}
 extension two_party.PaymentType : Swift.Equatable {}
 extension two_party.PaymentType : Swift.Hashable {}
 extension two_party.PaymentType : Swift.RawRepresentable {}
 extension two_party.PaymentStatus : Swift.Equatable {}
 extension two_party.PaymentStatus : Swift.Hashable {}
 extension two_party.PaymentStatus : Swift.RawRepresentable {}
+extension two_party.AmountRule : Swift.Equatable {}
+extension two_party.AmountRule : Swift.Hashable {}
+extension two_party.AmountRule : Swift.RawRepresentable {}
 extension two_party.RegisterStatus : Swift.Equatable {}
 extension two_party.RegisterStatus : Swift.Hashable {}
 extension two_party.RegisterStatus : Swift.RawRepresentable {}
@@ -463,12 +664,21 @@ extension two_party.UpiPinAction : Swift.RawRepresentable {}
 extension two_party.FundSourceType : Swift.Equatable {}
 extension two_party.FundSourceType : Swift.Hashable {}
 extension two_party.FundSourceType : Swift.RawRepresentable {}
+extension two_party.UpdateMandateRequestModel.Action : Swift.Equatable {}
+extension two_party.UpdateMandateRequestModel.Action : Swift.Hashable {}
+extension two_party.UpdateMandateRequestModel.Action : Swift.RawRepresentable {}
 extension two_party.MobileRegistrationFormat : Swift.Equatable {}
 extension two_party.MobileRegistrationFormat : Swift.Hashable {}
 extension two_party.MobileRegistrationFormat : Swift.RawRepresentable {}
+extension two_party.MandateRecurrencePeriod : Swift.Equatable {}
+extension two_party.MandateRecurrencePeriod : Swift.Hashable {}
+extension two_party.MandateRecurrencePeriod : Swift.RawRepresentable {}
 extension two_party.FundSourceProviderProduct : Swift.Equatable {}
 extension two_party.FundSourceProviderProduct : Swift.Hashable {}
 extension two_party.FundSourceProviderProduct : Swift.RawRepresentable {}
 extension two_party.VpaStatus : Swift.Equatable {}
 extension two_party.VpaStatus : Swift.Hashable {}
 extension two_party.VpaStatus : Swift.RawRepresentable {}
+extension two_party.MandateRecurrenceRule : Swift.Equatable {}
+extension two_party.MandateRecurrenceRule : Swift.Hashable {}
+extension two_party.MandateRecurrenceRule : Swift.RawRepresentable {}

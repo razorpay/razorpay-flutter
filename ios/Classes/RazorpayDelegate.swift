@@ -32,7 +32,7 @@ class RazorpayDelegate: NSObject, RazorpayPaymentCompletionProtocolWithData, Ext
         pendingResult = result
         
         self.razorpay = RazorpayCheckout.initWithKey(key, andDelegateWithData: self, plugin: RZPTurboUPI.UIPluginInstance())
-        self.razorpay?.upiTurbo?.initialize(self)             
+        self.razorpay?.upiTurboUI?.initialize(self)             
     }
 
     

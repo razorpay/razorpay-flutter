@@ -9,12 +9,14 @@ PODS:
     - Flutter
   - permission_handler_apple (9.3.0):
     - Flutter
-  - razorpay-pod (1.4.0)
-  - razorpay-turbo (2.0.3):
-    - razorpay-turbo/Core (= 2.0.3)
-    - razorpay-turbo/standard (= 2.0.3)
-  - razorpay-turbo/Core (2.0.3)
-  - razorpay-turbo/standard (2.0.3):
+  - razorpay-core-pod (1.0.3)
+  - razorpay-pod (1.5.0):
+    - razorpay-core-pod
+  - razorpay-turbo (2.1.1):
+    - razorpay-turbo/Core (= 2.1.1)
+    - razorpay-turbo/standard (= 2.1.1)
+  - razorpay-turbo/Core (2.1.1)
+  - razorpay-turbo/standard (2.1.1):
     - razorpay-pod
     - razorpay-turbo/Core
   - razorpay_turbo_standard (1.1.10):
@@ -28,12 +30,13 @@ DEPENDENCIES:
   - geolocator_apple (from `.symlinks/plugins/geolocator_apple/darwin`)
   - package_info_plus (from `.symlinks/plugins/package_info_plus/ios`)
   - permission_handler_apple (from `.symlinks/plugins/permission_handler_apple/ios`)
+  - razorpay-core-pod (from `https://github.com/razorpay/razorpay-customui-pod`, branch `test/standard`)
+  - razorpay-turbo (from `https://github.com/razorpay/razorpay-turbo-pod`, branch `prod/2.1.6`)
   - razorpay_turbo_standard (from `.symlinks/plugins/razorpay_turbo_standard/ios`)
 
 SPEC REPOS:
   trunk:
     - razorpay-pod
-    - razorpay-turbo
 
 EXTERNAL SOURCES:
   Flutter:
@@ -46,19 +49,34 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/package_info_plus/ios"
   permission_handler_apple:
     :path: ".symlinks/plugins/permission_handler_apple/ios"
+  razorpay-core-pod:
+    :branch: test/standard
+    :git: https://github.com/razorpay/razorpay-customui-pod
+  razorpay-turbo:
+    :branch: prod/2.1.6
+    :git: https://github.com/razorpay/razorpay-turbo-pod
   razorpay_turbo_standard:
     :path: ".symlinks/plugins/razorpay_turbo_standard/ios"
 
+CHECKOUT OPTIONS:
+  razorpay-core-pod:
+    :commit: 019ea62a5a29e2a44f897b188fe851aea028e4ec
+    :git: https://github.com/razorpay/razorpay-customui-pod
+  razorpay-turbo:
+    :commit: f0b564060db953453bcf7c05973a5ae71e015f05
+    :git: https://github.com/razorpay/razorpay-turbo-pod
+
 SPEC CHECKSUMS:
-  Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
+  Flutter: cabc95a1d2626b1b06e7179b784ebcf0c0cde467
   fluttertoast: 2c67e14dce98bbdb200df9e1acf610d7a6264ea1
   geolocator_apple: ab36aa0e8b7d7a2d7639b3b4e48308394e8cef5e
   package_info_plus: af8e2ca6888548050f16fa2f1938db7b5a5df499
   permission_handler_apple: 4ed2196e43d0651e8ff7ca3483a069d469701f2d
-  razorpay-pod: cb5b5439697bdda9c57d68a92b3e5b0ce1d2f2f3
-  razorpay-turbo: d09629ba703d6d070c6930c9eaff3b2818a06451
+  razorpay-core-pod: ef0309dbf8e3e5a1330f6cad89dcf9226d8ef758
+  razorpay-pod: f634f1b8397eb54d547f25d35291f679545ddf17
+  razorpay-turbo: c6adeb9917b963477d698d12504a1e6eaba64959
   razorpay_turbo_standard: 4d84065f48a70a360cdb6c97008a03cf735aaaa4
 
-PODFILE CHECKSUM: ce13d36744da294d67f8e460dbb7aed7c09bd7f4
+PODFILE CHECKSUM: 6414f1a7ed2fe91150a4968efe7e168c9f918744
 
 COCOAPODS: 1.16.2

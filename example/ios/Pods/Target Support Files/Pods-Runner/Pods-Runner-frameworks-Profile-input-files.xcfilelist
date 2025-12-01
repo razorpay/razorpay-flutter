@@ -7,5 +7,7 @@ ${PODS_ROOT}/razorpay-turbo/Pod/core/Sentry.framework
 ${PODS_ROOT}/razorpay-turbo/Pod/core/two_party.framework
 ${PODS_ROOT}/razorpay-turbo/Pod/ui/RazorpayTurboUPIUI.framework
 ${PODS_ROOT}/razorpay-turbo/Pod/ui/TurboUpiPluginUI.framework
-${BUILT_PRODUCTS_DIR}/razorpay_flutter/razorpay_flutter.framework
-${PODS_XCFRAMEWORKS_BUILD_DIR}/razorpay-pod/Razorpay.framework/Razorpay
+${BUILT_PRODUCTS_DIR}/razorpay_turbo_standard/razorpay_turbo_standard.framework
+${PODS_XCFRAMEWORKS_BUILD_DIR}/razorpay-core-pod/Razorpay.framework/Razorpay
+${PODS_XCFRAMEWORKS_BUILD_DIR}/razorpay-core-pod/RazorpayCore.framework/RazorpayCore
+${PODS_XCFRAMEWORKS_BUILD_DIR}/razorpay-pod/RazorpayStandard.framework/RazorpayStandard

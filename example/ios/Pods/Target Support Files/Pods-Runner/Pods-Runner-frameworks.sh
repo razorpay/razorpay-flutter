@@ -184,8 +184,10 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${PODS_ROOT}/razorpay-turbo/Pod/core/two_party.framework"
   install_framework "${PODS_ROOT}/razorpay-turbo/Pod/ui/RazorpayTurboUPIUI.framework"
   install_framework "${PODS_ROOT}/razorpay-turbo/Pod/ui/TurboUpiPluginUI.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/razorpay_flutter/razorpay_flutter.framework"
-  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/razorpay-pod/Razorpay.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/razorpay_turbo_standard/razorpay_turbo_standard.framework"
+  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/razorpay-core-pod/Razorpay.framework"
+  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/razorpay-core-pod/RazorpayCore.framework"
+  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/razorpay-pod/RazorpayStandard.framework"
 fi
 if [[ "$CONFIGURATION" == "Profile" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/fluttertoast/fluttertoast.framework"
@@ -196,8 +198,10 @@ if [[ "$CONFIGURATION" == "Profile" ]]; then
   install_framework "${PODS_ROOT}/razorpay-turbo/Pod/core/two_party.framework"
   install_framework "${PODS_ROOT}/razorpay-turbo/Pod/ui/RazorpayTurboUPIUI.framework"
   install_framework "${PODS_ROOT}/razorpay-turbo/Pod/ui/TurboUpiPluginUI.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/razorpay_flutter/razorpay_flutter.framework"
-  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/razorpay-pod/Razorpay.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/razorpay_turbo_standard/razorpay_turbo_standard.framework"
+  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/razorpay-core-pod/Razorpay.framework"
+  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/razorpay-core-pod/RazorpayCore.framework"
+  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/razorpay-pod/RazorpayStandard.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/fluttertoast/fluttertoast.framework"
@@ -208,8 +212,10 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${PODS_ROOT}/razorpay-turbo/Pod/core/two_party.framework"
   install_framework "${PODS_ROOT}/razorpay-turbo/Pod/ui/RazorpayTurboUPIUI.framework"
   install_framework "${PODS_ROOT}/razorpay-turbo/Pod/ui/TurboUpiPluginUI.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/razorpay_flutter/razorpay_flutter.framework"
-  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/razorpay-pod/Razorpay.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/razorpay_turbo_standard/razorpay_turbo_standard.framework"
+  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/razorpay-core-pod/Razorpay.framework"
+  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/razorpay-core-pod/RazorpayCore.framework"
+  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/razorpay-pod/RazorpayStandard.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait

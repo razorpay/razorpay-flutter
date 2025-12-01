@@ -36,9 +36,9 @@ public final class GeneratedPluginRegistrant {
       Log.e(TAG, "Error registering plugin permission_handler_android, com.baseflow.permissionhandler.PermissionHandlerPlugin", e);
     }
     try {
-      flutterEngine.getPlugins().add(new com.razorpay.razorpay_flutter.RazorpayFlutterPlugin());
+      flutterEngine.getPlugins().add(new com.razorpay.razorpay_turbo_standard.RazorpayFlutterPlugin());
     } catch (Exception e) {
-      Log.e(TAG, "Error registering plugin razorpay_flutter, com.razorpay.razorpay_flutter.RazorpayFlutterPlugin", e);
+      Log.e(TAG, "Error registering plugin razorpay_turbo_standard, com.razorpay.razorpay_turbo_standard.RazorpayFlutterPlugin", e);
     }
   }
 }

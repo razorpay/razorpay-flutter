@@ -381,6 +381,13 @@
       },
       {
         "kind": "Import",
+        "name": "RazorpayStandard",
+        "printedName": "RazorpayStandard",
+        "declKind": "Import",
+        "moduleName": "TurboUpiPluginUI"
+      },
+      {
+        "kind": "Import",
         "name": "RazorpayTurboUPIUI",
         "printedName": "RazorpayTurboUPIUI",
         "declKind": "Import",
@@ -11515,13 +11522,13 @@
               {
                 "kind": "TypeNominal",
                 "name": "UPITurboPlugin",
-                "printedName": "any Razorpay.UPITurboPlugin",
-                "usr": "c:@M@Razorpay@objc(pl)UPITurboPlugin"
+                "printedName": "any RazorpayCore.UPITurboPlugin",
+                "usr": "c:@M@RazorpayCore@objc(pl)UPITurboPlugin"
               }
             ],
             "declKind": "Func",
             "usr": "c:@M@TurboUpiPluginUI@objc(cs)RZPTurboUPI(cm)pluginInstance",
-            "mangledName": "$s16TurboUpiPluginUI11RZPTurboUPIC14pluginInstance8Razorpay08UPITurboC0_pyFZ",
+            "mangledName": "$s16TurboUpiPluginUI11RZPTurboUPIC14pluginInstance12RazorpayCore08UPITurboC0_pyFZ",
             "moduleName": "TurboUpiPluginUI",
             "static": true,
             "declAttributes": [
@@ -11538,13 +11545,13 @@
               {
                 "kind": "TypeNominal",
                 "name": "PluginPaymentDelegate",
-                "printedName": "any Razorpay.PluginPaymentDelegate",
-                "usr": "c:@M@Razorpay@objc(pl)PluginPaymentDelegate"
+                "printedName": "any RazorpayCore.PluginPaymentDelegate",
+                "usr": "c:@M@RazorpayCore@objc(pl)PluginPaymentDelegate"
               }
             ],
             "declKind": "Func",
             "usr": "c:@M@TurboUpiPluginUI@objc(cs)RZPTurboUPI(cm)paymentPlugin",
-            "mangledName": "$s16TurboUpiPluginUI11RZPTurboUPIC07paymentC08Razorpay0C15PaymentDelegate_pyFZ",
+            "mangledName": "$s16TurboUpiPluginUI11RZPTurboUPIC07paymentC012RazorpayCore0C15PaymentDelegate_pyFZ",
             "moduleName": "TurboUpiPluginUI",
             "static": true,
             "declAttributes": [
@@ -11561,13 +11568,13 @@
               {
                 "kind": "TypeNominal",
                 "name": "UPITurboUIPlugin",
-                "printedName": "any Razorpay.UPITurboUIPlugin",
-                "usr": "c:@M@Razorpay@objc(pl)UPITurboUIPlugin"
+                "printedName": "any RazorpayCore.UPITurboUIPlugin",
+                "usr": "c:@M@RazorpayCore@objc(pl)UPITurboUIPlugin"
               }
             ],
             "declKind": "Func",
             "usr": "c:@M@TurboUpiPluginUI@objc(cs)RZPTurboUPI(cm)UIPluginInstance",
-            "mangledName": "$s16TurboUpiPluginUI11RZPTurboUPIC16UIPluginInstance8Razorpay08UPITurboG0_pyFZ",
+            "mangledName": "$s16TurboUpiPluginUI11RZPTurboUPIC16UIPluginInstance12RazorpayCore08UPITurboG0_pyFZ",
             "moduleName": "TurboUpiPluginUI",
             "static": true,
             "declAttributes": [
@@ -11584,13 +11591,13 @@
               {
                 "kind": "TypeNominal",
                 "name": "PluginPaymentDelegate",
-                "printedName": "any Razorpay.PluginPaymentDelegate",
-                "usr": "c:@M@Razorpay@objc(pl)PluginPaymentDelegate"
+                "printedName": "any RazorpayCore.PluginPaymentDelegate",
+                "usr": "c:@M@RazorpayCore@objc(pl)PluginPaymentDelegate"
               }
             ],
             "declKind": "Func",
             "usr": "c:@M@TurboUpiPluginUI@objc(cs)RZPTurboUPI(cm)turboUIPaymentPlugin",
-            "mangledName": "$s16TurboUpiPluginUI11RZPTurboUPIC014turboUIPaymentC08Razorpay0C15PaymentDelegate_pyFZ",
+            "mangledName": "$s16TurboUpiPluginUI11RZPTurboUPIC014turboUIPaymentC012RazorpayCore0C15PaymentDelegate_pyFZ",
             "moduleName": "TurboUpiPluginUI",
             "static": true,
             "declAttributes": [
@@ -11607,13 +11614,13 @@
               {
                 "kind": "TypeNominal",
                 "name": "UPITurboTPVUIPlugin",
-                "printedName": "any Razorpay.UPITurboTPVUIPlugin",
-                "usr": "c:@M@Razorpay@objc(pl)UPITurboTPVUIPlugin"
+                "printedName": "any RazorpayCore.UPITurboTPVUIPlugin",
+                "usr": "c:@M@RazorpayCore@objc(pl)UPITurboTPVUIPlugin"
               }
             ],
             "declKind": "Func",
             "usr": "c:@M@TurboUpiPluginUI@objc(cs)RZPTurboUPI(cm)turboTPVUIPlugin",
-            "mangledName": "$s16TurboUpiPluginUI11RZPTurboUPIC16turboTPVUIPlugin8Razorpay08UPITurboH0_pyFZ",
+            "mangledName": "$s16TurboUpiPluginUI11RZPTurboUPIC16turboTPVUIPlugin12RazorpayCore08UPITurboH0_pyFZ",
             "moduleName": "TurboUpiPluginUI",
             "static": true,
             "declAttributes": [
@@ -11630,13 +11637,13 @@
               {
                 "kind": "TypeNominal",
                 "name": "UPITurboTPVPlugin",
-                "printedName": "any Razorpay.UPITurboTPVPlugin",
-                "usr": "c:@M@Razorpay@objc(pl)UPITurboTPVPlugin"
+                "printedName": "any RazorpayCore.UPITurboTPVPlugin",
+                "usr": "c:@M@RazorpayCore@objc(pl)UPITurboTPVPlugin"
               }
             ],
             "declKind": "Func",
             "usr": "c:@M@TurboUpiPluginUI@objc(cs)RZPTurboUPI(cm)turboTPVPlugin",
-            "mangledName": "$s16TurboUpiPluginUI11RZPTurboUPIC14turboTPVPlugin8Razorpay08UPITurboH0_pyFZ",
+            "mangledName": "$s16TurboUpiPluginUI11RZPTurboUPIC14turboTPVPlugin12RazorpayCore08UPITurboH0_pyFZ",
             "moduleName": "TurboUpiPluginUI",
             "static": true,
             "declAttributes": [
@@ -11827,371 +11834,371 @@
   },
   "ConstValues": [
     {
-      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/Checkout\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/RazorpayTurboAnalytics.swift",
+      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/CheckoutModularisation\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/RazorpayTurboAnalytics.swift",
       "kind": "StringLiteral",
       "offset": 329,
       "length": 9,
       "value": "\"_CALLED\""
     },
     {
-      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/Checkout\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/RazorpayTurboAnalytics.swift",
+      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/CheckoutModularisation\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/RazorpayTurboAnalytics.swift",
       "kind": "StringLiteral",
       "offset": 362,
       "length": 10,
       "value": "\"_SUCCESS\""
     },
     {
-      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/Checkout\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/RazorpayTurboAnalytics.swift",
+      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/CheckoutModularisation\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/RazorpayTurboAnalytics.swift",
       "kind": "StringLiteral",
       "offset": 395,
       "length": 9,
       "value": "\"_FAILED\""
     },
     {
-      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/Checkout\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/RazorpayTurbo.swift",
+      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/CheckoutModularisation\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/RazorpayTurbo.swift",
       "kind": "BooleanLiteral",
-      "offset": 687,
+      "offset": 711,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/Checkout\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/RazorpayTurbo.swift",
+      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/CheckoutModularisation\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/RazorpayTurbo.swift",
       "kind": "BooleanLiteral",
-      "offset": 732,
+      "offset": 756,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/Checkout\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/RazorpayTurbo.swift",
+      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/CheckoutModularisation\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/RazorpayTurbo.swift",
       "kind": "BooleanLiteral",
-      "offset": 831,
+      "offset": 855,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/Checkout\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/RazorpayTurbo.swift",
+      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/CheckoutModularisation\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/RazorpayTurbo.swift",
       "kind": "BooleanLiteral",
-      "offset": 1399,
+      "offset": 1423,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/Checkout\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/RazorpayTurbo.swift",
+      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/CheckoutModularisation\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/RazorpayTurbo.swift",
       "kind": "BooleanLiteral",
-      "offset": 1581,
+      "offset": 1605,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/Checkout\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/RazorpayTurbo.swift",
+      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/CheckoutModularisation\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/RazorpayTurbo.swift",
       "kind": "StringLiteral",
-      "offset": 2702,
+      "offset": 2726,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/Checkout\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/RazorpayTurbo.swift",
+      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/CheckoutModularisation\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/RazorpayTurbo.swift",
       "kind": "StringLiteral",
-      "offset": 2736,
+      "offset": 2760,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/Checkout\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/RazorpayTurbo.swift",
+      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/CheckoutModularisation\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/RazorpayTurbo.swift",
       "kind": "BooleanLiteral",
-      "offset": 2801,
+      "offset": 2825,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/Checkout\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/RazorpayTurbo.swift",
+      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/CheckoutModularisation\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/RazorpayTurbo.swift",
       "kind": "BooleanLiteral",
-      "offset": 9583,
+      "offset": 9260,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/Checkout\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/RazorpayTurboTPV.swift",
+      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/CheckoutModularisation\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/RazorpayTurboTPV.swift",
       "kind": "BooleanLiteral",
       "offset": 473,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/Checkout\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/RazorpayTurboTPV.swift",
+      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/CheckoutModularisation\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/RazorpayTurboTPV.swift",
       "kind": "StringLiteral",
       "offset": 566,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/Checkout\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/TurboPluginEntity.swift",
+      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/CheckoutModularisation\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/TurboPluginEntity.swift",
       "kind": "StringLiteral",
-      "offset": 862,
+      "offset": 916,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/Checkout\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/TurboPluginEntity.swift",
+      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/CheckoutModularisation\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/TurboPluginEntity.swift",
       "kind": "StringLiteral",
-      "offset": 893,
+      "offset": 947,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/Checkout\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/TurboPluginEntity.swift",
+      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/CheckoutModularisation\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/TurboPluginEntity.swift",
       "kind": "StringLiteral",
-      "offset": 4046,
+      "offset": 4152,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/Checkout\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/TurboPluginEntity.swift",
+      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/CheckoutModularisation\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/TurboPluginEntity.swift",
       "kind": "StringLiteral",
-      "offset": 4077,
+      "offset": 4183,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/Checkout\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/TurboPluginEntity.swift",
+      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/CheckoutModularisation\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/TurboPluginEntity.swift",
       "kind": "StringLiteral",
-      "offset": 4103,
+      "offset": 4209,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/Checkout\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/TurboPluginModel.swift",
+      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/CheckoutModularisation\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/TurboPluginModel.swift",
       "kind": "IntegerLiteral",
       "offset": 7487,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/Checkout\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/TurboPluginModel.swift",
+      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/CheckoutModularisation\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/TurboPluginModel.swift",
       "kind": "IntegerLiteral",
       "offset": 7498,
       "length": 9,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/Checkout\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/TurboPluginModel.swift",
+      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/CheckoutModularisation\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/TurboPluginModel.swift",
       "kind": "IntegerLiteral",
       "offset": 7517,
       "length": 17,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/Checkout\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/TurboPluginModel.swift",
+      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/CheckoutModularisation\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/TurboPluginModel.swift",
       "kind": "IntegerLiteral",
       "offset": 7544,
       "length": 14,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/Checkout\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/TurboPluginModel.swift",
+      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/CheckoutModularisation\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/TurboPluginModel.swift",
       "kind": "IntegerLiteral",
       "offset": 7568,
       "length": 13,
       "value": "4"
     },
     {
-      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/Checkout\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/TurboPluginModel.swift",
+      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/CheckoutModularisation\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/TurboPluginModel.swift",
       "kind": "IntegerLiteral",
       "offset": 8631,
       "length": 7,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/Checkout\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/TurboPluginModel.swift",
+      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/CheckoutModularisation\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/TurboPluginModel.swift",
       "kind": "IntegerLiteral",
       "offset": 8640,
       "length": 10,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/Checkout\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/TurboPluginModel.swift",
+      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/CheckoutModularisation\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/TurboPluginModel.swift",
       "kind": "IntegerLiteral",
       "offset": 8652,
       "length": 17,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/Checkout\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/TurboPluginModel.swift",
+      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/CheckoutModularisation\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/TurboPluginModel.swift",
       "kind": "IntegerLiteral",
       "offset": 8671,
       "length": 9,
       "value": "4"
     },
     {
-      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/Checkout\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/TurboPluginModel.swift",
+      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/CheckoutModularisation\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/TurboPluginModel.swift",
       "kind": "IntegerLiteral",
       "offset": 8682,
       "length": 19,
       "value": "5"
     },
     {
-      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/Checkout\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/TurboPluginModel.swift",
+      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/CheckoutModularisation\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/TurboPluginModel.swift",
       "kind": "IntegerLiteral",
       "offset": 8703,
       "length": 10,
       "value": "6"
     },
     {
-      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/Checkout\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/TurboPluginModel.swift",
+      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/CheckoutModularisation\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/TurboPluginModel.swift",
       "kind": "IntegerLiteral",
       "offset": 8715,
       "length": 16,
       "value": "7"
     },
     {
-      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/Checkout\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/TurboPluginModel.swift",
+      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/CheckoutModularisation\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/TurboPluginModel.swift",
       "kind": "IntegerLiteral",
       "offset": 8796,
       "length": 9,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/Checkout\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/TurboPluginModel.swift",
+      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/CheckoutModularisation\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/TurboPluginModel.swift",
       "kind": "IntegerLiteral",
       "offset": 8807,
       "length": 19,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/Checkout\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/TurboPluginModel.swift",
+      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/CheckoutModularisation\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/TurboPluginModel.swift",
       "kind": "IntegerLiteral",
       "offset": 8828,
       "length": 10,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/Checkout\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/TurboPluginModel.swift",
+      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/CheckoutModularisation\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/TurboPluginModel.swift",
       "kind": "IntegerLiteral",
       "offset": 13891,
       "length": 23,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/Checkout\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/TurboPluginModel.swift",
+      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/CheckoutModularisation\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/TurboPluginModel.swift",
       "kind": "IntegerLiteral",
       "offset": 13924,
       "length": 13,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/Checkout\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/TurboPluginModel.swift",
+      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/CheckoutModularisation\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/TurboPluginModel.swift",
       "kind": "IntegerLiteral",
       "offset": 13947,
       "length": 18,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/Checkout\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/TurboPluginModel.swift",
+      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/CheckoutModularisation\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/TurboPluginModel.swift",
       "kind": "IntegerLiteral",
       "offset": 13975,
       "length": 19,
       "value": "4"
     },
     {
-      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/Checkout\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/TurboPluginModel.swift",
+      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/CheckoutModularisation\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/TurboPluginModel.swift",
       "kind": "IntegerLiteral",
       "offset": 14004,
       "length": 18,
       "value": "5"
     },
     {
-      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/Checkout\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/TurboPluginModel.swift",
+      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/CheckoutModularisation\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/TurboPluginModel.swift",
       "kind": "IntegerLiteral",
       "offset": 14032,
       "length": 17,
       "value": "6"
     },
     {
-      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/Checkout\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/TurboPluginModel.swift",
+      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/CheckoutModularisation\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/TurboPluginModel.swift",
       "kind": "IntegerLiteral",
       "offset": 15566,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/Checkout\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/TurboPaymentPlugin.swift",
+      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/CheckoutModularisation\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/TurboPaymentPlugin.swift",
       "kind": "Dictionary",
       "offset": 470,
       "length": 3,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/Checkout\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/TurboPaymentPlugin.swift",
+      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/CheckoutModularisation\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/TurboPaymentPlugin.swift",
       "kind": "StringLiteral",
       "offset": 536,
       "length": 32,
       "value": "\"TURBO_PLUGIN_AUTHORIZE_SUCCESS\""
     },
     {
-      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/Checkout\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/TurboPaymentPlugin.swift",
+      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/CheckoutModularisation\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/TurboPaymentPlugin.swift",
       "kind": "StringLiteral",
       "offset": 603,
       "length": 31,
       "value": "\"TURBO_PLUGIN_AUTHORIZE_FAILED\""
     },
     {
-      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/Checkout\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/TurboPaymentPlugin.swift",
+      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/CheckoutModularisation\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/TurboPaymentPlugin.swift",
       "kind": "StringLiteral",
       "offset": 669,
       "length": 31,
       "value": "\"TURBO_PLUGIN_AUTHORIZE_CALLED\""
     },
     {
-      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/Checkout\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/TurboPaymentPlugin.swift",
+      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/CheckoutModularisation\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/TurboPaymentPlugin.swift",
       "kind": "IntegerLiteral",
       "offset": 743,
       "length": 2,
       "value": "30"
     },
     {
-      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/Checkout\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/TurboPaymentPlugin.swift",
+      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/CheckoutModularisation\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/TurboPaymentPlugin.swift",
       "kind": "StringLiteral",
       "offset": 838,
       "length": 27,
       "value": "\"https:\/\/api.razorpay.com\/\""
     },
     {
-      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/Checkout\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/TurboUIPaymentPlugin.swift",
+      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/CheckoutModularisation\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/TurboUIPaymentPlugin.swift",
       "kind": "Dictionary",
       "offset": 341,
       "length": 65,
       "value": "[(\"provider\", \"UPI_TURBO\"), (\"action\", \"PAY\")]"
     },
     {
-      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/Checkout\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/TurboUIPaymentPlugin.swift",
+      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/CheckoutModularisation\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/TurboUIPaymentPlugin.swift",
       "kind": "Dictionary",
       "offset": 437,
       "length": 61,
       "value": "[(\"payment_id\", \"\"), (\"status\", \"SUCCESS\")]"
     },
     {
-      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/Checkout\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/TurboUIPaymentPlugin.swift",
+      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/CheckoutModularisation\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/TurboUIPaymentPlugin.swift",
       "kind": "Dictionary",
       "offset": 524,
       "length": 113,
       "value": "[(\"payment_id\", \"\"), (\"error_code\", \"\"), (\"error_description\", \"\"), (\"status\", \"\")]"
     },
     {
-      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/Checkout\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/TurboUIPaymentPlugin.swift",
+      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/CheckoutModularisation\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/TurboUIPaymentPlugin.swift",
       "kind": "Array",
       "offset": 790,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/Checkout\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/TurboUIPaymentPlugin.swift",
+      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/CheckoutModularisation\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/TurboUIPaymentPlugin.swift",
       "kind": "Dictionary",
       "offset": 846,
       "length": 3,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/Checkout\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/TurboUIPaymentPlugin.swift",
+      "filePath": "\/Users\/ramprasad.a\/Documents\/projects\/CheckoutModularisation\/razorpay-ios\/RazorpayIOS\/TurboUpiPlugin\/TurboUIPaymentPlugin.swift",
       "kind": "StringLiteral",
       "offset": 1008,
       "length": 27,
