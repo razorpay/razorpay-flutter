@@ -13,7 +13,17 @@ public class RazorpayDelegate: NSObject, RazorpayPaymentCompletionProtocolWithDa
     static let TLS_ERROR = 3
     static let INCOMPATIBLE_PLUGIN = 3
     static let UNKNOWN_ERROR = 100
-    
+
+    private static func presentedViewControllerFromRoot() -> UIViewController? {
+        guard let rootVC = UIApplication.shared.windows.filter({ $0.isKeyWindow }).first?.rootViewController,
+              !(rootVC is UINavigationController),
+              let presented = rootVC.presentedViewController else {
+            return nil
+        }
+
+        return presented
+    }
+
     public func onExternalWalletSelected(_ walletName: String, withPaymentData paymentData: [AnyHashable : Any]?) {
         var response = [String:Any]()
         response["type"] = RazorpayDelegate.CODE_PAYMENT_EXTERNAL_WALLET
@@ -59,6 +69,10 @@ public class RazorpayDelegate: NSObject, RazorpayPaymentCompletionProtocolWithDa
         var options = options
         options["integration"] = "flutter"
         options["FRAMEWORK"] = "flutter"
+        if let presentedVC = RazorpayDelegate.presentedViewControllerFromRoot() {
+            razorpay.open(options, displayController: presentedVC)
+            return
+        }
         razorpay.open(options)
     }
     
