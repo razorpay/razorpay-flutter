@@ -1,3 +1,6 @@
+## 1.4.1
+- Removed dependency Fluttertoast from the library.
+
 ## 1.4.0
 
 - Removed mention of Registrar class in the plugin to fix `Registrar not found` issue.
