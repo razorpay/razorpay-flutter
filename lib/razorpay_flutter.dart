@@ -1,3 +1,5 @@
+import 'dart:async';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:eventify/eventify.dart';
 
@@ -20,13 +22,42 @@ class Razorpay {
   static const INCOMPATIBLE_PLUGIN = 4;
   static const UNKNOWN_ERROR = 100;
 
-  static const MethodChannel _channel = const MethodChannel('razorpay_flutter');
+  static const MethodChannel _channel = MethodChannel('razorpay_flutter');
+  static const EventChannel _merchantEventChannel =
+      EventChannel('razorpay_flutter/merchant_events');
 
   // EventEmitter instance used for communication
   late EventEmitter _eventEmitter;
 
+  List<String>? _subscribedAnalyticsEvents;
+  void Function(String payloadJson)? _onMerchantEvent;
+  StreamSubscription<dynamic>? _merchantEventSubscription;
+
   Razorpay() {
-    _eventEmitter = new EventEmitter();
+    _eventEmitter = EventEmitter();
+  }
+
+  /// Subscribes to checkout analytics events. Call before [open] to receive events.
+  /// [events] e.g. ['payment.*', 'checkout.initiate', 'checkout.close'].
+  /// [onEvent] is invoked with raw JSON string for each matching event.
+  void subscribeToAnalyticsEvents(
+      List<String> events, void Function(String payloadJson) onEvent) {
+    _subscribedAnalyticsEvents = List.from(events);
+    _onMerchantEvent = onEvent;
+    _channel.invokeMethod(
+        'subscribeToAnalyticsEvents', <String, dynamic>{'events': events});
+    _merchantEventSubscription?.cancel();
+    _merchantEventSubscription =
+        _merchantEventChannel.receiveBroadcastStream().listen(
+      (dynamic payload) {
+        if (_onMerchantEvent != null && payload is String) {
+          _onMerchantEvent!(payload);
+        }
+      },
+      onError: (dynamic error) {
+        debugPrint('[RazorpayFlutter] merchant event stream error: $error');
+      },
+    );
   }
 
   /// Opens Razorpay checkout
@@ -91,6 +122,10 @@ class Razorpay {
 
   /// Clears all event listeners
   void clear() {
+    _merchantEventSubscription?.cancel();
+    _merchantEventSubscription = null;
+    _onMerchantEvent = null;
+    _subscribedAnalyticsEvents = null;
     _eventEmitter.clear();
   }
 
@@ -121,7 +156,8 @@ class PaymentSuccessResponse {
   String? signature;
   Map<dynamic, dynamic>? data;
 
-  PaymentSuccessResponse(this.paymentId, this.orderId, this.signature, this.data);
+  PaymentSuccessResponse(
+      this.paymentId, this.orderId, this.signature, this.data);
 
   static PaymentSuccessResponse fromMap(Map<dynamic, dynamic> map) {
     String? paymentId = map["razorpay_payment_id"];

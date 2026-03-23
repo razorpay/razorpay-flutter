@@ -8,3 +8,17 @@ build/
 
 **/.idea/
 *.iml
+
+# iOS
+**/ios/.symlinks/
+**/ios/Pods/Manifest.lock
+**/ios/Pods/Pods.xcodeproj/xcuserdata/
+**/ios/Pods/Target Support Files/*/ResourceBundle-*
+**/ios/Pods/Target Support Files/razorpay-core-pod/
+**/ios/Pods/**/Resources/
+**/ios/Pods/razorpay-core-pod/
+**/ios/Pods/razorpay-pod/Pod/RazorpayStandard.xcframework/
+
+# Android
+**/.gradle/
+**/android/.gradle/
