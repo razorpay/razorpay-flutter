@@ -1,3 +1,7 @@
+## 1.4.3
+
+- Removed unused fluttertoast dependency
+
 ## 1.4.2
 
 - Added analytics event subscription support
