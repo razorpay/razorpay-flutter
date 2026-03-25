@@ -29,6 +29,7 @@ class Razorpay {
   // EventEmitter instance used for communication
   late EventEmitter _eventEmitter;
 
+  // ignore: unused_field
   List<String>? _subscribedAnalyticsEvents;
   void Function(String payloadJson)? _onMerchantEvent;
   StreamSubscription<dynamic>? _merchantEventSubscription;
