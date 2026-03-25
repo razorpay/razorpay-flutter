@@ -2,10 +2,13 @@ package com.razorpay.razorpay_flutter;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.os.Handler;
+import android.os.Looper;
 import android.util.Log;
 
 import com.razorpay.Checkout;
 import com.razorpay.CheckoutActivity;
+import com.razorpay.EventCallback;
 import com.razorpay.ExternalWalletListener;
 import com.razorpay.PaymentData;
 import com.razorpay.PaymentResultWithDataListener;
@@ -14,14 +17,17 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 
+import io.flutter.plugin.common.EventChannel;
 import io.flutter.plugin.common.MethodChannel.Result;
 import io.flutter.plugin.common.PluginRegistry.ActivityResultListener;
 
-public class RazorpayDelegate implements ActivityResultListener, ExternalWalletListener, PaymentResultWithDataListener {
+public class RazorpayDelegate implements ActivityResultListener, ExternalWalletListener, PaymentResultWithDataListener, EventCallback {
 
     private final Activity activity;
     private Result pendingResult;
@@ -39,7 +45,11 @@ public class RazorpayDelegate implements ActivityResultListener, ExternalWalletL
     private static final int TLS_ERROR = 3;
     private static final int INCOMPATIBLE_PLUGIN = 3;
     private static final int UNKNOWN_ERROR = 100;
+    private static final String TAG = "RazorpayFlutter";
+
     private String packageName;
+    private EventChannel.EventSink merchantEventSink;
+    private final Handler mainHandler = new Handler(Looper.getMainLooper());
 
     public RazorpayDelegate(Activity activity) {
         this.activity = activity;
@@ -49,9 +59,29 @@ public class RazorpayDelegate implements ActivityResultListener, ExternalWalletL
         this.packageName = packageName;
     }
 
-    void openCheckout(Map<String, Object> arguments, Result result) {
+    void setMerchantEventSink(EventChannel.EventSink sink) {
+        this.merchantEventSink = sink;
+    }
 
-        this.pendingResult = result;
+    void subscribeToAnalyticsEvents(List<String> events, Result result) {
+        try {
+            Checkout checkout = Checkout.getInstance(activity);
+            checkout.setEventCallback(this);
+            if (events != null && !events.isEmpty()) {
+                Method setSubscribed = Checkout.class.getDeclaredMethod("setSubscribedAnalyticsEvents", ArrayList.class);
+                setSubscribed.setAccessible(true);
+                setSubscribed.invoke(checkout, new ArrayList<>(events));
+              }
+        } catch (Exception e) {
+            Log.w(TAG, "Failed to subscribe to analytics events: " + e.getMessage());
+        }
+        if (result != null) {
+            result.success(null);
+        }
+    }
+
+    void openCheckout(Map<String, Object> arguments, Result result) {
+         this.pendingResult = result;
         JSONObject options = new JSONObject(arguments);
         if (activity.getPackageName().equalsIgnoreCase(packageName)){
             Intent intent = new Intent(activity, CheckoutActivity.class);
@@ -59,8 +89,18 @@ public class RazorpayDelegate implements ActivityResultListener, ExternalWalletL
             intent.putExtra("FRAMEWORK", "flutter");
             activity.startActivityForResult(intent, Checkout.RZP_REQUEST_CODE);
         }
+     }
 
-
+    @Override
+    public void onEvent(String payloadJson) {
+        if (merchantEventSink == null) {
+            return;
+        }
+        mainHandler.post(() -> {
+            if (merchantEventSink != null) {
+                merchantEventSink.success(payloadJson);
+            }
+        });
     }
 
     private void sendReply(Map<String, Object> data) {

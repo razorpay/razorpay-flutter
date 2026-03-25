@@ -50,6 +50,38 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
+  late Razorpay _razorpay;
+  final List<String> _merchantEvents = [];
+
+  @override
+  void initState() {
+    super.initState();
+    _razorpay = Razorpay();
+    // Subscribe to checkout analytics events before opening checkout
+    _razorpay.subscribeToAnalyticsEvents(
+      ['payment.*', 'checkout.initiate', 'checkout.close'],
+      (String payloadJson) {
+        debugPrint('[Merchant Event] $payloadJson');
+        if (mounted) {
+          setState(() {
+            _merchantEvents.add(payloadJson);
+          });
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text('Event #${_merchantEvents.length}: ${payloadJson.length > 40 ? '${payloadJson.substring(0, 40)}...' : payloadJson}'),
+              duration: const Duration(seconds: 2),
+            ),
+          );
+        }
+      },
+    );
+  }
+
+  @override
+  void dispose() {
+    _razorpay.clear();
+    super.dispose();
+  }
 
   void _incrementCounter() {
     setState(() {
@@ -76,51 +108,78 @@ class _MyHomePageState extends State<MyHomePage> {
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Invoke "debug painting" (press "p" in the console, choose the
-          // "Toggle Debug Paint" action from the Flutter Inspector in Android
-          // Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
-          // to see the wireframe for each widget.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'Pay with Razorpay',
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: ElevatedButton(
+              onPressed: () {
+                var options = {
+                  'key': 'rzp_live_ILgsfZCZoFIKMb',
+                  'amount': 100,
+                  'name': 'Acme Corp.',
+                  'description': 'Fine T-Shirt',
+                  'retry': {'enabled': true, 'max_count': 1},
+                  'send_sms_hash': true,
+                  'prefill': {'contact': '8888888888', 'email': 'test@razorpay.com'},
+                  'external': {'wallets': ['paytm']},
+                };
+                _razorpay.on(Razorpay.EVENT_PAYMENT_ERROR, handlePaymentErrorResponse);
+                _razorpay.on(Razorpay.EVENT_PAYMENT_SUCCESS, handlePaymentSuccessResponse);
+                _razorpay.on(Razorpay.EVENT_EXTERNAL_WALLET, handleExternalWalletSelected);
+                _razorpay.open(options);
+              },
+              child: const Text('Pay with Razorpay'),
             ),
-            ElevatedButton(onPressed: (){
-                  Razorpay razorpay = Razorpay();
-                  var options = {
-                    'key': 'rzp_live_ILgsfZCZoFIKMb',
-                    'amount': 100,
-                    'name': 'Acme Corp.',
-                    'description': 'Fine T-Shirt',
-                    'retry': {'enabled': true, 'max_count': 1},
-                    'send_sms_hash': true,
-                    'prefill': {'contact': '8888888888', 'email': 'test@razorpay.com'},
-                    'external': {
-                      'wallets': ['paytm']
-                    }
-                  };
-                  razorpay.on(Razorpay.EVENT_PAYMENT_ERROR, handlePaymentErrorResponse);
-                  razorpay.on(Razorpay.EVENT_PAYMENT_SUCCESS, handlePaymentSuccessResponse);
-                  razorpay.on(Razorpay.EVENT_EXTERNAL_WALLET, handleExternalWalletSelected);
-                  razorpay.open(options);
-                },
-                child: const Text("Pay with Razorpay")),
-          ],
-        ),
+          ),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 16.0),
+            child: Text(
+              'Events passed to Flutter (from native):',
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
+            ),
+          ),
+          Expanded(
+            child: _merchantEvents.isEmpty
+                ? const Center(
+                    child: Text(
+                      'No events yet. Tap "Pay with Razorpay" and use checkout to see events.',
+                      textAlign: TextAlign.center,
+                    ),
+                  )
+                : ListView.builder(
+                    padding: const EdgeInsets.all(16.0),
+                    itemCount: _merchantEvents.length,
+                    itemBuilder: (context, index) {
+                      final event = _merchantEvents[index];
+                      return Card(
+                        margin: const EdgeInsets.only(bottom: 8),
+                        child: Padding(
+                          padding: const EdgeInsets.all(12.0),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'Event ${index + 1}',
+                                style: const TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 12,
+                                ),
+                              ),
+                              const SizedBox(height: 4),
+                              SelectableText(
+                                event,
+                                style: const TextStyle(fontSize: 11, fontFamily: 'monospace'),
+                              ),
+                            ],
+                          ),
+                        ),
+                      );
+                    },
+                  ),
+          ),
+        ],
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
