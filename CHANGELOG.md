@@ -1,3 +1,9 @@
+## 1.4.2
+
+- Added analytics event subscription support
+- New `subscribeToAnalyticsEvents` API for real-time checkout analytics
+- EventChannel integration for streaming analytics events
+
 ## 1.4.0
 
 - Removed mention of Registrar class in the plugin to fix `Registrar not found` issue.
