@@ -8,228 +8,144 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
-        primarySwatch: Colors.blue,
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      title: 'Razorpay FPX Test',
+      theme: ThemeData(primarySwatch: Colors.blue),
+      home: const MyHomePage(),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
-  final String title;
+  const MyHomePage({super.key});
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
   late Razorpay _razorpay;
-  final List<String> _merchantEvents = [];
+  final _keyController = TextEditingController();
+  final List<String> _logs = [];
 
   @override
   void initState() {
     super.initState();
     _razorpay = Razorpay();
-    // Subscribe to checkout analytics events before opening checkout
-    _razorpay.subscribeToAnalyticsEvents(
-      ['payment.*', 'checkout.initiate', 'checkout.close'],
-      (String payloadJson) {
-        debugPrint('[Merchant Event] $payloadJson');
-        if (mounted) {
-          setState(() {
-            _merchantEvents.add(payloadJson);
-          });
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
-              content: Text('Event #${_merchantEvents.length}: ${payloadJson.length > 40 ? '${payloadJson.substring(0, 40)}...' : payloadJson}'),
-              duration: const Duration(seconds: 2),
-            ),
-          );
-        }
-      },
-    );
+    _razorpay.on(Razorpay.EVENT_PAYMENT_SUCCESS, _handleSuccess);
+    _razorpay.on(Razorpay.EVENT_PAYMENT_ERROR, _handleError);
+    _razorpay.on(Razorpay.EVENT_EXTERNAL_WALLET, _handleExternalWallet);
   }
 
   @override
   void dispose() {
     _razorpay.clear();
+    _keyController.dispose();
     super.dispose();
   }
 
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
+  void _log(String msg) {
+    setState(() => _logs.insert(0, '[${DateTime.now().toIso8601String().substring(11, 19)}] $msg'));
+  }
+
+  void _handleSuccess(PaymentSuccessResponse response) {
+    _log('SUCCESS — payment_id: ${response.paymentId}');
+    _showDialog('Payment Success', 'Payment ID: ${response.paymentId}');
+  }
+
+  void _handleError(PaymentFailureResponse response) {
+    _log('ERROR — code: ${response.code}, msg: ${response.message}, error: ${response.error}');
+    _showDialog('Payment Failed', 'Code: ${response.code}\nMessage: ${response.message}\nError: ${response.error}');
+  }
+
+  void _handleExternalWallet(ExternalWalletResponse response) {
+    _log('EXTERNAL WALLET — ${response.walletName}');
+    _showDialog('External Wallet', '${response.walletName}');
+  }
+
+  void _openCheckout() {
+    final key = _keyController.text.trim();
+    if (key.isEmpty) {
+      _showDialog('Error', 'Please enter a Razorpay key first.');
+      return;
+    }
+    _log('Opening checkout with key: ${key.substring(0, key.length.clamp(0, 12))}...');
+    var options = {
+      'key': key,
+      'amount': 100,
+      'name': 'FPX Crash Test',
+      'description': 'Testing FPX cancellation crash',
+      'send_sms_hash': true,
+      'prefill': {'contact': '8888888888', 'email': 'test@razorpay.com'},
+    };
+    try {
+      _razorpay.open(options);
+    } catch (e) {
+      _log('EXCEPTION: $e');
+    }
+  }
+
+  void _showDialog(String title, String message) {
+    showDialog(
+      context: context,
+      builder: (_) => AlertDialog(
+        title: Text(title),
+        content: SingleChildScrollView(child: Text(message)),
+        actions: [
+          TextButton(onPressed: () => Navigator.pop(context), child: const Text('OK')),
+        ],
+      ),
+    );
   }
 
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
     return Scaffold(
-      appBar: AppBar(
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
-      ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: ElevatedButton(
-              onPressed: () {
-                var options = {
-                  'key': 'rzp_live_ILgsfZCZoFIKMb',
-                  'amount': 100,
-                  'name': 'Acme Corp.',
-                  'description': 'Fine T-Shirt',
-                  'retry': {'enabled': true, 'max_count': 1},
-                  'send_sms_hash': true,
-                  'prefill': {'contact': '8888888888', 'email': 'test@razorpay.com'},
-                  'external': {'wallets': ['paytm']},
-                };
-                _razorpay.on(Razorpay.EVENT_PAYMENT_ERROR, handlePaymentErrorResponse);
-                _razorpay.on(Razorpay.EVENT_PAYMENT_SUCCESS, handlePaymentSuccessResponse);
-                _razorpay.on(Razorpay.EVENT_EXTERNAL_WALLET, handleExternalWalletSelected);
-                _razorpay.open(options);
-              },
-              child: const Text('Pay with Razorpay'),
+      appBar: AppBar(title: const Text('Razorpay FPX Crash Test')),
+      body: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            TextField(
+              controller: _keyController,
+              decoration: const InputDecoration(
+                labelText: 'Razorpay Key (rzp_test_... or rzp_live_...)',
+                border: OutlineInputBorder(),
+              ),
+              autocorrect: false,
+              enableSuggestions: false,
             ),
-          ),
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16.0),
-            child: Text(
-              'Events passed to Flutter (from native):',
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
+            const SizedBox(height: 12),
+            ElevatedButton(
+              onPressed: _openCheckout,
+              child: const Text('Open Checkout (test FPX cancellation)'),
             ),
-          ),
-          Expanded(
-            child: _merchantEvents.isEmpty
-                ? const Center(
-                    child: Text(
-                      'No events yet. Tap "Pay with Razorpay" and use checkout to see events.',
-                      textAlign: TextAlign.center,
-                    ),
-                  )
-                : ListView.builder(
-                    padding: const EdgeInsets.all(16.0),
-                    itemCount: _merchantEvents.length,
-                    itemBuilder: (context, index) {
-                      final event = _merchantEvents[index];
-                      return Card(
-                        margin: const EdgeInsets.only(bottom: 8),
+            const SizedBox(height: 16),
+            const Text('Event Log:', style: TextStyle(fontWeight: FontWeight.bold)),
+            const SizedBox(height: 8),
+            Expanded(
+              child: _logs.isEmpty
+                  ? const Center(child: Text('No events yet.\nEnter key, tap button, choose FPX, then cancel on the bank page.', textAlign: TextAlign.center))
+                  : ListView.builder(
+                      itemCount: _logs.length,
+                      itemBuilder: (_, i) => Card(
+                        margin: const EdgeInsets.only(bottom: 6),
                         child: Padding(
-                          padding: const EdgeInsets.all(12.0),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                'Event ${index + 1}',
-                                style: const TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 12,
-                                ),
-                              ),
-                              const SizedBox(height: 4),
-                              SelectableText(
-                                event,
-                                style: const TextStyle(fontSize: 11, fontFamily: 'monospace'),
-                              ),
-                            ],
+                          padding: const EdgeInsets.all(10),
+                          child: SelectableText(
+                            _logs[i],
+                            style: const TextStyle(fontSize: 12, fontFamily: 'monospace'),
                           ),
                         ),
-                      );
-                    },
-                  ),
-          ),
-        ],
+                      ),
+                    ),
+            ),
+          ],
+        ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
-    );
-  }
-
-  void handlePaymentErrorResponse(PaymentFailureResponse response){
-    /*
-    * PaymentFailureResponse contains three values:
-    * 1. Error Code
-    * 2. Error Description
-    * 3. Metadata
-    * */
-    showAlertDialog(context, "Payment Failed", "Code: ${response.code}\nDescription: ${response.message}\nMetadata:${response.error.toString()}");
-  }
-
-  void handlePaymentSuccessResponse(PaymentSuccessResponse response){
-    /*
-    * Payment Success Response contains three values:
-    * 1. Order ID
-    * 2. Payment ID
-    * 3. Signature
-    * */
-    showAlertDialog(context, "Payment Successful", "Payment ID: ${response.paymentId}");
-  }
-
-  void handleExternalWalletSelected(ExternalWalletResponse response){
-    showAlertDialog(context, "External Wallet Selected", "${response.walletName}");
-  }
-
-  void showAlertDialog(BuildContext context, String title, String message){
-    // set up the buttons
-    Widget continueButton = ElevatedButton(
-      child: const Text("Continue"),
-      onPressed:  () {},
-    );
-    // set up the AlertDialog
-    AlertDialog alert = AlertDialog(
-      title: Text(title),
-      content: Text(message),
-    );
-    // show the dialog
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return alert;
-      },
     );
   }
 }

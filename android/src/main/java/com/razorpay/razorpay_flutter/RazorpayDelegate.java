@@ -165,7 +165,9 @@ public class RazorpayDelegate implements ActivityResultListener, ExternalWalletL
             data.put("responseBody", resp);
         }catch (JSONException e){
             data.put("message", message);
-            data.put("responseBody", message);
+            Map<String, Object> resp = new HashMap<>();
+            resp.put("description", message);
+            data.put("responseBody", resp);
         }
 
         reply.put("data", data);
