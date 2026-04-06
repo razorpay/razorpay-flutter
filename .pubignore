@@ -1,0 +1,13 @@
+# Build outputs
+build/
+lib/flutter.jar
+local.properties
+
+# Example app generated/build files
+example/android/.gradle/
+example/android/local.properties
+example/android/app/src/main/java/io/flutter/plugins/
+example/ios/Pods/
+example/ios/Flutter/
+example/ios/Runner.xcodeproj/xcuserdata/
+example/ios/Runner.xcworkspace/xcuserdata/
