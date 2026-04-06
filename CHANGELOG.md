@@ -1,3 +1,8 @@
+## 1.4.4
+
+- Fixed crash when FPX or other payment methods return a plain-text error response instead of JSON
+- `PaymentFailureResponse.error` now returns `null` gracefully instead of throwing a type cast exception
+
 ## 1.4.3
 
 - Removed unused fluttertoast dependency
