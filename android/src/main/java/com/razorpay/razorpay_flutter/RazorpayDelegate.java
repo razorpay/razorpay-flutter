@@ -138,10 +138,13 @@ public class RazorpayDelegate implements ActivityResultListener, ExternalWalletL
     public void onPaymentError(int code, String message, PaymentData paymentData) {
         Map<String, Object> reply = new HashMap<>();
         reply.put("type", CODE_PAYMENT_ERROR);
-
         Map<String, Object> data = new HashMap<>();
-        data.put("code", translateRzpPaymentError(code));
         try{
+       
+
+        
+        data.put("code", translateRzpPaymentError(code));
+        
             JSONObject response = new JSONObject(message);
             JSONObject errorObj = response.getJSONObject("error");
             data.put("message", errorObj.getString("description"));
@@ -163,15 +166,18 @@ public class RazorpayDelegate implements ActivityResultListener, ExternalWalletL
             resp.put("email", paymentData.getUserEmail());
             resp.put("contact", paymentData.getUserContact());
             data.put("responseBody", resp);
+            reply.put("data", data);
+            sendReply(reply);
         }catch (JSONException e){
             data.put("message", message);
             Map<String, Object> resp = new HashMap<>();
             resp.put("description", message);
             data.put("responseBody", resp);
+            reply.put("data", data);
+            sendReply(resp)
         }
 
-        reply.put("data", data);
-        sendReply(reply);
+        
     }
 
     @Override
