@@ -15,6 +15,8 @@ import com.razorpay.PaymentResultWithDataListener;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+import java.lang.IllegalArgumentException;
+import java.lang.Exception;
 
 import java.lang.reflect.Method;
 import java.util.ArrayList;
@@ -104,11 +106,16 @@ public class RazorpayDelegate implements ActivityResultListener, ExternalWalletL
     }
 
     private void sendReply(Map<String, Object> data) {
-        if (pendingResult != null) {
-            pendingResult.success(data);
-            pendingReply = null;
-        } else {
-            pendingReply = data;
+        try{
+            
+            if (pendingResult != null) {
+                pendingResult.success(data);
+                pendingReply = null;
+            } else {
+                pendingReply = data;
+            }
+        }catch(Exception e){
+            //no-op
         }
     }
 
@@ -168,7 +175,7 @@ public class RazorpayDelegate implements ActivityResultListener, ExternalWalletL
             data.put("responseBody", resp);
             reply.put("data", data);
             sendReply(reply);
-        }catch (JSONException e){
+        }catch (Exception e){
             data.put("message", message);
             Map<String, Object> resp = new HashMap<>();
             resp.put("description", message);
