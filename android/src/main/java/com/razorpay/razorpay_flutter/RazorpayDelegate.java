@@ -146,45 +146,39 @@ public class RazorpayDelegate implements ActivityResultListener, ExternalWalletL
         Map<String, Object> reply = new HashMap<>();
         reply.put("type", CODE_PAYMENT_ERROR);
         Map<String, Object> data = new HashMap<>();
-        try{
-       
-
-        
         data.put("code", translateRzpPaymentError(code));
-        
+        try {
             JSONObject response = new JSONObject(message);
             JSONObject errorObj = response.getJSONObject("error");
-            data.put("message", errorObj.getString("description"));
-            JSONObject metadata = errorObj.getJSONObject("metadata");
+            data.put("message", errorObj.optString("description", ""));
+            JSONObject metadata = errorObj.optJSONObject("metadata");
             Map<String, String> metadataHash = new HashMap<>();
-            Iterator<String> metaKeys = metadata.keys();
-            while (metaKeys.hasNext()){
-                String key = metaKeys.next();
-                metadataHash.put(key,metadata.getString(key));
+            if (metadata != null) {
+                Iterator<String> metaKeys = metadata.keys();
+                while (metaKeys.hasNext()) {
+                    String key = metaKeys.next();
+                    metadataHash.put(key, metadata.getString(key));
+                }
             }
             errorObj.remove("metadata");
-            Map<String,Object> resp = new HashMap<>();
+            Map<String, Object> resp = new HashMap<>();
             Iterator<String> keys = errorObj.keys();
             while (keys.hasNext()) {
                 String key = keys.next();
-                resp.put(key,errorObj.get(key));
+                resp.put(key, errorObj.get(key));
             }
             resp.put("metadata", metadataHash);
-            resp.put("email", paymentData.getUserEmail());
-            resp.put("contact", paymentData.getUserContact());
+            resp.put("email", paymentData != null ? paymentData.getUserEmail() : null);
+            resp.put("contact", paymentData != null ? paymentData.getUserContact() : null);
             data.put("responseBody", resp);
-            reply.put("data", data);
-            sendReply(reply);
-        }catch (Exception e){
+        } catch (Exception e) {
             data.put("message", message);
             Map<String, Object> resp = new HashMap<>();
             resp.put("description", message);
             data.put("responseBody", resp);
-            reply.put("data", data);
-            sendReply(resp);
         }
-
-        
+        reply.put("data", data);
+        sendReply(reply);
     }
 
     @Override
