@@ -1,3 +1,7 @@
+## 1.4.5
+
+- Added null safety guards in `onPaymentError` to handle cases where `PaymentData` is null (e.g., FPX cancellation)
+
 ## 1.4.4
 
 - Fixed crash when FPX or other payment methods return a plain-text error response instead of JSON
