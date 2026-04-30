@@ -13,10 +13,7 @@ import com.razorpay.ExternalWalletListener;
 import com.razorpay.PaymentData;
 import com.razorpay.PaymentResultWithDataListener;
 
-import org.json.JSONException;
 import org.json.JSONObject;
-import java.lang.IllegalArgumentException;
-import java.lang.Exception;
 
 import java.lang.reflect.Method;
 import java.util.ArrayList;
