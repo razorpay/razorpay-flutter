@@ -6,5 +6,8 @@
 
 build/
 
+.build/
+.swiftpm/
+
 **/.idea/
 *.iml
