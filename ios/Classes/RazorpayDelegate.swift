@@ -63,9 +63,7 @@ public class RazorpayDelegate: NSObject, RazorpayPaymentCompletionProtocolWithDa
         let razorpay = RazorpayCheckout.initWithKey(key ?? "", andDelegateWithData: self)
         razorpay.setExternalWalletSelectionDelegate(self)
         if let events = subscribedAnalyticsEvents, !events.isEmpty {
-#if !RAZORPAY_SPM
             razorpay.subscribeToAnalyticsEvents(events, callback: self)
-#endif
         }
         var options = options
         options["integration"] = "flutter"
@@ -96,7 +94,6 @@ public class RazorpayDelegate: NSObject, RazorpayPaymentCompletionProtocolWithDa
 
 }
 
-#if !RAZORPAY_SPM
 import RazorpayCore
 
 extension RazorpayDelegate: RazorpayEventCallback {
@@ -110,4 +107,3 @@ extension RazorpayDelegate: RazorpayEventCallback {
         }
     }
 }
-#endif
