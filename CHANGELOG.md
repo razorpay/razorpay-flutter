@@ -1,3 +1,26 @@
+## 1.4.5
+
+- Added null safety guards in `onPaymentError` to handle cases where `PaymentData` is null (e.g., FPX cancellation)
+
+## 1.4.4
+
+- Fixed crash when FPX or other payment methods return a plain-text error response instead of JSON
+- `PaymentFailureResponse.error` now returns `null` gracefully instead of throwing a type cast exception
+
+## 1.4.3
+
+- Removed unused fluttertoast dependency
+
+## 1.4.2
+
+- Added analytics event subscription support
+- New `subscribeToAnalyticsEvents` API for real-time checkout analytics
+- EventChannel integration for streaming analytics events
+
+## 1.4.0
+
+- Removed mention of Registrar class in the plugin to fix `Registrar not found` issue.
+
 ## 1.3.5
 
 - Update package_info_plus to 4.0.0 to support 3.10.1 flutter version

@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:razorpay_flutter/model/upi_account.dart';
 import 'package:razorpay_flutter/razorpay_flutter.dart';
-import 'package:razorpay_flutter/model/Error.dart';
-import 'package:flutter/cupertino.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,485 +11,139 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      title: 'Razorpay FPX Test',
+      theme: ThemeData(primarySwatch: Colors.blue),
+      home: const MyHomePage(),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
+  const MyHomePage({super.key});
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
-/*class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-  // TPV Key - rzp_test_5sHeuuremkiApj
-  //Non-TPV key - rzp_test_0wFRWIZnH65uny
-  String keyId = "rzp_test_5sHeuuremkiApj";
-  String mobileNumber="";
-  late CheckOut checkOut ;
-
-  @override
-  void initState() {
-    checkOut = CheckOut(keyId);
-    super.initState();
-  }
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'Pay with Razorpay',
-            ),
-            ElevatedButton(onPressed: (){
-                  Razorpay razorpay = Razorpay();
-                   var options = {
-                    'key': 'rzp_live_ILgsfZCZoFIKMb',
-                    'amount': 100,
-                    'name': 'Acme Corp.',
-                    'description': 'Fine T-Shirt',
-                    'retry': {'enabled': true, 'max_count': 1},
-                    'send_sms_hash': true,
-                    'prefill': {'contact': '8888888888', 'email': 'test@razorpay.com'},
-                    'external': {
-                      'wallets': ['paytm']
-                    }
-                  };
-                  var options = {
-                    'amount': 10000,
-                    'currency': 'INR',
-                    'prefill':{
-                      'contact':'9877597717',
-                      'email':'pshibu567@gmail.com'
-                    },
-                    'theme':{
-                      'color':'#0CA72F'
-                    },
-                    'send_sms_hash':true,
-                    'retry':{
-                      'enabled':false,
-                      'max_count':4
-                    },
-                    'key': 'rzp_test_5sHeuuremkiApj',
-                    'order_id':'order_N0fmkHxFIp7wQh',
-                    'disable_redesign_v15': false,
-                    'experiments.upi_turbo':true,
-                    'ep':'https://api-web-turbo-upi.ext.dev.razorpay.in/test/checkout.html?branch=feat/turbo/tpv'
-                  };
-                  razorpay.on(Razorpay.EVENT_PAYMENT_ERROR, handlePaymentErrorResponse);
-                  razorpay.on(Razorpay.EVENT_PAYMENT_SUCCESS, handlePaymentSuccessResponse);
-                  razorpay.on(Razorpay.EVENT_EXTERNAL_WALLET, handleExternalWalletSelected);
-                  razorpay.open(options);
-                },
-                child: const Text("Pay with Razorpay")),
-
-            SizedBox(height: 10,),
-            Padding(
-              padding: const EdgeInsets.only(left: 20, right: 20, top: 10, bottom: 10),
-              child:  TextField(
-                  keyboardType: TextInputType.number,
-                  textAlign: TextAlign.start,
-                  decoration: InputDecoration(
-                    hintText: 'Mobile Number',
-                  ),
-                  onChanged: (newValue) => mobileNumber = newValue,
-              ),
-            ),
-            ElevatedButton(onPressed: (){
-             checkOut.upiTurbo.linkNewUpiAccount(customerMobile: mobileNumber,
-                 color: "#ffffff",
-                 onSuccess: (List<UpiAccount> upiAccounts) {
-                    print("Successfully Onboarded Account : ${upiAccounts.length}");
-                 },
-               onFailure:(Error error) { ScaffoldMessenger.of(context).showSnackBar(
-                   SnackBar(content: Text("Error : ${error.errorDescription}")));}
-                );
-            }, child: const Text("Pay with Turbo UPI")),
-
-            SizedBox(height: 8,),
-
-            ElevatedButton(onPressed: (){
-              checkOut.upiTurbo.manageUpiAccounts(customerMobile: mobileNumber,
-                  color: "#ffffff",
-                  onFailure:(Error error) { ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(content: Text("Error : ${error.errorDescription}")));}
-              );
-            }, child: const Text("ManageUpiAccounts")),
-
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
-    );
-  }
-
-  void handlePaymentErrorResponse(PaymentFailureResponse response){
-
-    * PaymentFailureResponse contains three values:
-    * 1. Error Code
-    * 2. Error Description
-    * 3. Metadata
-    *
-    showAlertDialog(context, "Payment Failed", "Code: ${response.code}\nDescription: ${response.message}\nMetadata:${response.error.toString()}");
-  }
-
-  void handlePaymentSuccessResponse(PaymentSuccessResponse response){
-
-    * Payment Success Response contains three values:
-    * 1. Order ID
-    * 2. Payment ID
-    * 3. Signature
-    *
-    showAlertDialog(context, "Payment Successful", "Payment ID: ${response.paymentId}");
-  }
-
-  void handleExternalWalletSelected(ExternalWalletResponse response){
-    showAlertDialog(context, "External Wallet Selected", "${response.walletName}");
-  }
-
-  void showAlertDialog(BuildContext context, String title, String message){
-    // set up the buttons
-    Widget continueButton = ElevatedButton(
-      child: const Text("Continue"),
-      onPressed:  () {},
-    );
-    // set up the AlertDialog
-    AlertDialog alert = AlertDialog(
-      title: Text(title),
-      content: Text(message),
-    );
-    // show the dialog
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return alert;
-      },
-    );
-  }
-
-}*/
-
 class _MyHomePageState extends State<MyHomePage> {
-  final TextEditingController keyController = TextEditingController();
-  final TextEditingController amountController = TextEditingController();
-  final TextEditingController orderIdController = TextEditingController();
-  final TextEditingController mobileNumberController = TextEditingController();
-
-  // TPV Key - rzp_test_5sHeuuremkiApj
-  //Non-TPV key - rzp_test_0wFRWIZnH65uny
-  //Checkout key - rzp_live_ILgsfZCZoFIKMb
-  String merchantKeyValue = "rzp_live_ILgsfZCZoFIKMb";
-  String amountValue = "100";
-  String orderIdValue = "";
-  String mobileNumberValue = "8888888888";
-
-  late Razorpay razorpay ;
+  late Razorpay _razorpay;
+  final _keyController = TextEditingController();
+  final List<String> _logs = [];
 
   @override
   void initState() {
-    razorpay = Razorpay("rzp_test_qRGYYA5wZrpFvJ").initUpiTurbo();
     super.initState();
+    _razorpay = Razorpay();
+    _razorpay.on(Razorpay.EVENT_PAYMENT_SUCCESS, _handleSuccess);
+    _razorpay.on(Razorpay.EVENT_PAYMENT_ERROR, _handleError);
+    _razorpay.on(Razorpay.EVENT_EXTERNAL_WALLET, _handleExternalWallet);
+  }
+
+  @override
+  void dispose() {
+    _razorpay.clear();
+    _keyController.dispose();
+    super.dispose();
+  }
+
+  void _log(String msg) {
+    setState(() => _logs.insert(0, '[${DateTime.now().toIso8601String().substring(11, 19)}] $msg'));
+  }
+
+  void _handleSuccess(PaymentSuccessResponse response) {
+    _log('SUCCESS — payment_id: ${response.paymentId}');
+    _showDialog('Payment Success', 'Payment ID: ${response.paymentId}');
+  }
+
+  void _handleError(PaymentFailureResponse response) {
+    _log('ERROR — code: ${response.code}, msg: ${response.message}, error: ${response.error}');
+    _showDialog('Payment Failed', 'Code: ${response.code}\nMessage: ${response.message}\nError: ${response.error}');
+  }
+
+  void _handleExternalWallet(ExternalWalletResponse response) {
+    _log('EXTERNAL WALLET — ${response.walletName}');
+    _showDialog('External Wallet', '${response.walletName}');
+  }
+
+  void _openCheckout() {
+    final key = _keyController.text.trim();
+    if (key.isEmpty) {
+      _showDialog('Error', 'Please enter a Razorpay key first.');
+      return;
+    }
+    _log('Opening checkout with key: ${key.substring(0, key.length.clamp(0, 12))}...');
+    var options = {
+      'key': key,
+      'amount': 100,
+      'name': 'FPX Crash Test',
+      'description': 'Testing FPX cancellation crash',
+      'send_sms_hash': true,
+      'prefill': {'contact': '8888888888', 'email': 'test@razorpay.com'},
+    };
+    try {
+      _razorpay.open(options);
+    } catch (e) {
+      _log('EXCEPTION: $e');
+    }
+  }
+
+  void _showDialog(String title, String message) {
+    showDialog(
+      context: context,
+      builder: (_) => AlertDialog(
+        title: Text(title),
+        content: SingleChildScrollView(child: Text(message)),
+        actions: [
+          TextButton(onPressed: () => Navigator.pop(context), child: const Text('OK')),
+        ],
+      ),
+    );
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: SingleChildScrollView(
-        child: Container(
-          child: Column(
-            children: [
-              RZPEditText(
-                controller: keyController,
-                textInputType: TextInputType.text,
-                hintText: 'Enter Key',
-                labelText: 'Merchant Key',
+      appBar: AppBar(title: const Text('Razorpay FPX Crash Test')),
+      body: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            TextField(
+              controller: _keyController,
+              decoration: const InputDecoration(
+                labelText: 'Razorpay Key (rzp_test_... or rzp_live_...)',
+                border: OutlineInputBorder(),
               ),
-              RZPEditText(
-                controller: amountController,
-                textInputType: TextInputType.number,
-                hintText: 'Enter Amount',
-                labelText: 'Amount',
-              ),
-              RZPEditText(
-                controller: orderIdController,
-                textInputType: TextInputType.text,
-                hintText: 'Enter Order Id',
-                labelText: 'Order Id',
-              ),
-              RZPEditText(
-                controller: mobileNumberController,
-                textInputType: TextInputType.number,
-                hintText: 'Enter Mobile Number',
-                labelText: 'Mobile Number',
-              ),
-              Container(
-                margin: EdgeInsets.fromLTRB(12.0, 0, 12.0, 0),
-                child: Text(
-                  '* Note - In case of TPV the orderId is mandatory.',
-                  style: TextStyle(
-                    fontStyle: FontStyle.italic,
-                  ),
-                ),
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  Expanded(
-                    child: RZPButton(
-                      widthSize: 200.0,
-                      onPressed: () {
-                        merchantKeyValue = keyController.text;
-                        amountValue = amountController.text;
-
-                        razorpay.on(Razorpay.EVENT_PAYMENT_ERROR, handlePaymentErrorResponse);
-                        razorpay.on(Razorpay.EVENT_PAYMENT_SUCCESS, handlePaymentSuccessResponse);
-                        razorpay.on(Razorpay.EVENT_EXTERNAL_WALLET, handleExternalWalletSelected);
-                        razorpay.open(getPaymentOptions());
-                      },
-                      labelText: 'Standard Checkout Pay',
+              autocorrect: false,
+              enableSuggestions: false,
+            ),
+            const SizedBox(height: 12),
+            ElevatedButton(
+              onPressed: _openCheckout,
+              child: const Text('Open Checkout (test FPX cancellation)'),
+            ),
+            const SizedBox(height: 16),
+            const Text('Event Log:', style: TextStyle(fontWeight: FontWeight.bold)),
+            const SizedBox(height: 8),
+            Expanded(
+              child: _logs.isEmpty
+                  ? const Center(child: Text('No events yet.\nEnter key, tap button, choose FPX, then cancel on the bank page.', textAlign: TextAlign.center))
+                  : ListView.builder(
+                      itemCount: _logs.length,
+                      itemBuilder: (_, i) => Card(
+                        margin: const EdgeInsets.only(bottom: 6),
+                        child: Padding(
+                          padding: const EdgeInsets.all(10),
+                          child: SelectableText(
+                            _logs[i],
+                            style: const TextStyle(fontSize: 12, fontFamily: 'monospace'),
+                          ),
+                        ),
+                      ),
                     ),
-                  ),
-                  Expanded(
-                    child: RZPButton(
-                      widthSize: 200.0,
-                      onPressed: () {
-                        merchantKeyValue = keyController.text;
-                        amountValue = amountController.text;
-                        mobileNumberValue = mobileNumberController.text;
-                        orderIdValue = orderIdController.text;
-
-                        razorpay.on(Razorpay.EVENT_PAYMENT_ERROR, handlePaymentErrorResponse);
-                        razorpay.on(Razorpay.EVENT_PAYMENT_SUCCESS, handlePaymentSuccessResponse);
-                        razorpay.on(Razorpay.EVENT_EXTERNAL_WALLET, handleExternalWalletSelected);
-                        razorpay.open(getTurboPaymentOptions());
-                      },
-                      labelText: 'Turbo Pay',
-                    ),
-                  ),
-                ],
-              ),
-              RZPEditText(
-                controller: mobileNumberController,
-                textInputType: TextInputType.number,
-                hintText: 'Enter Mobile Number',
-                labelText: 'Mobile Number',
-              ),
-              RZPButton(
-                widthSize: 200.0,
-                labelText: "Link New Upi Account",
-                onPressed: () {
-                  mobileNumberValue = mobileNumberController.text;
-
-                  razorpay.upiTurbo.linkNewUpiAccount(customerMobile: mobileNumberValue,
-                      color: "#ffffff",
-                      onSuccess: (List<UpiAccount> upiAccounts) {
-                        print("Successfully Onboarded Account : ${upiAccounts.length}");
-                      },
-                      onFailure:(Error error) { ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(content: Text("Error : ${error.errorDescription}")));}
-                  );
-                },
-              ),
-              RZPButton(
-                widthSize: 200.0,
-                labelText: "Manage Upi Account",
-                onPressed: () {
-                  mobileNumberValue = mobileNumberController.text;
-
-                  razorpay.upiTurbo.manageUpiAccounts(customerMobile: mobileNumberValue,
-                      color: "#ffffff",
-                      onFailure:(Error error) { ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(content: Text("Error : ${error.errorDescription}")));}
-                  );
-                },
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-
-  Map<String, Object> getPaymentOptions() {
-    return {
-      'key': '$merchantKeyValue',
-      'amount': int.parse(amountValue),
-      'name': 'Acme Corp.',
-      'description': 'Fine T-Shirt',
-      'retry': {'enabled': true, 'max_count': 1},
-      'send_sms_hash': true,
-      'prefill': {
-        'contact': '$mobileNumberValue',
-        'email': 'test@razorpay.com'
-      },
-      'external': {
-        'wallets': ['paytm']
-      }
-    };
-  }
-
-  Map<String, Object> getTurboPaymentOptions() {
-    return {
-      'amount': int.parse(amountValue),
-      'currency': 'INR',
-      'prefill':{
-        'contact':'$mobileNumberValue',
-        'email':'test@razorpay.com'
-      },
-      'theme':{
-        'color':'#0CA72F'
-      },
-      'send_sms_hash':true,
-      'retry':{
-        'enabled':false,
-        'max_count':4
-      },
-      'key': '$merchantKeyValue',
-      'order_id':'$orderIdValue',
-      'disable_redesign_v15': false,
-      'experiments.upi_turbo':true,
-      'ep':'https://api-web-turbo-upi.ext.dev.razorpay.in/test/checkout.html?branch=feat/turbo/tpv'
-    };
-  }
-
-
-  //Handle Payment Responses
-
-  void handlePaymentErrorResponse(PaymentFailureResponse response){
-
-    /** PaymentFailureResponse contains three values:
-    * 1. Error Code
-    * 2. Error Description
-    * 3. Metadata
-    **/
-    showAlertDialog(context, "Payment Failed", "Code: ${response.code}\nDescription: ${response.message}\nMetadata:${response.error.toString()}");
-  }
-
-  void handlePaymentSuccessResponse(PaymentSuccessResponse response){
-
-    /** Payment Success Response contains three values:
-    * 1. Order ID
-    * 2. Payment ID
-    * 3. Signature
-    **/
-    showAlertDialog(context, "Payment Successful", "Payment ID: ${response.paymentId}");
-  }
-
-  void handleExternalWalletSelected(ExternalWalletResponse response){
-    showAlertDialog(context, "External Wallet Selected", "${response.walletName}");
-  }
-
-  void showAlertDialog(BuildContext context, String title, String message){
-    // set up the buttons
-    Widget continueButton = ElevatedButton(
-      child: const Text("Continue"),
-      onPressed:  () {},
-    );
-    // set up the AlertDialog
-    AlertDialog alert = AlertDialog(
-      title: Text(title),
-      content: Text(message),
-    );
-    // show the dialog
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return alert;
-      },
-    );
-  }
-}
-
-class RZPButton extends StatelessWidget {
-  String labelText;
-  VoidCallback onPressed;
-  double widthSize = 100.0;
-
-  RZPButton(
-      {required this.widthSize,
-      required this.labelText,
-      required this.onPressed});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: widthSize,
-      height: 50.0,
-      margin: EdgeInsets.fromLTRB(12.0, 8.0, 8.0, 12.0),
-      child: ElevatedButton(
-        onPressed: onPressed,
-        child: Text(
-          labelText,
-          style: TextStyle(
-            color: Colors.white,
-          ),
-        ),
-        style: ButtonStyle(
-          backgroundColor: MaterialStateProperty.all(Colors.indigoAccent),
-        ),
-      ),
-    );
-  }
-}
-
-class RZPEditText extends StatelessWidget {
-  String hintText;
-  String labelText;
-  TextInputType textInputType;
-  TextEditingController controller;
-
-  RZPEditText(
-      {required this.textInputType,
-      required this.hintText,
-      required this.labelText,
-      required this.controller});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.all(12.0),
-      padding: EdgeInsets.fromLTRB(16.0, 0, 0, 0),
-      decoration: BoxDecoration(
-        border: Border.all(),
-      ),
-      child: TextField(
-        controller: controller,
-        keyboardType: textInputType,
-        style: TextStyle(
-          color: Colors.black,
-        ),
-        decoration: InputDecoration(
-          border: InputBorder.none,
-          hintText: hintText,
-          labelText: labelText,
+            ),
+          ],
         ),
       ),
     );

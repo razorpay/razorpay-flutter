@@ -1,8 +1,7 @@
+import 'dart:async';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:eventify/eventify.dart';
-import 'package:package_info_plus/package_info_plus.dart';
-import 'dart:io' show Platform;
-import 'package:razorpay_flutter/upi_turbo.dart';
 
 class Razorpay {
   // Response codes from platform
@@ -23,27 +22,43 @@ class Razorpay {
   static const INCOMPATIBLE_PLUGIN = 4;
   static const UNKNOWN_ERROR = 100;
 
-  static const MethodChannel _channel = const MethodChannel('razorpay_flutter');
-  late UpiTurbo upiTurbo;
+  static const MethodChannel _channel = MethodChannel('razorpay_flutter');
+  static const EventChannel _merchantEventChannel =
+      EventChannel('razorpay_flutter/merchant_events');
 
   // EventEmitter instance used for communication
   late EventEmitter _eventEmitter;
 
-  Razorpay(String key) {
-    _eventEmitter = new EventEmitter();
-    _setKeyID(key);
+  // ignore: unused_field
+  List<String>? _subscribedAnalyticsEvents;
+  void Function(String payloadJson)? _onMerchantEvent;
+  StreamSubscription<dynamic>? _merchantEventSubscription;
+
+  Razorpay() {
+    _eventEmitter = EventEmitter();
   }
 
-  Razorpay initUpiTurbo(){
-    upiTurbo = new UpiTurbo( _channel);
-    return this;
-  }
-
-
-
-  ///Set KeyId function
-  void _setKeyID(String keyID) async {
-    await _channel.invokeMethod('setKeyID', keyID);
+  /// Subscribes to checkout analytics events. Call before [open] to receive events.
+  /// [events] e.g. ['payment.*', 'checkout.initiate', 'checkout.close'].
+  /// [onEvent] is invoked with raw JSON string for each matching event.
+  void subscribeToAnalyticsEvents(
+      List<String> events, void Function(String payloadJson) onEvent) {
+    _subscribedAnalyticsEvents = List.from(events);
+    _onMerchantEvent = onEvent;
+    _channel.invokeMethod(
+        'subscribeToAnalyticsEvents', <String, dynamic>{'events': events});
+    _merchantEventSubscription?.cancel();
+    _merchantEventSubscription =
+        _merchantEventChannel.receiveBroadcastStream().listen(
+      (dynamic payload) {
+        if (_onMerchantEvent != null && payload is String) {
+          _onMerchantEvent!(payload);
+        }
+      },
+      onError: (dynamic error) {
+        debugPrint('[RazorpayFlutter] merchant event stream error: $error');
+      },
+    );
   }
 
   /// Opens Razorpay checkout
@@ -59,10 +74,6 @@ class Razorpay {
         }
       });
       return;
-    }
-    if (Platform.isAndroid) {
-      PackageInfo packageInfo = await PackageInfo.fromPlatform();
-      _channel.invokeMethod('setPackageName', packageInfo.packageName);
     }
 
     var response = await _channel.invokeMethod('open', options);
@@ -112,6 +123,10 @@ class Razorpay {
 
   /// Clears all event listeners
   void clear() {
+    _merchantEventSubscription?.cancel();
+    _merchantEventSubscription = null;
+    _onMerchantEvent = null;
+    _subscribedAnalyticsEvents = null;
     _eventEmitter.clear();
   }
 
@@ -140,15 +155,17 @@ class PaymentSuccessResponse {
   String? paymentId;
   String? orderId;
   String? signature;
+  Map<dynamic, dynamic>? data;
 
-  PaymentSuccessResponse(this.paymentId, this.orderId, this.signature);
+  PaymentSuccessResponse(
+      this.paymentId, this.orderId, this.signature, this.data);
 
   static PaymentSuccessResponse fromMap(Map<dynamic, dynamic> map) {
     String? paymentId = map["razorpay_payment_id"];
     String? signature = map["razorpay_signature"];
     String? orderId = map["razorpay_order_id"];
-
-    return new PaymentSuccessResponse(paymentId, orderId, signature);
+    Map<dynamic, dynamic> data = map;
+    return new PaymentSuccessResponse(paymentId, orderId, signature, data);
   }
 }
 
@@ -162,15 +179,9 @@ class PaymentFailureResponse {
   static PaymentFailureResponse fromMap(Map<dynamic, dynamic> map) {
     var code = map["code"] as int?;
     var message = map["message"] as String?;
-    var responseBody;
-
-    if (responseBody is Map<dynamic, dynamic>) {
-      return new PaymentFailureResponse(code, message, responseBody);
-    } else{
-      Map<dynamic, dynamic> errorMap = new Map<dynamic, dynamic>();
-      errorMap["reason"] = responseBody;
-      return new PaymentFailureResponse(code, message, responseBody);
-    }
+    var rawBody = map["responseBody"];
+    var responseBody = rawBody is Map<dynamic, dynamic> ? rawBody : null;
+    return new PaymentFailureResponse(code, message, responseBody);
   }
 }
 
