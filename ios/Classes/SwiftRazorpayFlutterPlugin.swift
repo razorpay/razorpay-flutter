@@ -2,6 +2,9 @@ import Flutter
 import Razorpay
 import UIKit
 
+#if RAZORPAY_SPM
+@objc(RazorpayFlutterPlugin)
+#endif
 public class SwiftRazorpayFlutterPlugin: NSObject, FlutterPlugin {
 
     private var razorpayDelegate = RazorpayDelegate()
