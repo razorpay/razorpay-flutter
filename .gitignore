@@ -6,6 +6,9 @@
 
 build/
 
+# FVM
+.fvm/
+
 **/.idea/
 *.iml
 
@@ -19,6 +22,14 @@ build/
 **/ios/Pods/razorpay-core-pod/
 **/ios/Pods/razorpay-pod/Pod/RazorpayStandard.xcframework/
 
+# VSCode
+.vscode/settings.json
+
+# Flutter generated
+**/.flutter-plugins
+**/.flutter-plugins-dependencies
+
 # Android
 **/.gradle/
 **/android/.gradle/
+**/local.properties
