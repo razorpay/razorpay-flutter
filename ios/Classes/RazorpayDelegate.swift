@@ -71,18 +71,21 @@ public class RazorpayDelegate: NSObject, RazorpayPaymentCompletionProtocolWithDa
     public func open(options: Dictionary<String, Any>, result: @escaping FlutterResult, from viewController: UIViewController?) {
         self.pendingResult = result
         let key = options["key"] as? String
-        let razorpay = RazorpayCheckout.initWithKey(key ?? "", andDelegateWithData: self)
-        razorpay.setExternalWalletSelectionDelegate(self)
-        if let events = subscribedAnalyticsEvents, !events.isEmpty {
-            razorpay.subscribeToAnalyticsEvents(events, callback: self)
-        }
         var options = options
         options["integration"] = "flutter"
         options["FRAMEWORK"] = "flutter"
-        if let vc = viewController {
-            razorpay.open(options, displayController: vc)
-        } else {
-            razorpay.open(options)
+
+        DispatchQueue.main.async {
+            let razorpay = RazorpayCheckout.initWithKey(key ?? "", andDelegateWithData: self)
+            razorpay.setExternalWalletSelectionDelegate(self)
+            if let events = self.subscribedAnalyticsEvents, !events.isEmpty {
+                razorpay.subscribeToAnalyticsEvents(events, callback: self)
+            }
+            if let vc = viewController {
+                razorpay.open(options, displayController: vc)
+            } else {
+                razorpay.open(options)
+            }
         }
     }
     
