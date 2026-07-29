@@ -1,0 +1,35 @@
+.DS_Store
+.dart_tool/
+
+.packages
+.pub/
+
+build/
+
+# FVM
+.fvm/
+
+**/.idea/
+*.iml
+
+# iOS
+**/ios/.symlinks/
+**/ios/Pods/Manifest.lock
+**/ios/Pods/Pods.xcodeproj/xcuserdata/
+**/ios/Pods/Target Support Files/*/ResourceBundle-*
+**/ios/Pods/Target Support Files/razorpay-core-pod/
+**/ios/Pods/**/Resources/
+**/ios/Pods/razorpay-core-pod/
+**/ios/Pods/razorpay-pod/Pod/RazorpayStandard.xcframework/
+
+# VSCode
+.vscode/settings.json
+
+# Flutter generated
+**/.flutter-plugins
+**/.flutter-plugins-dependencies
+
+# Android
+**/.gradle/
+**/android/.gradle/
+**/local.properties

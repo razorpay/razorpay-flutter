@@ -1,0 +1,29 @@
+{
+  "name": "razorpay_flutter",
+  "version": "1.1.10",
+  "summary": "Flutter plugin for Razorpay SDK.",
+  "description": "Flutter plugin for Razorpay SDK.",
+  "homepage": "https://github.com/razorpay/razorpay-flutter",
+  "license": {
+    "file": "../LICENSE"
+  },
+  "authors": {
+    "Chintan Acharya": "chintan.acharya@razorpay.com"
+  },
+  "source": {
+    "path": "."
+  },
+  "source_files": "Classes/**/*",
+  "public_header_files": "Classes/**/*.h",
+  "dependencies": {
+    "Flutter": [
+
+    ],
+    "razorpay-pod": [
+
+    ]
+  },
+  "platforms": {
+    "ios": "10.0"
+  }
+}
