@@ -9,23 +9,41 @@ jobs:
   semgrep:
     name: Scan
     runs-on: [ubuntu-latest]                               # nosemgrep : semgrep.dev/s/swati31196:github_provided_runner
+    permissions:
+      contents: read
     steps:
       - uses: actions/checkout@v2
+      - uses: safedep/pmg@v1
+        with:
+          server-mode: true
+          api-key: ${{ secrets.PMG_PUBLIC_REPOS_TOKEN }}
+          tenant-id: ${{ secrets.PMG_TENANT_ID }}
       - uses: returntocorp/semgrep-action@v1
         with:
           publishToken: ${{ secrets.SEMGREP_APP_TOKEN }}
           publishDeployment: 339
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Enforce PMG policy
+        if: always()
+        run: pmg proxy stop --fail-on-violation
 
   workflow_status:
     runs-on: [ ubuntu-latest ]                               # nosemgrep : semgrep.dev/s/swati31196:github_provided_runner
     name: Update Status Check
     needs: [ semgrep ]
     if: always()
+    permissions:
+      contents: read
+      statuses: write
     env:
       githubCommit: ${{ github.event.pull_request.head.sha }}
     steps:
+      - uses: safedep/pmg@v1
+        with:
+          server-mode: true
+          api-key: ${{ secrets.PMG_PUBLIC_REPOS_TOKEN }}
+          tenant-id: ${{ secrets.PMG_TENANT_ID }}
       - name: Set github commit id
         run: |
           if [ "${{ github.event_name }}" = "push" ] || [ "${{ github.event_name }}" = "schedule" ]; then
@@ -49,3 +67,6 @@ jobs:
           -d '{ "state" : "success" , "context" : "github/security-status-check" , "description" : "github/security-status-check", "target_url" : "https://github.com/${{ github.repository }}" }' \
           https://api.github.com/repos/${{ github.repository }}/statuses/${{ env.githubCommit }}
           exit 0
+      - name: Enforce PMG policy
+        if: always()
+        run: pmg proxy stop --fail-on-violation
