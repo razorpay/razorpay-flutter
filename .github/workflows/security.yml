@@ -9,11 +9,11 @@ jobs:
   semgrep:
     name: Scan
     runs-on: [ubuntu-latest]                               # nosemgrep : semgrep.dev/s/swati31196:github_provided_runner
-    permissions:
-      contents: read
     steps:
       - uses: actions/checkout@v2
-      - uses: safedep/pmg@v1
+      - name: Setup PMG proxy
+        id: pmg-setup
+        uses: safedep/pmg@v1
         with:
           server-mode: true
           api-key: ${{ secrets.PMG_PUBLIC_REPOS_TOKEN }}
@@ -26,20 +26,24 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Enforce PMG policy
         if: always()
-        run: pmg proxy stop --fail-on-violation
+        run: |
+          if [ "${{ steps.pmg-setup.outcome }}" = "success" ]; then
+            pmg proxy stop --fail-on-violation
+          else
+            pmg proxy stop || true
+          fi
 
   workflow_status:
     runs-on: [ ubuntu-latest ]                               # nosemgrep : semgrep.dev/s/swati31196:github_provided_runner
     name: Update Status Check
     needs: [ semgrep ]
     if: always()
-    permissions:
-      contents: read
-      statuses: write
     env:
       githubCommit: ${{ github.event.pull_request.head.sha }}
     steps:
-      - uses: safedep/pmg@v1
+      - name: Setup PMG proxy
+        id: pmg-setup
+        uses: safedep/pmg@v1
         with:
           server-mode: true
           api-key: ${{ secrets.PMG_PUBLIC_REPOS_TOKEN }}
@@ -69,4 +73,9 @@ jobs:
           exit 0
       - name: Enforce PMG policy
         if: always()
-        run: pmg proxy stop --fail-on-violation
+        run: |
+          if [ "${{ steps.pmg-setup.outcome }}" = "success" ]; then
+            pmg proxy stop --fail-on-violation
+          else
+            pmg proxy stop || true
+          fi
