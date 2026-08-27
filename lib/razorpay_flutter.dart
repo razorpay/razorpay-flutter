@@ -34,6 +34,12 @@ class Razorpay {
   void Function(String payloadJson)? _onMerchantEvent;
   StreamSubscription<dynamic>? _merchantEventSubscription;
 
+  /// Tracks event registrations that should receive the raw native
+  /// response map instead of the typed response classes. This lets
+  /// merchants share a single handler between razorpay_flutter and
+  /// razorpay_flutter_customui.
+  final Set<String> _rawMapEvents = <String>{};
+
   Razorpay() {
     _eventEmitter = EventEmitter();
   }
@@ -90,30 +96,50 @@ class Razorpay {
     switch (response['type']) {
       case _CODE_PAYMENT_SUCCESS:
         eventName = EVENT_PAYMENT_SUCCESS;
-        payload = PaymentSuccessResponse.fromMap(data!);
+        payload = _rawMapEvents.contains(EVENT_PAYMENT_SUCCESS)
+            ? (data ?? <dynamic, dynamic>{})
+            : PaymentSuccessResponse.fromMap(data!);
         break;
 
       case _CODE_PAYMENT_ERROR:
         eventName = EVENT_PAYMENT_ERROR;
-        payload = PaymentFailureResponse.fromMap(data!);
+        payload = _rawMapEvents.contains(EVENT_PAYMENT_ERROR)
+            ? (data ?? <dynamic, dynamic>{})
+            : PaymentFailureResponse.fromMap(data!);
         break;
 
       case _CODE_PAYMENT_EXTERNAL_WALLET:
         eventName = EVENT_EXTERNAL_WALLET;
-        payload = ExternalWalletResponse.fromMap(data!);
+        payload = _rawMapEvents.contains(EVENT_EXTERNAL_WALLET)
+            ? (data ?? <dynamic, dynamic>{})
+            : ExternalWalletResponse.fromMap(data!);
         break;
 
       default:
         eventName = 'error';
-        payload = PaymentFailureResponse(
-            UNKNOWN_ERROR, 'An unknown error occurred.', null);
+        payload = _rawMapEvents.contains(EVENT_PAYMENT_ERROR)
+            ? (data ?? <dynamic, dynamic>{})
+            : PaymentFailureResponse(
+                UNKNOWN_ERROR, 'An unknown error occurred.', null);
     }
 
     _eventEmitter.emit(eventName, null, payload);
   }
 
-  /// Registers event listeners for payment events
-  void on(String event, Function handler) {
+  /// Registers event listeners for payment events.
+  ///
+  /// By default the handler receives the typed response class
+  /// (e.g. [PaymentSuccessResponse]). Set [rawMap] to `true` to receive the
+  /// raw native response map instead. This is useful when you want to share
+  /// the same handler between `razorpay_flutter` and
+  /// `razorpay_flutter_customui`.
+  void on(String event, Function handler, {bool rawMap = false}) {
+    if (rawMap) {
+      _rawMapEvents.add(event);
+    } else {
+      _rawMapEvents.remove(event);
+    }
+
     EventCallback cb = (event, cont) {
       handler(event.eventData);
     };
@@ -123,6 +149,7 @@ class Razorpay {
 
   /// Clears all event listeners
   void clear() {
+    _rawMapEvents.clear();
     _merchantEventSubscription?.cancel();
     _merchantEventSubscription = null;
     _onMerchantEvent = null;
