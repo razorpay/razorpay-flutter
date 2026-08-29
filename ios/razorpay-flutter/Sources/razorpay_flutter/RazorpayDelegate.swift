@@ -1,8 +1,9 @@
 import Flutter
 import Razorpay
+import RazorpayCore
 import UIKit
 
-public class RazorpayDelegate: NSObject, RazorpayPaymentCompletionProtocolWithData, ExternalWalletSelectionProtocol {
+public class RazorpayDelegate: NSObject, RazorpayPaymentCompletionProtocolWithData, ExternalWalletSelectionProtocol, RazorpayEventCallback {
 
     static let CODE_PAYMENT_SUCCESS = 0
     static let CODE_PAYMENT_ERROR = 1
@@ -17,6 +18,8 @@ public class RazorpayDelegate: NSObject, RazorpayPaymentCompletionProtocolWithDa
 
     private var pendingResult: FlutterResult!
     private var razorpayCheckout: RazorpayCheckout?
+    private var subscribedAnalyticsEvents: [String]?
+    var merchantEventSink: FlutterEventSink?
 
     @objc public func onExternalWalletSelected(_ walletName: String, withPaymentData paymentData: [AnyHashable : Any]?) {
         var response = [String:Any]()
@@ -27,6 +30,20 @@ public class RazorpayDelegate: NSObject, RazorpayPaymentCompletionProtocolWithDa
         response["data"] = data
 
         pendingResult(response as NSDictionary)
+    }
+
+    public func subscribeToAnalyticsEvents(events: [String]) {
+        subscribedAnalyticsEvents = events
+    }
+
+    public func onEvent(_ payloadJson: String) {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self, let sink = self.merchantEventSink else {
+                print("[RazorpayFlutter] Analytics event received but Flutter listener is not connected")
+                return
+            }
+            sink(payloadJson)
+        }
     }
 
     @objc public func onPaymentError(_ code: Int32, description message: String, andData data: [AnyHashable : Any]?) {
@@ -50,7 +67,7 @@ public class RazorpayDelegate: NSObject, RazorpayPaymentCompletionProtocolWithDa
         pendingResult(response as NSDictionary)
     }
 
-    public func open(options: Dictionary<String, Any>, result: @escaping FlutterResult) {
+    public func open(options: Dictionary<String, Any>, result: @escaping FlutterResult, from viewController: UIViewController?) {
         self.pendingResult = result
 
         guard let key = options["key"] as? String, !key.isEmpty else {
@@ -59,7 +76,25 @@ public class RazorpayDelegate: NSObject, RazorpayPaymentCompletionProtocolWithDa
         }
 
         DispatchQueue.main.async { [weak self] in
-            self?.presentCheckout(key: key, options: options)
+            guard let self = self else { return }
+
+            let razorpay = RazorpayCheckout.initWithKey(key, andDelegateWithData: self)
+            razorpay.setExternalWalletSelectionDelegate(self)
+            self.razorpayCheckout = razorpay
+
+            if let events = self.subscribedAnalyticsEvents, !events.isEmpty {
+                razorpay.subscribeToAnalyticsEvents(events, callback: self)
+            }
+
+            var checkoutOptions = options
+            checkoutOptions["integration"] = "flutter"
+            checkoutOptions["FRAMEWORK"] = "flutter"
+
+            if let viewController = viewController {
+                razorpay.open(checkoutOptions, displayController: viewController)
+            } else {
+                razorpay.open(checkoutOptions)
+            }
         }
     }
 
@@ -80,22 +115,6 @@ public class RazorpayDelegate: NSObject, RazorpayPaymentCompletionProtocolWithDa
         }
     }
 
-    private func presentCheckout(key: String, options: Dictionary<String, Any>) {
-        let razorpay = RazorpayCheckout.initWithKey(key, andDelegateWithData: self)
-        razorpay.setExternalWalletSelectionDelegate(self)
-        razorpayCheckout = razorpay
-
-        var checkoutOptions = options
-        checkoutOptions["integration"] = "flutter"
-        checkoutOptions["FRAMEWORK"] = "flutter"
-
-        if let viewController = Self.topViewController() {
-            razorpay.open(checkoutOptions, displayController: viewController)
-        } else {
-            razorpay.open(checkoutOptions)
-        }
-    }
-
     private func reportInvalidOptions(message: String) {
         var response = [String: Any]()
         response["type"] = RazorpayDelegate.CODE_PAYMENT_ERROR
@@ -108,32 +127,4 @@ public class RazorpayDelegate: NSObject, RazorpayPaymentCompletionProtocolWithDa
         pendingResult(response as NSDictionary)
     }
 
-    private static func topViewController() -> UIViewController? {
-        guard let rootViewController = keyWindow()?.rootViewController else {
-            return nil
-        }
-        return topViewController(from: rootViewController)
-    }
-
-    private static func keyWindow() -> UIWindow? {
-        UIApplication.shared.connectedScenes
-            .compactMap { $0 as? UIWindowScene }
-            .flatMap { $0.windows }
-            .first(where: \.isKeyWindow)
-    }
-
-    private static func topViewController(from controller: UIViewController) -> UIViewController {
-        if let presented = controller.presentedViewController {
-            return topViewController(from: presented)
-        }
-        if let navigationController = controller as? UINavigationController,
-           let visible = navigationController.visibleViewController {
-            return topViewController(from: visible)
-        }
-        if let tabBarController = controller as? UITabBarController,
-           let selected = tabBarController.selectedViewController {
-            return topViewController(from: selected)
-        }
-        return controller
-    }
 }

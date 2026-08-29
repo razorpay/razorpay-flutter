@@ -11,7 +11,7 @@ let package = Package(
     ],
     dependencies: [
         .package(name: "FlutterFramework", path: "../FlutterFramework"),
-        .package(url: "https://github.com/razorpay/razorpay-pod.git", from: "1.3.0")
+        .package(url: "https://github.com/razorpay/razorpay-pod.git", from: "1.5.3")
     ],
     targets: [
         .target(
