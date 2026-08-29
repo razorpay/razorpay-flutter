@@ -2,29 +2,31 @@ package com.razorpay.razorpay_flutter;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.os.Handler;
+import android.os.Looper;
 import android.util.Log;
 
-import androidx.annotation.NonNull;
-
-import com.google.gson.Gson;
 import com.razorpay.Checkout;
 import com.razorpay.CheckoutActivity;
+import com.razorpay.EventCallback;
 import com.razorpay.ExternalWalletListener;
 import com.razorpay.PaymentData;
 import com.razorpay.PaymentResultWithDataListener;
 
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 
+import io.flutter.plugin.common.EventChannel;
 import io.flutter.plugin.common.MethodChannel.Result;
 import io.flutter.plugin.common.PluginRegistry.ActivityResultListener;
 
-public class RazorpayDelegate implements ActivityResultListener, ExternalWalletListener, PaymentResultWithDataListener {
+public class RazorpayDelegate implements ActivityResultListener, ExternalWalletListener, PaymentResultWithDataListener, EventCallback {
 
     private final Activity activity;
     private Result pendingResult;
@@ -42,43 +44,75 @@ public class RazorpayDelegate implements ActivityResultListener, ExternalWalletL
     private static final int TLS_ERROR = 3;
     private static final int INCOMPATIBLE_PLUGIN = 3;
     private static final int UNKNOWN_ERROR = 100;
+    private static final String TAG = "RazorpayFlutter";
+
     private String packageName;
-    private Checkout checkout;
-    Gson gson ;
-    private UpiTurbo upiTurbo;
+    private EventChannel.EventSink merchantEventSink;
+    private final Handler mainHandler = new Handler(Looper.getMainLooper());
 
     public RazorpayDelegate(Activity activity) {
         this.activity = activity;
-        upiTurbo = new UpiTurbo(activity);
-        this.gson = new Gson();
     }
 
     void setPackageName(String packageName){
         this.packageName = packageName;
     }
 
+    void setMerchantEventSink(EventChannel.EventSink sink) {
+        this.merchantEventSink = sink;
+    }
+
+    void subscribeToAnalyticsEvents(List<String> events, Result result) {
+        try {
+            Checkout checkout = Checkout.getInstance(activity);
+            checkout.setEventCallback(this);
+            if (events != null && !events.isEmpty()) {
+                Method setSubscribed = Checkout.class.getDeclaredMethod("setSubscribedAnalyticsEvents", ArrayList.class);
+                setSubscribed.setAccessible(true);
+                setSubscribed.invoke(checkout, new ArrayList<>(events));
+              }
+        } catch (Exception e) {
+            Log.w(TAG, "Failed to subscribe to analytics events: " + e.getMessage());
+        }
+        if (result != null) {
+            result.success(null);
+        }
+    }
+
     void openCheckout(Map<String, Object> arguments, Result result) {
-
-        this.pendingResult = result;
-
+         this.pendingResult = result;
         JSONObject options = new JSONObject(arguments);
         if (activity.getPackageName().equalsIgnoreCase(packageName)){
             Intent intent = new Intent(activity, CheckoutActivity.class);
             intent.putExtra("OPTIONS", options.toString());
             intent.putExtra("FRAMEWORK", "flutter");
-
             activity.startActivityForResult(intent, Checkout.RZP_REQUEST_CODE);
         }
+     }
 
-
+    @Override
+    public void onEvent(String payloadJson) {
+        if (merchantEventSink == null) {
+            return;
+        }
+        mainHandler.post(() -> {
+            if (merchantEventSink != null) {
+                merchantEventSink.success(payloadJson);
+            }
+        });
     }
 
     private void sendReply(Map<String, Object> data) {
-        if (pendingResult != null) {
-            pendingResult.success(data);
-            pendingReply = null;
-        } else {
-            pendingReply = data;
+        try{
+            
+            if (pendingResult != null) {
+                pendingResult.success(data);
+                pendingReply = null;
+            } else {
+                pendingReply = data;
+            }
+        }catch(Exception e){
+            //no-op
         }
     }
 
@@ -108,36 +142,38 @@ public class RazorpayDelegate implements ActivityResultListener, ExternalWalletL
     public void onPaymentError(int code, String message, PaymentData paymentData) {
         Map<String, Object> reply = new HashMap<>();
         reply.put("type", CODE_PAYMENT_ERROR);
-
         Map<String, Object> data = new HashMap<>();
         data.put("code", translateRzpPaymentError(code));
-        try{
+        try {
             JSONObject response = new JSONObject(message);
             JSONObject errorObj = response.getJSONObject("error");
-            data.put("message", errorObj.getString("description"));
-            JSONObject metadata = errorObj.getJSONObject("metadata");
+            data.put("message", errorObj.optString("description", ""));
+            JSONObject metadata = errorObj.optJSONObject("metadata");
             Map<String, String> metadataHash = new HashMap<>();
-            Iterator<String> metaKeys = metadata.keys();
-            while (metaKeys.hasNext()){
-                String key = metaKeys.next();
-                metadataHash.put(key,metadata.getString(key));
+            if (metadata != null) {
+                Iterator<String> metaKeys = metadata.keys();
+                while (metaKeys.hasNext()) {
+                    String key = metaKeys.next();
+                    metadataHash.put(key, metadata.getString(key));
+                }
             }
             errorObj.remove("metadata");
-            Map<String,Object> resp = new HashMap<>();
+            Map<String, Object> resp = new HashMap<>();
             Iterator<String> keys = errorObj.keys();
             while (keys.hasNext()) {
                 String key = keys.next();
-                resp.put(key,errorObj.get(key));
+                resp.put(key, errorObj.get(key));
             }
             resp.put("metadata", metadataHash);
-            resp.put("email", paymentData.getUserEmail());
-            resp.put("contact", paymentData.getUserContact());
+            resp.put("email", paymentData != null ? paymentData.getUserEmail() : null);
+            resp.put("contact", paymentData != null ? paymentData.getUserContact() : null);
             data.put("responseBody", resp);
-        }catch (JSONException e){
+        } catch (Exception e) {
             data.put("message", message);
-            data.put("responseBody", message);
+            Map<String, Object> resp = new HashMap<>();
+            resp.put("description", message);
+            data.put("responseBody", resp);
         }
-
         reply.put("data", data);
         sendReply(reply);
     }
@@ -182,23 +218,6 @@ public class RazorpayDelegate implements ActivityResultListener, ExternalWalletL
         reply.put("data", data);
 
         sendReply(reply);
-    }
-
-    public void setKeyID(String keyId,  Result result){
-        upiTurbo.setKeyID(keyId, result);
-    }
-
-    public void linkNewUpiAccount(String customerMobile, String color, Result result){
-        upiTurbo.linkNewUpiAccount(customerMobile, color, result);
-    }
-
-
-    public void manageUpiAccounts(String customerMobile, String color, Result result){
-        upiTurbo.manageUpiAccounts(customerMobile, color, result);
-    }
-
-    public  boolean isTurboPluginAvailable(Result result) {
-        return upiTurbo.isTurboPluginAvailable(result);
     }
 
 }

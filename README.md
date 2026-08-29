@@ -208,6 +208,10 @@ We export a class `Razorpay` from `package:razorpay_flutter/razorpay_flutter.dar
 #5      Razorpay.open (package:razorpay_flutter/razorpay_flutter.dart:49:5)
 ```
 
+### Class Registrar not found
+
+Please update to version 1.4.0 to fix this issue. 
+
 Check the signatures of the callbacks for payment events. They should match the ones described [here](#onstring-eventname-function-listener).
 
 ## API
@@ -279,3 +283,4 @@ The event names have also been exposed as Strings by the `Razorpay` class.
 | Field Name | Type   | Description                               |
 | ---------- | ------ | ----------------------------------------- |
 | walletName | String | The name of the external wallet selected. |
+

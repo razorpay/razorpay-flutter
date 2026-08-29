@@ -1,10 +1,15 @@
 package com.razorpay.razorpay_flutter;
 
+import android.util.Log;
+
 import androidx.annotation.NonNull;
 
 import org.json.JSONException;
 
 import java.util.Map;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import io.flutter.embedding.engine.plugins.FlutterPlugin;
 import io.flutter.embedding.engine.plugins.activity.ActivityAware;
@@ -22,24 +27,52 @@ public class RazorpayFlutterPlugin implements FlutterPlugin, MethodCallHandler, 
 
     private RazorpayDelegate razorpayDelegate;
     private ActivityPluginBinding pluginBinding;
-    private static String CHANNEL_NAME = "razorpay_flutter";
-    Map<String, Object> _arguments;
-    String customerMobile ;
-    String color;
+    private static final String CHANNEL_NAME = "razorpay_flutter";
+    private static final String MERCHANT_EVENT_CHANNEL_NAME = "razorpay_flutter/merchant_events";
 
+    private EventChannel.EventSink merchantEventSink;
 
     public RazorpayFlutterPlugin() {
     }
 
     @Override
     public void onAttachedToEngine(@NonNull FlutterPluginBinding binding) {
-        final MethodChannel channel = new MethodChannel(binding.getBinaryMessenger(), CHANNEL_NAME);
+        MethodChannel channel = new MethodChannel(binding.getBinaryMessenger(), CHANNEL_NAME);
         channel.setMethodCallHandler(this);
+        EventChannel merchantEventChannel = new EventChannel(binding.getBinaryMessenger(), MERCHANT_EVENT_CHANNEL_NAME);
+        merchantEventChannel.setStreamHandler(new EventChannel.StreamHandler() {
+            @Override
+            public void onListen(Object arguments, EventChannel.EventSink events) {
+                merchantEventSink = events;
+                if (razorpayDelegate != null) {
+                    razorpayDelegate.setMerchantEventSink(merchantEventSink);
+                }
+            }
+
+            @Override
+            public void onCancel(Object arguments) {
+                merchantEventSink = null;
+                if (razorpayDelegate != null) {
+                    razorpayDelegate.setMerchantEventSink(null);
+                }
+            }
+        });
     }
 
     @Override
     public void onDetachedFromEngine(@NonNull FlutterPluginBinding binding) {
     }
+
+
+//    /**
+//     * Constructor for Flutter version < 1.12
+//     * @param registrar
+//     */
+//    private RazorpayFlutterPlugin(Registrar registrar) {
+//        this.razorpayDelegate = new RazorpayDelegate(registrar.activity());
+//        this.razorpayDelegate.setPackageName(registrar.activity().getPackageName());
+//        registrar.addActivityResultListener(razorpayDelegate);
+//    }
 
     @Override
     @SuppressWarnings("unchecked")
@@ -47,42 +80,22 @@ public class RazorpayFlutterPlugin implements FlutterPlugin, MethodCallHandler, 
 
 
         switch (call.method) {
-
             case "open":
                 razorpayDelegate.openCheckout((Map<String, Object>) call.arguments, result);
                 break;
-
-            case "setPackageName":
-                razorpayDelegate.setPackageName((String)call.arguments);
-                break;
-
             case "resync":
                 razorpayDelegate.resync(result);
                 break;
-
-            case "setKeyID":
-                String key = call.arguments().toString();
-                razorpayDelegate.setKeyID(key,  result);
-                break;
-            case "linkNewUpiAccount":
-                _arguments = call.arguments();
-                customerMobile = (String) _arguments.get("customerMobile");
-                color = (String) _arguments.get("color");
-                razorpayDelegate.linkNewUpiAccount(customerMobile, color , result);
-                break;
-
-            case "manageUpiAccounts":
-                _arguments = call.arguments();
-                customerMobile = (String) _arguments.get("customerMobile");
-                color = (String) _arguments.get("color");
-                razorpayDelegate.manageUpiAccounts(customerMobile, color , result);
-                break;
-            case "isTurboPluginAvailable":
-                razorpayDelegate.isTurboPluginAvailable(result);
+            case "subscribeToAnalyticsEvents":
+                @SuppressWarnings("unchecked")
+                Map<String, Object> args = call.arguments != null ? (Map<String, Object>) call.arguments : null;
+                List<String> events = args != null && args.containsKey("events")
+                    ? (List<String>) args.get("events")
+                    : new ArrayList<>();
+                razorpayDelegate.subscribeToAnalyticsEvents(events, result);
                 break;
             default:
                 result.notImplemented();
-
         }
 
     }
@@ -91,6 +104,10 @@ public class RazorpayFlutterPlugin implements FlutterPlugin, MethodCallHandler, 
     public void onAttachedToActivity(@NonNull ActivityPluginBinding binding) {
         this.razorpayDelegate = new RazorpayDelegate(binding.getActivity());
         this.pluginBinding = binding;
+        razorpayDelegate.setPackageName(binding.getActivity().getPackageName());
+        if (merchantEventSink != null) {
+            razorpayDelegate.setMerchantEventSink(merchantEventSink);
+        }
         binding.addActivityResultListener(razorpayDelegate);
     }
 
