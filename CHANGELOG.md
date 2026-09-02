@@ -1,3 +1,7 @@
+## 1.4.6
+
+- Added opt-in `rawMap` parameter to `Razorpay.on(event, handler, {rawMap})`. When `true`, handlers receive the raw unwrapped `data` map instead of typed response objects, letting merchants share a single handler with `razorpay_flutter_customui`'s `unwrapData` opt-in. Default behavior is unchanged.
+
 ## 1.4.5
 
 - Added null safety guards in `onPaymentError` to handle cases where `PaymentData` is null (e.g., FPX cancellation)

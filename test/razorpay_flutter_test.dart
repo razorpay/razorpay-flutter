@@ -3,6 +3,8 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:razorpay_flutter/razorpay_flutter.dart';
 
 void main() {
+  TestWidgetsFlutterBinding.ensureInitialized();
+
   // Regression tests for: type 'String' is not a subtype of type 'Map<dynamic, dynamic>?'
   // When the native layer (Android/iOS) sends a plain-text error string instead of a
   // structured JSON object (e.g. FPX cancellation, UPI Turbo errors), the hard cast in
@@ -114,6 +116,88 @@ void main() {
             Razorpay.EVENT_PAYMENT_ERROR, expectAsync1(errorHandler, count: 1));
 
         razorpay.open(options);
+      });
+
+      group('with rawMap: true', () {
+        test('emits raw map for payment success', () async {
+          channel.setMockMethodCallHandler((MethodCall call) async {
+            if (call.method == 'resync') {
+              return null;
+            }
+            return {
+              'type': 0,
+              'data': {
+                'razorpay_payment_id': 'pay_123',
+                'razorpay_order_id': 'order_456',
+              }
+            };
+          });
+
+          razorpay.clear();
+
+          var successHandler = (Map<dynamic, dynamic> response) {
+            expect(response['razorpay_payment_id'], equals('pay_123'));
+            expect(response['razorpay_order_id'], equals('order_456'));
+          };
+
+          razorpay.on(Razorpay.EVENT_PAYMENT_SUCCESS,
+              expectAsync1(successHandler, count: 1),
+              rawMap: true);
+
+          razorpay.open({'key': 'rzp_test_xxx'});
+        });
+
+        test('emits raw map for payment error', () async {
+          channel.setMockMethodCallHandler((MethodCall call) async {
+            if (call.method == 'resync') {
+              return null;
+            }
+            return {
+              'type': 1,
+              'data': {
+                'code': Razorpay.NETWORK_ERROR,
+                'message': 'Network error',
+              }
+            };
+          });
+
+          razorpay.clear();
+
+          var errorHandler = (Map<dynamic, dynamic> response) {
+            expect(response['code'], equals(Razorpay.NETWORK_ERROR));
+            expect(response['message'], equals('Network error'));
+          };
+
+          razorpay.on(Razorpay.EVENT_PAYMENT_ERROR,
+              expectAsync1(errorHandler, count: 1),
+              rawMap: true);
+
+          razorpay.open({'key': 'rzp_test_xxx'});
+        });
+
+        test('emits raw map for external wallet', () async {
+          channel.setMockMethodCallHandler((MethodCall call) async {
+            if (call.method == 'resync') {
+              return null;
+            }
+            return {
+              'type': 2,
+              'data': {'external_wallet': 'paytm'}
+            };
+          });
+
+          razorpay.clear();
+
+          var walletHandler = (Map<dynamic, dynamic> response) {
+            expect(response['external_wallet'], equals('paytm'));
+          };
+
+          razorpay.on(Razorpay.EVENT_EXTERNAL_WALLET,
+              expectAsync1(walletHandler, count: 1),
+              rawMap: true);
+
+          razorpay.open({'key': 'rzp_test_xxx'});
+        });
       });
     });
   });
