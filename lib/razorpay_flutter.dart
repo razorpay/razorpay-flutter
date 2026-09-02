@@ -28,6 +28,7 @@ class Razorpay {
 
   // EventEmitter instance used for communication
   late EventEmitter _eventEmitter;
+  bool _resultHandled = false;
 
   // ignore: unused_field
   List<String>? _subscribedAnalyticsEvents;
@@ -69,6 +70,7 @@ class Razorpay {
 
   /// Opens Razorpay checkout
   void open(Map<String, dynamic> options) async {
+    _resultHandled = false;
     Map<String, dynamic> validationResult = _validateOptions(options);
 
     if (!validationResult['success']) {
@@ -88,6 +90,10 @@ class Razorpay {
 
   /// Handles checkout response from platform
   void _handleResult(Map<dynamic, dynamic> response) {
+    if (_resultHandled) {
+      return;
+    }
+    _resultHandled = true;
     String eventName;
     Map<dynamic, dynamic>? data = response["data"];
 
