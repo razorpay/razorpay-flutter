@@ -6,6 +6,8 @@
 
 build/
 
+.build/
+.swiftpm/
 # FVM
 .fvm/
 
