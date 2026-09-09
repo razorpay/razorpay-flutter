@@ -2,7 +2,9 @@ import Flutter
 import Razorpay
 import UIKit
 
-public class SwiftRazorpayFlutterPlugin: NSObject, FlutterPlugin {
+/// iOS entry point. The class name matches `pluginClass` in pubspec.yaml, so Flutter's generated
+/// registrant finds it via `@import razorpay_flutter` under both CocoaPods and Swift Package Manager.
+public class RazorpayFlutterPlugin: NSObject, FlutterPlugin {
 
     private var razorpayDelegate = RazorpayDelegate()
     private static let CHANNEL_NAME = "razorpay_flutter"
@@ -10,7 +12,7 @@ public class SwiftRazorpayFlutterPlugin: NSObject, FlutterPlugin {
 
     public static func register(with registrar: FlutterPluginRegistrar) {
         let channel = FlutterMethodChannel(name: CHANNEL_NAME, binaryMessenger: registrar.messenger())
-        let instance = SwiftRazorpayFlutterPlugin()
+        let instance = RazorpayFlutterPlugin()
         registrar.addMethodCallDelegate(instance, channel: channel)
 
         let merchantEventChannel = FlutterEventChannel(name: MERCHANT_EVENT_CHANNEL_NAME, binaryMessenger: registrar.messenger())
@@ -52,7 +54,7 @@ public class SwiftRazorpayFlutterPlugin: NSObject, FlutterPlugin {
     }
 }
 
-extension SwiftRazorpayFlutterPlugin: FlutterStreamHandler {
+extension RazorpayFlutterPlugin: FlutterStreamHandler {
     public func onListen(withArguments arguments: Any?, eventSink events: @escaping FlutterEventSink) -> FlutterError? {
         razorpayDelegate.merchantEventSink = events
         return nil
