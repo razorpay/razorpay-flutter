@@ -156,11 +156,11 @@ end
 
 Set `config.build_settings['ENABLE_BITCODE'] = 'YES'`.
 
-### Setting Swift version
+### Enabling bit code
 
 Add the following line below `config.build_settings['ENABLE_BITCODE'] = 'YES'`:
 
-`config.build_settings['SWIFT_VERSION'] = '5.0'`
+Also verify that the Swift version should always be the latest or atleast be more than 5.1+
 
 ### `CocoaPods could not find compatible versions for pod "razorpay_flutter"` when running `pod install`
 
