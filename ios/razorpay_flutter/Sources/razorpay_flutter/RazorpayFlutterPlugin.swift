@@ -1,67 +1,12 @@
 import Flutter
-import Razorpay
-import UIKit
 
-/// iOS entry point. The class name matches `pluginClass` in pubspec.yaml, so Flutter's generated
-/// registrant finds it via `@import razorpay_flutter` under both CocoaPods and Swift Package Manager.
-public class RazorpayFlutterPlugin: NSObject, FlutterPlugin {
-
-    private var razorpayDelegate = RazorpayDelegate()
-    private static let CHANNEL_NAME = "razorpay_flutter"
-    private static let MERCHANT_EVENT_CHANNEL_NAME = "razorpay_flutter/merchant_events"
-
-    public static func register(with registrar: FlutterPluginRegistrar) {
-        let channel = FlutterMethodChannel(name: CHANNEL_NAME, binaryMessenger: registrar.messenger())
-        let instance = RazorpayFlutterPlugin()
-        registrar.addMethodCallDelegate(instance, channel: channel)
-
-        let merchantEventChannel = FlutterEventChannel(name: MERCHANT_EVENT_CHANNEL_NAME, binaryMessenger: registrar.messenger())
-        merchantEventChannel.setStreamHandler(instance)
-    }
-
-    /// Returns the root view controller so the SDK can present checkout. Prefers scene-based API (iOS 13+).
-    private static func rootViewController() -> UIViewController? {
-        if #available(iOS 13.0, *) {
-            for scene in UIApplication.shared.connectedScenes {
-                guard let windowScene = scene as? UIWindowScene else { continue }
-                if let vc = windowScene.windows.first(where: { $0.isKeyWindow })?.rootViewController {
-                    return vc
-                }
-                if let vc = windowScene.windows.first?.rootViewController {
-                    return vc
-                }
-            }
-        }
-        return UIApplication.shared.keyWindow?.rootViewController
-    }
-
-    public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
-        switch call.method {
-        case "open":
-            let options = call.arguments as! Dictionary<String, Any>
-            let viewController = Self.rootViewController()
-            razorpayDelegate.open(options: options, result: result, from: viewController)
-        case "resync":
-            razorpayDelegate.resync(result: result)
-        case "subscribeToAnalyticsEvents":
-            let args = call.arguments as? [String: Any]
-            let events = (args?["events"] as? [String]) ?? []
-            razorpayDelegate.subscribeToAnalyticsEvents(events: events)
-            result(nil)
-        default:
-            result(FlutterMethodNotImplemented)
-        }
-    }
-}
-
-extension RazorpayFlutterPlugin: FlutterStreamHandler {
-    public func onListen(withArguments arguments: Any?, eventSink events: @escaping FlutterEventSink) -> FlutterError? {
-        razorpayDelegate.merchantEventSink = events
-        return nil
-    }
-
-    public func onCancel(withArguments arguments: Any?) -> FlutterError? {
-        razorpayDelegate.merchantEventSink = nil
-        return nil
-    }
-}
+/// Swift Package Manager entry point.
+///
+/// Flutter's generated registrant calls `[RazorpayFlutterPlugin registerWithRegistrar:]`, the
+/// `pluginClass` from pubspec.yaml. Under CocoaPods that class is the Objective-C shim in
+/// `ios/Classes`, which forwards to `SwiftRazorpayFlutterPlugin`. SwiftPM targets cannot mix
+/// Objective-C and Swift, so this package instead exposes the same name as a subclass of the
+/// shared Swift implementation. This file exists only in the SwiftPM package; the shared sources
+/// next to it are symlinks into `ios/Classes`, so CocoaPods is unaffected.
+@objc(RazorpayFlutterPlugin)
+public final class RazorpayFlutterPlugin: SwiftRazorpayFlutterPlugin {}

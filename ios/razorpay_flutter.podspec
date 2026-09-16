@@ -10,7 +10,8 @@ Pod::Spec.new do |s|
   s.license          = { :file => '../LICENSE' }
   s.author           = { 'Chintan Acharya' => 'chintan.acharya@razorpay.com' }
   s.source           = { :path => '.' }
-  s.source_files = 'razorpay_flutter/Sources/razorpay_flutter/**/*.swift'
+  s.source_files = 'Classes/**/*'
+  s.public_header_files = 'Classes/**/*.h'
   s.dependency 'Flutter'
   s.dependency 'razorpay-pod'
 
