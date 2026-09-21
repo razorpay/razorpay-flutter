@@ -17,6 +17,8 @@ public class RazorpayDelegate: NSObject, RazorpayPaymentCompletionProtocolWithDa
     static let UNKNOWN_ERROR = 100
     
     public func onExternalWalletSelected(_ walletName: String, withPaymentData paymentData: [AnyHashable : Any]?) {
+        if resultDelivered { return }
+        resultDelivered = true
         var response = [String:Any]()
         response["type"] = RazorpayDelegate.CODE_PAYMENT_EXTERNAL_WALLET
         
@@ -29,6 +31,7 @@ public class RazorpayDelegate: NSObject, RazorpayPaymentCompletionProtocolWithDa
     
     private var pendingResult: FlutterResult!
     private var subscribedAnalyticsEvents: [String]?
+    private var resultDelivered: Bool = false
     var merchantEventSink: FlutterEventSink?
 
     private let logTag = "RazorpayFlutter"
@@ -48,6 +51,8 @@ public class RazorpayDelegate: NSObject, RazorpayPaymentCompletionProtocolWithDa
     }
 
     public func onPaymentError(_ code: Int32, description message: String, andData data: [AnyHashable : Any]?) {
+        if resultDelivered { return }
+        resultDelivered = true
         var response = [String:Any]()
         response["type"] = RazorpayDelegate.CODE_PAYMENT_ERROR
         
@@ -61,6 +66,8 @@ public class RazorpayDelegate: NSObject, RazorpayPaymentCompletionProtocolWithDa
     }
     
     public func onPaymentSuccess(_ payment_id: String, andData data: [AnyHashable: Any]?) {
+        if resultDelivered { return }
+        resultDelivered = true
         var response = [String:Any]()
         response["type"] = RazorpayDelegate.CODE_PAYMENT_SUCCESS
         response["data"] = data
@@ -70,6 +77,7 @@ public class RazorpayDelegate: NSObject, RazorpayPaymentCompletionProtocolWithDa
     
     public func open(options: Dictionary<String, Any>, result: @escaping FlutterResult, from viewController: UIViewController?) {
         self.pendingResult = result
+        self.resultDelivered = false
         let key = options["key"] as? String
         var options = options
         options["integration"] = "flutter"

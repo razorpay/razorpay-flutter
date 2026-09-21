@@ -31,6 +31,7 @@ public class RazorpayDelegate implements ActivityResultListener, ExternalWalletL
     private final Activity activity;
     private Result pendingResult;
     private Map<String, Object> pendingReply;
+    private boolean resultDelivered = false;
 
     // Response codes for communicating with plugin
     private static final int CODE_PAYMENT_SUCCESS = 0;
@@ -81,7 +82,8 @@ public class RazorpayDelegate implements ActivityResultListener, ExternalWalletL
 
     void openCheckout(Map<String, Object> arguments, Result result) {
          this.pendingResult = result;
-        JSONObject options = new JSONObject(arguments);
+         this.resultDelivered = false;
+         JSONObject options = new JSONObject(arguments);
         if (activity.getPackageName().equalsIgnoreCase(packageName)){
             Intent intent = new Intent(activity, CheckoutActivity.class);
             intent.putExtra("OPTIONS", options.toString());
@@ -104,9 +106,12 @@ public class RazorpayDelegate implements ActivityResultListener, ExternalWalletL
 
     private void sendReply(Map<String, Object> data) {
         try{
-            
+            if (resultDelivered) {
+                return;
+            }
             if (pendingResult != null) {
                 pendingResult.success(data);
+                resultDelivered = true;
                 pendingReply = null;
             } else {
                 pendingReply = data;
@@ -118,6 +123,9 @@ public class RazorpayDelegate implements ActivityResultListener, ExternalWalletL
 
     public void resync(Result result) {
         result.success(pendingReply);
+        if (pendingReply != null) {
+            resultDelivered = true;
+        }
         pendingReply = null;
     }
 
