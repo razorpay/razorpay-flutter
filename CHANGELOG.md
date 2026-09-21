@@ -1,3 +1,7 @@
+## 1.4.7
+
+- Added Swift Package Manager support for iOS. The plugin now ships `ios/razorpay_flutter/Package.swift` alongside the existing podspec, so apps using either of Flutter's iOS dependency managers build without extra setup. CocoaPods integration is unchanged.
+
 ## 1.4.6
 
 - Added opt-in `rawMap` parameter to `Razorpay.on(event, handler, {rawMap})`. When `true`, handlers receive the raw unwrapped `data` map instead of typed response objects, letting merchants share a single handler with `razorpay_flutter_customui`'s `unwrapData` opt-in. Default behavior is unchanged.
