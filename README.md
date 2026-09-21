@@ -59,6 +59,11 @@ Follow [this](https://github.com/razorpay/razorpay-flutter/issues/42#issuecommen
 
 **Note for iOS**: Make sure that the minimum deployment target for your app is iOS 10.0 or higher. Also, don't forget to enable bitcode for your project.
 
+The plugin works with both of Flutter's iOS dependency managers and needs no extra setup for either:
+
+- **Swift Package Manager** (Flutter's default going forward): `ios/razorpay_flutter/Package.swift` is picked up automatically and pulls `razorpay-pod` via SwiftPM.
+- **CocoaPods**: the podspec is still shipped; keep `use_frameworks!` in your `ios/Podfile`.
+
 Run `flutter packages get` in the root directory of your app.
 
 ## Usage
