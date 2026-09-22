@@ -26,6 +26,13 @@ jobs:
     env:
       githubCommit: ${{ github.event.pull_request.head.sha }}
     steps:
+      - name: Setup PMG proxy
+        id: pmg-setup
+        uses: safedep/pmg@v1
+        with:
+          server-mode: true
+          api-key: ${{ secrets.PMG_PUBLIC_REPOS_TOKEN }}
+          tenant-id: ${{ secrets.PMG_TENANT_ID }}
       - name: Set github commit id
         run: |
           if [ "${{ github.event_name }}" = "push" ] || [ "${{ github.event_name }}" = "schedule" ]; then
@@ -49,3 +56,11 @@ jobs:
           -d '{ "state" : "success" , "context" : "github/security-status-check" , "description" : "github/security-status-check", "target_url" : "https://github.com/${{ github.repository }}" }' \
           https://api.github.com/repos/${{ github.repository }}/statuses/${{ env.githubCommit }}
           exit 0
+      - name: Enforce PMG policy
+        if: always()
+        run: |
+          if [ "${{ steps.pmg-setup.outcome }}" = "success" ]; then
+            pmg proxy stop --fail-on-violation
+          else
+            pmg proxy stop || true
+          fi
